@@ -134,7 +134,7 @@
 ## 前端技术约束
 
 - 本项目 Next.js 版本存在破坏性变化；修改 `frontend/app` 路由、页面、Next 自身的 API（next/navigation、next/font 等）或 Next 配置前，
-  必须读取 `frontend/node_modules/next/dist/docs/` 中对应指南，并遵守弃用提示。
+  必须读取已安装 Next 包内 dist/docs 下的对应指南（装完依赖后位于 frontend 的 node_modules 里），并遵守弃用提示。
 - **视觉改动必须在本机 `localhost` 上看过截图再提交。** 不据裸 DOM 判断版面。
 - **界面文案一律走字典**（`frontend/lib/i18n/{zh-Hans,en}.ts`），组件内不写字面量文案。
   `dictionary.test.ts` 守护中英键集对等且英文字典不含汉字。

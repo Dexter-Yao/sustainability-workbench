@@ -1,5 +1,5 @@
-# ABOUTME: CI 只跑不依赖数据库与模型的部分：前端全量、后端非持久化用例、两个 lint。
-# ABOUTME: 持久化与导出用例需要本机 Supabase 栈与 LibreOffice，按 SETUP.md 在本机跑。
+# ABOUTME: CI 跑不依赖本机栈的部分：前端全量、后端非持久化非导出用例、两个 lint。
+# ABOUTME: 持久化用例需要 Supabase 栈、导出用例需要完整 LibreOffice，两者按 SETUP.md 在本机跑。
 name: verify
 
 on:
@@ -10,18 +10,27 @@ on:
 jobs:
   backend:
     runs-on: ubuntu-latest
+    env:
+      # 占位凭据：只为让模型对象能构造出来。受此影响的用例只断言 Agent 未暴露
+      # 领域改写工具（tests/test_material_mapping_agent.py），不发出任何请求。
+      # 真实调用的用例本就不在 CI 跑。
+      AZURE_OPENAI_API_KEY: ci-placeholder-not-a-real-key
+      AZURE_OPENAI_ENDPOINT: https://example.invalid/
     steps:
       - uses: actions/checkout@v4
       - uses: astral-sh/setup-uv@v5
         with:
           python-version: "3.12"
-      - name: Install LibreOffice
-        # Word 导出的运行时依赖：目录页码要靠排版引擎分页，python-docx 不做排版。
-        run: sudo apt-get update && sudo apt-get install -y libreoffice-writer
       - run: uv sync --project backend
       - name: pytest
         working-directory: backend
-        # 持久化用例在无 Supabase 栈时自行 skip；此处不假装它们跑过。
+        # 刻意不装 LibreOffice。导出用例走 render_docx（docx_renderer.py:1620），
+        # 它不做目录页码收尾，因此不触碰 LibreOffice；只有 render_final_docx
+        # （:1726）才调用 finalize_toc_page_numbers，而它在 CI 里不跑。
+        # 反过来装了 libreoffice-writer 才会出事：toc.py 的 shutil.which 命中后
+        # 走真实转换，而 runner 上的 headless 版排不出正文分页，直接
+        # TocFinalizationError（首次 CI 实测）。交付物保真由本机验收把关。
+        # 持久化用例另有 pytest.skip("本地 Supabase 栈未启动")，CI 不假装验过数据库层。
         run: uv run pytest -q
       - name: ruff
         run: uv run --project backend ruff check backend/src backend/tests
