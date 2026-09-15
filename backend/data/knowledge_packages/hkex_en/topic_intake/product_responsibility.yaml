@@ -1,0 +1,31 @@
+# ABOUTME(en): Topic-specific intake questions of "Product Responsibility"; the four fixed pillar questions come from topic_intake_common.yaml.
+# ABOUTME(en): Quantitative KPIs are collected through the metric catalog, not here.
+contentScopeId: product_responsibility
+items:
+- key: product.q_quality_assurance
+  prompt: What is the company's quality assurance process?
+  kind: text
+  collectionPriority: recommended
+  hint: Incoming, process and outgoing inspection; certifications.
+  maxChars: 5000
+- key: product.q_recall_procedure
+  prompt: How does the company handle product recalls and customer complaints?
+  kind: text
+  collectionPriority: recommended
+  hint: Recall triggers, traceability, complaint channels, process.
+  generationBoundary: |-
+    Unless specific figures are given, do not generate complaint numbers, recall percentages or response times.
+  maxChars: 5000
+- key: product.q_ip_practices
+  prompt: How does the company observe and protect intellectual property rights?
+  kind: text
+  collectionPriority: recommended
+  hint: Patents, trademarks, confidentiality, customer drawings.
+  maxChars: 5000
+- key: product.q_advertising_labelling
+  prompt: |-
+    What compliance requirements does the company apply to advertising and product labelling?
+  kind: text
+  collectionPriority: recommended
+  hint: Label review, compliance review of promotional materials.
+  maxChars: 5000

@@ -1,0 +1,143 @@
+# ABOUTME(en): GRI 102: Climate Change 2025 disclosure requirements, grouped by the package's pillars, for the
+# ABOUTME(en): coverage audit and the key whitelist. Wording condenses the official requirement text (a.-k. sub-items).
+# ABOUTME(en): GRI 102-5 to 102-10 are emissions data disclosures carried by the quantitative metric catalog, not here.
+topicStandardDisclosureRequirementGroups:
+- topicSectionKey: climate_change.gov
+  pillar: governance
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: climate_change.gov.board_oversight
+    standardDisclosureRequirementTitle: Governance bodies responsible for the transition and adaptation plans
+    excerptFrom: GRI 102 Climate Change 2025 · Disclosure 102-1-d and 102-2-b-iv
+    standardDisclosureRequirementText: |-
+      Report the governance bodies or individual roles responsible for overseeing and implementing the transition plan for climate change mitigation and the climate change adaptation plan, and their responsibilities.
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: GRI
+      clauseRef: 102-1-d
+    - standard: GRI
+      clauseRef: 102-2-b-iv
+  - standardDisclosureRequirementKey: climate_change.gov.management_role
+    standardDisclosureRequirementTitle: Management of the climate change topic
+    excerptFrom: GRI 102 Climate Change 2025 · Section 1 introduction; GRI 3 Disclosure 3-3
+    standardDisclosureRequirementText: |-
+      Report how the organization manages the climate change topic, including the policies and actions to mitigate climate change and how the transition plan is embedded in the business strategy.
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: GRI
+      clauseRef: 102-1-a
+    - standard: GRI
+      clauseRef: 102-1-e
+- topicSectionKey: climate_change.strategy
+  pillar: strategy
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: climate_change.strategy.risks_and_opportunities
+    standardDisclosureRequirementTitle: Climate-related risks, opportunities and their impacts on people and the environment
+    excerptFrom: GRI 102 Climate Change 2025 · Disclosure 102-2-a
+    standardDisclosureRequirementText: |-
+      Describe the impacts on people and the environment associated with the organization's climate-related risks and opportunities, and how they were considered in developing the adaptation plan. Climate-related risks may be physical (acute or chronic) or transition risks.
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: GRI
+      clauseRef: 102-2-a
+  - standardDisclosureRequirementKey: climate_change.strategy.business_model_and_value_chain
+    standardDisclosureRequirementTitle: Coverage of the organization's activities and value chain
+    excerptFrom: GRI 102 Climate Change 2025 · Guidance to Disclosure 102-1 and 102-2
+    standardDisclosureRequirementText: |-
+      Cover the organization's own activities and its upstream and downstream value chain when describing the transition plan and the adaptation plan.
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: GRI
+      clauseRef: 102-1 Guidance
+    - standard: GRI
+      clauseRef: 102-2 Guidance
+  - standardDisclosureRequirementKey: climate_change.strategy.strategy_and_transition_plan
+    standardDisclosureRequirementTitle: Transition plan for climate change mitigation
+    excerptFrom: GRI 102 Climate Change 2025 · Disclosure 102-1-a, 102-1-b, 102-1-e, 102-1-j
+    standardDisclosureRequirementText: |-
+      Describe the transition plan, including the policies and actions to mitigate climate change, how it aligns with the latest scientific evidence on limiting global warming to 1.5C (including the climate scenarios, methodologies and assumptions used), and how it is embedded in the business strategy. In the absence of a transition plan, explain why it does not exist and describe the steps being taken to develop it and the expected time frame.
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: GRI
+      clauseRef: 102-1-a
+    - standard: GRI
+      clauseRef: 102-1-b
+    - standard: GRI
+      clauseRef: 102-1-j
+  - standardDisclosureRequirementKey: climate_change.strategy.financial_effects
+    standardDisclosureRequirementTitle: Expenditure incurred by the transition and adaptation plans
+    excerptFrom: GRI 102 Climate Change 2025 · Disclosure 102-1-c and 102-2-b-iii
+    standardDisclosureRequirementText: |-
+      Report the total expenditure incurred by implementing the transition plan and the adaptation plan as a monetary value and as a percentage of the total expenditure incurred in the reporting period.
+    disclosureRequirementObligationLevel: encouraged
+    sourceClauseReferenceLabels:
+    - standard: GRI
+      clauseRef: 102-1-c
+    - standard: GRI
+      clauseRef: 102-2-b-iii
+  - standardDisclosureRequirementKey: climate_change.strategy.climate_resilience
+    standardDisclosureRequirementTitle: Climate change adaptation plan
+    excerptFrom: GRI 102 Climate Change 2025 · Disclosure 102-2-b and 102-2-d
+    standardDisclosureRequirementText: |-
+      Describe the adaptation plan, including the policies and actions to adapt to climate change, the source of the climate scenarios used and the temperature projection they include, and the methodologies and assumptions used to develop the plan. In the absence of an adaptation plan, explain why it does not exist and describe the steps being taken to develop it and the expected time frame.
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: GRI
+      clauseRef: 102-2-b
+    - standard: GRI
+      clauseRef: 102-2-d
+  - standardDisclosureRequirementKey: climate_change.strategy.climate_targets
+    standardDisclosureRequirementTitle: GHG emissions reduction targets and progress
+    excerptFrom: GRI 102 Climate Change 2025 · Disclosure 102-4
+    standardDisclosureRequirementText: |-
+      Report short-, medium- and long-term gross Scope 1, Scope 2 and Scope 3 GHG emissions reduction targets in metric tons of CO2 equivalent and as a percentage of base year emissions, the base year and the rationale for choosing it, how the targets align with the latest scientific evidence on limiting global warming to 1.5C, the target revision policy, and progress toward each target.
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: GRI
+      clauseRef: 102-4-a
+    - standard: GRI
+      clauseRef: 102-4-f
+    - standard: GRI
+      clauseRef: 102-4-h
+    - standard: GRI
+      clauseRef: 102-4-i
+- topicSectionKey: climate_change.iro
+  pillar: iro_management
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: climate_change.iro.risk_management_process
+    standardDisclosureRequirementTitle: Actions to manage impacts and just transition alignment
+    excerptFrom: GRI 102 Climate Change 2025 · Disclosure 102-1-g, 102-1-h, 102-2-c
+    standardDisclosureRequirementText: |-
+      Describe the impacts on people and the environment from implementing the transition plan and the adaptation plan and the actions taken to manage them, covering workers, local communities, Indigenous Peoples and biodiversity, and describe how the plans align with just transition principles and how stakeholder engagement informs their development and implementation.
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: GRI
+      clauseRef: 102-1-g
+    - standard: GRI
+      clauseRef: 102-1-h
+    - standard: GRI
+      clauseRef: 102-2-c
+- topicSectionKey: climate_change.metrics
+  pillar: metrics_targets
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: climate_change.metrics.ghg_emissions
+    standardDisclosureRequirementTitle: Gross Scope 1, Scope 2 and Scope 3 GHG emissions
+    excerptFrom: GRI 102 Climate Change 2025 · Disclosures 102-5, 102-6, 102-7
+    standardDisclosureRequirementText: |-
+      Report gross Scope 1, Scope 2 and Scope 3 GHG emissions in metric tons of CO2 equivalent, with the gases included, the consolidation approach, and the standards, methodologies, assumptions and calculation tools used.
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: GRI
+      clauseRef: 102-5
+    - standard: GRI
+      clauseRef: 102-6
+    - standard: GRI
+      clauseRef: 102-7
+  - standardDisclosureRequirementKey: climate_change.metrics.ghg_intensity
+    standardDisclosureRequirementTitle: GHG emissions intensity
+    excerptFrom: GRI 102 Climate Change 2025 · Disclosure 102-8
+    standardDisclosureRequirementText: |-
+      Report the GHG emissions intensity ratio, the metric chosen as the denominator, and the scopes and gases included in the ratio.
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: GRI
+      clauseRef: 102-8

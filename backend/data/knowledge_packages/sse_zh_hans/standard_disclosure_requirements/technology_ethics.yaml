@@ -1,0 +1,72 @@
+# ABOUTME: 科技伦理议题准则披露要求库，供覆盖审计与按 key 白名单注入生成上下文（注入受开关控制，默认关闭）。
+# ABOUTME: 本文件不作为用户可见准则批注来源；用户可见条款原文来自 user_visible_disclosure_clause_annotations。
+topicStandardDisclosureRequirementGroups:
+- topicSectionKey: technology_ethics.gov
+  pillar: governance
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: technology_ethics.gov.activity_norms_required
+    standardDisclosureRequirementTitle: 科技伦理敏感活动领域与规范制度
+    excerptFrom: 附录索引表第四十三条
+    standardDisclosureRequirementText: 当公司从事生命科学、人工智能等科技伦理敏感领域的科学研究、技术开发等活动时，应披露从事科技研究、技术开发等科技活动的领域及遵守的科技伦理规范，并说明内部管理制度中关于科技伦理的规定及落实情况。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 第四十三条
+    - standard: SZSE
+      clauseRef: 第四十三条
+    - standard: BSE
+      clauseRef: 第四十三条
+  - standardDisclosureRequirementKey: technology_ethics.gov.review_committee_conditional
+    standardDisclosureRequirementTitle: 科技伦理审查委员会及运行
+    excerptFrom: 附录索引表第四十三条
+    standardDisclosureRequirementText: 如涉及科技伦理委员会、伦理审查委员会或类似机制，应说明其设置、职责、项目审查流程和运作情况。
+    disclosureRequirementObligationLevel: conditional
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 第四十三条
+    - standard: SZSE
+      clauseRef: 第四十三条
+    - standard: BSE
+      clauseRef: 第四十三条
+- topicSectionKey: technology_ethics.strategy
+  pillar: strategy
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: technology_ethics.strategy.ethics_management_strategy_required
+    standardDisclosureRequirementTitle: 科技伦理管理原则与策略
+    excerptFrom: 附录索引表第四十三条
+    standardDisclosureRequirementText: 当公司从事生命科学、人工智能等科技伦理敏感活动时，应说明公司在科技伦理管理中的基本原则、管理策略、合规要求嵌入、审查监督安排或能力建设方向。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 第四十三条
+    - standard: SZSE
+      clauseRef: 第四十三条
+    - standard: BSE
+      clauseRef: 第四十三条
+- topicSectionKey: technology_ethics.iro
+  pillar: iro_management
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: technology_ethics.iro.violation_incidents_conditional
+    standardDisclosureRequirementTitle: 违反科技伦理行为、处罚与整改
+    excerptFrom: 附录索引表第四十三条
+    standardDisclosureRequirementText: 如涉及违反科技伦理的行为，应披露相关行为的基本情况、被有权机关处罚的情况、内部调查处理与责任追究情况，以及采取的整改措施。
+    disclosureRequirementObligationLevel: conditional
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 第四十三条
+    - standard: SZSE
+      clauseRef: 第四十三条
+    - standard: BSE
+      clauseRef: 第四十三条
+  - standardDisclosureRequirementKey: technology_ethics.iro.training_public_education_required
+    standardDisclosureRequirementTitle: 科技伦理培训与科普宣传
+    excerptFrom: 附录索引表第四十三条
+    standardDisclosureRequirementText: 应说明公司开展科技伦理内外部培训及科普宣传等情况，包括培训对象、主题、覆盖范围、科普宣传对象、效果或后续计划。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 第四十三条
+    - standard: SZSE
+      clauseRef: 第四十三条
+    - standard: BSE
+      clauseRef: 第四十三条

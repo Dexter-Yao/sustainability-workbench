@@ -1,0 +1,22 @@
+# ABOUTME: 科技伦理议题轻量版内容清单，聚焦违规处罚事件和科技伦理培训。
+# ABOUTME: 治理、战略和指标目标固定题由 topic_intake_common.yaml 展开；结构化数值由 ESG 定量数据表维护。
+contentScopeId: technology_ethics
+items:
+- key: technology_ethics.q_ethics_violation_penalties
+  prompt: 贵公司报告期内是否发生科技伦理相关违规和处罚事件？
+  kind: single_select
+  collectionPriority: recommended
+  options:
+  - 是
+  - 否
+  - 不确定
+  hint: 如选择是，请在补充说明中简述违规事实、处罚情况和改进计划。
+  generationBoundary: 未选择是或未填写具体内容时，不得生成违规、处罚或整改事实。
+  maxChars: 5000
+- key: technology_ethics.q_ethics_training
+  prompt: 贵公司开展过哪些科技伦理相关培训？
+  kind: text
+  collectionPriority: recommended
+  hint: 请简述培训主题、培训范围和对象、培训成果等。
+  generationBoundary: 未填写具体数值时，不得生成培训人次、次数或覆盖率。
+  maxChars: 5000

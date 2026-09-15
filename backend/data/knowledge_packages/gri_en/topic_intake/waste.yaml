@@ -1,0 +1,23 @@
+# ABOUTME(en): Topic-specific intake questions of "Waste"; the four fixed pillar questions come from topic_intake_common.yaml.
+# ABOUTME(en): Quantitative metrics are collected through the metric catalog, not here.
+contentScopeId: waste
+items:
+- key: waste.q_waste_reduction_measures
+  prompt: What measures has the company taken to reduce or recycle waste?
+  kind: text
+  collectionPriority: recommended
+  hint: Source reduction, sorting, recycling, reuse; or blank.
+  generationBoundary: |-
+    Unless specific figures are given, do not generate waste reduction volumes or recycling rates.
+  maxChars: 5000
+- key: waste.q_hazardous_waste_handling
+  prompt: How is hazardous waste handled?
+  kind: single_select
+  collectionPriority: recommended
+  options:
+  - Handled by a licensed third party
+  - Handled in-house under permit
+  - No hazardous waste
+  - Not sure
+  hint: Name no vendor; the arrangement type is enough.
+  maxChars: 5000

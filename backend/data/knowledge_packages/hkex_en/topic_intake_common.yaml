@@ -1,0 +1,50 @@
+# ABOUTME(en): Fixed per-Aspect questions expanded for every report section: policy owner, policies and
+# ABOUTME(en): compliance, certifications (governance) and approach & targets (strategy). {topic_title} is the
+# ABOUTME(en): section title; keys become <prefix>.<keySuffix>. English twin of hkex_zh_hant.
+fixedPillarQuestionTemplates:
+- keySuffix: q_governance_roles
+  pillar: governance
+  prompt: Which departments or positions are responsible for "{topic_title}"?
+  kind: single_select
+  collectionPriority: recommended
+  options:
+  - A dedicated department or position is responsible
+  - Handled by another department or position alongside its duties
+  - No dedicated department or position yet
+  hint: Name the unit, its duties and how it coordinates.
+  termExplanation: If none, generation uses a general description for the industry and business.
+  maxChars: 3000
+- keySuffix: q_governance_policies
+  pillar: governance
+  prompt: Does the company have policies, procedures or management requirements on "{topic_title}"?
+  kind: single_select
+  collectionPriority: recommended
+  options:
+  - Policies, procedures or management requirements in place
+  - No written policy, but day-to-day management practices
+  - Not sure
+  hint: Policy name, scope, main requirements; compliance too.
+  maxChars: 5000
+- keySuffix: q_governance_certifications
+  pillar: governance
+  prompt: Does the company hold certifications related to "{topic_title}"?
+  kind: single_select
+  collectionPriority: recommended
+  options:
+  - Certifications held
+  - No related certification
+  - Not sure
+  hint: Give the certification name, scope and issuing body.
+  # The products and businesses a certification covers belong to the company as a whole and are carried by
+  # "About the Company"; repeating them per Aspect would repeat the same product names in many chapters.
+  # The boundary is projected with this question and reaches only the governance block that consumes it.
+  generationBoundary: Write only the certification name and its relation to this Aspect; the products and businesses it covers do not enter this passage.
+  maxChars: 3000
+- keySuffix: q_strategy_content
+  pillar: strategy
+  prompt: What approach, targets, action plans or priorities does the company have on "{topic_title}"?
+  kind: text
+  collectionPriority: recommended
+  hint: Approach, targets and steps, or priorities; or blank.
+  generationBoundary: Unless specific target values or timelines are given, do not generate target values, base years or deadlines.
+  maxChars: 5000

@@ -1,0 +1,114 @@
+# ABOUTME(en): Topic chapter template of the HKEX Aspect "Community Investment": governance / strategy / risk-management
+# ABOUTME(en): blocks with their intake evidence and Appendix C2 requirement keys; the metrics H3 is compiled from metricDisclosure.
+section:
+  key: community_investment
+  title: Community Investment
+  headingLevel: 2
+  reportSectionId: community_investment
+  conciseDisclosure:
+    id: community_investment.concise_summary
+    type: paragraph
+    blockType: generative
+    source: ai
+    styleRole: body
+    generation:
+      task:
+        focus: |-
+          From the evidence currently visible for this Aspect, write one coherent summary covering the policies on community engagement to understand the needs of the communities where the company operates, the focus areas of contribution and the resources contributed, without the four sub-headings.
+      inputs:
+        evidence:
+          kind: report_section
+      targetChars:
+      - 260
+      - 520
+  children:
+  - key: community_investment.gov
+    title: Governance
+    pillar: governance
+    headingLevel: 3
+    blocks:
+    - id: community_investment.gov_policy
+      type: paragraph
+      blockType: generative
+      source: ai
+      styleRole: body
+      generation:
+        task:
+          focus: |-
+            Describe the company's policies and allocation of responsibility on community engagement to understand the needs of the communities where it operates and to ensure its activities take into consideration the communities' interests (Code Aspect B8 General Disclosure).
+          noFactGuidance: |-
+            When the user provides no policy or responsibility facts, describe in a measured, general register the management attention, compliance principles and allocation of responsibility a company of this industry and business type applies to this Aspect; do not name departments, policy titles, certifications or approval flows, and do not claim that a specific system exists or that compliance checks have been completed.
+        inputs:
+          evidence:
+            kind: explicit
+            intakeItems:
+            - community_investment.q_governance_roles
+            - community_investment.q_governance_policies
+            - community_investment.q_governance_certifications
+        targetChars:
+        - 85
+        - 190
+        standardDisclosureRequirementKeys:
+        - community_investment.gov.general_disclosure_policies
+  - key: community_investment.strategy
+    title: Strategy
+    pillar: strategy
+    headingLevel: 3
+    blocks:
+    - id: community_investment.strategy_focus_areas
+      type: paragraph
+      blockType: generative
+      source: ai
+      styleRole: body
+      generation:
+        task:
+          focus: |-
+            Describe the company's focus areas of contribution (such as education, environmental concerns, labour needs, health, culture, sport) and its direction on community investment (Code KPI B8.1).
+          noFactGuidance: |-
+            When the user provides no targets or plans, state that the company will keep attending to improvement directions and the setting of quantified targets for this Aspect as the business develops; do not invent target values, base years, deadlines or achieved results.
+        inputs:
+          evidence:
+            kind: explicit
+            intakeItems:
+            - community_investment.q_strategy_content
+            - community_investment.q_focus_areas
+        targetChars:
+        - 85
+        - 190
+        standardDisclosureRequirementKeys:
+        - community_investment.strategy.focus_areas
+  - key: community_investment.iro
+    title: Risk Management
+    pillar: iro_management
+    headingLevel: 3
+    blocks:
+    - id: community_investment.iro_activities
+      type: paragraph
+      blockType: generative
+      source: ai
+      styleRole: body
+      generation:
+        task:
+          focus: |-
+            Describe the community engagement and charitable activities carried out during the reporting period, cooperation with community organisations, and the types of resources contributed (such as donations or volunteer time) (Code KPI B8.2).
+          noFactGuidance: |-
+            When the user provides no specific measures, describe only the management steps and directional arrangements common to this Aspect for the industry and business type; do not claim that the company has implemented specific measures, purchased equipment, engaged contractors or achieved results.
+        inputs:
+          evidence:
+            kind: explicit
+            intakeItems:
+            - community_investment.q_community_activities
+            - community_investment.q_focus_areas
+        targetChars:
+        - 95
+        - 230
+        standardDisclosureRequirementKeys:
+        - community_investment.iro.community_activities
+        simplifiedWritingGuidance:
+        - |-
+          Figures are carried by the KPI data table; this passage does not state emissions, consumption, ratios or reduction percentages.
+metricDisclosure:
+  catalogMetricKeys:
+  - community_donations
+  - community_volunteer_hours
+  - community_volunteer_participants

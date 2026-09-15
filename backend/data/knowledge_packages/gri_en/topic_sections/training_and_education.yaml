@@ -1,0 +1,104 @@
+# ABOUTME(en): Topic chapter template of the GRI topic "Training and Education" (GRI 404: Training and Education 2016): management /
+# ABOUTME(en): approach / actions blocks with their intake evidence and GRI requirement keys; the metrics H3 is compiled from metricDisclosure.
+section:
+  key: training_and_education
+  title: Training and Education
+  headingLevel: 2
+  reportSectionId: training_and_education
+  conciseDisclosure:
+    id: training.concise_summary
+    type: paragraph
+    blockType: generative
+    source: ai
+    styleRole: body
+    generation:
+      task:
+        focus: |-
+          From the evidence currently visible for this topic, write one coherent summary covering the training arrangements, the programs for upgrading employee skills and the training data reported, without the four sub-headings.
+      inputs:
+        evidence:
+          kind: report_section
+      targetChars:
+      - 260
+      - 520
+  children:
+  - key: training_and_education.gov
+    title: Management of the Topic
+    pillar: governance
+    headingLevel: 3
+    blocks:
+    - id: training.gov_policy
+      type: paragraph
+      blockType: generative
+      source: ai
+      styleRole: body
+      generation:
+        task:
+          focus: |-
+            Describe how the company manages training and education: the responsibilities and policies covering employee training and development.
+          noFactGuidance: |-
+            When the user provides no facts for this part, keep a prudent, general and low-commitment register describing the management attention and directional arrangements common to the industry; do not claim that specific systems, projects, certifications or results are in place.
+        inputs:
+          evidence:
+            kind: report_section
+        targetChars:
+        - 220
+        - 420
+        standardDisclosureRequirementKeys:
+        - training_and_education.gov.management_of_training
+  - key: training_and_education.strategy
+    title: Approach and Targets
+    pillar: strategy
+    headingLevel: 3
+    blocks:
+    - id: training.strategy_direction
+      type: paragraph
+      blockType: generative
+      source: ai
+      styleRole: body
+      generation:
+        task:
+          focus: |-
+            Describe the company's direction and targets for training and education, including the approach to building the capabilities its business needs.
+          noFactGuidance: |-
+            When the user provides no facts for this part, keep a prudent, general and low-commitment register describing the management attention and directional arrangements common to the industry; do not claim that specific systems, projects, certifications or results are in place.
+        inputs:
+          evidence:
+            kind: report_section
+        targetChars:
+        - 200
+        - 400
+        standardDisclosureRequirementKeys:
+        - training_and_education.strategy.performance_reviews
+  - key: training_and_education.iro
+    title: Actions and Processes
+    pillar: iro_management
+    headingLevel: 3
+    blocks:
+    - id: training.iro_measures
+      type: paragraph
+      blockType: generative
+      source: ai
+      styleRole: body
+      generation:
+        task:
+          focus: |-
+            Describe the actions the company takes on training and education: the types and scope of training programs and any transition assistance provided.
+          noFactGuidance: |-
+            When the user provides no facts for this part, keep a prudent, general and low-commitment register describing the management attention and directional arrangements common to the industry; do not claim that specific systems, projects, certifications or results are in place.
+        inputs:
+          evidence:
+            kind: report_section
+        targetChars:
+        - 240
+        - 460
+        standardDisclosureRequirementKeys:
+        - training_and_education.iro.skill_programs
+metricDisclosure:
+  catalogMetricKeys:
+  - training_employees_trained_rate
+  - training_rate_female
+  - training_rate_male
+  - training_rate_senior_management
+  - training_rate_middle_management
+  - training_rate_general_staff

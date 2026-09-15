@@ -1,0 +1,26 @@
+# ABOUTME(en): Topic-specific intake questions of「社區投資」; the four fixed pillar questions come from topic_intake_common.yaml.
+# ABOUTME(en): Quantitative KPIs are collected through the metric catalog, not here.
+contentScopeId: community_investment
+items:
+- key: community_investment.q_focus_areas
+  prompt: 貴公司的社區投資專注於哪些範疇？
+  kind: multi_select
+  collectionPriority: recommended
+  options:
+  - 教育
+  - 環境
+  - 勞工需求
+  - 健康
+  - 文化
+  - 體育
+  - 扶貧及弱勢社群
+  - 暫無特定範疇
+  hint: 可多選；請在補充說明中簡述選擇原因及主要合作對象。
+  maxChars: 5000
+- key: community_investment.q_community_activities
+  prompt: 匯報期間貴公司開展了哪些社區參與或公益活動？
+  kind: text
+  collectionPriority: recommended
+  hint: 可說明活動內容、合作機構、參與僱員及投入資源；金額與時數由指標數據表承載。
+  generationBoundary: 未填寫具體數值時，不得生成捐款金額、義工時數或受惠人數。
+  maxChars: 5000

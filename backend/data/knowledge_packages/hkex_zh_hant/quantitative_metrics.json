@@ -1,0 +1,1241 @@
+[
+  {
+    "key": "economic_revenue",
+    "sheet": "經濟",
+    "category": "經濟績效",
+    "groupPath": [
+      "經濟績效"
+    ],
+    "metricLabel": "營業收入",
+    "unit": "百萬港元",
+    "metricDefinition": "匯報期間綜合損益表的收入。",
+    "termExplanation": "與年報一致；各項密度指標以此為分母之一。"
+  },
+  {
+    "key": "economic_total_employees",
+    "sheet": "經濟",
+    "category": "經濟績效",
+    "groupPath": [
+      "經濟績效"
+    ],
+    "metricLabel": "僱員總數（期末）",
+    "unit": "人",
+    "metricDefinition": "匯報期間結束日在職僱員總數。",
+    "termExplanation": "與B1.1僱員總數一致；作人均密度指標分母。"
+  },
+  {
+    "key": "climate_ghg_scope1",
+    "sheet": "環境",
+    "kpiCode": "D28(a)",
+    "category": "氣候變化",
+    "groupPath": [
+      "氣候變化",
+      "溫室氣體排放"
+    ],
+    "metricLabel": "範圍1溫室氣體排放量",
+    "unit": "噸二氧化碳當量",
+    "requiresGreenhouseGasAccountingStandard": true,
+    "metricDefinition": "公司擁有或控制的排放源直接產生的排放。",
+    "termExplanation": "範圍1為直接排放，範圍2為外購能源產生的間接排放；各類溫室氣體按全球暖化潛勢換算為二氧化碳當量。"
+  },
+  {
+    "key": "climate_ghg_scope2",
+    "sheet": "環境",
+    "kpiCode": "D28(b)",
+    "category": "氣候變化",
+    "groupPath": [
+      "氣候變化",
+      "溫室氣體排放"
+    ],
+    "metricLabel": "範圍2溫室氣體排放量",
+    "unit": "噸二氧化碳當量",
+    "requiresGreenhouseGasAccountingStandard": true,
+    "metricDefinition": "外購電力、熱力或蒸汽產生的間接排放。",
+    "termExplanation": "以地區電網或供電商排放因子計算，並說明所採用因子的來源。"
+  },
+  {
+    "key": "climate_ghg_scope1_2_total",
+    "sheet": "環境",
+    "kpiCode": "D28",
+    "category": "氣候變化",
+    "groupPath": [
+      "氣候變化",
+      "溫室氣體排放"
+    ],
+    "metricLabel": "範圍1及範圍2溫室氣體排放總量",
+    "unit": "噸二氧化碳當量",
+    "sumOfMetricKeys": [
+      "climate_ghg_scope1",
+      "climate_ghg_scope2"
+    ],
+    "metricDefinition": "範圍1與範圍2排放量之和，由系統自動計算。",
+    "termExplanation": ""
+  },
+  {
+    "key": "climate_ghg_scope3",
+    "sheet": "環境",
+    "kpiCode": "D28(c)",
+    "category": "氣候變化",
+    "groupPath": [
+      "氣候變化",
+      "溫室氣體排放"
+    ],
+    "metricLabel": "範圍3溫室氣體排放量",
+    "unit": "噸二氧化碳當量",
+    "requiresGreenhouseGasAccountingStandard": true,
+    "metricDefinition": "價值鏈上下游產生的其他間接排放（如有計算）。",
+    "termExplanation": "守則設有過渡寬免：未能披露時可說明工作計劃與時間表。"
+  },
+  {
+    "key": "climate_ghg_intensity_revenue",
+    "sheet": "環境",
+    "kpiCode": "D28",
+    "category": "氣候變化",
+    "groupPath": [
+      "氣候變化",
+      "溫室氣體排放"
+    ],
+    "metricLabel": "溫室氣體排放密度（按收入）",
+    "unit": "噸二氧化碳當量／百萬港元",
+    "metricDefinition": "範圍1及範圍2排放總量除以營業收入。",
+    "termExplanation": ""
+  },
+  {
+    "key": "climate_ghg_intensity_output",
+    "sheet": "環境",
+    "kpiCode": "D28",
+    "category": "氣候變化",
+    "groupPath": [
+      "氣候變化",
+      "溫室氣體排放"
+    ],
+    "metricLabel": "溫室氣體排放密度（按產量或面積）",
+    "unit": "噸二氧化碳當量／單位產量",
+    "metricDefinition": "範圍1及範圍2排放總量除以產量、樓面面積或其他業務單位。",
+    "termExplanation": "分母單位須在口徑備註中說明。"
+  },
+  {
+    "key": "climate_internal_carbon_price",
+    "sheet": "環境",
+    "kpiCode": "D37",
+    "category": "氣候變化",
+    "groupPath": [
+      "氣候變化",
+      "氣候相關指標"
+    ],
+    "metricLabel": "內部碳價格",
+    "unit": "港元／噸二氧化碳當量",
+    "metricDefinition": "公司在決策中採用的內部碳價格（如有）。",
+    "termExplanation": ""
+  },
+  {
+    "key": "climate_capital_deployment",
+    "sheet": "環境",
+    "kpiCode": "D36",
+    "category": "氣候變化",
+    "groupPath": [
+      "氣候變化",
+      "氣候相關指標"
+    ],
+    "metricLabel": "投放於氣候相關風險與機遇的資本開支及投資",
+    "unit": "百萬港元",
+    "metricDefinition": "匯報期間用於氣候相關風險應對或機遇的資本開支、融資或投資金額。",
+    "termExplanation": ""
+  },
+  {
+    "key": "emissions_nox",
+    "sheet": "環境",
+    "kpiCode": "A1.1",
+    "category": "排放物",
+    "groupPath": [
+      "排放物",
+      "空氣污染物"
+    ],
+    "metricLabel": "氮氧化物排放量",
+    "unit": "公斤",
+    "metricDefinition": "固定及流動排放源排放的氮氧化物。",
+    "termExplanation": "排放類別按守則A1.1；車輛排放可依港交所《附錄二：環境關鍵績效指標匯報指引》估算。"
+  },
+  {
+    "key": "emissions_sox",
+    "sheet": "環境",
+    "kpiCode": "A1.1",
+    "category": "排放物",
+    "groupPath": [
+      "排放物",
+      "空氣污染物"
+    ],
+    "metricLabel": "硫氧化物排放量",
+    "unit": "公斤",
+    "metricDefinition": "燃料燃燒排放的硫氧化物。",
+    "termExplanation": ""
+  },
+  {
+    "key": "emissions_pm",
+    "sheet": "環境",
+    "kpiCode": "A1.1",
+    "category": "排放物",
+    "groupPath": [
+      "排放物",
+      "空氣污染物"
+    ],
+    "metricLabel": "顆粒物排放量",
+    "unit": "公斤",
+    "metricDefinition": "燃料燃燒及生產過程排放的顆粒物。",
+    "termExplanation": ""
+  },
+  {
+    "key": "emissions_voc",
+    "sheet": "環境",
+    "kpiCode": "A1.1",
+    "category": "排放物",
+    "groupPath": [
+      "排放物",
+      "空氣污染物"
+    ],
+    "metricLabel": "揮發性有機化合物排放量",
+    "unit": "公斤",
+    "metricDefinition": "生產過程（如噴塗、清洗）排放的揮發性有機化合物。",
+    "termExplanation": ""
+  },
+  {
+    "key": "emissions_wastewater_discharge",
+    "sheet": "環境",
+    "kpiCode": "A1.1",
+    "category": "排放物",
+    "groupPath": [
+      "排放物",
+      "排放至水體及土地"
+    ],
+    "metricLabel": "廢水排放量",
+    "unit": "立方米",
+    "metricDefinition": "經處理後排放至公共渠道或水體的廢水總量。",
+    "termExplanation": ""
+  },
+  {
+    "key": "emissions_cod",
+    "sheet": "環境",
+    "kpiCode": "A1.1",
+    "category": "排放物",
+    "groupPath": [
+      "排放物",
+      "排放至水體及土地"
+    ],
+    "metricLabel": "化學需氧量排放量",
+    "unit": "公斤",
+    "metricDefinition": "廢水中的化學需氧量排放量。",
+    "termExplanation": ""
+  },
+  {
+    "key": "waste_hazardous_total",
+    "sheet": "環境",
+    "kpiCode": "A1.3",
+    "category": "廢棄物管理",
+    "groupPath": [
+      "廢棄物管理",
+      "有害廢棄物"
+    ],
+    "metricLabel": "有害廢棄物總量",
+    "unit": "噸",
+    "metricDefinition": "匯報期間產生並交由持牌承辦商處置的有害廢棄物總量。",
+    "termExplanation": "有害廢棄物按當地法規界定（如香港《廢物處置條例》化學廢物）。"
+  },
+  {
+    "key": "waste_hazardous_intensity",
+    "sheet": "環境",
+    "kpiCode": "A1.3",
+    "category": "廢棄物管理",
+    "groupPath": [
+      "廢棄物管理",
+      "有害廢棄物"
+    ],
+    "metricLabel": "有害廢棄物密度",
+    "unit": "噸／百萬港元",
+    "metricDefinition": "有害廢棄物總量除以營業收入。",
+    "termExplanation": ""
+  },
+  {
+    "key": "waste_non_hazardous_total",
+    "sheet": "環境",
+    "kpiCode": "A1.4",
+    "category": "廢棄物管理",
+    "groupPath": [
+      "廢棄物管理",
+      "無害廢棄物"
+    ],
+    "metricLabel": "無害廢棄物總量",
+    "unit": "噸",
+    "metricDefinition": "匯報期間產生的一般工業及生活廢棄物總量。",
+    "termExplanation": ""
+  },
+  {
+    "key": "waste_non_hazardous_intensity",
+    "sheet": "環境",
+    "kpiCode": "A1.4",
+    "category": "廢棄物管理",
+    "groupPath": [
+      "廢棄物管理",
+      "無害廢棄物"
+    ],
+    "metricLabel": "無害廢棄物密度",
+    "unit": "噸／百萬港元",
+    "metricDefinition": "無害廢棄物總量除以營業收入。",
+    "termExplanation": ""
+  },
+  {
+    "key": "waste_recycled_total",
+    "sheet": "環境",
+    "kpiCode": "A1.6",
+    "category": "廢棄物管理",
+    "groupPath": [
+      "廢棄物管理",
+      "回收"
+    ],
+    "metricLabel": "廢棄物回收量",
+    "unit": "噸",
+    "metricDefinition": "經分類回收再利用或交由回收商處理的廢棄物量。",
+    "termExplanation": ""
+  },
+  {
+    "key": "waste_recycling_rate",
+    "sheet": "環境",
+    "kpiCode": "A1.6",
+    "category": "廢棄物管理",
+    "groupPath": [
+      "廢棄物管理",
+      "回收"
+    ],
+    "metricLabel": "廢棄物回收率",
+    "unit": "%",
+    "metricDefinition": "回收量佔廢棄物總量的百分比。",
+    "termExplanation": ""
+  },
+  {
+    "key": "energy_purchased_electricity",
+    "sheet": "環境",
+    "kpiCode": "A2.1",
+    "category": "能源管理",
+    "groupPath": [
+      "能源管理",
+      "間接能源"
+    ],
+    "metricLabel": "外購電力消耗量",
+    "unit": "千千瓦時",
+    "metricDefinition": "匯報期間外購電力總量。",
+    "termExplanation": "守則以千個千瓦時為單位。"
+  },
+  {
+    "key": "energy_renewable_electricity",
+    "sheet": "環境",
+    "kpiCode": "A2.1",
+    "category": "能源管理",
+    "groupPath": [
+      "能源管理",
+      "間接能源"
+    ],
+    "metricLabel": "可再生能源電力消耗量",
+    "unit": "千千瓦時",
+    "metricDefinition": "自建太陽能光伏或購買的可再生能源電力。",
+    "termExplanation": ""
+  },
+  {
+    "key": "energy_natural_gas",
+    "sheet": "環境",
+    "kpiCode": "A2.1",
+    "category": "能源管理",
+    "groupPath": [
+      "能源管理",
+      "直接能源"
+    ],
+    "metricLabel": "天然氣消耗量",
+    "unit": "千千瓦時",
+    "metricDefinition": "天然氣消耗按熱值換算為千千瓦時。",
+    "termExplanation": ""
+  },
+  {
+    "key": "energy_diesel",
+    "sheet": "環境",
+    "kpiCode": "A2.1",
+    "category": "能源管理",
+    "groupPath": [
+      "能源管理",
+      "直接能源"
+    ],
+    "metricLabel": "柴油消耗量",
+    "unit": "千千瓦時",
+    "metricDefinition": "車輛、發電機及設備使用的柴油按熱值換算。",
+    "termExplanation": ""
+  },
+  {
+    "key": "energy_petrol",
+    "sheet": "環境",
+    "kpiCode": "A2.1",
+    "category": "能源管理",
+    "groupPath": [
+      "能源管理",
+      "直接能源"
+    ],
+    "metricLabel": "汽油消耗量",
+    "unit": "千千瓦時",
+    "metricDefinition": "車輛使用的汽油按熱值換算。",
+    "termExplanation": ""
+  },
+  {
+    "key": "energy_lpg",
+    "sheet": "環境",
+    "kpiCode": "A2.1",
+    "category": "能源管理",
+    "groupPath": [
+      "能源管理",
+      "直接能源"
+    ],
+    "metricLabel": "石油氣消耗量",
+    "unit": "千千瓦時",
+    "metricDefinition": "食堂及設備使用的石油氣按熱值換算。",
+    "termExplanation": ""
+  },
+  {
+    "key": "energy_total",
+    "sheet": "環境",
+    "kpiCode": "A2.1",
+    "category": "能源管理",
+    "groupPath": [
+      "能源管理",
+      "能源總量"
+    ],
+    "metricLabel": "能源消耗總量",
+    "unit": "千千瓦時",
+    "sumOfMetricKeys": [
+      "energy_purchased_electricity",
+      "energy_renewable_electricity",
+      "energy_natural_gas",
+      "energy_diesel",
+      "energy_petrol",
+      "energy_lpg"
+    ],
+    "metricDefinition": "直接及間接能源消耗之和，由系統自動計算。",
+    "termExplanation": ""
+  },
+  {
+    "key": "energy_intensity_revenue",
+    "sheet": "環境",
+    "kpiCode": "A2.1",
+    "category": "能源管理",
+    "groupPath": [
+      "能源管理",
+      "能源總量"
+    ],
+    "metricLabel": "能源消耗密度（按收入）",
+    "unit": "千千瓦時／百萬港元",
+    "metricDefinition": "能源消耗總量除以營業收入。",
+    "termExplanation": ""
+  },
+  {
+    "key": "energy_intensity_output",
+    "sheet": "環境",
+    "kpiCode": "A2.1",
+    "category": "能源管理",
+    "groupPath": [
+      "能源管理",
+      "能源總量"
+    ],
+    "metricLabel": "能源消耗密度（按產量或面積）",
+    "unit": "千千瓦時／單位產量",
+    "metricDefinition": "能源消耗總量除以產量、樓面面積或其他業務單位。",
+    "termExplanation": "分母單位須在口徑備註中說明。"
+  },
+  {
+    "key": "water_consumption_total",
+    "sheet": "環境",
+    "kpiCode": "A2.2",
+    "category": "水資源管理",
+    "groupPath": [
+      "水資源管理"
+    ],
+    "metricLabel": "總耗水量",
+    "unit": "立方米",
+    "metricDefinition": "匯報期間市政供水及其他來源的用水總量。",
+    "termExplanation": ""
+  },
+  {
+    "key": "water_intensity_revenue",
+    "sheet": "環境",
+    "kpiCode": "A2.2",
+    "category": "水資源管理",
+    "groupPath": [
+      "水資源管理"
+    ],
+    "metricLabel": "耗水密度（按收入）",
+    "unit": "立方米／百萬港元",
+    "metricDefinition": "總耗水量除以營業收入。",
+    "termExplanation": ""
+  },
+  {
+    "key": "water_intensity_output",
+    "sheet": "環境",
+    "kpiCode": "A2.2",
+    "category": "水資源管理",
+    "groupPath": [
+      "水資源管理"
+    ],
+    "metricLabel": "耗水密度（按產量或面積）",
+    "unit": "立方米／單位產量",
+    "metricDefinition": "總耗水量除以產量、樓面面積或其他業務單位。",
+    "termExplanation": "分母單位須在口徑備註中說明。"
+  },
+  {
+    "key": "water_recycled",
+    "sheet": "環境",
+    "kpiCode": "A2.4",
+    "category": "水資源管理",
+    "groupPath": [
+      "水資源管理"
+    ],
+    "metricLabel": "循環再用水量",
+    "unit": "立方米",
+    "metricDefinition": "經處理後於生產或清潔環節重複使用的水量。",
+    "termExplanation": ""
+  },
+  {
+    "key": "packaging_total",
+    "sheet": "環境",
+    "kpiCode": "A2.5",
+    "category": "物料及包裝",
+    "groupPath": [
+      "物料及包裝"
+    ],
+    "metricLabel": "製成品所用包裝材料總量",
+    "unit": "噸",
+    "metricDefinition": "匯報期間出貨製成品所用紙箱、膠袋、托盤等包裝材料總量。",
+    "termExplanation": ""
+  },
+  {
+    "key": "packaging_per_unit",
+    "sheet": "環境",
+    "kpiCode": "A2.5",
+    "category": "物料及包裝",
+    "groupPath": [
+      "物料及包裝"
+    ],
+    "metricLabel": "每單位產品包裝材料用量",
+    "unit": "公斤／單位產品",
+    "metricDefinition": "包裝材料總量除以製成品數量。",
+    "termExplanation": ""
+  },
+  {
+    "key": "packaging_recycled_content_rate",
+    "sheet": "環境",
+    "kpiCode": "A2.5",
+    "category": "物料及包裝",
+    "groupPath": [
+      "物料及包裝"
+    ],
+    "metricLabel": "包裝材料中可回收或再生材料比例",
+    "unit": "%",
+    "metricDefinition": "可回收或含再生成分的包裝材料佔包裝材料總量的比例。",
+    "termExplanation": ""
+  },
+  {
+    "key": "employment_total_workforce",
+    "sheet": "社會",
+    "kpiCode": "B1.1",
+    "category": "僱傭",
+    "groupPath": [
+      "僱傭",
+      "僱員總數"
+    ],
+    "metricLabel": "僱員總數",
+    "unit": "人",
+    "metricDefinition": "匯報期間結束日在職僱員總數（不含外判人員）。",
+    "termExplanation": ""
+  },
+  {
+    "key": "employment_female",
+    "sheet": "社會",
+    "kpiCode": "B1.1",
+    "category": "僱傭",
+    "groupPath": [
+      "僱傭",
+      "按性別"
+    ],
+    "metricLabel": "女性僱員人數",
+    "unit": "人",
+    "metricDefinition": "在職女性僱員人數。",
+    "termExplanation": ""
+  },
+  {
+    "key": "employment_male",
+    "sheet": "社會",
+    "kpiCode": "B1.1",
+    "category": "僱傭",
+    "groupPath": [
+      "僱傭",
+      "按性別"
+    ],
+    "metricLabel": "男性僱員人數",
+    "unit": "人",
+    "metricDefinition": "在職男性僱員人數。",
+    "termExplanation": ""
+  },
+  {
+    "key": "employment_full_time",
+    "sheet": "社會",
+    "kpiCode": "B1.1",
+    "category": "僱傭",
+    "groupPath": [
+      "僱傭",
+      "按僱傭類型"
+    ],
+    "metricLabel": "全職僱員人數",
+    "unit": "人",
+    "metricDefinition": "全職僱員人數。",
+    "termExplanation": ""
+  },
+  {
+    "key": "employment_part_time",
+    "sheet": "社會",
+    "kpiCode": "B1.1",
+    "category": "僱傭",
+    "groupPath": [
+      "僱傭",
+      "按僱傭類型"
+    ],
+    "metricLabel": "兼職僱員人數",
+    "unit": "人",
+    "metricDefinition": "兼職及臨時僱員人數。",
+    "termExplanation": ""
+  },
+  {
+    "key": "employment_age_under_30",
+    "sheet": "社會",
+    "kpiCode": "B1.1",
+    "category": "僱傭",
+    "groupPath": [
+      "僱傭",
+      "按年齡組別"
+    ],
+    "metricLabel": "30歲以下僱員人數",
+    "unit": "人",
+    "metricDefinition": "年齡在30歲以下的僱員人數。",
+    "termExplanation": ""
+  },
+  {
+    "key": "employment_age_30_50",
+    "sheet": "社會",
+    "kpiCode": "B1.1",
+    "category": "僱傭",
+    "groupPath": [
+      "僱傭",
+      "按年齡組別"
+    ],
+    "metricLabel": "30至50歲僱員人數",
+    "unit": "人",
+    "metricDefinition": "年齡在30至50歲之間的僱員人數。",
+    "termExplanation": ""
+  },
+  {
+    "key": "employment_age_over_50",
+    "sheet": "社會",
+    "kpiCode": "B1.1",
+    "category": "僱傭",
+    "groupPath": [
+      "僱傭",
+      "按年齡組別"
+    ],
+    "metricLabel": "50歲以上僱員人數",
+    "unit": "人",
+    "metricDefinition": "年齡在50歲以上的僱員人數。",
+    "termExplanation": ""
+  },
+  {
+    "key": "employment_region_hong_kong",
+    "sheet": "社會",
+    "kpiCode": "B1.1",
+    "category": "僱傭",
+    "groupPath": [
+      "僱傭",
+      "按地區"
+    ],
+    "metricLabel": "香港僱員人數",
+    "unit": "人",
+    "metricDefinition": "工作地點在香港的僱員人數。",
+    "termExplanation": ""
+  },
+  {
+    "key": "employment_region_mainland",
+    "sheet": "社會",
+    "kpiCode": "B1.1",
+    "category": "僱傭",
+    "groupPath": [
+      "僱傭",
+      "按地區"
+    ],
+    "metricLabel": "中國內地僱員人數",
+    "unit": "人",
+    "metricDefinition": "工作地點在中國內地的僱員人數。",
+    "termExplanation": ""
+  },
+  {
+    "key": "employment_region_other",
+    "sheet": "社會",
+    "kpiCode": "B1.1",
+    "category": "僱傭",
+    "groupPath": [
+      "僱傭",
+      "按地區"
+    ],
+    "metricLabel": "其他地區僱員人數",
+    "unit": "人",
+    "metricDefinition": "工作地點在香港及中國內地以外的僱員人數。",
+    "termExplanation": ""
+  },
+  {
+    "key": "employment_turnover_rate_total",
+    "sheet": "社會",
+    "kpiCode": "B1.2",
+    "category": "僱傭",
+    "groupPath": [
+      "僱傭",
+      "僱員流失"
+    ],
+    "metricLabel": "僱員流失比率",
+    "unit": "%",
+    "metricDefinition": "匯報期間離職僱員人數除以期末僱員總數。",
+    "termExplanation": "守則B1.2要求按性別、年齡組別及地區披露。"
+  },
+  {
+    "key": "employment_turnover_rate_female",
+    "sheet": "社會",
+    "kpiCode": "B1.2",
+    "category": "僱傭",
+    "groupPath": [
+      "僱傭",
+      "僱員流失"
+    ],
+    "metricLabel": "女性僱員流失比率",
+    "unit": "%",
+    "metricDefinition": "離職女性僱員人數除以期末女性僱員人數。",
+    "termExplanation": ""
+  },
+  {
+    "key": "employment_turnover_rate_male",
+    "sheet": "社會",
+    "kpiCode": "B1.2",
+    "category": "僱傭",
+    "groupPath": [
+      "僱傭",
+      "僱員流失"
+    ],
+    "metricLabel": "男性僱員流失比率",
+    "unit": "%",
+    "metricDefinition": "離職男性僱員人數除以期末男性僱員人數。",
+    "termExplanation": ""
+  },
+  {
+    "key": "employment_turnover_rate_under_30",
+    "sheet": "社會",
+    "kpiCode": "B1.2",
+    "category": "僱傭",
+    "groupPath": [
+      "僱傭",
+      "僱員流失"
+    ],
+    "metricLabel": "30歲以下僱員流失比率",
+    "unit": "%",
+    "metricDefinition": "按年齡組別計算的流失比率。",
+    "termExplanation": ""
+  },
+  {
+    "key": "employment_turnover_rate_30_50",
+    "sheet": "社會",
+    "kpiCode": "B1.2",
+    "category": "僱傭",
+    "groupPath": [
+      "僱傭",
+      "僱員流失"
+    ],
+    "metricLabel": "30至50歲僱員流失比率",
+    "unit": "%",
+    "metricDefinition": "按年齡組別計算的流失比率。",
+    "termExplanation": ""
+  },
+  {
+    "key": "employment_turnover_rate_over_50",
+    "sheet": "社會",
+    "kpiCode": "B1.2",
+    "category": "僱傭",
+    "groupPath": [
+      "僱傭",
+      "僱員流失"
+    ],
+    "metricLabel": "50歲以上僱員流失比率",
+    "unit": "%",
+    "metricDefinition": "按年齡組別計算的流失比率。",
+    "termExplanation": ""
+  },
+  {
+    "key": "health_safety_fatalities_current",
+    "sheet": "社會",
+    "kpiCode": "B2.1",
+    "category": "健康與安全",
+    "groupPath": [
+      "健康與安全",
+      "因工亡故"
+    ],
+    "metricLabel": "匯報年度因工亡故人數",
+    "unit": "人",
+    "metricDefinition": "匯報年度內因工作相關事故亡故的僱員人數。",
+    "termExplanation": "守則B2.1要求披露過去三年（包括匯報年度）的數目及比率。"
+  },
+  {
+    "key": "health_safety_fatalities_prior_1",
+    "sheet": "社會",
+    "kpiCode": "B2.1",
+    "category": "健康與安全",
+    "groupPath": [
+      "健康與安全",
+      "因工亡故"
+    ],
+    "metricLabel": "上一年度因工亡故人數",
+    "unit": "人",
+    "metricDefinition": "匯報年度前一年的因工亡故人數。",
+    "termExplanation": ""
+  },
+  {
+    "key": "health_safety_fatalities_prior_2",
+    "sheet": "社會",
+    "kpiCode": "B2.1",
+    "category": "健康與安全",
+    "groupPath": [
+      "健康與安全",
+      "因工亡故"
+    ],
+    "metricLabel": "前兩年度因工亡故人數",
+    "unit": "人",
+    "metricDefinition": "匯報年度前兩年的因工亡故人數。",
+    "termExplanation": ""
+  },
+  {
+    "key": "health_safety_fatality_rate",
+    "sheet": "社會",
+    "kpiCode": "B2.1",
+    "category": "健康與安全",
+    "groupPath": [
+      "健康與安全",
+      "因工亡故"
+    ],
+    "metricLabel": "因工亡故比率",
+    "unit": "每千名僱員",
+    "metricDefinition": "因工亡故人數除以僱員總數乘以一千。",
+    "termExplanation": ""
+  },
+  {
+    "key": "health_safety_lost_days",
+    "sheet": "社會",
+    "kpiCode": "B2.2",
+    "category": "健康與安全",
+    "groupPath": [
+      "健康與安全",
+      "工傷"
+    ],
+    "metricLabel": "因工傷損失工作日數",
+    "unit": "日",
+    "metricDefinition": "匯報期間因工傷導致僱員缺勤的總日數。",
+    "termExplanation": ""
+  },
+  {
+    "key": "health_safety_injury_cases",
+    "sheet": "社會",
+    "kpiCode": "B2.2",
+    "category": "健康與安全",
+    "groupPath": [
+      "健康與安全",
+      "工傷"
+    ],
+    "metricLabel": "工傷個案數目",
+    "unit": "宗",
+    "metricDefinition": "匯報期間須向勞工處呈報的工傷個案數目。",
+    "termExplanation": ""
+  },
+  {
+    "key": "training_employees_trained_rate",
+    "sheet": "社會",
+    "kpiCode": "B3.1",
+    "category": "發展及培訓",
+    "groupPath": [
+      "發展及培訓",
+      "受訓百分比"
+    ],
+    "metricLabel": "受訓僱員百分比",
+    "unit": "%",
+    "metricDefinition": "匯報期間曾接受培訓的僱員佔僱員總數的百分比。",
+    "termExplanation": "守則B3.1要求按性別及僱員類別披露。"
+  },
+  {
+    "key": "training_rate_female",
+    "sheet": "社會",
+    "kpiCode": "B3.1",
+    "category": "發展及培訓",
+    "groupPath": [
+      "發展及培訓",
+      "受訓百分比"
+    ],
+    "metricLabel": "女性受訓僱員百分比",
+    "unit": "%",
+    "metricDefinition": "曾受訓女性僱員佔女性僱員的百分比。",
+    "termExplanation": ""
+  },
+  {
+    "key": "training_rate_male",
+    "sheet": "社會",
+    "kpiCode": "B3.1",
+    "category": "發展及培訓",
+    "groupPath": [
+      "發展及培訓",
+      "受訓百分比"
+    ],
+    "metricLabel": "男性受訓僱員百分比",
+    "unit": "%",
+    "metricDefinition": "曾受訓男性僱員佔男性僱員的百分比。",
+    "termExplanation": ""
+  },
+  {
+    "key": "training_rate_senior_management",
+    "sheet": "社會",
+    "kpiCode": "B3.1",
+    "category": "發展及培訓",
+    "groupPath": [
+      "發展及培訓",
+      "受訓百分比"
+    ],
+    "metricLabel": "高級管理層受訓百分比",
+    "unit": "%",
+    "metricDefinition": "曾受訓的高級管理層佔該類別的百分比。",
+    "termExplanation": ""
+  },
+  {
+    "key": "training_rate_middle_management",
+    "sheet": "社會",
+    "kpiCode": "B3.1",
+    "category": "發展及培訓",
+    "groupPath": [
+      "發展及培訓",
+      "受訓百分比"
+    ],
+    "metricLabel": "中級管理層受訓百分比",
+    "unit": "%",
+    "metricDefinition": "曾受訓的中級管理層佔該類別的百分比。",
+    "termExplanation": ""
+  },
+  {
+    "key": "training_rate_general_staff",
+    "sheet": "社會",
+    "kpiCode": "B3.1",
+    "category": "發展及培訓",
+    "groupPath": [
+      "發展及培訓",
+      "受訓百分比"
+    ],
+    "metricLabel": "一般僱員受訓百分比",
+    "unit": "%",
+    "metricDefinition": "曾受訓的一般僱員佔該類別的百分比。",
+    "termExplanation": ""
+  },
+  {
+    "key": "training_hours_average",
+    "sheet": "社會",
+    "kpiCode": "B3.2",
+    "category": "發展及培訓",
+    "groupPath": [
+      "發展及培訓",
+      "平均受訓時數"
+    ],
+    "metricLabel": "每名僱員平均受訓時數",
+    "unit": "小時",
+    "metricDefinition": "培訓總時數除以僱員總數。",
+    "termExplanation": "守則B3.2要求按性別及僱員類別披露。"
+  },
+  {
+    "key": "training_hours_female",
+    "sheet": "社會",
+    "kpiCode": "B3.2",
+    "category": "發展及培訓",
+    "groupPath": [
+      "發展及培訓",
+      "平均受訓時數"
+    ],
+    "metricLabel": "女性僱員平均受訓時數",
+    "unit": "小時",
+    "metricDefinition": "女性僱員培訓總時數除以女性僱員人數。",
+    "termExplanation": ""
+  },
+  {
+    "key": "training_hours_male",
+    "sheet": "社會",
+    "kpiCode": "B3.2",
+    "category": "發展及培訓",
+    "groupPath": [
+      "發展及培訓",
+      "平均受訓時數"
+    ],
+    "metricLabel": "男性僱員平均受訓時數",
+    "unit": "小時",
+    "metricDefinition": "男性僱員培訓總時數除以男性僱員人數。",
+    "termExplanation": ""
+  },
+  {
+    "key": "training_hours_senior_management",
+    "sheet": "社會",
+    "kpiCode": "B3.2",
+    "category": "發展及培訓",
+    "groupPath": [
+      "發展及培訓",
+      "平均受訓時數"
+    ],
+    "metricLabel": "高級管理層平均受訓時數",
+    "unit": "小時",
+    "metricDefinition": "按僱員類別計算的平均受訓時數。",
+    "termExplanation": ""
+  },
+  {
+    "key": "training_hours_middle_management",
+    "sheet": "社會",
+    "kpiCode": "B3.2",
+    "category": "發展及培訓",
+    "groupPath": [
+      "發展及培訓",
+      "平均受訓時數"
+    ],
+    "metricLabel": "中級管理層平均受訓時數",
+    "unit": "小時",
+    "metricDefinition": "按僱員類別計算的平均受訓時數。",
+    "termExplanation": ""
+  },
+  {
+    "key": "training_hours_general_staff",
+    "sheet": "社會",
+    "kpiCode": "B3.2",
+    "category": "發展及培訓",
+    "groupPath": [
+      "發展及培訓",
+      "平均受訓時數"
+    ],
+    "metricLabel": "一般僱員平均受訓時數",
+    "unit": "小時",
+    "metricDefinition": "按僱員類別計算的平均受訓時數。",
+    "termExplanation": ""
+  },
+  {
+    "key": "supply_chain_suppliers_total",
+    "sheet": "社會",
+    "kpiCode": "B5.1",
+    "category": "供應鏈管理",
+    "groupPath": [
+      "供應鏈管理",
+      "按地區"
+    ],
+    "metricLabel": "供應商總數",
+    "unit": "家",
+    "metricDefinition": "匯報期間有實際交易的供應商數目。",
+    "termExplanation": "守則B5.1要求按地區披露。"
+  },
+  {
+    "key": "supply_chain_suppliers_hong_kong",
+    "sheet": "社會",
+    "kpiCode": "B5.1",
+    "category": "供應鏈管理",
+    "groupPath": [
+      "供應鏈管理",
+      "按地區"
+    ],
+    "metricLabel": "香港供應商數目",
+    "unit": "家",
+    "metricDefinition": "註冊地或主要營運地在香港的供應商。",
+    "termExplanation": ""
+  },
+  {
+    "key": "supply_chain_suppliers_mainland",
+    "sheet": "社會",
+    "kpiCode": "B5.1",
+    "category": "供應鏈管理",
+    "groupPath": [
+      "供應鏈管理",
+      "按地區"
+    ],
+    "metricLabel": "中國內地供應商數目",
+    "unit": "家",
+    "metricDefinition": "註冊地或主要營運地在中國內地的供應商。",
+    "termExplanation": ""
+  },
+  {
+    "key": "supply_chain_suppliers_other",
+    "sheet": "社會",
+    "kpiCode": "B5.1",
+    "category": "供應鏈管理",
+    "groupPath": [
+      "供應鏈管理",
+      "按地區"
+    ],
+    "metricLabel": "其他地區供應商數目",
+    "unit": "家",
+    "metricDefinition": "香港及中國內地以外的供應商。",
+    "termExplanation": ""
+  },
+  {
+    "key": "supply_chain_suppliers_assessed",
+    "sheet": "社會",
+    "kpiCode": "B5.2",
+    "category": "供應鏈管理",
+    "groupPath": [
+      "供應鏈管理",
+      "供應商管理"
+    ],
+    "metricLabel": "已實施供應商管理慣例的供應商數目",
+    "unit": "家",
+    "metricDefinition": "已接受環境及社會風險評估、行為守則簽署或審核的供應商數目。",
+    "termExplanation": ""
+  },
+  {
+    "key": "product_recall_rate",
+    "sheet": "社會",
+    "kpiCode": "B6.1",
+    "category": "產品責任",
+    "groupPath": [
+      "產品責任"
+    ],
+    "metricLabel": "因安全與健康理由須回收的產品百分比",
+    "unit": "%",
+    "metricDefinition": "須回收的產品數量佔已售或已運送產品總數的百分比。",
+    "termExplanation": ""
+  },
+  {
+    "key": "product_complaints",
+    "sheet": "社會",
+    "kpiCode": "B6.2",
+    "category": "產品責任",
+    "groupPath": [
+      "產品責任"
+    ],
+    "metricLabel": "接獲的產品及服務投訴數目",
+    "unit": "宗",
+    "metricDefinition": "匯報期間接獲關於產品及服務的投訴數目。",
+    "termExplanation": ""
+  },
+  {
+    "key": "product_complaints_resolved_rate",
+    "sheet": "社會",
+    "kpiCode": "B6.2",
+    "category": "產品責任",
+    "groupPath": [
+      "產品責任"
+    ],
+    "metricLabel": "投訴處理完成率",
+    "unit": "%",
+    "metricDefinition": "已處理完成的投訴佔投訴總數的百分比。",
+    "termExplanation": ""
+  },
+  {
+    "key": "privacy_data_breaches",
+    "sheet": "社會",
+    "kpiCode": "B6.5",
+    "category": "資料保障及私隱",
+    "groupPath": [
+      "資料保障及私隱"
+    ],
+    "metricLabel": "已確認的個人資料外洩事故數目",
+    "unit": "宗",
+    "metricDefinition": "匯報期間經確認並須通報的個人資料外洩事故。",
+    "termExplanation": ""
+  },
+  {
+    "key": "anti_corruption_legal_cases",
+    "sheet": "社會",
+    "kpiCode": "B7.1",
+    "category": "反貪污",
+    "groupPath": [
+      "反貪污"
+    ],
+    "metricLabel": "已審結的貪污訴訟案件數目",
+    "unit": "宗",
+    "metricDefinition": "匯報期間對公司或其僱員提出並已審結的貪污訴訟案件。",
+    "termExplanation": ""
+  },
+  {
+    "key": "anti_corruption_training_directors",
+    "sheet": "社會",
+    "kpiCode": "B7.3",
+    "category": "反貪污",
+    "groupPath": [
+      "反貪污"
+    ],
+    "metricLabel": "董事接受反貪污培訓人數",
+    "unit": "人",
+    "metricDefinition": "匯報期間接受反貪污培訓的董事人數。",
+    "termExplanation": ""
+  },
+  {
+    "key": "anti_corruption_training_employees",
+    "sheet": "社會",
+    "kpiCode": "B7.3",
+    "category": "反貪污",
+    "groupPath": [
+      "反貪污"
+    ],
+    "metricLabel": "僱員接受反貪污培訓人數",
+    "unit": "人",
+    "metricDefinition": "匯報期間接受反貪污培訓的僱員人數。",
+    "termExplanation": ""
+  },
+  {
+    "key": "anti_corruption_training_hours",
+    "sheet": "社會",
+    "kpiCode": "B7.3",
+    "category": "反貪污",
+    "groupPath": [
+      "反貪污"
+    ],
+    "metricLabel": "反貪污培訓總時數",
+    "unit": "小時",
+    "metricDefinition": "匯報期間反貪污培訓的總時數。",
+    "termExplanation": ""
+  },
+  {
+    "key": "community_donations",
+    "sheet": "社會",
+    "kpiCode": "B8.2",
+    "category": "社區投資",
+    "groupPath": [
+      "社區投資"
+    ],
+    "metricLabel": "社區捐款及贊助金額",
+    "unit": "千港元",
+    "metricDefinition": "匯報期間現金捐款及贊助的總額。",
+    "termExplanation": ""
+  },
+  {
+    "key": "community_volunteer_hours",
+    "sheet": "社會",
+    "kpiCode": "B8.2",
+    "category": "社區投資",
+    "groupPath": [
+      "社區投資"
+    ],
+    "metricLabel": "義工服務時數",
+    "unit": "小時",
+    "metricDefinition": "僱員參與義工服務的總時數。",
+    "termExplanation": ""
+  },
+  {
+    "key": "community_volunteer_participants",
+    "sheet": "社會",
+    "kpiCode": "B8.2",
+    "category": "社區投資",
+    "groupPath": [
+      "社區投資"
+    ],
+    "metricLabel": "參與義工服務的僱員人數",
+    "unit": "人",
+    "metricDefinition": "匯報期間參與義工服務的僱員人數。",
+    "termExplanation": ""
+  }
+]

@@ -1,0 +1,24 @@
+# ABOUTME(en): Topic-specific intake questions of "Materials"; the four fixed pillar questions come from topic_intake_common.yaml.
+# ABOUTME(en): Quantitative metrics are collected through the metric catalog, not here.
+contentScopeId: materials
+items:
+- key: materials.q_material_reduction_measures
+  prompt: What measures has the company taken to reduce material use or use recycled materials?
+  kind: text
+  collectionPriority: recommended
+  hint: Substitution, recycled content, packaging; or blank.
+  generationBoundary: |-
+    Unless specific figures are given, do not generate material savings, recycled content rates or investment amounts.
+  maxChars: 5000
+- key: materials.q_packaging_recycling
+  prompt: Does the company reclaim its products or packaging?
+  kind: single_select
+  collectionPriority: recommended
+  options:
+  - Yes, a take-back or recycling scheme is in place
+  - Partly, for some product categories
+  - Not yet
+  - Not applicable to the business
+  - Not sure
+  hint: State the arrangement type, not the volumes.
+  maxChars: 5000

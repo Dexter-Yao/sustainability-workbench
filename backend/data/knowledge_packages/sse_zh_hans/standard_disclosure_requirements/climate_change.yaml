@@ -1,0 +1,245 @@
+# ABOUTME: 气候变化议题准则披露要求库，供覆盖审计与按 key 白名单注入生成上下文（注入受开关控制，默认关闭）。
+# ABOUTME: 本文件不作为用户可见准则批注来源；用户可见条款原文来自附录索引表事实源。
+
+topicStandardDisclosureRequirementGroups:
+  # 一、治理（沪14第十二条 / 深17第十二条 / 北11第十二条 / 港C2 D(a) 管治）
+  - topicSectionKey: climate.gov
+    pillar: governance
+    standardDisclosureRequirements:
+      - standardDisclosureRequirementKey: climate.gov.governance_body
+        standardDisclosureRequirementTitle: 气候相关治理机构
+        excerptFrom: 上交所·指南第二号·第六章·准则披露要求1
+        standardDisclosureRequirementText: 1．描述负责监督管理气候相关影响、风险和机遇的治理机构（如董事会、专门委员会等）、管理层设置情况，可通过气候相关治理架构图等方式呈现<ref>（详细可参考《第一号 总体要求与披露框架》指南中相关内容）</ref>。2．描述气候相关治理机构的人员构成。3．描述气候相关治理机构的职权范围。4．描述气候相关治理机构的相关工作任务及目标等。
+        disclosureRequirementObligationLevel: required
+        sourceClauseReferenceLabels:
+          - {standard: SSE, clauseRef: 指南第二号·准则披露要求1（指引第14号第十二条）}
+          - {standard: SZSE, clauseRef: 第17号·第十二条}
+          - {standard: BSE, clauseRef: 第11号·第十二条}
+          - {standard: HKEX, clauseRef: 附录C2·D部分(a) 管治}
+      - standardDisclosureRequirementKey: climate.gov.expertise
+        standardDisclosureRequirementTitle: 气候相关治理机构（人员）专业技能和能力
+        excerptFrom: 上交所·指南第二号·第六章·准则披露要求2
+        standardDisclosureRequirementText: 1．描述气候相关治理机构和人员在执行、监督气候相关影响、风险和机遇的战略、制度等方面的专业技能和能力。2．可描述提高治理机构人员相关专业技能的措施和规划等。
+        disclosureRequirementObligationLevel: required
+        sourceClauseReferenceLabels:
+          - {standard: SSE, clauseRef: 指南第二号·准则披露要求2（指引第14号第十二条）}
+          - {standard: SZSE, clauseRef: 第17号·第十二条}
+          - {standard: BSE, clauseRef: 第11号·第十二条}
+          - {standard: HKEX, clauseRef: 附录C2·D部分(a) 管治}
+      - standardDisclosureRequirementKey: climate.gov.information_mechanism
+        standardDisclosureRequirementTitle: 气候相关治理机构（人员）获取信息的机制
+        excerptFrom: 上交所·指南第二号·第六章·准则披露要求3
+        standardDisclosureRequirementText: 1．描述为保障气候相关治理机构和人员及时获取气候影响、风险和机遇相关信息而建立的信息报告机制。2．描述气候相关治理机构和人员获取气候影响、风险和机遇相关信息的报告方式以及报告频率。
+        disclosureRequirementObligationLevel: required
+        sourceClauseReferenceLabels:
+          - {standard: SSE, clauseRef: 指南第二号·准则披露要求3（指引第14号第十二条）}
+          - {standard: SZSE, clauseRef: 第17号·第十二条}
+          - {standard: BSE, clauseRef: 第11号·第十二条}
+          - {standard: HKEX, clauseRef: 附录C2·D部分(a) 管治}
+      - standardDisclosureRequirementKey: climate.gov.supervision
+        standardDisclosureRequirementTitle: 气候相关治理机构（人员）监督情况
+        excerptFrom: 上交所·指南第二号·第六章·准则披露要求4
+        standardDisclosureRequirementText: 1．描述气候相关治理机构和人员监督管理气候相关影响、风险和机遇的目标设定、战略执行、目标实现进展的情况，包括内部控制制度、监督程序、监督措施及考核情况等。
+        disclosureRequirementObligationLevel: required
+        sourceClauseReferenceLabels:
+          - {standard: SSE, clauseRef: 指南第二号·准则披露要求4（指引第14号第十二条）}
+          - {standard: SZSE, clauseRef: 第17号·第十二条}
+          - {standard: BSE, clauseRef: 第11号·第十二条}
+          - {standard: HKEX, clauseRef: 附录C2·D部分(a) 管治}
+      - standardDisclosureRequirementKey: climate.gov.decision_integration
+        standardDisclosureRequirementTitle: 气候相关治理机构将气候相关因素纳入决策的情况
+        excerptFrom: 上交所·指南第二号·第六章·准则披露要求5
+        standardDisclosureRequirementText: 1．描述气候相关治理机构和人员在监督战略实施、重大交易决策、风险管理过程中，将气候相关影响、风险和机遇纳入决策考虑的措施、方法等。
+        disclosureRequirementObligationLevel: required
+        sourceClauseReferenceLabels:
+          - {standard: SSE, clauseRef: 指南第二号·准则披露要求5（指引第14号第十二条）}
+          - {standard: SZSE, clauseRef: 第17号·第十二条}
+          - {standard: BSE, clauseRef: 第11号·第十二条}
+          - {standard: HKEX, clauseRef: 附录C2·D部分(a) 管治}
+
+  # 二、战略（沪14第十三~十七条 / 深17同 / 北11同 / 港C2 D(b) 策略）
+  - topicSectionKey: climate.strategy
+    pillar: strategy
+    standardDisclosureRequirements:
+      - standardDisclosureRequirementKey: climate.strategy.material_impact
+        standardDisclosureRequirementTitle: 气候相关重大影响
+        excerptFrom: 上交所·指南第二号·第六章·准则披露要求6
+        standardDisclosureRequirementText: 1．定性或定量描述披露主体在气候方面对经济、环境和社会产生的重大影响。2．描述为监测、预防、管理、控制、减缓气候相关重大影响所采取的措施和行动。
+        disclosureRequirementObligationLevel: required
+        sourceClauseReferenceLabels:
+          - {standard: SSE, clauseRef: 指南第二号·准则披露要求6（指引第14号第十四条）}
+          - {standard: SZSE, clauseRef: 第17号·第十四条}
+          - {standard: BSE, clauseRef: 第11号·第十四条}
+          - {standard: HKEX, clauseRef: 附录C2·D部分(b) 策略}
+      - standardDisclosureRequirementKey: climate.strategy.risks_opportunities
+        standardDisclosureRequirementTitle: 气候相关风险和机遇
+        excerptFrom: 上交所·指南第二号·第六章·准则披露要求7
+        standardDisclosureRequirementText: 1．描述识别出的气候相关风险和机遇。针对识别的每项气候相关风险，可说明其属于气候相关物理风险还是转型风险。2．针对识别的每项气候相关风险和机遇，明确其可合理预期产生重大影响的时间范围，即短期、中期还是长期。3．解释披露主体如何定义短期、中期和长期，以及相关定义与公司的发展战略规划和资源分配计划的匹配情况<ref>（定义时间范围的具体考量详见《第一号 总体要求与披露框架》指南）</ref>。
+        disclosureRequirementObligationLevel: required
+        sourceClauseReferenceLabels:
+          - {standard: SSE, clauseRef: 指南第二号·准则披露要求7（指引第14号第十四条）}
+          - {standard: SZSE, clauseRef: 第17号·第十四条}
+          - {standard: BSE, clauseRef: 第11号·第十四条}
+          - {standard: HKEX, clauseRef: 附录C2·D部分(b) 策略}
+      - standardDisclosureRequirementKey: climate.strategy.value_chain_impact
+        standardDisclosureRequirementTitle: 气候相关风险和机遇对商业模式和价值链的影响
+        excerptFrom: 上交所·指南第二号·第六章·准则披露要求8
+        standardDisclosureRequirementText: 1．描述气候相关风险和机遇对商业模式、主要供应商和其他利益相关方的当期影响，并预测未来影响。2．描述商业模式和价值链中，气候相关风险和机遇集中的领域，如地理区域、设施、资产类型等。
+        disclosureRequirementObligationLevel: encouraged
+        sourceClauseReferenceLabels:
+          - {standard: SSE, clauseRef: 指南第二号·准则披露要求8（指引第14号第十四条，鼓励）}
+          - {standard: SZSE, clauseRef: 第17号·第十四条}
+          - {standard: BSE, clauseRef: 第11号·第十四条}
+          - {standard: HKEX, clauseRef: 附录C2·D部分(b) 策略}
+      - standardDisclosureRequirementKey: climate.strategy.strategy_decision
+        standardDisclosureRequirementTitle: 气候相关影响、风险和机遇对公司战略和决策的影响
+        excerptFrom: 上交所·指南第二号·第六章·准则披露要求9
+        standardDisclosureRequirementText: 1．描述为应对气候相关影响、风险和机遇，在战略制定和重大决策过程中所采用的方法，如战略决策机制、管理办法等。2．描述为实现相关战略目标而制定的计划以及衡量计划进展的定性、定量信息<ref>（详细可参考《第一号 总体要求与披露框架》指南中“设定和管理目标”相关内容，可与“气候相关转型计划”合并披露）</ref>。
+        disclosureRequirementObligationLevel: required
+        sourceClauseReferenceLabels:
+          - {standard: SSE, clauseRef: 指南第二号·准则披露要求9（指引第14号第十五条）}
+          - {standard: SZSE, clauseRef: 第17号·第十五条}
+          - {standard: BSE, clauseRef: 第11号·第十五条}
+          - {standard: HKEX, clauseRef: 附录C2·D部分(b) 策略}
+      - standardDisclosureRequirementKey: climate.strategy.transition_plan
+        standardDisclosureRequirementTitle: 气候相关转型计划
+        excerptFrom: 上交所·指南第二号·第六章·准则披露要求10
+        standardDisclosureRequirementText: 1．描述为应对气候相关风险和机遇所制定的转型计划，及制定该计划所依赖的基本假设。2．描述为应对气候相关风险和机遇而对当前和未来战略、商业模式和资源分配进行调整的情况。例如，管理或者停止碳、能源或水密集型业务的计划；因需求或者供应链变化导致的资源配置；通过资本支出或者额外研发支出进行业务发展产生的资源配置；以及收购或者剥离等。3．描述公司已经或者计划为直接或间接应对气候相关风险和机遇所采取的措施。例如，直接措施包括改进生产工艺或设备、更新设备、搬迁设施、改变产品规格等；间接措施包括通过与客户和供应链合作等。4．公司实施转型计划的进展情况。
+        disclosureRequirementObligationLevel: required
+        sourceClauseReferenceLabels:
+          - {standard: SSE, clauseRef: 指南第二号·准则披露要求10（指引第14号第二十三条）}
+          - {standard: SZSE, clauseRef: 第17号·第二十三条}
+          - {standard: BSE, clauseRef: 第11号·第二十三条}
+          - {standard: HKEX, clauseRef: 附录C2·D部分(b) 策略}
+      - standardDisclosureRequirementKey: climate.strategy.current_financial
+        standardDisclosureRequirementTitle: 当期气候相关财务影响
+        excerptFrom: 上交所·指南第二号·第六章·准则披露要求11
+        standardDisclosureRequirementText: 1．定性或定量分析气候相关风险和机遇对披露主体报告期间的财务状况、经营成果和现金流的影响<ref>（详细可参考《第一号 总体要求与披露框架》指南中相关内容）</ref>。定量描述应当结合实际情况披露具体数值或者合理的区间范围。2．相关风险和机遇是否会对公司下一年度财务状况、经营成果、现金流产生重大影响。3．若披露主体确不具备披露财务影响定量信息的能力、相关财务影响无法单独识别，或者因计量的不确定性过大导致该定量信息不具备使用价值的，披露主体应当披露相关财务影响的定性信息，解释未采用定量披露信息的原因，并在合理范围内提供有助于投资者了解相关影响的信息和说明，以及实现定量披露的工作计划、进度和时间表。
+        disclosureRequirementObligationLevel: required
+        sourceClauseReferenceLabels:
+          - {standard: SSE, clauseRef: 指南第二号·准则披露要求11（指引第14号第十六条）}
+          - {standard: SZSE, clauseRef: 第17号·第十六条}
+          - {standard: BSE, clauseRef: 第11号·第十六条}
+          - {standard: HKEX, clauseRef: 附录C2·D部分(b) 策略}
+      - standardDisclosureRequirementKey: climate.strategy.expected_financial
+        standardDisclosureRequirementTitle: 预期气候相关财务影响
+        excerptFrom: 上交所·指南第二号·第六章·准则披露要求12
+        standardDisclosureRequirementText: 1．气候相关风险和机遇对公司财务状况、经营成果、现金流在短期、中期和长期内的影响<ref>（详细可参考《第一号 总体要求与披露框架》指南中相关内容）</ref>。2．结合披露主体开展与气候相关的投资、资产处置、融资计划等规划，描述财务状况在短期、中期和长期内的变化趋势。3．结合披露主体管理气候相关风险和机遇的战略，描述经营成果和现金流在短期、中期和长期内的变化趋势。4．若披露主体确不具备披露财务影响定量信息的能力、相关财务影响无法单独识别，或者因计量的不确定性过大导致该定量信息不具备使用价值的，披露主体应当披露相关财务影响的定性信息，解释未采用定量披露信息的原因，并在合理范围内提供有助于投资者了解相关影响的信息和说明，以及实现定量披露的工作计划、进度和时间表。
+        disclosureRequirementObligationLevel: encouraged
+        sourceClauseReferenceLabels:
+          - {standard: SSE, clauseRef: 指南第二号·准则披露要求12（指引第14号第十六条，鼓励）}
+          - {standard: SZSE, clauseRef: 第17号·第十六条}
+          - {standard: BSE, clauseRef: 第11号·第十六条}
+          - {standard: HKEX, clauseRef: 附录C2·D部分(b) 策略}
+      - standardDisclosureRequirementKey: climate.strategy.resilience
+        standardDisclosureRequirementTitle: 气候适应性评估
+        excerptFrom: 上交所·指南第二号·第六章·准则披露要求13
+        standardDisclosureRequirementText: 1．描述披露主体评估的气候变化对其战略和业务模式的影响，以及应对相关影响的方法。2．描述在评估气候适应性时考虑的重大不确定性因素，如极端天气事件发生概率、强度、政策趋势等。3．描述在短期、中期和长期内为适应气候变化调整其战略和商业模式的能力。例如，披露主体现有财务资源在应对气候相关风险和把握气候相关机遇时的可获得性、灵活性；披露主体重新配置、重新利用、升级或停用现有资产的能力；披露主体当前和计划在气候相关缓解、适应措施和气候适应性机遇方面投资的影响。4．鼓励采用情景分析进行气候适应性评估，并披露情景分析使用的输入值信息与关键假设、分析过程等。
+        disclosureRequirementObligationLevel: conditional
+        sourceClauseReferenceLabels:
+          - {standard: SSE, clauseRef: 指南第二号·准则披露要求13（指引第14号第十七条）}
+          - {standard: SZSE, clauseRef: 第17号·第二十二条}
+          - {standard: BSE, clauseRef: 第11号·第二十二条}
+          - {standard: HKEX, clauseRef: 附录C2·D部分(b) 策略·情景分析}
+        note: "情景分析沪深北鼓励、港交所C2（对齐 IFRS S2）要求用于气候韧性评估。"
+
+  # 三、风险和机遇影响（沪14第十八条 / 深17第十八条 / 北11第十八条 / 港C2 D(c) 风险管理）
+  - topicSectionKey: climate.iro
+    pillar: iro_management
+    standardDisclosureRequirements:
+      - standardDisclosureRequirementKey: climate.iro.management_process
+        standardDisclosureRequirementTitle: 气候相关影响、风险及机遇管理的流程
+        excerptFrom: 上交所·指南第二号·第六章·准则披露要求14
+        standardDisclosureRequirementText: 1．描述评估气候相关影响、风险和机遇的方法。2．描述如何评估气候相关影响、风险和机遇发生的可能性、大小和影响的途径。例如，披露主体是否考虑定性因素、定量阈值或者其他标准。3．描述是否以及如何考虑气候相关风险相较于其他类型风险的优先级。4．描述如何监测气候相关影响、风险和机遇的情况，如管理机制、具体流程等。5．描述气候相关影响、风险和机遇管理流程融入公司内部管理流程（如整体风险管理流程）的情况，若发生调整，则披露管理流程调整的情况。
+        disclosureRequirementObligationLevel: required
+        sourceClauseReferenceLabels:
+          - {standard: SSE, clauseRef: 指南第二号·准则披露要求14（指引第14号第十八条）}
+          - {standard: SZSE, clauseRef: 第17号·第十八条}
+          - {standard: BSE, clauseRef: 第11号·第十八条}
+          - {standard: HKEX, clauseRef: 附录C2·D部分(c) 风险管理}
+
+  # 四、指标目标（沪14第十九条 + 气候节排放/减排条款 / 深17同 / 北11同 / 港C2 D(d) 指标及目标）
+  - topicSectionKey: climate.metrics
+    pillar: metrics_targets
+    standardDisclosureRequirements:
+      - standardDisclosureRequirementKey: climate.metrics.targets
+        standardDisclosureRequirementTitle: 气候相关目标
+        excerptFrom: 上交所·指南第二号·第六章·准则披露要求15
+        standardDisclosureRequirementText: 1．披露主体应当描述根据相关法律法规、《指引》要求以及自身需要设定的气候相关目标。2．对于气候相关目标的描述，可包括：具体的目标内容（定性或定量），定量目标包括绝对目标（如温室气体排放总量/净排放量）以及强度目标等；目标所适用的主体范围，如适用于整个报告主体还是仅适用于特定业务单元或区域；目标的适用期间等<ref>（详细可参考《第一号 总体要求与披露框架》指南相关内容；若气候相关目标为温室气体减排目标，可与减排实践中的“减排目标”合并披露）</ref>。
+        disclosureRequirementObligationLevel: required
+        sourceClauseReferenceLabels:
+          - {standard: SSE, clauseRef: 指南第二号·准则披露要求15（指引第14号第十九条）}
+          - {standard: SZSE, clauseRef: 第17号·第十九条}
+          - {standard: BSE, clauseRef: 第11号·第十九条}
+          - {standard: HKEX, clauseRef: 附录C2·D部分(d) 指标及目标}
+      - standardDisclosureRequirementKey: climate.metrics.target_progress
+        standardDisclosureRequirementTitle: 气候相关目标实现进展
+        excerptFrom: 上交所·指南第二号·第六章·准则披露要求16
+        standardDisclosureRequirementText: 1．披露主体应当描述报告期末相关目标实现情况以及报告期内的进展情况。2．对于气候相关目标实现进展情况的描述，可包括：衡量气候相关目标进展的基准期；阶段性气候相关目标和中期气候相关目标（如有）；目标实现进展（如已完成、进程中、未完成等，或定量描述报告期内目标完成度）<ref>（详细可参考《第一号 总体要求与披露框架》指南相关内容）</ref>。
+        disclosureRequirementObligationLevel: required
+        sourceClauseReferenceLabels:
+          - {standard: SSE, clauseRef: 指南第二号·准则披露要求16（指引第14号第十九条）}
+          - {standard: SZSE, clauseRef: 第17号·第十九条}
+          - {standard: BSE, clauseRef: 第11号·第十九条}
+          - {standard: HKEX, clauseRef: 附录C2·D部分(d) 指标及目标}
+      - standardDisclosureRequirementKey: climate.metrics.ghg_emissions
+        standardDisclosureRequirementTitle: 温室气体排放量
+        excerptFrom: 上交所·指南第二号·第六章·准则披露要求17
+        standardDisclosureRequirementText: 1．以二氧化碳当量公吨为单位，披露范围一、范围二及范围三（鼓励）温室气体排放量<ref>（核算温室气体排放量的方法详见本指南第四章）</ref>。2．按照业务单位或设施、国家或地区、来源类型（燃烧、加工、电力、供暖、制冷和蒸汽等）分类披露温室气体排放量（鼓励）。3．描述核算温室气体排放量所依据的标准、方法、假设或计算工具。若报告期内核算标准、方法、假设等发生变化的，应当说明原因并披露具体影响。4．说明核算温室气体排放量的合并方法，如股权比例法、财务控制法、运营控制法等。5．说明第三方机构对公司温室气体排放等数据进行核查或鉴证情况（如涉及）。
+        disclosureRequirementObligationLevel: required
+        sourceClauseReferenceLabels:
+          - {standard: SSE, clauseRef: 指南第二号·准则披露要求17（指引第14号第二十四至二十六条）}
+          - {standard: SZSE, clauseRef: 第17号·第二十四至二十六条}
+          - {standard: BSE, clauseRef: 第11号·第二十四至二十六条}
+          - {standard: HKEX, clauseRef: 附录C2·D部分(d) 指标及目标}
+        note: "范围三排放沪深北鼓励、港交所C2（IFRS S2）要求；按业务单位/地区/来源类型分类披露为鼓励。"
+      - standardDisclosureRequirementKey: climate.metrics.reduction_practice
+        standardDisclosureRequirementTitle: 温室气体减排实践
+        excerptFrom: 上交所·指南第二号·第六章·准则披露要求18
+        standardDisclosureRequirementText: 披露主体应当说明其为减少温室气体排放所采取的措施及相关安排，包括节能降耗、温室气体减排、资源效率提升、低碳产品或其他减排实践。
+        disclosureRequirementObligationLevel: required
+        sourceClauseReferenceLabels:
+          - {standard: SSE, clauseRef: 指南第二号·准则披露要求18}
+          - {standard: SZSE, clauseRef: 第17号·应对气候变化节}
+          - {standard: BSE, clauseRef: 第11号·第二十七条}
+          - {standard: HKEX, clauseRef: 附录C2·D部分(d) 指标及目标}
+      - standardDisclosureRequirementKey: climate.metrics.carbon_credit
+        standardDisclosureRequirementTitle: 碳信用额度来源和数量
+        excerptFrom: 上交所·指南第二号·第六章·准则披露要求19
+        standardDisclosureRequirementText: 1．描述所使用的碳信用额度的来源，如国家核证自愿减排量（CCER）和各试点碳市场的碳普惠项目等。2．以二氧化碳当量公吨为单位，披露公司所使用的碳信用数量。
+        disclosureRequirementObligationLevel: conditional
+        sourceClauseReferenceLabels:
+          - {standard: SSE, clauseRef: 指南第二号·准则披露要求19}
+          - {standard: SZSE, clauseRef: 第17号·应对气候变化节}
+          - {standard: BSE, clauseRef: 第11号·第二十四条}
+        note: "如涉及：仅在使用碳信用额度时披露。港交所 C2 无对应专项要求。"
+      - standardDisclosureRequirementKey: climate.metrics.allowance_settlement
+        standardDisclosureRequirementTitle: 碳排放配额清缴情况
+        excerptFrom: 上交所·指南第二号·第六章·准则披露要求20
+        standardDisclosureRequirementText: 1．描述报告期内是否在碳排放权交易市场完成清缴履约。2．描述是否因碳排放权清缴问题，被有关部门要求整改、立案调查或处罚。
+        disclosureRequirementObligationLevel: conditional
+        sourceClauseReferenceLabels:
+          - {standard: SSE, clauseRef: 指南第二号·准则披露要求20}
+          - {standard: SZSE, clauseRef: 第17号·应对气候变化节}
+          - {standard: BSE, clauseRef: 第11号·第二十四条}
+        note: "如涉及：仅在纳入碳排放权交易市场时披露。港交所 C2 无对应专项要求。"
+      - standardDisclosureRequirementKey: climate.metrics.ccer
+        standardDisclosureRequirementTitle: 全国温室气体自愿减排项目与CCER登记交易情况
+        excerptFrom: 上交所·指南第二号·第六章·准则披露要求21
+        standardDisclosureRequirementText: 1．在全国温室气体自愿减排项目和核证自愿减排量（CCER）登记的项目情况，如项目数量、状态、类型、预计减排量等。2．披露交易的CCER项目减排量。
+        disclosureRequirementObligationLevel: conditional
+        sourceClauseReferenceLabels:
+          - {standard: SSE, clauseRef: 指南第二号·准则披露要求21}
+          - {standard: SZSE, clauseRef: 第17号·应对气候变化节}
+          - {standard: BSE, clauseRef: 第11号·第二十七条}
+        note: "如涉及：仅在涉及CCER登记或交易时披露。港交所 C2 无对应专项要求。"
+      - standardDisclosureRequirementKey: climate.metrics.other_mechanisms
+        standardDisclosureRequirementTitle: 参与其他减排机制的项目和减排量登记与交易情况
+        excerptFrom: 上交所·指南第二号·第六章·准则披露要求22
+        standardDisclosureRequirementText: 1．描述参与的其他减排机制项目名称、减排机制类型，以及其他减排机制下登记的项目情况、交易的减排量数量等。2．描述其他减排机制项目情况，如项目数量、状态、类型、预计减排量等。
+        disclosureRequirementObligationLevel: conditional
+        sourceClauseReferenceLabels:
+          - {standard: SSE, clauseRef: 指南第二号·准则披露要求22}
+          - {standard: SZSE, clauseRef: 第17号·应对气候变化节}
+          - {standard: BSE, clauseRef: 第11号·第二十七条}
+        note: "如涉及：仅在参与其他减排机制时披露。港交所 C2 无对应专项要求。"

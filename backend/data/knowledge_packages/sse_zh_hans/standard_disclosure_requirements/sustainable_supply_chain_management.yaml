@@ -1,0 +1,83 @@
+# ABOUTME: 可持续供应链管理议题准则披露要求库，供覆盖审计与按 key 白名单注入生成上下文（注入受开关控制，默认关闭）。
+# ABOUTME: 本文件不作为用户可见准则批注来源；用户可见条款原文来自 user_visible_disclosure_clause_annotations。
+topicStandardDisclosureRequirementGroups:
+- topicSectionKey: sustainable_supply_chain_management.gov
+  pillar: governance
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: sustainable_supply_chain_management.gov.governance_structure_required
+    standardDisclosureRequirementTitle: 供应链可持续管理治理安排
+    excerptFrom: 参考模板“治理”；附录索引表第四十四条、第四十五条
+    standardDisclosureRequirementText: 应概括公司供应链可持续管理的组织设置、职责安排、制度流程或认证情况。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 第四十四条、第四十五条
+    - standard: SZSE
+      clauseRef: 第四十四条、第四十五条
+    - standard: BSE
+      clauseRef: 第四十四条、第四十五条
+- topicSectionKey: sustainable_supply_chain_management.strategy
+  pillar: strategy
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: sustainable_supply_chain_management.strategy.targets_required
+    standardDisclosureRequirementTitle: 供应链战略方向
+    excerptFrom: 附录索引表第四十五条；参考模板“战略”
+    standardDisclosureRequirementText: 应说明供应稳定性、质量稳定性、供应商协作或基础数字化管理等供应链战略方向。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 第四十五条
+    - standard: SZSE
+      clauseRef: 第四十五条
+    - standard: BSE
+      clauseRef: 第四十五条
+- topicSectionKey: sustainable_supply_chain_management.iro
+  pillar: iro_management
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: sustainable_supply_chain_management.iro.resilience_risk_management_required
+    standardDisclosureRequirementTitle: 供应链韧性与风险管理
+    excerptFrom: 附录索引表第四十五条；参考模板“供应链韧性”
+    standardDisclosureRequirementText: 应围绕供应商管理或评价维度，披露供应稳定性、质量稳定性、资质、交付、成本或合作稳定性等风险管理关注点。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 第四十五条
+    - standard: SZSE
+      clauseRef: 第四十五条
+    - standard: BSE
+      clauseRef: 第四十五条
+  - standardDisclosureRequirementKey: sustainable_supply_chain_management.iro.supplier_training_required
+    standardDisclosureRequirementTitle: 供应商赋能与培训
+    excerptFrom: 附录索引表第四十五条；参考模板“供应商赋能与培训”
+    standardDisclosureRequirementText: 应说明供应商培训和帮扶相关政策、报告期内培训和帮扶情况，包括培训供应商覆盖范围、培训主题、培训效果、帮扶供应商类别、帮扶项目、帮扶投入资源及成果；如涉及具体覆盖数量、培训时长或帮扶供应商数量，必须准确引用。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 第四十五条
+    - standard: SZSE
+      clauseRef: 第四十五条
+    - standard: BSE
+      clauseRef: 第四十五条
+  - standardDisclosureRequirementKey: sustainable_supply_chain_management.iro.supplier_training_encouraged
+    standardDisclosureRequirementTitle: 供应商能力建设补充口径
+    excerptFrom: 参考模板“政策内容、帮扶和培训”
+    standardDisclosureRequirementText: 可进一步披露说明供应商能力建设如何支持供应链韧性、低碳转型、质量提升或 ESG 管理成熟度提升，以及培训成果转化和后续计划。
+    disclosureRequirementObligationLevel: encouraged
+    sourceClauseReferenceLabels:
+    - standard: ReferenceTemplate
+      clauseRef: 可持续供应链管理：供应商赋能与培训
+- topicSectionKey: sustainable_supply_chain_management.metrics
+  pillar: metrics_targets
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: sustainable_supply_chain_management.metrics.supplier_metrics_required
+    standardDisclosureRequirementTitle: 指标、目标与成效数据
+    excerptFrom: 附录索引表第四十四条、第四十五条；参考模板“指标目标”
+    standardDisclosureRequirementText: 应说明供应商总数、区域分布、淘汰供应商数量或供应商管理相关指标口径。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 第四十四条、第四十五条
+    - standard: SZSE
+      clauseRef: 第四十四条、第四十五条
+    - standard: BSE
+      clauseRef: 第四十四条、第四十五条

@@ -1,0 +1,63 @@
+# ABOUTME(en): Appendix C2 disclosure requirements of「僱傭」(General Disclosure and KPIs), grouped by pillar,
+# ABOUTME(en): for the coverage audit and for prompt assembly by key whitelist (injection is switch-gated, off by default) and for the coverage audit. Wording awaits check against the official Chinese text.
+topicStandardDisclosureRequirementGroups:
+- topicSectionKey: employment.gov
+  pillar: governance
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: employment.gov.general_disclosure_policies
+    standardDisclosureRequirementTitle: 僱傭政策
+    excerptFrom: 港交所·附錄C2·一般披露 B1
+    standardDisclosureRequirementText: 應披露有關薪酬及解僱、招聘及晉升、工作時數、假期、平等機會、多元化、反歧視以及其他待遇及福利的政策。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: 一般披露 B1
+  - standardDisclosureRequirementKey: employment.gov.general_disclosure_compliance
+    standardDisclosureRequirementTitle: 遵守僱傭相關法律及規例
+    excerptFrom: 港交所·附錄C2·一般披露 B1
+    standardDisclosureRequirementText: 應披露遵守對發行人有重大影響的僱傭相關法律及規例的資料。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: 一般披露 B1
+- topicSectionKey: employment.strategy
+  pillar: strategy
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: employment.strategy.employment_direction
+    standardDisclosureRequirementTitle: 人才管理方針及目標
+    excerptFrom: 港交所·附錄C2·一般披露 B1
+    standardDisclosureRequirementText: 應說明公司在人才吸引與保留、多元共融及僱員福祉方面的方針及目標。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: 一般披露 B1
+- topicSectionKey: employment.iro
+  pillar: iro_management
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: employment.iro.employment_practices
+    standardDisclosureRequirementTitle: 僱傭實務
+    excerptFrom: 港交所·附錄C2·一般披露 B1
+    standardDisclosureRequirementText: 應說明公司落實僱傭政策的實務安排，包括招聘與晉升、薪酬、工時及假期、平等機會及僱員福利。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: 一般披露 B1
+- topicSectionKey: employment.metrics
+  pillar: metrics_targets
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: employment.metrics.workforce_data
+    standardDisclosureRequirementTitle: 按性別、僱傭類型、年齡組別及地區劃分的僱員總數
+    excerptFrom: 港交所·附錄C2·關鍵績效指標 B1.1
+    standardDisclosureRequirementText: 應披露按性別、僱傭類型（如全職或兼職）、年齡組別及地區劃分的僱員總數。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: 關鍵績效指標 B1.1
+  - standardDisclosureRequirementKey: employment.metrics.turnover_data
+    standardDisclosureRequirementTitle: 按性別、年齡組別及地區劃分的僱員流失比率
+    excerptFrom: 港交所·附錄C2·關鍵績效指標 B1.2
+    standardDisclosureRequirementText: 應披露按性別、年齡組別及地區劃分的僱員流失比率。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: 關鍵績效指標 B1.2

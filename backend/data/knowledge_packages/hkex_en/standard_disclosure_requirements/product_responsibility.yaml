@@ -1,0 +1,86 @@
+# ABOUTME(en): Appendix C2 disclosure requirements of "Product Responsibility" (General Disclosure and KPIs), grouped by pillar,
+# ABOUTME(en): for the coverage audit and for prompt assembly by key whitelist (injection is switch-gated, off by default) and for the coverage audit. Wording follows the English Code text.
+topicStandardDisclosureRequirementGroups:
+- topicSectionKey: product_responsibility.gov
+  pillar: governance
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: product_responsibility.gov.general_disclosure_policies
+    standardDisclosureRequirementTitle: Product responsibility policies
+    excerptFrom: HKEX·Appendix C2·General Disclosure B6
+    standardDisclosureRequirementText: |-
+      Disclose the policies on health and safety, advertising, labelling and privacy matters relating to products and services provided and methods of redress.
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: General Disclosure B6
+  - standardDisclosureRequirementKey: product_responsibility.gov.general_disclosure_compliance
+    standardDisclosureRequirementTitle: Compliance with product responsibility laws and regulations
+    excerptFrom: HKEX·Appendix C2·General Disclosure B6
+    standardDisclosureRequirementText: |-
+      Disclose information on compliance with product responsibility laws and regulations that have a significant impact on the issuer.
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: General Disclosure B6
+- topicSectionKey: product_responsibility.strategy
+  pillar: strategy
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: product_responsibility.strategy.quality_direction
+    standardDisclosureRequirementTitle: Product quality and customer service approach
+    excerptFrom: HKEX·Appendix C2·General Disclosure B6
+    standardDisclosureRequirementText: |-
+      Describe the company's approach and targets on product quality and on advertising and labelling compliance.
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: General Disclosure B6
+- topicSectionKey: product_responsibility.iro
+  pillar: iro_management
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: product_responsibility.iro.quality_assurance_and_recall
+    standardDisclosureRequirementTitle: Quality assurance process and recall procedures
+    excerptFrom: HKEX·Appendix C2·KPI B6.4
+    standardDisclosureRequirementText: Description of quality assurance process and recall procedures.
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: KPI B6.4
+  - standardDisclosureRequirementKey: product_responsibility.iro.complaints_handling
+    standardDisclosureRequirementTitle: How complaints are dealt with
+    excerptFrom: HKEX·Appendix C2·KPI B6.2
+    standardDisclosureRequirementText: |-
+      Description of how complaints received relating to products and services are dealt with.
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: KPI B6.2
+  - standardDisclosureRequirementKey: product_responsibility.iro.intellectual_property
+    standardDisclosureRequirementTitle: |-
+      Practices relating to observing and protecting intellectual property rights
+    excerptFrom: HKEX·Appendix C2·KPI B6.3
+    standardDisclosureRequirementText: |-
+      Description of practices relating to observing and protecting intellectual property rights.
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: KPI B6.3
+- topicSectionKey: product_responsibility.metrics
+  pillar: metrics_targets
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: product_responsibility.metrics.recall_data
+    standardDisclosureRequirementTitle: Percentage of products subject to recalls for safety and health reasons
+    excerptFrom: HKEX·Appendix C2·KPI B6.1
+    standardDisclosureRequirementText: |-
+      Disclose the percentage of total products sold or shipped subject to recalls for safety and health reasons.
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: KPI B6.1
+  - standardDisclosureRequirementKey: product_responsibility.metrics.complaints_data
+    standardDisclosureRequirementTitle: Number of products and service related complaints received
+    excerptFrom: HKEX·Appendix C2·KPI B6.2
+    standardDisclosureRequirementText: Disclose the number of products and service related complaints received.
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: KPI B6.2

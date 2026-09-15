@@ -1,0 +1,895 @@
+# ABOUTME(en): Fixed skeleton of an HKEX ESG report (Appendix C2): about the report (reporting boundary, period,
+# ABOUTME(en): basis, reporting principles §14), the mandatory board statement §13, company profile, ESG governance
+# ABOUTME(en): with stakeholder engagement and materiality assessment, and the appendix (KPI table, content index).
+# 可執行 schema 以 contract/models.py 為準；本文件是模板實例真相源：字段只有定義無具體值，
+# 章節標題由 Section.title 承載（含字段引用時用 titleContent），正文塊為葉子；空標題節 = 純內容分組。
+# blockType: fixed=確定正文 | slot=填空(字段/用戶輸入) | constrained/generative=LLM 生成
+# 骨架 id（about_report / company_intro / sustainability_mgmt / report_appendix、sm.* / appendix.*）與上交所包一致，
+# 由代碼引用；HKEX 專有的 board_statement 章為新增。
+title: 環境、社會及管治報告
+fields:
+  company_registered_name: {key: company_registered_name, label: 公司名稱, type: string, source: user_input, required: true, requiredBefore: export}
+  company_short_name:      {key: company_short_name, label: 公司簡稱, type: string, source: user_input, required: true}
+  reporting_year:          {key: reporting_year, label: 匯報年度, type: year, source: user_input, required: true, requiredBefore: export}
+  report_period_start:     {key: report_period_start, label: 匯報期間開始, type: date, source: user_input, required: false}
+  report_period_end:       {key: report_period_end, label: 匯報期間結束, type: date, source: user_input, required: false}
+  # 匯報範圍為結構化單選：選項決定「關於本報告」匯報範圍段落的口徑變體；未選擇落入「與綜合財務報表一致」句。
+  consolidation_scope:     {key: consolidation_scope, label: 匯報範圍, type: enum, source: user_input, required: false, options: [僅公司本部（無附屬公司）, 本公司及全部附屬公司, 特定範圍]}
+  consolidation_scope_note: {key: consolidation_scope_note, label: 匯報範圍說明, type: string, source: user_input, required: false, appears_when: {all: [{path: fields.consolidation_scope.value, op: eq, value: 特定範圍}]}}
+  report_publication_channel: {key: report_publication_channel, label: 報告刊發方式, type: enum, source: user_input, required: false, options: [公司網站刊發, 聯交所披露易及公司網站刊發, 其他方式刊發]}
+  report_publication_website_url: {key: report_publication_website_url, label: 公司網站地址, type: url, source: user_input, required: false, appears_when: {all: [{path: fields.report_publication_channel.value, op: ne, value: 其他方式刊發}]}}
+  report_approval_year:    {key: report_approval_year, label: 批准年份, type: year, source: user_input, required: false}
+  report_approval_month:   {key: report_approval_month, label: 批准月份, type: month, source: user_input, required: false}
+  assurance_provider_name: {key: assurance_provider_name, label: 鑑證機構全稱, type: string, source: user_input, required: false}
+  assurance_standard:      {key: assurance_standard, label: 鑑證準則, type: string, source: user_input, required: false}
+  industry_major_category:  {key: industry_major_category, label: 所屬行業, type: enum, source: user_input, required: true, options: [製造業, 建造業, 進出口貿易及批發業, 零售業, 運輸、倉庫及物流業, 住宿及膳食服務業, 資訊及通訊業, 金融及保險業, 地產業, 專業及商用服務業, 醫療保健及社會工作, 教育, 藝術、娛樂及康樂, 公用事業, 其他服務業]}
+  industry_division:        {key: industry_division, label: 主要業務類別, type: string, source: user_input, required: false}
+  industry:                 {key: industry, label: 行業, type: string, source: derived, required: true, computed: {from: [industry_major_category, industry_division], rule: 行業與主要業務類別名稱合併}}
+  company_business_summary: {key: company_business_summary, label: 主要業務概述, type: string, source: derived, required: false, computed: {from: [company_profile], rule: LLM 壓縮公司簡介為約100字主要業務概述（上下文工程步驟0）}}
+
+# 用戶可見填寫體驗合同：只解釋如何填寫並聲明新建報告默認值；不進入報告正文、持久化事實或 LLM 上下文。
+inputGuidance:
+  fields.industry_major_category.value:
+    termExplanation: "行業與主要業務類別共同決定報告中的行業表述與同業參照口徑。"
+  fields.report_publication_channel.value:
+    termExplanation: "決定「關於本報告」的報告取閱方式表述；選「其他方式刊發」時讀者透過意見反饋郵箱索取。"
+  fields.report_publication_website_url.value:
+    helpText: "公司網站地址，讀者據此查閱本報告；不是本報告文件的下載連結。"
+  fields.consolidation_scope.value:
+    helpText: "選擇報告涵蓋哪些實體；與綜合財務報表範圍一致時選常規口徑。"
+    termExplanation: "決定「關於本報告」匯報範圍段落的表述；不選擇時按本公司及全部附屬公司表述。"
+  fields.consolidation_scope_note.value:
+    helpText: "一句話說明涵蓋的實體範圍，如「本公司及東莞生產基地」，無需句號。"
+    termExplanation: "原文進入「關於本報告」匯報範圍段落；僅在匯報範圍選擇「特定範圍」時填寫。"
+  fields.report_approval_year.value:
+    termExplanation: "批准年份與月份齊備才生成「關於本報告」的董事會批准說明段落，否則自動省略。"
+  fields.report_approval_month.value:
+    termExplanation: "與批准年份齊備才生成董事會批准說明段落。"
+  fields.assurance_provider_name.value:
+    termExplanation: "勾選「本報告包含外部鑑證報告」後填寫，用於生成「關於本報告」外部鑑證段落。"
+  appendixPackage.readerFeedbackContactInformation.email:
+    helpText: "讀者據此聯絡公司；選「其他方式刊發」時也用於索取報告。"
+  fields.reporting_year.value:
+    defaultRule: previous_calendar_year
+  fields.report_period_start.value:
+    defaultRule: reporting_year_start
+  fields.report_period_end.value:
+    defaultRule: reporting_year_end
+assessmentScoreScale:
+  minimumExclusive: 0
+  maximum: 5
+  multipleOf: 0.1
+  financialMaterialityDefinition: 議題對本公司業務、收入或成本的影響（對業務的重要性）。
+  financialMaterialityExplanation: 達到或超過閾值的議題按「對業務重要」納入報告重點。
+  impactMaterialityDefinition: 本公司在該議題上對環境、社會及持份者的影響（對持份者的重要性）。
+  impactMaterialityExplanation: 達到或超過閾值的議題按「對持份者重要」納入報告重點。
+
+# Display vocabulary of the materiality assessment (tables, matrix axes, model-visible IRO labels).
+# The sm.topic_table / sm.iro_table option lists must agree with these words (guarded by tests).
+assessmentVocabulary:
+  materiality: {dual: 高度重要, financial: 對業務重要, impact: 對持份者重要, non: 一般關注}
+  materialityAxes: {financial: 對業務的重要性, impact: 對持份者的重要性}
+  iroKind: {impact: 影響, risk: 風險, opportunity: 機遇, risk_opportunity: 風險與機遇}
+  impactClass: {actual_positive: 實際正面影響, potential_positive: 潛在正面影響, potential_negative: 潛在負面影響}
+
+# Wording of the quantitative metrics table that is validated or printed: the greenhouse gas accounting
+# standard choices, the "other" sentinel, and the review-only remark naming the standard behind a value.
+quantitativeMetricsVocabulary:
+  greenhouseGasAccountingStandards:
+    - 《溫室氣體核算體系》（GHG Protocol）
+    - ISO 14064-1:2018
+  otherStandardLabel: 其他
+  accountingStandardRemarkTemplate: "核算標準：{standard}"
+  remarkSeparator: "；"
+  noValueReasonLabels:
+    not_collected: 尚未收集
+    not_available: 暫無法取得
+    not_applicable: 不適用
+    will_supplement: 後續補充
+
+intakeItems:
+  - key: company_profile
+    contentScopeId: front_company_intro
+    prompt: 公司簡介
+    kind: text
+    collectionPriority: core
+    hint: 按事實填寫即可，無需潤飾成報告文體。
+    termExplanation: 作為「關於本公司」章節與主要業務概述的基礎資料，生成時會據此整合改寫。
+    minChars: 100
+    maxChars: 5000
+  - key: company_certifications
+    contentScopeId: front_company_intro
+    prompt: 請填寫貴公司取得的專業認證、資質及獎項。
+    kind: text
+    collectionPriority: recommended
+    hint: 可填寫認證或獎項名稱及授予機構；已上傳證書圖片的無需在此重複填寫。沒有可留空。
+    maxChars: 3000
+  - key: board_statement.q_oversight
+    contentScopeId: front_board_statement
+    prompt: 董事會如何監管環境、社會及管治事宜？
+    kind: text
+    collectionPriority: core
+    hint: 可說明董事會或其委員會的監管職責、審議頻次、由誰向董事會匯報；沒有專責委員會的，可說明現有安排。
+    termExplanation: 守則第13(i)段要求董事會聲明說明董事會對環境、社會及管治事宜的監管。
+    maxChars: 5000
+  - key: board_statement.q_management_approach
+    contentScopeId: front_board_statement
+    prompt: 董事會的環境、社會及管治管理方針及策略是什麼？重要議題如何評估、優先排序及管理？
+    kind: text
+    collectionPriority: core
+    hint: 可說明管理方針、策略方向，以及識別及排序重要議題的做法（如持份者諮詢、重要性評估）。
+    termExplanation: 守則第13(ii)段要求說明管理方針及策略，包括評估、優先排序及管理重要議題（包括對業務的風險）的過程。
+    maxChars: 5000
+  - key: board_statement.q_progress_review
+    contentScopeId: front_board_statement
+    prompt: 董事會如何按環境、社會及管治相關目標檢討進度？
+    kind: text
+    collectionPriority: core
+    hint: 可說明已訂立的目標、檢討頻次與方式，以及目標與業務的關連；尚未訂立目標的可如實說明。
+    termExplanation: 守則第13(iii)段要求說明董事會如何按相關目標檢討進度，並解釋目標如何與業務有關連。
+    maxChars: 5000
+  - key: sustainability_governance_structure
+    contentScopeId: front_sustainability_mgmt
+    prompt: 請簡述貴公司環境、社會及管治事宜由哪些機構、部門或崗位參與管理。
+    kind: text
+    collectionPriority: core
+    hint: 設有專責委員會或工作小組的，可說明層級及組成；沒有的可填寫現有負責人、部門或崗位如何分工參與。
+    maxChars: 5000
+  - key: sustainability_governance_duties
+    contentScopeId: front_sustainability_mgmt
+    prompt: 請填寫上述機構、部門或崗位在環境、社會及管治事宜中的主要職責分工。
+    kind: text
+    collectionPriority: core
+    hint: 可概括職責邊界及協作方式；不需要為了報告而編寫複雜的委員會、匯報機制或考核機制。
+    maxChars: 5000
+
+disclosureProfile:
+  mainlandStandard: sse
+  includesHongKongExchangeGuide: false
+  additionalDisclosureReferences: []
+appendixPackage:
+  externalAssuranceReport:
+    isIncluded: false
+  readerFeedbackContactInformation:
+    address: null
+    email: null
+    phone: null
+
+sections:
+  # ============ 關於本報告 ============
+  - key: about_report
+    title: 關於本報告
+    headingLevel: 1
+    required: true
+    blocks:
+      - id: about.opening
+        type: paragraph
+        blockType: fixed
+        source: template
+        styleRole: body
+        content:
+          - {kind: ref, ref: company_short_name, fallback: 本公司}
+          - {kind: text, text: "秉持可持續發展理念，重視各持份者的合理期望，持續推進環境、社會及管治相關工作。本報告圍繞公司的環境、社會及管治安排與重要議題實踐，客觀呈現匯報期間內的管理方針、行動進展及績效資料。"}
+    children:
+      - key: about_report.scope
+        title: 匯報範圍
+        headingLevel: 2
+        blocks:
+          - id: about.scope
+            type: paragraph
+            blockType: slot
+            source: user_input
+            styleRole: body
+            appears_when:
+              all:
+                - {path: fields.company_short_name.value, op: exists}
+                - {path: fields.consolidation_scope.value, op: ne, value: 僅公司本部（無附屬公司）}
+                - {path: fields.consolidation_scope.value, op: ne, value: 特定範圍}
+            content:
+              - {kind: text, text: "本報告的匯報範圍涵蓋"}
+              - {kind: ref, ref: company_registered_name}
+              - {kind: text, text: "及其附屬公司（簡稱「"}
+              - {kind: ref, ref: company_short_name}
+              - {kind: text, text: "」、「本公司」或「我們」），與公司年度綜合財務報表的範圍一致。個別資料的統計範圍與匯報範圍不一致時，會在正文中註明。"}
+          - id: about.scope_without_short_name
+            type: paragraph
+            blockType: slot
+            source: user_input
+            styleRole: body
+            appears_when:
+              all:
+                - {path: fields.company_short_name.value, op: not_exists}
+                - {path: fields.consolidation_scope.value, op: ne, value: 僅公司本部（無附屬公司）}
+                - {path: fields.consolidation_scope.value, op: ne, value: 特定範圍}
+            content:
+              - {kind: text, text: "本報告的匯報範圍涵蓋"}
+              - {kind: ref, ref: company_registered_name}
+              - {kind: text, text: "及其附屬公司（以下統稱「本公司」或「我們」），與公司年度綜合財務報表的範圍一致。個別資料的統計範圍與匯報範圍不一致時，會在正文中註明。"}
+          - id: about.scope_parent_only
+            type: paragraph
+            blockType: slot
+            source: user_input
+            styleRole: body
+            appears_when:
+              all:
+                - {path: fields.company_short_name.value, op: exists}
+                - {path: fields.consolidation_scope.value, op: eq, value: 僅公司本部（無附屬公司）}
+            content:
+              - {kind: text, text: "本報告的匯報範圍涵蓋"}
+              - {kind: ref, ref: company_registered_name}
+              - {kind: text, text: "（簡稱「"}
+              - {kind: ref, ref: company_short_name}
+              - {kind: text, text: "」、「本公司」或「我們」），即公司本部。個別資料的統計範圍與匯報範圍不一致時，會在正文中註明。"}
+          - id: about.scope_parent_only_without_short_name
+            type: paragraph
+            blockType: slot
+            source: user_input
+            styleRole: body
+            appears_when:
+              all:
+                - {path: fields.company_short_name.value, op: not_exists}
+                - {path: fields.consolidation_scope.value, op: eq, value: 僅公司本部（無附屬公司）}
+            content:
+              - {kind: text, text: "本報告的匯報範圍涵蓋"}
+              - {kind: ref, ref: company_registered_name}
+              - {kind: text, text: "（以下統稱「本公司」或「我們」），即公司本部。個別資料的統計範圍與匯報範圍不一致時，會在正文中註明。"}
+          - id: about.scope_special
+            type: paragraph
+            blockType: slot
+            source: user_input
+            styleRole: body
+            appears_when:
+              all:
+                - {path: fields.company_short_name.value, op: exists}
+                - {path: fields.consolidation_scope.value, op: eq, value: 特定範圍}
+            content:
+              - {kind: text, text: "本報告的匯報範圍涵蓋"}
+              - {kind: ref, ref: company_registered_name}
+              - {kind: text, text: "（簡稱「"}
+              - {kind: ref, ref: company_short_name}
+              - {kind: text, text: "」、「本公司」或「我們」）。本報告資料的編製範圍為："}
+              - {kind: ref, ref: consolidation_scope_note, fallback: 以正文各處註明的披露範圍為準}
+              - {kind: text, text: "。個別資料的統計範圍與匯報範圍不一致時，會在正文中註明。"}
+          - id: about.scope_special_without_short_name
+            type: paragraph
+            blockType: slot
+            source: user_input
+            styleRole: body
+            appears_when:
+              all:
+                - {path: fields.company_short_name.value, op: not_exists}
+                - {path: fields.consolidation_scope.value, op: eq, value: 特定範圍}
+            content:
+              - {kind: text, text: "本報告的匯報範圍涵蓋"}
+              - {kind: ref, ref: company_registered_name}
+              - {kind: text, text: "（以下統稱「本公司」或「我們」）。本報告資料的編製範圍為："}
+              - {kind: ref, ref: consolidation_scope_note, fallback: 以正文各處註明的披露範圍為準}
+              - {kind: text, text: "。個別資料的統計範圍與匯報範圍不一致時，會在正文中註明。"}
+      - key: about_report.timeframe
+        title: 匯報期間
+        headingLevel: 2
+        blocks:
+          - id: about.timeframe
+            type: paragraph
+            blockType: slot
+            source: user_input
+            styleRole: body
+            appears_when:
+              all:
+                - {path: fields.report_period_start.value, op: exists}
+                - {path: fields.report_period_end.value, op: exists}
+            content:
+              - {kind: text, text: "本報告為年度報告，匯報期間為"}
+              - {kind: ref, ref: report_period_start}
+              - {kind: text, text: "至"}
+              - {kind: ref, ref: report_period_end}
+              - {kind: text, text: "，與公司年報所涵蓋的財政年度一致。部分資料超出此期間的，已在對應位置說明。"}
+      - key: about_report.basis
+        title: 編製依據
+        headingLevel: 2
+        blocks:
+          - id: about.basis
+            type: paragraph
+            blockType: fixed
+            source: template
+            styleRole: body
+            content:
+              - {kind: text, text: "本報告依據"}
+              - {kind: ref, ref: disclosureProfile.basisStatement}
+              - {kind: text, text: "編製，涵蓋守則B部的強制披露規定、C部各層面的一般披露及關鍵績效指標，以及D部的氣候相關披露；氣候相關披露的結構與國際可持續發展準則理事會（ISSB）《國際財務報告可持續披露準則第2號——氣候相關披露》保持一致。"}
+      - key: about_report.principles
+        title: 匯報原則
+        headingLevel: 2
+        blocks:
+          - id: about.principles
+            type: paragraph
+            blockType: fixed
+            source: template
+            styleRole: body
+            content: [{kind: text, text: "本報告的編製遵循守則第14段訂明的「重要性、量化、平衡、一致性」四項匯報原則。"}]
+          - {id: about.principle_materiality, type: paragraph, blockType: fixed, source: template, styleRole: body, listType: unordered, content: [{kind: text, text: "重要性：透過持份者參與及重要性評估，識別對投資者及其他持份者具重要影響的環境、社會及管治事宜，並優先披露；評估過程與結果載於「可持續發展管治」一章。"}]}
+          - {id: about.principle_quant, type: paragraph, blockType: fixed, source: template, styleRole: body, listType: unordered, content: [{kind: text, text: "量化：關鍵績效指標以可計量的方式披露，並說明所採用的統計準則、方法、假設及換算因素的來源，使資料可供比較與評估。"}]}
+          - {id: about.principle_balance, type: paragraph, blockType: fixed, source: template, styleRole: body, listType: unordered, content: [{kind: text, text: "平衡：不偏不倚地呈現公司的表現，既披露進展與成效，亦如實反映挑戰與不足，避免可能不當影響讀者判斷的選擇性披露。"}]}
+          - {id: about.principle_consistency, type: paragraph, blockType: fixed, source: template, styleRole: body, listType: unordered, content: [{kind: text, text: "一致性：採用一致的統計方法與披露範圍，以便有意義地比較不同期間的表現；如統計方法或關鍵績效指標有所變動，將在報告中說明變動及其影響。"}]}
+      - key: about_report.access
+        title: 報告取閱及意見反饋
+        headingLevel: 2
+        blocks:
+          - id: about.access.website
+            type: paragraph
+            blockType: slot
+            source: user_input
+            styleRole: body
+            appears_when:
+              all:
+                - {path: fields.report_publication_channel.value, op: ne, value: 其他方式刊發}
+                - {path: fields.report_publication_website_url.value, op: exists}
+            content:
+              - {kind: text, text: "本報告以繁體中文刊發；如另行刊發英文版本，兩者如有歧義，概以英文版為準。報告可於香港交易及結算所有限公司「披露易」網站及公司網站"}
+              - {kind: ref, ref: report_publication_website_url}
+              - {kind: text, text: "查閱及下載。"}
+          - id: about.access
+            type: paragraph
+            blockType: slot
+            source: user_input
+            styleRole: body
+            appears_when:
+              any:
+                - {path: fields.report_publication_channel.value, op: eq, value: 其他方式刊發}
+                - {path: fields.report_publication_website_url.value, op: not_exists}
+            content:
+              - {kind: text, text: "本報告以繁體中文刊發；如另行刊發英文版本，兩者如有歧義，概以英文版為準。"}
+          - id: about.contact
+            type: paragraph
+            blockType: slot
+            source: user_input
+            styleRole: body
+            appears_when: {all: [{path: appendixPackage.readerFeedbackContactInformation.email, op: exists}]}
+            content:
+              - {kind: text, text: "如需索取本報告，或對報告內容有任何查詢或建議，歡迎透過電郵"}
+              - {kind: ref, ref: appendixPackage.readerFeedbackContactInformation.email}
+              - {kind: text, text: "與我們聯絡。"}
+      - key: about_report.assurance
+        title: 鑑證
+        headingLevel: 2
+        blocks:
+          - id: about.assurance
+            type: paragraph
+            blockType: slot
+            source: user_input
+            styleRole: body
+            appears_when:
+              all:
+                - {path: appendixPackage.externalAssuranceReport.isIncluded, op: eq, value: true}
+                - {path: fields.assurance_provider_name.value, op: exists}
+                - {path: fields.assurance_standard.value, op: exists}
+            content:
+              - {kind: text, text: "本報告已委聘"}
+              - {kind: ref, ref: assurance_provider_name}
+              - {kind: text, text: "依據"}
+              - {kind: ref, ref: assurance_standard}
+              - {kind: text, text: "進行獨立鑑證，鑑證報告載於附錄。"}
+      # 批准說明為章末不編號段落：置於空標題分組節，編號推導對無標題節透明。
+      - key: about_report.approval
+        title: ""
+        headingLevel: 2
+        blocks:
+          - id: about.approval
+            type: paragraph
+            blockType: slot
+            source: user_input
+            styleRole: body
+            appears_when:
+              all:
+                - {path: fields.report_approval_year.value, op: exists}
+                - {path: fields.report_approval_month.value, op: exists}
+            content:
+              - {kind: text, text: "本報告已於"}
+              - {kind: ref, ref: report_approval_month}
+              - {kind: text, text: "經董事會審閱及批准。"}
+
+  # ============ 董事會聲明（守則B部第13段，強制） ============
+  - key: board_statement
+    title: 董事會聲明
+    headingLevel: 1
+    required: true
+    blocks:
+      - id: board.oversight
+        type: paragraph
+        blockType: constrained
+        source: ai
+        styleRole: body
+        generation:
+          task:
+            focus: "以董事會的名義說明董事會對環境、社會及管治事宜的監管：監管職責、審議安排及向董事會匯報的路徑。"
+            noFactGuidance: |-
+              用戶未提供董事會監管安排時，以審慎、概括的方式說明董事會對環境、社會及管治事宜負最終責任、定期審議相關事宜及風險，並由管理層向董事會匯報；不指名委員會、人數、審議頻次或具體會議。
+          inputs: {evidence: {kind: explicit, intakeItems: [board_statement.q_oversight]}}
+          targetChars: [150, 320]
+          simplifiedWritingGuidance:
+            - "以「董事會」為主語、第一人稱複數（我們）或第三人稱陳述皆可，全段語氣一致。"
+            - "只寫監管安排本身，不在此段展開個別層面的措施或績效。"
+      - id: board.management_approach
+        type: paragraph
+        blockType: constrained
+        source: ai
+        styleRole: body
+        generation:
+          task:
+            focus: "說明董事會的環境、社會及管治管理方針及策略，包括評估、優先排序及管理重要的環境、社會及管治相關事宜（包括對本公司業務的風險）的過程。"
+            noFactGuidance: |-
+              用戶未提供管理方針時，概括說明公司將環境、社會及管治因素納入業務策略與風險管理的考慮，並透過持份者參與及重要性評估識別及排序重要議題；不聲稱已建立特定委員會、專項制度或已完成的考核。
+          inputs: {evidence: {kind: explicit, intakeItems: [board_statement.q_management_approach]}}
+          targetChars: [180, 380]
+          simplifiedWritingGuidance:
+            - "重要性評估的具體步驟與結果由「可持續發展管治」一章承載，本段只述董事會層面的方針與過程，不重複議題清單。"
+      - id: board.progress_review
+        type: paragraph
+        blockType: constrained
+        source: ai
+        styleRole: body
+        generation:
+          task:
+            focus: "說明董事會如何按環境、社會及管治相關目標檢討進度，並解釋這些目標如何與本公司業務有關連。"
+            noFactGuidance: |-
+              用戶未提供目標檢討安排時，說明董事會定期檢視相關工作進展並按業務發展審視目標的合適性；不虛構具體目標數值、基準年或完成期限。
+          inputs: {evidence: {kind: explicit, intakeItems: [board_statement.q_progress_review]}}
+          targetChars: [120, 300]
+
+  # ============ 關於本公司 ============
+  - key: company_intro
+    title: 關於本公司
+    titleContent: [{kind: text, text: "關於"}, {kind: ref, ref: company_short_name, fallback: 本公司}]
+    headingLevel: 1
+    required: true
+    blocks:
+      - id: company_intro.body
+        type: paragraph
+        blockType: constrained
+        source: ai
+        styleRole: body
+        generation:
+          task: {focus: 依據用戶提供的公司簡介，整合形成完整、準確的公司介紹，作為報告「關於本公司」一章的正文。}
+          inputs: {evidence: {kind: explicit, intakeItems: [company_profile, company_certifications]}}
+          targetChars: [400, 1200]
+          simplifiedWritingGuidance:
+            - 本章的實質內容就是公司自身概況：公司背景、發展歷程、業務與願景在本章不屬於「背景鋪墊」，而是正文本體，應直接完整呈現。
+            - 用戶簡介中實際提供的事實類別須在正文中均有體現：發展歷程與關鍵節點、主要產品或服務、銷售網絡或市場覆蓋、策略願景與價值觀，以及用戶提供的其他重要事實（如獎項資質）；用戶未提供的類別不虛構、不補寫。
+            - 整合改寫而非壓縮摘要：可重組次序、去除口號式重複，但不得丟棄具體年份、產品名、地區、客戶領域等可核驗事實；篇幅隨用戶資料的豐富程度在區間內自適應。
+      - id: company_intro.layout_assets
+        type: image
+        blockType: slot
+        source: user_input
+        styleRole: figure_inline
+        image: {layoutAssetSlot: true}
+
+  # ============ 可持續發展管治 ============
+  - key: sustainability_mgmt
+    title: 可持續發展管治
+    headingLevel: 1
+    required: true
+    children:
+      - key: sm.gov_arch
+        title: 管治架構
+        headingLevel: 2
+        required: true
+        blocks:
+          - id: sm.gov_arch_overview
+            type: paragraph
+            blockType: constrained
+            source: ai
+            styleRole: body
+            generation:
+              task:
+                focus: "說明公司管理環境、社會及管治事宜所建立或適用的管治架構，按決策層、管理層、執行層說明各層級的職責分工與協同關係；董事會層面的監管聲明已由「董事會聲明」承載，本節不重複。"
+                noFactGuidance: |-
+                  用戶未提供管治架構資料時，按決策層、管理層、執行層三個層級說明通用職責分工，不指名具體委員會、部門、崗位名稱或人數：
+                  決策層負責監督環境、社會及管治相關風險與機遇的評估，審閱相關方針、策略及目標，並定期檢討進度；
+                  管理層負責統籌重要議題的管理、分配所需資源，並向決策層匯報；
+                  執行層負責落實相關措施、統計及分析資料、與持份者溝通，並協調編製本報告。
+                  不寫已設立專責委員會、已形成閉環、已開展定期審議或已完成考核等未經用戶確認的事實。
+              inputs: {evidence: {kind: explicit, intakeItems: [sustainability_governance_structure, sustainability_governance_duties]}}
+              targetChars: [280, 600]
+              simplifiedWritingGuidance:
+                - 只寫組織層級、職責邊界和協同方向；不把現有部門兼任擴寫成成熟的專責委員會、完整閉環或專項考核安排。
+          - id: sm.layout_assets
+            type: image
+            blockType: slot
+            source: user_input
+            styleRole: figure_inline
+            image: {layoutAssetSlot: true}
+
+      - key: sm.stakeholder
+        title: 持份者參與
+        headingLevel: 2
+        blocks:
+          - id: sm.stakeholder_intro
+            type: paragraph
+            blockType: fixed
+            source: template
+            styleRole: body
+            content: [{kind: text, text: "持份者參與有助於了解各方對環境、社會及管治事宜的關注，是識別重要議題及持續完善相關管理的基礎。公司透過多元渠道與主要持份者保持溝通，主要持份者、其關注議題及溝通方式概列如下。"}]
+          - id: sm.stakeholder_table
+            type: table
+            blockType: slot
+            source: user_input
+            styleRole: table_three_line
+            table:
+              caption: 持份者參與情況
+              firstColumnNarrow: true
+              rowSource: stakeholder_engagement
+              colDefs:
+                - {key: stk_party, header: 持份者, cellType: text}
+                - {key: stk_topics, header: 關注議題, cellType: text}
+                - {key: stk_methods, header: 溝通及參與方式, cellType: text}
+              children:
+                - headerRow: true
+                  children:
+                    - {type: th, value: 持份者}
+                    - {type: th, value: 關注議題}
+                    - {type: th, value: 溝通及參與方式}
+      - key: sm.materiality
+        title: 重要性評估
+        headingLevel: 2
+        blocks:
+          # —— 未評分分支（meta.materialityStrategy == complete_coverage）——
+          - id: sm.unscored_purpose
+            type: paragraph
+            blockType: fixed
+            source: template
+            styleRole: body
+            appears_when: {all: [{path: meta.materialityStrategy, op: eq, value: complete_coverage}]}
+            content: [{kind: text, text: "重要性評估是釐定環境、社會及管治匯報重點的基礎工作，有助公司聚焦對業務及持份者最為重要的事宜，並為管理方針及目標的訂立提供依據。"}]
+          - id: sm.unscored_identification
+            type: paragraph
+            blockType: fixed
+            source: template
+            styleRole: body
+            appears_when: {all: [{path: meta.materialityStrategy, op: eq, value: complete_coverage}]}
+            content:
+              - {kind: ref, ref: reporting_year}
+              - {kind: text, text: "年度，公司立足自身業務營運及價值鏈各環節，識別經營活動相關的環境、社會及管治影響；同時關注監管要求、行業趨勢及持份者的期望，研判各類外部因素對公司業務的潛在影響，並將主要持份者的關注納入評估框架。"}
+          - id: sm.unscored_screening
+            type: paragraph
+            blockType: fixed
+            source: template
+            styleRole: body
+            appears_when: {all: [{path: meta.materialityStrategy, op: eq, value: complete_coverage}]}
+            content: [{kind: text, text: "公司對照守則各層面的一般披露及關鍵績效指標，結合所屬行業特點，篩選對公司具實質影響的環境、社會及管治議題。"}]
+          - id: sm.unscored_coverage
+            type: paragraph
+            blockType: fixed
+            source: template
+            styleRole: body
+            appears_when: {all: [{path: meta.materialityStrategy, op: eq, value: complete_coverage}]}
+            content:
+              - {kind: text, text: "本年度報告合共披露 "}
+              - {kind: ref, ref: assessment.applicableTopicCount}
+              - {kind: text, text: " 項環境、社會及管治議題，完整涵蓋"}
+              - {kind: ref, ref: disclosureProfile.selectedStandardNames}
+              - {kind: text, text: "環境及社會兩個主要範疇的全部層面及氣候相關披露。"}
+          # —— 評分分支 ——
+          - id: sm.materiality_intro
+            type: paragraph
+            blockType: fixed
+            source: template
+            styleRole: body
+            appears_when: {all: [{path: meta.materialityStrategy, op: ne, value: complete_coverage}]}
+            content: [{kind: text, text: "重要性評估為本報告提供結構化參考，有助聚焦關鍵領域並組織披露重點。本報告按守則各層面及氣候相關披露的議題體系，對環境及社會相關議題進行分類呈現。"}]
+          - id: sm.topic_library
+            type: paragraph
+            blockType: fixed
+            source: template
+            styleRole: body
+            appears_when: {all: [{path: meta.materialityStrategy, op: ne, value: complete_coverage}]}
+            content:
+              - {kind: text, text: "公司結合所屬行業特點及守則的議題體系，形成本年度環境、社會及管治議題清單，作為重要性評估及章節披露的基礎。"}
+          - id: sm.process_step1
+            type: paragraph
+            blockType: fixed
+            source: template
+            styleRole: body
+            listType: ordered
+            appears_when: {all: [{path: meta.materialityStrategy, op: ne, value: complete_coverage}]}
+            content: [{kind: text, text: "了解業務背景：從業務營運及價值鏈各環節識別環境、社會及管治相關影響，關注監管要求、行業趨勢及持份者期望，梳理主要持份者及其關注事項。"}]
+          - id: sm.process_step2
+            type: paragraph
+            blockType: fixed
+            source: template
+            styleRole: body
+            listType: ordered
+            appears_when: {all: [{path: meta.materialityStrategy, op: ne, value: complete_coverage}]}
+            content: [{kind: text, text: "建立議題清單：對照守則各層面及氣候相關披露，結合行業特點及同業做法，形成涵蓋完整、結構清晰的議題清單。"}]
+          - id: sm.process_step3
+            appears_when: {all: [{path: meta.materialityStrategy, op: ne, value: complete_coverage}]}
+            type: paragraph
+            blockType: fixed
+            source: template
+            styleRole: body
+            listType: ordered
+            content: [{kind: text, text: "評估議題重要性：從對持份者的重要性（公司對環境、社會及持份者的影響）及對業務的重要性（對公司業務、收入或成本的影響，並綜合短、中、長期）兩個維度評估各議題。"}]
+          - id: sm.process_step4
+            appears_when: {all: [{path: meta.materialityStrategy, op: ne, value: complete_coverage}]}
+            type: paragraph
+            blockType: fixed
+            source: template
+            styleRole: body
+            listType: ordered
+            content: [{kind: text, text: "確認及呈現：訂立重要性閾值，繪製重要性矩陣，經管理層確認及董事會審閱後，於本報告披露評估結果。"}]
+          - id: sm.result_counts
+            type: paragraph
+            blockType: slot
+            source: assessment
+            styleRole: body
+            content:
+              - {kind: ref, ref: reporting_year}
+              - {kind: text, text: "年度重要性評估結果顯示，共有"}
+              - {kind: ref, ref: assessment.counts.dual}
+              - {kind: text, text: "項議題屬高度重要，"}
+              - {kind: ref, ref: assessment.counts.financial_only}
+              - {kind: text, text: "項屬對業務重要，"}
+              - {kind: ref, ref: assessment.counts.impact_only}
+              - {kind: text, text: "項屬對持份者重要，"}
+              - {kind: ref, ref: assessment.counts.non_material}
+              - {kind: text, text: "項屬一般關注議題。"}
+          - id: sm.matrix_image
+            type: image
+            blockType: slot
+            source: assessment
+            styleRole: figure_inline
+            image:
+              caption: 重要性議題矩陣
+              placeholder: 由評估結果生成的重要性矩陣圖
+          - id: sm.topic_table
+            type: table
+            blockType: slot
+            source: assessment
+            styleRole: table_three_line
+            table:
+              caption: 重要性評估結果
+              firstColumnNarrow: true
+              rowSource: assessment_topics
+              colDefs:
+                - {key: topic_dimension, header: 主要範疇, cellType: text}
+                - {key: topic_name, header: 議題, cellType: text}
+                - {key: topic_materiality, header: 重要性類別, cellType: single_select, options: [高度重要, 對持份者重要, 對業務重要, 一般關注]}
+              children:
+                - headerRow: true
+                  children:
+                    - {type: th, value: 主要範疇}
+                    - {type: th, value: 議題}
+                    - {type: th, value: 重要性類別}
+          - id: sm.iro_intro
+            type: paragraph
+            blockType: fixed
+            source: template
+            styleRole: body
+            appears_when:
+              any:
+                - {path: assessment.counts.dual, op: gt, value: 0}
+                - {path: assessment.counts.financial_only, op: gt, value: 0}
+            content:
+              - {kind: text, text: "針對高度重要及對業務重要的議題，公司基於評估結果梳理"}
+              - {kind: ref, ref: company_short_name, fallback: 本公司}
+              - {kind: text, text: "相關議題的影響、風險與機遇，並匯總如下。"}
+          - id: sm.iro_table
+            type: table
+            blockType: constrained
+            source: ai
+            styleRole: table_three_line
+            appears_when:
+              any:
+                - {path: assessment.counts.dual, op: gt, value: 0}
+                - {path: assessment.counts.financial_only, op: gt, value: 0}
+            generation:
+              task:
+                focus: "圍繞已納入高度重要或對業務重要範圍的議題，分別給出影響披露與風險機遇披露；議題名稱和適用範圍由評估結果確定，模型只補全其餘披露單元格。"
+                noFactGuidance: "缺少公司具體影響、風險與機遇資料時，僅描述與所屬行業和業務類型相關的潛在影響、風險或機遇；不得聲稱公司已發生、已識別或已建立任何具體制度、項目、會議、考核或成果，也不得將分類標為「實際正面影響」。"
+              inputs:
+                evidence: {kind: explicit}
+              producesConclusion: topic_iro
+              rowMode: expanded_rows
+              rowExpansion:
+                sharedColumnKeys: [iro_topic, iro_value_chain, iro_time_horizon]
+                units:
+                  - key: impact
+                    label: 影響描述
+                    columnKeys: [iro_desc, iro_class]
+                    optionsNarrowing:
+                      iro_class: [實際正面影響, 潛在正面影響, 潛在負面影響]
+                    genHintOverride:
+                      iro_desc: "只寫該議題對外部環境與社會造成的影響，不寫對公司自身的風險或機遇；一段不超過 120 字，不重複議題名稱。"
+                  - key: risk_opportunity
+                    label: 風險與／或機遇描述
+                    columnKeys: [iro_desc, iro_class]
+                    optionsNarrowing:
+                      iro_class: [機遇, 風險]
+                    genHintOverride:
+                      iro_desc: "只寫該議題對公司自身構成的風險或帶來的機遇，不重複影響描述子行的表述；一段不超過 120 字，不重複議題名稱。"
+            table:
+              caption: 高度重要及對業務重要議題的影響、風險與機遇
+              firstColumnNarrow: true
+              columnWidthWeights: {iro_topic: 12, iro_desc: 45, iro_class: 15, iro_value_chain: 18, iro_time_horizon: 10}
+              rowSource: assessment_iro
+              colDefs:
+                - {key: iro_topic, header: 議題, cellType: text}
+                - {key: iro_desc, header: 影響、風險與機遇描述, cellType: ai_text}
+                - {key: iro_class, header: 分類, cellType: multi_select, options: [實際正面影響, 潛在正面影響, 潛在負面影響, 機遇, 風險]}
+                - {key: iro_value_chain, header: 影響範圍, cellType: multi_select, options: [上游價值鏈, 公司營運, 下游價值鏈]}
+                - {key: iro_time_horizon, header: 影響期間, cellType: multi_select, options: [短期, 中期, 長期]}
+              children:
+                - headerRow: true
+                  children:
+                    - {type: th, value: 議題}
+                    - {type: th, value: 影響、風險與機遇描述}
+                    - {type: th, value: 分類}
+                    - {type: th, value: 影響範圍}
+                    - {type: th, value: 影響期間}
+  # ============ 認證與資質（無證書時整章不出現） ============
+  - key: sustainable_achievements
+    title: 認證與資質
+    headingLevel: 1
+    required: false
+    children:
+      - key: achievements_certificates
+        title: 專業認證與資質
+        headingLevel: 2
+        blocks:
+          - id: achievements.certificate_table
+            type: table
+            blockType: slot
+            source: user_input
+            styleRole: table_three_line
+            table:
+              caption: 公司專業認證與資質
+              firstColumnNarrow: false
+              rowSource: certificate_facts
+              colDefs:
+                - {key: cert_name, header: 認證名稱, cellType: text}
+                - {key: cert_issuer, header: 發證機構, cellType: text}
+                - {key: cert_scope, header: 認證範圍, cellType: text}
+              children:
+                - headerRow: true
+                  children:
+                    - {type: th, value: 認證名稱}
+                    - {type: th, value: 發證機構}
+                    - {type: th, value: 認證範圍}
+          - id: achievements.layout_assets
+            type: image
+            blockType: slot
+            source: user_input
+            styleRole: figure_inline
+            image:
+              layoutAssetSlot: true
+  # ============ 附錄 ============
+  - key: report_appendix
+    title: 附錄
+    headingLevel: 1
+    required: true
+    children:
+      - key: report_appendix.esg_key_performance_metrics
+        title: 關鍵績效指標表
+        headingLevel: 2
+        blocks:
+          - id: appendix.esg_key_performance_metrics
+            type: table
+            blockType: fixed
+            source: derived
+            styleRole: table_three_line
+            table:
+              caption: 環境、社會及管治關鍵績效指標
+              firstColumnNarrow: false
+              colDefs:
+                - {key: category, header: 層面, cellType: text}
+                - {key: kpi_code, header: 指標編號, cellType: text}
+                - {key: metric, header: 指標, cellType: text}
+                - {key: unit, header: 單位, cellType: text}
+                - {key: value, header: 匯報年度數值, cellType: text}
+                - {key: remark, header: 口徑備註, cellType: text}
+              children:
+                - type: tr
+                  headerRow: true
+                  children:
+                    - {type: th, value: 層面}
+                    - {type: th, value: 指標編號}
+                    - {type: th, value: 指標}
+                    - {type: th, value: 單位}
+                    - {type: th, value: 匯報年度數值}
+                    - {type: th, value: 口徑備註}
+      - key: report_appendix.sustainability_disclosure_standards_index
+        title: 守則內容索引
+        headingLevel: 2
+        blocks:
+          - id: appendix.standards_index.intro
+            type: paragraph
+            blockType: fixed
+            source: template
+            styleRole: body
+            content:
+              - {kind: ref, ref: disclosureProfile.selectedStandardNames}
+          - id: appendix.standards_index.table
+            type: table
+            blockType: fixed
+            source: derived
+            styleRole: table_three_line
+            table:
+              caption: 《環境、社會及管治報告守則》內容索引
+              colDefs:
+                - {key: disclosure_requirement, header: 層面／規定, cellType: text}
+                - {key: clause_reference, header: 條文, cellType: text}
+                - {key: report_section, header: 對應的本報告章節, cellType: text}
+              children:
+                - type: tr
+                  headerRow: true
+                  children:
+                    - {type: th, value: 層面／規定}
+                    - {type: th, value: 條文}
+                    - {type: th, value: 對應的本報告章節}
+      - key: report_appendix.external_assurance_report
+        title: 獨立鑑證報告
+        headingLevel: 2
+        appears_when: {all: [{path: appendixPackage.externalAssuranceReport.isIncluded, op: eq, value: true}]}
+        blocks:
+          - id: appendix.external_assurance_report.placeholder
+            type: paragraph
+            blockType: slot
+            source: user_input
+            styleRole: body
+            appears_when: {all: [{path: appendixPackage.externalAssuranceReport.fileLabel, op: exists}]}
+            content:
+              - {kind: text, text: "獨立鑑證報告附件說明："}
+              - {kind: ref, ref: appendixPackage.externalAssuranceReport.fileLabel}
+              - {kind: text, text: "。"}
+      - key: report_appendix.reader_feedback_contact_information
+        title: 讀者意見
+        headingLevel: 2
+        appears_when:
+          any:
+            - {path: appendixPackage.readerFeedbackContactInformation.address, op: exists}
+            - {path: appendixPackage.readerFeedbackContactInformation.email, op: exists}
+            - {path: appendixPackage.readerFeedbackContactInformation.phone, op: exists}
+        blocks:
+          - id: appendix.reader_feedback.opening
+            type: paragraph
+            blockType: fixed
+            source: template
+            styleRole: body
+            content:
+              - {kind: text, text: "感謝閣下閱讀"}
+              - {kind: ref, ref: company_short_name, fallback: 本公司}
+              - {kind: text, text: "環境、社會及管治報告。我們歡迎閣下就本報告內容提出意見及建議。"}
+          - id: appendix.reader_feedback.company_name
+            type: paragraph
+            blockType: slot
+            source: user_input
+            styleRole: body
+            appears_when: {all: [{path: fields.company_registered_name.value, op: exists}]}
+            content:
+              - {kind: ref, ref: company_registered_name}
+          - id: appendix.reader_feedback.address
+            type: paragraph
+            blockType: slot
+            source: user_input
+            styleRole: body
+            appears_when: {all: [{path: appendixPackage.readerFeedbackContactInformation.address, op: exists}]}
+            content:
+              - {kind: text, text: "地址："}
+              - {kind: ref, ref: appendixPackage.readerFeedbackContactInformation.address}
+          - id: appendix.reader_feedback.email
+            type: paragraph
+            blockType: slot
+            source: user_input
+            styleRole: body
+            appears_when: {all: [{path: appendixPackage.readerFeedbackContactInformation.email, op: exists}]}
+            content:
+              - {kind: text, text: "電郵："}
+              - {kind: ref, ref: appendixPackage.readerFeedbackContactInformation.email}
+          - id: appendix.reader_feedback.phone
+            type: paragraph
+            blockType: slot
+            source: user_input
+            styleRole: body
+            appears_when: {all: [{path: appendixPackage.readerFeedbackContactInformation.phone, op: exists}]}
+            content:
+              - {kind: text, text: "電話："}
+              - {kind: ref, ref: appendixPackage.readerFeedbackContactInformation.phone}

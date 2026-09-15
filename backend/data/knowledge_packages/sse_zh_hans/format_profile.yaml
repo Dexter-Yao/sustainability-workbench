@@ -1,0 +1,274 @@
+# ABOUTME: 中文 Word 报告统一格式参数 SSOT——renderer 消费的唯一机器可读真相源，规范解释同在本文件。
+# ABOUTME: 数值依据 GB/T 1.1-2020（标准编写规则）与 GB/T 7713.1-2025（学位论文编写规则），非任意取值。
+#
+# 国标依据（数值不是拍脑袋定的，改动前先确认新值仍符合下列规则）：
+# - GB/T 1.1-2020：章节编号体系、条文脚注的上标与分隔线形态（§10.4.4）。
+# - GB/T 7713.1-2025：图表题注位置（图下表上）、页面版式与参考文献著录。
+#   注意该标准已代替 GB/T 7713.1-2006，勿回引旧号。
+# - 图表编号采用全文连续编号，不用分章连续编号——后者在本产品的章节动态增删下不稳定。
+profile_id: sse_zh_hans
+profile_version: 1
+language: zh-Hans
+scope: 全体中文 Word 报告（full_report）
+
+theme:
+  primary: "1F4E79"          # 单一主题色：三线表顶底线、表头字色、图表主色
+  note_red: "C00000"         # 备注红字（内部校准语义）
+  caption_gray: "404040"     # 题注、表注、资料来源注
+  cover_gray: "595959"       # 封面辅助信息与页脚
+  placeholder_gray: "999999" # 图片占位文字
+
+page:
+  size: A4
+  # 版心参数由模板母版 sectPr 承载；此处为当前发布事实的规范记录，一致性测试守护。
+  body_margins_cm: { top: 2.0, bottom: 2.0, left: 2.5, right: 2.5 }
+  cover_margins_cm: { top: 2.0, bottom: 2.0, left: 3.0, right: 3.0 }
+
+numbering:
+  # 章节编号：渲染期由 contract/section_number.py 推导，不进数据。
+  section_scheme: chapter_cn           # 第N章 / 一、 / （一） / 1.
+  unnumbered_chapter_keys: [about_report, company_intro, report_appendix]
+  # 图表编号：全文连续（GB/T 1.1-2020、GB/T 7713 系列），渲染期确定性字面量输出。
+  figure_numbering: sequential_whole_document
+  appendix_numbering: appendix_letter  # 附录子树编 图A.1 / 表A.1
+  number_caption_separator: "　"       # 编号后空一汉字接题
+  count_only_rendered: true            # 受控省略与渲染失败的图表不占号
+
+captions:
+  figure_position: below               # 图题在图下方（国标铁律）
+  table_position: above                # 表题在表上方（国标铁律）
+  font_size_pt: 9
+  color: caption_gray
+  no_trailing_period: true             # 短语式题注末尾不用句号（GB/T 15834 附录 A.1）
+  source_note_font_size_pt: 9          # 图表"资料来源：/注："
+  table_note_font_size_pt: 8           # 表格 disclaimer "注："
+  table_note_italic: true
+
+footnotes:
+  # 样式按「名称」解析 styleId：normalize_template 会改写样式，Word 也会重排 id，硬编码必漂移。
+  text_style_name: footnote text
+  reference_style_name: footnote reference
+  font_size_pt: 9
+
+body:
+  east_asia_font: 宋体
+  font_size_pt: 11                     # Normal 样式（模板母版承载）
+  line_spacing_multiple: 1.5           # normalize_template 归正后的正文行距
+  space_after_pt: 6                    # normalize_template 归正后的正文段后距
+  first_line_indent_chars: 2           # firstLineChars=200
+  first_line_indent_twips: 480
+
+headings:
+  east_asia_font: 黑体                  # 标题黑体（格式标准 §2）
+# Fixed words printed into the deliverable; the renderer owns layout, this profile owns wording.
+labels:
+  toc_title: 目录
+  toc_placeholder: 目录条目在导出定稿时生成
+  page_number_prefix: "第 "
+  page_number_suffix: " 页"
+  table_note_prefix: "注："
+  figure_label: 图
+  table_label: 表
+  appendix_number_prefix: "A."         # 附录子树编 图A.1 / 表A.1
+  reporting_period_template: "{year}年度"
+  document_title_template: "{year}年度{title}"
+  generated_at_template: "生成于 {timestamp}"
+  image_placeholder_template: "［图片占位：{text}］"
+  derived_figure_failed: 指标摘要图生成失败
+  default_table_unit_text: 表格
+  default_image_unit_text: 图表
+  metric_year_template: "{year}年"
+  metric_year_fallback: 报告年度
+  metric_table_headers: { metric: 指标, value: 数值, unit: 单位 }
+  delivery_filename_variants: { word: 正式稿, review: 审阅稿 }
+
+tables:
+  cell_font_size_pt: 8.5
+  header_font_size_pt: 8.5
+  header_bold: true
+  header_color: primary
+  cell_east_asia_font: 宋体
+  cell_line_spacing: 1.15
+  cell_space_before_pt: 0
+  cell_space_after_pt: 0
+  cell_margins_dxa: { top: 80, start: 90, bottom: 80, end: 90 }
+  three_line:
+    outer_size_pt: 1.5                 # w:sz=12（磅×8）
+    outer_color: primary
+    inner_h_size_pt: 0.5               # w:sz=4
+    inner_h_color: "BFBFBF"
+    vertical_edges: nil
+  first_column_narrow_ratio: 0.13
+  repeat_header_row: true              # tblHeader 跨页重复表头
+  keep_row_together: true              # cantSplit 行不切断
+  fixed_layout: true
+  caption_space_pt: 6                  # 表题与表格、图题与图片的间距
+
+figures:
+  placeholder_color: placeholder_gray
+  widths_cm:
+    evidence_default: 16.0             # 上游按宽高比给出时的兜底宽度
+    derived_metric_summary: 16.0
+    materiality_matrix: 13.0
+  # 素材图片宽高比宽度规则（上游解析器消费）：≥1.4→16；≥0.8→11；否则 min(11, 13×宽高比)。
+  aspect_ratio_rules:
+    wide_threshold: 1.4
+    mid_threshold: 0.8
+    wide_cm: 16.0
+    mid_cm: 11.0
+    narrow_scale_cm: 13.0
+    narrow_cap_cm: 11.0
+lists:
+  bullet_char: "•"
+  ordered_level_text: "%1."
+  indent_left_dxa: 560
+  hanging_dxa: 280
+  supported_levels: 1                  # 当前仅单级列项
+
+footer:
+  east_asia_font: 宋体
+  color: cover_gray
+  standard_font_size_pt: 8             # 正式稿居中"第 N 页"
+  # 7pt 使整行说明在 16cm 正文宽内单行放下；7.5 会折行且把时间挤到第二行。
+  review_font_size_pt: 7
+  # 审阅稿是流转件，页脚承载署名而非时刻取证；日期足以分辨版本，时分是机器视角。
+  timestamp_format: "%Y年%m月%d日"
+  timezone: Asia/Shanghai
+  # 页脚是署名：署编制方而非产品名，用通用称谓。称谓统一用「用户」——
+  # 不采用「贵司」这类 To B 敬语，该口径与批注、说明页一致。provider_name 同时写入 Word 元数据的
+  # AIGC 隐式标识（《标识办法》第五条的服务提供者要素）。
+  provider_name: "Sustainability Workbench"
+  review_prefix_standard: "本报告由开源工具 Sustainability Workbench 根据用户提供的资料编制"
+  # 审阅稿会流转到上传者之外的读者，可留联系方式供其找到编制方；为空则不显示该段。
+  review_contact: ""
+  repository_url: "github.com/Dexter-Yao/sustainability-workbench"
+  # 审阅稿：封面、资料处理说明与目录同样承载制作说明（出处声明应在封面即可见），
+  # 但不显示页码；正式稿这些节仍完全无页脚。
+  cover_and_toc_footer: attribution_only
+
+cover_full_report:
+  # 字标宽高比约 6.33:1，比旧的叠石锁定扁得多；3.4cm 宽只剩 0.54cm 高，封面上会失重。
+  logo_width_cm: 5.0
+  logo_space_before_pt: 18
+  logo_space_after_pt: 64
+  standard_spacer_before_pt: 130
+  company_space_before_review_pt: 30
+  company_space_before_standard_pt: 0
+  company_space_after_pt: 22
+  company_font_size_pt: 22
+  title_text: 可持续发展报告
+  title_font_size_pt: 28
+  title_space_after_pt: 12
+  period_font_size_pt: 13
+  period_space_after_pt: 0
+  # 《人工智能生成合成内容标识办法》（2025-09-01 施行）第四条要求文本类内容在起始位置添加
+  # 显著提示。封面底部是全篇起始位置，且不随页重复——页脚每页复述对对外交付物的观感
+  # 代价过大。正式稿与审阅稿一律承载。
+  ai_disclosure_text: 本报告含人工智能生成合成内容
+  ai_disclosure_font_size_pt: 10
+  ai_disclosure_space_before_pt: 18
+
+
+# 审阅稿前置说明页（资料处理说明）。位于目录之后、正文第一章之前，标题不进多级编号，
+# 因此不占章号、不进目录——正式稿与审阅稿的章号与目录逐条一致。
+material_processing_notice:
+  # 说明页是条目清单，不是连续正文：段内行距必须明显小于条目间距，
+  # 否则一条事项的续行与下一条之间的段间距等宽，会被误读成独立条目。
+  line_spacing_multiple: 1.0
+  heading_font_size_pt: 18
+  heading_space_after_pt: 10
+  lead_font_size_pt: 10.5
+  lead_space_after_pt: 16
+  file_name_font_size_pt: 12
+  file_name_space_before_pt: 14
+  file_name_space_after_pt: 6
+  item_font_size_pt: 10.5
+  item_space_after_pt: 4
+  next_action_font_size_pt: 10
+  next_action_space_after_pt: 10
+  next_action_label: 提示
+  next_action_indent_chars: 2
+
+toc:
+  max_heading_level: 2                 # 目录仅列一级章与二级节
+  field_instruction: ' TOC \o "1-2" \h \z \u '
+  page_numbers: frozen_by_layout_engine  # LibreOffice PDF 回写，不依赖打开刷新
+
+# 审阅版交付文案：封面批注、逐块批注、资料处理说明页与准则对照说明页的全部用户可见句式。
+# Wording only; structure and the facts behind each sentence stay in report_review_packages.py.
+delivery_texts:
+  overview:
+    no_materials: |-
+      本版本未使用上传资料；正文依据用户的基础信息、填写内容与行业通用披露语境撰写，系统撰写的各段与绘制的各图均以批注说明依据。
+    materials_adopted: 本版本使用了用户提供的资料；系统撰写的各段与绘制的各图均以批注说明依据。
+    adopted_list_template: 已采用资料：{names}。
+    adopted_name_separator: 、
+    materials_read_not_adopted: |-
+      本版本已读取用户提供的资料，但未作为企业事实采用；正文依据用户的基础信息、填写内容与行业通用披露语境撰写。
+    file_group_template: 《{names}》：{explanation}
+    file_name_separator: 》《
+    not_adopted:
+      not_relevant: 内容与本报告的企业事实呈现无关
+      attention_items: 资料存在须留意事项（见资料处理说明），未作为企业事实采用
+      no_supporting_content: 经核对未找到可直接支持正文表述的内容，未作为企业事实采用
+  unit_labels:
+    paragraph: 本段
+    list: 本条
+    table: 本表
+    other: 本内容
+  explanations:
+    layout_image: 本图为用户上传的素材图片，系统按识别结果放置于本节，图片内容未作改动。
+    certificate_table: |-
+      本表由系统从用户上传的证书图片识别得出，同一张证书只列一行；认证名称、发证机构与认证范围如与证书原件有出入，可在资料处理页更正后重新生成。
+    derived_metric_figure: 本图由系统根据用户填写的以下定量指标绘制，数值与填写值一致：
+    assessment_matrix: |-
+      本图由系统根据用户完成的议题重要性评估结果绘制，各议题的位置对应其财务重要性与影响重要性评估得分。
+    from_materials: '{label}依据用户提供的以下资料撰写，内容限于资料实际反映的范围：'
+    from_materials_and_metrics: '{label}依据用户提供的以下资料，并结合用户填写的定量指标撰写：'
+    needs_attention: 相关资料中的信息存在不一致或无法核实之处，{label}未将其作为企业事实采用，按审慎表述撰写。
+    from_metrics: '{label}依据用户填写的定量指标与填写内容撰写。'
+    without_materials: '{label}未引用用户上传的资料，依据用户的基础信息、填写内容与行业通用披露语境撰写。'
+  reading_notes:
+    needs_attention: 阅读提示：本版未将存在关键不确定性或相互不一致的信息作为企业事实采用。
+    attention_items_present: 阅读提示：本版仅采用了可稳定支持报告表述的资料内容。
+  comment_lines:
+    source_item: '- 《{name}》'
+    image_item: '- 上传文件《{name}》'
+    image_user_description: （用户说明：{description}）
+    image_category_placement: '  系统识别为{category}，放置于「{scope}」。'
+    image_placement: '  系统按识别结果放置于「{scope}」。'
+    metrics_heading: 本段引用的定量指标（用户填写值）：
+    metric_item: '- {name}：{value}{unit}'
+    cover_comment: 本次报告说明：{overview}
+  layout_image_categories:
+    certificate_or_award: 证书或奖项
+    photo: 活动、现场或产品照片
+    document_scan: 文档扫描或截图
+  material_notice:
+    heading: 资料处理说明
+    lead: 本页说明系统对用户所提供资料的处理情况，供定稿前参考。本页不属于报告正文，正式报告不包含本页。
+    files_heading: 资料核对事项
+    files_lead: 以下事项来自对用户所提供资料的自动核对，按来源文件列出，供定稿前留意。
+  standards_notice:
+    heading: 准则对照说明
+    lead: |-
+      本页说明本报告对照上海证券交易所《上市公司自律监管指南第4号——可持续发展报告编制》的披露覆盖情况，供定稿前参考，不构成鉴证意见或法律意见。本页不属于报告正文，正式报告不包含本页。
+    attention_heading: 建议留意事项
+    attention_lead: 以下事项在定稿前值得关注，可通过补充资料或补充说明处理。
+    exclusion_heading: 准则允许的省略
+    exclusion_lead: 以下内容依据准则规定未纳入本报告，列出供了解，无须处理。
+    omission_finding_template: 「{title}」因未获得对应资料，本报告未作披露。
+    omission_finding_untitled: 该议题存在应披露事项因未获得对应资料而未作披露。
+    omission_next_action: 补充相应资料后重新生成，或在定稿时补充一句未披露原因的说明。
+    report_scope_label: 报告整体
+    obligation_unmet_template: 「{title}」尚未满足。
+    obligation_next_action: 请在定稿前补充相应内容。
+    pending_topic_message: 该议题的准则披露要求尚在梳理中，本报告按现有编制规范生成内容，未做逐条准则对照。
+    summary_template: 本报告已覆盖 {count} 项准则应披露要求。
+    exclusion_rationales:
+      scenario_analysis_encouraged: 气候情景分析属准则鼓励披露事项，本报告未开展情景分析，未作相关披露。
+      transition_plan_out_of_scope: 气候转型计划需以专项减排路径与资源安排为基础，超出本报告的编制范围，未作披露。
+      quantitative_capability: 相关财务影响的定量信息缺少可核算基础，本报告未作定量披露；准则允许以定性说明替代。
+      not_in_simplified_scope: 该披露事项超出本报告的编制范围，未作单独披露。
+      integrated_governance: 该事项已并入报告的整体治理与内部制度章节披露；准则允许治理要素整合披露。
+      integrated_adjacent_topic: 该事项已在相邻议题中合并披露；准则允许相关内容合并撰写。

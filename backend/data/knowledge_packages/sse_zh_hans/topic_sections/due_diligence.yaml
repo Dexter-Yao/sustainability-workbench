@@ -1,0 +1,121 @@
+# ABOUTME: 尽职调查议题章节骨架，H2 标题以附录索引表“对应的本报告章节”为准。
+# ABOUTME: 本文件承载尽职调查轻量版生成块，本议题当前未映射 ESG 定量数据表指标。
+section:
+  key: due_diligence
+  title: 尽职调查
+  headingLevel: 2
+  reportSectionId: due_diligence
+  conciseDisclosure:
+    id: due_diligence.concise_summary
+    type: paragraph
+    blockType: generative
+    source: ai
+    styleRole: body
+    generation:
+      task:
+        focus: "根据本议题当前可见证据形成一段连贯摘要，覆盖相关管理关注、方向与实践，不使用四要素小标题。"
+      inputs: {evidence: {kind: report_section}}
+      targetChars: [300, 600]
+  children:
+  - key: due_diligence.gov
+    title: 治理
+    pillar: governance
+    headingLevel: 3
+    blocks:
+    - id: due_diligence.gov_management_framework
+      type: paragraph
+      blockType: generative
+      source: ai
+      styleRole: body
+      generation:
+        task:
+          focus: "说明尽职调查的责任安排、协作关系和流程机制。"
+        templateResidueBans:
+        - '资料:'
+        - 资料：
+        - 若1、2都没有资料
+        - 若 1、2 都没有资料
+        - 生成默认内容
+        - 公司通过利益相关方沟通、影响评估等多种方式
+        - 采取包括但不限于风险规避、风险控制、风险 转移等应对措施
+        - 采取包括但不限于风险规避、风险控制、风险转移等应对措施
+        - 公司针对尽职调查管理形成包含覆盖广度、流程执行、风险管控、体系优化等维度的指标体系
+        - 常态化数据统计、动态监测与持续改善
+        inputs:
+          evidence:
+            kind: explicit
+            intakeItems:
+              - due_diligence.q_governance_roles
+              - due_diligence.q_governance_policies
+              - due_diligence.q_governance_certifications
+        targetChars:
+        - 180
+        - 360
+  - key: due_diligence.strategy
+    title: 战略
+    pillar: strategy
+    headingLevel: 3
+    blocks:
+    - id: due_diligence.strategy_due_diligence_direction
+      type: paragraph
+      blockType: generative
+      source: ai
+      styleRole: body
+      generation:
+        task:
+          focus: "说明公司面向长期经营和风险防范的尽职调查基本原则与关注方向。"
+        templateResidueBans:
+        - '资料:'
+        - 资料：
+        - 若1、2都没有资料
+        - 若 1、2 都没有资料
+        - 生成默认内容
+        - 公司通过利益相关方沟通、影响评估等多种方式
+        - 采取包括但不限于风险规避、风险控制、风险 转移等应对措施
+        - 采取包括但不限于风险规避、风险控制、风险转移等应对措施
+        - 公司针对尽职调查管理形成包含覆盖广度、流程执行、风险管控、体系优化等维度的指标体系
+        - 常态化数据统计、动态监测与持续改善
+        inputs:
+          evidence:
+            kind: explicit
+            intakeItems:
+              - due_diligence.q_strategy_content
+        targetChars:
+        - 180
+        - 360
+  - key: due_diligence.iro
+    title: 影响、风险与机遇管理
+    pillar: iro_management
+    headingLevel: 3
+    blocks:
+    - id: due_diligence.iro_due_diligence_practices
+      type: paragraph
+      blockType: generative
+      source: ai
+      styleRole: body
+      generation:
+        task:
+          focus: "说明企业在运营和业务合作中开展尽职调查的相关实践。"
+        templateResidueBans:
+        - '资料:'
+        - 资料：
+        - 若1、2都没有资料
+        - 若 1、2 都没有资料
+        - 生成默认内容
+        - 公司通过利益相关方沟通、影响评估等多种方式
+        - 采取包括但不限于风险规避、风险控制、风险 转移等应对措施
+        - 采取包括但不限于风险规避、风险控制、风险转移等应对措施
+        - 公司针对尽职调查管理形成包含覆盖广度、流程执行、风险管控、体系优化等维度的指标体系
+        - 常态化数据统计、动态监测与持续改善
+        inputs:
+          evidence:
+            kind: explicit
+            intakeItems:
+              - due_diligence.q_internal_external_due_diligence
+        targetChars:
+        - 200
+        - 420
+        simplifiedWritingGuidance:
+          - "尽职调查对象、范围、发现问题和整改跟踪来自本块用户事实。"
+metricDisclosure:
+  catalogMetricKeys: []

@@ -1,0 +1,21 @@
+# ABOUTME(en): Topic-specific intake questions of「健康與安全」; the four fixed pillar questions come from topic_intake_common.yaml.
+# ABOUTME(en): Quantitative KPIs are collected through the metric catalog, not here.
+contentScopeId: health_and_safety
+items:
+- key: health_safety.q_ohs_measures
+  prompt: 貴公司採納了哪些職業健康與安全措施？
+  kind: text
+  collectionPriority: recommended
+  hint: 可說明風險評估、安全培訓、防護裝備、設備檢查、應急演練及監察方式；沒有可留空。
+  maxChars: 5000
+- key: health_safety.q_ohs_incidents
+  prompt: 匯報期間貴公司是否發生因工亡故或須呈報的工傷事故？
+  kind: single_select
+  collectionPriority: recommended
+  options:
+  - 沒有因工亡故及須呈報工傷
+  - 有工傷事故，無因工亡故
+  - 有因工亡故
+  - 不確定
+  hint: 如有事故，請在補充說明中簡述事故及跟進措施；數字由指標數據表承載。
+  maxChars: 5000

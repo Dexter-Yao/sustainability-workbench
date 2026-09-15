@@ -1,0 +1,60 @@
+# ABOUTME(en): Appendix C2 disclosure requirements of "Development and Training" (General Disclosure and KPIs), grouped by pillar,
+# ABOUTME(en): for the coverage audit and for prompt assembly by key whitelist (injection is switch-gated, off by default) and for the coverage audit. Wording follows the English Code text.
+topicStandardDisclosureRequirementGroups:
+- topicSectionKey: development_and_training.gov
+  pillar: governance
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: development_and_training.gov.general_disclosure_policies
+    standardDisclosureRequirementTitle: Development and training policies
+    excerptFrom: HKEX·Appendix C2·General Disclosure B3
+    standardDisclosureRequirementText: |-
+      Disclose the policies on improving employees' knowledge and skills for discharging duties at work.
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: General Disclosure B3
+- topicSectionKey: development_and_training.strategy
+  pillar: strategy
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: development_and_training.strategy.training_direction
+    standardDisclosureRequirementTitle: Talent development approach and targets
+    excerptFrom: HKEX·Appendix C2·General Disclosure B3
+    standardDisclosureRequirementText: Describe the company's approach and targets on employee development.
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: General Disclosure B3
+- topicSectionKey: development_and_training.iro
+  pillar: iro_management
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: development_and_training.iro.training_activities
+    standardDisclosureRequirementTitle: Description of training activities
+    excerptFrom: HKEX·Appendix C2·General Disclosure B3
+    standardDisclosureRequirementText: |-
+      Describe the training activities carried out during the reporting period (training refers to vocational training and may include internal and external courses paid by the employer).
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: General Disclosure B3
+- topicSectionKey: development_and_training.metrics
+  pillar: metrics_targets
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: development_and_training.metrics.trained_percentage_data
+    standardDisclosureRequirementTitle: Percentage of employees trained by gender and employee category
+    excerptFrom: HKEX·Appendix C2·KPI B3.1
+    standardDisclosureRequirementText: |-
+      Disclose the percentage of employees trained by gender and employee category (e.g. senior management, middle management).
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: KPI B3.1
+  - standardDisclosureRequirementKey: development_and_training.metrics.training_hours_data
+    standardDisclosureRequirementTitle: |-
+      Average training hours completed per employee by gender and employee category
+    excerptFrom: HKEX·Appendix C2·KPI B3.2
+    standardDisclosureRequirementText: |-
+      Disclose the average training hours completed per employee by gender and employee category.
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: KPI B3.2

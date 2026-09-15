@@ -1,0 +1,36 @@
+# ABOUTME: 废弃物管理议题轻量版内容清单，聚焦固废要求、减量措施和第三方处理。
+# ABOUTME: 治理、战略和指标目标固定题由 topic_intake_common.yaml 展开；结构化数值由 ESG 定量数据表维护。
+contentScopeId: waste_management
+items:
+- key: waste_management.q_solid_waste_requirements
+  prompt: 贵公司是否有固体废弃物管理的具体要求？
+  kind: single_select
+  collectionPriority: recommended
+  options:
+  - 是
+  - 否
+  - 不确定
+  hint: 如选择是，请在补充说明中简述固体废弃物管理具体要求，可包括分类、收集、暂存、转移、处置、危险废弃物管理或台账要求。
+  maxChars: 5000
+- key: waste_management.q_waste_reduction_measures
+  prompt: 贵公司是否开展过旨在减少废弃物的管理措施？
+  kind: single_select
+  collectionPriority: recommended
+  options:
+  - 是
+  - 否
+  - 不确定
+  hint: 如选择是，请在补充说明中简述措施目标、措施内容和措施效果。
+  generationBoundary: 未填写具体数值时，不得生成减少量、比例或完成率。
+  maxChars: 5000
+- key: waste_management.q_third_party_disposal
+  prompt: 贵公司报告期内是否委托专业第三方进行过废弃物处理？
+  kind: single_select
+  collectionPriority: recommended
+  options:
+  - 是
+  - 否
+  - 不确定
+  hint: 如选择是，请在补充说明中简述涉及废弃物的类型、专业第三方资质和废弃物处理方式。
+  generationBoundary: 未填写具体资质时，不得编造处置单位或资质名称。
+  maxChars: 5000

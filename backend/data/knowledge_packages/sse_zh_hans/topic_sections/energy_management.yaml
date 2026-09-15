@@ -1,0 +1,187 @@
+# ABOUTME: 能源管理议题章节骨架，H2 标题以附录索引表“对应的本报告章节”为准。
+# ABOUTME: 本文件承载能源管理的段落级生成块；指标块按声明读取ESG 定量数据表的受控投影。
+section:
+  key: energy_management
+  title: 能源管理
+  headingLevel: 2
+  reportSectionId: energy_management
+  conciseDisclosure:
+    id: energy_management.concise_summary
+    type: paragraph
+    blockType: generative
+    source: ai
+    styleRole: body
+    generation:
+      task:
+        focus: "根据本议题当前可见证据形成一段连贯摘要，覆盖相关管理关注、方向与实践，不使用四要素小标题。"
+      inputs: {evidence: {kind: report_section}}
+      targetChars: [300, 600]
+  children:
+  - key: energy_management.gov
+    title: 治理
+    pillar: governance
+    headingLevel: 3
+    blocks:
+    - id: energy_management.gov_system_framework
+      type: paragraph
+      blockType: generative
+      source: ai
+      styleRole: body
+      generation:
+        task:
+          focus: "说明能源管理的责任安排、制度机制和协调方式。"
+        inputs:
+          evidence:
+            kind: explicit
+            intakeItems:
+            - energy_management.q_governance_roles
+            - energy_management.q_governance_policies
+            - energy_management.q_governance_certifications
+        targetChars:
+        - 180
+        - 360
+        standardDisclosureRequirementKeys:
+        - energy_management.gov.responsibility_structure
+        - energy_management.gov.energy_management_system
+        - energy_management.gov.certifications
+        - energy_management.gov.energy_review
+        simplifiedWritingGuidance:
+          - "使用用能管理、能源效率、节能降耗和政策合规等能源管理语汇。"
+          - "认证证书编号、机构名称、覆盖比例与有效期必须来自相关事实，不得推断。"
+  - key: energy_management.strategy
+    title: 战略
+    pillar: strategy
+    headingLevel: 3
+    blocks:
+    - id: energy_management.strategy_risk_opportunity_preface
+      type: paragraph
+      blockType: fixed
+      source: template
+      styleRole: body
+      content:
+      - kind: text
+        text: 公司结合所属行业、主营业务及能源使用特征，识别能源管理相关风险与机遇，并围绕运营成本、市场响应和能源效率提升等方面制定相应管理措施。
+    - id: energy_management.strategy_risk_opportunity_table
+      type: table
+      blockType: generative
+      source: ai
+      generation:
+        task:
+          focus: "完成「能源相关风险机遇识别及应对措施」表格内容。"
+          noFactGuidance: |-
+            请结合报告主体的主营业务与所属行业，识别本公司实际适用的能源相关风险与机遇，逐条撰写方向性内容与应对措施，并在受控选项内选取财务影响与时间范围；参考清单仅供参照取舍，不适用的不列。无实质用户事实时，市场类行只写一般市场偏好和竞争力变化，不写客户准入、供应商评价、审核要求、已实施技术、绿电采购或获得补贴。
+        inputs:
+          evidence:
+            kind: explicit
+            intakeItems:
+            - energy_management.q_strategy_content
+        rowMode: adaptive_catalog
+        rowCount:
+        - 3
+        - 7
+        referenceCatalog:
+        - {category: 风险, name: 投资风险, reference: 能源价格或供应波动、节能改造投入等对公司经营成本与投资安排的影响}
+        - {category: 风险, name: 技术风险, reference: 高耗能设备/工艺被低碳节能技术替代、改造周期与落地不确定性}
+        - {category: 风险, name: 市场风险, reference: 市场对低能耗、绿色生产或能源效率表现的关注变化对一般竞争力的影响}
+        - {category: 机遇, name: 补贴激励, reference: 节能、绿电、能效相关政策补贴与激励带来的成本与收益机会}
+        - {category: 机遇, name: 节能技术应用机遇, reference: 采用节能技术/清洁能源提升能效、降低单位能耗与运营成本}
+        - {category: 机遇, name: 市场机遇, reference: 能源效率和绿色生产表现改善带来的市场沟通与竞争力提升机会}
+        - {category: 机遇, name: 品牌形象机遇, reference: 能效与低碳表现提升企业品牌声誉与利益相关方认可}
+        standardDisclosureRequirementKeys:
+        - energy_management.strategy.risk_opportunity
+        - energy_management.strategy.clean_energy_transition
+        disclosureStance: risk_disclosure
+        simplifiedWritingGuidance:
+          - 表格应保持整表行文一致，围绕行业和业务类型给出方向性影响与应对；固定行或宽泛输入不延伸为未提供的客户、产品线、厂区、项目、时间表、专门机制或量化结论。
+          - 动态目录识别出的行名只界定适用的风险或机遇主题，不证明企业已有特定设备短板、技术改造或投资评估安排；无实质用户事实时，影响与应对停留在经营成本、技术变化、市场偏好及关注评估等方向层面。
+      table:
+        caption: 能源相关风险机遇识别及应对措施
+        iroKind: risk_and_opportunity
+        rowSource: user
+        layoutProfile: risk_response_matrix
+        columnWidthWeights:
+          risk_category: 9
+          risk_name: 14
+          risk_description: 27
+          financial_impact: 13
+          time_horizon: 10
+          response_measures: 27
+        colDefs:
+        - key: risk_category
+          header: 风险与机遇类型
+          cellType: text
+          required: true
+        - key: risk_name
+          header: 风险与机遇名称
+          cellType: text
+          required: true
+        - key: risk_description
+          header: 潜在影响
+          cellType: ai_text
+          genHint: 结合报告主体的主营业务与所属行业，用一至两句说明该能源相关风险或机遇对公司的方向性影响；体现行业和业务类型相关性，不编造已获补贴、已应用技术、绿电采购或客户订单。
+          required: true
+        - key: financial_impact
+          header: 财务影响
+          cellType: multi_select
+          options:
+          - 运营成本增加
+          - 运营成本减少
+          - 收入增加
+        - key: time_horizon
+          header: 影响的时间范围
+          cellType: multi_select
+          options:
+          - 短期
+          - 中期
+          - 长期
+        - key: response_measures
+          header: 应对措施
+          cellType: ai_text
+          genHint: 生成2-3个短句，覆盖能源价格跟踪、节能技术评估、设备更新、绿色电力关注、产品服务响应或政策补贴跟踪，不编造具体项目名或已采购事实。
+          required: true
+        children:
+        - headerRow: true
+          children:
+          - type: th
+            value: 风险与机遇类型
+          - type: th
+            value: 风险与机遇名称
+          - type: th
+            value: 潜在影响
+          - type: th
+            value: 财务影响
+          - type: th
+            value: 影响的时间范围
+          - type: th
+            value: 应对措施
+  - key: energy_management.iro
+    title: 影响、风险与机遇管理
+    pillar: iro_management
+    headingLevel: 3
+    blocks:
+    - id: energy_management.iro_efficiency_projects
+      type: paragraph
+      blockType: generative
+      source: ai
+      styleRole: body
+      generation:
+        task:
+          focus: "说明节能降耗、能源利用和效率提升的相关实践。"
+        inputs:
+          evidence:
+            kind: explicit
+            intakeItems:
+            - energy_management.q_energy_saving_measures
+        targetChars:
+        - 220
+        - 420
+        standardDisclosureRequirementKeys:
+        - energy_management.iro.saving_target_and_measures
+        - energy_management.iro.policy_practice
+        - energy_management.iro.operational_control
+        - energy_management.iro.product_service_efficiency
+        simplifiedWritingGuidance:
+          - "制度运行频次、问题数量与整改结果必须来自相关事实，不得推断。"
+          - "客户绿色供应链要求、低碳转型安排与能源使用困难须区分已实施、正在规划与面临困难，不得把规划事项写成已完成事实。"
+metricDisclosure:
+  catalogMetricKeys: [economic_environment_r11, economic_environment_r17, economic_environment_r19, economic_environment_r22]

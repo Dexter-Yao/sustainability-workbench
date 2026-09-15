@@ -1,0 +1,156 @@
+# ABOUTME: 科技伦理条件议题章节骨架，标题以附录索引表“对应的本报告章节”为准。
+# ABOUTME: 仅当报告配置确认涉及科技伦理敏感活动时由 planner 纳入正文。
+section:
+  key: technology_ethics
+  title: 科技伦理
+  headingLevel: 2
+  reportSectionId: technology_ethics
+  conciseDisclosure:
+    id: technology_ethics.concise_summary
+    type: paragraph
+    blockType: generative
+    source: ai
+    styleRole: body
+    generation:
+      task:
+        focus: "根据本议题当前可见证据形成一段连贯摘要，覆盖相关管理关注、方向与实践，不使用四要素小标题。"
+      inputs: {evidence: {kind: report_section}}
+      targetChars: [300, 600]
+  children:
+  - key: technology_ethics.gov
+    title: 治理
+    pillar: governance
+    headingLevel: 3
+    blocks:
+    - id: technology_ethics.gov_management_framework
+      type: paragraph
+      blockType: generative
+      source: ai
+      styleRole: body
+      generation:
+        task:
+          focus: "说明科技活动伦理风险的基本治理关注与管理安排。"
+        templateResidueBans:
+        - 若议题重要性评估处选择不显示
+        - 如果选择涉及
+        - 按一下规则生成内容
+        - 按以下规则生成内容
+        inputs:
+          evidence:
+            kind: explicit
+            intakeItems:
+            - technology_ethics.q_governance_roles
+            - technology_ethics.q_governance_policies
+            - technology_ethics.q_governance_certifications
+          fields:
+          - has_technology_ethics_sensitive_activity
+        targetChars:
+        - 180
+        - 360
+        standardDisclosureRequirementKeys:
+        - technology_ethics.gov.activity_norms_required
+        - technology_ethics.gov.review_committee_conditional
+        simplifiedWritingGuidance:
+          - "聚焦科技伦理敏感活动领域、伦理规范、内部制度、审查监督和基础职责安排，具体领域与治理成熟度来自本块用户事实。"
+  - key: technology_ethics.strategy
+    title: 战略
+    pillar: strategy
+    headingLevel: 3
+    blocks:
+    - id: technology_ethics.strategy_ethics_management_strategy
+      type: paragraph
+      blockType: generative
+      source: ai
+      styleRole: body
+      generation:
+        task:
+          focus: "说明科技活动中的伦理关注重点、基本原则和推进方向。"
+        templateResidueBans:
+        - 若议题重要性评估处选择不显示
+        - 如果选择涉及
+        - 按一下规则生成内容
+        - 按以下规则生成内容
+        inputs:
+          evidence:
+            kind: explicit
+            intakeItems:
+            - technology_ethics.q_strategy_content
+          fields:
+          - has_technology_ethics_sensitive_activity
+        targetChars:
+        - 140
+        - 300
+        standardDisclosureRequirementKeys:
+        - technology_ethics.strategy.ethics_management_strategy_required
+  - key: technology_ethics.iro
+    title: 影响、风险与机遇管理
+    pillar: iro_management
+    headingLevel: 3
+    children:
+    - key: technology_ethics.iro.violation_incident_management
+      title: 违规事件与整改
+      headingLevel: 4
+      titleGeneration:
+        sourceBlockId: technology_ethics.iro_violation_incident_management
+        guidance: 概括本内容单元的核心行动或结果，生成简洁、准确且不引入新事实的标题。
+      appears_when:
+        all:
+        - path: intakeItems.technology_ethics.q_ethics_violation_penalties
+          op: eq
+          value: 是
+      blocks:
+      - id: technology_ethics.iro_violation_incident_management
+        type: paragraph
+        blockType: constrained
+        source: ai
+        styleRole: body
+        generation:
+          task:
+            focus: "说明科技伦理相关事件的识别、处理和整改情况。"
+          templateResidueBans:
+          - 若议题重要性评估处选择不显示
+          - 如果选择涉及
+          - 按一下规则生成内容
+          - 按以下规则生成内容
+          inputs:
+            evidence:
+              kind: explicit
+              intakeItems:
+              - technology_ethics.q_ethics_violation_penalties
+          targetChars:
+          - 140
+          - 320
+          standardDisclosureRequirementKeys:
+          - technology_ethics.iro.violation_incidents_conditional
+    - key: technology_ethics.iro.training_public_education
+      title: 培训与科普
+      headingLevel: 4
+      titleGeneration:
+        sourceBlockId: technology_ethics.iro_training_public_education
+        guidance: 概括本内容单元的核心行动或结果，生成简洁、准确且不引入新事实的标题。
+      blocks:
+      - id: technology_ethics.iro_training_public_education
+        type: paragraph
+        blockType: generative
+        source: ai
+        styleRole: body
+        generation:
+          task:
+            focus: "说明科技伦理培训、意识提升和科普宣传的相关实践。"
+          templateResidueBans:
+          - 若议题重要性评估处选择不显示
+          - 如果选择涉及
+          - 按一下规则生成内容
+          - 按以下规则生成内容
+          inputs:
+            evidence:
+              kind: explicit
+              intakeItems:
+              - technology_ethics.q_ethics_training
+          targetChars:
+          - 140
+          - 300
+          standardDisclosureRequirementKeys:
+          - technology_ethics.iro.training_public_education_required
+metricDisclosure:
+  catalogMetricKeys: []

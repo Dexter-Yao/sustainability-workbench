@@ -1,0 +1,51 @@
+# ABOUTME(en): GRI 301: Materials 2016 disclosure requirements, grouped by the package's pillars, for the
+# ABOUTME(en): coverage audit and the key whitelist. Wording condenses the official requirement text.
+topicStandardDisclosureRequirementGroups:
+- topicSectionKey: materials.gov
+  pillar: governance
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: materials.gov.management_of_materials
+    standardDisclosureRequirementTitle: Management of the materials topic
+    excerptFrom: GRI 3-3 with GRI 301
+    standardDisclosureRequirementText: |-
+      Report how the organization manages the materials topic, including the policies and responsibilities covering the materials used to produce and package its primary products and services.
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: GRI
+      clauseRef: GRI 3-3 with GRI 301
+- topicSectionKey: materials.strategy
+  pillar: strategy
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: materials.strategy.recycled_input_direction
+    standardDisclosureRequirementTitle: Direction on recycled input materials
+    excerptFrom: 301-2
+    standardDisclosureRequirementText: |-
+      Report the percentage of recycled input materials used to manufacture the organization's primary products and services, and the direction the organization takes on increasing that share.
+    disclosureRequirementObligationLevel: encouraged
+    sourceClauseReferenceLabels:
+    - standard: GRI
+      clauseRef: 301-2
+- topicSectionKey: materials.iro
+  pillar: iro_management
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: materials.iro.reclaimed_products
+    standardDisclosureRequirementTitle: Reclaimed products and their packaging materials
+    excerptFrom: 301-3
+    standardDisclosureRequirementText: |-
+      Report the percentage of reclaimed products and their packaging materials for each product category, and how the data for this disclosure have been collected.
+    disclosureRequirementObligationLevel: encouraged
+    sourceClauseReferenceLabels:
+    - standard: GRI
+      clauseRef: 301-3
+- topicSectionKey: materials.metrics
+  pillar: metrics_targets
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: materials.metrics.materials_used
+    standardDisclosureRequirementTitle: Materials used by weight or volume
+    excerptFrom: 301-1
+    standardDisclosureRequirementText: |-
+      Report the total weight or volume of materials used to produce and package the organization's primary products and services during the reporting period, split into non-renewable and renewable materials used.
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: GRI
+      clauseRef: 301-1

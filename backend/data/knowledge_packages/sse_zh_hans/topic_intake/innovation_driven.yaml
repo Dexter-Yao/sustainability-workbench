@@ -1,0 +1,17 @@
+# ABOUTME: 创新驱动议题轻量版内容清单，聚焦研发团队激励和创新工作举措。
+# ABOUTME: 治理、战略和指标目标固定题由 topic_intake_common.yaml 展开；结构化数值由 ESG 定量数据表维护。
+contentScopeId: innovation_driven
+items:
+- key: innovation_driven.q_rd_team_incentives
+  prompt: 请简要填写贵司研发团队考核指标和激励方式。
+  kind: text
+  collectionPriority: recommended
+  hint: 可填写研发团队考核指标、绩效评价方式、激励机制、晋升安排、项目奖励或其他与研发团队管理相关的内容；没有可留空。
+  maxChars: 5000
+- key: innovation_driven.q_innovation_work_measures
+  prompt: 请简述贵公司在研发投入、技术创新、知识产权管理、数字化转型、外部技术交流、内部技术人才团队培养方面的工作举措。
+  kind: text
+  collectionPriority: recommended
+  hint: 可填写研发投入方向、技术创新项目、知识产权管理、数字化建设、外部交流合作、内部人才培养或其他创新工作举措。
+  generationBoundary: 投入金额、专利数量和项目数量属于需要由补充说明直接支持的定量事实。
+  maxChars: 6000

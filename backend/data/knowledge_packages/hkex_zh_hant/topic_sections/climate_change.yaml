@@ -1,0 +1,163 @@
+# ABOUTME(en): Topic chapter template of the HKEX Aspect「氣候變化」: governance / strategy / risk-management
+# ABOUTME(en): blocks with their intake evidence and Appendix C2 requirement keys; the metrics H3 is compiled from metricDisclosure.
+# D部氣候相關披露（第16至41段）以管治／策略／風險管理／指標及目標四項承載；範圍1及範圍2排放為所有發行人的規定披露。
+section:
+  key: climate_change
+  title: 氣候變化
+  headingLevel: 2
+  reportSectionId: climate_change
+  conciseDisclosure:
+    id: climate.concise_summary
+    type: paragraph
+    blockType: generative
+    source: ai
+    styleRole: body
+    generation:
+      task:
+        focus: 根據本層面當前可見證據形成一段連貫摘要，涵蓋氣候相關管治、策略、風險管理與指標目標的主要安排，不使用四項小標題。
+      inputs:
+        evidence:
+          kind: report_section
+      targetChars:
+      - 260
+      - 520
+  children:
+  - key: climate_change.gov
+    title: 管治
+    pillar: governance
+    headingLevel: 3
+    blocks:
+    - id: climate.gov_oversight
+      type: paragraph
+      blockType: generative
+      source: ai
+      styleRole: body
+      generation:
+        task:
+          focus: |-
+            說明董事會及管理層對氣候相關風險與機遇的監管與管理安排：負責的治理機構或職位、其職權與能力、向董事會匯報的頻次，以及氣候考慮如何納入決策（守則D部第19至20段）。
+          noFactGuidance: 用戶未提供氣候管治資料時，說明董事會對氣候相關事宜負最終監管責任並由管理層負責日常管理與匯報；不指名委員會、職位、頻次或具體會議。
+        inputs:
+          evidence:
+            kind: explicit
+            intakeItems:
+            - climate.q_governance_roles
+            - climate.q_governance_policies
+            - climate.q_governance_certifications
+        targetChars:
+        - 200
+        - 420
+        standardDisclosureRequirementKeys:
+        - climate_change.gov.board_oversight
+        - climate_change.gov.management_role
+        simplifiedWritingGuidance:
+        - 董事會層面的整體監管聲明已由「董事會聲明」承載；本段只寫氣候相關的具體管治安排。
+  - key: climate_change.strategy
+    title: 策略
+    pillar: strategy
+    headingLevel: 3
+    blocks:
+    - id: climate.strategy_risks_opportunities
+      type: paragraph
+      blockType: generative
+      source: ai
+      styleRole: body
+      generation:
+        task:
+          focus: |-
+            說明公司識別的氣候相關實體風險與過渡風險及機遇，其在短、中、長期對業務模式、價值鏈及財務狀況的潛在影響，以及公司的應對策略與過渡計劃（守則D部第21至24段）。
+          noFactGuidance: |-
+            用戶未提供氣候風險資料時，僅結合所屬行業及業務類型說明常見的實體風險（如極端天氣、高溫）與過渡風險（如碳定價、客戶低碳要求）的方向性影響及一般應對方向；不聲稱公司已識別、已量化或已制定過渡計劃。
+        inputs:
+          evidence:
+            kind: explicit
+            intakeItems:
+            - climate.q_strategy_content
+            - climate.q_climate_risks
+            - climate.q_climate_opportunities
+            - climate.q_transition_plan
+        targetChars:
+        - 320
+        - 700
+        standardDisclosureRequirementKeys:
+        - climate_change.strategy.risks_and_opportunities
+        - climate_change.strategy.business_model_and_value_chain
+        - climate_change.strategy.strategy_and_transition_plan
+        - climate_change.strategy.financial_effects
+        simplifiedWritingGuidance:
+        - 財務影響只在用戶提供定量資料時寫數值；否則以定性方式說明影響方向，並可註明公司正在評估。
+        - 數值由關鍵績效指標數據表承載；本段不寫排放量、耗用量、比率或減幅等數字。
+    - id: climate.strategy_resilience
+      type: paragraph
+      blockType: generative
+      source: ai
+      styleRole: body
+      generation:
+        task:
+          focus: 說明公司對其策略及業務模式氣候韌性的評估，包括是否採用情景分析、所考慮的情景與假設，以及評估結論（守則D部第25至26段）。
+          noFactGuidance: 用戶未提供韌性評估資料時，說明公司會按守則的實施安排逐步開展氣候韌性評估；不聲稱已完成情景分析或已得出結論。
+        inputs:
+          evidence:
+            kind: explicit
+            intakeItems:
+            - climate.q_scenario_analysis
+        targetChars:
+        - 140
+        - 320
+        standardDisclosureRequirementKeys:
+        - climate_change.strategy.climate_resilience
+    - id: climate.strategy_targets
+      type: paragraph
+      blockType: generative
+      source: ai
+      styleRole: body
+      generation:
+        task:
+          focus: 說明公司訂立的氣候相關目標（如溫室氣體減排目標）、目標所涵蓋的範圍、基準年、目標年及達成目標的步驟與進度（守則D部第33至35段）。
+          noFactGuidance: 用戶未提供目標或計劃時，說明公司會結合業務發展持續關注本層面的改善方向與量化目標的訂立；不虛構目標數值、基準年、達成期限或已取得的成效。
+        inputs:
+          evidence:
+            kind: explicit
+            intakeItems:
+            - climate.q_strategy_content
+            - climate.q_climate_targets
+        targetChars:
+        - 160
+        - 360
+        standardDisclosureRequirementKeys:
+        - climate_change.strategy.climate_targets
+  - key: climate_change.iro
+    title: 風險管理
+    pillar: iro_management
+    headingLevel: 3
+    blocks:
+    - id: climate.iro_risk_management_process
+      type: paragraph
+      blockType: generative
+      source: ai
+      styleRole: body
+      generation:
+        task:
+          focus: 說明公司識別、評估、優先排序及監察氣候相關風險與機遇的過程，以及該過程如何融入整體風險管理（守則D部第27段）。
+          noFactGuidance: 用戶未提供風險管理過程資料時，說明公司會在整體風險管理框架下關注氣候相關風險的識別與評估；不聲稱已建立專項流程、定期評估頻次或已完成優先排序。
+        inputs:
+          evidence:
+            kind: explicit
+            intakeItems:
+            - climate.q_climate_risks
+            - climate.q_risk_management_process
+        targetChars:
+        - 180
+        - 400
+        standardDisclosureRequirementKeys:
+        - climate_change.iro.risk_management_process
+metricDisclosure:
+  catalogMetricKeys:
+  - climate_ghg_scope1
+  - climate_ghg_scope2
+  - climate_ghg_scope1_2_total
+  - climate_ghg_scope3
+  - climate_ghg_intensity_revenue
+  - climate_ghg_intensity_output
+  - climate_internal_carbon_price
+  - climate_capital_deployment

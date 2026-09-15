@@ -1,0 +1,24 @@
+# ABOUTME(en): Topic-specific intake questions of "Supply Chain Management"; the four fixed pillar questions come from topic_intake_common.yaml.
+# ABOUTME(en): Quantitative KPIs are collected through the metric catalog, not here.
+contentScopeId: supply_chain_management
+items:
+- key: supply_chain.q_supplier_engagement
+  prompt: How does the company screen, evaluate and manage suppliers?
+  kind: text
+  collectionPriority: recommended
+  hint: Admission criteria, code of conduct, evaluation, audits.
+  maxChars: 5000
+- key: supply_chain.q_supplier_esg_risk
+  prompt: |-
+    How does the company identify environmental and social risks in its supply chain?
+  kind: text
+  collectionPriority: recommended
+  hint: Scope, questionnaires or audits, risk types, follow-up.
+  maxChars: 5000
+- key: supply_chain.q_green_procurement
+  prompt: |-
+    Does the company give preference to environmentally preferable products and services in procurement?
+  kind: text
+  collectionPriority: recommended
+  hint: Green procurement rules, certification preference, sourcing.
+  maxChars: 5000

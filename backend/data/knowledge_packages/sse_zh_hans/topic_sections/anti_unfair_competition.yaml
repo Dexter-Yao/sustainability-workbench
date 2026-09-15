@@ -1,0 +1,158 @@
+# ABOUTME: 反不正当竞争议题章节骨架，H2 标题以附录索引表“对应的本报告章节”为准。
+# ABOUTME: 本文件承载反不正当竞争轻量版生成块；指标块按声明读取ESG 定量数据表的受控投影。
+section:
+  key: anti_unfair_competition
+  title: 反不正当竞争
+  headingLevel: 2
+  reportSectionId: anti_unfair_competition
+  conciseDisclosure:
+    id: anti_unfair_competition.concise_summary
+    type: paragraph
+    blockType: generative
+    source: ai
+    styleRole: body
+    generation:
+      task:
+        focus: "根据本议题当前可见证据形成一段连贯摘要，覆盖相关管理关注、方向与实践，不使用四要素小标题。"
+      inputs: {evidence: {kind: report_section}}
+      targetChars: [300, 600]
+  children:
+  - key: anti_unfair_competition.gov
+    title: 治理
+    pillar: governance
+    headingLevel: 3
+    blocks:
+    - id: anti_unfair_competition.gov_policy_system
+      type: paragraph
+      blockType: generative
+      source: ai
+      styleRole: body
+      generation:
+        task:
+          focus: "说明反不正当竞争工作的责任安排和宣传合规管理机制。"
+        inputs:
+          evidence:
+            kind: explicit
+            intakeItems:
+            - anti_unfair_competition.q_governance_roles
+            - anti_unfair_competition.q_governance_policies
+            - anti_unfair_competition.q_governance_certifications
+        targetChars:
+        - 180
+        - 360
+        standardDisclosureRequirementKeys:
+        - anti_unfair_competition.gov.policy_system_required
+        - anti_unfair_competition.gov.policy_system_encouraged
+  - key: anti_unfair_competition.strategy
+    title: 战略
+    pillar: strategy
+    headingLevel: 3
+    blocks:
+    - id: anti_unfair_competition.strategy_fair_competition
+      type: paragraph
+      blockType: generative
+      source: ai
+      styleRole: body
+      generation:
+        task:
+          focus: "说明公平竞争和宣传合规的长期方向、风险判断和推进原则。"
+        inputs:
+          evidence:
+            kind: explicit
+            intakeItems:
+            - anti_unfair_competition.q_strategy_content
+        targetChars:
+        - 180
+        - 360
+        standardDisclosureRequirementKeys:
+        - anti_unfair_competition.strategy.fair_competition_required
+  - key: anti_unfair_competition.iro
+    title: 影响、风险与机遇管理
+    pillar: iro_management
+    headingLevel: 3
+    children:
+    - key: anti_unfair_competition.iro.fair_competition_controls
+      title: 公平竞争与宣传合规
+      headingLevel: 4
+      titleGeneration:
+        sourceBlockId: anti_unfair_competition.iro_fair_competition_controls
+        guidance: 概括本内容单元的核心行动或结果，生成简洁、准确且不引入新事实的标题。
+      blocks:
+      - id: anti_unfair_competition.iro_fair_competition_controls
+        type: paragraph
+        blockType: generative
+        source: ai
+        styleRole: body
+        generation:
+          task:
+            focus: "说明公平竞争、宣传合规和相关风险防范的管理实践。"
+          inputs:
+            evidence:
+              kind: explicit
+              intakeItems:
+              - anti_unfair_competition.q_advertising_review_requirements
+              - anti_unfair_competition.q_trade_secret_protection
+          targetChars:
+          - 200
+          - 420
+          standardDisclosureRequirementKeys:
+          - anti_unfair_competition.iro.controls_required
+          simplifiedWritingGuidance:
+            - "聚焦用户已披露的宣传内容审核、对外经营公平竞争、商业秘密保护和合作伙伴相关要求，同一事实在本块内组织一次。"
+            - "商业秘密保护只写用户已确认的安排；未提供具体措施时不坐实保密协议、分级管控或专项系统。"
+    - key: anti_unfair_competition.iro.litigation_penalties
+      title: 诉讼与处罚
+      headingLevel: 4
+      titleGeneration:
+        sourceBlockId: anti_unfair_competition.iro_litigation_penalties
+        guidance: 概括本内容单元的核心行动或结果，生成简洁、准确且不引入新事实的标题。
+      appears_when:
+        all:
+        - path: intakeItems.anti_unfair_competition.q_litigation_reports
+          op: eq
+          value: 是
+      blocks:
+      - id: anti_unfair_competition.iro_litigation_penalties
+        type: paragraph
+        blockType: constrained
+        source: ai
+        styleRole: body
+        generation:
+          task:
+            focus: "说明反不正当竞争相关诉讼、行政处罚和整改情况。"
+          inputs:
+            evidence:
+              kind: explicit
+              intakeItems:
+              - anti_unfair_competition.q_litigation_reports
+          targetChars:
+          - 140
+          - 300
+          standardDisclosureRequirementKeys:
+          - anti_unfair_competition.iro.litigation_penalties_conditional
+    - key: anti_unfair_competition.iro.partner_fair_competition_terms
+      title: 合作伙伴公平竞争约定
+      headingLevel: 4
+      blocks:
+      - id: anti_unfair_competition.iro_partner_fair_competition_terms
+        type: paragraph
+        blockType: generative
+        source: ai
+        styleRole: body
+        generation:
+          task:
+            focus: "基于用户上传的经销商或合作伙伴合同条款、公平竞争约定类资料，说明对合作伙伴的公平竞争要求与执行安排。"
+          inputs:
+            evidence:
+              kind: material_gated
+          targetChars:
+          - 140
+          - 300
+          standardDisclosureRequirementKeys:
+          - anti_unfair_competition.iro.partner_requirements_required
+          simplifiedWritingGuidance:
+            - "只作有据叙述：可独立核验的对象、名称、数值与日期须资料明确记载才可写，不得推断或补写。"
+            - "资料记载的未按期、超期或不合规情形如实保留其性质表述，不淡化省略，也不添加资料未记载的保证性评价。"
+            - "不展开贪污贿赂、廉洁培训或举报内容（归反商业贿赂与反贪污议题）。"
+metricDisclosure:
+  catalogMetricKeys: [governance_r17, governance_r18]

@@ -1,0 +1,22 @@
+# ABOUTME(en): Topic-specific intake questions of「供應鏈管理」; the four fixed pillar questions come from topic_intake_common.yaml.
+# ABOUTME(en): Quantitative KPIs are collected through the metric catalog, not here.
+contentScopeId: supply_chain_management
+items:
+- key: supply_chain.q_supplier_engagement
+  prompt: 貴公司如何篩選、評核及管理供應商？
+  kind: text
+  collectionPriority: recommended
+  hint: 可說明准入條件、行為守則、定期評核、現場審核及不合格處理；沒有可留空。
+  maxChars: 5000
+- key: supply_chain.q_supplier_esg_risk
+  prompt: 貴公司如何識別供應鏈中的環境及社會風險？
+  kind: text
+  collectionPriority: recommended
+  hint: 可說明風險評估範圍、問卷或審核、關注的風險類別及跟進；沒有可留空。
+  maxChars: 5000
+- key: supply_chain.q_green_procurement
+  prompt: 貴公司在採購時是否優先選用環保產品及服務？
+  kind: text
+  collectionPriority: recommended
+  hint: 可說明綠色採購要求、環保認證偏好或本地採購安排；沒有可留空。
+  maxChars: 5000

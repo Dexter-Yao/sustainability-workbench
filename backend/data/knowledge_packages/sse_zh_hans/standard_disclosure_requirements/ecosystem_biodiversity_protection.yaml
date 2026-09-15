@@ -1,0 +1,92 @@
+# ABOUTME: 生态系统与生物多样性保护议题准则披露要求库，供覆盖审计与按 key 白名单注入生成上下文（注入受开关控制，默认关闭）。
+# ABOUTME: 本文件不作为用户可见准则批注来源；用户可见条款原文来自 user_visible_disclosure_clause_annotations。
+topicStandardDisclosureRequirementGroups:
+- topicSectionKey: ecosystem_biodiversity_protection.gov
+  pillar: governance
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: ecosystem_biodiversity_protection.gov.ecological_governance_required
+    standardDisclosureRequirementTitle: 生态保护治理职责与管理原则
+    excerptFrom: 附录索引表第二十九条、第三十二条、第三十三条；参考模板“生态系统与生物多样性保护”
+    standardDisclosureRequirementText: 应概括公司生态保护、生物多样性保护、项目选址、生态影响评估、生态恢复或生态活动相关治理安排。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 第二十九条、第三十二条、第三十三条
+    - standard: SZSE
+      clauseRef: 第二十九条、第三十二条、第三十三条
+    - standard: BSE
+      clauseRef: 第二十九条、第三十二条、第三十三条
+  - standardDisclosureRequirementKey: ecosystem_biodiversity_protection.gov.ecological_governance_encouraged
+    standardDisclosureRequirementTitle: 生态保护职责协同与持续改进
+    excerptFrom: 参考模板“组织架构和职责分工描述”
+    standardDisclosureRequirementText: 可进一步披露说明生态保护职责协同、生态影响评估、生态恢复、生态活动、利益相关方沟通和持续改进安排。
+    disclosureRequirementObligationLevel: encouraged
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 第二十九条、第三十二条、第三十三条
+    - standard: SZSE
+      clauseRef: 第二十九条、第三十二条、第三十三条
+    - standard: BSE
+      clauseRef: 第二十九条、第三十二条、第三十三条
+  - standardDisclosureRequirementKey: ecosystem_biodiversity_protection.gov.policy_documents_required
+    standardDisclosureRequirementTitle: 生态环境保护与生物多样性保护制度
+    excerptFrom: 参考模板“生态环境保护、生物多样性保护相关的制度文件”
+    standardDisclosureRequirementText: 如涉及生态环境保护、生物多样性保护、生态影响评估、生态保护红线避让、自然保护地管理、项目建设生态保护或生态恢复相关制度，应说明制度名称、制度目标、适用范围和关键流程；制度名称和目标必须来自相关事实。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 第二十九条、第三十二条、第三十三条
+    - standard: SZSE
+      clauseRef: 第二十九条、第三十二条、第三十三条
+    - standard: BSE
+      clauseRef: 第二十九条、第三十二条、第三十三条
+- topicSectionKey: ecosystem_biodiversity_protection.strategy
+  pillar: strategy
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: ecosystem_biodiversity_protection.strategy.protection_approach_required
+    standardDisclosureRequirementTitle: 生态保护战略原则与自然相关关注重点
+    excerptFrom: 附录索引表第三十二条；参考模板“在发展中保护、在保护中发展”
+    standardDisclosureRequirementText: 应概括公司生态系统与生物多样性保护战略、原则、项目选址要求、敏感区域避让、自然资源依赖、生态系统服务影响或自然相关风险机遇关注重点。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 第三十二条
+    - standard: SZSE
+      clauseRef: 第三十二条
+    - standard: BSE
+      clauseRef: 第三十二条
+- topicSectionKey: ecosystem_biodiversity_protection.iro
+  pillar: iro_management
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: ecosystem_biodiversity_protection.iro.policy_practice_required
+    standardDisclosureRequirementTitle: 生态保护制度执行与管理框架
+    excerptFrom: 参考模板“根据制度生成内容描述”
+    standardDisclosureRequirementText: 应依据治理模块提供的制度文件事实，按管理框架说明生态环境保护制度的目标、主要分工职责和相关规范要求的执行情况。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: ReferenceTemplate
+      clauseRef: 生态系统与生物多样性保护：制度内容描述
+  - standardDisclosureRequirementKey: ecosystem_biodiversity_protection.iro.sensitive_area_and_impact_required
+    standardDisclosureRequirementTitle: 敏感区域与生态影响识别
+    excerptFrom: 附录索引表第三十二条；参考模板“生态优先地点识别”
+    standardDisclosureRequirementText: 如企业选择涉及敏感区域、可能产生明显影响或不确定，应概括生态保护红线、自然保护地、重要生态功能区、环境敏感区、生态系统影响、业务依赖、风险或机遇的识别与关注重点。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 第三十二条
+    - standard: SZSE
+      clauseRef: 第三十二条
+    - standard: BSE
+      clauseRef: 第三十二条
+  - standardDisclosureRequirementKey: ecosystem_biodiversity_protection.iro.protection_measures_and_activities_required
+    standardDisclosureRequirementTitle: 生态保护措施、恢复安排与活动参与
+    excerptFrom: 附录索引表第三十二条；参考模板“生态保护和恢复措施”“参与环境生态保护组织和活动”
+    standardDisclosureRequirementText: 如涉及生态保护措施、环境影响降低措施、生态恢复安排、项目或产品生态影响评估、建设运营管控或生态保护活动，应合并说明保护行动和活动参与情况。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 第三十二条
+    - standard: SZSE
+      clauseRef: 第三十二条
+    - standard: BSE
+      clauseRef: 第三十二条

@@ -1,0 +1,83 @@
+# Demo instance data — used only for the export style sample Word / contract JSON. One typed pipeline:
+# inputs = CompanyInputs (upstream input, parse-first; industry/summary/materiality computed by build_report);
+# content = ReportContent (pre-written generated/tables, written back by apply_report_content). In production this
+# data comes from AI generation plus user edits.
+inputs:
+  fields:
+    company_registered_name: Jinli Precision Industrial Holdings Limited
+    company_short_name: Jinli Precision
+    reporting_year: 2025
+    report_period_start: "2025-01-01"
+    report_period_end: "2025-12-31"
+    consolidation_scope: The Company and all its subsidiaries
+    report_approval_year: 2026
+    report_approval_month: 2026-03
+    report_publication_channel: HKEXnews and the company website
+    report_publication_website_url: https://www.jinli-precision.example.hk
+    industry_major_category: Manufacturing
+    industry_division: Precision metal stamping parts and connectors
+  company_profile: Jinli Precision Industrial Holdings Limited is a precision manufacturer listed on the Main Board of The Stock Exchange of Hong Kong Limited, headquartered in Kwun Tong, Hong Kong, with its production base in Dongguan, Guangdong. It develops, manufactures and sells precision metal stamping parts, connectors and assembled modules for customers in consumer electronics, industrial equipment and new energy vehicle components. The company runs an integrated system spanning research and development, production, quality and customer service, keeps advancing automated manufacturing, energy saving and emission reduction and supply chain collaboration, values employee development, product responsibility and community participation, and aims to create long-term value for customers, shareholders and society.
+  business_summary: The company is a Hong Kong Main Board listed precision manufacturer engaged in the development, manufacture and sale of precision metal stamping parts, connectors and assembled modules for customers in consumer electronics, industrial equipment and new energy vehicle components.
+  intake:
+    board_statement.q_oversight:
+      answer: The Board holds ultimate responsibility for environmental, social and governance matters and reviews the related risks, targets and progress at least twice a year; the ESG working group, led by an executive director, reports to the Board.
+    board_statement.q_management_approach:
+      answer: The Board has set a management approach built on compliant operation, green manufacturing and a people-first culture; material issues are identified and ranked through an annual stakeholder questionnaire and a management assessment, and disclosure priorities follow their importance to the business and to stakeholders.
+    board_statement.q_progress_review:
+      answer: The Board reviews progress against the energy intensity, greenhouse gas emission intensity and injury rate targets every year and adjusts the targets as the business develops.
+    sustainability_governance_structure:
+      answer: The company has an ESG working group led by an executive director, with the heads of finance, human resources, production, quality and procurement as members; each department appoints a coordinator responsible for data collection.
+    sustainability_governance_duties:
+      answer: The Board oversees and approves; the working group coordinates the materiality assessment, target setting and report preparation; departments implement the measures and submit data quarterly.
+    climate.q_governance_roles:
+      answer: A dedicated department or position is responsible
+      supplement: The ESG working group coordinates climate-related matters; the production department owns energy and emissions data.
+    climate.q_strategy_content:
+      answer: The company has set a target to cut Scope 1 and Scope 2 greenhouse gas emission intensity by 30% by 2030 against a 2023 base year, mainly through rooftop solar photovoltaics, equipment efficiency improvements and the purchase of renewable electricity.
+  assessmentInput:
+    reportingYear: 2025
+    threshold:
+      financial: 4.0
+      impact: 4.0
+    scores:
+    - {assessmentTopicId: climate_change, financialScore: 4.4, impactScore: 4.3}
+    - {assessmentTopicId: energy, financialScore: 4.5, impactScore: 4.1}
+    - {assessmentTopicId: water_and_effluents, financialScore: 3.2, impactScore: 3.8}
+    - {assessmentTopicId: waste, financialScore: 3.6, impactScore: 4.2}
+    - {assessmentTopicId: materials, financialScore: 3.5, impactScore: 3.6}
+    - {assessmentTopicId: biodiversity, financialScore: 3.0, impactScore: 3.7}
+    - {assessmentTopicId: employment, financialScore: 4.2, impactScore: 4.3}
+    - {assessmentTopicId: occupational_health_and_safety, financialScore: 4.3, impactScore: 4.6}
+    - {assessmentTopicId: training_and_education, financialScore: 3.8, impactScore: 4.0}
+    - {assessmentTopicId: diversity_and_equal_opportunity, financialScore: 3.4, impactScore: 4.0}
+    - {assessmentTopicId: customer_health_and_safety, financialScore: 4.6, impactScore: 4.2}
+    - {assessmentTopicId: customer_privacy, financialScore: 3.9, impactScore: 3.7}
+    - {assessmentTopicId: anti_corruption, financialScore: 4.1, impactScore: 4.2}
+    - {assessmentTopicId: supplier_environmental_assessment, financialScore: 4.0, impactScore: 3.9}
+    - {assessmentTopicId: supplier_social_assessment, financialScore: 3.9, impactScore: 4.0}
+  quantitativeMetrics:
+    greenhouseGasAccountingStandard: GHG Protocol Corporate Accounting and Reporting Standard
+    metrics:
+      economic_revenue: {value: "486.2"}
+      economic_total_employees: {value: "612"}
+      climate_ghg_scope1: {value: "1240"}
+      climate_ghg_scope2: {value: "6830"}
+      climate_ghg_intensity_revenue: {value: "16.6"}
+      energy_purchased_electricity: {value: "11920"}
+      energy_renewable_electricity: {value: "1360"}
+      energy_diesel: {value: "410"}
+      water_consumption_total: {value: "58400"}
+      waste_hazardous_total: {value: "36.5"}
+      waste_non_hazardous_total: {value: "412"}
+      employment_total_workforce: {value: "612"}
+      employment_female: {value: "268"}
+      employment_male: {value: "344"}
+      health_safety_fatalities_current: {value: "0"}
+      health_safety_lost_days: {value: "126"}
+      training_hours_average: {value: "18.5"}
+      supply_chain_suppliers_total: {value: "213"}
+      anti_corruption_legal_cases: {value: "0"}
+      community_volunteer_hours: {value: "640"}
+content:
+  generated: {}
+  tables: {}

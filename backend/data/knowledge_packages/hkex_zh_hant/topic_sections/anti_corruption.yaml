@@ -1,0 +1,113 @@
+# ABOUTME(en): Topic chapter template of the HKEX Aspect「反貪污」: governance / strategy / risk-management
+# ABOUTME(en): blocks with their intake evidence and Appendix C2 requirement keys; the metrics H3 is compiled from metricDisclosure.
+section:
+  key: anti_corruption
+  title: 反貪污
+  headingLevel: 2
+  reportSectionId: anti_corruption
+  conciseDisclosure:
+    id: anti_corruption.concise_summary
+    type: paragraph
+    blockType: generative
+    source: ai
+    styleRole: body
+    generation:
+      task:
+        focus: 根據本層面當前可見證據形成一段連貫摘要，涵蓋防止賄賂、勒索、欺詐及洗黑錢的政策與合規情況、防範措施、舉報程序及反貪污培訓，不使用四項小標題。
+      inputs:
+        evidence:
+          kind: report_section
+      targetChars:
+      - 260
+      - 520
+  children:
+  - key: anti_corruption.gov
+    title: 管治
+    pillar: governance
+    headingLevel: 3
+    blocks:
+    - id: anti_corruption.gov_policy_and_compliance
+      type: paragraph
+      blockType: generative
+      source: ai
+      styleRole: body
+      generation:
+        task:
+          focus: 說明公司有關防止賄賂、勒索、欺詐及洗黑錢的政策、職責安排，以及遵守相關法律及規例（如香港《防止賄賂條例》）的情況（守則層面B7一般披露）。
+          noFactGuidance: |-
+            用戶未提供政策或職責資料時，以審慎、概括的語態說明公司按所屬行業及業務類型對本層面採取的一般管理關注、合規原則及職責安排；不指名部門、制度名稱、認證或審批流程，不聲稱已建立特定制度或已完成合規檢查。
+        inputs:
+          evidence:
+            kind: explicit
+            intakeItems:
+            - anti_corruption.q_governance_roles
+            - anti_corruption.q_governance_policies
+            - anti_corruption.q_governance_certifications
+        targetChars:
+        - 180
+        - 400
+        standardDisclosureRequirementKeys:
+        - anti_corruption.gov.general_disclosure_policies
+        - anti_corruption.gov.general_disclosure_compliance
+        simplifiedWritingGuidance:
+        - 遵守相關法律及規例的情況只在用戶明確提供時陳述；未提供時不寫「未發現違規」或「無重大違規」等結論。
+  - key: anti_corruption.strategy
+    title: 策略
+    pillar: strategy
+    headingLevel: 3
+    blocks:
+    - id: anti_corruption.strategy_direction
+      type: paragraph
+      blockType: generative
+      source: ai
+      styleRole: body
+      generation:
+        task:
+          focus: 說明公司在商業道德與誠信方面的方針、對僱員及業務夥伴的要求以及反貪污文化建設的方向。
+          noFactGuidance: 用戶未提供目標或計劃時，說明公司會結合業務發展持續關注本層面的改善方向與量化目標的訂立；不虛構目標數值、基準年、達成期限或已取得的成效。
+        inputs:
+          evidence:
+            kind: explicit
+            intakeItems:
+            - anti_corruption.q_strategy_content
+        targetChars:
+        - 120
+        - 280
+        standardDisclosureRequirementKeys:
+        - anti_corruption.strategy.integrity_direction
+  - key: anti_corruption.iro
+    title: 風險管理
+    pillar: iro_management
+    headingLevel: 3
+    blocks:
+    - id: anti_corruption.iro_measures_and_training
+      type: paragraph
+      blockType: generative
+      source: ai
+      styleRole: body
+      generation:
+        task:
+          focus: |-
+            描述公司的防範措施及舉報程序（舉報渠道、保密與免受報復、調查與跟進）及其執行與監察方法，以及向董事及僱員提供的反貪污培訓（守則關鍵績效指標B7.2及B7.3）。
+          noFactGuidance: 用戶未提供具體措施時，僅結合行業及業務類型說明本層面常見的管理環節與方向性安排；不聲稱公司已實施特定措施、已購置設備、已委聘服務商或已取得成效。
+        inputs:
+          evidence:
+            kind: explicit
+            intakeItems:
+            - anti_corruption.q_whistleblowing
+            - anti_corruption.q_anti_corruption_training
+            - anti_corruption.q_corruption_cases
+        targetChars:
+        - 220
+        - 460
+        standardDisclosureRequirementKeys:
+        - anti_corruption.iro.preventive_measures_and_whistleblowing
+        - anti_corruption.iro.anti_corruption_training
+        simplifiedWritingGuidance:
+        - 數值由關鍵績效指標數據表承載；本段不寫排放量、耗用量、比率或減幅等數字。
+metricDisclosure:
+  catalogMetricKeys:
+  - anti_corruption_legal_cases
+  - anti_corruption_training_directors
+  - anti_corruption_training_employees
+  - anti_corruption_training_hours

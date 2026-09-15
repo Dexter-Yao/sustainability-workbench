@@ -1,0 +1,25 @@
+# ABOUTME(en): Topic-specific intake questions of "Emissions"; the four fixed pillar questions come from topic_intake_common.yaml.
+# ABOUTME(en): Quantitative KPIs are collected through the metric catalog, not here.
+contentScopeId: emissions
+items:
+- key: emissions.q_emission_sources
+  prompt: What are the company's main emission sources?
+  kind: multi_select
+  collectionPriority: recommended
+  options:
+  - Combustion equipment (boilers, generators)
+  - Company vehicles
+  - Production processes (spraying, welding, cleaning, etc.)
+  - Industrial wastewater discharge
+  - Domestic sewage discharge
+  - No significant emission sources
+  hint: Select all that apply; note how each source is controlled.
+  maxChars: 5000
+- key: emissions.q_emission_reduction_measures
+  prompt: What measures has the company taken to reduce emissions?
+  kind: text
+  collectionPriority: recommended
+  hint: Treatment facilities, monitoring, projects; or blank.
+  generationBoundary: |-
+    Unless specific figures are given, do not generate reduction volumes, compliance rates or monitoring results.
+  maxChars: 5000

@@ -1,0 +1,999 @@
+# 报告固定骨架（模板形态·自包含·递归 Section 树）。可执行 schema 以 contract/models.py 为准；本文件是模板实例真相源：字段只有定义无具体值，
+# 章节标题由 Section.title 承载（含字段引用时用 titleContent），正文块为叶子；空标题节=纯内容分组。
+# blockType: fixed=确定正文 | slot=填空(字段/用户输入) | constrained/generative=LLM生成
+title: 可持续发展报告
+# requiredBefore 决定门禁阶段，required 只决定「用户须填」（UI 星号与 readiness 引导）。
+# 只有正文无条件引用、缺失即导致交付级渲染 fail-loud 的字段才标 export；
+# 承载块自带 appears_when（缺失即整块隐藏）或正文根本不引用的字段不设阶段，
+# 以免"能生成却导不出"：能生成就必须能导出。
+fields:
+  company_registered_name: {key: company_registered_name, label: 公司注册名, type: string, source: user_input, required: true, requiredBefore: export}
+  company_short_name:      {key: company_short_name, label: 公司简称, type: string, source: user_input, required: true}
+  reporting_year:          {key: reporting_year, label: 报告年份, type: year, source: user_input, required: true, requiredBefore: export}
+  # 报告期起止由报告年份派生默认值（见 inputGuidance 的 defaultRule），用户可改可留空，
+  # 故不设 required；正文引用它们的块均带 fallback 或自门控。
+  report_period_start:     {key: report_period_start, label: 报告期起始, type: date, source: user_input, required: false}
+  report_period_end:       {key: report_period_end, label: 报告期截止, type: date, source: user_input, required: false}
+  # 以下字段用户可填可不填：正文不引用，或承载块 appears_when 在缺失时整块隐藏。
+  # 合并范围为结构化单选：选项决定「关于本报告」披露范围段落
+  # 的口径变体；未选择或历史自由文本值（ne 两个特殊选项）落入默认「与合并财务报表口径一致」句。
+  consolidation_scope:     {key: consolidation_scope, label: 合并范围, type: enum, source: user_input, required: false, options: [仅公司本部（无并表子公司）, 母公司及全部并表子公司, 特殊口径]}
+  consolidation_scope_note: {key: consolidation_scope_note, label: 合并范围说明, type: string, source: user_input, required: false, appears_when: {all: [{path: fields.consolidation_scope.value, op: eq, value: 特殊口径}]}}
+  # 报告发布方式决定「报告获取及意见反馈」的表述：官网发布给出公司官网地址供读者查阅，
+  # 线下发布则由读者经反馈邮箱索取。填的是公司官网地址（编制期即已存在），不是本报告的存储链接。
+  report_publication_channel: {key: report_publication_channel, label: 报告发布方式, type: enum, source: user_input, required: false, options: [公司官网发布, 线下发布]}
+  report_publication_website_url: {key: report_publication_website_url, label: 公司官网地址, type: url, source: user_input, required: false, appears_when: {all: [{path: fields.report_publication_channel.value, op: eq, value: 公司官网发布}]}}
+  report_approval_year:    {key: report_approval_year, label: 审批年份, type: year, source: user_input, required: false}
+  report_approval_month:   {key: report_approval_month, label: 审批月份, type: month, source: user_input, required: false}
+  report_approval_body:    {key: report_approval_body, label: 审批主体, type: enum, source: user_input, required: false, options: [高级管理层, 董事会, 高级管理层/董事会]}
+  assurance_provider_name: {key: assurance_provider_name, label: 鉴证机构完整名称, type: string, source: user_input, required: false}
+  assurance_standard:      {key: assurance_standard, label: 鉴证标准, type: string, source: user_input, required: false}
+  board_meeting_count:     {key: board_meeting_count, label: 董事会会议次数, type: number, source: user_input, required: false}
+  board_attendance_rate:   {key: board_attendance_rate, label: 董事出席率, type: percent, source: user_input, required: false}
+  industry_major_category:  {key: industry_major_category, label: 所属行业门类, type: enum, source: user_input, required: true, options: [农、林、牧、渔业, 采矿业, 制造业, 电力、热力、燃气及水生产和供应业, 建筑业, 批发和零售业, 交通运输、仓储和邮政业, 住宿和餐饮业, 信息传输、软件和信息技术服务业, 金融业, 房地产业, 租赁和商务服务业, 科学研究和技术服务业, 水利、环境和公共设施管理业, 居民服务、修理和其他服务业, 教育, 卫生和社会工作, 文化、体育和娱乐业, 公共管理、社会保障和社会组织, 国际组织]}
+  industry_division:        {key: industry_division, label: 所属行业大类, type: string, source: user_input, required: false}
+  industry:                 {key: industry, label: 所属行业, type: string, source: derived, required: true, computed: {from: [industry_major_category, industry_division], rule: 门类与大类中文名合并}}
+  company_business_summary: {key: company_business_summary, label: 主营业务概述, type: string, source: derived, required: false, computed: {from: [company_profile], rule: LLM 压缩公司简介为约100字主营业务概述（上下文工程步骤0）}}
+  # —— 条件作答字段（控制可选节显隐；并入 fields，不另设 materials）——
+  has_technology_ethics_sensitive_activity: {key: has_technology_ethics_sensitive_activity, label: 企业运营是否涉及生命科学、人工智能等科技伦理敏感领域的科学研究、技术开发活动？, type: enum, source: user_input, required: true, options: [是, 否]}
+
+# 用户可见填写体验合同：只解释如何填写并声明新建报告默认值；不进入报告正文、持久化事实或 LLM 上下文。
+inputGuidance:
+  fields.industry_major_category.value:
+    termExplanation: "行业门类与大类共同决定报告中的行业表述与同行参照口径。"
+  fields.report_publication_channel.value:
+    termExplanation: "决定「关于本报告」的报告获取方式表述；选「线下发布」时读者通过读者反馈邮箱索取。"
+  fields.report_publication_website_url.value:
+    helpText: "公司官网地址，读者据此查阅本报告；不是本报告文件的下载链接。"
+  fields.consolidation_scope.value:
+    helpText: "选择报告覆盖到哪些主体；与财务报表合并范围一致时选常规口径。"
+    termExplanation: "决定「关于本报告」披露范围段落的表述，并作为定量收资模板的只读口径；不选择时按母公司及全部并表子公司表述。"
+  fields.consolidation_scope_note.value:
+    helpText: "一句话说明覆盖的主体范围，如「母公司及物流、仓储两家子公司」，无需句号。"
+    termExplanation: "原文进入「关于本报告」披露范围段落；仅在合并范围选择「特殊口径」时填写。"
+  fields.report_approval_year.value:
+    termExplanation: "审批年份、月份、主体三项齐备才生成「关于本报告」的审批说明段落，否则自动省略。"
+  fields.report_approval_month.value:
+    termExplanation: "与审批年份、主体三项齐备才生成审批说明段落。"
+  fields.report_approval_body.value:
+    termExplanation: "与审批年份、月份三项齐备才生成审批说明段落。"
+  fields.assurance_provider_name.value:
+    termExplanation: "勾选「本报告包含外部鉴证报告」后填写，用于生成「关于本报告」外部鉴证段落。"
+  appendixPackage.readerFeedbackContactInformation.email:
+    helpText: "读者据此联系公司；选「线下发布」时也用于索取报告。"
+  fields.reporting_year.value:
+    defaultRule: previous_calendar_year
+  fields.report_period_start.value:
+    defaultRule: reporting_year_start
+  fields.report_period_end.value:
+    defaultRule: reporting_year_end
+assessmentScoreScale:
+  minimumExclusive: 0
+  maximum: 5
+  multipleOf: 0.1
+  # 两个维度的用户可见释义：网页与评分表 Excel 共用，不在任一端另写一份。
+  financialMaterialityDefinition: 议题对公司自身经营、收入或成本的影响。
+  financialMaterialityExplanation: 达到或超过阈值的议题按「财务重要」纳入报告重点。
+  impactMaterialityDefinition: 公司在该议题上对环境和社会的影响，正面负面均计。
+  impactMaterialityExplanation: 达到或超过阈值的议题按「影响重要」纳入报告重点。
+
+# Display vocabulary of the materiality assessment (tables, matrix axes, model-visible IRO labels).
+# The sm.topic_table / sm.iro_table option lists must agree with these words (guarded by tests).
+assessmentVocabulary:
+  materiality: {dual: 双重重要性, financial: 财务重要性, impact: 影响重要性, non: 非重要性}
+  materialityAxes: {financial: 财务重要性, impact: 影响重要性}
+  iroKind: {impact: 影响, risk: 风险, opportunity: 机遇, risk_opportunity: 风险与机遇}
+  impactClass: {actual_positive: 实际正面影响, potential_positive: 潜在正面影响, potential_negative: 潜在负面影响}
+
+# Wording of the quantitative metrics table that is validated or printed: the greenhouse gas accounting
+# standard choices, the "other" sentinel, and the review-only remark naming the standard behind a value.
+quantitativeMetricsVocabulary:
+  greenhouseGasAccountingStandards:
+    - 《温室气体核算体系》（GHG Protocol）
+    - ISO 14064-1:2018及《工业企业温室气体排放核算和报告通则》（GB/T 32150-2015）
+  otherStandardLabel: 其他
+  accountingStandardRemarkTemplate: "核算标准：{standard}"
+  remarkSeparator: "；"
+  noValueReasonLabels:
+    not_collected: 尚未收集
+    not_available: 暂无法取得
+    not_applicable: 不适用
+    will_supplement: 后续补充
+
+intakeItems:
+  - key: company_profile
+    contentScopeId: front_company_intro
+    # 题干兼作 LLM 上下文的材料标签与收资表题列，保持简洁名词，不写填写引导。
+    prompt: 公司简介
+    kind: text
+    collectionPriority: core
+    # 不设 requiredBefore：轻量版以 report_profiles.yaml 的 generation_required_field_ids
+    # 为唯一生成门槛，公司简介缺失时由生成侧按缺资料分支处理，不阻断生成与导出。
+    hint: 按事实写即可，无需润色成报告文体。
+    termExplanation: 作为「关于公司」章节与主营业务概述的基础材料，生成时会据此整合改写。
+    minChars: 100
+    maxChars: 5000
+  - key: articles
+    contentScopeId: front_governance
+    prompt: 请填写公司章程或治理制度中关于治理主体、职责边界和运行安排的描述。
+    kind: text
+    collectionPriority: core
+    hint: 可粘贴章程或制度中的相关条款；系统会整合为一个治理架构与权责体系段落，不需要按报告段落拆分。
+    maxChars: 5000
+  - key: sustainability_strategy
+    contentScopeId: front_sustainability_mgmt
+    prompt: 请填写公司可持续发展战略的主要内容。
+    kind: text
+    collectionPriority: recommended
+    hint: 可填写战略方向、重点领域、原则或阶段性安排；也可上传战略规划类文件由系统按资料出具。没有可留空，本节将不出现在报告中。
+    maxChars: 5000
+  - key: sustainability_governance_structure
+    contentScopeId: front_sustainability_mgmt
+    prompt: 请简述贵司可持续发展（ESG）相关事项由哪些机构、部门或岗位参与管理。
+    kind: text
+    collectionPriority: core
+    hint: 有专门 ESG 组织的，可说明层级和机构；没有专门 ESG 组织的，可填写现有负责人、部门或岗位如何分工参与。
+    maxChars: 5000
+  # 企业资质与认证的文字填写入口：进「关于公司」正文，
+  # 不进「可持续发展成果」的集中表——集中表的行由证书图片确定性解析而来，模型不参与；
+  # 把自由文本再喂给模型解析成表格行会多一次调用，且两条路径的可核对性不同。
+  # 用户上传了证书图片时，事实由 Image Agent 解析并进集中表，此处不必重复填。
+  - key: company_certifications
+    contentScopeId: front_company_intro
+    prompt: 请填写贵司获得的专业认证、资质与荣誉。
+    kind: text
+    collectionPriority: recommended
+    hint: 可写认证或荣誉名称与授予方；已上传证书图片的无需在此重复填写。没有可留空。
+    maxChars: 3000
+  - key: sustainability_governance_duties
+    contentScopeId: front_sustainability_mgmt
+    prompt: 请填写上述机构、部门或岗位在可持续发展相关事项中的主要职责分工。
+    kind: text
+    collectionPriority: core
+    hint: 可概括职责边界和协作方式；不需要为了报告而编写复杂委员会、汇报机制或考核机制。
+    maxChars: 5000
+
+disclosureProfile:
+  mainlandStandard: sse
+  includesHongKongExchangeGuide: false
+  additionalDisclosureReferences: []
+appendixPackage:
+  externalAssuranceReport:
+    isIncluded: false
+  readerFeedbackContactInformation:
+    address: null
+    email: null
+    phone: null
+
+sections:
+  # ============ 第一章 关于本报告 ============
+  - key: about_report
+    title: 关于本报告
+    headingLevel: 1
+    required: true
+    blocks:
+      - id: about.opening
+        type: paragraph
+        blockType: fixed
+        source: template
+        styleRole: body
+        content:
+          - {kind: ref, ref: company_short_name, fallback: 本公司}
+          - {kind: text, text: "秉持可持续发展理念，关注各利益相关方的合理诉求，持续推进环境、社会及治理相关工作。本报告围绕公司可持续发展管理与重要议题实践，客观呈现报告期内相关管理安排、行动进展与绩效信息。"}
+    children:
+      - key: about_report.scope
+        title: 报告范围
+        headingLevel: 2
+        blocks:
+          # 披露范围段落按「合并范围 × 有无简称」选变体：
+          # 默认口径（未选择、历史自由文本或选“母公司及全部并表子公司”）沿用合并报表口径句；
+          # “仅公司本部”陈述覆盖范围为公司本部；“特殊口径”引用 consolidation_scope_note 原文（缺失有 fallback）。
+          - id: about.scope
+            type: paragraph
+            blockType: slot
+            source: user_input
+            styleRole: body
+            appears_when:
+              all:
+                - {path: fields.company_short_name.value, op: exists}
+                - {path: fields.consolidation_scope.value, op: ne, value: 仅公司本部（无并表子公司）}
+                - {path: fields.consolidation_scope.value, op: ne, value: 特殊口径}
+            content:
+              - {kind: text, text: "本报告信息披露范围覆盖"}
+              - {kind: ref, ref: company_registered_name}
+              - {kind: text, text: "及其下属子公司（简称“"}
+              - {kind: ref, ref: company_short_name}
+              - {kind: text, text: "”、“公司”或“我们”），与公司年度合并财务报表口径保持一致。当具体数据范围与报告范围不一致时，会在正文中注明。"}
+          - id: about.scope_without_short_name
+            type: paragraph
+            blockType: slot
+            source: user_input
+            styleRole: body
+            appears_when:
+              all:
+                - {path: fields.company_short_name.value, op: not_exists}
+                - {path: fields.consolidation_scope.value, op: ne, value: 仅公司本部（无并表子公司）}
+                - {path: fields.consolidation_scope.value, op: ne, value: 特殊口径}
+            content:
+              - {kind: text, text: "本报告信息披露范围覆盖"}
+              - {kind: ref, ref: company_registered_name}
+              - {kind: text, text: "及其下属子公司（以下统称“公司”或“我们”），与公司年度合并财务报表口径保持一致。当具体数据范围与报告范围不一致时，会在正文中注明。"}
+          - id: about.scope_parent_only
+            type: paragraph
+            blockType: slot
+            source: user_input
+            styleRole: body
+            appears_when:
+              all:
+                - {path: fields.company_short_name.value, op: exists}
+                - {path: fields.consolidation_scope.value, op: eq, value: 仅公司本部（无并表子公司）}
+            content:
+              - {kind: text, text: "本报告信息披露范围覆盖"}
+              - {kind: ref, ref: company_registered_name}
+              - {kind: text, text: "（简称“"}
+              - {kind: ref, ref: company_short_name}
+              - {kind: text, text: "”、“公司”或“我们”），即公司本部。当具体数据范围与报告范围不一致时，会在正文中注明。"}
+          - id: about.scope_parent_only_without_short_name
+            type: paragraph
+            blockType: slot
+            source: user_input
+            styleRole: body
+            appears_when:
+              all:
+                - {path: fields.company_short_name.value, op: not_exists}
+                - {path: fields.consolidation_scope.value, op: eq, value: 仅公司本部（无并表子公司）}
+            content:
+              - {kind: text, text: "本报告信息披露范围覆盖"}
+              - {kind: ref, ref: company_registered_name}
+              - {kind: text, text: "（以下统称“公司”或“我们”），即公司本部。当具体数据范围与报告范围不一致时，会在正文中注明。"}
+          - id: about.scope_special
+            type: paragraph
+            blockType: slot
+            source: user_input
+            styleRole: body
+            appears_when:
+              all:
+                - {path: fields.company_short_name.value, op: exists}
+                - {path: fields.consolidation_scope.value, op: eq, value: 特殊口径}
+            content:
+              - {kind: text, text: "本报告信息披露范围覆盖"}
+              - {kind: ref, ref: company_registered_name}
+              - {kind: text, text: "（简称“"}
+              - {kind: ref, ref: company_short_name}
+              - {kind: text, text: "”、“公司”或“我们”）。本报告的数据编制口径为："}
+              - {kind: ref, ref: consolidation_scope_note, fallback: 以正文各处注明的披露口径为准}
+              - {kind: text, text: "。当具体数据范围与报告范围不一致时，会在正文中注明。"}
+          - id: about.scope_special_without_short_name
+            type: paragraph
+            blockType: slot
+            source: user_input
+            styleRole: body
+            appears_when:
+              all:
+                - {path: fields.company_short_name.value, op: not_exists}
+                - {path: fields.consolidation_scope.value, op: eq, value: 特殊口径}
+            content:
+              - {kind: text, text: "本报告信息披露范围覆盖"}
+              - {kind: ref, ref: company_registered_name}
+              - {kind: text, text: "（以下统称“公司”或“我们”）。本报告的数据编制口径为："}
+              - {kind: ref, ref: consolidation_scope_note, fallback: 以正文各处注明的披露口径为准}
+              - {kind: text, text: "。当具体数据范围与报告范围不一致时，会在正文中注明。"}
+      - key: about_report.timeframe
+        title: 时间范围
+        headingLevel: 2
+        blocks:
+          - id: about.timeframe
+            type: paragraph
+            blockType: slot
+            source: user_input
+            styleRole: body
+            # 报告期改为可选后必须自门控：起止任一为空则整句隐藏，
+            # 否则交付级渲染会因无 fallback 的 ref 缺值而 fail-loud（拿不到任何 Word）。
+            appears_when:
+              all:
+                - {path: fields.report_period_start.value, op: exists}
+                - {path: fields.report_period_end.value, op: exists}
+            content:
+              - {kind: text, text: "本报告为年度报告，报告时间范围为"}
+              - {kind: ref, ref: report_period_start}
+              - {kind: text, text: "至"}
+              - {kind: ref, ref: report_period_end}
+              - {kind: text, text: "。部分信息超出此范围的，已在对应报告位置予以说明。"}
+      - key: about_report.basis
+        title: 编制依据
+        headingLevel: 2
+        blocks:
+          - id: about.basis
+            type: paragraph
+            blockType: fixed
+            source: template
+            styleRole: body
+            content:
+              - {kind: text, text: "本报告主要遵循"}
+              - {kind: ref, ref: disclosureProfile.basisStatement}
+              - {kind: text, text: "进行编制。同时参考了国际可持续准则理事会（ISSB）发布的《国际财务报告可持续披露准则第1号——可持续相关财务信息披露一般要求》和《国际财务报告可持续披露准则第2号——气候相关披露》，并响应联合国可持续发展目标（SDGs）。"}
+      - key: about_report.principles
+        title: 编制原则
+        headingLevel: 2
+        blocks:
+          - id: about.principles
+            type: paragraph
+            blockType: fixed
+            source: template
+            styleRole: body
+            content: [{kind: text, text: "在编制本报告时，我们遵循“重要性、量化、平衡、一致性”的披露原则，并综合考量“准确性、清晰性、可比性、完整性、时效性、可验证性”等质量要求。"}]
+          - {id: about.principle_materiality, type: paragraph, blockType: fixed, source: template, styleRole: body, listType: unordered, content: [{kind: text, text: "重要性原则：围绕公司战略与利益相关方核心关切，识别环境、社会及治理领域的关键议题，优先披露对企业发展和社会影响重大的内容，确保报告聚焦核心价值与关键风险。"}]}
+          - {id: about.principle_balance, type: paragraph, blockType: fixed, source: template, styleRole: body, listType: unordered, content: [{kind: text, text: "平衡原则：客观披露企业在可持续发展中的积极成果与面临的挑战，不回避问题与不足，全面、平衡地呈现企业的责任履行状况，以诚恳的态度接受社会监督，持续改进不足。"}]}
+          - {id: about.principle_quant, type: paragraph, blockType: fixed, source: template, styleRole: body, listType: unordered, content: [{kind: text, text: "量化原则：在具备数据基础的领域，对关键ESG绩效采用量化指标呈现，并说明数据统计方法、口径与来源，为利益相关方提供直观、可对比的信息。"}]}
+          - {id: about.principle_consistency, type: paragraph, blockType: fixed, source: template, styleRole: body, listType: unordered, content: [{kind: text, text: "一致性原则：保持数据统计口径、披露范围与表述方式的前后一致，若因准则更新或业务调整需变更，将在报告中明确说明变更原因与影响，保障信息的纵向可比性。"}]}
+      - key: about_report.access
+        title: 报告获取及意见反馈
+        headingLevel: 2
+        blocks:
+          # 报告获取方式三选一：选官网发布且已填官网地址 → 给出地址；选线下发布 → 只述发布形式，
+          # 读者经 about.contact 的反馈邮箱索取；未选择或选了官网但未填地址 → 落入默认句（同线下表述）。
+          - id: about.access.website
+            type: paragraph
+            blockType: slot
+            source: user_input
+            styleRole: body
+            appears_when:
+              all:
+                - {path: fields.report_publication_channel.value, op: eq, value: 公司官网发布}
+                - {path: fields.report_publication_website_url.value, op: exists}
+            content:
+              - {kind: text, text: "本报告以独立报告形式发布，提供简体中文版本。若另行发布其他语言版本，如内容存在差异，以简体中文版为准。报告可通过公司官网"}
+              - {kind: ref, ref: report_publication_website_url}
+              - {kind: text, text: "查阅与下载。"}
+          - id: about.access
+            type: paragraph
+            blockType: slot
+            source: user_input
+            styleRole: body
+            appears_when:
+              any:
+                - {path: fields.report_publication_channel.value, op: ne, value: 公司官网发布}
+                - {path: fields.report_publication_website_url.value, op: not_exists}
+            content:
+              - {kind: text, text: "本报告以独立报告形式发布，提供简体中文版本。若另行发布其他语言版本，如内容存在差异，以简体中文版为准。"}
+          - id: about.contact
+            type: paragraph
+            blockType: slot
+            source: user_input
+            styleRole: body
+            appears_when: {all: [{path: appendixPackage.readerFeedbackContactInformation.email, op: exists}]}
+            content:
+              - {kind: text, text: "如需获取本报告，或对本报告内容有任何垂询或改进建议，敬请通过邮箱"}
+              - {kind: ref, ref: appendixPackage.readerFeedbackContactInformation.email}
+              - {kind: text, text: "与我们联络。"}
+      - key: about_report.assurance
+        title: 报告鉴证
+        headingLevel: 2
+        blocks:
+          - id: about.assurance
+            type: paragraph
+            blockType: slot
+            source: user_input
+            styleRole: body
+            appears_when:
+              all:
+                - {path: appendixPackage.externalAssuranceReport.isIncluded, op: eq, value: true}
+                - {path: fields.assurance_provider_name.value, op: exists}
+                - {path: fields.assurance_standard.value, op: exists}
+            content:
+              - {kind: text, text: "本报告已委托"}
+              - {kind: ref, ref: assurance_provider_name}
+              - {kind: text, text: "依据"}
+              - {kind: ref, ref: assurance_standard}
+              - {kind: text, text: "进行第三方外部鉴证，外部鉴证报告详见附录。"}
+      # 审批说明按参考模板为章末不编号段落：置于空标题分组节，
+      # 编号推导对无标题节透明（section_number 的空标题分组节规则），故不占「七、」。
+      - key: about_report.approval
+        title: ""
+        headingLevel: 2
+        blocks:
+          - id: about.approval
+            type: paragraph
+            blockType: slot
+            source: user_input
+            styleRole: body
+            appears_when:
+              all:
+                - {path: fields.report_approval_year.value, op: exists}
+                - {path: fields.report_approval_month.value, op: exists}
+                - {path: fields.report_approval_body.value, op: exists}
+            content:
+              - {kind: text, text: "本报告于"}
+              - {kind: ref, ref: report_approval_month}
+              - {kind: text, text: "经由"}
+              - {kind: ref, ref: report_approval_body}
+              - {kind: text, text: "审议并批准发布。"}
+
+      # ============ 第二章 公司简介 ============
+  - key: company_intro
+    title: 关于公司
+    titleContent: [{kind: text, text: "关于"}, {kind: ref, ref: company_short_name, fallback: 本公司}]
+    headingLevel: 1
+    required: true
+    blocks:
+      - id: company_intro.body
+        type: paragraph
+        blockType: constrained
+        source: ai
+        styleRole: body
+        generation:
+          task: {focus: 依据用户提供的公司简介，整合形成完整、准确的公司介绍，作为报告“关于公司”一章的正文。}
+          inputs: {evidence: {kind: explicit, intakeItems: [company_profile, company_certifications]}}
+          targetChars: [400, 1200]
+          simplifiedWritingGuidance:
+            - 本章的实质内容就是企业自身概况：企业背景、发展历程、业务与愿景在本章不属于“背景铺垫”，而是正文本体，应直接完整呈现。
+            - 用户简介中实际提供的事实类别须在正文中均有体现：发展历程与关键节点、主要产品或服务、销售网络或市场覆盖、战略愿景与价值观，以及用户提供的其他重要事实（如荣誉资质）；用户未提供的类别不虚构、不补写。
+            - 整合改写而非压缩摘要：可重组顺序、去除口号式重复，但不得丢弃具体年份、产品名、地域、客户领域等可核验事实；篇幅随用户资料的丰富程度在区间内自适应，资料丰富时靠上限组织。
+      # 素材图片承载位：证书/奖项等公司范围排版素材在生成期确定性放置于本章末尾。
+      - id: company_intro.layout_assets
+        type: image
+        blockType: slot
+        source: user_input
+        styleRole: figure_inline
+        image: {layoutAssetSlot: true}
+
+  # ============ 第三章 公司治理 ============
+  - key: governance
+    title: 公司治理
+    headingLevel: 1
+    required: true
+    children:
+      - key: gov.structure
+        title: 治理架构与权责体系
+        headingLevel: 2
+        blocks:
+          - id: gov.structure_intro
+            type: paragraph
+            blockType: constrained
+            source: ai
+            styleRole: body
+            generation:
+              task:
+                focus: "说明公司治理架构、权责关系和基本运行机制。"
+              inputs: {evidence: {kind: explicit, intakeItems: [articles]}}
+              targetChars: [300, 650]
+              simplifiedWritingGuidance:
+                - 只概括公司治理架构、主要治理主体和权责安排；不按股东会、董事会、监事和管理层拆成多个生成段落。
+                - 依据公司章程资料组织内容，但保持报告层面的概括距离，不展开章程条款细节、议事流程或内部审批节点。
+          # 素材图片承载位：组织架构图等治理范围排版素材在生成期确定性放置于本节末尾。
+          - id: gov.structure.layout_assets
+            type: image
+            blockType: slot
+            source: user_input
+            styleRole: figure_inline
+            image: {layoutAssetSlot: true}
+      - key: gov.compliance
+        title: 治理合规与透明度
+        headingLevel: 2
+        blocks:
+          - id: gov.board_meetings
+            type: paragraph
+            blockType: slot
+            source: user_input
+            styleRole: body
+            appears_when:
+              all:
+                - {path: fields.board_meeting_count.value, op: exists}
+                - {path: fields.board_attendance_rate.value, op: exists}
+            content:
+              - {kind: text, text: "报告期内，公司治理体系运行稳健，全年共计召开董事会会议"}
+              - {kind: ref, ref: board_meeting_count}
+              - {kind: text, text: "次，董事出席率"}
+              - {kind: ref, ref: board_attendance_rate}
+              - {kind: text, text: "，确保了重大决策的科学性与及时性。"}
+
+  # ============ 第四章 可持续发展治理 ============
+  - key: sustainability_mgmt
+    title: 可持续发展治理
+    headingLevel: 1
+    required: true
+    children:
+      - key: sm.strategy
+        title: 可持续发展战略
+        headingLevel: 2
+        blocks:
+          - id: sm.strategy
+            type: paragraph
+            blockType: generative
+            source: ai
+            styleRole: body
+            generation:
+              task:
+                focus: "依据用户提供的可持续发展战略内容或上传的战略类资料，说明公司的战略方向、重点领域和推进原则。"
+              inputs:
+                evidence:
+                  kind: material_gated
+                  intakeItems: [sustainability_strategy]
+              targetChars: [220, 480]
+              simplifiedWritingGuidance:
+                - "只呈现用户战略内容或战略类资料中已确认的方向与安排；不新增目标数值、时间表或专项行动，不预设成熟战略体系。"
+                - "资料记载的未按期或调整情形如实保留其性质表述，不淡化省略，也不添加资料未记载的保证性评价。"
+
+      - key: sm.goals
+        title: 可持续发展目标与关键进展
+        headingLevel: 2
+        blocks:
+          - id: sm.goals_table
+            type: table
+            blockType: slot
+            source: user_input
+            styleRole: table_three_line
+            table:
+              caption: 可持续发展目标与关键进展
+              firstColumnNarrow: true
+              rowSource: user
+              colDefs:
+              - {key: goal_topic, header: 可持续议题, cellType: text}
+              - {key: goal_target_long, header: 长期目标, cellType: text}
+              - {key: goal_progress, header: 报告年度关键进展, cellType: text}
+              children:
+              - headerRow: true
+                children:
+                - {type: th, value: 可持续议题}
+                - {type: th, value: 长期目标}
+                - {type: th, value: 报告年度关键进展}
+
+      - key: sm.gov_arch
+        title: 可持续发展治理架构
+        headingLevel: 2
+        required: true
+        blocks:
+          - id: sm.gov_arch_overview
+            type: paragraph
+            blockType: constrained
+            source: ai
+            styleRole: body
+            generation:
+              task:
+                focus: "说明公司管理可持续发展事务所建立或适用的治理架构，按决策层、管理层、执行层说明各层级在可持续发展事务中的职责分工与协同关系；不描述股东会、董事会、监事会的法人治理运作机制。"
+                noFactGuidance: |-
+                  用户未提供可持续发展治理架构信息时，按决策层、管理层、执行层三个层级说明通用职责分工，不指名具体机构、部门、岗位、委员会名称或人数：
+                  决策层负责监督可持续发展相关影响、风险和机遇的评估，指导及审阅可持续发展方针、战略及目标，定期监督目标进展及完成情况，审批《可持续发展报告》；
+                  管理层负责管理重要性议题以提供分析与建议供决策层讨论，确定及管理为识别、减缓、管理及监察可持续发展相关影响、风险和机遇所需分配的成本及资源；
+                  执行层负责定期向管理层汇报可持续工作进展，承担可持续相关管理、数据统计与分析、投资者及研究机构沟通等能力建设，并协调编制可持续发展报告。
+                  不写已设立专门委员会、已形成闭环、已开展定期审议或已完成考核等未经用户确认的事实。
+              inputs: {evidence: {kind: explicit, intakeItems: [sustainability_governance_structure, sustainability_governance_duties]}}
+              targetChars: [300, 650]
+              simplifiedWritingGuidance:
+                - 将可持续发展治理架构和职责分工合并为一个主段；只写组织层级、职责边界和协同方向。
+                - 依据用户资料生成，但不把现有部门兼任扩写成成熟 ESG 委员会、完整闭环、定期汇报机制或专项考核安排。
+                - 本节只写可持续发展事务的治理架构：公司章程、法人治理结构、股东会/董事会/监事会的设立与运作机制属于「公司治理」章节，不得在此复述；即使资料中出现“承担社会责任、实现持续发展”等原则性表述，也只能作为公司重视可持续发展的背景，不得据此把法人治理结构写成可持续发展治理架构。
+          # 素材图片承载位：可持续发展治理范围的排版素材在生成期确定性放置于本节末尾。
+          - id: sm.layout_assets
+            type: image
+            blockType: slot
+            source: user_input
+            styleRole: figure_inline
+            image: {layoutAssetSlot: true}
+
+      - key: sm.stakeholder
+        title: 利益相关方沟通
+        headingLevel: 2
+        blocks:
+          - id: sm.stakeholder_intro
+            type: paragraph
+            blockType: fixed
+            source: template
+            styleRole: body
+            content: [{kind: text, text: "利益相关方沟通有助于识别可持续发展议题的关注重点，并为持续完善相关管理提供参考。"}]
+          - id: sm.stakeholder_table
+            type: table
+            blockType: slot
+            source: user_input
+            styleRole: table_three_line
+            table:
+              caption: 利益相关方沟通与参与情况
+              firstColumnNarrow: true
+              rowSource: stakeholder_engagement
+              colDefs:
+                - {key: stk_party, header: 利益相关方, cellType: text}
+                - {key: stk_topics, header: 沟通议题, cellType: text}
+                - {key: stk_methods, header: 沟通与参与方式, cellType: text}
+              children:
+                - headerRow: true
+                  children:
+                    - {type: th, value: 利益相关方}
+                    - {type: th, value: 沟通议题}
+                    - {type: th, value: 沟通与参与方式}
+      - key: sm.materiality
+        title: 议题重要性评估
+        headingLevel: 2
+        blocks:
+          # —— 未评分分支（meta.materialityStrategy == complete_coverage）——
+          # 用户未做重要性评分时，本节改用完整的四段确定性叙述，替代下方评分分支的
+          # 引言与流程步骤。理由：仅复用评分分支的块，未评分形态只出得了流程前两步、
+          # 评估结果类块全部缺席，章节语义不完整。
+          # 两个分支以 meta.materialityStrategy 互斥，任何时候只出现一套。
+          - id: sm.unscored_purpose
+            type: paragraph
+            blockType: fixed
+            source: template
+            styleRole: body
+            appears_when: {all: [{path: meta.materialityStrategy, op: eq, value: complete_coverage}]}
+            content: [{kind: text, text: "重要性议题识别是企业 ESG 治理的核心基础工作，能够帮助企业锚定可持续发展关键方向，为 ESG 战略制定与重点工作落地提供清晰指引。"}]
+          - id: sm.unscored_identification
+            type: paragraph
+            blockType: fixed
+            source: template
+            styleRole: body
+            appears_when: {all: [{path: meta.materialityStrategy, op: eq, value: complete_coverage}]}
+            content:
+              - {kind: ref, ref: reporting_year}
+              - {kind: text, text: "年度，公司立足自身生产经营全流程及价值链各环节，全面识别经营活动产生的可持续发展影响；同时密切跟踪外部宏观政策导向、产业发展趋势、监管要求及行业实践动态，研判各类外部因素对公司经营发展带来的潜在作用。评估过程中，公司系统梳理内外部主要利益相关方范畴，充分吸纳各利益相关方的核心诉求，将其纳入重要性议题评估框架。"}
+          - id: sm.unscored_screening
+            type: paragraph
+            blockType: fixed
+            source: template
+            styleRole: body
+            appears_when: {all: [{path: meta.materialityStrategy, op: eq, value: complete_coverage}]}
+            content: [{kind: text, text: "结合国家及行业政策重点，对标资本市场可持续信息披露相关准则规范，公司筛选识别对企业具备实质影响的可持续发展议题。"}]
+          # 议题数量与准则名称均为派生事实，不写死：前者随科技伦理适用性与披露档位变化，
+          # 后者随企业上市地变化。科技伦理说明走脚注——它是对「全部议题」这一断言的限定，
+          # 独立成段会读成与前文并列的另一件事。
+          - id: sm.unscored_coverage
+            type: paragraph
+            blockType: fixed
+            source: template
+            styleRole: body
+            appears_when: {all: [{path: meta.materialityStrategy, op: eq, value: complete_coverage}]}
+            content:
+              - {kind: text, text: "本年度报告合计披露 "}
+              - {kind: ref, ref: assessment.applicableTopicCount}
+              - {kind: text, text: " 项可持续发展议题，完整覆盖"}
+              - {kind: ref, ref: disclosureProfile.selectedStandardNames}
+              - {kind: text, text: "所要求的环境、社会、治理三大维度全部议题。"}
+            footnote:
+              - {kind: text, text: "鉴于公司主营业务未涉及生命科学、人工智能等科技伦理敏感领域的科学研究、技术开发活动，经评估，科技伦理不构成本年度实质性议题，故未在本报告中单独披露。"}
+          - id: sm.materiality_intro
+            type: paragraph
+            blockType: fixed
+            source: template
+            styleRole: body
+            appears_when: {all: [{path: meta.materialityStrategy, op: ne, value: complete_coverage}]}
+            content: [{kind: text, text: "重要性议题识别为可持续发展报告提供结构化参考，有助于聚焦关键领域并组织披露重点。本报告按适用的报告议题体系，对环境、社会及治理相关议题进行分类呈现。"}]
+          - id: sm.topic_library
+            type: paragraph
+            blockType: fixed
+            source: template
+            styleRole: body
+            appears_when: {all: [{path: meta.materialityStrategy, op: ne, value: complete_coverage}]}
+            content:
+              - {kind: text, text: "报告结合所在行业特点和报告议题体系，形成本年度可持续发展议题清单，为后续可能开展的重要性评估及章节披露提供结构化参考。"}
+          - id: sm.process_step1
+            type: paragraph
+            blockType: fixed
+            source: template
+            styleRole: body
+            listType: ordered
+            appears_when: {all: [{path: meta.materialityStrategy, op: ne, value: complete_coverage}]}
+            content: [{kind: text, text: "了解公司活动和业务关系背景：从经营活动与价值链各环节识别可持续发展相关影响，关注外部宏观政策、产业趋势与监管导向，梳理内外部重点利益相关方及其核心关切。"}]
+          - id: sm.process_step2
+            type: paragraph
+            blockType: fixed
+            source: template
+            styleRole: body
+            listType: ordered
+            appears_when: {all: [{path: meta.materialityStrategy, op: ne, value: complete_coverage}]}
+            content: [{kind: text, text: "建立议题清单：依据可持续信息披露规范，结合行业特点与同业对标，形成覆盖完整、结构清晰的可持续议题清单。"}]
+          - id: sm.process_step3
+            appears_when: {all: [{path: meta.materialityStrategy, op: ne, value: complete_coverage}]}
+            type: paragraph
+            blockType: fixed
+            source: template
+            styleRole: body
+            listType: ordered
+            content: [{kind: text, text: "议题重要性评估与确认：从影响重要性（影响的性质、状态、严重程度与可能性）与财务重要性（发生可能性、财务影响程度，并综合短/中/长期）两个维度评估。"}]
+          - id: sm.process_step4
+            appears_when: {all: [{path: meta.materialityStrategy, op: ne, value: complete_coverage}]}
+            type: paragraph
+            blockType: fixed
+            source: template
+            styleRole: body
+            listType: ordered
+            content: [{kind: text, text: "议题确认与呈现：设定重要性判定阈值，构建双重重要性矩阵，并在本报告中披露重要性议题评估结果。"}]
+          - id: sm.result_counts
+            type: paragraph
+            blockType: slot
+            source: assessment
+            styleRole: body
+            content:
+              - {kind: ref, ref: reporting_year}
+              - {kind: text, text: "年度议题重要性分析结果显示，公司最终确定共有"}
+              - {kind: ref, ref: assessment.counts.dual}
+              - {kind: text, text: "项议题具有双重重要性，"}
+              - {kind: ref, ref: assessment.counts.financial_only}
+              - {kind: text, text: "项仅具有财务重要性，"}
+              - {kind: ref, ref: assessment.counts.impact_only}
+              - {kind: text, text: "项仅具有影响重要性，"}
+              - {kind: ref, ref: assessment.counts.non_material}
+              - {kind: text, text: "项既不具有财务重要性又不具有影响重要性。"}
+          - id: sm.matrix_image
+            type: image
+            blockType: slot
+            source: assessment
+            styleRole: figure_inline
+            image:
+              caption: 双重重要性议题矩阵
+              placeholder: 由评估结果生成的双重重要性矩阵图
+          - id: sm.topic_table
+            type: table
+            blockType: slot
+            source: assessment
+            styleRole: table_three_line
+            table:
+              caption: 重要性议题评估结果
+              firstColumnNarrow: true
+              rowSource: assessment_topics
+              colDefs:
+                - {key: topic_dimension, header: 议题维度, cellType: text}
+                - {key: topic_name, header: 议题名称, cellType: text}
+                - {key: topic_materiality, header: 重要性范畴, cellType: single_select, options: [双重重要性, 影响重要性, 财务重要性, 非重要性]}
+              children:
+                - headerRow: true
+                  children:
+                    - {type: th, value: 议题维度}
+                    - {type: th, value: 议题名称}
+                    - {type: th, value: 重要性范畴}
+          # 本节当前只有这一条注，按 GB/T 1.1-2020 §9.10 写「注：」不编号；
+          # 若日后本节新增第二条注，两条都要改回「注1：」「注2：」。
+          # id 保留 note1 后缀：block id 随报告状态持久化，改名会使既有报告的块失配。
+          - id: sm.topic_table_note1
+            type: paragraph
+            blockType: fixed
+            source: template
+            styleRole: source_note
+            appears_when:
+              all:
+                - {path: fields.has_technology_ethics_sensitive_activity.value, op: eq, value: 否}
+                # 未评分分支已把同一说明挂成 sm.unscored_coverage 的脚注，此处不再重复成段。
+                - {path: meta.materialityStrategy, op: ne, value: complete_coverage}
+            content: [{kind: text, text: "注：鉴于公司主营业务未涉及生命科学、人工智能等科技伦理敏感领域的科学研究、技术开发活动，经双重重要性评估，科技伦理不构成本年度实质性议题，故未在本报告中单独披露。"}]
+          # IRO 引导段与 IRO 表只披露财务重要性和双重重要性议题；一个都没有时整组不出现，
+          # 否则固定引导语会声称已梳理一批并不存在的议题，且表内只剩表头。
+          - id: sm.iro_intro
+            type: paragraph
+            blockType: fixed
+            source: template
+            styleRole: body
+            appears_when:
+              any:
+                - {path: assessment.counts.dual, op: gt, value: 0}
+                - {path: assessment.counts.financial_only, op: gt, value: 0}
+            content:
+              - {kind: text, text: "针对财务重要性和双重重要性议题，公司基于重要性评估结果，梳理"}
+              - {kind: ref, ref: company_short_name, fallback: 本公司}
+              - {kind: text, text: "相关议题的影响、风险与机遇，并对不同议题情况予以汇总。"}
+          - id: sm.iro_table
+            type: table
+            blockType: constrained
+            source: ai
+            styleRole: table_three_line
+            appears_when:
+              any:
+                - {path: assessment.counts.dual, op: gt, value: 0}
+                - {path: assessment.counts.financial_only, op: gt, value: 0}
+            generation:
+              task:
+                focus: "围绕已进入财务重要性或双重重要性范围的议题，分别给出影响披露与风险机遇披露；议题名称和适用范围由评分结果确定，模型只补全其余披露单元格。"
+                noFactGuidance: "缺少企业具体 IRO 资料时，仅描述与所在行业和业务类型相关的潜在影响、风险或机遇；不得声称公司已发生、已识别或已建立任何具体制度、项目、会议、考核或成果，也不得将分类标为“实际正面影响”。"
+              inputs:
+                evidence: {kind: explicit}
+              # 本表结论是议题章节的方向参照；声明后生成编排先跑本块，再跑消费方。
+              producesConclusion: topic_iro
+              rowMode: expanded_rows
+              rowExpansion:
+                sharedColumnKeys: [iro_topic, iro_value_chain, iro_time_horizon]
+                units:
+                  - key: impact
+                    label: 影响描述
+                    columnKeys: [iro_desc, iro_class]
+                    optionsNarrowing:
+                      iro_class: [实际正面影响, 潜在正面影响, 潜在负面影响]
+                    genHintOverride:
+                      iro_desc: "只写该议题对外部环境与社会造成的影响，不写对公司自身的风险或机遇；一段不超过 120 字，不重复议题名称。"
+                  - key: risk_opportunity
+                    label: 风险与/或机遇影响描述
+                    columnKeys: [iro_desc, iro_class]
+                    optionsNarrowing:
+                      iro_class: [机遇, 风险]
+                    genHintOverride:
+                      iro_desc: "只写该议题对公司自身构成的风险或带来的机遇，不重复影响描述子行的表述；一段不超过 120 字，不重复议题名称。"
+            table:
+              caption: 财务/双重重要性议题的影响、风险与机遇
+              firstColumnNarrow: true
+              columnWidthWeights: {iro_topic: 12, iro_desc: 45, iro_class: 15, iro_value_chain: 18, iro_time_horizon: 10}
+              rowSource: assessment_iro
+              colDefs:
+                - {key: iro_topic, header: 议题, cellType: text}
+                - {key: iro_desc, header: 影响、风险与机遇描述, cellType: ai_text}
+                - {key: iro_class, header: 分类, cellType: multi_select, options: [实际正面影响, 潜在正面影响, 潜在负面影响, 机遇, 风险]}
+                - {key: iro_value_chain, header: 影响范围, cellType: multi_select, options: [上游价值链, 公司运营, 下游价值链]}
+                - {key: iro_time_horizon, header: 影响周期, cellType: multi_select, options: [短期, 中期, 长期]}
+              children:
+                - headerRow: true
+                  children:
+                    - {type: th, value: 议题}
+                    - {type: th, value: 影响、风险与机遇描述}
+                    - {type: th, value: 分类}
+                    - {type: th, value: 影响范围}
+                    - {type: th, value: 影响周期}
+  # ============ 可持续发展成果 ============
+  # 资质与认证是企业整体事实，不属于任何单一议题：一张 ISO 14001 天然横跨环境、能源、
+  # 污染物、废弃物、水资源等多个议题。集中承载使认证范围只写一次，议题正文只写证书名
+  # 与本议题的关系（该口径由 topic_intake_common.yaml 的 generationBoundary 施加）。
+  # 无证书时整章不出现：证书表按 renderable_table_rows 无数据行即不可渲染，图集承载位
+  # 无资产同样不可渲染，两块皆不可渲染时本章不进正文与目录——复用既有 renderability，
+  # 不新造显隐分支。与参考模板「没资料则不显示」一致。
+  - key: sustainable_achievements
+    title: 可持续发展成果
+    headingLevel: 1
+    required: false
+    children:
+      - key: achievements_certificates
+        title: 专业认证与资质
+        headingLevel: 2
+        blocks:
+          - id: achievements.certificate_table
+            type: table
+            blockType: slot
+            source: user_input
+            styleRole: table_three_line
+            table:
+              caption: 企业专业认证与资质
+              firstColumnNarrow: false
+              rowSource: certificate_facts
+              colDefs:
+                - {key: cert_name, header: 认证名称, cellType: text}
+                - {key: cert_issuer, header: 发证机构, cellType: text}
+                - {key: cert_scope, header: 认证范围, cellType: text}
+              children:
+                - headerRow: true
+                  children:
+                    - {type: th, value: 认证名称}
+                    - {type: th, value: 发证机构}
+                    - {type: th, value: 认证范围}
+          # 认证证书图集承载位；scope 为 report-area:sustainable_achievements。
+          - id: achievements.layout_assets
+            type: image
+            blockType: slot
+            source: user_input
+            styleRole: figure_inline
+            image:
+              layoutAssetSlot: true
+  # ============ 附录 ============
+  - key: report_appendix
+    title: 附录
+    headingLevel: 1
+    required: true
+    children:
+      - key: report_appendix.esg_key_performance_metrics
+        title: ESG关键绩效表
+        headingLevel: 2
+        blocks:
+          - id: appendix.esg_key_performance_metrics
+            type: table
+            blockType: fixed
+            source: derived
+            styleRole: table_three_line
+            table:
+              caption: ESG 关键绩效表
+              firstColumnNarrow: false
+              colDefs:
+                - {key: category, header: 议题类别, cellType: text}
+                - {key: metric, header: 指标, cellType: text}
+                - {key: unit, header: 单位, cellType: text}
+                - {key: value, header: 报告年度数值, cellType: text}
+                - {key: remark, header: 口径备注, cellType: text}
+              children:
+                - type: tr
+                  headerRow: true
+                  children:
+                    - {type: th, value: 议题类别}
+                    - {type: th, value: 指标}
+                    - {type: th, value: 单位}
+                    - {type: th, value: 报告年度数值}
+                    - {type: th, value: 口径备注}
+      - key: report_appendix.sustainability_disclosure_standards_index
+        title: 索引表
+        headingLevel: 2
+        blocks:
+          - id: appendix.standards_index.intro
+            type: paragraph
+            blockType: fixed
+            source: template
+            styleRole: body
+            # 只显示准则完整名称：表题已说明这是披露索引表，「本索引表依据…编制」是同义复述
+            # ——直接显示准则完整名称即可，不需要其他文字描述。
+            content:
+              - {kind: ref, ref: disclosureProfile.selectedStandardNames}
+          - id: appendix.standards_index.table
+            type: table
+            blockType: fixed
+            source: derived
+            styleRole: table_three_line
+            table:
+              caption: 可持续发展披露索引表
+              colDefs:
+                - {key: disclosure_requirement, header: 披露要求, cellType: text}
+                - {key: clause_reference, header: 条款, cellType: text}
+                - {key: report_section, header: 对应的本报告章节, cellType: text}
+              children:
+                - type: tr
+                  headerRow: true
+                  children:
+                    - {type: th, value: 披露要求}
+                    - {type: th, value: 条款}
+                    - {type: th, value: 对应的本报告章节}
+      - key: report_appendix.external_assurance_report
+        title: 外部鉴证声明
+        headingLevel: 2
+        appears_when: {all: [{path: appendixPackage.externalAssuranceReport.isIncluded, op: eq, value: true}]}
+        blocks:
+          - id: appendix.external_assurance_report.placeholder
+            type: paragraph
+            blockType: slot
+            source: user_input
+            styleRole: body
+            appears_when: {all: [{path: appendixPackage.externalAssuranceReport.fileLabel, op: exists}]}
+            content:
+              - {kind: text, text: "外部鉴证报告附件说明："}
+              - {kind: ref, ref: appendixPackage.externalAssuranceReport.fileLabel}
+              - {kind: text, text: "。"}
+      - key: report_appendix.reader_feedback_contact_information
+        title: 读者反馈
+        headingLevel: 2
+        appears_when:
+          any:
+            - {path: appendixPackage.readerFeedbackContactInformation.address, op: exists}
+            - {path: appendixPackage.readerFeedbackContactInformation.email, op: exists}
+            - {path: appendixPackage.readerFeedbackContactInformation.phone, op: exists}
+        blocks:
+          - id: appendix.reader_feedback.opening
+            type: paragraph
+            blockType: fixed
+            source: template
+            styleRole: body
+            content:
+              - {kind: text, text: "尊敬的读者：感谢您阅读"}
+              - {kind: ref, ref: company_short_name, fallback: 本公司}
+              - {kind: text, text: "可持续发展报告。我们欢迎您就本报告内容提出意见与建议。"}
+          - id: appendix.reader_feedback.company_name
+            type: paragraph
+            blockType: slot
+            source: user_input
+            styleRole: body
+            appears_when: {all: [{path: fields.company_registered_name.value, op: exists}]}
+            content:
+              - {kind: ref, ref: company_registered_name}
+          - id: appendix.reader_feedback.address
+            type: paragraph
+            blockType: slot
+            source: user_input
+            styleRole: body
+            appears_when: {all: [{path: appendixPackage.readerFeedbackContactInformation.address, op: exists}]}
+            content:
+              - {kind: text, text: "公司地址："}
+              - {kind: ref, ref: appendixPackage.readerFeedbackContactInformation.address}
+          - id: appendix.reader_feedback.email
+            type: paragraph
+            blockType: slot
+            source: user_input
+            styleRole: body
+            appears_when: {all: [{path: appendixPackage.readerFeedbackContactInformation.email, op: exists}]}
+            content:
+              - {kind: text, text: "联系邮箱："}
+              - {kind: ref, ref: appendixPackage.readerFeedbackContactInformation.email}
+          - id: appendix.reader_feedback.phone
+            type: paragraph
+            blockType: slot
+            source: user_input
+            styleRole: body
+            appears_when: {all: [{path: appendixPackage.readerFeedbackContactInformation.phone, op: exists}]}
+            content:
+              - {kind: text, text: "联系电话："}
+              - {kind: ref, ref: appendixPackage.readerFeedbackContactInformation.phone}

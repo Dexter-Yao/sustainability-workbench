@@ -1,0 +1,32 @@
+# ABOUTME: 人力资本发展议题轻量版内容清单，聚焦福利保障、员工培训和具体员工支持安排。
+# ABOUTME: 治理、战略和指标目标固定题由 topic_intake_common.yaml 展开；结构化数值由 ESG 定量数据表维护。
+contentScopeId: human_capital_development
+items:
+- key: human_capital_development.q_employee_benefits
+  prompt: 请简述公司员工享有的福利保障内容。
+  kind: text
+  collectionPriority: recommended
+  hint: 可填写员工福利、社会保险、补充保障、假期安排、员工关怀、困难帮扶或其他福利保障内容；没有专项内容可留空。
+  maxChars: 5000
+- key: human_capital_development.q_employee_training
+  prompt: 公司报告期内是否开展过员工培训？
+  kind: single_select
+  collectionPriority: recommended
+  options:
+  - 是
+  - 否
+  - 不确定
+  hint: 如选择是，请在补充说明中简述培训内容、培训对象和培训成果。
+  generationBoundary: 未填写具体数值时，不得生成培训人次、课时或覆盖率。
+  maxChars: 5000
+- key: human_capital_development.q_vulnerable_employee_support
+  prompt: 公司报告期内是否有针对员工特殊困难或特定群体的帮扶安排？
+  kind: single_select
+  collectionPriority: recommended
+  options:
+  - 是
+  - 否
+  - 不确定
+  hint: 如选择是，请在补充说明中写明具体帮扶对象和帮扶内容。
+  generationBoundary: 未填写具体内容时，不得编造帮扶对象、金额或次数；题干中的对象范围不得被当作已提供的企业事实。
+  maxChars: 5000

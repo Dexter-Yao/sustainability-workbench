@@ -1,0 +1,51 @@
+# ABOUTME(en): GRI 404: Training and Education 2016 disclosure requirements, grouped by the package's pillars, for the
+# ABOUTME(en): coverage audit and the key whitelist. Wording condenses the official requirement text.
+topicStandardDisclosureRequirementGroups:
+- topicSectionKey: training_and_education.gov
+  pillar: governance
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: training_and_education.gov.management_of_training
+    standardDisclosureRequirementTitle: Management of the training and education topic
+    excerptFrom: GRI 3-3 with GRI 404
+    standardDisclosureRequirementText: |-
+      Report how the organization manages the training and education topic, including the responsibilities and policies covering employee training and career development.
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: GRI
+      clauseRef: GRI 3-3 with GRI 404
+- topicSectionKey: training_and_education.strategy
+  pillar: strategy
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: training_and_education.strategy.performance_reviews
+    standardDisclosureRequirementTitle: Regular performance and career development reviews
+    excerptFrom: 404-3
+    standardDisclosureRequirementText: |-
+      Report the percentage of total employees, by gender and by employee category, who received a regular performance and career development review during the reporting period.
+    disclosureRequirementObligationLevel: encouraged
+    sourceClauseReferenceLabels:
+    - standard: GRI
+      clauseRef: 404-3
+- topicSectionKey: training_and_education.iro
+  pillar: iro_management
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: training_and_education.iro.skill_programs
+    standardDisclosureRequirementTitle: Programs for upgrading employee skills and transition assistance
+    excerptFrom: 404-2
+    standardDisclosureRequirementText: |-
+      Report the type and scope of programs implemented and assistance provided to upgrade employee skills, and the transition assistance programs provided to facilitate continued employability and the management of career endings.
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: GRI
+      clauseRef: 404-2
+- topicSectionKey: training_and_education.metrics
+  pillar: metrics_targets
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: training_and_education.metrics.training_hours
+    standardDisclosureRequirementTitle: Average hours of training per year per employee
+    excerptFrom: 404-1
+    standardDisclosureRequirementText: |-
+      Report the average hours of training that the organization's employees have undertaken during the reporting period, by gender and by employee category.
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: GRI
+      clauseRef: 404-1

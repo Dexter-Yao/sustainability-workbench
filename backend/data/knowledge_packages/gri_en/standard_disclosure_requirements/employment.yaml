@@ -1,0 +1,51 @@
+# ABOUTME(en): GRI 401: Employment 2016 disclosure requirements, grouped by the package's pillars, for the
+# ABOUTME(en): coverage audit and the key whitelist. Wording condenses the official requirement text.
+topicStandardDisclosureRequirementGroups:
+- topicSectionKey: employment.gov
+  pillar: governance
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: employment.gov.management_of_employment
+    standardDisclosureRequirementTitle: Management of the employment topic
+    excerptFrom: GRI 3-3 with GRI 401
+    standardDisclosureRequirementText: |-
+      Report how the organization manages the employment topic, including the policies and responsibilities covering recruitment, employment terms, and compliance with applicable labour requirements.
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: GRI
+      clauseRef: GRI 3-3 with GRI 401
+- topicSectionKey: employment.strategy
+  pillar: strategy
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: employment.strategy.benefits
+    standardDisclosureRequirementTitle: Benefits provided to full-time employees
+    excerptFrom: 401-2
+    standardDisclosureRequirementText: |-
+      Report the benefits that are standard for full-time employees of the organization but are not provided to temporary or part-time employees, by significant locations of operation.
+    disclosureRequirementObligationLevel: encouraged
+    sourceClauseReferenceLabels:
+    - standard: GRI
+      clauseRef: 401-2
+- topicSectionKey: employment.iro
+  pillar: iro_management
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: employment.iro.parental_leave
+    standardDisclosureRequirementTitle: Parental leave
+    excerptFrom: 401-3
+    standardDisclosureRequirementText: |-
+      Report the number of employees entitled to and taking parental leave by gender, the number returning to work after parental leave ended, and the return-to-work and retention rates.
+    disclosureRequirementObligationLevel: encouraged
+    sourceClauseReferenceLabels:
+    - standard: GRI
+      clauseRef: 401-3
+- topicSectionKey: employment.metrics
+  pillar: metrics_targets
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: employment.metrics.hires_and_turnover
+    standardDisclosureRequirementTitle: New employee hires and employee turnover
+    excerptFrom: 401-1
+    standardDisclosureRequirementText: |-
+      Report the total number and rate of new employee hires and of employee turnover during the reporting period, by age group, gender and region.
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: GRI
+      clauseRef: 401-1

@@ -1,0 +1,102 @@
+# ABOUTME(en): Topic chapter template of the GRI topic "Water and Effluents" (GRI 303: Water and Effluents 2018): management /
+# ABOUTME(en): approach / actions blocks with their intake evidence and GRI requirement keys; the metrics H3 is compiled from metricDisclosure.
+section:
+  key: water_and_effluents
+  title: Water and Effluents
+  headingLevel: 2
+  reportSectionId: water_and_effluents
+  conciseDisclosure:
+    id: water.concise_summary
+    type: paragraph
+    blockType: generative
+    source: ai
+    styleRole: body
+    generation:
+      task:
+        focus: |-
+          From the evidence currently visible for this topic, write one coherent summary covering how the company interacts with water, how water discharge-related impacts are managed, and the water data reported, without the four sub-headings.
+      inputs:
+        evidence:
+          kind: report_section
+      targetChars:
+      - 260
+      - 520
+  children:
+  - key: water_and_effluents.gov
+    title: Management of the Topic
+    pillar: governance
+    headingLevel: 3
+    blocks:
+    - id: water.gov_policy
+      type: paragraph
+      blockType: generative
+      source: ai
+      styleRole: body
+      generation:
+        task:
+          focus: |-
+            Describe how the company manages water and effluents: the responsibilities and policies in place, and the approach used to identify water-related impacts, including the scope of assessments and any tools or methodologies used.
+          noFactGuidance: |-
+            When the user provides no facts for this part, keep a prudent, general and low-commitment register describing the management attention and directional arrangements common to the industry; do not claim that specific systems, projects, certifications or results are in place.
+        inputs:
+          evidence:
+            kind: report_section
+        targetChars:
+        - 220
+        - 420
+        standardDisclosureRequirementKeys:
+        - water_and_effluents.gov.shared_resource
+  - key: water_and_effluents.strategy
+    title: Approach and Targets
+    pillar: strategy
+    headingLevel: 3
+    blocks:
+    - id: water.strategy_direction
+      type: paragraph
+      blockType: generative
+      source: ai
+      styleRole: body
+      generation:
+        task:
+          focus: |-
+            Describe the company's direction and targets for water: how water-related goals and targets are set, and how the company works with stakeholders to steward water as a shared resource.
+          noFactGuidance: |-
+            When the user provides no facts for this part, keep a prudent, general and low-commitment register describing the management attention and directional arrangements common to the industry; do not claim that specific systems, projects, certifications or results are in place.
+        inputs:
+          evidence:
+            kind: report_section
+        targetChars:
+        - 200
+        - 400
+        standardDisclosureRequirementKeys:
+        - water_and_effluents.strategy.goals_and_stewardship
+  - key: water_and_effluents.iro
+    title: Actions and Processes
+    pillar: iro_management
+    headingLevel: 3
+    blocks:
+    - id: water.iro_measures
+      type: paragraph
+      blockType: generative
+      source: ai
+      styleRole: body
+      generation:
+        task:
+          focus: |-
+            Describe the actions the company takes on water: how the requirements for water discharge are determined, and the measures applied to prevent or reduce water-related impacts, including recycling and reuse.
+          noFactGuidance: |-
+            When the user provides no facts for this part, keep a prudent, general and low-commitment register describing the management attention and directional arrangements common to the industry; do not claim that specific systems, projects, certifications or results are in place.
+        inputs:
+          evidence:
+            kind: report_section
+        targetChars:
+        - 240
+        - 460
+        standardDisclosureRequirementKeys:
+        - water_and_effluents.iro.discharge_management
+metricDisclosure:
+  catalogMetricKeys:
+  - water_consumption_total
+  - water_intensity_revenue
+  - water_intensity_output
+  - water_recycled

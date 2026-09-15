@@ -1,0 +1,101 @@
+# ABOUTME(en): Topic chapter template of the GRI topic "Materials" (GRI 301: Materials 2016): management /
+# ABOUTME(en): approach / actions blocks with their intake evidence and GRI requirement keys; the metrics H3 is compiled from metricDisclosure.
+section:
+  key: materials
+  title: Materials
+  headingLevel: 2
+  reportSectionId: materials
+  conciseDisclosure:
+    id: materials.concise_summary
+    type: paragraph
+    blockType: generative
+    source: ai
+    styleRole: body
+    generation:
+      task:
+        focus: |-
+          From the evidence currently visible for this topic, write one coherent summary covering the materials used, the use of recycled input materials and the reclaiming of products and packaging, without the four sub-headings.
+      inputs:
+        evidence:
+          kind: report_section
+      targetChars:
+      - 260
+      - 520
+  children:
+  - key: materials.gov
+    title: Management of the Topic
+    pillar: governance
+    headingLevel: 3
+    blocks:
+    - id: materials.gov_policy
+      type: paragraph
+      blockType: generative
+      source: ai
+      styleRole: body
+      generation:
+        task:
+          focus: |-
+            Describe how the company manages materials: the responsibilities and policies covering the materials used to produce and package its primary products and services.
+          noFactGuidance: |-
+            When the user provides no facts for this part, keep a prudent, general and low-commitment register describing the management attention and directional arrangements common to the industry; do not claim that specific systems, projects, certifications or results are in place.
+        inputs:
+          evidence:
+            kind: report_section
+        targetChars:
+        - 220
+        - 420
+        standardDisclosureRequirementKeys:
+        - materials.gov.management_of_materials
+  - key: materials.strategy
+    title: Approach and Targets
+    pillar: strategy
+    headingLevel: 3
+    blocks:
+    - id: materials.strategy_direction
+      type: paragraph
+      blockType: generative
+      source: ai
+      styleRole: body
+      generation:
+        task:
+          focus: |-
+            Describe the company's direction and targets for materials: the approach to reducing material use, increasing recycled input and designing products and packaging for reclaiming.
+          noFactGuidance: |-
+            When the user provides no facts for this part, keep a prudent, general and low-commitment register describing the management attention and directional arrangements common to the industry; do not claim that specific systems, projects, certifications or results are in place.
+        inputs:
+          evidence:
+            kind: report_section
+        targetChars:
+        - 200
+        - 400
+        standardDisclosureRequirementKeys:
+        - materials.strategy.recycled_input_direction
+  - key: materials.iro
+    title: Actions and Processes
+    pillar: iro_management
+    headingLevel: 3
+    blocks:
+    - id: materials.iro_measures
+      type: paragraph
+      blockType: generative
+      source: ai
+      styleRole: body
+      generation:
+        task:
+          focus: |-
+            Describe the actions the company takes on materials: substitution, packaging optimisation and the reclaiming of products and their packaging materials.
+          noFactGuidance: |-
+            When the user provides no facts for this part, keep a prudent, general and low-commitment register describing the management attention and directional arrangements common to the industry; do not claim that specific systems, projects, certifications or results are in place.
+        inputs:
+          evidence:
+            kind: report_section
+        targetChars:
+        - 240
+        - 460
+        standardDisclosureRequirementKeys:
+        - materials.iro.reclaimed_products
+metricDisclosure:
+  catalogMetricKeys:
+  - packaging_total
+  - packaging_per_unit
+  - packaging_recycled_content_rate

@@ -1,0 +1,212 @@
+# ABOUTME: 人力资本发展议题章节骨架，H2 标题以附录索引表“对应的本报告章节”为准。
+# ABOUTME: 本文件承载人力资本发展的段落级生成块；指标块按声明读取ESG 定量数据表的受控投影。
+section:
+  key: human_capital_development
+  title: 人力资本发展
+  headingLevel: 2
+  reportSectionId: human_capital_development
+  conciseDisclosure:
+    id: human_capital_development.concise_summary
+    type: paragraph
+    blockType: generative
+    source: ai
+    styleRole: body
+    generation:
+      task:
+        focus: "根据本议题当前可见证据形成一段连贯摘要，覆盖相关管理关注、方向与实践，不使用四要素小标题。"
+      inputs: {evidence: {kind: report_section}}
+      targetChars: [300, 600]
+  children:
+  - key: human_capital_development.gov
+    title: 治理
+    pillar: governance
+    headingLevel: 3
+    blocks:
+    - id: human_capital_development.gov_workforce_governance
+      type: paragraph
+      blockType: generative
+      source: ai
+      styleRole: body
+      generation:
+        task:
+          focus: "说明员工权益与人力资本发展的责任安排和管理机制。"
+        inputs:
+          evidence:
+            kind: explicit
+            intakeItems:
+            - human_capital_development.q_governance_roles
+            - human_capital_development.q_governance_policies
+            - human_capital_development.q_governance_certifications
+        targetChars:
+        - 220
+        - 420
+        standardDisclosureRequirementKeys:
+        - human_capital_development.gov.hr_responsibility_required
+        - human_capital_development.gov.labor_rights_required
+        - human_capital_development.gov.hr_policy_documents_required
+        templateResidueBans:
+        - 《》《》《》
+        - 填空公司人力资源管理
+        - 填写公司人力发展主责部门
+        simplifiedWritingGuidance:
+          - "将行政管理或合规材料组织为员工权益保护、福利保障、职业发展支持和沟通反馈等人力资本治理内容。"
+  - key: human_capital_development.strategy
+    title: 战略
+    pillar: strategy
+    headingLevel: 3
+    blocks:
+    - id: human_capital_development.strategy_talent_development
+      type: paragraph
+      blockType: generative
+      source: ai
+      styleRole: body
+      generation:
+        task:
+          focus: "说明人才与员工发展的长期方向、重点目标和推进原则。"
+        inputs:
+          evidence:
+            kind: explicit
+            intakeItems:
+            - human_capital_development.q_strategy_content
+        targetChars:
+        - 180
+        - 360
+        standardDisclosureRequirementKeys:
+        - human_capital_development.strategy.talent_development_required
+        - human_capital_development.strategy.talent_pipeline_encouraged
+        simplifiedWritingGuidance:
+          - "将岗位能力、班组管理或关键技术人员事项组织为人才发展目标、培养路径、职业发展支持和员工成长内容。"
+  - key: human_capital_development.iro
+    title: 影响、风险与机遇管理
+    pillar: iro_management
+    headingLevel: 3
+    children:
+    - key: human_capital_development.iro.employee_rights_and_inclusion
+      title: 员工权益与包容
+      headingLevel: 4
+      titleGeneration:
+        sourceBlockId: human_capital_development.iro_employee_rights_and_inclusion
+        guidance: 概括本内容单元的核心行动或结果，生成简洁、准确且不引入新事实的标题。
+      blocks:
+      - id: human_capital_development.iro_employee_rights_and_inclusion
+        type: paragraph
+        blockType: generative
+        source: ai
+        styleRole: body
+        generation:
+          task:
+            focus: "说明员工权益保障、平等机会和包容环境的相关实践。"
+          inputs:
+            evidence:
+              kind: explicit
+              intakeItems:
+              - human_capital_development.q_vulnerable_employee_support
+          targetChars:
+          - 220
+          - 460
+          standardDisclosureRequirementKeys:
+          - human_capital_development.iro.employee_rights_and_inclusion_required
+          - human_capital_development.iro.recruitment_compensation_required
+          - human_capital_development.iro.compensation_incentives_required
+          simplifiedWritingGuidance:
+            - "帮扶对象和支持内容来自本块用户事实，整体表达围绕员工权益、平等机会、包容环境和职业发展支持。"
+    - key: human_capital_development.iro.welfare_benefits
+      title: 员工福利保障
+      headingLevel: 4
+      blocks:
+      - id: human_capital_development.iro_welfare_benefits_preface
+        type: paragraph
+        blockType: fixed
+        source: template
+        styleRole: body
+        content:
+        - kind: text
+          text: 公司围绕员工工作体验、身心健康与生活支持等方面持续完善福利保障安排，通过多层次福利项目提升员工获得感与组织凝聚力。
+      - id: human_capital_development.iro_welfare_benefits_table
+        type: table
+        blockType: generative
+        source: ai
+        appears_when:
+          all:
+          - path: intakeItems.human_capital_development.q_employee_benefits
+            op: exists
+        generation:
+          task:
+            focus: "完成「员工福利保障体系」表格内容。"
+          inputs:
+            evidence:
+              kind: explicit
+              intakeItems:
+              - human_capital_development.q_employee_benefits
+          rowCount:
+          - 4
+          - 10
+          standardDisclosureRequirementKeys:
+          - human_capital_development.iro.welfare_benefits_required
+          simplifiedWritingGuidance:
+            - 员工福利表只依据用户填写项目组织完整行集合，不得遗漏已填写事项，也不得新增未填写的福利、金额、比例、频次或覆盖范围。
+            - 福利类别应按基本权益保障、健康休息、普惠关怀和专项支持等稳定语义归纳；法定义务只作为概括性基础保障，不包装为 ESG 成效，也不使用干巴巴的险种清单表达。
+        table:
+          caption: 员工福利保障体系
+          rowSource: user
+          colDefs:
+          - key: benefit_category
+            header: 福利类别
+            cellType: single_select
+            options:
+            - 法定保障
+            - 健康与安全
+            - 生活津贴
+            - 关怀与补助
+            - 发展支持
+            - 团队建设
+            required: true
+          - key: benefit_item
+            header: 福利项目
+            cellType: text
+            genHint: 使用简短福利项目名称，例如基础福利保障、年度健康体检、培训与发展。
+          - key: benefit_content
+            header: 主要内容
+            cellType: ai_text
+            genHint: 使用一句短句说明福利内容，不编造金额、比例、覆盖人数或适用职级。
+          children:
+          - headerRow: true
+            children:
+            - type: th
+              value: 福利类别
+            - type: th
+              value: 福利项目
+            - type: th
+              value: 主要内容
+    - key: human_capital_development.iro.training_development
+      title: 员工培训与发展
+      headingLevel: 4
+      titleGeneration:
+        sourceBlockId: human_capital_development.iro_training_development
+        guidance: 概括本内容单元的核心行动或结果，生成简洁、准确且不引入新事实的标题。
+      appears_when:
+        all:
+        - path: intakeItems.human_capital_development.q_employee_training
+          op: eq
+          value: 是
+      blocks:
+      - id: human_capital_development.iro_training_development
+        type: paragraph
+        blockType: generative
+        source: ai
+        styleRole: body
+        generation:
+          task:
+            focus: "说明员工培训、能力提升和职业发展的相关实践。"
+          inputs:
+            evidence:
+              kind: explicit
+              intakeItems:
+              - human_capital_development.q_employee_training
+          targetChars:
+          - 220
+          - 420
+          standardDisclosureRequirementKeys:
+          - human_capital_development.iro.training_development_required
+metricDisclosure:
+  catalogMetricKeys: [social_r02, social_r03, social_r04, social_r10, social_r11, social_r12, social_r13, social_r17, social_r25, social_r26]

@@ -1,0 +1,57 @@
+# OS
+.DS_Store
+
+# gstack / tooling 本地状态
+.gstack/
+.cli-home/
+.claude/
+.playwright-mcp/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+*.egg-info/
+
+# backend 导出/渲染产物（可由代码 + Reference 模板重新生成）
+backend/out/
+
+# Node（未来前端）
+node_modules/
+.next/
+dist/
+
+# 密钥与本地环境
+.env
+.env.local
+.env.bak-*
+*.key
+
+# 本地缓存
+.pytest_cache/
+.ruff_cache/
+tmp/
+
+# Word 临时锁文件
+~$*.docx
+~$*.doc
+
+# 编辑器
+.vscode/
+.idea/
+~$*
+
+# 编辑器/合并遗留杂物
+*.bak
+*.orig
+
+# Agent 技能安装产物：由 skills-lock.json 可重建，不进仓库
+.agents/
+
+# 晟原合成 corpus 的工作簿派生产物：由 fill_workbook.py 从产品模板现算，不参与清单指纹。
+# 注意 materials_docx/ 已入库（与晉澧 corpus 一致）：清单逐份钉住 SHA-256 且
+# tests/local_e2e_fixture.py 比对磁盘字节，而 pandoc 产物随版本变化，忽略它等于
+# 让任何新检出都无法通过指纹校验、跑不了演示与浏览器验收。
+backend/tests/fixtures/local_e2e/shengyuan/shengyuan-unified-workbook.xlsx
+backend/tests/fixtures/local_e2e/shengyuan/.blank-unified-workbook.xlsx

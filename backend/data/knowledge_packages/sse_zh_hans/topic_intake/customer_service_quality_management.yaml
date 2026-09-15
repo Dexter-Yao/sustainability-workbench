@@ -1,0 +1,17 @@
+# ABOUTME: 客户服务质量管理议题轻量版内容清单，聚焦服务平台和客户服务承诺。
+# ABOUTME: 治理、战略和指标目标固定题由 topic_intake_common.yaml 展开；结构化数值由 ESG 定量数据表维护。
+contentScopeId: customer_service_quality_management
+items:
+- key: customer_service_quality_management.q_service_complaint_platforms
+  prompt: 贵司客户服务或客诉处理平台包含哪些？
+  kind: text
+  collectionPriority: recommended
+  hint: 可填写客户服务热线、客户服务线上平台、客户服务微信公众号以及其他服务平台名称；没有可填写“无”或留空。
+  generationBoundary: 未填写具体名称时，不得编造热线、公众号或平台名称。
+  maxChars: 5000
+- key: customer_service_quality_management.q_customer_service_commitments
+  prompt: 请简述贵司客户服务承诺。
+  kind: text
+  collectionPriority: recommended
+  hint: 可填写服务响应、投诉处理、客户沟通、售后支持、服务质量改进或其他客户服务承诺；没有专项承诺可留空。
+  maxChars: 5000

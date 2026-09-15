@@ -1,0 +1,428 @@
+{
+  "_about": "章节编号推导跨端 golden 一致性 fixture——前后端各跑 number_sections/numberSections 断言 == expected，防编号双写漂移。label 含分隔符：H1 为「第N章 」(尾随半角空格)、H2 为「N、」、H3 为「（N）」(全角括号)、H4 为阿拉伯数字加句点；前置大章(关于本报告/关于公司)label 为空字符串，但其子节照常编号。空标题节与不可见节不产 label(不入结果)。 每个 case 可带 scheme（chapter_cn 默认 / decimal）：decimal 下编号为 1 / 1.1 / 1.1.1（尾随半角空格），且前置大章的整棵子树不编号（label 为空），故前置小节永不与章号冲突。",
+  "cases": [
+    {
+      "name": "basic_three_levels",
+      "report": {
+        "title": "t",
+        "fields": {},
+        "sections": [
+          {
+            "key": "governance",
+            "title": "公司治理",
+            "headingLevel": 1,
+            "children": [
+              {
+                "key": "gov.structure",
+                "title": "治理架构与权责体系",
+                "headingLevel": 2,
+                "children": [
+                  {
+                    "key": "g3a",
+                    "title": "子节甲",
+                    "headingLevel": 3
+                  },
+                  {
+                    "key": "g3b",
+                    "title": "子节乙",
+                    "headingLevel": 3
+                  }
+                ]
+              },
+              {
+                "key": "gov.compliance",
+                "title": "治理合规与透明度",
+                "headingLevel": 2
+              }
+            ]
+          }
+        ]
+      },
+      "expected": {
+        "governance": "第一章 ",
+        "gov.structure": "一、",
+        "g3a": "（一）",
+        "g3b": "（二）",
+        "gov.compliance": "二、"
+      },
+      "scheme": "chapter_cn"
+    },
+    {
+      "name": "preface_chapter_unnumbered_children_numbered",
+      "report": {
+        "title": "t",
+        "fields": {},
+        "sections": [
+          {
+            "key": "about_report",
+            "title": "关于本报告",
+            "headingLevel": 1,
+            "children": [
+              {
+                "key": "about.scope",
+                "title": "报告范围",
+                "headingLevel": 2
+              },
+              {
+                "key": "about.timeframe",
+                "title": "时间范围",
+                "headingLevel": 2
+              }
+            ]
+          }
+        ]
+      },
+      "expected": {
+        "about_report": "",
+        "about.scope": "一、",
+        "about.timeframe": "二、"
+      },
+      "scheme": "chapter_cn"
+    },
+    {
+      "name": "preface_two_then_report_module_ordinal",
+      "report": {
+        "title": "t",
+        "fields": {},
+        "sections": [
+          {
+            "key": "about_report",
+            "title": "关于本报告",
+            "headingLevel": 1
+          },
+          {
+            "key": "company_intro",
+            "title": "关于公司",
+            "headingLevel": 1
+          },
+          {
+            "key": "governance",
+            "title": "公司治理",
+            "headingLevel": 1
+          },
+          {
+            "key": "sustainability_mgmt",
+            "title": "可持续发展管理",
+            "headingLevel": 1
+          },
+          {
+            "key": "environmental_sustainability",
+            "title": "环境可持续",
+            "headingLevel": 1,
+            "reportModuleId": "environmental_sustainability",
+            "children": [
+              {
+                "key": "climate_change",
+                "title": "应对气候变化",
+                "headingLevel": 2
+              }
+            ]
+          }
+        ]
+      },
+      "expected": {
+        "about_report": "",
+        "company_intro": "",
+        "governance": "第一章 ",
+        "sustainability_mgmt": "第二章 ",
+        "environmental_sustainability": "第三章 ",
+        "climate_change": "一、"
+      },
+      "scheme": "chapter_cn"
+    },
+    {
+      "name": "hidden_h2_skips_ordinal",
+      "report": {
+        "title": "t",
+        "fields": {
+          "flag": {
+            "key": "flag",
+            "label": "flag",
+            "type": "string",
+            "source": "user_input",
+            "value": ""
+          }
+        },
+        "sections": [
+          {
+            "key": "root",
+            "title": "公司治理",
+            "headingLevel": 1,
+            "children": [
+              {
+                "key": "a",
+                "title": "甲",
+                "headingLevel": 2
+              },
+              {
+                "key": "b",
+                "title": "乙隐藏",
+                "headingLevel": 2,
+                "appears_when": {
+                  "all": [
+                    {
+                      "path": "fields.flag.value",
+                      "op": "exists"
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "c",
+                "title": "丙",
+                "headingLevel": 2
+              }
+            ]
+          }
+        ]
+      },
+      "expected": {
+        "root": "第一章 ",
+        "a": "一、",
+        "c": "二、"
+      },
+      "scheme": "chapter_cn"
+    },
+    {
+      "name": "empty_title_not_counted",
+      "report": {
+        "title": "t",
+        "fields": {},
+        "sections": [
+          {
+            "key": "root",
+            "title": "公司治理",
+            "headingLevel": 1,
+            "children": [
+              {
+                "key": "a",
+                "title": "甲",
+                "headingLevel": 2
+              },
+              {
+                "key": "closing",
+                "title": "",
+                "headingLevel": 2
+              }
+            ]
+          }
+        ]
+      },
+      "expected": {
+        "root": "第一章 ",
+        "a": "一、"
+      },
+      "scheme": "chapter_cn"
+    },
+    {
+      "name": "title_content_section_numbered",
+      "report": {
+        "title": "t",
+        "fields": {},
+        "sections": [
+          {
+            "key": "root",
+            "title": "议题重要性评估",
+            "headingLevel": 1,
+            "children": [
+              {
+                "key": "proc",
+                "title": "流程",
+                "headingLevel": 2,
+                "titleContent": [
+                  {
+                    "kind": "ref",
+                    "ref": "reporting_year"
+                  },
+                  {
+                    "kind": "text",
+                    "text": "年度评估流程"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "expected": {
+        "root": "第一章 ",
+        "proc": "一、"
+      },
+      "scheme": "chapter_cn"
+    },
+    {
+      "name": "h4_subtopics_restart_inside_each_pillar",
+      "report": {
+        "title": "t",
+        "fields": {},
+        "sections": [
+          {
+            "key": "environment",
+            "title": "环境章",
+            "headingLevel": 1,
+            "children": [
+              {
+                "key": "waste",
+                "title": "废弃物管理",
+                "headingLevel": 2,
+                "children": [
+                  {
+                    "key": "waste.iro",
+                    "title": "影响、风险与机遇管理",
+                    "headingLevel": 3,
+                    "children": [
+                      {
+                        "key": "waste.iro.a",
+                        "title": "分类与收集",
+                        "headingLevel": 4
+                      },
+                      {
+                        "key": "waste.iro.b",
+                        "title": "合规处置",
+                        "headingLevel": 4
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "expected": {
+        "environment": "第一章 ",
+        "waste": "一、",
+        "waste.iro": "（一）",
+        "waste.iro.a": "1. ",
+        "waste.iro.b": "2. "
+      },
+      "scheme": "chapter_cn"
+    },
+    {
+      "name": "basic_three_levels__decimal",
+      "scheme": "decimal",
+      "report": {
+        "title": "t",
+        "fields": {},
+        "sections": [
+          {
+            "key": "governance",
+            "title": "公司治理",
+            "headingLevel": 1,
+            "children": [
+              {
+                "key": "gov.structure",
+                "title": "治理架构与权责体系",
+                "headingLevel": 2,
+                "children": [
+                  {
+                    "key": "g3a",
+                    "title": "子节甲",
+                    "headingLevel": 3
+                  },
+                  {
+                    "key": "g3b",
+                    "title": "子节乙",
+                    "headingLevel": 3
+                  }
+                ]
+              },
+              {
+                "key": "gov.compliance",
+                "title": "治理合规与透明度",
+                "headingLevel": 2
+              }
+            ]
+          }
+        ]
+      },
+      "expected": {
+        "governance": "1 ",
+        "gov.structure": "1.1 ",
+        "g3a": "1.1.1 ",
+        "g3b": "1.1.2 ",
+        "gov.compliance": "1.2 "
+      }
+    },
+    {
+      "name": "preface_chapter_unnumbered_children_numbered__decimal",
+      "scheme": "decimal",
+      "report": {
+        "title": "t",
+        "fields": {},
+        "sections": [
+          {
+            "key": "about_report",
+            "title": "关于本报告",
+            "headingLevel": 1,
+            "children": [
+              {
+                "key": "about.scope",
+                "title": "报告范围",
+                "headingLevel": 2
+              },
+              {
+                "key": "about.timeframe",
+                "title": "时间范围",
+                "headingLevel": 2
+              }
+            ]
+          }
+        ]
+      },
+      "expected": {
+        "about_report": "",
+        "about.scope": "",
+        "about.timeframe": ""
+      }
+    },
+    {
+      "name": "h4_subtopics_restart_inside_each_pillar__decimal",
+      "scheme": "decimal",
+      "report": {
+        "title": "t",
+        "fields": {},
+        "sections": [
+          {
+            "key": "environment",
+            "title": "环境章",
+            "headingLevel": 1,
+            "children": [
+              {
+                "key": "waste",
+                "title": "废弃物管理",
+                "headingLevel": 2,
+                "children": [
+                  {
+                    "key": "waste.iro",
+                    "title": "影响、风险与机遇管理",
+                    "headingLevel": 3,
+                    "children": [
+                      {
+                        "key": "waste.iro.a",
+                        "title": "分类与收集",
+                        "headingLevel": 4
+                      },
+                      {
+                        "key": "waste.iro.b",
+                        "title": "合规处置",
+                        "headingLevel": 4
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "expected": {
+        "environment": "1 ",
+        "waste": "1.1 ",
+        "waste.iro": "1.1.1 ",
+        "waste.iro.a": "1.1.1.1 ",
+        "waste.iro.b": "1.1.1.2 "
+      }
+    }
+  ]
+}

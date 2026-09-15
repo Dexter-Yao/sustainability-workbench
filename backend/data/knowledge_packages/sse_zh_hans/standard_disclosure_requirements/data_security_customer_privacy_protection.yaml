@@ -1,0 +1,115 @@
+# ABOUTME: 数据安全与客户隐私保护议题准则披露要求库，供覆盖审计与按 key 白名单注入生成上下文（注入受开关控制，默认关闭）。
+# ABOUTME: 本文件不作为用户可见准则批注来源；用户可见条款原文来自 user_visible_disclosure_clause_annotations。
+topicStandardDisclosureRequirementGroups:
+- topicSectionKey: data_security_customer_privacy_protection.gov
+  pillar: governance
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: data_security_customer_privacy_protection.gov.security_management_system_required
+    standardDisclosureRequirementTitle: 数据安全和客户隐私保护制度体系
+    excerptFrom: 附录索引表第四十八条；参考模板“ISO/IEC 27001 与管理体系”
+    standardDisclosureRequirementText: 应说明数据安全管理制度体系建立与运行情况、客户隐私保护制度体系建设与运行情况、信息安全管理体系、数据安全和隐私保护管理程序、责任部门、覆盖范围和具体措施。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 第四十八条
+    - standard: SZSE
+      clauseRef: 第四十八条
+    - standard: BSE
+      clauseRef: 第四十八条
+  - standardDisclosureRequirementKey: data_security_customer_privacy_protection.gov.security_certification_encouraged
+    standardDisclosureRequirementTitle: 信息安全管理体系认证
+    excerptFrom: 参考模板“ISO 27001 信息安全管理体系认证”
+    standardDisclosureRequirementText: 可进一步披露说明 ISO/IEC 27001、第三方认证、认证范围和信息安全治理成熟度；认证和范围必须来自相关事实。
+    disclosureRequirementObligationLevel: encouraged
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 第四十八条
+    - standard: SZSE
+      clauseRef: 第四十八条
+    - standard: BSE
+      clauseRef: 第四十八条
+- topicSectionKey: data_security_customer_privacy_protection.strategy
+  pillar: strategy
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: data_security_customer_privacy_protection.strategy.security_targets_required
+    standardDisclosureRequirementTitle: 数据安全与隐私保护管理原则和目标
+    excerptFrom: 校准后的预防性全流程管控、合规尽责与责任明确原则
+    standardDisclosureRequirementText: 应说明数据安全与客户隐私保护管理原则、年度目标、重点计划、培训覆盖率目标、风险防范目标、安全能力建设和全员安全意识提升。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: ReferenceTemplate
+      clauseRef: 数据安全与客户隐私保护：管理原则和目标
+- topicSectionKey: data_security_customer_privacy_protection.iro
+  pillar: iro_management
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: data_security_customer_privacy_protection.iro.data_lifecycle_required
+    standardDisclosureRequirementTitle: 数据全生命周期管控
+    excerptFrom: 附录索引表第四十八条；参考模板“制度体系与数据全生命周期管控”
+    standardDisclosureRequirementText: 应说明数据分类分级，以及数据收集、存储、使用、传输、共享、销毁、出境等全流程中的审批、加密、脱敏、审计、溯源、数据最小化、超期数据清理和第三方人员管理。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 第四十八条
+    - standard: SZSE
+      clauseRef: 第四十八条
+    - standard: BSE
+      clauseRef: 第四十八条
+  - standardDisclosureRequirementKey: data_security_customer_privacy_protection.iro.access_account_required
+    standardDisclosureRequirementTitle: 权限与账号安全管理
+    excerptFrom: 参考模板“权限与账号严控”
+    standardDisclosureRequirementText: 应说明最小必要权限、账号生命周期管理、员工离职账号回收、权限清除、访问审批、权限复核、多因素认证、日志审计或异常访问监控。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: ReferenceTemplate
+      clauseRef: 数据安全与客户隐私保护：权限与账号严控
+  - standardDisclosureRequirementKey: data_security_customer_privacy_protection.iro.incident_response_required
+    standardDisclosureRequirementTitle: 应急响应与业务连续性管理
+    excerptFrom: 参考模板“应急响应与业务连续性管理”
+    standardDisclosureRequirementText: 应说明网络入侵、勒索病毒、核心机房安全、电源中断、火灾、雷暴、自然灾害、盗抢等场景下的多层级应急预案、角色职责、时效要求、隔离封禁、恢复验证和保障安排。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: ReferenceTemplate
+      clauseRef: 数据安全与客户隐私保护：应急响应与业务连续性管理
+  - standardDisclosureRequirementKey: data_security_customer_privacy_protection.iro.drills_improvement_required
+    standardDisclosureRequirementTitle: 验证演练与持续改进
+    excerptFrom: 参考模板“验证演练与持续改进”
+    standardDisclosureRequirementText: 应说明信息安全与应急保障演练、消防演练、网络切换演练、防火墙主备切换、断电测试、事故上报、复盘发现、整改情况、预案修订和后续演练计划。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: ReferenceTemplate
+      clauseRef: 数据安全与客户隐私保护：验证演练与持续改进
+  - standardDisclosureRequirementKey: data_security_customer_privacy_protection.iro.security_training_required
+    standardDisclosureRequirementTitle: 信息安全专项培训
+    excerptFrom: 参考模板“信息安全专项培训”
+    standardDisclosureRequirementText: 应说明信息安全、数据安全、隐私保护或网络安全意识培训，包括培训主题、覆盖人数、覆盖率、培训对象、勒索病毒、网络钓鱼、电信诈骗、数据安全法规、信息系统使用规范、AI 应用风险或应急处置流程。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: ReferenceTemplate
+      clauseRef: 数据安全与客户隐私保护：信息安全专项培训
+  - standardDisclosureRequirementKey: data_security_customer_privacy_protection.iro.security_privacy_incidents_conditional
+    standardDisclosureRequirementTitle: 数据安全事件与泄露客户隐私事件
+    excerptFrom: 附录索引表第四十八条
+    standardDisclosureRequirementText: 仅当企业选择报告期内发生过数据安全事件、客户隐私泄露事件、隐私投诉或监管处罚，并填写具体详情时，才应准确说明事件具体情况、造成影响、涉及金额、采取的应对措施及进展。
+    disclosureRequirementObligationLevel: conditional
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 第四十八条
+    - standard: SZSE
+      clauseRef: 第四十八条
+    - standard: BSE
+      clauseRef: 第四十八条
+- topicSectionKey: data_security_customer_privacy_protection.metrics
+  pillar: metrics_targets
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: data_security_customer_privacy_protection.metrics.security_privacy_metrics_required
+    standardDisclosureRequirementTitle: 数据安全与客户隐私保护指标
+    excerptFrom: 附录索引表第四十八条；参考模板“培训、演练和事件”
+    standardDisclosureRequirementText: 如本议题涉及相关指标，应准确说明信息安全培训覆盖率、培训人次、演练次数、数据安全事件数量、客户隐私泄露事件数量、隐私投诉数量、系统认证、整改完成率或应急响应演练覆盖范围。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 第四十八条
+    - standard: SZSE
+      clauseRef: 第四十八条
+    - standard: BSE
+      clauseRef: 第四十八条

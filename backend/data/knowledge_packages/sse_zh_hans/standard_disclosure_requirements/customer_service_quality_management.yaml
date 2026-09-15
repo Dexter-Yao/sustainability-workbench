@@ -1,0 +1,147 @@
+# ABOUTME: 客户服务质量管理议题准则披露要求库，供覆盖审计与按 key 白名单注入生成上下文（注入受开关控制，默认关闭）。
+# ABOUTME: 本文件不作为用户可见准则批注来源；用户可见条款原文来自 user_visible_disclosure_clause_annotations。
+topicStandardDisclosureRequirementGroups:
+- topicSectionKey: customer_service_quality_management.gov
+  pillar: governance
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: customer_service_quality_management.gov.service_management_required
+    standardDisclosureRequirementTitle: 客户服务职责与售后服务体系
+    excerptFrom: 附录索引表第四十四条、第四十七条；参考模板“治理”
+    standardDisclosureRequirementText: 应说明客户服务责任部门、售后服务体系、服务规范、技术支持、安装调试、客户投诉、退换货、远程或现场服务、售后资源统筹、订单/库存/事故协同、服务回访和客户意见改进。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 第四十四条、第四十七条
+    - standard: SZSE
+      clauseRef: 第四十四条、第四十七条
+    - standard: BSE
+      clauseRef: 第四十四条、第四十七条
+  - standardDisclosureRequirementKey: customer_service_quality_management.gov.service_management_encouraged
+    standardDisclosureRequirementTitle: 服务体系、标准与资源统筹
+    excerptFrom: 参考模板“客服物流部职责”
+    standardDisclosureRequirementText: 可进一步披露说明体系与标准、服务与执行、运营与支持、关系与改进、技术支持、安装调试、退换货和远程或现场服务。
+    disclosureRequirementObligationLevel: encouraged
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 第四十四条、第四十七条
+    - standard: SZSE
+      clauseRef: 第四十四条、第四十七条
+    - standard: BSE
+      clauseRef: 第四十四条、第四十七条
+- topicSectionKey: customer_service_quality_management.strategy
+  pillar: strategy
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: customer_service_quality_management.strategy.service_strategy_required
+    standardDisclosureRequirementTitle: 以客户为中心的服务战略
+    excerptFrom: 附录索引表第四十四条、第四十七条；参考模板“战略”
+    standardDisclosureRequirementText: 应说明以客户为中心的服务战略、客户体验目标、服务提升计划、统一反馈入口、分级响应、流程管控、跨部门协同、服务回访、数据分析、改进优化、客户满意度和忠诚度提升。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 第四十四条、第四十七条
+    - standard: SZSE
+      clauseRef: 第四十四条、第四十七条
+    - standard: BSE
+      clauseRef: 第四十四条、第四十七条
+  - standardDisclosureRequirementKey: customer_service_quality_management.strategy.customer_centric_encouraged
+    standardDisclosureRequirementTitle: 闭环、高效、客户导向的服务体系
+    excerptFrom: 参考模板“闭环、高效、以客户为导向”
+    standardDisclosureRequirementText: 可进一步披露说明以客户为中心的服务理念，以及客户咨询、投诉、服务请求、退换货等需求如何得到及时、专业的闭环处理，并如何支撑品牌价值与服务承诺兑现。
+    disclosureRequirementObligationLevel: encouraged
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 第四十四条、第四十七条
+    - standard: SZSE
+      clauseRef: 第四十四条、第四十七条
+    - standard: BSE
+      clauseRef: 第四十四条、第四十七条
+- topicSectionKey: customer_service_quality_management.iro
+  pillar: iro_management
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: customer_service_quality_management.iro.complaint_process_required
+    standardDisclosureRequirementTitle: 客户投诉、售后服务与闭环处理
+    excerptFrom: 附录索引表第四十七条；参考模板“客户服务质量管理框架”
+    standardDisclosureRequirementText: 应说明客户投诉、服务请求、退换货或售后服务的受理途径、处理流程和处理情况，包括统一归口、矩阵协同、接收、响应、处理、回访、归档、分级响应、限时闭环、跨部门协同、根因分析、纠正预防和服务信息分析。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 第四十七条
+    - standard: SZSE
+      clauseRef: 第四十七条
+    - standard: BSE
+      clauseRef: 第四十七条
+  - standardDisclosureRequirementKey: customer_service_quality_management.iro.continuous_improvement_encouraged
+    standardDisclosureRequirementTitle: 客户反馈驱动持续改进
+    excerptFrom: 参考模板“纠正与预防措施管理”
+    standardDisclosureRequirementText: 可进一步披露说明售后问题处理、根因分析、纠正预防、服务信息分析、产品或流程改进、服务优势识别和短板定位；不得把产品质量与安全议题整体写入本段。
+    disclosureRequirementObligationLevel: encouraged
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 第四十七条
+    - standard: SZSE
+      clauseRef: 第四十七条
+    - standard: BSE
+      clauseRef: 第四十七条
+  - standardDisclosureRequirementKey: customer_service_quality_management.iro.satisfaction_survey_required
+    standardDisclosureRequirementTitle: 客户满意度调研与服务改进
+    excerptFrom: 参考模板“倾听客户声音，持续发现与改进”
+    standardDisclosureRequirementText: 应说明客户满意度调研年度、调研维度、产品、销售服务、交付与供货、售后服务、品牌推广、系统使用、客户认知、忠诚度、调研结论、服务优势、改进短板和下一年度客户体验提升策略。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: ReferenceTemplate
+      clauseRef: 客户服务质量管理：满意度调研
+  - standardDisclosureRequirementKey: customer_service_quality_management.iro.satisfaction_survey_encouraged
+    standardDisclosureRequirementTitle: 品牌健康度与客户体验诊断
+    excerptFrom: 参考模板“品牌健康度与客户体验”
+    standardDisclosureRequirementText: 可进一步披露说明品牌知名度、市场渗透、客户认知、忠诚度、服务优势、改进短板和策略制定。
+    disclosureRequirementObligationLevel: encouraged
+    sourceClauseReferenceLabels:
+    - standard: ReferenceTemplate
+      clauseRef: 客户服务质量管理：满意度调研
+  - standardDisclosureRequirementKey: customer_service_quality_management.iro.feedback_channel_required
+    standardDisclosureRequirementTitle: 客户沟通渠道
+    excerptFrom: 附录索引表第四十七条；参考模板“客户沟通渠道”
+    standardDisclosureRequirementText: 应说明客户沟通渠道或反馈入口，包括客服热线、服务邮箱、客户服务小程序、官网在线服务、微信公众号、客户经理或其他渠道。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 第四十七条
+    - standard: SZSE
+      clauseRef: 第四十七条
+    - standard: BSE
+      clauseRef: 第四十七条
+  - standardDisclosureRequirementKey: customer_service_quality_management.iro.product_safety_feedback_linkage_required
+    standardDisclosureRequirementTitle: 产品健康与安全反馈联动
+    excerptFrom: 参考模板“健康与安全问题反馈处理”
+    standardDisclosureRequirementText: 应说明客户反馈涉及产品健康与安全问题时的专项调查、产品追溯程序、质量管理部门联动、产品追回程序、客户通知、风险控制和消费者权益保护；具体事故、处罚和召回数量应与“产品质量与安全”议题保持一致，不得在本议题编造。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: ReferenceTemplate
+      clauseRef: 客户服务质量管理：产品健康与安全反馈
+- topicSectionKey: customer_service_quality_management.metrics
+  pillar: metrics_targets
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: customer_service_quality_management.metrics.service_metrics_required
+    standardDisclosureRequirementTitle: 客户服务质量指标
+    excerptFrom: 附录索引表第四十七条；参考模板“客户服务质量管理主要指标”
+    standardDisclosureRequirementText: 如企业在本议题提供客户服务质量数据，应准确呈现客户投诉回复率、客户投诉解决率、客户满意度、客户投诉数量、响应时效、投诉闭环率、回访覆盖率或服务改进事项。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 第四十七条
+    - standard: SZSE
+      clauseRef: 第四十七条
+    - standard: BSE
+      clauseRef: 第四十七条
+  - standardDisclosureRequirementKey: customer_service_quality_management.metrics.service_metrics_encouraged
+    standardDisclosureRequirementTitle: 客户服务指标对比与改进
+    excerptFrom: 参考模板“投诉响应时效、投诉闭环率、客户满意度”
+    standardDisclosureRequirementText: 可进一步披露补充客户服务指标目标、历史对比、服务改进措施、未达成原因和后续提升计划。
+    disclosureRequirementObligationLevel: encouraged
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 第四十七条
+    - standard: SZSE
+      clauseRef: 第四十七条
+    - standard: BSE
+      clauseRef: 第四十七条

@@ -1,0 +1,195 @@
+# ABOUTME: 人力资本发展议题准则披露要求库，供覆盖审计与按 key 白名单注入生成上下文（注入受开关控制，默认关闭）。
+# ABOUTME: 本文件不作为用户可见准则批注来源；用户可见条款原文来自 user_visible_disclosure_clause_annotations。
+topicStandardDisclosureRequirementGroups:
+- topicSectionKey: human_capital_development.gov
+  pillar: governance
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: human_capital_development.gov.hr_responsibility_required
+    standardDisclosureRequirementTitle: 人力资本发展主责部门与职责分工
+    excerptFrom: 参考模板“人力发展主责部门统筹管理”
+    standardDisclosureRequirementText: 应说明公司人力资本发展或人力资源管理主责部门、招聘薪酬、员工发展、员工沟通职责或跨部门协同机制；员工培训专项事实由专项段承载，本段不重复展开课程、次数或覆盖率。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 第四十九条、第五十条
+    - standard: SZSE
+      clauseRef: 第四十九条、第五十条
+    - standard: BSE
+      clauseRef: 第四十九条、第五十条
+  - standardDisclosureRequirementKey: human_capital_development.gov.hr_responsibility_encouraged
+    standardDisclosureRequirementTitle: 人力资源规范化运作与持续优化
+    excerptFrom: 参考模板“系统推进人力资源管理的规范化运作与持续优化”
+    standardDisclosureRequirementText: 可进一步披露说明主责部门统筹、人力资源制度执行、招聘薪酬培训协同、员工沟通反馈和持续优化机制。
+    disclosureRequirementObligationLevel: encouraged
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 第四十九条、第五十条
+    - standard: SZSE
+      clauseRef: 第四十九条、第五十条
+    - standard: BSE
+      clauseRef: 第四十九条、第五十条
+  - standardDisclosureRequirementKey: human_capital_development.gov.labor_rights_required
+    standardDisclosureRequirementTitle: 员工合法权益与人力资源合规
+    excerptFrom: 附录索引表第四十九条、第五十条；参考模板“治理”
+    standardDisclosureRequirementText: 应说明公司依法保护员工合法权益的制度与执行情况，包括薪酬及时支付、社保缴纳、员工申诉制度、预防歧视骚扰、劳动合同和劳动纠纷管理。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 第四十九条、第五十条
+    - standard: SZSE
+      clauseRef: 第四十九条、第五十条
+    - standard: BSE
+      clauseRef: 第四十九条、第五十条
+  - standardDisclosureRequirementKey: human_capital_development.gov.labor_rights_encouraged
+    standardDisclosureRequirementTitle: 人力资源制度与员工沟通机制
+    excerptFrom: 参考模板“薪酬待遇管理、福利管理、预防歧视、骚扰政策”
+    standardDisclosureRequirementText: 可进一步披露说明薪酬待遇管理、福利管理、反歧视反骚扰政策、员工沟通、申诉处理、内部监督和持续改进安排。
+    disclosureRequirementObligationLevel: encouraged
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 第四十九条、第五十条
+    - standard: SZSE
+      clauseRef: 第四十九条、第五十条
+    - standard: BSE
+      clauseRef: 第四十九条、第五十条
+  - standardDisclosureRequirementKey: human_capital_development.gov.hr_policy_documents_required
+    standardDisclosureRequirementTitle: 人力资源管理与人才发展制度
+    excerptFrom: 参考模板“人力资源管理、人才发展培训相关制度名称”
+    standardDisclosureRequirementText: 如涉及招聘录用、薪酬福利、绩效考核、职业通道、晋升、员工沟通或员工关爱相关制度，应说明制度名称、制度目标、适用范围和关键流程；制度名称和目标必须来自相关事实；员工培训制度名称、课程、次数或覆盖率由专项段承载。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 第四十九条、第五十条
+    - standard: SZSE
+      clauseRef: 第四十九条、第五十条
+    - standard: BSE
+      clauseRef: 第四十九条、第五十条
+- topicSectionKey: human_capital_development.strategy
+  pillar: strategy
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: human_capital_development.strategy.talent_development_required
+    standardDisclosureRequirementTitle: 人才发展战略与职业通道
+    excerptFrom: 附录索引表第五十条；参考模板“战略”
+    standardDisclosureRequirementText: 应说明公司是否建立人才发展战略、培养体系、职业发展通道、职位体系、晋升选拔机制或关键人才留任安排。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 第五十条
+    - standard: SZSE
+      clauseRef: 第五十条
+    - standard: BSE
+      clauseRef: 第五十条
+  - standardDisclosureRequirementKey: human_capital_development.strategy.talent_pipeline_encouraged
+    standardDisclosureRequirementTitle: 专业化、多元化、国际化人才梯队
+    excerptFrom: 参考模板“专业化、多元化、国际化的人才梯队”
+    standardDisclosureRequirementText: 可进一步披露说明专业化、多元化、国际化人才梯队、系统化培养体系、多维职业发展通道、创新能力、组织韧性和员工成长与公司发展的关系。
+    disclosureRequirementObligationLevel: encouraged
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 第五十条
+    - standard: SZSE
+      clauseRef: 第五十条
+    - standard: BSE
+      clauseRef: 第五十条
+- topicSectionKey: human_capital_development.iro
+  pillar: iro_management
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: human_capital_development.iro.employee_rights_and_inclusion_required
+    standardDisclosureRequirementTitle: 员工权益、福利与包容实践
+    excerptFrom: 附录索引表第四十九条、第五十条；参考模板“平等与多元化”“薪酬福利体系”
+    standardDisclosureRequirementText: 应围绕企业提供的具体帮扶对象和帮扶内容，概括说明员工权益、平等多元、反歧视和员工支持安排；福利项目由福利表承载，本段不重复展开。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 第四十九条、第五十条
+    - standard: SZSE
+      clauseRef: 第四十九条、第五十条
+    - standard: BSE
+      clauseRef: 第四十九条、第五十条
+  - standardDisclosureRequirementKey: human_capital_development.iro.recruitment_compensation_required
+    standardDisclosureRequirementTitle: 招聘录用、薪酬福利与员工保障
+    excerptFrom: 附录索引表第五十条
+    standardDisclosureRequirementText: 可概括员工聘用与待遇政策及执行情况，包括招聘录用公平透明、工资支付、社保缴纳、薪酬福利或员工保障。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 第五十条
+    - standard: SZSE
+      clauseRef: 第五十条
+    - standard: BSE
+      clauseRef: 第五十条
+  - standardDisclosureRequirementKey: human_capital_development.iro.compensation_incentives_required
+    standardDisclosureRequirementTitle: 薪酬体系原则、目标与激励政策
+    excerptFrom: 参考模板“薪酬福利体系”
+    standardDisclosureRequirementText: 可说明薪酬体系原则、福利保障或激励政策方向。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 第五十条
+    - standard: SZSE
+      clauseRef: 第五十条
+    - standard: BSE
+      clauseRef: 第五十条
+  - standardDisclosureRequirementKey: human_capital_development.iro.welfare_benefits_required
+    standardDisclosureRequirementTitle: 员工福利保障体系
+    excerptFrom: 参考模板“全方位多层次的福利关怀体系”
+    standardDisclosureRequirementText: 仅当企业提供福利保障项目时，应以福利类别、福利项目和主要内容组织说明，可覆盖法定保障、健康与安全、生活津贴、关怀与补助、发展支持和团队建设等类别。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 第五十条
+    - standard: SZSE
+      clauseRef: 第五十条
+    - standard: BSE
+      clauseRef: 第五十条
+  - standardDisclosureRequirementKey: human_capital_development.iro.training_development_required
+    standardDisclosureRequirementTitle: 员工培训、晋升选拔与职业发展
+    excerptFrom: 附录索引表第四十九条、第五十条
+    standardDisclosureRequirementText: 仅当企业确认报告期内开展员工培训时，可概括培训主题、培训对象、职业发展支持或员工成长方向；企业。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 第四十九条、第五十条
+    - standard: SZSE
+      clauseRef: 第四十九条、第五十条
+    - standard: BSE
+      clauseRef: 第四十九条、第五十条
+- topicSectionKey: human_capital_development.metrics
+  pillar: metrics_targets
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: human_capital_development.metrics.workforce_metrics_required
+    standardDisclosureRequirementTitle: 员工总体情况与发展指标
+    excerptFrom: 附录索引表第五十条
+    standardDisclosureRequirementText: 如企业在本议题提供人力资本数据，正文应准确说明员工总体情况、期末在职员工性别和年龄构成、员工变动、员工流失率、女性员工比例、培训覆盖率、人均培训小时、绩效和职业发展评估覆盖率或劳动纠纷情况；只有指标名称或单位、无填写值时，可作指标口径参考并使用持续完善、稳步推进、继续细化等通用管理表达。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 第五十条
+    - standard: SZSE
+      clauseRef: 第五十条
+    - standard: BSE
+      clauseRef: 第五十条
+  - standardDisclosureRequirementKey: human_capital_development.metrics.workforce_metrics_encouraged
+    standardDisclosureRequirementTitle: 员工结构、培训与发展指标对比
+    excerptFrom: 参考模板“女性员工比例、员工培训覆盖率、员工平均培训时数”
+    standardDisclosureRequirementText: 可进一步披露补充女性员工、女性管理者、女性高级管理层、员工沟通覆盖率、员工培训覆盖率、人均培训时数、绩效和职业发展评估覆盖率的目标、历史对比或后续改进计划。
+    disclosureRequirementObligationLevel: encouraged
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 第五十条
+    - standard: SZSE
+      clauseRef: 第五十条
+    - standard: BSE
+      clauseRef: 第五十条
+  - standardDisclosureRequirementKey: human_capital_development.metrics.workforce_metrics_conditional
+    standardDisclosureRequirementTitle: 女性员工、培训覆盖与劳动纠纷数据
+    excerptFrom: 附录索引表第五十条；参考模板“人力资本发展指标”
+    standardDisclosureRequirementText: 若企业在本议题填写女性员工、培训覆盖率、员工平均培训时数、绩效评估覆盖率、员工流失率、劳动纠纷或员工变动数据，应准确说明统计范围、计量口径、报告期数据和与目标的关系。
+    disclosureRequirementObligationLevel: conditional
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 第五十条
+    - standard: SZSE
+      clauseRef: 第五十条
+    - standard: BSE
+      clauseRef: 第五十条

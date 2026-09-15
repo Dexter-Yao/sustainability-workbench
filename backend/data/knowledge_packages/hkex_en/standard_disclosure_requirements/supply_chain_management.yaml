@@ -1,0 +1,61 @@
+# ABOUTME(en): Appendix C2 disclosure requirements of "Supply Chain Management" (General Disclosure and KPIs), grouped by pillar,
+# ABOUTME(en): for the coverage audit and for prompt assembly by key whitelist (injection is switch-gated, off by default) and for the coverage audit. Wording follows the English Code text.
+topicStandardDisclosureRequirementGroups:
+- topicSectionKey: supply_chain_management.gov
+  pillar: governance
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: supply_chain_management.gov.general_disclosure_policies
+    standardDisclosureRequirementTitle: Policies on managing environmental and social risks of the supply chain
+    excerptFrom: HKEX·Appendix C2·General Disclosure B5
+    standardDisclosureRequirementText: |-
+      Disclose the policies on managing environmental and social risks of the supply chain.
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: General Disclosure B5
+- topicSectionKey: supply_chain_management.strategy
+  pillar: strategy
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: supply_chain_management.strategy.green_procurement
+    standardDisclosureRequirementTitle: |-
+      Practices used to promote environmentally preferable products and services
+    excerptFrom: HKEX·Appendix C2·KPI B5.4
+    standardDisclosureRequirementText: |-
+      Description of practices used to promote environmentally preferable products and services when selecting suppliers, and how they are implemented and monitored.
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: KPI B5.4
+- topicSectionKey: supply_chain_management.iro
+  pillar: iro_management
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: supply_chain_management.iro.supplier_engagement
+    standardDisclosureRequirementTitle: Practices relating to engaging suppliers
+    excerptFrom: HKEX·Appendix C2·KPI B5.2
+    standardDisclosureRequirementText: |-
+      Description of practices relating to engaging suppliers, number of suppliers where the practices are being implemented, and how they are implemented and monitored.
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: KPI B5.2
+  - standardDisclosureRequirementKey: supply_chain_management.iro.supply_chain_risk_identification
+    standardDisclosureRequirementTitle: |-
+      Practices used to identify environmental and social risks along the supply chain
+    excerptFrom: HKEX·Appendix C2·KPI B5.3
+    standardDisclosureRequirementText: |-
+      Description of practices used to identify environmental and social risks along each stage of the supply chain, and how they are implemented and monitored.
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: KPI B5.3
+- topicSectionKey: supply_chain_management.metrics
+  pillar: metrics_targets
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: supply_chain_management.metrics.suppliers_by_region_data
+    standardDisclosureRequirementTitle: Number of suppliers by geographical region
+    excerptFrom: HKEX·Appendix C2·KPI B5.1
+    standardDisclosureRequirementText: Disclose the number of suppliers by geographical region.
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: KPI B5.1

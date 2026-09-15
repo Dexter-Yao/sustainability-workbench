@@ -1,0 +1,47 @@
+# ABOUTME(en): Appendix C2 disclosure requirements of「物料及包裝」(General Disclosure and KPIs), grouped by pillar,
+# ABOUTME(en): for the coverage audit and for prompt assembly by key whitelist (injection is switch-gated, off by default) and for the coverage audit. Wording awaits check against the official Chinese text.
+topicStandardDisclosureRequirementGroups:
+- topicSectionKey: materials_and_packaging.gov
+  pillar: governance
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: materials_and_packaging.gov.general_disclosure_policies
+    standardDisclosureRequirementTitle: 有效使用原材料的政策
+    excerptFrom: 港交所·附錄C2·一般披露 A2
+    standardDisclosureRequirementText: 應披露有效使用資源（包括其他原材料）的政策。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: 一般披露 A2
+- topicSectionKey: materials_and_packaging.strategy
+  pillar: strategy
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: materials_and_packaging.strategy.packaging_reduction_direction
+    standardDisclosureRequirementTitle: 包裝材料減量方向
+    excerptFrom: 港交所·附錄C2·一般披露 A2
+    standardDisclosureRequirementText: 應說明公司在包裝材料減量、可回收及再生材料使用方面的方向及目標。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: 一般披露 A2
+- topicSectionKey: materials_and_packaging.iro
+  pillar: iro_management
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: materials_and_packaging.iro.packaging_management
+    standardDisclosureRequirementTitle: 包裝材料管理措施
+    excerptFrom: 港交所·附錄C2·關鍵績效指標 A2.5
+    standardDisclosureRequirementText: 應說明製成品所用包裝材料的種類及管理措施，與關鍵績效指標A2.5的數量披露相互印證。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: 關鍵績效指標 A2.5
+- topicSectionKey: materials_and_packaging.metrics
+  pillar: metrics_targets
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: materials_and_packaging.metrics.packaging_material_data
+    standardDisclosureRequirementTitle: 製成品所用包裝材料總量及每生產單位佔量
+    excerptFrom: 港交所·附錄C2·關鍵績效指標 A2.5
+    standardDisclosureRequirementText: 應披露製成品所用包裝材料的總量（以噸計算）及（如適用）每生產單位佔量。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: 關鍵績效指標 A2.5

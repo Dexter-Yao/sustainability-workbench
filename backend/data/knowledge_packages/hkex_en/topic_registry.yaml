@@ -1,0 +1,139 @@
+# ABOUTME(en): HKEX topic contract (English twin of hkex_zh_hant): Appendix C2 Aspects (A1–A3, B1–B8) and the
+# ABOUTME(en): Part D climate chapter as scored topics → report H2 sections → fixed H1 subject-area modules.
+# ABOUTME(en): Module titles are fixed (no titleGenerationGuidance); ids and section prefixes equal the zh-Hant package.
+
+reportModules:
+  - id: environmental_aspects
+    navigationTitle: Environmental
+    order: 10
+  - id: employment_and_labour_practices
+    navigationTitle: Employment and Labour Practices
+    order: 20
+  - id: operating_practices
+    navigationTitle: Operating Practices
+    order: 30
+  - id: community
+    navigationTitle: Community
+    order: 40
+
+dimensions:
+  - {id: environment, label: Environmental, order: 10}
+  - {id: social, label: Social, order: 20}
+
+assessmentTopics:
+  # —— A Environmental ——
+  - id: climate_change
+    name: Climate Change
+    dimension: environment
+    order: 10
+    reportSectionId: climate_change
+    materialityDetermination: {kind: scored}
+  - id: emissions
+    name: Emissions
+    dimension: environment
+    order: 20
+    reportSectionId: emissions
+    materialityDetermination: {kind: scored}
+  - id: waste_management
+    name: Waste Management
+    dimension: environment
+    order: 30
+    reportSectionId: waste_management
+    materialityDetermination: {kind: scored}
+  - id: energy_management
+    name: Energy Management
+    dimension: environment
+    order: 40
+    reportSectionId: energy_management
+    materialityDetermination: {kind: scored}
+  - id: water_management
+    name: Water Management
+    dimension: environment
+    order: 50
+    reportSectionId: water_management
+    materialityDetermination: {kind: scored}
+  - id: materials_and_packaging
+    name: Materials and Packaging
+    dimension: environment
+    order: 60
+    reportSectionId: materials_and_packaging
+    materialityDetermination: {kind: scored}
+  - id: environment_and_natural_resources
+    name: The Environment and Natural Resources
+    dimension: environment
+    order: 70
+    reportSectionId: environment_and_natural_resources
+    materialityDetermination: {kind: scored}
+  # —— B Social ——
+  - id: employment
+    name: Employment
+    dimension: social
+    order: 10
+    reportSectionId: employment
+    materialityDetermination: {kind: scored}
+  - id: health_and_safety
+    name: Health and Safety
+    dimension: social
+    order: 20
+    reportSectionId: health_and_safety
+    materialityDetermination: {kind: scored}
+  - id: development_and_training
+    name: Development and Training
+    dimension: social
+    order: 30
+    reportSectionId: development_and_training
+    materialityDetermination: {kind: scored}
+  - id: labour_standards
+    name: Labour Standards
+    dimension: social
+    order: 40
+    reportSectionId: labour_standards
+    materialityDetermination: {kind: scored}
+  - id: supply_chain_management
+    name: Supply Chain Management
+    dimension: social
+    order: 50
+    reportSectionId: supply_chain_management
+    materialityDetermination: {kind: scored}
+  - id: product_responsibility
+    name: Product Responsibility
+    dimension: social
+    order: 60
+    reportSectionId: product_responsibility
+    materialityDetermination: {kind: scored}
+  - id: data_protection_and_privacy
+    name: Data Protection and Privacy
+    dimension: social
+    order: 70
+    reportSectionId: data_protection_and_privacy
+    materialityDetermination: {kind: scored}
+  - id: anti_corruption
+    name: Anti-corruption
+    dimension: social
+    order: 80
+    reportSectionId: anti_corruption
+    materialityDetermination: {kind: scored}
+  - id: community_investment
+    name: Community Investment
+    dimension: social
+    order: 90
+    reportSectionId: community_investment
+    materialityDetermination: {kind: scored}
+
+reportSections:
+  - {id: climate_change, title: Climate Change, reportModuleId: environmental_aspects, order: 10, sectionPrefix: climate}
+  - {id: emissions, title: Emissions, reportModuleId: environmental_aspects, order: 20}
+  - {id: waste_management, title: Waste Management, reportModuleId: environmental_aspects, order: 30, sectionPrefix: waste}
+  - {id: energy_management, title: Energy Management, reportModuleId: environmental_aspects, order: 40, sectionPrefix: energy}
+  - {id: water_management, title: Water Management, reportModuleId: environmental_aspects, order: 50, sectionPrefix: water}
+  - {id: materials_and_packaging, title: Materials and Packaging, reportModuleId: environmental_aspects, order: 60, sectionPrefix: materials}
+  - {id: environment_and_natural_resources, title: The Environment and Natural Resources, reportModuleId: environmental_aspects, order: 70, sectionPrefix: natural_resources}
+  - {id: employment, title: Employment, reportModuleId: employment_and_labour_practices, order: 10}
+  - {id: health_and_safety, title: Health and Safety, reportModuleId: employment_and_labour_practices, order: 20, sectionPrefix: health_safety}
+  - {id: development_and_training, title: Development and Training, reportModuleId: employment_and_labour_practices, order: 30, sectionPrefix: training}
+  - {id: labour_standards, title: Labour Standards, reportModuleId: employment_and_labour_practices, order: 40}
+  - {id: supply_chain_management, title: Supply Chain Management, reportModuleId: operating_practices, order: 10, sectionPrefix: supply_chain}
+  - {id: product_responsibility, title: Product Responsibility, reportModuleId: operating_practices, order: 20, sectionPrefix: product}
+  - {id: data_protection_and_privacy, title: Data Protection and Privacy, reportModuleId: operating_practices, order: 30, sectionPrefix: privacy}
+  - {id: anti_corruption, title: Anti-corruption, reportModuleId: operating_practices, order: 40}
+  - {id: community_investment, title: Community Investment, reportModuleId: community, order: 10}

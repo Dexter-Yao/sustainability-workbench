@@ -1,0 +1,29 @@
+# ABOUTME(en): Topic-specific intake questions of "Anti-corruption"; the four fixed pillar questions come from topic_intake_common.yaml.
+# ABOUTME(en): Quantitative KPIs are collected through the metric catalog, not here.
+contentScopeId: anti_corruption
+items:
+- key: anti_corruption.q_whistleblowing
+  prompt: |-
+    What anti-corruption preventive measures and whistle-blowing procedures does the company have?
+  kind: text
+  collectionPriority: recommended
+  hint: Declarations, gift rules, channels, confidentiality, probes.
+  maxChars: 5000
+- key: anti_corruption.q_anti_corruption_training
+  prompt: |-
+    What anti-corruption training did the company provide to directors and staff during the reporting period?
+  kind: text
+  collectionPriority: recommended
+  hint: Audiences, topics and formats; numbers via KPIs.
+  maxChars: 5000
+- key: anti_corruption.q_corruption_cases
+  prompt: |-
+    Were any concluded legal cases regarding corrupt practices brought against the company or its employees during the reporting period?
+  kind: single_select
+  collectionPriority: recommended
+  options:
+  - None
+  - 'Yes'
+  - Not sure
+  hint: If yes, describe the nature and outcome of the cases.
+  maxChars: 5000

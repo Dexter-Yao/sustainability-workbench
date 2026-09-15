@@ -1,0 +1,143 @@
+# ABOUTME: 反商业贿赂与反贪污议题准则披露要求库，供覆盖审计与按 key 白名单注入生成上下文（注入受开关控制，默认关闭）。
+# ABOUTME: 本文件不作为用户可见准则批注来源；用户可见条款原文来自 user_visible_disclosure_clause_annotations。
+topicStandardDisclosureRequirementGroups:
+- topicSectionKey: anti_bribery_anti_corruption.gov
+  pillar: governance
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: anti_bribery_anti_corruption.gov.structure_required
+    standardDisclosureRequirementTitle: 反商业贿赂与反贪污组织架构及职责
+    excerptFrom: 附录索引表第五十五条；参考模板“治理”
+    standardDisclosureRequirementText: 应说明反商业贿赂和反贪污管理组织架构及主要职责分工，包括董事会、审计委员会、纪检监察、法务合规、内审、采购、财务、人力资源等职责、汇报机制和监督安排。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 第五十五条
+    - standard: SZSE
+      clauseRef: 第五十五条
+    - standard: BSE
+      clauseRef: 第五十五条
+  - standardDisclosureRequirementKey: anti_bribery_anti_corruption.gov.policy_system_required
+    standardDisclosureRequirementTitle: 反商业贿赂与反贪污制度体系
+    excerptFrom: 附录索引表第五十五条；参考模板“制度/商业行为准则”
+    standardDisclosureRequirementText: 应说明反商业贿赂及反贪污风险管理制度体系建立与运行情况、反商业贿赂制度、反贪污制度、商业行为准则、廉洁从业规范、礼品招待、利益冲突和第三方管理要求。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 第五十五条
+    - standard: SZSE
+      clauseRef: 第五十五条
+    - standard: BSE
+      clauseRef: 第五十五条
+  - standardDisclosureRequirementKey: anti_bribery_anti_corruption.gov.certification_encouraged
+    standardDisclosureRequirementTitle: 反贿赂和商业道德认证
+    excerptFrom: 参考模板“反贿赂/商业道德类管理体系认证”
+    standardDisclosureRequirementText: 可进一步披露说明 ISO 37001 或反贿赂、商业道德类管理体系认证、认证标准、认证范围和有效期；认证必须来自相关事实。
+    disclosureRequirementObligationLevel: encouraged
+    sourceClauseReferenceLabels:
+    - standard: ReferenceTemplate
+      clauseRef: 反商业贿赂与反贪污：认证
+- topicSectionKey: anti_bribery_anti_corruption.strategy
+  pillar: strategy
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: anti_bribery_anti_corruption.strategy.risk_management_required
+    standardDisclosureRequirementTitle: 反腐败风险识别、评估与管理
+    excerptFrom: 附录索引表第五十五条；参考模板“战略”
+    standardDisclosureRequirementText: 应说明公司对商业贿赂及贪污风险进行识别、评估和管理的情况，可围绕采购、销售、第三方合作等业务活动中的廉洁风险、管理目标、应对方向和管理体系完善进行概括。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 第五十五条
+    - standard: SZSE
+      clauseRef: 第五十五条
+    - standard: BSE
+      clauseRef: 第五十五条
+- topicSectionKey: anti_bribery_anti_corruption.iro
+  pillar: iro_management
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: anti_bribery_anti_corruption.iro.risk_response_table_required
+    standardDisclosureRequirementTitle: 反商业贿赂与反贪污风险内容、影响及应对措施
+    excerptFrom: 参考模板“风险内容、影响及应对措施表”
+    standardDisclosureRequirementText: 应以风险表说明反商业贿赂与反贪污风险类型、具体内容、财务影响、影响时间范围和应对措施。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: ReferenceTemplate
+      clauseRef: 反商业贿赂与反贪污：风险表
+  - standardDisclosureRequirementKey: anti_bribery_anti_corruption.iro.management_measures_required
+    standardDisclosureRequirementTitle: 反贪污管理规范和措施
+    excerptFrom: 附录索引表第五十五条；参考模板“制度内容描述”
+    standardDisclosureRequirementText: 应说明利益冲突申报、礼品招待审批、第三方尽调、廉洁承诺、关键岗位监督、审批权限、违规处理、责任追究或整改闭环等制度落地措施。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 第五十五条
+    - standard: SZSE
+      clauseRef: 第五十五条
+    - standard: BSE
+      clauseRef: 第五十五条
+  - standardDisclosureRequirementKey: anti_bribery_anti_corruption.iro.training_required
+    standardDisclosureRequirementTitle: 廉洁和反贪污培训
+    excerptFrom: 附录索引表第五十五条；参考模板“廉洁和反贪污培训”
+    standardDisclosureRequirementText: 应说明接受反商业贿赂及反贪污培训的董事、管理层人员、员工总数和百分比，以及报告期内廉洁、反贪污主题培训场次、覆盖范围、培训主题和培训效果。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 第五十五条
+    - standard: SZSE
+      clauseRef: 第五十五条
+    - standard: BSE
+      clauseRef: 第五十五条
+  - standardDisclosureRequirementKey: anti_bribery_anti_corruption.iro.supplier_ethics_required
+    standardDisclosureRequirementTitle: 供应商商业道德与阳光采购要求
+    excerptFrom: 参考模板“供应商商业道德/反贪污/阳光采购要求”
+    standardDisclosureRequirementText: 应说明供应商行为准则、阳光采购制度、供应商廉洁协议、商业道德条款、反贪污要求、供应商培训、供应商尽调和违反要求的处理。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: ReferenceTemplate
+      clauseRef: 反商业贿赂与反贪污：供应商要求
+  - standardDisclosureRequirementKey: anti_bribery_anti_corruption.iro.audit_supervision_required
+    standardDisclosureRequirementTitle: 商业道德和廉洁审计监督
+    excerptFrom: 参考模板“审计监督”
+    standardDisclosureRequirementText: 应说明商业道德、廉洁或反贪污领域审计机制、审计范围、审计频次、报告期审计项目、问题发现、整改跟踪和责任追究。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: ReferenceTemplate
+      clauseRef: 反商业贿赂与反贪污：审计监督
+  - standardDisclosureRequirementKey: anti_bribery_anti_corruption.iro.reporting_whistleblower_required
+    standardDisclosureRequirementTitle: 举报渠道与举报人保护
+    excerptFrom: 附录索引表第五十五条；参考模板“沟通渠道与举报人保护机制”
+    standardDisclosureRequirementText: 应说明是否建立举报者保护政策、商业道德/反贪污/合规举报管理办法、合规热线、合规邮箱、匿名举报、举报受理、调查流程、保密措施、反报复、举报人保护和处理反馈。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 第五十五条
+    - standard: SZSE
+      clauseRef: 第五十五条
+    - standard: BSE
+      clauseRef: 第五十五条
+  - standardDisclosureRequirementKey: anti_bribery_anti_corruption.iro.corruption_incidents_conditional
+    standardDisclosureRequirementTitle: 商业贿赂与贪污事件
+    excerptFrom: 附录索引表第五十五条
+    standardDisclosureRequirementText: 如涉及报告期内发生的商业贿赂及贪污事件，应准确说明董事、管理层人员、员工由于商业贿赂或贪污行为而被解雇或受到处分、被有权部门调查、与业务合作伙伴的合同被终止或未续约以及诉讼案件具体情况。
+    disclosureRequirementObligationLevel: conditional
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 第五十五条
+    - standard: SZSE
+      clauseRef: 第五十五条
+    - standard: BSE
+      clauseRef: 第五十五条
+- topicSectionKey: anti_bribery_anti_corruption.metrics
+  pillar: metrics_targets
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: anti_bribery_anti_corruption.metrics.metrics_required
+    standardDisclosureRequirementTitle: 反商业贿赂与反贪污指标
+    excerptFrom: 附录索引表第五十五条；参考模板“指标目标”
+    standardDisclosureRequirementText: 如本议题涉及相关指标，应准确说明培训场次、培训人数和百分比、董事/管理层/员工培训覆盖率、举报数量、调查处理数量、廉洁协议签署比例、审计次数、违规事件数量或整改完成率。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 第五十五条
+    - standard: SZSE
+      clauseRef: 第五十五条
+    - standard: BSE
+      clauseRef: 第五十五条

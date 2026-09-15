@@ -1,0 +1,106 @@
+# ABOUTME(en): Topic chapter template of the HKEX Aspect「勞工準則」: governance / strategy / risk-management
+# ABOUTME(en): blocks with their intake evidence and Appendix C2 requirement keys; the metrics H3 is compiled from metricDisclosure.
+section:
+  key: labour_standards
+  title: 勞工準則
+  headingLevel: 2
+  reportSectionId: labour_standards
+  conciseDisclosure:
+    id: labour_standards.concise_summary
+    type: paragraph
+    blockType: generative
+    source: ai
+    styleRole: body
+    generation:
+      task:
+        focus: 根據本層面當前可見證據形成一段連貫摘要，涵蓋防止童工或強制勞工的政策、合規情況、檢討僱傭常規的措施及發現違規時的處理步驟，不使用四項小標題。
+      inputs:
+        evidence:
+          kind: report_section
+      targetChars:
+      - 260
+      - 520
+  children:
+  - key: labour_standards.gov
+    title: 管治
+    pillar: governance
+    headingLevel: 3
+    blocks:
+    - id: labour_standards.gov_policy_and_compliance
+      type: paragraph
+      blockType: generative
+      source: ai
+      styleRole: body
+      generation:
+        task:
+          focus: 說明公司有關防止童工或強制勞工的政策與職責安排，以及遵守相關法律及規例的情況（守則層面B4一般披露）。
+          noFactGuidance: |-
+            用戶未提供政策或職責資料時，以審慎、概括的語態說明公司按所屬行業及業務類型對本層面採取的一般管理關注、合規原則及職責安排；不指名部門、制度名稱、認證或審批流程，不聲稱已建立特定制度或已完成合規檢查。
+        inputs:
+          evidence:
+            kind: explicit
+            intakeItems:
+            - labour_standards.q_governance_roles
+            - labour_standards.q_governance_policies
+            - labour_standards.q_governance_certifications
+        targetChars:
+        - 160
+        - 360
+        standardDisclosureRequirementKeys:
+        - labour_standards.gov.general_disclosure_policies
+        - labour_standards.gov.general_disclosure_compliance
+        simplifiedWritingGuidance:
+        - 遵守相關法律及規例的情況只在用戶明確提供時陳述；未提供時不寫「未發現違規」或「無重大違規」等結論。
+  - key: labour_standards.strategy
+    title: 策略
+    pillar: strategy
+    headingLevel: 3
+    blocks:
+    - id: labour_standards.strategy_direction
+      type: paragraph
+      blockType: generative
+      source: ai
+      styleRole: body
+      generation:
+        task:
+          focus: 說明公司在勞工準則方面的承諾與方向，包括對供應鏈勞工準則的期望。
+          noFactGuidance: 用戶未提供目標或計劃時，說明公司會結合業務發展持續關注本層面的改善方向與量化目標的訂立；不虛構目標數值、基準年、達成期限或已取得的成效。
+        inputs:
+          evidence:
+            kind: explicit
+            intakeItems:
+            - labour_standards.q_strategy_content
+        targetChars:
+        - 120
+        - 280
+        standardDisclosureRequirementKeys:
+        - labour_standards.strategy.labour_commitment
+  - key: labour_standards.iro
+    title: 風險管理
+    pillar: iro_management
+    headingLevel: 3
+    blocks:
+    - id: labour_standards.iro_review_and_remediation
+      type: paragraph
+      blockType: generative
+      source: ai
+      styleRole: body
+      generation:
+        task:
+          focus: |-
+            描述公司檢討招聘及僱傭常規以避免童工及強制勞工的措施（如年齡核實、自願僱傭、工時管理），以及發現違規情況時所採取的消除步驟（守則關鍵績效指標B4.1及B4.2）。
+          noFactGuidance: 用戶未提供具體措施時，僅結合行業及業務類型說明本層面常見的管理環節與方向性安排；不聲稱公司已實施特定措施、已購置設備、已委聘服務商或已取得成效。
+        inputs:
+          evidence:
+            kind: explicit
+            intakeItems:
+            - labour_standards.q_labour_review_measures
+            - labour_standards.q_labour_violations
+        targetChars:
+        - 180
+        - 400
+        standardDisclosureRequirementKeys:
+        - labour_standards.iro.review_measures
+        - labour_standards.iro.remediation_steps
+metricDisclosure:
+  catalogMetricKeys: []

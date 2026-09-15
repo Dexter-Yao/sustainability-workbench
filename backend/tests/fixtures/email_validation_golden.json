@@ -1,0 +1,18 @@
+{
+  "_about": "联系邮箱格式跨端 golden 一致性 fixture——后端 is_valid_contact_email 与前端 isFieldValueAllowed('email') 各自断言 == expected，防双写漂移。空串代表未填写，不在本 fixture 范围（两端各自在空值分支前返回）。",
+  "cases": [
+    {"value": "esg@example.com", "expected": true},
+    {"value": "a.b-c_d@sub.domain.cn", "expected": true},
+    {"value": "USER@COMPANY.COM.CN", "expected": true},
+    {"value": "u+tag@example.io", "expected": true},
+    {"value": "abc", "expected": false},
+    {"value": "user@", "expected": false},
+    {"value": "@example.com", "expected": false},
+    {"value": "user@example", "expected": false},
+    {"value": "user @example.com", "expected": false},
+    {"value": "user@exa mple.com", "expected": false},
+    {"value": "user@@example.com", "expected": false},
+    {"value": "user@example.com。", "expected": false},
+    {"value": "请发送至 user@example.com", "expected": false}
+  ]
+}

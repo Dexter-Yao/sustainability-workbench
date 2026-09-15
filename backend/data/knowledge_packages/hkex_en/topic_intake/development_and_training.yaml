@@ -1,0 +1,20 @@
+# ABOUTME(en): Topic-specific intake questions of "Development and Training"; the four fixed pillar questions come from topic_intake_common.yaml.
+# ABOUTME(en): Quantitative KPIs are collected through the metric catalog, not here.
+contentScopeId: development_and_training
+items:
+- key: training.q_training_programmes
+  prompt: |-
+    What training activities did the company carry out during the reporting period?
+  kind: text
+  collectionPriority: recommended
+  hint: Topics, audiences, formats and evaluation; or blank.
+  generationBoundary: |-
+    Unless specific figures are given, do not generate attendance, hours or coverage rates.
+  maxChars: 5000
+- key: training.q_training_needs
+  prompt: |-
+    How does the company identify training needs and plan employee development?
+  kind: text
+  collectionPriority: recommended
+  hint: Needs surveys, appraisal links, promotion, sponsorship.
+  maxChars: 5000

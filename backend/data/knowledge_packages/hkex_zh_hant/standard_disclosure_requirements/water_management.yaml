@@ -1,0 +1,47 @@
+# ABOUTME(en): Appendix C2 disclosure requirements of「水資源管理」(General Disclosure and KPIs), grouped by pillar,
+# ABOUTME(en): for the coverage audit and for prompt assembly by key whitelist (injection is switch-gated, off by default) and for the coverage audit. Wording awaits check against the official Chinese text.
+topicStandardDisclosureRequirementGroups:
+- topicSectionKey: water_management.gov
+  pillar: governance
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: water_management.gov.general_disclosure_policies
+    standardDisclosureRequirementTitle: 有效使用水資源的政策
+    excerptFrom: 港交所·附錄C2·一般披露 A2
+    standardDisclosureRequirementText: 應披露有效使用資源（包括水）的政策。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: 一般披露 A2
+- topicSectionKey: water_management.strategy
+  pillar: strategy
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: water_management.strategy.water_efficiency_targets
+    standardDisclosureRequirementTitle: 用水效益目標及達標步驟
+    excerptFrom: 港交所·附錄C2·關鍵績效指標 A2.4
+    standardDisclosureRequirementText: 應描述所訂立的用水效益目標及為達到這些目標所採取的步驟。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: 關鍵績效指標 A2.4
+- topicSectionKey: water_management.iro
+  pillar: iro_management
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: water_management.iro.water_sourcing_and_measures
+    standardDisclosureRequirementTitle: 求取適用水源的問題及用水措施
+    excerptFrom: 港交所·附錄C2·關鍵績效指標 A2.4
+    standardDisclosureRequirementText: 應描述求取適用水源上可有任何問題，以及節約用水、循環再用等措施及其實施方式。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: 關鍵績效指標 A2.4
+- topicSectionKey: water_management.metrics
+  pillar: metrics_targets
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: water_management.metrics.water_consumption_data
+    standardDisclosureRequirementTitle: 總耗水量及密度
+    excerptFrom: 港交所·附錄C2·關鍵績效指標 A2.2
+    standardDisclosureRequirementText: 應披露總耗水量及密度（如以每產量單位、每項設施計算）。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: 關鍵績效指標 A2.2

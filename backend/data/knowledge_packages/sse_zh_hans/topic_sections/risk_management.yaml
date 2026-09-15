@@ -1,0 +1,169 @@
+# ABOUTME: 风险管理议题章节骨架，H2 标题以附录索引表“对应的本报告章节”为准。
+# ABOUTME: 本文件按参考模板拆分治理架构、制度遵循、战略、风险管理流程和指标目标，指标由定量目录风险管理五项承载。
+section:
+  key: risk_management
+  title: 风险管理
+  headingLevel: 2
+  reportSectionId: risk_management
+  conciseDisclosure:
+    id: risk_management.concise_summary
+    type: paragraph
+    blockType: generative
+    source: ai
+    styleRole: body
+    generation:
+      task:
+        focus: "根据本议题当前可见证据形成一段连贯摘要，覆盖相关管理关注、方向与实践，不使用四要素小标题。"
+      inputs: {evidence: {kind: report_section}}
+      targetChars: [300, 600]
+  children:
+  - key: risk_management.gov
+    title: 治理
+    pillar: governance
+    headingLevel: 3
+    children:
+    - key: risk_management.gov.structure_responsibilities
+      title: 风险管理职责
+      headingLevel: 4
+      titleGeneration:
+        sourceBlockId: risk_management.gov_structure_responsibilities
+        guidance: 概括本内容单元的核心行动或结果，生成简洁、准确且不引入新事实的标题。
+      blocks:
+      - id: risk_management.gov_structure_responsibilities
+        type: paragraph
+        blockType: generative
+        source: ai
+        styleRole: body
+        generation:
+          task:
+            focus: "说明风险管理的责任主体、职责分工和协调安排。"
+          templateResidueBans:
+          - 《》、《》
+          - 代入制度名称
+          - 若企业没有对应组织架构内容资料
+          - 拟议段符合所有企业
+          - 注意该段内容中的部门名称无需具化
+          - 根据风险管理制度内容
+          - 如果没有制度
+          - 适用于任何企业
+          - 不宜太过具象
+          - 需适合所有企业情况
+          - 资料：
+          inputs:
+            evidence:
+              kind: explicit
+              intakeItems:
+                - risk_management.q_governance_roles
+          targetChars:
+          - 180
+          - 360
+    - key: risk_management.gov.policy_documents
+      title: 风险管理制度
+      headingLevel: 4
+      titleGeneration:
+        sourceBlockId: risk_management.gov_policy_documents
+        guidance: 概括本内容单元的核心行动或结果，生成简洁、准确且不引入新事实的标题。
+      blocks:
+      - id: risk_management.gov_policy_documents
+        type: paragraph
+        blockType: generative
+        source: ai
+        styleRole: body
+        generation:
+          task:
+            focus: "说明风险管理制度、流程及其在经营管理中的作用。"
+          templateResidueBans:
+          - 《》、《》
+          - 代入制度名称
+          - 若企业没有对应组织架构内容资料
+          - 拟议段符合所有企业
+          - 注意该段内容中的部门名称无需具化
+          - 根据风险管理制度内容
+          - 如果没有制度
+          - 适用于任何企业
+          - 不宜太过具象
+          - 需适合所有企业情况
+          - 资料：
+          inputs:
+            evidence:
+              kind: explicit
+              intakeItems:
+                - risk_management.q_governance_policies
+                - risk_management.q_governance_certifications
+          targetChars:
+          - 160
+          - 320
+  - key: risk_management.strategy
+    title: 战略
+    pillar: strategy
+    headingLevel: 3
+    blocks:
+    - id: risk_management.strategy_integrated_risk_management
+      type: paragraph
+      blockType: generative
+      source: ai
+      styleRole: body
+      generation:
+        task:
+          focus: "说明风险管理在长期经营中的总体方向、风险判断和推进原则。"
+        templateResidueBans:
+        - 《》、《》
+        - 代入制度名称
+        - 若企业没有对应组织架构内容资料
+        - 拟议段符合所有企业
+        - 注意该段内容中的部门名称无需具化
+        - 根据风险管理制度内容
+        - 如果没有制度
+        - 适用于任何企业
+        - 不宜太过具象
+        - 需适合所有企业情况
+        - 资料：
+        inputs:
+          evidence:
+            kind: explicit
+            intakeItems:
+              - risk_management.q_strategy_content
+        targetChars:
+        - 180
+        - 360
+  - key: risk_management.iro
+    title: 影响、风险与机遇管理
+    pillar: iro_management
+    headingLevel: 3
+    blocks:
+    - id: risk_management.iro_process
+      type: paragraph
+      blockType: generative
+      source: ai
+      styleRole: body
+      generation:
+        task:
+          focus: "说明风险识别、评估、应对和跟踪的相关流程与实践。"
+        templateResidueBans:
+        - 《》、《》
+        - 代入制度名称
+        - 若企业没有对应组织架构内容资料
+        - 拟议段符合所有企业
+        - 注意该段内容中的部门名称无需具化
+        - 根据风险管理制度内容
+        - 如果没有制度
+        - 适用于任何企业
+        - 不宜太过具象
+        - 需适合所有企业情况
+        - 资料：
+        inputs:
+          evidence:
+            kind: explicit
+            intakeItems:
+              - risk_management.q_iro_impacts_risks_opportunities
+              - risk_management.q_iro_management_actions
+        targetChars:
+        - 220
+        - 440
+metricDisclosure:
+  catalogMetricKeys:
+    - governance_r19
+    - governance_r20
+    - governance_r21
+    - governance_r22
+    - governance_r23

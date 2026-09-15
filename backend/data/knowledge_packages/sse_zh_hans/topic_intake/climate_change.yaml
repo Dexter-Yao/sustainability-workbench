@@ -1,0 +1,87 @@
+# ABOUTME: 应对气候变化议题轻量版内容清单，保留战略表格辅助题与培训活动题。
+# ABOUTME: 治理与战略固定题由 topic_intake_common.yaml 展开；结构化数值由 ESG 定量数据表维护。
+contentScopeId: climate_change
+items:
+- key: climate.q_climate_risk_choices
+  prompt: 您认为以下哪些气候相关风险会对公司产生影响？请在物理风险和转型风险中各至少选择一项。
+  kind: multi_select
+  options:
+  - 台风
+  - 暴雨
+  - 极端高温
+  - 海平面上升
+  - 降水和温度的变化
+  - 生物多样性丧失和土壤生产力变化
+  - 水短缺
+  - 碳定价与排放监管政策变化
+  - 气候相关诉讼风险
+  - 低碳技术替代与转型风险
+  - 消费者偏好转变风险
+  - 原材料成本与资产定价波动风险
+  - 气候相关声誉受损风险
+  optionGroups:
+  - key: physical_risk
+    label: 物理风险
+    minSelections: 1
+    options:
+    - 台风
+    - 暴雨
+    - 极端高温
+    - 海平面上升
+    - 降水和温度的变化
+    - 生物多样性丧失和土壤生产力变化
+    - 水短缺
+  - key: transition_risk
+    label: 转型风险
+    minSelections: 1
+    options:
+    - 碳定价与排放监管政策变化
+    - 气候相关诉讼风险
+    - 低碳技术替代与转型风险
+    - 消费者偏好转变风险
+    - 原材料成本与资产定价波动风险
+    - 气候相关声誉受损风险
+  collectionPriority: core
+  requiredBefore: generation
+  hint: 可在补充说明中填写风险影响的业务环节、影响范围、应对措施或目前掌握情况；物理风险与转型风险均需至少选择一项。
+  maxChars: 5000
+- key: climate.q_climate_opportunity_choices
+  prompt: 您认为以下哪些气候相关机遇会对公司产生影响？请至少选择一项。
+  kind: multi_select
+  options:
+  - 运营资源效率提升机遇
+  - 低碳产品方案开发机遇
+  - 低碳转型新市场与绿色金融机遇
+  - 能源绿色转型
+  - 气候适应能力建设与运营优化机遇
+  collectionPriority: core
+  requiredBefore: generation
+  hint: 可在补充说明中填写机遇涉及的产品、服务、运营环节、客户需求、管理措施或阶段性成果。
+  maxChars: 5000
+- key: climate.q_climate_target_status
+  prompt: 公司是否已设定温室气体减排、能源转型或其他低碳目标？
+  kind: single_select
+  collectionPriority: core
+  requiredBefore: generation
+  options:
+  - 已设定相关目标
+  - 正在制定相关目标
+  - 尚未设定相关目标
+  hint: 如已设定或正在制定，请在补充说明中填写目标覆盖范围、基准年、目标年、量化口径或当前进展；如尚未设定，请直接选择对应选项。
+  maxChars: 5000
+- key: climate.q_training_activities
+  prompt: 报告期内，公司是否开展过节能降耗、温室气体减排、资源效率提升、绿色低碳相关主题培训和活动？
+  kind: single_select
+  collectionPriority: recommended
+  options:
+  - 是
+  - 否
+  - 不确定
+  hint: 如选择是，请在补充说明中简述相关培训和活动的主题、覆盖范围和对象、活动场次及活动效果；没有或不确定可不补充。
+  maxChars: 5000
+- key: climate.q_reduction_practices
+  prompt: 报告期内，公司开展了哪些节能减排、资源效率提升或低碳运营实践？
+  kind: text
+  collectionPriority: recommended
+  hint: 可填写节能改造、能源结构优化、温室气体管理、绿色办公或其他已实际开展的措施与阶段性结果；没有专项实践可留空。
+  maxChars: 5000

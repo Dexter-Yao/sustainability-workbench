@@ -1,0 +1,20 @@
+# ABOUTME(en): Topic-specific intake questions of「勞工準則」; the four fixed pillar questions come from topic_intake_common.yaml.
+# ABOUTME(en): Quantitative KPIs are collected through the metric catalog, not here.
+contentScopeId: labour_standards
+items:
+- key: labour_standards.q_labour_review_measures
+  prompt: 貴公司如何檢討招聘及僱傭常規，以避免童工及強制勞工？
+  kind: text
+  collectionPriority: recommended
+  hint: 可說明年齡核實、身份證件查驗、自願僱傭與離職自由、工時及加班管理等；沒有可留空。
+  maxChars: 5000
+- key: labour_standards.q_labour_violations
+  prompt: 匯報期間是否發現童工或強制勞工的情況？
+  kind: single_select
+  collectionPriority: recommended
+  options:
+  - 沒有發現
+  - 有發現並已處理
+  - 不確定
+  hint: 如有發現，請在補充說明中說明處理及消除步驟。
+  maxChars: 5000

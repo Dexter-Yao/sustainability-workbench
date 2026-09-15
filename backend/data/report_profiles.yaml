@@ -1,0 +1,50 @@
+# ABOUTME(en): Versioned registry of report product Profiles: each Profile binds one knowledge
+# ABOUTME(en): package (standards framework × language) to product semantics. Entitlement Profiles
+# ABOUTME(en): only authorise which products may be created; this file holds no user data or prose.
+#
+# display_name 只写**准则名**，不带语言后缀：语言是 ReportProfileOption.language 这个
+# typed 字段，由界面按用户当前界面语言配文案。把「· 简体中文」写进 display_name，
+# 英文界面下会渲染成「上海证券交易所… · 简体中文」这样的混排。
+schema_version: 1
+defaults:
+  # 默认选中项与展示顺序一致：目标市场是香港，港交所繁體是最常见的起点。
+  lightweight: hkex_zh_hant@1
+# 声明顺序即建报对话框的展示顺序（dict 保序）：港交所两包在前——目标市场是香港与
+# 欧美 ESG 报告领域；`defaults` 的默认选中项与该顺序保持一致。
+profiles:
+  hkex_zh_hant@1:
+    report_type: lightweight
+    display_name: 香港聯合交易所《環境、社會及管治報告守則》
+    knowledge_package: hkex_zh_hant
+    requires_synthetic_data: false
+    generation_required_field_ids:
+      - company_registered_name
+      - industry_major_category
+      - reporting_year
+    # 整节重写与模块标题生成已装配冻结 Mapping（todos §3.6 前置解除），故开放。
+    workbench_enabled: true
+  hkex_en@1:
+    report_type: lightweight
+    display_name: HKEX Environmental, Social and Governance Reporting Code
+    knowledge_package: hkex_en
+    requires_synthetic_data: false
+    generation_required_field_ids:
+      - company_registered_name
+      - industry_major_category
+      - reporting_year
+    workbench_enabled: true
+  sse_zh_hans@1:
+    report_type: lightweight
+    display_name: 上海证券交易所可持续发展报告指引
+    knowledge_package: sse_zh_hans
+    requires_synthetic_data: false
+    # Report period start/end are optional (derived from the reporting year, clearable);
+    # the reporting year itself gates generation: sm.result_counts references it unconditionally.
+    generation_required_field_ids:
+      - company_registered_name
+      - industry_major_category
+      - reporting_year
+    # Paragraph and table revision are always available on the report body page; this switch
+    # adjudicates whole-section rewrite and the module-title endpoint, both open since the
+    # frozen-Mapping assembly landed (todos §3.6).
+    workbench_enabled: true

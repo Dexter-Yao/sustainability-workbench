@@ -1,0 +1,63 @@
+# ABOUTME(en): Appendix C2 disclosure requirements of「廢棄物管理」(General Disclosure and KPIs), grouped by pillar,
+# ABOUTME(en): for the coverage audit and for prompt assembly by key whitelist (injection is switch-gated, off by default) and for the coverage audit. Wording awaits check against the official Chinese text.
+topicStandardDisclosureRequirementGroups:
+- topicSectionKey: waste_management.gov
+  pillar: governance
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: waste_management.gov.general_disclosure_policies
+    standardDisclosureRequirementTitle: 廢棄物管理政策
+    excerptFrom: 港交所·附錄C2·一般披露 A1
+    standardDisclosureRequirementText: 應披露有關有害及無害廢棄物的產生及處置的政策。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: 一般披露 A1
+  - standardDisclosureRequirementKey: waste_management.gov.general_disclosure_compliance
+    standardDisclosureRequirementTitle: 遵守廢棄物相關法律及規例
+    excerptFrom: 港交所·附錄C2·一般披露 A1
+    standardDisclosureRequirementText: 應披露遵守對發行人有重大影響的廢棄物相關法律及規例的資料。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: 一般披露 A1
+- topicSectionKey: waste_management.strategy
+  pillar: strategy
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: waste_management.strategy.waste_reduction_targets
+    standardDisclosureRequirementTitle: 廢棄物減量目標及達標步驟
+    excerptFrom: 港交所·附錄C2·關鍵績效指標 A1.6
+    standardDisclosureRequirementText: 應描述所訂立的減廢目標及為達到這些目標所採取的步驟。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: 關鍵績效指標 A1.6
+- topicSectionKey: waste_management.iro
+  pillar: iro_management
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: waste_management.iro.waste_handling
+    standardDisclosureRequirementTitle: 有害及無害廢棄物的處理方法
+    excerptFrom: 港交所·附錄C2·關鍵績效指標 A1.6
+    standardDisclosureRequirementText: 應描述處理有害及無害廢棄物的方法，包括分類、收集、暫存、交由持牌承辦商處置及回收的安排。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: 關鍵績效指標 A1.6
+- topicSectionKey: waste_management.metrics
+  pillar: metrics_targets
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: waste_management.metrics.hazardous_waste_data
+    standardDisclosureRequirementTitle: 所產生有害廢棄物總量及密度
+    excerptFrom: 港交所·附錄C2·關鍵績效指標 A1.3
+    standardDisclosureRequirementText: 應披露所產生有害廢棄物總量（以噸計算）及（如適用）密度（如以每產量單位、每項設施計算）。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: 關鍵績效指標 A1.3
+  - standardDisclosureRequirementKey: waste_management.metrics.non_hazardous_waste_data
+    standardDisclosureRequirementTitle: 所產生無害廢棄物總量及密度
+    excerptFrom: 港交所·附錄C2·關鍵績效指標 A1.4
+    standardDisclosureRequirementText: 應披露所產生無害廢棄物總量（以噸計算）及（如適用）密度（如以每產量單位、每項設施計算）。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: 關鍵績效指標 A1.4

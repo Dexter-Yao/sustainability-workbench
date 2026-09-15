@@ -1,0 +1,123 @@
+# ABOUTME(en): Topic chapter template of the HKEX Aspect "Health and Safety": governance / strategy / risk-management
+# ABOUTME(en): blocks with their intake evidence and Appendix C2 requirement keys; the metrics H3 is compiled from metricDisclosure.
+section:
+  key: health_and_safety
+  title: Health and Safety
+  headingLevel: 2
+  reportSectionId: health_and_safety
+  conciseDisclosure:
+    id: health_safety.concise_summary
+    type: paragraph
+    blockType: generative
+    source: ai
+    styleRole: body
+    generation:
+      task:
+        focus: |-
+          From the evidence currently visible for this Aspect, write one coherent summary covering the policies and compliance on providing a safe working environment and protecting employees from occupational hazards, the measures adopted and how they are implemented and monitored, without the four sub-headings.
+      inputs:
+        evidence:
+          kind: report_section
+      targetChars:
+      - 260
+      - 520
+  children:
+  - key: health_and_safety.gov
+    title: Governance
+    pillar: governance
+    headingLevel: 3
+    blocks:
+    - id: health_safety.gov_policy_and_compliance
+      type: paragraph
+      blockType: generative
+      source: ai
+      styleRole: body
+      generation:
+        task:
+          focus: |-
+            Describe the company's policies, allocation of responsibility and certifications (such as ISO 45001) on providing a safe working environment and protecting employees from occupational hazards, and its compliance with relevant laws and regulations (such as the Hong Kong Occupational Safety and Health Ordinance and the Mainland Work Safety Law) (Code Aspect B2 General Disclosure).
+          noFactGuidance: |-
+            When the user provides no policy or responsibility facts, describe in a measured, general register the management attention, compliance principles and allocation of responsibility a company of this industry and business type applies to this Aspect; do not name departments, policy titles, certifications or approval flows, and do not claim that a specific system exists or that compliance checks have been completed.
+        inputs:
+          evidence:
+            kind: explicit
+            intakeItems:
+            - health_safety.q_governance_roles
+            - health_safety.q_governance_policies
+            - health_safety.q_governance_certifications
+        targetChars:
+        - 120
+        - 265
+        standardDisclosureRequirementKeys:
+        - health_and_safety.gov.general_disclosure_policies
+        - health_and_safety.gov.general_disclosure_compliance
+        simplifiedWritingGuidance:
+        - |-
+          State compliance with relevant laws and regulations only when the user explicitly provides it; otherwise do not write conclusions such as "no non-compliance was identified" or "no material breach".
+  - key: health_and_safety.strategy
+    title: Strategy
+    pillar: strategy
+    headingLevel: 3
+    blocks:
+    - id: health_safety.strategy_targets
+      type: paragraph
+      blockType: generative
+      source: ai
+      styleRole: body
+      generation:
+        task:
+          focus: |-
+            Describe the company's occupational health and safety targets (such as zero fatalities or a lower injury rate) and the direction for achieving them.
+          noFactGuidance: |-
+            When the user provides no targets or plans, state that the company will keep attending to improvement directions and the setting of quantified targets for this Aspect as the business develops; do not invent target values, base years, deadlines or achieved results.
+        inputs:
+          evidence:
+            kind: explicit
+            intakeItems:
+            - health_safety.q_strategy_content
+        targetChars:
+        - 85
+        - 190
+        standardDisclosureRequirementKeys:
+        - health_and_safety.strategy.ohs_targets
+        simplifiedWritingGuidance:
+        - |-
+          Figures are carried by the KPI data table; this passage does not state emissions, consumption, ratios or reduction percentages.
+  - key: health_and_safety.iro
+    title: Risk Management
+    pillar: iro_management
+    headingLevel: 3
+    blocks:
+    - id: health_safety.iro_measures
+      type: paragraph
+      blockType: generative
+      source: ai
+      styleRole: body
+      generation:
+        task:
+          focus: |-
+            Describe the occupational health and safety measures adopted and how they are implemented and monitored: hazard identification and risk assessment, safety training, personal protective equipment, equipment and fire safety, incident investigation and emergency drills (Code KPI B2.3).
+          noFactGuidance: |-
+            When the user provides no specific measures, describe only the management steps and directional arrangements common to this Aspect for the industry and business type; do not claim that the company has implemented specific measures, purchased equipment, engaged contractors or achieved results.
+        inputs:
+          evidence:
+            kind: explicit
+            intakeItems:
+            - health_safety.q_ohs_measures
+            - health_safety.q_ohs_incidents
+        targetChars:
+        - 130
+        - 275
+        standardDisclosureRequirementKeys:
+        - health_and_safety.iro.ohs_measures
+        simplifiedWritingGuidance:
+        - |-
+          Figures are carried by the KPI data table; this passage does not state emissions, consumption, ratios or reduction percentages.
+metricDisclosure:
+  catalogMetricKeys:
+  - health_safety_fatalities_current
+  - health_safety_fatalities_prior_1
+  - health_safety_fatalities_prior_2
+  - health_safety_fatality_rate
+  - health_safety_lost_days
+  - health_safety_injury_cases

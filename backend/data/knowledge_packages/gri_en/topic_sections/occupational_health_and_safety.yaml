@@ -1,0 +1,102 @@
+# ABOUTME(en): Topic chapter template of the GRI topic "Occupational Health and Safety" (GRI 403: Occupational Health and Safety 2018): management /
+# ABOUTME(en): approach / actions blocks with their intake evidence and GRI requirement keys; the metrics H3 is compiled from metricDisclosure.
+section:
+  key: occupational_health_and_safety
+  title: Occupational Health and Safety
+  headingLevel: 2
+  reportSectionId: occupational_health_and_safety
+  conciseDisclosure:
+    id: health_safety.concise_summary
+    type: paragraph
+    blockType: generative
+    source: ai
+    styleRole: body
+    generation:
+      task:
+        focus: |-
+          From the evidence currently visible for this topic, write one coherent summary covering the occupational health and safety management system, hazard identification, worker training and the safety data reported, without the four sub-headings.
+      inputs:
+        evidence:
+          kind: report_section
+      targetChars:
+      - 260
+      - 520
+  children:
+  - key: occupational_health_and_safety.gov
+    title: Management of the Topic
+    pillar: governance
+    headingLevel: 3
+    blocks:
+    - id: health_safety.gov_policy
+      type: paragraph
+      blockType: generative
+      source: ai
+      styleRole: body
+      generation:
+        task:
+          focus: |-
+            Describe how the company manages occupational health and safety: whether a management system is in place, whether it follows legal requirements or recognised standards, and the scope of workers, activities and workplaces it covers.
+          noFactGuidance: |-
+            When the user provides no facts for this part, keep a prudent, general and low-commitment register describing the management attention and directional arrangements common to the industry; do not claim that specific systems, projects, certifications or results are in place.
+        inputs:
+          evidence:
+            kind: report_section
+        targetChars:
+        - 220
+        - 420
+        standardDisclosureRequirementKeys:
+        - occupational_health_and_safety.gov.management_system
+  - key: occupational_health_and_safety.strategy
+    title: Approach and Targets
+    pillar: strategy
+    headingLevel: 3
+    blocks:
+    - id: health_safety.strategy_direction
+      type: paragraph
+      blockType: generative
+      source: ai
+      styleRole: body
+      generation:
+        task:
+          focus: |-
+            Describe the company's direction and targets for occupational health and safety, including how worker participation and consultation inform the development and evaluation of the management system.
+          noFactGuidance: |-
+            When the user provides no facts for this part, keep a prudent, general and low-commitment register describing the management attention and directional arrangements common to the industry; do not claim that specific systems, projects, certifications or results are in place.
+        inputs:
+          evidence:
+            kind: report_section
+        targetChars:
+        - 200
+        - 400
+        standardDisclosureRequirementKeys:
+        - occupational_health_and_safety.strategy.worker_participation
+  - key: occupational_health_and_safety.iro
+    title: Actions and Processes
+    pillar: iro_management
+    headingLevel: 3
+    blocks:
+    - id: health_safety.iro_measures
+      type: paragraph
+      blockType: generative
+      source: ai
+      styleRole: body
+      generation:
+        task:
+          focus: |-
+            Describe the actions and processes the company applies to occupational health and safety: hazard identification and risk assessment, incident investigation, occupational health services, worker training and health promotion.
+          noFactGuidance: |-
+            When the user provides no facts for this part, keep a prudent, general and low-commitment register describing the management attention and directional arrangements common to the industry; do not claim that specific systems, projects, certifications or results are in place.
+        inputs:
+          evidence:
+            kind: report_section
+        targetChars:
+        - 240
+        - 460
+        standardDisclosureRequirementKeys:
+        - occupational_health_and_safety.iro.hazard_identification
+        - occupational_health_and_safety.iro.worker_training
+metricDisclosure:
+  catalogMetricKeys:
+  - health_safety_fatalities_current
+  - health_safety_injury_cases
+  - health_safety_lost_days

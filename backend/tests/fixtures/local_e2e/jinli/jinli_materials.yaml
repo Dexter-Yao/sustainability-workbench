@@ -1,0 +1,385 @@
+contract: sustainability_desk.local_e2e_selection_manifest.v3
+manifestId: jinli-synthetic-corpus
+artifactPurpose: local_e2e_test
+corpusRootRelative: backend/tests/fixtures/local_e2e/jinli/materials_docx
+selectionBasis: path_and_filename_only
+selectionPolicyVersion: jinli-synthetic-corpus.v1
+selectedFileCount: 25
+excludedPathSegments: []
+uploadBatches:
+- - material-01
+  - material-02
+  - material-03
+  - material-04
+  - material-05
+  - material-06
+  - material-07
+  - material-08
+  - material-09
+  - material-10
+- - material-11
+  - material-12
+  - material-13
+  - material-14
+  - material-15
+  - material-16
+  - material-17
+  - material-18
+  - material-19
+  - material-20
+- - material-21
+  - material-22
+  - material-23
+  - material-24
+  - material-25
+files:
+- caseId: material-01
+  ordinal: 1
+  relativePath: 2025年度人力資源統計表.docx
+  selectionRationale: 晉澧合成 corpus 的語義資料，按文件名表達內容歸屬。
+  expectedKind: docx
+  expectedMediaType: application/vnd.openxmlformats-officedocument.wordprocessingml.document
+  expectedSizeBytes: 12855
+  expectedSha256: b3f3822a9eccb06b1c6f0c0c2cb70e5c6a0f5dc9e9a8937770d41f419d9e4d51
+  expectedPdfPageCount: null
+  declaration:
+    description: 2025年度人力資源統計表，晉澧精密 2025 年度環境、社會及管治相關資料。
+    role: semantic_material
+    topic_tags:
+    - uncertain
+- caseId: material-02
+  ordinal: 2
+  relativePath: 2025年度供應商名錄及評核記錄.docx
+  selectionRationale: 晉澧合成 corpus 的語義資料，按文件名表達內容歸屬。
+  expectedKind: docx
+  expectedMediaType: application/vnd.openxmlformats-officedocument.wordprocessingml.document
+  expectedSizeBytes: 12461
+  expectedSha256: 68f05c4b6f17918d9923dd5ab641e6b64f333240b0e48e5a09fea8af352f81a2
+  expectedPdfPageCount: null
+  declaration:
+    description: 2025年度供應商名錄及評核記錄，晉澧精密 2025 年度環境、社會及管治相關資料。
+    role: semantic_material
+    topic_tags:
+    - uncertain
+- caseId: material-03
+  ordinal: 3
+  relativePath: 2025年度品質數據及客戶投訴記錄.docx
+  selectionRationale: 晉澧合成 corpus 的語義資料，按文件名表達內容歸屬。
+  expectedKind: docx
+  expectedMediaType: application/vnd.openxmlformats-officedocument.wordprocessingml.document
+  expectedSizeBytes: 12681
+  expectedSha256: 15f65b8d6324f1e700f74f307ebaa786f65b592f9ef884580a26e30c018c6abf
+  expectedPdfPageCount: null
+  declaration:
+    description: 2025年度品質數據及客戶投訴記錄，晉澧精密 2025 年度環境、社會及管治相關資料。
+    role: semantic_material
+    topic_tags:
+    - uncertain
+- caseId: material-04
+  ordinal: 4
+  relativePath: 2025年度培訓及發展記錄.docx
+  selectionRationale: 晉澧合成 corpus 的語義資料，按文件名表達內容歸屬。
+  expectedKind: docx
+  expectedMediaType: application/vnd.openxmlformats-officedocument.wordprocessingml.document
+  expectedSizeBytes: 12952
+  expectedSha256: 9dc6ee5ae8645d4ccc1a205762aa003f9b2f760747baeeec959c67230eb252b4
+  expectedPdfPageCount: null
+  declaration:
+    description: 2025年度培訓及發展記錄，晉澧精密 2025 年度環境、社會及管治相關資料。
+    role: semantic_material
+    topic_tags:
+    - uncertain
+- caseId: material-05
+  ordinal: 5
+  relativePath: 2025年度安全培訓及工傷記錄.docx
+  selectionRationale: 晉澧合成 corpus 的語義資料，按文件名表達內容歸屬。
+  expectedKind: docx
+  expectedMediaType: application/vnd.openxmlformats-officedocument.wordprocessingml.document
+  expectedSizeBytes: 13111
+  expectedSha256: 50ef12be8d49b518464bc9ae38b75d122ec272b6fbee60a4cfc40faa5c80567d
+  expectedPdfPageCount: null
+  declaration:
+    description: 2025年度安全培訓及工傷記錄，晉澧精密 2025 年度環境、社會及管治相關資料。
+    role: semantic_material
+    topic_tags:
+    - uncertain
+- caseId: material-06
+  ordinal: 6
+  relativePath: 2025年度廢棄物及用水台賬.docx
+  selectionRationale: 晉澧合成 corpus 的語義資料，按文件名表達內容歸屬。
+  expectedKind: docx
+  expectedMediaType: application/vnd.openxmlformats-officedocument.wordprocessingml.document
+  expectedSizeBytes: 13709
+  expectedSha256: a4d4f124aca83579572a4a46d4600f2bf1ea6bf56c995dcd7788e98e9ec8269f
+  expectedPdfPageCount: null
+  declaration:
+    description: 2025年度廢棄物及用水台賬，晉澧精密 2025 年度環境、社會及管治相關資料。
+    role: semantic_material
+    topic_tags:
+    - uncertain
+- caseId: material-07
+  ordinal: 7
+  relativePath: 2025年度業務回顧及經營情況說明.docx
+  selectionRationale: 晉澧合成 corpus 的語義資料，按文件名表達內容歸屬。
+  expectedKind: docx
+  expectedMediaType: application/vnd.openxmlformats-officedocument.wordprocessingml.document
+  expectedSizeBytes: 12556
+  expectedSha256: 2a0afb346f58acad0d916dca9037b1ea15c5d9047d6087d2e6b6d717886fd75b
+  expectedPdfPageCount: null
+  declaration:
+    description: 2025年度業務回顧及經營情況說明，晉澧精密 2025 年度環境、社會及管治相關資料。
+    role: semantic_material
+    topic_tags:
+    - uncertain
+- caseId: material-08
+  ordinal: 8
+  relativePath: 2025年度社區投資活動記錄.docx
+  selectionRationale: 晉澧合成 corpus 的語義資料，按文件名表達內容歸屬。
+  expectedKind: docx
+  expectedMediaType: application/vnd.openxmlformats-officedocument.wordprocessingml.document
+  expectedSizeBytes: 12199
+  expectedSha256: 2b6dc3f799cae65eb171518b468013ce67e7861546d9da021add01bcaa8a2df9
+  expectedPdfPageCount: null
+  declaration:
+    description: 2025年度社區投資活動記錄，晉澧精密 2025 年度環境、社會及管治相關資料。
+    role: semantic_material
+    topic_tags:
+    - uncertain
+- caseId: material-09
+  ordinal: 9
+  relativePath: 2025年度能源及排放台賬.docx
+  selectionRationale: 晉澧合成 corpus 的語義資料，按文件名表達內容歸屬。
+  expectedKind: docx
+  expectedMediaType: application/vnd.openxmlformats-officedocument.wordprocessingml.document
+  expectedSizeBytes: 14151
+  expectedSha256: d89396a056f35b7eee02f5ebe2c4b298e69309b26195afd1ceae56ea2659d0ad
+  expectedPdfPageCount: null
+  declaration:
+    description: 2025年度能源及排放台賬，晉澧精密 2025 年度環境、社會及管治相關資料。
+    role: semantic_material
+    topic_tags:
+    - uncertain
+- caseId: material-10
+  ordinal: 10
+  relativePath: 2025年度董事會及環境社會管治運作說明.docx
+  selectionRationale: 晉澧合成 corpus 的語義資料，按文件名表達內容歸屬。
+  expectedKind: docx
+  expectedMediaType: application/vnd.openxmlformats-officedocument.wordprocessingml.document
+  expectedSizeBytes: 14546
+  expectedSha256: d3e219c205b5d4a4544b208ed9488a9c333fae85518efccde8e2425d7c5f4533
+  expectedPdfPageCount: null
+  declaration:
+    description: 2025年度董事會及環境社會管治運作說明，晉澧精密 2025 年度環境、社會及管治相關資料。
+    role: semantic_material
+    topic_tags:
+    - uncertain
+- caseId: material-11
+  ordinal: 11
+  relativePath: 供應商管理辦法.docx
+  selectionRationale: 晉澧合成 corpus 的語義資料，按文件名表達內容歸屬。
+  expectedKind: docx
+  expectedMediaType: application/vnd.openxmlformats-officedocument.wordprocessingml.document
+  expectedSizeBytes: 12866
+  expectedSha256: 94f717b8ea3a6cdad2ea01015e942259b642d87d7bf129c60ffe3a67fa84e8de
+  expectedPdfPageCount: null
+  declaration:
+    description: 供應商管理辦法，晉澧精密 2025 年度環境、社會及管治相關資料。
+    role: semantic_material
+    topic_tags:
+    - uncertain
+- caseId: material-12
+  ordinal: 12
+  relativePath: 僱員手冊.docx
+  selectionRationale: 晉澧合成 corpus 的語義資料，按文件名表達內容歸屬。
+  expectedKind: docx
+  expectedMediaType: application/vnd.openxmlformats-officedocument.wordprocessingml.document
+  expectedSizeBytes: 13526
+  expectedSha256: 6b40e93b8bfec26dd4777093a7a9cf70ea24c079fbf41aecaef56198091e8f46
+  expectedPdfPageCount: null
+  declaration:
+    description: 僱員手冊，晉澧精密 2025 年度環境、社會及管治相關資料。
+    role: semantic_material
+    topic_tags:
+    - uncertain
+- caseId: material-13
+  ordinal: 13
+  relativePath: 公司簡介.docx
+  selectionRationale: 晉澧合成 corpus 的語義資料，按文件名表達內容歸屬。
+  expectedKind: docx
+  expectedMediaType: application/vnd.openxmlformats-officedocument.wordprocessingml.document
+  expectedSizeBytes: 13079
+  expectedSha256: 4d924f0afab1c881bf85d1252ed4aedc8b7d1f0858c76d520fbe434436ed1fd0
+  expectedPdfPageCount: null
+  declaration:
+    description: 公司簡介，晉澧精密 2025 年度環境、社會及管治相關資料。
+    role: semantic_material
+    topic_tags:
+    - uncertain
+- caseId: material-14
+  ordinal: 14
+  relativePath: 包裝材料管理指引.docx
+  selectionRationale: 晉澧合成 corpus 的語義資料，按文件名表達內容歸屬。
+  expectedKind: docx
+  expectedMediaType: application/vnd.openxmlformats-officedocument.wordprocessingml.document
+  expectedSizeBytes: 11999
+  expectedSha256: f332db361c214d4a613cd9cc9f721d6d44b68953265460a88429faaa7653a631
+  expectedPdfPageCount: null
+  declaration:
+    description: 包裝材料管理指引，晉澧精密 2025 年度環境、社會及管治相關資料。
+    role: semantic_material
+    topic_tags:
+    - uncertain
+- caseId: material-15
+  ordinal: 15
+  relativePath: 反貪污及舉報政策.docx
+  selectionRationale: 晉澧合成 corpus 的語義資料，按文件名表達內容歸屬。
+  expectedKind: docx
+  expectedMediaType: application/vnd.openxmlformats-officedocument.wordprocessingml.document
+  expectedSizeBytes: 12748
+  expectedSha256: be24fe5e78a860eec2937c7d9ed6f984293a64aa6ec7f092eaaba88be5871320
+  expectedPdfPageCount: null
+  declaration:
+    description: 反貪污及舉報政策，晉澧精密 2025 年度環境、社會及管治相關資料。
+    role: semantic_material
+    topic_tags:
+    - uncertain
+- caseId: material-16
+  ordinal: 16
+  relativePath: 品質管理手冊.docx
+  selectionRationale: 晉澧合成 corpus 的語義資料，按文件名表達內容歸屬。
+  expectedKind: docx
+  expectedMediaType: application/vnd.openxmlformats-officedocument.wordprocessingml.document
+  expectedSizeBytes: 13233
+  expectedSha256: 298da94daa23040f3529f2e4d9cd69152562c2e8c5593e929566ea7e688fe2dd
+  expectedPdfPageCount: null
+  declaration:
+    description: 品質管理手冊，晉澧精密 2025 年度環境、社會及管治相關資料。
+    role: semantic_material
+    topic_tags:
+    - uncertain
+- caseId: material-17
+  ordinal: 17
+  relativePath: 客戶服務及投訴處理程序.docx
+  selectionRationale: 晉澧合成 corpus 的語義資料，按文件名表達內容歸屬。
+  expectedKind: docx
+  expectedMediaType: application/vnd.openxmlformats-officedocument.wordprocessingml.document
+  expectedSizeBytes: 11780
+  expectedSha256: d9b524f261802c4e6a81cdd3b7a19c01d7701020f18a3d8ccf0ceff2dba352df
+  expectedPdfPageCount: null
+  declaration:
+    description: 客戶服務及投訴處理程序，晉澧精密 2025 年度環境、社會及管治相關資料。
+    role: semantic_material
+    topic_tags:
+    - uncertain
+- caseId: material-18
+  ordinal: 18
+  relativePath: 廢棄物管理程序.docx
+  selectionRationale: 晉澧合成 corpus 的語義資料，按文件名表達內容歸屬。
+  expectedKind: docx
+  expectedMediaType: application/vnd.openxmlformats-officedocument.wordprocessingml.document
+  expectedSizeBytes: 12621
+  expectedSha256: 9040f29bf852ca2eb3d27ce5d3fc070eadf1367ef9637ba145736a65012e03cb
+  expectedPdfPageCount: null
+  declaration:
+    description: 廢棄物管理程序，晉澧精密 2025 年度環境、社會及管治相關資料。
+    role: semantic_material
+    topic_tags:
+    - uncertain
+- caseId: material-19
+  ordinal: 19
+  relativePath: 持份者溝通記錄.docx
+  selectionRationale: 晉澧合成 corpus 的語義資料，按文件名表達內容歸屬。
+  expectedKind: docx
+  expectedMediaType: application/vnd.openxmlformats-officedocument.wordprocessingml.document
+  expectedSizeBytes: 12775
+  expectedSha256: b2717c48234bb3404802e4510e5b91521460a9b91f8a4be70607e2c7724786a2
+  expectedPdfPageCount: null
+  declaration:
+    description: 持份者溝通記錄，晉澧精密 2025 年度環境、社會及管治相關資料。
+    role: semantic_material
+    topic_tags:
+    - uncertain
+- caseId: material-20
+  ordinal: 20
+  relativePath: 氣候相關風險管理指引及2025年度評估.docx
+  selectionRationale: 晉澧合成 corpus 的語義資料，按文件名表達內容歸屬。
+  expectedKind: docx
+  expectedMediaType: application/vnd.openxmlformats-officedocument.wordprocessingml.document
+  expectedSizeBytes: 13655
+  expectedSha256: a721ac8719eebf9f3b9118643ed943b91248ea82854dd048993cadc20409ab69
+  expectedPdfPageCount: null
+  declaration:
+    description: 氣候相關風險管理指引及2025年度評估，晉澧精密 2025 年度環境、社會及管治相關資料。
+    role: semantic_material
+    topic_tags:
+    - uncertain
+- caseId: material-21
+  ordinal: 21
+  relativePath: 環境社會及管治工作小組職權範圍.docx
+  selectionRationale: 晉澧合成 corpus 的語義資料，按文件名表達內容歸屬。
+  expectedKind: docx
+  expectedMediaType: application/vnd.openxmlformats-officedocument.wordprocessingml.document
+  expectedSizeBytes: 12600
+  expectedSha256: 7945d77c0001f2ee1fb0d3cca24048b747820086958c430ffe9e832fcfdef94d
+  expectedPdfPageCount: null
+  declaration:
+    description: 環境社會及管治工作小組職權範圍，晉澧精密 2025 年度環境、社會及管治相關資料。
+    role: semantic_material
+    topic_tags:
+    - uncertain
+- caseId: material-22
+  ordinal: 22
+  relativePath: 環境管理制度.docx
+  selectionRationale: 晉澧合成 corpus 的語義資料，按文件名表達內容歸屬。
+  expectedKind: docx
+  expectedMediaType: application/vnd.openxmlformats-officedocument.wordprocessingml.document
+  expectedSizeBytes: 14091
+  expectedSha256: 30e7e9c042d8bf06725b0dfd8847edb72948bb39425b75baa108ac426b586739
+  expectedPdfPageCount: null
+  declaration:
+    description: 環境管理制度，晉澧精密 2025 年度環境、社會及管治相關資料。
+    role: semantic_material
+    topic_tags:
+    - uncertain
+- caseId: material-23
+  ordinal: 23
+  relativePath: 職業健康與安全管理制度.docx
+  selectionRationale: 晉澧合成 corpus 的語義資料，按文件名表達內容歸屬。
+  expectedKind: docx
+  expectedMediaType: application/vnd.openxmlformats-officedocument.wordprocessingml.document
+  expectedSizeBytes: 13369
+  expectedSha256: d0713365a72ee067ab5e10b165ca746f512522b7c7ed52e9cd067da937509a03
+  expectedPdfPageCount: null
+  declaration:
+    description: 職業健康與安全管理制度，晉澧精密 2025 年度環境、社會及管治相關資料。
+    role: semantic_material
+    topic_tags:
+    - uncertain
+- caseId: material-24
+  ordinal: 24
+  relativePath: 能源管理辦法.docx
+  selectionRationale: 晉澧合成 corpus 的語義資料，按文件名表達內容歸屬。
+  expectedKind: docx
+  expectedMediaType: application/vnd.openxmlformats-officedocument.wordprocessingml.document
+  expectedSizeBytes: 13316
+  expectedSha256: 7d157b97b9d25ece78de64420fbad96b2dd88046a692d602e6b64179308b2612
+  expectedPdfPageCount: null
+  declaration:
+    description: 能源管理辦法，晉澧精密 2025 年度環境、社會及管治相關資料。
+    role: semantic_material
+    topic_tags:
+    - uncertain
+- caseId: material-25
+  ordinal: 25
+  relativePath: 資料保障及私隱政策.docx
+  selectionRationale: 晉澧合成 corpus 的語義資料，按文件名表達內容歸屬。
+  expectedKind: docx
+  expectedMediaType: application/vnd.openxmlformats-officedocument.wordprocessingml.document
+  expectedSizeBytes: 12568
+  expectedSha256: 7e06954cfd0e88e3779eea188672c982b6589f9fa340ab80084e861d93d8ced0
+  expectedPdfPageCount: null
+  declaration:
+    description: 資料保障及私隱政策，晉澧精密 2025 年度環境、社會及管治相關資料。
+    role: semantic_material
+    topic_tags:
+    - uncertain

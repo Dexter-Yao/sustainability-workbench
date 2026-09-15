@@ -1,0 +1,116 @@
+# ABOUTME(en): Topic chapter template of the HKEX Aspect「健康與安全」: governance / strategy / risk-management
+# ABOUTME(en): blocks with their intake evidence and Appendix C2 requirement keys; the metrics H3 is compiled from metricDisclosure.
+section:
+  key: health_and_safety
+  title: 健康與安全
+  headingLevel: 2
+  reportSectionId: health_and_safety
+  conciseDisclosure:
+    id: health_safety.concise_summary
+    type: paragraph
+    blockType: generative
+    source: ai
+    styleRole: body
+    generation:
+      task:
+        focus: 根據本層面當前可見證據形成一段連貫摘要，涵蓋提供安全工作環境及保障僱員免受職業性危害的政策、合規情況、措施及其實施與監察，不使用四項小標題。
+      inputs:
+        evidence:
+          kind: report_section
+      targetChars:
+      - 260
+      - 520
+  children:
+  - key: health_and_safety.gov
+    title: 管治
+    pillar: governance
+    headingLevel: 3
+    blocks:
+    - id: health_safety.gov_policy_and_compliance
+      type: paragraph
+      blockType: generative
+      source: ai
+      styleRole: body
+      generation:
+        task:
+          focus: |-
+            說明公司有關提供安全工作環境及保障僱員避免職業性危害的政策、職責安排及認證（如ISO 45001），以及遵守相關法律及規例（如香港《職業安全及健康條例》、內地《安全生產法》）的情況（守則層面B2一般披露）。
+          noFactGuidance: |-
+            用戶未提供政策或職責資料時，以審慎、概括的語態說明公司按所屬行業及業務類型對本層面採取的一般管理關注、合規原則及職責安排；不指名部門、制度名稱、認證或審批流程，不聲稱已建立特定制度或已完成合規檢查。
+        inputs:
+          evidence:
+            kind: explicit
+            intakeItems:
+            - health_safety.q_governance_roles
+            - health_safety.q_governance_policies
+            - health_safety.q_governance_certifications
+        targetChars:
+        - 200
+        - 440
+        standardDisclosureRequirementKeys:
+        - health_and_safety.gov.general_disclosure_policies
+        - health_and_safety.gov.general_disclosure_compliance
+        simplifiedWritingGuidance:
+        - 遵守相關法律及規例的情況只在用戶明確提供時陳述；未提供時不寫「未發現違規」或「無重大違規」等結論。
+  - key: health_and_safety.strategy
+    title: 策略
+    pillar: strategy
+    headingLevel: 3
+    blocks:
+    - id: health_safety.strategy_targets
+      type: paragraph
+      blockType: generative
+      source: ai
+      styleRole: body
+      generation:
+        task:
+          focus: 說明公司在職業健康與安全方面的目標（如零工亡、工傷率下降）與推進方向。
+          noFactGuidance: 用戶未提供目標或計劃時，說明公司會結合業務發展持續關注本層面的改善方向與量化目標的訂立；不虛構目標數值、基準年、達成期限或已取得的成效。
+        inputs:
+          evidence:
+            kind: explicit
+            intakeItems:
+            - health_safety.q_strategy_content
+        targetChars:
+        - 140
+        - 320
+        standardDisclosureRequirementKeys:
+        - health_and_safety.strategy.ohs_targets
+        simplifiedWritingGuidance:
+        - 數值由關鍵績效指標數據表承載；本段不寫排放量、耗用量、比率或減幅等數字。
+  - key: health_and_safety.iro
+    title: 風險管理
+    pillar: iro_management
+    headingLevel: 3
+    blocks:
+    - id: health_safety.iro_measures
+      type: paragraph
+      blockType: generative
+      source: ai
+      styleRole: body
+      generation:
+        task:
+          focus: |-
+            說明公司所採納的職業健康與安全措施及其實施與監察方法：危害識別與風險評估、安全培訓、個人防護裝備、設備與消防安全、事故調查及應急演練（守則關鍵績效指標B2.3）。
+          noFactGuidance: 用戶未提供具體措施時，僅結合行業及業務類型說明本層面常見的管理環節與方向性安排；不聲稱公司已實施特定措施、已購置設備、已委聘服務商或已取得成效。
+        inputs:
+          evidence:
+            kind: explicit
+            intakeItems:
+            - health_safety.q_ohs_measures
+            - health_safety.q_ohs_incidents
+        targetChars:
+        - 220
+        - 460
+        standardDisclosureRequirementKeys:
+        - health_and_safety.iro.ohs_measures
+        simplifiedWritingGuidance:
+        - 數值由關鍵績效指標數據表承載；本段不寫排放量、耗用量、比率或減幅等數字。
+metricDisclosure:
+  catalogMetricKeys:
+  - health_safety_fatalities_current
+  - health_safety_fatalities_prior_1
+  - health_safety_fatalities_prior_2
+  - health_safety_fatality_rate
+  - health_safety_lost_days
+  - health_safety_injury_cases

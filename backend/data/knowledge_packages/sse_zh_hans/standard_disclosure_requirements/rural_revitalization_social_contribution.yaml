@@ -1,0 +1,87 @@
+# ABOUTME: 乡村振兴与社会贡献议题准则披露要求库，供覆盖审计与按 key 白名单注入生成上下文（注入受开关控制，默认关闭）。
+# ABOUTME: 本文件不作为用户可见准则批注来源；用户可见条款原文来自 user_visible_disclosure_clause_annotations。
+topicStandardDisclosureRequirementGroups:
+- topicSectionKey: rural_revitalization_social_contribution.gov
+  pillar: governance
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: rural_revitalization_social_contribution.gov.responsibility_department_required
+    standardDisclosureRequirementTitle: 社会责任工作归口和协同机制
+    excerptFrom: 参考模板“治理”；准则第三十八条
+    standardDisclosureRequirementText: 应说明企业负责社会公益、志愿服务、乡村振兴、扶贫或社会责任相关工作的归口部门、职责分工、跨部门协同和项目管理流程。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 第三十八条
+    - standard: SZSE
+      clauseRef: 第三十八条
+    - standard: BSE
+      clauseRef: 第三十八条
+- topicSectionKey: rural_revitalization_social_contribution.strategy
+  pillar: strategy
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: rural_revitalization_social_contribution.strategy.social_responsibility_strategy_required
+    standardDisclosureRequirementTitle: 乡村振兴与社会贡献战略
+    excerptFrom: 附录索引表第三十八条、第三十九条；参考模板“战略”
+    standardDisclosureRequirementText: 应说明企业支持乡村振兴、社会公益事业、共同富裕或区域协调发展的战略、策略和行动方向；如乡村和脱贫地区业务占比较高，可结合主营业务说明将支持乡村振兴、巩固拓展脱贫攻坚成果融入公司战略的具体情况。业务占比、战略纳入和项目成果必须来自相关事实。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 第三十八条、第三十九条
+    - standard: SZSE
+      clauseRef: 第三十八条、第三十九条
+    - standard: BSE
+      clauseRef: 第三十八条、第三十九条
+  - standardDisclosureRequirementKey: rural_revitalization_social_contribution.strategy.national_strategy_encouraged
+    standardDisclosureRequirementTitle: 国家战略方向
+    excerptFrom: 参考模板“产业、人才、文化、生态、组织五大振兴”
+    standardDisclosureRequirementText: 可进一步披露说明产业、人才、文化、生态、组织五大振兴，共同富裕、区域协调发展、城乡融合等方向。
+    disclosureRequirementObligationLevel: encouraged
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 第三十八条、第三十九条
+    - standard: SZSE
+      clauseRef: 第三十八条、第三十九条
+    - standard: BSE
+      clauseRef: 第三十八条、第三十九条
+- topicSectionKey: rural_revitalization_social_contribution.iro
+  pillar: iro_management
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: rural_revitalization_social_contribution.iro.rural_actions_required
+    standardDisclosureRequirementTitle: 支持乡村振兴的具体措施和成果
+    excerptFrom: 附录索引表第三十九条；参考模板“乡村振兴内容描述”
+    standardDisclosureRequirementText: 应说明报告期内支持乡村振兴的具体情况，包括乡村地区设施建设、产业建设、促进就业和增收、助农惠农、扶贫帮扶、农村地区金融服务、乡村清洁能源设施建设、乡村文化活动、乡村教育助学、面向农村地区技能培训等工作类别、具体内容和工作成果。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 第三十九条
+    - standard: SZSE
+      clauseRef: 第三十九条
+    - standard: BSE
+      clauseRef: 第三十九条
+  - standardDisclosureRequirementKey: rural_revitalization_social_contribution.iro.social_contribution_required
+    standardDisclosureRequirementTitle: 社会贡献、公益慈善和志愿活动
+    excerptFrom: 附录索引表第四十条；参考模板“社会贡献内容描述”
+    standardDisclosureRequirementText: 应说明报告期内公司参与社会捐赠、抗灾救灾、志愿服务、公益活动、社区服务等社会贡献情况，包括开展工作的类别、具体内容和工作成果。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 第四十条
+    - standard: SZSE
+      clauseRef: 第四十条
+    - standard: BSE
+      clauseRef: 第四十条
+- topicSectionKey: rural_revitalization_social_contribution.metrics
+  pillar: metrics_targets
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: rural_revitalization_social_contribution.metrics.results_required
+    standardDisclosureRequirementTitle: 投入、惠及群体、志愿服务和效果指标
+    excerptFrom: 附录索引表第三十九条、第四十条；参考模板“指标和目标”
+    standardDisclosureRequirementText: 如本议题涉及相关指标，应准确说明报告期内总投入金额、惠及群体范围及数量、公益捐赠金额、志愿服务人员、志愿服务时间、取得效果以及对公司品牌和业务开展的影响。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 第三十九条、第四十条
+    - standard: SZSE
+      clauseRef: 第三十九条、第四十条
+    - standard: BSE
+      clauseRef: 第三十九条、第四十条

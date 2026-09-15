@@ -1,0 +1,136 @@
+# ABOUTME: 废弃物管理议题章节骨架，H2 标题以附录索引表“对应的本报告章节”为准。
+# ABOUTME: 本文件承载废弃物管理的段落级生成块；指标块按声明读取ESG 定量数据表的受控投影。
+section:
+  key: waste_management
+  title: 废弃物管理
+  headingLevel: 2
+  reportSectionId: waste_management
+  conciseDisclosure:
+    id: waste_management.concise_summary
+    type: paragraph
+    blockType: generative
+    source: ai
+    styleRole: body
+    generation:
+      task:
+        focus: "根据本议题当前可见证据形成一段连贯摘要，覆盖相关管理关注、方向与实践，不使用四要素小标题。"
+      inputs: {evidence: {kind: report_section}}
+      targetChars: [300, 600]
+  children:
+  - key: waste_management.gov
+    title: 治理
+    pillar: governance
+    headingLevel: 3
+    blocks:
+    - id: waste_management.gov_management_system
+      type: paragraph
+      blockType: generative
+      source: ai
+      styleRole: body
+      generation:
+        task:
+          focus: "说明废弃物管理的责任安排、制度机制和协调方式。"
+        inputs:
+          evidence:
+            kind: explicit
+            intakeItems:
+            - waste_management.q_governance_roles
+            - waste_management.q_governance_policies
+            - waste_management.q_governance_certifications
+        targetChars:
+        - 180
+        - 360
+        standardDisclosureRequirementKeys:
+        - waste_management.gov.responsibility_structure_required
+        - waste_management.gov.responsibility_structure_encouraged
+        - waste_management.gov.waste_management_required
+        - waste_management.gov.waste_management_encouraged
+        - waste_management.gov.policy_documents_required
+        - waste_management.gov.policy_documents_encouraged
+  - key: waste_management.strategy
+    title: 战略
+    pillar: strategy
+    headingLevel: 3
+    blocks:
+    - id: waste_management.strategy_control_framework
+      type: paragraph
+      blockType: generative
+      source: ai
+      styleRole: body
+      generation:
+        task:
+          focus: "说明废弃物减量、规范处置和资源化利用的长期方向与推进原则。"
+        inputs:
+          evidence:
+            kind: explicit
+            intakeItems:
+            - waste_management.q_strategy_content
+        targetChars:
+        - 220
+        - 460
+        standardDisclosureRequirementKeys:
+        - waste_management.strategy.control_framework_required
+        - waste_management.strategy.control_framework_encouraged
+        - waste_management.strategy.waste_reduction_required
+        - waste_management.strategy.waste_reduction_encouraged
+        simplifiedWritingGuidance:
+          - "废弃物对象按用户填写的管理类别表达。"
+  - key: waste_management.iro
+    title: 影响、风险与机遇管理
+    pillar: iro_management
+    headingLevel: 3
+    blocks:
+    - id: waste_management.iro_classification_and_disposal
+      type: paragraph
+      blockType: generative
+      source: ai
+      styleRole: body
+      generation:
+        task:
+          focus: "说明废弃物分类、处置、减量和资源化利用的相关实践。"
+        inputs:
+          evidence:
+            kind: explicit
+            intakeItems:
+            - waste_management.q_solid_waste_requirements
+            - waste_management.q_waste_reduction_measures
+            - waste_management.q_third_party_disposal
+        targetChars:
+        - 220
+        - 440
+        standardDisclosureRequirementKeys:
+        - waste_management.iro.waste_classification_required
+        - waste_management.iro.hazardous_waste_control_required
+        - waste_management.iro.recycling_disposal_required
+        - waste_management.iro.waste_disposal_encouraged
+        - waste_management.iro.policy_practice_required
+        - waste_management.iro.policy_practice_encouraged
+        simplifiedWritingGuidance:
+          - "按废弃物管理生命周期组织用户已披露的分类收集、规范暂存、源头减量和资源化利用实践。"
+    children:
+    - key: waste_management.iro.hazardous_disposal_evidence
+      title: 危险废弃物委托处置
+      headingLevel: 4
+      blocks:
+      - id: waste_management.iro_hazardous_disposal_evidence
+        type: paragraph
+        blockType: generative
+        source: ai
+        styleRole: body
+        generation:
+          task:
+            focus: "基于用户上传的危险废弃物处置合同、处置记录或转移联单类资料，说明危险废弃物委托处置与合规管理的执行情况。"
+          inputs:
+            evidence:
+              kind: material_gated
+          targetChars:
+          - 160
+          - 320
+          standardDisclosureRequirementKeys:
+          - waste_management.iro.hazardous_waste_compliance_required
+          simplifiedWritingGuidance:
+            - "只作有据叙述：处置单位资质、联单编号、处置量、日期等可独立核验信息须资料明确记载才可写，不得推断或补写。"
+            - "资料记载的未按期、超期或不合规情形如实保留其性质表述，不淡化省略，也不添加资料未记载的保证性评价。"
+            - "不写合规处置率或数值统计；相关数值由定量指标承载。"
+metricDisclosure:
+  catalogMetricKeys: [economic_environment_r38, economic_environment_r39, economic_environment_r40, economic_environment_r41]

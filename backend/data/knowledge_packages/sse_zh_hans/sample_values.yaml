@@ -1,0 +1,235 @@
+# 演示实例数据——仅用于导出样式样本 Word / 契约 JSON。走单一 typed 管线：
+# inputs = CompanyInputs（上游输入，parse-first；industry/summary/materiality 由 build_report 现算）；
+# content = ReportContent（预写正文 generated/tables，由 apply_report_content 写回）。生产环境此数据来自 AI 生成 + 用户编辑。
+inputs:
+  fields:
+    company_registered_name: 晟原精密电子股份有限公司
+    company_short_name: 晟原精密
+    reporting_year: 2025
+    report_period_start: "2025-01-01"
+    report_period_end: "2025-12-31"
+    consolidation_scope: 母公司及全部并表子公司
+    report_approval_year: 2026
+    report_approval_month: 2026-04
+    report_approval_body: 董事会
+    board_meeting_count: 12
+    board_attendance_rate: 98
+    has_technology_ethics_sensitive_activity: 否
+    industry_major_category: 制造业
+    industry_division: 计算机、通信和其他电子设备制造业
+  company_profile: 晟原精密电子股份有限公司是精密电子元器件制造企业，主要从事连接器、精密结构件与电子模组的研发、制造与销售，服务消费电子、工业控制与新能源等客户场景。公司建立了覆盖研发、制造、销售与服务的业务体系，持续推进产品创新、数字化制造和绿色低碳转型，关注客户价值、员工成长、供应链协同和环境责任，致力于为客户和社会创造长期价值。
+  business_summary: 公司是精密电子元器件制造企业，主要从事连接器、精密结构件与电子模组的研发、制造与销售，服务消费电子、工业控制与新能源等客户场景。
+  intake:
+    articles:
+      answer: 公司股东大会是公司的最高权力机构，依法决定公司经营方针、投资计划、董事和监事选举等重大事项；董事会对股东大会负责，负责公司经营计划、投资方案、内部管理机构设置和基本管理制度等事项；监事会依法对董事、高级管理人员履职及公司财务情况进行监督；高级管理层负责日常经营管理，组织实施董事会决议。
+    sustainability_governance_structure:
+      answer: 公司建立由董事会关注、管理层统筹、可持续发展相关部门协调、各职能部门和业务单位参与的可持续发展治理架构。
+    sustainability_governance_duties:
+      answer: 董事会关注可持续发展重大事项，管理层统筹年度重点工作，可持续发展相关部门负责议题协调、信息收集与报告编制，各职能部门和业务单位结合实际落实环境、员工、供应链、合规等相关工作。
+    climate.q_governance_roles:
+      answer: 设有专职部门或岗位负责
+      supplement: 公司设可持续发展委员会统筹气候治理，下设办公室与气候行动管理组，定期审议气候战略与重大风险。
+    climate.q_strategy_content:
+      answer: 公司持续评估气候相关风险和机遇对战略、商业模式和资源配置的影响，围绕节能降耗、清洁能源替代和绿色产品方向推进低碳转型。
+    climate.q_climate_risk_choices:
+      answer:
+      - 台风
+      - 极端高温
+      - 碳定价与排放监管政策变化
+      - 消费者偏好转变风险
+      supplement: 主要面临厂区高温与台风影响生产、能源成本变化以及客户绿色要求提高等因素。
+    climate.q_climate_opportunity_choices:
+      answer:
+      - 运营资源效率提升机遇
+      - 低碳产品方案开发机遇
+      - 低碳转型新市场与绿色金融机遇
+      supplement: 绿色低碳产品需求上升带来增长机遇，节能改造有助于提升运营效率。
+    climate.q_training_activities:
+      answer: 是
+      supplement: 面向管理层与一线团队开展应对气候变化培训，覆盖低碳政策、碳核算与减排实务等主题。
+  assessmentInput:
+    reportingYear: 2025
+    threshold:
+      financial: 4.0
+      impact: 4.0
+    scores:
+    - assessmentTopicId: climate_change
+      financialScore: 4.5
+      impactScore: 4.5
+    - assessmentTopicId: anti_bribery_anti_corruption
+      financialScore: 2.6
+      impactScore: 4.0
+    - assessmentTopicId: human_capital_development
+      financialScore: 4.2
+      impactScore: 4.1
+    - assessmentTopicId: occupational_health_safety
+      financialScore: 2.8
+      impactScore: 4.1
+    - assessmentTopicId: product_quality_safety
+      financialScore: 4.3
+      impactScore: 4.2
+    - assessmentTopicId: energy_management
+      financialScore: 4.0
+      impactScore: 3.0
+    - assessmentTopicId: environmental_compliance_management
+      financialScore: 3.0
+      impactScore: 4.0
+    - assessmentTopicId: pollutant_emissions_management
+      financialScore: 3.0
+      impactScore: 4.1
+    - assessmentTopicId: waste_management
+      financialScore: 3.1
+      impactScore: 4.0
+    - assessmentTopicId: circular_economy_promotion
+      financialScore: 3.2
+      impactScore: 3.5
+    - assessmentTopicId: water_resource_management
+      financialScore: 3.0
+      impactScore: 4.0
+    - assessmentTopicId: ecosystem_biodiversity_protection
+      financialScore: 2.8
+      impactScore: 3.4
+    - assessmentTopicId: rural_revitalization
+      financialScore: 2.9
+      impactScore: 4.0
+    - assessmentTopicId: social_contribution
+      financialScore: 2.8
+      impactScore: 4.0
+    - assessmentTopicId: sustainable_supply_chain_management
+      financialScore: 3.2
+      impactScore: 4.1
+    - assessmentTopicId: sme_fair_treatment
+      financialScore: 2.4
+      impactScore: 3.2
+    - assessmentTopicId: innovation_driven
+      financialScore: 4.2
+      impactScore: 4.0
+    - assessmentTopicId: customer_service_quality_management
+      financialScore: 4.1
+      impactScore: 4.0
+    - assessmentTopicId: data_security_customer_privacy_protection
+      financialScore: 3.6
+      impactScore: 4.2
+    - assessmentTopicId: anti_unfair_competition
+      financialScore: 2.7
+      impactScore: 4.0
+    - assessmentTopicId: risk_management
+      financialScore: 3.0
+      impactScore: 4.1
+    - assessmentTopicId: due_diligence
+      financialScore: 3.2
+      impactScore: 4.1
+  disclosureProfile:
+    mainlandStandard: sse
+    includesHongKongExchangeGuide: false
+    additionalDisclosureReferences: []
+  appendixPackage:
+    externalAssuranceReport:
+      isIncluded: false
+      fileLabel: null
+    readerFeedbackContactInformation:
+      address: 江苏省苏州市工业园区晟原路 88 号（合成示例地址）
+      email: esg@example.com
+      phone: 0577-00000000
+content:
+  generated:
+    company_intro.body: 晟原精密电子股份有限公司是以精密电子元器件为核心的制造企业，业务涵盖连接器、精密结构件与电子模组。公司构建了覆盖研发、制造、销售与服务的业务体系，持续推进产品创新、数字化制造与绿色低碳转型。
+    gov.structure_intro: 晟原精密建立了由股东大会、董事会、监事会和高级管理层组成的公司治理架构。股东大会作为最高权力机构，依法决定公司经营方针、投资计划以及董事、监事选举等重大事项；董事会对股东大会负责，承担经营计划、投资方案、内部管理机构设置和基本管理制度等职责；监事会依法对董事、高级管理人员履职及公司财务情况进行监督；高级管理层负责日常经营管理并组织实施董事会决议。各治理主体依照章程履行职责，保障公司治理运行有序。
+    sm.gov_arch_overview: 晟原精密结合精密电子制造业务特点，建立由董事会关注、管理层统筹、可持续发展相关部门协调、各职能部门和业务单位共同参与的可持续发展治理架构。董事会关注可持续发展重大事项，管理层统筹年度重点工作，可持续发展相关部门负责议题协调、信息收集与报告编制，各职能部门和业务单位结合实际落实环境、员工、供应链、合规等相关工作，推动可持续发展要求融入日常管理。
+    climate.gov_structure: 公司高度重视气候相关治理，构建了"决策监督—统筹执行—专项落实"三层治理架构。可持续发展委员会作为最高决策与监督机构，审议气候战略、目标与重大风险应对；可持续发展办公室作为统筹执行中枢，协调各部门推进气候相关工作；气候行动管理组负责具体措施落实与数据归集。三层之间建立常态化协同与汇报机制，并持续开展面向管理层与业务团队的气候相关能力培训，提升全员应对气候变化的专业水平。
+    climate.iro_reduction_practice: 公司实施多项节能减排与资源循环措施，涵盖节能技改、分布式光伏等清洁能源替代与工艺优化降耗，并推进废料循环利用，围绕单位产值碳强度下降方向持续推进，报告期内取得阶段性成效。
+    climate.iro_training: 公司面向管理层与一线业务团队开展应对气候变化专项培训，覆盖低碳政策、碳核算与减排实务等主题，提升全员气候素养与执行能力。
+  tables:
+    climate.strategy_physical_risk:
+    - phys_type: 急性风险
+      phys_name: 极端高温
+      phys_impact: 持续高温影响公司运营场所用能与室外作业员工健康，管理压力上升
+      phys_value_chain:
+      - 公司运营
+      phys_time_horizon:
+      - 中期
+      - 长期
+      phys_financial:
+      - 成本上升
+      phys_response: 加强温控与应急预案、优化能源管理与作业安排
+    - phys_type: 急性风险
+      phys_name: 台风
+      phys_impact: 台风天气可能影响公司设施安全与供应链运输，造成运营中断
+      phys_value_chain:
+      - 上游价值链
+      - 公司运营
+      phys_time_horizon:
+      - 短期
+      - 中期
+      phys_financial:
+      - 成本上升
+      - 资产减值
+      phys_response: 完善防灾设施与业务连续性预案、分散供应来源
+    climate.strategy_transition_risk:
+    - trans_type: 政策风险
+      trans_name: 碳定价与排放监管政策变化
+      trans_impact: 碳定价与排放监管趋严，公司合规与用能成本上升
+      trans_value_chain:
+      - 公司运营
+      trans_time_horizon:
+      - 中期
+      - 长期
+      trans_financial:
+      - 成本上升
+      trans_response: 推进节能改造与清洁能源替代、加强碳数据管理
+    - trans_type: 市场风险
+      trans_name: 消费者偏好转变风险
+      trans_impact: 市场向低碳产品倾斜，公司现有产品竞争力面临调整压力
+      trans_value_chain:
+      - 公司运营
+      - 下游价值链
+      trans_time_horizon:
+      - 中期
+      - 长期
+      trans_financial:
+      - 收入减少
+      trans_response: 加大低碳产品研发与产线升级投入
+    climate.strategy_opportunity:
+    - opp_type: 资源效率
+      opp_name: 运营资源效率提升机遇
+      opp_impact: 通过提升能源与资源利用效率，公司运营成本下降、效率提升
+      opp_value_chain:
+      - 公司运营
+      opp_time_horizon:
+      - 短期
+      - 中期
+      opp_financial:
+      - 成本下降
+      opp_response: 实施能效管理与流程优化、推动员工参与
+    - opp_type: 市场
+      opp_name: 低碳转型新市场与绿色金融机遇
+      opp_impact: 低碳需求带动公司绿色产品收入增长与市场拓展
+      opp_value_chain:
+      - 下游价值链
+      opp_time_horizon:
+      - 中期
+      - 长期
+      opp_financial:
+      - 收入增加
+      opp_response: 扩大绿色产品组合与市场推广、拓展绿色金融合作
+    appendix.esg_key_performance_metrics:
+    - category: 经济绩效
+      metric: 总资产
+      unit: 百万元
+      value: '120000'
+      remark: ''
+    - category: 经济绩效
+      metric: 营业收入
+      unit: 百万元
+      value: '90000'
+      remark: ''
+    - category: 应对气候变化 / 碳排放
+      metric: 范围一：温室气体排放总量
+      unit: 吨二氧化碳当量
+      value: '12000'
+      remark: 核算标准：ISO 14064-1:2018及GB/T 32150-2015
+    - category: 人力资本发展-员工多元化 / 员工总数
+      metric: 员工总数
+      unit: 人
+      value: '18000'
+      remark: ''

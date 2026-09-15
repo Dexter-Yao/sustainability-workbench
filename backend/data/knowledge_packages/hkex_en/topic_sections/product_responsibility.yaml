@@ -1,0 +1,143 @@
+# ABOUTME(en): Topic chapter template of the HKEX Aspect "Product Responsibility": governance / strategy / risk-management
+# ABOUTME(en): blocks with their intake evidence and Appendix C2 requirement keys; the metrics H3 is compiled from metricDisclosure.
+section:
+  key: product_responsibility
+  title: Product Responsibility
+  headingLevel: 2
+  reportSectionId: product_responsibility
+  conciseDisclosure:
+    id: product.concise_summary
+    type: paragraph
+    blockType: generative
+    source: ai
+    styleRole: body
+    generation:
+      task:
+        focus: |-
+          From the evidence currently visible for this Aspect, write one coherent summary covering the policies and compliance on health and safety, advertising, labelling and methods of redress for products and services, quality assurance and recall procedures, and intellectual property protection, without the four sub-headings.
+      inputs:
+        evidence:
+          kind: report_section
+      targetChars:
+      - 260
+      - 520
+  children:
+  - key: product_responsibility.gov
+    title: Governance
+    pillar: governance
+    headingLevel: 3
+    blocks:
+    - id: product.gov_policy_and_compliance
+      type: paragraph
+      blockType: generative
+      source: ai
+      styleRole: body
+      generation:
+        task:
+          focus: |-
+            Describe the company's policies, allocation of responsibility and certifications (such as ISO 9001) on health and safety, advertising, labelling and methods of redress relating to products and services provided, and its compliance with relevant laws and regulations (Code Aspect B6 General Disclosure).
+          noFactGuidance: |-
+            When the user provides no policy or responsibility facts, describe in a measured, general register the management attention, compliance principles and allocation of responsibility a company of this industry and business type applies to this Aspect; do not name departments, policy titles, certifications or approval flows, and do not claim that a specific system exists or that compliance checks have been completed.
+        inputs:
+          evidence:
+            kind: explicit
+            intakeItems:
+            - product.q_governance_roles
+            - product.q_governance_policies
+            - product.q_governance_certifications
+        targetChars:
+        - 120
+        - 265
+        standardDisclosureRequirementKeys:
+        - product_responsibility.gov.general_disclosure_policies
+        - product_responsibility.gov.general_disclosure_compliance
+        simplifiedWritingGuidance:
+        - |-
+          State compliance with relevant laws and regulations only when the user explicitly provides it; otherwise do not write conclusions such as "no non-compliance was identified" or "no material breach".
+  - key: product_responsibility.strategy
+    title: Strategy
+    pillar: strategy
+    headingLevel: 3
+    blocks:
+    - id: product.strategy_direction
+      type: paragraph
+      blockType: generative
+      source: ai
+      styleRole: body
+      generation:
+        task:
+          focus: |-
+            Describe the company's approach and targets on product quality and customer service, and its compliance principles for advertising and labelling.
+          noFactGuidance: |-
+            When the user provides no targets or plans, state that the company will keep attending to improvement directions and the setting of quantified targets for this Aspect as the business develops; do not invent target values, base years, deadlines or achieved results.
+        inputs:
+          evidence:
+            kind: explicit
+            intakeItems:
+            - product.q_strategy_content
+            - product.q_advertising_labelling
+        targetChars:
+        - 85
+        - 190
+        standardDisclosureRequirementKeys:
+        - product_responsibility.strategy.quality_direction
+        simplifiedWritingGuidance:
+        - |-
+          Figures are carried by the KPI data table; this passage does not state emissions, consumption, ratios or reduction percentages.
+  - key: product_responsibility.iro
+    title: Risk Management
+    pillar: iro_management
+    headingLevel: 3
+    blocks:
+    - id: product.iro_quality_and_recall
+      type: paragraph
+      blockType: generative
+      source: ai
+      styleRole: body
+      generation:
+        task:
+          focus: |-
+            Describe the company's quality assurance process and product recall procedures, and how customer complaints are handled (Code KPIs B6.2 and B6.4).
+          noFactGuidance: |-
+            When the user provides no specific measures, describe only the management steps and directional arrangements common to this Aspect for the industry and business type; do not claim that the company has implemented specific measures, purchased equipment, engaged contractors or achieved results.
+        inputs:
+          evidence:
+            kind: explicit
+            intakeItems:
+            - product.q_quality_assurance
+            - product.q_recall_procedure
+        targetChars:
+        - 120
+        - 265
+        standardDisclosureRequirementKeys:
+        - product_responsibility.iro.quality_assurance_and_recall
+        - product_responsibility.iro.complaints_handling
+        simplifiedWritingGuidance:
+        - |-
+          Figures are carried by the KPI data table; this passage does not state emissions, consumption, ratios or reduction percentages.
+    - id: product.iro_intellectual_property
+      type: paragraph
+      blockType: generative
+      source: ai
+      styleRole: body
+      generation:
+        task:
+          focus: |-
+            Describe the company's practices for observing and protecting intellectual property rights: patent and trademark management, confidentiality arrangements and respect for customers' intellectual property (Code KPI B6.3).
+          noFactGuidance: |-
+            When the user provides no specific measures, describe only the management steps and directional arrangements common to this Aspect for the industry and business type; do not claim that the company has implemented specific measures, purchased equipment, engaged contractors or achieved results.
+        inputs:
+          evidence:
+            kind: explicit
+            intakeItems:
+            - product.q_ip_practices
+        targetChars:
+        - 70
+        - 170
+        standardDisclosureRequirementKeys:
+        - product_responsibility.iro.intellectual_property
+metricDisclosure:
+  catalogMetricKeys:
+  - product_recall_rate
+  - product_complaints
+  - product_complaints_resolved_rate

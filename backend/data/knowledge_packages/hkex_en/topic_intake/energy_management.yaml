@@ -1,0 +1,24 @@
+# ABOUTME(en): Topic-specific intake questions of "Energy Management"; the four fixed pillar questions come from topic_intake_common.yaml.
+# ABOUTME(en): Quantitative KPIs are collected through the metric catalog, not here.
+contentScopeId: energy_management
+items:
+- key: energy.q_energy_efficiency_measures
+  prompt: What measures has the company taken to improve energy efficiency?
+  kind: text
+  collectionPriority: recommended
+  hint: Upgrades, retrofits, monitoring and systems; or blank.
+  generationBoundary: |-
+    Unless specific figures are given, do not generate energy savings, saving percentages or investment amounts.
+  maxChars: 5000
+- key: energy.q_renewable_energy
+  prompt: Does the company use renewable energy?
+  kind: single_select
+  collectionPriority: recommended
+  options:
+  - Own solar photovoltaic or other renewable installations
+  - Purchased renewable electricity or certificates
+  - Both
+  - Not yet
+  - Not sure
+  hint: If yes, note installed capacity or procurement arrangement.
+  maxChars: 5000

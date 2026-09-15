@@ -1,0 +1,124 @@
+# ABOUTME: 上交所《指南第一号 总体要求与披露框架》报告级义务注册表——不属于单一议题的结构性与流程性披露义务。
+# ABOUTME: 承载位置由 carrierSectionKeys/carrierBlockIds 单点声明；判定规则在 contract/disclosure_coverage.py，本文件不含判定逻辑。
+#
+# obligationKind 取值：
+#   structural  报告骨架静态满足的结构义务（章节存在与相对次序），判定用于防合同漂移
+#   statement   须在正文出现的声明义务（范围、期间、编制依据等），按实例判定
+#   process     须披露过程或机制的义务（双重重要性分析过程等）
+#   fallback_statement  准则内置的「做不到时说明原因」出口，未触发不构成缺口
+#
+# 已收录：第一号第一章总体要求、第二章重要性议题识别与分析、第七章报告披露框架。
+# 有意不收录：
+#   - 议题级披露要点 → 归 standard_disclosure_requirements/<topic>.yaml 与覆盖审定表；
+#   - 气候情景分析 → 归气候覆盖审定表 conditional_applicability（第一号第四章为「鼓励」）；
+#   - 报告发布时间、发布方式、独立报告形式 → 属发布环节而非编制产物，系统不产出该事实。
+reportLevelDisclosureObligations:
+- obligationKey: g1.report_name
+  obligationTitle: 报告名称
+  sourceLabel: 上交所·指南第一号·第一章 五、报告名称和发布方式
+  obligationText: 报告名称应当为《××公司可持续发展报告》或者《××公司环境、社会和公司治理报告》（统称《可持续发展报告》），或者包含“可持续发展报告”“环境、社会和公司治理报告”表述。
+  obligationKind: statement
+  carrierSectionKeys: []
+  carrierBlockIds: []
+  userFacingNote: 报告名称须包含“可持续发展报告”或“环境、社会和公司治理报告”表述。
+
+- obligationKey: g1.report_scope_declaration
+  obligationTitle: 报告范围声明
+  sourceLabel: 上交所·指南第一号·第一章 二、报告范围
+  obligationText: 《可持续发展报告》的报告范围与公司年度财务报告合并报表范围保持一致。
+  obligationKind: statement
+  carrierSectionKeys: [about_report.scope]
+  carrierBlockIds:
+  - about.scope
+  - about.scope_without_short_name
+  - about.scope_parent_only
+  - about.scope_parent_only_without_short_name
+  - about.scope_special
+  - about.scope_special_without_short_name
+  userFacingNote: 报告未载明信息披露范围。准则要求报告范围与年度财务报告合并报表范围保持一致，建议在定稿前补充公司全称与合并范围口径。
+
+- obligationKey: g1.reporting_period_declaration
+  obligationTitle: 报告期间声明
+  sourceLabel: 上交所·指南第一号·第一章 三、报告期间
+  obligationText: 《可持续发展报告》的报告期间与年度报告保持一致，覆盖一个完整的会计年度。
+  obligationKind: statement
+  carrierSectionKeys: [about_report.timeframe]
+  carrierBlockIds: [about.timeframe]
+  userFacingNote: 报告未载明报告期间。准则要求报告期间覆盖一个完整会计年度，建议在定稿前补充报告期起止日期。
+
+- obligationKey: g1.basis_declaration
+  obligationTitle: 编制依据声明
+  sourceLabel: 上交所·指南第一号·第七章 报告披露
+  obligationText: 报告应以《指引》为依据，报告内容应符合《指引》要求。
+  obligationKind: statement
+  carrierSectionKeys: [about_report.basis]
+  carrierBlockIds: [about.basis]
+  userFacingNote: 报告未载明编制依据。
+
+- obligationKey: g1.board_approval
+  obligationTitle: 董事会审议
+  sourceLabel: 上交所·指南第一号·第一章 六、审议程序
+  obligationText: 《可持续发展报告》应当经董事会审议通过后方可披露；上市公司章程对审议程序有更为严格规定的，从其规定。
+  obligationKind: statement
+  carrierSectionKeys: [about_report.approval]
+  carrierBlockIds: [about.approval]
+  userFacingNote: 报告未载明审议批准情况。准则要求报告经董事会审议通过后披露，建议在定稿前补充审议机构与审议时间。
+
+- obligationKey: g1.materiality_process_disclosure
+  obligationTitle: 议题重要性分析过程与结果披露
+  sourceLabel: 上交所·指南第一号·第二章 二、议题重要性分析步骤（步骤四）
+  obligationText: 在完成重要性评估流程后，公司应当披露议题重要性的分析过程及其结果。
+  obligationKind: process
+  carrierSectionKeys: [sm.materiality]
+  carrierBlockIds: []
+  userFacingNote: 报告未披露议题重要性的分析过程与结果。
+
+- obligationKey: g1.framework_structure
+  obligationTitle: 报告框架完整性
+  sourceLabel: 上交所·指南第一号·第七章 表21《可持续发展报告》框架参考
+  obligationText: 报告框架建议以重要性议题构成主体章节，覆盖报告编制说明、公司基本信息、议题重要性评估、公司ESG治理安排、各维度议题、ESG数据表和附注、对标索引表。
+  obligationKind: structural
+  carrierSectionKeys:
+  - about_report
+  - company_intro
+  - governance
+  - sustainability_mgmt
+  - report_appendix
+  carrierBlockIds: []
+  userFacingNote: 报告框架缺少准则参考框架要求的组成部分。
+
+- obligationKey: g1.benchmark_index_table
+  obligationTitle: 对标索引表
+  sourceLabel: 上交所·指南第一号·第七章 表29 可持续发展报告对标索引表示例
+  obligationText: 报告应提供披露要求与报告章节的对标索引表；相关议题未披露的，根据《指引》第七条要求进行充分说明。
+  obligationKind: structural
+  carrierSectionKeys: []
+  carrierBlockIds: [appendix.standards_index.table]
+  userFacingNote: 报告缺少准则对标索引表。
+
+- obligationKey: g1.target_absence_statement
+  obligationTitle: 尚未设定目标的说明
+  sourceLabel: 上交所·指南第一号·第六章 一、（一）设定目标
+  obligationText: 如果公司因为尚未设定可持续发展目标而无法披露《指引》所要求披露的相关信息，公司可以对此事实进行披露，说明尚未设定目标的理由，并说明拟设定目标的时间范围，以及是否设定了相关指标以监测和管理公司可持续发展绩效。
+  obligationKind: fallback_statement
+  carrierSectionKeys: []
+  carrierBlockIds: []
+  userFacingNote: 部分议题未披露可持续发展目标。准则允许以说明替代：可说明尚未设定目标的理由、拟设定目标的时间范围，以及是否已设定相关指标。
+
+- obligationKey: g1.quantitative_capability_statement
+  obligationTitle: 不具备定量披露能力时的说明
+  sourceLabel: 上交所·指南第二号·披露要点11 第3项；披露要点12 第4项
+  obligationText: 若披露主体确不具备披露财务影响定量信息的能力、相关财务影响无法单独识别，或者因计量的不确定性过大导致该定量信息不具备使用价值的，披露主体应当披露相关财务影响的定性信息，解释未采用定量披露信息的原因，并在合理范围内提供有助于投资者了解相关影响的信息和说明，以及实现定量披露的工作计划、进度和时间表。
+  obligationKind: fallback_statement
+  carrierSectionKeys: []
+  carrierBlockIds: []
+  userFacingNote: 报告未披露相关财务影响的定量信息。准则允许以定性披露替代，但需解释未采用定量披露的原因及后续工作计划。
+
+- obligationKey: g1.confidentiality_exemption
+  obligationTitle: 涉密或不适用条款的豁免说明
+  sourceLabel: 上交所·指南第一号·第一章 九、其他相关要求 1
+  obligationText: 因相关信息涉及国家秘密、商业秘密，或者由于其他特殊原因，披露主体无法按照《指引》个别条款的规定履行信息披露义务、披露可能严重损害披露主体利益，或者确不适用相关条款、议题对其不具有财务重要性或影响重要性的，可以根据实际情况调整披露内容或者采取替代措施，但应当充分说明原因。
+  obligationKind: fallback_statement
+  carrierSectionKeys: []
+  carrierBlockIds: []
+  userFacingNote: 如因涉密或条款不适用而调整披露内容，准则要求充分说明原因。

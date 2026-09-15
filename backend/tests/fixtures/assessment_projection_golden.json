@@ -1,0 +1,196 @@
+{
+  "cases": [
+    {
+      "name": "完整评估_含计数_四象限含非重要性",
+      "assessment": {
+        "reportingYear": 2025,
+        "topics": [
+          {
+            "assessmentTopicId": "anti_bribery_anti_corruption",
+            "determination": "scored",
+            "materiality": "dual",
+            "financialScore": 4.5,
+            "impactScore": 4.6
+          },
+          {
+            "assessmentTopicId": "anti_unfair_competition",
+            "determination": "scored",
+            "materiality": "impact",
+            "financialScore": 3.0,
+            "impactScore": 4.2
+          },
+          {
+            "assessmentTopicId": "due_diligence",
+            "determination": "scored",
+            "materiality": "financial",
+            "financialScore": 4.3,
+            "impactScore": 3.1
+          },
+          {
+            "assessmentTopicId": "technology_ethics",
+            "determination": "scored",
+            "materiality": "non",
+            "financialScore": 2.0,
+            "impactScore": 2.1
+          }
+        ]
+      },
+      "expected": {
+        "tables": {
+          "sm.topic_table": [
+            {
+              "topic_dimension": "治理",
+              "topic_name": "反商业贿赂与反贪污",
+              "topic_materiality": "双重重要性"
+            },
+            {
+              "topic_dimension": "治理",
+              "topic_name": "反不正当竞争",
+              "topic_materiality": "影响重要性"
+            },
+            {
+              "topic_dimension": "治理",
+              "topic_name": "尽职调查",
+              "topic_materiality": "财务重要性"
+            },
+            {
+              "topic_dimension": "社会",
+              "topic_name": "科技伦理",
+              "topic_materiality": "非重要性"
+            }
+          ],
+          "sm.iro_table": [
+            {
+              "iro_topic": "反商业贿赂与反贪污",
+              "iro_value_chain": [],
+              "iro_time_horizon": [],
+              "impact": {
+                "iro_desc": "",
+                "iro_class": []
+              },
+              "risk_opportunity": {
+                "iro_desc": "",
+                "iro_class": []
+              }
+            },
+            {
+              "iro_topic": "尽职调查",
+              "iro_value_chain": [],
+              "iro_time_horizon": [],
+              "impact": {
+                "iro_desc": "",
+                "iro_class": []
+              },
+              "risk_opportunity": {
+                "iro_desc": "",
+                "iro_class": []
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "缺计数_从议题派生_含非重要性",
+      "assessment": {
+        "reportingYear": 2025,
+        "topics": [
+          {
+            "assessmentTopicId": "climate_change",
+            "determination": "scored",
+            "materiality": "dual",
+            "financialScore": 4.5,
+            "impactScore": 4.5
+          },
+          {
+            "assessmentTopicId": "energy_management",
+            "determination": "scored",
+            "materiality": "dual",
+            "financialScore": 4.1,
+            "impactScore": 4.0
+          },
+          {
+            "assessmentTopicId": "occupational_health_safety",
+            "determination": "scored",
+            "materiality": "impact",
+            "financialScore": 3.2,
+            "impactScore": 4.4
+          },
+          {
+            "assessmentTopicId": "ecosystem_biodiversity_protection",
+            "determination": "scored",
+            "materiality": "non",
+            "financialScore": 2.2,
+            "impactScore": 2.0
+          }
+        ]
+      },
+      "expected": {
+        "tables": {
+          "sm.topic_table": [
+            {
+              "topic_dimension": "环境",
+              "topic_name": "应对气候变化",
+              "topic_materiality": "双重重要性"
+            },
+            {
+              "topic_dimension": "环境",
+              "topic_name": "能源管理",
+              "topic_materiality": "双重重要性"
+            },
+            {
+              "topic_dimension": "社会",
+              "topic_name": "职业健康与安全",
+              "topic_materiality": "影响重要性"
+            },
+            {
+              "topic_dimension": "环境",
+              "topic_name": "生态系统与生物多样性保护",
+              "topic_materiality": "非重要性"
+            }
+          ],
+          "sm.iro_table": [
+            {
+              "iro_topic": "应对气候变化",
+              "iro_value_chain": [],
+              "iro_time_horizon": [],
+              "impact": {
+                "iro_desc": "",
+                "iro_class": []
+              },
+              "risk_opportunity": {
+                "iro_desc": "",
+                "iro_class": []
+              }
+            },
+            {
+              "iro_topic": "能源管理",
+              "iro_value_chain": [],
+              "iro_time_horizon": [],
+              "impact": {
+                "iro_desc": "",
+                "iro_class": []
+              },
+              "risk_opportunity": {
+                "iro_desc": "",
+                "iro_class": []
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "空评估_无议题无计数",
+      "assessment": {
+        "reportingYear": 2025
+      },
+      "expected": {
+        "tables": {
+          "sm.topic_table": [],
+          "sm.iro_table": []
+        }
+      }
+    }
+  ]
+}

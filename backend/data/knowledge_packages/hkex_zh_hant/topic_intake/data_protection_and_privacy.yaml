@@ -1,0 +1,16 @@
+# ABOUTME(en): Topic-specific intake questions of「資料保障及私隱」; the four fixed pillar questions come from topic_intake_common.yaml.
+# ABOUTME(en): Quantitative KPIs are collected through the metric catalog, not here.
+contentScopeId: data_protection_and_privacy
+items:
+- key: privacy.q_privacy_policies
+  prompt: 貴公司有關客戶資料保障及私隱的政策包括哪些內容？
+  kind: text
+  collectionPriority: recommended
+  hint: 可說明資料收集目的限制、保留期、第三方轉移及查閱權處理；沒有可留空。
+  maxChars: 5000
+- key: privacy.q_data_security_measures
+  prompt: 貴公司採取了哪些資料安全措施？
+  kind: text
+  collectionPriority: recommended
+  hint: 可說明存取控制、加密、備份、系統監控、僱員培訓及事故應對；沒有可留空。
+  maxChars: 5000

@@ -1,0 +1,22 @@
+# ABOUTME(en): Manifest of the HKEX knowledge package in English: Main Board Listing Rules Appendix C2
+# ABOUTME(en): "Environmental, Social and Governance Reporting Code" (2025-01-01 text; A4 and KPI A1.2 repealed,
+# ABOUTME(en): climate disclosures in Part D). Structural twin of hkex_zh_hant; content files sit beside it.
+schema_version: sustainability_desk.knowledge_package.v1
+id: hkex_en
+language: en
+framework: hkex_esg_reporting_code
+display_name: HKEX Environmental, Social and Governance Reporting Code
+# Topic chapters carry the Part D climate pillars (Governance / Strategy / Risk Management / Metrics and Targets);
+# the same four pillars structure every Aspect as policy, approach & compliance, and KPIs.
+pillar_titles:
+  governance: Governance
+  strategy: Strategy
+  iro_management: Risk Management
+  metrics_targets: Metrics and Targets
+# The Code's materiality principle is what the board judges important to investors;
+# double materiality is named as something issuers may also refer to, not a requirement.
+materiality_regime: financial_primary
+disclosure_basis:
+  mainland_standard_selectable: false
+  primary_standard_names:
+    - Appendix C2 "Environmental, Social and Governance Reporting Code" to the Rules Governing the Listing of Securities on The Stock Exchange of Hong Kong Limited

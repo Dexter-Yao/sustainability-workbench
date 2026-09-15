@@ -1,0 +1,55 @@
+# ABOUTME(en): Appendix C2 disclosure requirements of「發展及培訓」(General Disclosure and KPIs), grouped by pillar,
+# ABOUTME(en): for the coverage audit and for prompt assembly by key whitelist (injection is switch-gated, off by default) and for the coverage audit. Wording awaits check against the official Chinese text.
+topicStandardDisclosureRequirementGroups:
+- topicSectionKey: development_and_training.gov
+  pillar: governance
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: development_and_training.gov.general_disclosure_policies
+    standardDisclosureRequirementTitle: 發展及培訓政策
+    excerptFrom: 港交所·附錄C2·一般披露 B3
+    standardDisclosureRequirementText: 應披露有關提升僱員履行工作職責的知識及技能的政策。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: 一般披露 B3
+- topicSectionKey: development_and_training.strategy
+  pillar: strategy
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: development_and_training.strategy.training_direction
+    standardDisclosureRequirementTitle: 人才發展方針及目標
+    excerptFrom: 港交所·附錄C2·一般披露 B3
+    standardDisclosureRequirementText: 應說明公司在僱員發展方面的方針及目標。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: 一般披露 B3
+- topicSectionKey: development_and_training.iro
+  pillar: iro_management
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: development_and_training.iro.training_activities
+    standardDisclosureRequirementTitle: 培訓活動描述
+    excerptFrom: 港交所·附錄C2·一般披露 B3
+    standardDisclosureRequirementText: 應描述匯報期間開展的培訓活動（培訓指職業培訓，可包括由僱主付費的內部及外部課程）。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: 一般披露 B3
+- topicSectionKey: development_and_training.metrics
+  pillar: metrics_targets
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: development_and_training.metrics.trained_percentage_data
+    standardDisclosureRequirementTitle: 按性別及僱員類別劃分的受訓僱員百分比
+    excerptFrom: 港交所·附錄C2·關鍵績效指標 B3.1
+    standardDisclosureRequirementText: 應披露按性別及僱員類別（如高級管理層、中級管理層）劃分的受訓僱員百分比。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: 關鍵績效指標 B3.1
+  - standardDisclosureRequirementKey: development_and_training.metrics.training_hours_data
+    standardDisclosureRequirementTitle: 按性別及僱員類別劃分的平均受訓時數
+    excerptFrom: 港交所·附錄C2·關鍵績效指標 B3.2
+    standardDisclosureRequirementText: 應披露按性別及僱員類別劃分，每名僱員完成受訓的平均時數。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: 關鍵績效指標 B3.2

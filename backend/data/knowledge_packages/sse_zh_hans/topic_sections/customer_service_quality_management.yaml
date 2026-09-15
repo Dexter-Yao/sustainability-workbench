@@ -1,0 +1,106 @@
+# ABOUTME: 客户服务质量管理议题章节骨架，H2 标题以附录索引表“对应的本报告章节”为准。
+# ABOUTME: 本文件承载客户服务职责、战略、反馈闭环和服务指标表；指标表按声明读取ESG 定量数据表的受控投影。
+section:
+  key: customer_service_quality_management
+  title: 客户服务质量管理
+  headingLevel: 2
+  reportSectionId: customer_service_quality_management
+  conciseDisclosure:
+    id: customer_service_quality_management.concise_summary
+    type: paragraph
+    blockType: generative
+    source: ai
+    styleRole: body
+    generation:
+      task:
+        focus: "根据本议题当前可见证据形成一段连贯摘要，覆盖相关管理关注、方向与实践，不使用四要素小标题。"
+      inputs: {evidence: {kind: report_section}}
+      targetChars: [300, 600]
+  children:
+  - key: customer_service_quality_management.gov
+    title: 治理
+    pillar: governance
+    headingLevel: 3
+    blocks:
+    - id: customer_service_quality_management.gov_service_responsibility
+      type: paragraph
+      blockType: generative
+      source: ai
+      styleRole: body
+      generation:
+        task:
+          focus: "说明客户服务工作的责任安排、协作关系和管理机制。"
+        inputs:
+          evidence:
+            kind: explicit
+            intakeItems:
+            - customer_service_quality_management.q_governance_roles
+            - customer_service_quality_management.q_governance_policies
+            - customer_service_quality_management.q_governance_certifications
+        targetChars:
+        - 180
+        - 360
+        standardDisclosureRequirementKeys:
+        - customer_service_quality_management.gov.service_management_required
+        - customer_service_quality_management.gov.service_management_encouraged
+  - key: customer_service_quality_management.strategy
+    title: 战略
+    pillar: strategy
+    headingLevel: 3
+    blocks:
+    - id: customer_service_quality_management.strategy_customer_centric_service
+      type: paragraph
+      blockType: generative
+      source: ai
+      styleRole: body
+      generation:
+        task:
+          focus: "说明客户服务能力和客户体验相关的长期方向与推进原则。"
+        inputs:
+          evidence:
+            kind: explicit
+            intakeItems:
+            - customer_service_quality_management.q_strategy_content
+        targetChars:
+        - 180
+        - 360
+        standardDisclosureRequirementKeys:
+        - customer_service_quality_management.strategy.service_strategy_required
+        - customer_service_quality_management.strategy.customer_centric_encouraged
+        simplifiedWritingGuidance:
+          - "聚焦客户服务质量方向、体验关注点和客户关系维护，优先使用服务能力、交付履约、服务响应、客诉闭环、增值服务和协同支持等专业维度。"
+          - "客户类型按用户资料概括为主要客户群体或相关客户。"
+  - key: customer_service_quality_management.iro
+    title: 影响、风险与机遇管理
+    pillar: iro_management
+    headingLevel: 3
+    blocks:
+    - id: customer_service_quality_management.iro_service_feedback_improvement
+      type: paragraph
+      blockType: generative
+      source: ai
+      styleRole: body
+      generation:
+        task:
+          focus: "说明客户服务响应、意见反馈和持续改进的相关实践。"
+        inputs:
+          evidence:
+            kind: explicit
+            intakeItems:
+            - customer_service_quality_management.q_service_complaint_platforms
+            - customer_service_quality_management.q_customer_service_commitments
+        targetChars:
+        - 220
+        - 460
+        standardDisclosureRequirementKeys:
+        - customer_service_quality_management.iro.complaint_process_required
+        - customer_service_quality_management.iro.continuous_improvement_encouraged
+        - customer_service_quality_management.iro.satisfaction_survey_required
+        - customer_service_quality_management.iro.feedback_channel_required
+        templateResidueBans:
+        - 退换货政策和品牌宣传推广力度方面仍存在一定改进空间
+        simplifiedWritingGuidance:
+          - "聚焦服务响应、沟通与投诉处理，以及客户反馈如何进入服务复盘和持续改进，形成递进叙述。"
+          - "客户对象和服务场景来自本块用户事实。"
+metricDisclosure:
+  catalogMetricKeys: [social_r55, social_r56]

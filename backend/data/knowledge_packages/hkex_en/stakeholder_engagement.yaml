@@ -1,0 +1,109 @@
+# ABOUTME(en): Deterministic stakeholder engagement catalog of the HKEX English package: stable stakeholder types,
+# ABOUTME(en): engagement methods and the default topic ↔ stakeholder mapping (ids equal hkex_zh_hant). Topic names
+# ABOUTME(en): and applicability stay with topic_registry.yaml; this file only references official topic ids.
+
+stakeholders:
+  - id: government_regulators
+    label: Government and regulators
+    order: 10
+    defaultMethodIds: [regulatory_communication, document_submission_correspondence, supervision_inspection_support]
+  - id: shareholders_investors
+    label: Shareholders and investors
+    order: 20
+    defaultMethodIds: [shareholder_meeting, information_disclosure, investor_communication]
+  - id: customers
+    label: Customers
+    order: 30
+    defaultMethodIds: [customer_visits, customer_service_channels, satisfaction_survey, complaints_feedback]
+  - id: management
+    label: Management
+    order: 40
+    defaultMethodIds: [management_meeting, special_reporting, issue_review_decision]
+  - id: employees
+    label: Employees
+    order: 50
+    defaultMethodIds: [employee_representative_communication, employee_forum, opinion_channels, training]
+  - id: suppliers
+    label: Suppliers
+    order: 60
+    defaultMethodIds: [supplier_meeting, daily_business_communication, supplier_admission_evaluation, supply_chain_collaborative_improvement]
+  - id: partners
+    label: Business partners
+    order: 70
+    defaultMethodIds: [business_meeting, industry_exchange, joint_working_group, project_cooperation]
+  - id: community_public
+    label: Community and the public
+    order: 80
+    defaultMethodIds: [community_visits, public_consultation, opinion_solicitation, community_co_creation]
+
+methods:
+  - {id: regulatory_communication, label: Regulatory communication, kind: communication_channel, allowedStakeholderTypes: [government_regulators]}
+  - {id: document_submission_correspondence, label: Filings and correspondence, kind: communication_channel, allowedStakeholderTypes: [government_regulators]}
+  - {id: policy_briefing_roundtable, label: Policy briefings and roundtables, kind: participation_mechanism, allowedStakeholderTypes: [government_regulators]}
+  - {id: supervision_inspection_support, label: Cooperation with inspections, kind: participation_mechanism, allowedStakeholderTypes: [government_regulators]}
+  - {id: government_enterprise_exchange, label: Government–business exchange, kind: collaboration_activity, allowedStakeholderTypes: [government_regulators]}
+
+  - {id: shareholder_meeting, label: General meetings, kind: communication_channel, allowedStakeholderTypes: [shareholders_investors]}
+  - {id: information_disclosure, label: Announcements and disclosures, kind: communication_channel, allowedStakeholderTypes: [shareholders_investors]}
+  - {id: investor_communication, label: Investor communication, kind: communication_channel, allowedStakeholderTypes: [shareholders_investors]}
+  - {id: inquiries_feedback, label: Enquiries and feedback, kind: participation_mechanism, allowedStakeholderTypes: [shareholders_investors]}
+  - {id: thematic_exchange, label: Thematic exchanges, kind: collaboration_activity, allowedStakeholderTypes: [shareholders_investors]}
+
+  - {id: customer_visits, label: Customer visits, kind: communication_channel, allowedStakeholderTypes: [customers]}
+  - {id: customer_service_channels, label: Customer service hotline and online channels, kind: communication_channel, allowedStakeholderTypes: [customers]}
+  - {id: satisfaction_survey, label: Satisfaction surveys, kind: participation_mechanism, allowedStakeholderTypes: [customers, employees]}
+  - {id: complaints_feedback, label: Complaints and feedback, kind: participation_mechanism, allowedStakeholderTypes: [customers, community_public]}
+  - {id: technical_exchange_joint_solution, label: Technical exchange and joint solutions, kind: collaboration_activity, allowedStakeholderTypes: [customers]}
+
+  - {id: management_meeting, label: Management meetings, kind: communication_channel, allowedStakeholderTypes: [management]}
+  - {id: special_reporting, label: Special reporting, kind: communication_channel, allowedStakeholderTypes: [management]}
+  - {id: issue_review_decision, label: Issue review and decision-making, kind: participation_mechanism, allowedStakeholderTypes: [management]}
+  - {id: cross_department_coordination, label: Cross-departmental coordination, kind: participation_mechanism, allowedStakeholderTypes: [management]}
+  - {id: special_working_group, label: Special working groups, kind: collaboration_activity, allowedStakeholderTypes: [management]}
+
+  - {id: employee_representative_communication, label: Employee representative communication, kind: communication_channel, allowedStakeholderTypes: [employees]}
+  - {id: employee_forum, label: Employee forums, kind: communication_channel, allowedStakeholderTypes: [employees]}
+  - {id: opinion_channels, label: Opinion channels, kind: communication_channel, allowedStakeholderTypes: [employees]}
+  - {id: grievance_feedback, label: Grievances and feedback, kind: participation_mechanism, allowedStakeholderTypes: [employees]}
+  - {id: training, label: Training, kind: participation_mechanism, allowedStakeholderTypes: [employees]}
+  - {id: employee_improvement_activities, label: Employee improvement activities, kind: collaboration_activity, allowedStakeholderTypes: [employees]}
+
+  - {id: supplier_meeting, label: Supplier meetings, kind: communication_channel, allowedStakeholderTypes: [suppliers]}
+  - {id: daily_business_communication, label: Day-to-day business communication, kind: communication_channel, allowedStakeholderTypes: [suppliers]}
+  - {id: supplier_admission_evaluation, label: Supplier screening and evaluation, kind: participation_mechanism, allowedStakeholderTypes: [suppliers]}
+  - {id: on_site_audit, label: On-site audits, kind: participation_mechanism, allowedStakeholderTypes: [suppliers]}
+  - {id: supplier_grievance_feedback, label: Grievance feedback, kind: participation_mechanism, allowedStakeholderTypes: [suppliers]}
+  - {id: capability_building, label: Capability building, kind: collaboration_activity, allowedStakeholderTypes: [suppliers]}
+  - {id: supply_chain_collaborative_improvement, label: Collaborative supply chain improvement, kind: collaboration_activity, allowedStakeholderTypes: [suppliers]}
+
+  - {id: business_meeting, label: Business meetings, kind: communication_channel, allowedStakeholderTypes: [partners]}
+  - {id: industry_exchange, label: Industry exchanges, kind: communication_channel, allowedStakeholderTypes: [partners]}
+  - {id: industry_association_forum, label: Chambers and industry forums, kind: participation_mechanism, allowedStakeholderTypes: [partners]}
+  - {id: joint_working_group, label: Joint working groups, kind: participation_mechanism, allowedStakeholderTypes: [partners]}
+  - {id: industry_academia_research_cooperation, label: Industry–academia cooperation, kind: collaboration_activity, allowedStakeholderTypes: [partners]}
+  - {id: joint_research_development, label: Joint research and development, kind: collaboration_activity, allowedStakeholderTypes: [partners]}
+  - {id: project_cooperation, label: Project cooperation, kind: collaboration_activity, allowedStakeholderTypes: [partners]}
+
+  - {id: community_visits, label: Community visits, kind: communication_channel, allowedStakeholderTypes: [community_public]}
+  - {id: public_consultation, label: Public consultation, kind: communication_channel, allowedStakeholderTypes: [community_public]}
+  - {id: opinion_solicitation, label: Opinion solicitation, kind: participation_mechanism, allowedStakeholderTypes: [community_public]}
+  - {id: community_co_creation, label: Community co-building, kind: collaboration_activity, allowedStakeholderTypes: [community_public]}
+  - {id: public_welfare_activities, label: Charitable and volunteer activities, kind: collaboration_activity, allowedStakeholderTypes: [community_public]}
+
+defaultTopicStakeholders:
+  climate_change: [government_regulators, shareholders_investors, management, community_public]
+  emissions: [government_regulators, management, employees, community_public]
+  waste_management: [government_regulators, management, employees, community_public]
+  energy_management: [government_regulators, management, employees]
+  water_management: [government_regulators, management, community_public]
+  materials_and_packaging: [customers, management, suppliers]
+  environment_and_natural_resources: [government_regulators, management, partners, community_public]
+  employment: [shareholders_investors, management, employees]
+  health_and_safety: [government_regulators, management, employees, suppliers]
+  development_and_training: [management, employees]
+  labour_standards: [government_regulators, management, employees, suppliers]
+  supply_chain_management: [customers, management, suppliers, partners]
+  product_responsibility: [government_regulators, customers, management, suppliers]
+  data_protection_and_privacy: [government_regulators, customers, management, employees, partners]
+  anti_corruption: [government_regulators, shareholders_investors, management, employees, suppliers, partners]
+  community_investment: [shareholders_investors, management, employees, partners, community_public]

@@ -1,0 +1,26 @@
+# ABOUTME: 污染物排放管理议题轻量版内容清单，聚焦排放管理要求和减排措施。
+# ABOUTME: 治理、战略和指标目标固定题由 topic_intake_common.yaml 展开；结构化数值由 ESG 定量数据表维护。
+contentScopeId: pollutant_emissions_management
+items:
+- key: pollutant_emissions_management.q_emission_management_requirements
+  prompt: 贵公司是否有污染物排放管理的具体要求？
+  kind: single_select
+  collectionPriority: recommended
+  options:
+  - 是
+  - 否
+  - 不确定
+  hint: 如选择是，请在补充说明中简述污染物排放管理的具体要求。
+  termExplanation: 可涉及水污染物、大气污染物、噪声、排放监测、达标排放或排污许可等方面。
+  maxChars: 5000
+- key: pollutant_emissions_management.q_reduction_measures
+  prompt: 贵公司是否开展过针对污染物减排的管理措施？
+  kind: single_select
+  collectionPriority: recommended
+  options:
+  - 是
+  - 否
+  - 不确定
+  hint: 如选择是，请在补充说明中简述减排目标、针对的污染物类型、措施内容和措施效果。
+  generationBoundary: 未填写具体数值时，不得生成减排量、比例或完成率。
+  maxChars: 5000

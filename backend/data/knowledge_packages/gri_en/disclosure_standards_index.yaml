@@ -1,0 +1,114 @@
+# ABOUTME(en): Source of the appendix GRI content index: the GRI disclosures this report cites → the report
+# ABOUTME(en): sections where each is found. Required by GRI 1 Foundation 2021 for reporting with reference.
+# Only disclosures actually cited belong here: with reference sets no minimum number, and an uncited
+# disclosure is simply absent from the index rather than listed as an omission.
+chapters:
+  - title: GRI 2 General Disclosures 2021
+    sections:
+      - title: The organization and its reporting practices
+        clauses:
+          - {clause: "2-1 Organizational details", reportSections: [About the Company]}
+          - {clause: "2-2 Entities included in the organization's sustainability reporting", reportSections: [Reporting Boundary]}
+          - {clause: "2-3 Reporting period, frequency and contact point", reportSections: [Time Frame, Report Access and Feedback]}
+          - {clause: "2-5 External assurance", reportSections: [Report Assurance]}
+      - title: Activities and workers
+        clauses:
+          - {clause: "2-6 Activities, value chain and other business relationships", reportSections: [About the Company]}
+          - {clause: "2-7 Employees", reportSections: [Employment]}
+      - title: Governance
+        clauses:
+          - {clause: "2-9 Governance structure and composition", reportSections: [Governance Structure and Accountability]}
+          - {clause: "2-12 Role of the highest governance body in overseeing the management of impacts", reportSections: [Board Statement]}
+          - {clause: "2-13 Delegation of responsibility for managing impacts", reportSections: [Sustainability Governance Structure]}
+          - {clause: "2-14 Role of the highest governance body in sustainability reporting", reportSections: [Board Statement]}
+      - title: Strategy, policies and practices
+        clauses:
+          - {clause: "2-22 Statement on sustainable development strategy", reportSections: [Sustainability Strategy]}
+          - {clause: "2-27 Compliance with laws and regulations", reportSections: [Governance Compliance and Transparency]}
+      - title: Stakeholder engagement
+        clauses:
+          - {clause: "2-29 Approach to stakeholder engagement", reportSections: [Stakeholder Engagement]}
+  - title: GRI 3 Material Topics 2021
+    sections:
+      - title: Disclosures on material topics
+        clauses:
+          - {clause: "3-1 Process to determine material topics", reportSections: [Topic Materiality Assessment]}
+          - {clause: "3-2 List of material topics", reportSections: [Topic Materiality Assessment]}
+          - {clause: "3-3 Management of material topics", reportSections: [Climate Change]}
+  - title: GRI Topic Standards
+    sections:
+      - title: GRI 102 Climate Change 2025
+        clauses:
+          - {clause: "102-1 Transition plan for climate change mitigation", reportSections: [Climate Change]}
+          - {clause: "102-2 Climate change adaptation plan", reportSections: [Climate Change]}
+          - {clause: "102-4 GHG emissions reduction targets and progress", reportSections: [Climate Change]}
+          - {clause: "102-5 Scope 1 GHG emissions", reportSections: [Climate Change, ESG Key Performance Table]}
+          - {clause: "102-6 Scope 2 GHG emissions", reportSections: [Climate Change, ESG Key Performance Table]}
+          - {clause: "102-8 GHG emissions intensity", reportSections: [Climate Change, ESG Key Performance Table]}
+      - title: GRI 103 Energy 2025
+        clauses:
+          - {clause: "103-1 Energy policies and commitments", reportSections: [Energy]}
+          - {clause: "103-2 Energy consumption and self-generation within the organization", reportSections: [Energy, ESG Key Performance Table]}
+          - {clause: "103-4 Energy intensity", reportSections: [Energy, ESG Key Performance Table]}
+          - {clause: "103-5 Reduction in energy consumption", reportSections: [Energy]}
+      - title: GRI 303 Water and Effluents 2018
+        clauses:
+          - {clause: "303-1 Interactions with water as a shared resource", reportSections: [Water and Effluents]}
+          - {clause: "303-2 Management of water discharge-related impacts", reportSections: [Water and Effluents]}
+          - {clause: "303-5 Water consumption", reportSections: [Water and Effluents, ESG Key Performance Table]}
+      - title: GRI 306 Waste 2020
+        clauses:
+          - {clause: "306-1 Waste generation and significant waste-related impacts", reportSections: [Waste]}
+          - {clause: "306-2 Management of significant waste-related impacts", reportSections: [Waste]}
+          - {clause: "306-3 Waste generated", reportSections: [Waste, ESG Key Performance Table]}
+          - {clause: "306-4 Waste diverted from disposal", reportSections: [Waste, ESG Key Performance Table]}
+      - title: GRI 301 Materials 2016
+        clauses:
+          - {clause: "301-1 Materials used by weight or volume", reportSections: [Materials, ESG Key Performance Table]}
+          - {clause: "301-2 Recycled input materials used", reportSections: [Materials]}
+          - {clause: "301-3 Reclaimed products and their packaging materials", reportSections: [Materials]}
+      - title: GRI 101 Biodiversity 2024
+        clauses:
+          - {clause: "101-1 Policies to halt and reverse biodiversity loss", reportSections: [Biodiversity]}
+          - {clause: "101-2 Management of biodiversity impacts", reportSections: [Biodiversity]}
+          - {clause: "101-4 Identification of biodiversity impacts", reportSections: [Biodiversity]}
+          - {clause: "101-5 Locations with biodiversity impacts", reportSections: [Biodiversity]}
+      - title: GRI 401 Employment 2016
+        clauses:
+          - {clause: "401-1 New employee hires and employee turnover", reportSections: [Employment, ESG Key Performance Table]}
+          - {clause: "401-2 Benefits provided to full-time employees that are not provided to temporary or part-time employees", reportSections: [Employment]}
+          - {clause: "401-3 Parental leave", reportSections: [Employment]}
+      - title: GRI 403 Occupational Health and Safety 2018
+        clauses:
+          - {clause: "403-1 Occupational health and safety management system", reportSections: [Occupational Health and Safety]}
+          - {clause: "403-2 Hazard identification, risk assessment, and incident investigation", reportSections: [Occupational Health and Safety]}
+          - {clause: "403-4 Worker participation, consultation, and communication on occupational health and safety", reportSections: [Occupational Health and Safety]}
+          - {clause: "403-5 Worker training on occupational health and safety", reportSections: [Occupational Health and Safety]}
+          - {clause: "403-9 Work-related injuries", reportSections: [Occupational Health and Safety, ESG Key Performance Table]}
+      - title: GRI 404 Training and Education 2016
+        clauses:
+          - {clause: "404-1 Average hours of training per year per employee", reportSections: [Training and Education, ESG Key Performance Table]}
+          - {clause: "404-2 Programs for upgrading employee skills and transition assistance programs", reportSections: [Training and Education]}
+          - {clause: "404-3 Percentage of employees receiving regular performance and career development reviews", reportSections: [Training and Education]}
+      - title: GRI 405 Diversity and Equal Opportunity 2016
+        clauses:
+          - {clause: "405-1 Diversity of governance bodies and employees", reportSections: [Diversity and Equal Opportunity, ESG Key Performance Table]}
+          - {clause: "405-2 Ratio of basic salary and remuneration of women to men", reportSections: [Diversity and Equal Opportunity]}
+      - title: GRI 416 Customer Health and Safety 2016
+        clauses:
+          - {clause: "416-1 Assessment of the health and safety impacts of product and service categories", reportSections: [Customer Health and Safety]}
+          - {clause: "416-2 Incidents of non-compliance concerning the health and safety impacts of products and services", reportSections: [Customer Health and Safety]}
+      - title: GRI 418 Customer Privacy 2016
+        clauses:
+          - {clause: "418-1 Substantiated complaints concerning breaches of customer privacy and losses of customer data", reportSections: [Customer Privacy]}
+      - title: GRI 205 Anti-corruption 2016
+        clauses:
+          - {clause: "205-1 Operations assessed for risks related to corruption", reportSections: [Anti-corruption]}
+          - {clause: "205-2 Communication and training about anti-corruption policies and procedures", reportSections: [Anti-corruption]}
+          - {clause: "205-3 Confirmed incidents of corruption and actions taken", reportSections: [Anti-corruption]}
+      - title: GRI 308 Supplier Environmental Assessment 2016 and GRI 414 Supplier Social Assessment 2016
+        clauses:
+          - {clause: "308-1 New suppliers that were screened using environmental criteria", reportSections: [Supplier Assessment]}
+          - {clause: "308-2 Negative environmental impacts in the supply chain and actions taken", reportSections: [Supplier Assessment]}
+          - {clause: "414-1 New suppliers that were screened using social criteria", reportSections: [Supplier Assessment]}
+          - {clause: "414-2 Negative social impacts in the supply chain and actions taken", reportSections: [Supplier Assessment]}

@@ -1,0 +1,48 @@
+# ABOUTME(en): GRI 205: Anti-corruption 2016 disclosure requirements, grouped by the package's pillars, for the
+# ABOUTME(en): coverage audit and the key whitelist. Wording condenses the official requirement text.
+topicStandardDisclosureRequirementGroups:
+- topicSectionKey: anti_corruption.gov
+  pillar: governance
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: anti_corruption.gov.management_of_anti_corruption
+    standardDisclosureRequirementTitle: Management of the anti-corruption topic
+    excerptFrom: GRI 3-3 with GRI 205
+    standardDisclosureRequirementText: |-
+      Report how the organization manages the anti-corruption topic, including the anti-corruption policies and procedures, the responsibilities for them, and compliance with applicable anti-corruption requirements.
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: GRI
+      clauseRef: GRI 3-3 with GRI 205
+- topicSectionKey: anti_corruption.strategy
+  pillar: strategy
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: anti_corruption.strategy.risk_assessment
+    standardDisclosureRequirementTitle: Operations assessed for risks related to corruption
+    excerptFrom: 205-1
+    standardDisclosureRequirementText: |-
+      Report the total number and percentage of operations assessed for risks related to corruption, and the significant risks related to corruption identified through the risk assessment.
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: GRI
+      clauseRef: 205-1
+- topicSectionKey: anti_corruption.iro
+  pillar: iro_management
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: anti_corruption.iro.communication_and_training
+    standardDisclosureRequirementTitle: Communication and training about anti-corruption policies and procedures
+    excerptFrom: 205-2
+    standardDisclosureRequirementText: |-
+      Report the number and percentage of governance body members, employees and business partners to whom the organization's anti-corruption policies and procedures have been communicated, and the number and percentage of governance body members and employees who have received training on anti-corruption.
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: GRI
+      clauseRef: 205-2
+  - standardDisclosureRequirementKey: anti_corruption.iro.incidents
+    standardDisclosureRequirementTitle: Confirmed incidents of corruption and actions taken
+    excerptFrom: 205-3
+    standardDisclosureRequirementText: |-
+      Report the total number and nature of confirmed incidents of corruption, the incidents in which employees were dismissed or disciplined and in which contracts with business partners were terminated or not renewed, and any public legal cases regarding corruption brought during the reporting period; where none have been identified, a brief statement of that fact is sufficient.
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: GRI
+      clauseRef: 205-3

@@ -1,0 +1,83 @@
+# 演示實例數據——僅用於導出樣式樣本 Word / 契約 JSON。走單一 typed 管線：
+# inputs = CompanyInputs（上游輸入，parse-first；industry/summary/materiality 由 build_report 現算）；
+# content = ReportContent（預寫正文 generated/tables，由 apply_report_content 寫回）。生產環境此數據來自 AI 生成 + 用戶編輯。
+inputs:
+  fields:
+    company_registered_name: 晉澧精密工業控股有限公司
+    company_short_name: 晉澧精密
+    reporting_year: 2025
+    report_period_start: "2025-01-01"
+    report_period_end: "2025-12-31"
+    consolidation_scope: 本公司及全部附屬公司
+    report_approval_year: 2026
+    report_approval_month: 2026-03
+    report_publication_channel: 聯交所披露易及公司網站刊發
+    report_publication_website_url: https://www.jinli-precision.example.hk
+    industry_major_category: 製造業
+    industry_division: 精密金屬沖壓件及連接器製造
+  company_profile: 晉澧精密工業控股有限公司是在香港聯合交易所主板上市的精密製造企業，總部位於香港觀塘，生產基地位於廣東東莞，主要從事精密金屬沖壓件、連接器及組裝模組的研發、製造及銷售，客戶涵蓋消費電子、工業設備及新能源汽車零部件領域。公司建立了涵蓋研發、生產、品質及客戶服務的業務體系，持續推進自動化製造、節能減排及供應鏈協同，重視僱員發展、產品責任及社區參與，致力為客戶、股東及社會創造長期價值。
+  business_summary: 公司是香港主板上市的精密製造企業，主要從事精密金屬沖壓件、連接器及組裝模組的研發、製造及銷售，客戶涵蓋消費電子、工業設備及新能源汽車零部件領域。
+  intake:
+    board_statement.q_oversight:
+      answer: 董事會對環境、社會及管治事宜負最終責任，每年至少兩次審議相關風險、目標及進展；環境、社會及管治工作小組由執行董事牽頭，向董事會匯報。
+    board_statement.q_management_approach:
+      answer: 董事會確立以合規營運、綠色製造及以人為本為主軸的管理方針；重要議題透過年度持份者問卷及管理層評估識別及排序，並按對業務及持份者的重要性釐定披露重點。
+    board_statement.q_progress_review:
+      answer: 董事會每年檢討能源密度、溫室氣體排放密度及工傷率等目標的進展，並按業務發展調整目標。
+    sustainability_governance_structure:
+      answer: 公司設有由執行董事牽頭的環境、社會及管治工作小組，成員包括財務、人力資源、生產、品質及採購部門主管；各部門指派聯絡人負責數據收集。
+    sustainability_governance_duties:
+      answer: 董事會負責監管及審批；工作小組統籌重要性評估、目標訂立及報告編製；各部門落實措施並按季度提交數據。
+    climate.q_governance_roles:
+      answer: 設有專責部門或崗位負責
+      supplement: 環境、社會及管治工作小組統籌氣候相關事宜，生產部門負責能源及排放數據。
+    climate.q_strategy_content:
+      answer: 公司訂立以2023年為基準年、於2030年將範圍1及範圍2溫室氣體排放密度降低30%的目標，主要透過廠房屋頂太陽能光伏、設備能效提升及購買可再生能源電力推進。
+  assessmentInput:
+    reportingYear: 2025
+    threshold:
+      financial: 4.0
+      impact: 4.0
+    scores:
+    - {assessmentTopicId: climate_change, financialScore: 4.4, impactScore: 4.3}
+    - {assessmentTopicId: emissions, financialScore: 4.1, impactScore: 4.4}
+    - {assessmentTopicId: waste_management, financialScore: 3.6, impactScore: 4.2}
+    - {assessmentTopicId: energy_management, financialScore: 4.5, impactScore: 4.1}
+    - {assessmentTopicId: water_management, financialScore: 3.2, impactScore: 3.8}
+    - {assessmentTopicId: materials_and_packaging, financialScore: 3.5, impactScore: 3.6}
+    - {assessmentTopicId: environment_and_natural_resources, financialScore: 3.0, impactScore: 3.7}
+    - {assessmentTopicId: employment, financialScore: 4.2, impactScore: 4.3}
+    - {assessmentTopicId: health_and_safety, financialScore: 4.3, impactScore: 4.6}
+    - {assessmentTopicId: development_and_training, financialScore: 3.8, impactScore: 4.0}
+    - {assessmentTopicId: labour_standards, financialScore: 3.4, impactScore: 4.2}
+    - {assessmentTopicId: supply_chain_management, financialScore: 4.2, impactScore: 4.0}
+    - {assessmentTopicId: product_responsibility, financialScore: 4.6, impactScore: 4.2}
+    - {assessmentTopicId: data_protection_and_privacy, financialScore: 3.9, impactScore: 3.7}
+    - {assessmentTopicId: anti_corruption, financialScore: 4.1, impactScore: 4.2}
+    - {assessmentTopicId: community_investment, financialScore: 3.0, impactScore: 3.9}
+  quantitativeMetrics:
+    greenhouseGasAccountingStandard: 《溫室氣體核算體系》（GHG Protocol）
+    metrics:
+      economic_revenue: {value: "486.2"}
+      economic_total_employees: {value: "612"}
+      climate_ghg_scope1: {value: "1240"}
+      climate_ghg_scope2: {value: "6830"}
+      climate_ghg_intensity_revenue: {value: "16.6"}
+      energy_purchased_electricity: {value: "11920"}
+      energy_renewable_electricity: {value: "1360"}
+      energy_diesel: {value: "410"}
+      water_consumption_total: {value: "58400"}
+      waste_hazardous_total: {value: "36.5"}
+      waste_non_hazardous_total: {value: "412"}
+      employment_total_workforce: {value: "612"}
+      employment_female: {value: "268"}
+      employment_male: {value: "344"}
+      health_safety_fatalities_current: {value: "0"}
+      health_safety_lost_days: {value: "126"}
+      training_hours_average: {value: "18.5"}
+      supply_chain_suppliers_total: {value: "213"}
+      anti_corruption_legal_cases: {value: "0"}
+      community_volunteer_hours: {value: "640"}
+content:
+  generated: {}
+  tables: {}

@@ -1,0 +1,977 @@
+{
+  "$defs": {
+    "BlockState": {
+      "enum": [
+        "pending",
+        "generating",
+        "ready",
+        "locked",
+        "failed",
+        "omitted"
+      ],
+      "type": "string"
+    },
+    "CatalogReference": {
+      "additionalProperties": false,
+      "description": "adaptive_catalog 的典型参考条目：仅供前置一步据企业业务取舍/补充生成适用锚点，不强制、不作正文预设。\n\ncategory=分组类型（并发分组键，如风险/机遇）、name=条目名称、reference=典型内容/影响参考口径（供参照改写、不照抄）。\n与 FixedRowSeed（preset_catalog 的固定行锚点）是两个不同概念：一为参考、一为固定。",
+      "properties": {
+        "category": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "reference": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        }
+      },
+      "required": [
+        "category",
+        "name"
+      ],
+      "title": "CatalogReference",
+      "type": "object"
+    },
+    "Condition": {
+      "additionalProperties": false,
+      "properties": {
+        "all": {
+          "anyOf": [
+            {
+              "items": {
+                "$ref": "#/$defs/ConditionRule"
+              },
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "any": {
+          "anyOf": [
+            {
+              "items": {
+                "$ref": "#/$defs/ConditionRule"
+              },
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        }
+      },
+      "title": "Condition",
+      "type": "object",
+      "required": []
+    },
+    "ConditionRule": {
+      "additionalProperties": false,
+      "properties": {
+        "path": {
+          "type": "string"
+        },
+        "op": {
+          "enum": [
+            "eq",
+            "ne",
+            "exists",
+            "not_exists",
+            "gt",
+            "in",
+            "contains_any"
+          ],
+          "type": "string"
+        },
+        "value": {
+          "anyOf": [
+            {},
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        }
+      },
+      "required": [
+        "path",
+        "op"
+      ],
+      "title": "ConditionRule",
+      "type": "object"
+    },
+    "ExplicitGenerationEvidenceSelector": {
+      "additionalProperties": false,
+      "description": "显式证据选择器：生成块只读取声明的内容清单项和定量指标。",
+      "properties": {
+        "kind": {
+          "const": "explicit",
+          "type": "string"
+        },
+        "intakeItems": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "quantitativeMetrics": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "kind"
+      ],
+      "title": "ExplicitGenerationEvidenceSelector",
+      "type": "object"
+    },
+    "FixedRowSeed": {
+      "additionalProperties": false,
+      "description": "固定表格行种子：用于由契约声明表格行主题，生成链只补全文本内容。\n\npreset_catalog 表：theme=行名称锚点、category=类型（并发分组键）、referenceImpact=该行潜在影响参考口径\n（仅供模型参考改写、不照抄，不作为正文预设）。",
+      "properties": {
+        "theme": {
+          "type": "string"
+        },
+        "category": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "driver_hint": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "referenceImpact": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        }
+      },
+      "required": [
+        "theme"
+      ],
+      "title": "FixedRowSeed",
+      "type": "object"
+    },
+    "GenerationEvidenceSelector": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/ExplicitGenerationEvidenceSelector"
+        },
+        {
+          "$ref": "#/$defs/ReportSectionGenerationEvidenceSelector"
+        },
+        {
+          "$ref": "#/$defs/MaterialGatedGenerationEvidenceSelector"
+        }
+      ]
+    },
+    "GenerationInputs": {
+      "additionalProperties": false,
+      "description": "生成输入合同：证据选择与额外主体字段分离，不允许未消费的配置静默通过。",
+      "properties": {
+        "evidence": {
+          "$ref": "#/$defs/GenerationEvidenceSelector"
+        },
+        "fields": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "evidence"
+      ],
+      "title": "GenerationInputs",
+      "type": "object"
+    },
+    "GenerationSpec": {
+      "additionalProperties": false,
+      "description": "模型生成合同；任务、证据与输出约束均须显式声明。",
+      "properties": {
+        "task": {
+          "$ref": "#/$defs/GenerationTask"
+        },
+        "inputs": {
+          "$ref": "#/$defs/GenerationInputs"
+        },
+        "templateResidueBans": {
+          "anyOf": [
+            {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "evidenceGatedFacts": {
+          "anyOf": [
+            {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "targetChars": {
+          "anyOf": [
+            {
+              "maxItems": 2,
+              "minItems": 2,
+              "prefixItems": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "integer"
+                }
+              ],
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "rowCount": {
+          "anyOf": [
+            {
+              "maxItems": 2,
+              "minItems": 2,
+              "prefixItems": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "integer"
+                }
+              ],
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "fixedRowSeeds": {
+          "anyOf": [
+            {
+              "items": {
+                "$ref": "#/$defs/FixedRowSeed"
+              },
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "presetRowSelection": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/PresetRowSelection"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "referenceCatalog": {
+          "anyOf": [
+            {
+              "items": {
+                "$ref": "#/$defs/CatalogReference"
+              },
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "rowExpansion": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/RowExpansion"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "rowMode": {
+          "anyOf": [
+            {
+              "enum": [
+                "preset_catalog",
+                "adaptive_catalog",
+                "expanded_rows"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "producesConclusion": {
+          "anyOf": [
+            {
+              "const": "topic_iro",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "standardDisclosureRequirementKeys": {
+          "anyOf": [
+            {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "simplifiedWritingGuidance": {
+          "anyOf": [
+            {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "disclosureStance": {
+          "default": "standard",
+          "enum": [
+            "standard",
+            "risk_disclosure"
+          ],
+          "type": "string"
+        }
+      },
+      "required": [
+        "task"
+      ],
+      "title": "GenerationSpec",
+      "type": "object"
+    },
+    "GenerationTask": {
+      "additionalProperties": false,
+      "description": "生成块的唯一任务合同；不从正文占位或块类型反向推断。",
+      "properties": {
+        "mode": {
+          "default": "standard",
+          "enum": [
+            "standard",
+            "metric_narrative"
+          ],
+          "type": "string"
+        },
+        "focus": {
+          "type": "string"
+        },
+        "noFactGuidance": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        }
+      },
+      "required": [
+        "focus"
+      ],
+      "title": "GenerationTask",
+      "type": "object"
+    },
+    "GsTableCell": {
+      "additionalProperties": false,
+      "description": "单元格 = Plate td/th 节点 + 业务属性。受控值存 value（保结构化类型）；options 可在单元格级覆盖列级（如 IRO 影响行/风险机遇行选项不同）。",
+      "properties": {
+        "type": {
+          "default": "td",
+          "enum": [
+            "td",
+            "th"
+          ],
+          "type": "string"
+        },
+        "colKey": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "value": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "options": {
+          "anyOf": [
+            {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "colSpan": {
+          "default": 1,
+          "type": "integer"
+        },
+        "rowSpan": {
+          "default": 1,
+          "type": "integer"
+        },
+        "cellState": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/BlockState"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "children": {
+          "items": {
+            "additionalProperties": true,
+            "type": "object"
+          },
+          "type": "array"
+        }
+      },
+      "title": "GsTableCell",
+      "type": "object",
+      "required": []
+    },
+    "GsTableRow": {
+      "additionalProperties": false,
+      "description": "行 = Plate tr 节点 + 业务属性。",
+      "properties": {
+        "type": {
+          "const": "tr",
+          "default": "tr",
+          "type": "string"
+        },
+        "headerRow": {
+          "default": false,
+          "type": "boolean"
+        },
+        "state": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/BlockState"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "origin": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/RowOrigin"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "generation": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/GenerationSpec"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "appears_when": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Condition"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "children": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/GsTableCell"
+          },
+          "type": "array"
+        }
+      },
+      "title": "GsTableRow",
+      "type": "object",
+      "required": [
+        "children"
+      ]
+    },
+    "MaterialGatedGenerationEvidenceSelector": {
+      "additionalProperties": false,
+      "description": "证据门控选择器：块的存在性由证据判定，缺证据时整块受控省略而非方向性生成。\n\n判定为「或」语义：Mapping 判定 supported/partially_supported 的文件资料，或声明的\nintakeItems 中存在实质答案，任一满足块即出具；两者皆无时生成编排直接置\n``state=\"omitted\"``，随 renderability 从正文与目录消失。纯材料门控是\nintakeItems 为空的退化形态。",
+      "properties": {
+        "kind": {
+          "const": "material_gated",
+          "type": "string"
+        },
+        "intakeItems": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "kind"
+      ],
+      "title": "MaterialGatedGenerationEvidenceSelector",
+      "type": "object"
+    },
+    "ParagraphGenerationResult": {
+      "additionalProperties": false,
+      "description": "从 Report 正文状态投影的一项段落结果。",
+      "properties": {
+        "block_id": {
+          "type": "string"
+        },
+        "text": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "block_id",
+        "text"
+      ],
+      "title": "ParagraphGenerationResult",
+      "type": "object"
+    },
+    "PresetRowSelection": {
+      "additionalProperties": false,
+      "description": "preset_catalog 行显隐合同：由结构化内容清单选择确定可生成的固定行。",
+      "properties": {
+        "intakeItemKey": {
+          "type": "string"
+        },
+        "selectionMode": {
+          "const": "selected_only",
+          "default": "selected_only",
+          "type": "string"
+        },
+        "unansweredBehavior": {
+          "default": "hide_all_rows",
+          "enum": [
+            "hide_all_rows",
+            "show_all_rows"
+          ],
+          "type": "string"
+        }
+      },
+      "required": [
+        "intakeItemKey"
+      ],
+      "title": "PresetRowSelection",
+      "type": "object"
+    },
+    "ReportSectionGenerationEvidenceSelector": {
+      "additionalProperties": false,
+      "description": "报告章节证据选择器：摘要块继承所属 H2 的用户输入与指标目录。",
+      "properties": {
+        "kind": {
+          "const": "report_section",
+          "type": "string"
+        }
+      },
+      "required": [
+        "kind"
+      ],
+      "title": "ReportSectionGenerationEvidenceSelector",
+      "type": "object"
+    },
+    "RowExpansion": {
+      "additionalProperties": false,
+      "description": "把一个业务行展开成多个披露子行的契约声明（如 IRO 表每议题＝影响行 + 风险机遇行）。\n\nsharedColumnKeys 每业务行只填一次、跨子行 rowSpan 合并；units 有序，顺序即表内子行顺序。\n与 preset_catalog 的「多业务行归一分组」方向相反，故为独立 rowMode，不复用锚点列序约定。",
+      "properties": {
+        "sharedColumnKeys": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "units": {
+          "items": {
+            "$ref": "#/$defs/RowExpansionUnit"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "sharedColumnKeys",
+        "units"
+      ],
+      "title": "RowExpansion",
+      "type": "object"
+    },
+    "RowExpansionUnit": {
+      "additionalProperties": false,
+      "description": "一个业务行内的一个披露子行：绑定本子行独占填写的列，并可在列级 options 内收窄候选。\n\nkey 进结构化输出 schema 作字段名（不进 prompt）；label 是模型可见的子行名称（如「影响描述」）。",
+      "properties": {
+        "key": {
+          "type": "string"
+        },
+        "label": {
+          "type": "string"
+        },
+        "columnKeys": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "optionsNarrowing": {
+          "anyOf": [
+            {
+              "additionalProperties": {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              },
+              "type": "object"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "genHintOverride": {
+          "anyOf": [
+            {
+              "additionalProperties": {
+                "type": "string"
+              },
+              "type": "object"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        }
+      },
+      "required": [
+        "key",
+        "label",
+        "columnKeys"
+      ],
+      "title": "RowExpansionUnit",
+      "type": "object"
+    },
+    "RowOrigin": {
+      "additionalProperties": false,
+      "description": "AI 定行的 RowSeed 复现快照：单行重生成据此还原 seed（SSOT §3.C/§8）。from 区分 AI 定行 / 用户加行。",
+      "properties": {
+        "from": {
+          "default": "ai",
+          "enum": [
+            "ai",
+            "user"
+          ],
+          "type": "string"
+        },
+        "theme": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "category": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "driver_hint": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        }
+      },
+      "title": "RowOrigin",
+      "type": "object",
+      "required": []
+    },
+    "SectionDisplayTitle": {
+      "additionalProperties": false,
+      "description": "章节的实例级用户可见标题；稳定导航标题仍由 Section.title 拥有。",
+      "properties": {
+        "text": {
+          "type": "string"
+        },
+        "origin": {
+          "enum": [
+            "generated",
+            "user"
+          ],
+          "type": "string"
+        },
+        "inputFingerprint": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "text",
+        "origin",
+        "inputFingerprint"
+      ],
+      "title": "SectionDisplayTitle",
+      "type": "object"
+    },
+    "SectionRewriteAllowance": {
+      "additionalProperties": false,
+      "description": "整节生成完成后的服务端权威重写额度。",
+      "properties": {
+        "quota": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "used": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "reserved": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "remaining": {
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "quota",
+        "used",
+        "reserved",
+        "remaining"
+      ],
+      "title": "SectionRewriteAllowance",
+      "type": "object"
+    },
+    "TableGenerationResult": {
+      "additionalProperties": false,
+      "description": "从 Report 表格状态投影的一项表格结果。",
+      "properties": {
+        "block_id": {
+          "type": "string"
+        },
+        "rows": {
+          "items": {
+            "$ref": "#/$defs/GsTableRow"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "block_id",
+        "rows"
+      ],
+      "title": "TableGenerationResult",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "description": "整节生成或幂等重放的完整公共响应。",
+  "properties": {
+    "batch_id": {
+      "format": "uuid",
+      "type": "string"
+    },
+    "mode": {
+      "enum": [
+        "initial",
+        "regeneration"
+      ],
+      "type": "string"
+    },
+    "replayed": {
+      "type": "boolean"
+    },
+    "state_seq": {
+      "minimum": 1,
+      "type": "integer"
+    },
+    "results": {
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "#/$defs/ParagraphGenerationResult"
+          },
+          {
+            "$ref": "#/$defs/TableGenerationResult"
+          }
+        ]
+      },
+      "type": "array"
+    },
+    "section_titles": {
+      "additionalProperties": {
+        "$ref": "#/$defs/SectionDisplayTitle"
+      },
+      "type": "object"
+    },
+    "input_fingerprint": {
+      "maxLength": 64,
+      "minLength": 64,
+      "type": "string"
+    },
+    "freshness": {
+      "const": "fresh",
+      "type": "string"
+    },
+    "company_business_summary": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "allowance": {
+      "$ref": "#/$defs/SectionRewriteAllowance"
+    }
+  },
+  "required": [
+    "batch_id",
+    "mode",
+    "replayed",
+    "state_seq",
+    "results",
+    "section_titles",
+    "input_fingerprint",
+    "freshness",
+    "company_business_summary",
+    "allowance"
+  ],
+  "title": "SectionGenerationResponse",
+  "type": "object"
+}

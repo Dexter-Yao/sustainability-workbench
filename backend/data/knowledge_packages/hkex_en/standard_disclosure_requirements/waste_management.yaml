@@ -1,0 +1,69 @@
+# ABOUTME(en): Appendix C2 disclosure requirements of "Waste Management" (General Disclosure and KPIs), grouped by pillar,
+# ABOUTME(en): for the coverage audit and for prompt assembly by key whitelist (injection is switch-gated, off by default) and for the coverage audit. Wording follows the English Code text.
+topicStandardDisclosureRequirementGroups:
+- topicSectionKey: waste_management.gov
+  pillar: governance
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: waste_management.gov.general_disclosure_policies
+    standardDisclosureRequirementTitle: Waste management policies
+    excerptFrom: HKEX·Appendix C2·General Disclosure A1
+    standardDisclosureRequirementText: |-
+      Disclose the policies on the generation and disposal of hazardous and non-hazardous waste.
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: General Disclosure A1
+  - standardDisclosureRequirementKey: waste_management.gov.general_disclosure_compliance
+    standardDisclosureRequirementTitle: Compliance with waste-related laws and regulations
+    excerptFrom: HKEX·Appendix C2·General Disclosure A1
+    standardDisclosureRequirementText: |-
+      Disclose information on compliance with waste-related laws and regulations that have a significant impact on the issuer.
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: General Disclosure A1
+- topicSectionKey: waste_management.strategy
+  pillar: strategy
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: waste_management.strategy.waste_reduction_targets
+    standardDisclosureRequirementTitle: Waste reduction targets and steps taken to achieve them
+    excerptFrom: HKEX·Appendix C2·KPI A1.6
+    standardDisclosureRequirementText: |-
+      Description of waste reduction target(s) set and steps taken to achieve them.
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: KPI A1.6
+- topicSectionKey: waste_management.iro
+  pillar: iro_management
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: waste_management.iro.waste_handling
+    standardDisclosureRequirementTitle: Handling of hazardous and non-hazardous waste
+    excerptFrom: HKEX·Appendix C2·KPI A1.6
+    standardDisclosureRequirementText: |-
+      Description of how hazardous and non-hazardous wastes are handled, including sorting, collection, temporary storage, disposal through licensed contractors and recycling.
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: KPI A1.6
+- topicSectionKey: waste_management.metrics
+  pillar: metrics_targets
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: waste_management.metrics.hazardous_waste_data
+    standardDisclosureRequirementTitle: Total hazardous waste produced and intensity
+    excerptFrom: HKEX·Appendix C2·KPI A1.3
+    standardDisclosureRequirementText: |-
+      Disclose the total hazardous waste produced (in tonnes) and, where appropriate, intensity (e.g. per unit of production volume, per facility).
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: KPI A1.3
+  - standardDisclosureRequirementKey: waste_management.metrics.non_hazardous_waste_data
+    standardDisclosureRequirementTitle: Total non-hazardous waste produced and intensity
+    excerptFrom: HKEX·Appendix C2·KPI A1.4
+    standardDisclosureRequirementText: |-
+      Disclose the total non-hazardous waste produced (in tonnes) and, where appropriate, intensity (e.g. per unit of production volume, per facility).
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: KPI A1.4

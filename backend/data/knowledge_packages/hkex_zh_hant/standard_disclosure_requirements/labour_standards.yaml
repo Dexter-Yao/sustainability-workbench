@@ -1,0 +1,52 @@
+# ABOUTME(en): Appendix C2 disclosure requirements of「勞工準則」(General Disclosure and KPIs), grouped by pillar,
+# ABOUTME(en): for the coverage audit and for prompt assembly by key whitelist (injection is switch-gated, off by default) and for the coverage audit. Wording awaits check against the official Chinese text.
+topicStandardDisclosureRequirementGroups:
+- topicSectionKey: labour_standards.gov
+  pillar: governance
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: labour_standards.gov.general_disclosure_policies
+    standardDisclosureRequirementTitle: 防止童工及強制勞工的政策
+    excerptFrom: 港交所·附錄C2·一般披露 B4
+    standardDisclosureRequirementText: 應披露有關防止童工或強制勞工的政策。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: 一般披露 B4
+  - standardDisclosureRequirementKey: labour_standards.gov.general_disclosure_compliance
+    standardDisclosureRequirementTitle: 遵守勞工準則相關法律及規例
+    excerptFrom: 港交所·附錄C2·一般披露 B4
+    standardDisclosureRequirementText: 應披露遵守對發行人有重大影響的防止童工及強制勞工相關法律及規例的資料。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: 一般披露 B4
+- topicSectionKey: labour_standards.strategy
+  pillar: strategy
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: labour_standards.strategy.labour_commitment
+    standardDisclosureRequirementTitle: 勞工準則承諾及方向
+    excerptFrom: 港交所·附錄C2·一般披露 B4
+    standardDisclosureRequirementText: 應說明公司在勞工準則方面的承諾及方向。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: 一般披露 B4
+- topicSectionKey: labour_standards.iro
+  pillar: iro_management
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: labour_standards.iro.review_measures
+    standardDisclosureRequirementTitle: 檢討僱傭常規的措施
+    excerptFrom: 港交所·附錄C2·關鍵績效指標 B4.1
+    standardDisclosureRequirementText: 應描述檢討招聘及僱傭常規的措施，以避免童工及強制勞工。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: 關鍵績效指標 B4.1
+  - standardDisclosureRequirementKey: labour_standards.iro.remediation_steps
+    standardDisclosureRequirementTitle: 發現違規時的消除步驟
+    excerptFrom: 港交所·附錄C2·關鍵績效指標 B4.2
+    standardDisclosureRequirementText: 應描述在發現違規情況時消除有關情況所採取的步驟。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: 關鍵績效指標 B4.2

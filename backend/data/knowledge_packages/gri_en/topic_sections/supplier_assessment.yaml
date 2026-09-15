@@ -1,0 +1,100 @@
+# ABOUTME(en): Topic chapter template of the GRI topic "Supplier Assessment" (GRI 308: Supplier Environmental Assessment 2016 and GRI 414: Supplier Social Assessment 2016): management /
+# ABOUTME(en): approach / actions blocks with their intake evidence and GRI requirement keys; the metrics H3 is compiled from metricDisclosure.
+section:
+  key: supplier_assessment
+  title: Supplier Assessment
+  headingLevel: 2
+  reportSectionId: supplier_assessment
+  conciseDisclosure:
+    id: supplier.concise_summary
+    type: paragraph
+    blockType: generative
+    source: ai
+    styleRole: body
+    generation:
+      task:
+        focus: |-
+          From the evidence currently visible for this topic, write one coherent summary covering how suppliers are screened and assessed on environmental and social criteria and how identified impacts are handled, without the four sub-headings.
+      inputs:
+        evidence:
+          kind: report_section
+      targetChars:
+      - 260
+      - 520
+  children:
+  - key: supplier_assessment.gov
+    title: Management of the Topic
+    pillar: governance
+    headingLevel: 3
+    blocks:
+    - id: supplier.gov_policy
+      type: paragraph
+      blockType: generative
+      source: ai
+      styleRole: body
+      generation:
+        task:
+          focus: |-
+            Describe how the company manages supplier assessment: the responsibilities and policies covering environmental and social criteria in supplier selection and management.
+          noFactGuidance: |-
+            When the user provides no facts for this part, keep a prudent, general and low-commitment register describing the management attention and directional arrangements common to the industry; do not claim that specific systems, projects, certifications or results are in place.
+        inputs:
+          evidence:
+            kind: report_section
+        targetChars:
+        - 220
+        - 420
+        standardDisclosureRequirementKeys:
+        - supplier_assessment.gov.management_of_supplier_assessment
+  - key: supplier_assessment.strategy
+    title: Approach and Targets
+    pillar: strategy
+    headingLevel: 3
+    blocks:
+    - id: supplier.strategy_direction
+      type: paragraph
+      blockType: generative
+      source: ai
+      styleRole: body
+      generation:
+        task:
+          focus: |-
+            Describe the company's direction and targets for supplier assessment, including the approach to screening new suppliers against environmental and social criteria.
+          noFactGuidance: |-
+            When the user provides no facts for this part, keep a prudent, general and low-commitment register describing the management attention and directional arrangements common to the industry; do not claim that specific systems, projects, certifications or results are in place.
+        inputs:
+          evidence:
+            kind: report_section
+        targetChars:
+        - 200
+        - 400
+        standardDisclosureRequirementKeys:
+        - supplier_assessment.strategy.screening
+  - key: supplier_assessment.iro
+    title: Actions and Processes
+    pillar: iro_management
+    headingLevel: 3
+    blocks:
+    - id: supplier.iro_measures
+      type: paragraph
+      blockType: generative
+      source: ai
+      styleRole: body
+      generation:
+        task:
+          focus: |-
+            Describe the actions and processes the company applies to supplier assessment: how suppliers are assessed, what negative impacts were identified, and how improvements are agreed or relationships ended.
+          noFactGuidance: |-
+            When the user provides no facts for this part, keep a prudent, general and low-commitment register describing the management attention and directional arrangements common to the industry; do not claim that specific systems, projects, certifications or results are in place.
+        inputs:
+          evidence:
+            kind: report_section
+        targetChars:
+        - 240
+        - 460
+        standardDisclosureRequirementKeys:
+        - supplier_assessment.iro.negative_impacts
+metricDisclosure:
+  catalogMetricKeys:
+  - supply_chain_suppliers_total
+  - supply_chain_suppliers_assessed

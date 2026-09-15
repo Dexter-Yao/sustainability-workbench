@@ -1,0 +1,292 @@
+# 气候议题章节模板（topic_sections）。planner 据 registry dimension(climate_change=环境) 挂入环境大章；
+# 议题 guard 保障「实质议题与章节双向对应」。本文件＝阶段二 MVP 治理支柱。
+# 输入走分议题内容清单（topic_intake/climate_change.yaml）经 inputs.evidence.intakeItems 喂入；
+# 当前活跃合同不包含业务资料上传入口。减排细颗粒 5 块（零碳/供应链/产品足迹/减排/绿色案例）已收敛为 1 个
+# generative「减排实践」块（吃 Q4）；细颗粒「完整合规版」变体见 commit 55b9714 前的本文件，待 intensity 选择器复用。
+section:
+  key: climate_change
+  title: 应对气候变化
+  headingLevel: 2
+  reportSectionId: climate_change
+  conciseDisclosure:
+    id: climate_change.concise_summary
+    type: paragraph
+    blockType: generative
+    source: ai
+    styleRole: body
+    generation:
+      task:
+        focus: "根据本议题当前可见证据形成一段连贯摘要，覆盖相关管理关注、方向与实践，不使用四要素小标题。"
+      inputs: {evidence: {kind: report_section}}
+      targetChars: [300, 600]
+  children:
+    - key: climate.gov
+      title: 治理
+      pillar: governance
+      headingLevel: 3
+      blocks:
+        - id: climate.gov_structure
+          type: paragraph
+          blockType: generative
+          source: ai
+          styleRole: body
+          generation:
+            task:
+              focus: "说明气候相关事项的监督责任、职责分工和协调安排。"
+            inputs: {evidence: {kind: explicit, intakeItems: [climate.q_governance_roles, climate.q_governance_policies, climate.q_governance_certifications]}}
+            targetChars: [250, 500]
+            standardDisclosureRequirementKeys:
+              - climate.gov.governance_body
+              - climate.gov.expertise
+              - climate.gov.information_mechanism
+              - climate.gov.supervision
+              - climate.gov.decision_integration
+            simplifiedWritingGuidance:
+              - "ISO 50001 表述为能源管理体系建设及认证；ISO 14064-1 表述为依据该标准开展或完成温室气体核查。"
+    - key: climate.strategy
+      title: 战略
+      pillar: strategy
+      headingLevel: 3
+      blocks:
+        - id: climate.strategy_direction
+          type: paragraph
+          blockType: generative
+          source: ai
+          styleRole: body
+          generation:
+            task:
+              focus: "按“战略方向—管理重点—目标状态”组织应对气候变化的战略段落；仅在已填写时吸收战略补充与目标状态，不以风险或机遇清单作为段落开头。"
+            inputs: {evidence: {kind: explicit, intakeItems: [climate.q_climate_target_status, climate.q_strategy_content]}}
+            targetChars: [180, 360]
+            standardDisclosureRequirementKeys: [climate.strategy.strategy_decision]
+            simplifiedWritingGuidance:
+              - "先说明战略方向，再说明管理重点，最后说明已确认的目标状态或后续安排。风险和机遇的具体识别、影响与应对仅在本节后续的风险与机遇表格中呈现，段落不重复表格明细。未提供量化目标时不得补造基准年、目标年、比例或项目名称。"
+        - id: climate.strategy_identification
+          type: paragraph
+          blockType: fixed
+          source: template
+          styleRole: body
+          content: [{kind: text, text: "本章基于公司对气候相关风险、机遇和目标状态的确认，围绕可能影响及管理方向进行披露。相关风险与机遇的方向性分析如下："}]
+        - id: climate.strategy_physical_risk
+          type: table
+          blockType: generative
+          source: ai
+          generation:
+            task:
+              focus: "完成「气候相关物理风险及应对措施」表格内容。"
+              noFactGuidance: |-
+                请结合报告主体的主营业务、所属行业与 TCFD 物理风险框架，为每一条气候相关物理风险撰写潜在影响与应对措施，
+                并在受控选项内选取影响价值链、影响时限与财务影响；参考口径仅供范围/语气参照，不得坐实具体损失金额或发生概率，评估性判断须为方向性参考。
+            rowMode: preset_catalog
+            presetRowSelection: {intakeItemKey: climate.q_climate_risk_choices, selectionMode: selected_only, unansweredBehavior: show_all_rows}
+            disclosureStance: risk_disclosure
+            inputs: {evidence: {kind: explicit, intakeItems: [climate.q_strategy_content, climate.q_climate_risk_choices]}}
+            standardDisclosureRequirementKeys: [climate.strategy.material_impact, climate.strategy.risks_opportunities, climate.strategy.value_chain_impact]
+            fixedRowSeeds:
+              - {theme: 台风, category: 急性风险, referenceImpact: "台风/大风天气可能破坏厂房、设备等固定资产并引发停工停产，甚至财产及人身安全事故。"}
+              - {theme: 暴雨, category: 急性风险, referenceImpact: "暴雨天气可能导致交通受限或交通基础设施损坏，影响供应链运输。"}
+              - {theme: 极端高温, category: 急性风险, referenceImpact: "持续极端高温可能引发限电、致使产能受限，加大室外作业员工健康安全风险，制冷负荷增长导致用能用电量增加。"}
+              - {theme: 海平面上升, category: 慢性风险, referenceImpact: "海平面上升及其引发的沿海洪涝灾害可能导致厂房、设备、存货等资产受到损毁或淹没。"}
+              - {theme: 降水和温度的变化, category: 慢性风险, referenceImpact: "长期降水、气温环境持续改变，扰乱日常生产运营安排，加速设施老化损耗，增加季节性灾害干扰生产的可能性。"}
+              - {theme: 生物多样性丧失和土壤生产力变化, category: 慢性风险, referenceImpact: "周边自然生态环境稳定性下降，区域自然防灾缓冲能力减弱，供应链生态相关合规管理压力上升。"}
+              - {theme: 水短缺, category: 慢性风险, referenceImpact: "生产、运营所需水资源供给不足，限制日常生产活动，加大水资源管控与节水运维压力，极端缺水下将造成生产无法正常开展。"}
+            simplifiedWritingGuidance:
+              - 气候风险表应保持整表行文一致，围绕行业和业务类型给出方向性影响与应对；固定行、报告主体和宽泛输入只用于判断相关性，不延伸为未提供的客户、产品线、厂区、工序、项目、时间表、专门机制或量化结论。
+          table:
+            caption: 气候相关物理风险及应对措施
+            iroKind: risk
+            disclaimer: "表中财务影响为方向性分析，不构成对公司经营结果、财务表现或风险发生情况的预测。影响时限：短期为报告期结束后1年以内（含1年）；中期为报告期结束后1—5年（含5年）；长期为报告期结束后5年以上。"
+            rowSource: user
+            colDefs:
+              - {key: phys_type, header: 风险类型, cellType: text}
+              - {key: phys_name, header: 风险名称, cellType: text}
+              - {key: phys_impact, header: 潜在影响, cellType: ai_text, subjectTerm: company, genHint: "统一使用“公司”指代报告主体、不使用公司简称；体现所属行业和业务类型相关性，约35—70字；参考口径仅供范围/语气参照、不得照抄；风险影响保持方向性，不把水短缺、高温、暴雨等风险写成具体工序或设施受损清单；不得展开客户、产品线、厂区、项目、考核、认证、时间表、低洼/沿海等场地暴露或专门机制，除非用户明确提供且适合披露"}
+              - {key: phys_value_chain, header: 影响价值链, cellType: multi_select, options: [上游价值链, 公司运营, 下游价值链], genHint: "按该风险对公司业务的实际影响范围选取，可多选"}
+              - {key: phys_time_horizon, header: 影响时限, cellType: multi_select, options: [短期, 中期, 长期], genHint: "按影响显现的时间尺度选取，可多选"}
+              - {key: phys_financial, header: 财务影响, cellType: multi_select, options: [收入减少, 成本上升, 资产减值, 资本支出增加], genHint: "按该风险对公司财务的实际作用方向选取，可多选"}
+              - {key: phys_response, header: 应对及管理措施, cellType: ai_text, genHint: "简述措施大意，使用2—3个短句；不同类型措施用中文分号分隔，不写项目符号、编号列表或换行列表；使用关注、跟踪、加强、优化、适度完善等方向性表达，避免每行机械重复同一句式；不得写预案、演练、应急物资、固定排查机制、供应商协同、备用路线、监测机制、节水改造、保险配置、资产转移规划、地势评估或具体项目名/数据，除非用户明确提供"}
+            children:
+              - headerRow: true
+                children:
+                  - {type: th, value: 物理风险, colSpan: 7}
+              - headerRow: true
+                children:
+                  - {type: th, value: 风险类型}
+                  - {type: th, value: 风险名称}
+                  - {type: th, value: 潜在影响}
+                  - {type: th, value: 影响价值链}
+                  - {type: th, value: 影响时限}
+                  - {type: th, value: 财务影响}
+                  - {type: th, value: 应对及管理措施}
+        - id: climate.strategy_transition_risk
+          type: table
+          blockType: generative
+          source: ai
+          generation:
+            task:
+              focus: "完成「气候相关转型风险及应对措施」表格内容。"
+              noFactGuidance: |-
+                请结合报告主体的主营业务、所属行业与 TCFD 转型风险框架（政策/技术/市场/声誉），为每一条转型风险撰写潜在影响与应对措施，
+                并在受控选项内选取影响价值链、影响时限与财务影响；参考口径仅供范围/语气参照，不得坐实本公司具体数据，评估性判断须为方向性参考。
+            rowMode: preset_catalog
+            presetRowSelection: {intakeItemKey: climate.q_climate_risk_choices, selectionMode: selected_only, unansweredBehavior: show_all_rows}
+            disclosureStance: risk_disclosure
+            inputs: {evidence: {kind: explicit, intakeItems: [climate.q_strategy_content, climate.q_climate_risk_choices]}}
+            standardDisclosureRequirementKeys: [climate.strategy.material_impact, climate.strategy.risks_opportunities, climate.strategy.value_chain_impact]
+            fixedRowSeeds:
+              - {theme: 碳定价与排放监管政策变化, category: 政策风险, referenceImpact: "实施碳定价机制、强化排放量报告义务、现有产品和服务的监管要求变化等政策措施，可能对企业运营产生直接及供应链间接影响。"}
+              - {theme: 气候相关诉讼风险, category: 政策风险, referenceImpact: "监管部门、投资者、客户、公众等相关方针对企业气候相关合规性、信息披露、环境影响提起的监管调查、诉讼、索赔及舆论监督事件增多。"}
+              - {theme: 低碳技术替代与转型风险, category: 技术风险, referenceImpact: "低碳、节能、环保相关新兴技术研发与商业化应用加速，可能对企业现有高耗能、高排放的生产技术、运营模式、产品体系形成替代冲击。"}
+              - {theme: 消费者偏好转变风险, category: 市场风险, referenceImpact: "市场对低碳、可持续产品与服务的需求持续提升，采购偏好向低环境影响、高可持续性倾斜，可能导致现有产品服务的市场需求与竞争格局变化。"}
+              - {theme: 原材料成本与资产定价波动风险, category: 市场风险, referenceImpact: "能源、水资源、原材料等生产要素价格大幅波动，环保排放、废弃物处理等合规成本上升，相关资产估值与定价逻辑因气候政策与市场预期而调整。"}
+              - {theme: 气候相关声誉受损风险, category: 声誉风险, referenceImpact: "企业在低碳转型、环境治理、可持续发展方面的表现未达利益相关方预期，引发客户、投资者、公众、媒体的负面评价，导致品牌声誉与责任评级受损。"}
+            simplifiedWritingGuidance:
+              - 表格应保持整表行文一致，围绕行业和业务类型给出方向性影响与应对；固定行或宽泛输入不延伸为未提供的客户、产品线、厂区、项目、时间表、专门机制或量化结论。
+          table:
+            caption: 气候相关转型风险及应对措施
+            iroKind: risk
+            disclaimer: "表中财务影响为方向性分析，不构成对公司经营结果、财务表现或风险发生情况的预测。影响时限：短期为报告期结束后1年以内（含1年）；中期为报告期结束后1—5年（含5年）；长期为报告期结束后5年以上。"
+            rowSource: user
+            colDefs:
+              - {key: trans_type, header: 风险类型, cellType: text}
+              - {key: trans_name, header: 风险名称, cellType: text}
+              - {key: trans_impact, header: 潜在影响, cellType: ai_text, subjectTerm: company, genHint: "统一使用“公司”指代报告主体、不使用公司简称；体现所属行业和业务类型相关性，约40—80字；参考口径仅供范围/语气参照、不得照抄；不得展开客户、产品线、厂区、项目、考核、认证、时间表、客户低碳标准、供应链绿色低碳要求、产品碳足迹表现、绿色供应链准入或专门机制，除非用户明确提供且适合披露"}
+              - {key: trans_value_chain, header: 影响价值链, cellType: multi_select, options: [上游价值链, 公司运营, 下游价值链], genHint: "按该风险对公司业务的实际影响范围选取，可多选"}
+              - {key: trans_time_horizon, header: 影响时限, cellType: multi_select, options: [短期, 中期, 长期], genHint: "按影响显现的时间尺度选取，可多选"}
+              - {key: trans_financial, header: 财务影响, cellType: multi_select, options: [收入减少, 成本上升, 资产减值, 融资成本上升], genHint: "按该风险对公司财务的实际作用方向选取，可多选"}
+              - {key: trans_response, header: 应对及管理措施, cellType: ai_text, genHint: "简述措施大意，使用2—3个短句；不同类型措施用中文分号分隔，不写项目符号、编号列表或换行列表；使用关注、评估、逐步完善等方向性表达；不得写核算体系、数据管理体系、跨部门协同机制、客户协同对接、定期合规审查、产品全生命周期管理、产品碳足迹管理、绿色供应链要求或具体项目名/数据，除非用户明确提供"}
+            children:
+              - headerRow: true
+                children:
+                  - {type: th, value: 转型风险, colSpan: 7}
+              - headerRow: true
+                children:
+                  - {type: th, value: 风险类型}
+                  - {type: th, value: 风险名称}
+                  - {type: th, value: 潜在影响}
+                  - {type: th, value: 影响价值链}
+                  - {type: th, value: 影响时限}
+                  - {type: th, value: 财务影响}
+                  - {type: th, value: 应对及管理措施}
+        - id: climate.strategy_opportunity
+          type: table
+          blockType: generative
+          source: ai
+          generation:
+            task:
+              focus: "完成「气候相关机遇及应对措施」表格内容。"
+              noFactGuidance: |-
+                请结合报告主体的主营业务、所属行业与 TCFD 机遇框架（资源效率/产品服务/市场/能源来源/适应力），为每一条机遇撰写潜在影响与把握举措，
+                并在受控选项内选取影响价值链、影响时限与财务影响；参考口径仅供范围/语气参照，不得坐实本公司具体数据，评估性判断须为方向性参考。
+            rowMode: preset_catalog
+            presetRowSelection: {intakeItemKey: climate.q_climate_opportunity_choices, selectionMode: selected_only, unansweredBehavior: show_all_rows}
+            inputs: {evidence: {kind: explicit, intakeItems: [climate.q_strategy_content, climate.q_climate_opportunity_choices]}}
+            standardDisclosureRequirementKeys: [climate.strategy.material_impact, climate.strategy.risks_opportunities, climate.strategy.value_chain_impact]
+            fixedRowSeeds:
+              - {theme: 运营资源效率提升机遇, category: 资源效率, referenceImpact: "通过在生产分销流程、建筑物、机器设备和运输工具方面提高能源、物资、水资源和废弃物管理效率，采用循环技术、高效运输方式，实现运营优化。"}
+              - {theme: 低碳产品方案开发机遇, category: 产品服务, referenceImpact: "围绕低排放产品和服务方向，响应市场对低碳属性的关注，并保持方向性表述。"}
+              - {theme: 低碳转型新市场与绿色金融机遇, category: 市场, referenceImpact: "关注低碳经济转型带来的市场机会和融资环境变化，表述保持方向性。"}
+              - {theme: 能源绿色转型, category: 能源来源, referenceImpact: "关注清洁能源替代和能源结构优化方向，表述保持方向性。"}
+              - {theme: 气候适应能力建设与运营优化机遇, category: 适应力, referenceImpact: "培养应对气候变化的适应能力，更好地管理气候相关风险并抓住机遇，包括提升运营效率、设计新生产工艺、开发新产品等。"}
+            simplifiedWritingGuidance:
+              - 表格应保持整表行文一致，围绕行业和业务类型给出方向性影响与应对；固定行或宽泛输入不延伸为未提供的客户、产品线、厂区、项目、时间表、专门机制或量化结论。
+          table:
+            caption: 气候相关机遇及应对措施
+            iroKind: opportunity
+            disclaimer: "影响时限：短期为报告期结束后1年以内（含1年）；中期为报告期结束后1—5年（含5年）；长期为报告期结束后5年以上。"
+            rowSource: user
+            colDefs:
+              - {key: opp_type, header: 机遇类型, cellType: text}
+              - {key: opp_name, header: 机遇名称, cellType: text}
+              - {key: opp_impact, header: 潜在影响, cellType: ai_text, subjectTerm: company, genHint: "统一使用“公司”指代报告主体、不使用公司简称；体现所属行业和业务类型相关性，约40—80字；参考口径仅供范围/语气参照、不得照抄；不得展开客户、产品线、厂区、项目、考核、认证、时间表、客户低碳标准、绿色供应链准入、产品碳足迹、绿色信贷、能源管理系统或专门机制，除非用户明确提供且适合披露"}
+              - {key: opp_value_chain, header: 影响价值链, cellType: multi_select, options: [上游价值链, 公司运营, 下游价值链], genHint: "按该机遇对公司业务的实际作用范围选取，可多选"}
+              - {key: opp_time_horizon, header: 影响时限, cellType: multi_select, options: [短期, 中期, 长期], genHint: "按机遇显现的时间尺度选取，可多选"}
+              - {key: opp_financial, header: 财务影响, cellType: multi_select, options: [收入增加, 成本下降, 研发投入增加, 融资成本下降], genHint: "按该机遇对公司财务的实际作用方向选取，可多选"}
+              - {key: opp_response, header: 应对及管理措施, cellType: ai_text, genHint: "简述措施大意，使用2—3个短句；不同类型措施用中文分号分隔，不写项目符号、编号列表或换行列表；使用关注、优化、探索等方向性表达；不得写客户标准、定制化产品方案、产品碳足迹管理、绿色信贷、能源管理系统、绿色供应链准入、碳足迹核算、经营考核、碳交易、监测应急能力、具体项目名或数据，除非用户明确提供且适合披露"}
+            children:
+              - headerRow: true
+                children:
+                  - {type: th, value: 气候相关机遇, colSpan: 7}
+              - headerRow: true
+                children:
+                  - {type: th, value: 机遇类型}
+                  - {type: th, value: 机遇名称}
+                  - {type: th, value: 潜在影响}
+                  - {type: th, value: 影响价值链}
+                  - {type: th, value: 影响时限}
+                  - {type: th, value: 财务影响}
+                  - {type: th, value: 应对及管理措施}
+    - key: climate.iro
+      title: 影响、风险与机遇管理
+      pillar: iro_management
+      headingLevel: 3
+      blocks: []
+      children:
+        - key: climate.iro.management_framework
+          title: 气候变化管理机制
+          headingLevel: 4
+          titleGeneration:
+            sourceBlockId: climate.iro_management_framework
+            guidance: 概括本内容单元的核心行动或结果，生成简洁、准确且不引入新事实的标题。
+          blocks:
+            - id: climate.iro_management_framework
+              type: paragraph
+              blockType: generative
+              source: ai
+              styleRole: body
+              generation:
+                task:
+                  focus: "依据治理支柱披露的应对气候变化制度与责任安排，提炼制度目标、主要分工职责和相关规范要求，形成公司管理气候相关影响、风险与机遇的框架描述。"
+                  noFactGuidance: "结合报告主体的主营业务与所属行业，按风险识别、日常运营管控和跨部门协同等基础方向，说明公司管理气候相关影响、风险与机遇的一般框架与推进要求；不得虚构制度名称、量化目标、认证或专门机制。"
+                inputs: {evidence: {kind: explicit, intakeItems: [climate.q_governance_policies, climate.q_governance_roles]}}
+                targetChars: [180, 360]
+                standardDisclosureRequirementKeys: [climate.iro.management_process]
+                simplifiedWritingGuidance:
+                  - "从治理支柱已披露的制度与职责事实中提炼管理流程与规范要求，不逐条罗列制度原文，不引入治理支柱未披露的机制。"
+        - key: climate.iro.reduction_practice
+          title: 节能减排与资源效率
+          headingLevel: 4
+          titleGeneration:
+            sourceBlockId: climate.iro_reduction_practice
+            guidance: 概括本内容单元的核心行动或结果，生成简洁、准确且不引入新事实的标题。
+          appears_when:
+            all:
+              - path: "intakeItems.climate.q_reduction_practices"
+                op: contains_any
+                value: [节能, 减排, 降耗, 温室气体, 资源效率, 能源效率, 绿色办公, 低碳运营, 清洁能源, 光伏, 设备改造, 工艺优化, 能源管理, 用能, 碳核算, 碳足迹]
+          blocks:
+            - id: climate.iro_reduction_practice
+              type: paragraph
+              blockType: generative
+              source: ai
+              styleRole: body
+              generation:
+                task:
+                  focus: "说明节能减排、资源效率提升和低碳运营的相关实践。"
+                inputs: {evidence: {kind: explicit, intakeItems: [climate.q_reduction_practices]}}
+                targetChars: [250, 500]
+                standardDisclosureRequirementKeys: [climate.metrics.reduction_practice]
+                simplifiedWritingGuidance:
+                  - "使用温室气体减排、低碳运营、低碳节能或资源效率提升等气候语境。"
+        - key: climate.iro.training
+          title: 气候培训与能力建设
+          headingLevel: 4
+          titleGeneration:
+            sourceBlockId: climate.iro_training
+            guidance: 概括本内容单元的核心行动或结果，生成简洁、准确且不引入新事实的标题。
+          appears_when: {all: [{path: "intakeItems.climate.q_training_activities", op: eq, value: 是}]}
+          blocks:
+            - id: climate.iro_training
+              type: paragraph
+              blockType: constrained
+              source: ai
+              styleRole: body
+              generation:
+                task:
+                  focus: "说明气候相关培训、意识提升和参与活动的实施情况。"
+                inputs: {evidence: {kind: explicit, intakeItems: [climate.q_training_activities]}}
+                targetChars: [150, 320]
+                simplifiedWritingGuidance:
+                  - "使用绿色低碳、温室气体减排、资源效率提升或低碳节能等气候语境。"
+metricDisclosure:
+  catalogMetricKeys: [economic_environment_r04, economic_environment_r05, economic_environment_r07]

@@ -1,0 +1,63 @@
+# ABOUTME(en): Appendix C2 disclosure requirements of「反貪污」(General Disclosure and KPIs), grouped by pillar,
+# ABOUTME(en): for the coverage audit and for prompt assembly by key whitelist (injection is switch-gated, off by default) and for the coverage audit. Wording awaits check against the official Chinese text.
+topicStandardDisclosureRequirementGroups:
+- topicSectionKey: anti_corruption.gov
+  pillar: governance
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: anti_corruption.gov.general_disclosure_policies
+    standardDisclosureRequirementTitle: 反貪污政策
+    excerptFrom: 港交所·附錄C2·一般披露 B7
+    standardDisclosureRequirementText: 應披露有關防止賄賂、勒索、欺詐及洗黑錢的政策。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: 一般披露 B7
+  - standardDisclosureRequirementKey: anti_corruption.gov.general_disclosure_compliance
+    standardDisclosureRequirementTitle: 遵守反貪污相關法律及規例
+    excerptFrom: 港交所·附錄C2·一般披露 B7
+    standardDisclosureRequirementText: 應披露遵守對發行人有重大影響的反貪污相關法律及規例的資料。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: 一般披露 B7
+- topicSectionKey: anti_corruption.strategy
+  pillar: strategy
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: anti_corruption.strategy.integrity_direction
+    standardDisclosureRequirementTitle: 商業道德與誠信方針
+    excerptFrom: 港交所·附錄C2·一般披露 B7
+    standardDisclosureRequirementText: 應說明公司在商業道德與誠信方面的方針及對僱員及業務夥伴的要求。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: 一般披露 B7
+- topicSectionKey: anti_corruption.iro
+  pillar: iro_management
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: anti_corruption.iro.preventive_measures_and_whistleblowing
+    standardDisclosureRequirementTitle: 防範措施及舉報程序
+    excerptFrom: 港交所·附錄C2·關鍵績效指標 B7.2
+    standardDisclosureRequirementText: 應描述防範措施及舉報程序，以及相關執行及監察方法。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: 關鍵績效指標 B7.2
+  - standardDisclosureRequirementKey: anti_corruption.iro.anti_corruption_training
+    standardDisclosureRequirementTitle: 向董事及僱員提供的反貪污培訓
+    excerptFrom: 港交所·附錄C2·關鍵績效指標 B7.3
+    standardDisclosureRequirementText: 應描述向董事及僱員提供的反貪污培訓。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: 關鍵績效指標 B7.3
+- topicSectionKey: anti_corruption.metrics
+  pillar: metrics_targets
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: anti_corruption.metrics.legal_cases_data
+    standardDisclosureRequirementTitle: 已審結的貪污訴訟案件數目及結果
+    excerptFrom: 港交所·附錄C2·關鍵績效指標 B7.1
+    standardDisclosureRequirementText: 應披露於匯報期內對發行人或其僱員提出並已審結的貪污訴訟案件的數目及訴訟結果。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: 關鍵績效指標 B7.1

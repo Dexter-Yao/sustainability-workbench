@@ -1,0 +1,103 @@
+# ABOUTME: 水资源管理议题章节骨架，H2 标题以附录索引表“对应的本报告章节”为准。
+# ABOUTME: 本文件承载水资源管理的段落级生成块；指标块按声明读取ESG 定量数据表的受控投影。
+section:
+  key: water_resource_management
+  title: 水资源管理
+  headingLevel: 2
+  reportSectionId: water_resource_management
+  conciseDisclosure:
+    id: water_resource_management.concise_summary
+    type: paragraph
+    blockType: generative
+    source: ai
+    styleRole: body
+    generation:
+      task:
+        focus: "根据本议题当前可见证据形成一段连贯摘要，覆盖相关管理关注、方向与实践，不使用四要素小标题。"
+      inputs: {evidence: {kind: report_section}}
+      targetChars: [300, 600]
+  children:
+  - key: water_resource_management.gov
+    title: 治理
+    pillar: governance
+    headingLevel: 3
+    blocks:
+    - id: water_resource_management.gov_management_framework
+      type: paragraph
+      blockType: generative
+      source: ai
+      styleRole: body
+      generation:
+        task:
+          focus: "说明水资源管理的责任安排、制度机制和协调方式。"
+        inputs:
+          evidence:
+            kind: explicit
+            intakeItems:
+            - water_resource_management.q_governance_roles
+            - water_resource_management.q_governance_policies
+            - water_resource_management.q_governance_certifications
+        targetChars:
+        - 180
+        - 360
+        standardDisclosureRequirementKeys:
+        - water_resource_management.gov.responsibility_structure
+        - water_resource_management.gov.management_system
+        - water_resource_management.gov.policy_documents
+  - key: water_resource_management.strategy
+    title: 战略
+    pillar: strategy
+    headingLevel: 3
+    blocks:
+    - id: water_resource_management.strategy_water_strategy
+      type: paragraph
+      blockType: generative
+      source: ai
+      styleRole: body
+      generation:
+        task:
+          focus: "说明节水与水资源风险管理的长期方向、目标意识和推进原则。"
+        inputs:
+          evidence:
+            kind: explicit
+            intakeItems:
+            - water_resource_management.q_strategy_content
+        targetChars:
+        - 180
+        - 380
+        standardDisclosureRequirementKeys:
+        - water_resource_management.strategy.saving_strategy
+        - water_resource_management.strategy.water_risk
+  - key: water_resource_management.iro
+    title: 影响、风险与机遇管理
+    pillar: iro_management
+    headingLevel: 3
+    blocks:
+    - id: water_resource_management.iro_water_saving_actions
+      type: paragraph
+      blockType: generative
+      source: ai
+      styleRole: body
+      generation:
+        task:
+          focus: "说明节水行动、水资源利用和相关风险预防的实践。"
+        disclosureStance: risk_disclosure
+        inputs:
+          evidence:
+            kind: explicit
+            intakeItems:
+            - water_resource_management.q_water_stressed_area
+            - water_resource_management.q_water_management_measures
+        targetChars:
+        - 220
+        - 440
+        standardDisclosureRequirementKeys:
+        - water_resource_management.iro.saving_target_and_measures
+        - water_resource_management.iro.water_reuse
+        - water_resource_management.iro.policy_practice
+        - water_resource_management.iro.site_water_assessment
+        simplifiedWritingGuidance:
+          - "聚焦用户已披露的缺水地区判断、节水措施、用水效率、循环用水和风险预防实践，同一事实在本块内组织一次。"
+          - "制度运行频次、问题数量、整改结果、评估报告名称与量化结论必须来自相关事实，不得推断。"
+metricDisclosure:
+  catalogMetricKeys: [economic_environment_r42, economic_environment_r43, economic_environment_r44, economic_environment_r45, economic_environment_r46]

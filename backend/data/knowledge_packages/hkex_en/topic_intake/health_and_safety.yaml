@@ -1,0 +1,22 @@
+# ABOUTME(en): Topic-specific intake questions of "Health and Safety"; the four fixed pillar questions come from topic_intake_common.yaml.
+# ABOUTME(en): Quantitative KPIs are collected through the metric catalog, not here.
+contentScopeId: health_and_safety
+items:
+- key: health_safety.q_ohs_measures
+  prompt: What occupational health and safety measures has the company adopted?
+  kind: text
+  collectionPriority: recommended
+  hint: Risk assessment, training, PPE, inspections, drills.
+  maxChars: 5000
+- key: health_safety.q_ohs_incidents
+  prompt: |-
+    Did any work-related fatality or reportable injury occur during the reporting period?
+  kind: single_select
+  collectionPriority: recommended
+  options:
+  - No work-related fatality or reportable injury
+  - Injuries occurred, no fatality
+  - Work-related fatality occurred
+  - Not sure
+  hint: If any, outline incidents and follow-up; figures via KPIs.
+  maxChars: 5000

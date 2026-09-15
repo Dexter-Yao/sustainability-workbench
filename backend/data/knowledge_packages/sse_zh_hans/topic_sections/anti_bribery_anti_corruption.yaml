@@ -1,0 +1,399 @@
+# ABOUTME: 反商业贿赂与反贪污议题章节骨架，H2 标题以附录索引表“对应的本报告章节”为准。
+# ABOUTME: 本文件承载轻量版反贿赂议题生成块；指标块按声明读取ESG 定量数据表的受控投影。
+section:
+  key: anti_bribery_anti_corruption
+  title: 反商业贿赂与反贪污
+  headingLevel: 2
+  reportSectionId: anti_bribery_anti_corruption
+  conciseDisclosure:
+    id: anti_bribery_anti_corruption.concise_summary
+    type: paragraph
+    blockType: generative
+    source: ai
+    styleRole: body
+    generation:
+      task:
+        focus: "根据本议题当前可见证据形成一段连贯摘要，覆盖相关管理关注、方向与实践，不使用四要素小标题。"
+      inputs: {evidence: {kind: report_section}}
+      targetChars: [300, 600]
+  children:
+  - key: anti_bribery_anti_corruption.gov
+    title: 治理
+    pillar: governance
+    headingLevel: 3
+    blocks:
+    - id: anti_bribery_anti_corruption.gov_structure_responsibilities
+      type: paragraph
+      blockType: generative
+      source: ai
+      styleRole: body
+      generation:
+        task:
+          focus: "说明反商业贿赂与反贪污的责任安排和制度机制。"
+        templateResidueBans:
+        - 《》、《》
+        - 代入上传的制度名称
+        - XX认证
+        - XX标准
+        - 确保XXX
+        - 保障XXX
+        - 填空
+        - 引用数据表
+        - 对应议题指标
+        - 数据表无数据
+        - 着手建立指标量化体系
+        - XXX
+        - 根据资料内容
+        - 根据行业和企业特性
+        - 避免过度具体化
+        inputs:
+          evidence:
+            kind: explicit
+            intakeItems:
+            - anti_bribery_anti_corruption.q_governance_roles
+            - anti_bribery_anti_corruption.q_governance_policies
+            - anti_bribery_anti_corruption.q_governance_certifications
+        targetChars:
+        - 160
+        - 320
+        standardDisclosureRequirementKeys:
+        - anti_bribery_anti_corruption.gov.structure_required
+        - anti_bribery_anti_corruption.gov.policy_system_required
+        - anti_bribery_anti_corruption.gov.certification_encouraged
+        simplifiedWritingGuidance:
+          - "“设有专职部门或岗位负责”按补充说明解析为相应职能、人员或岗位安排。"
+  - key: anti_bribery_anti_corruption.strategy
+    title: 战略
+    pillar: strategy
+    headingLevel: 3
+    blocks:
+    - id: anti_bribery_anti_corruption.strategy_risk_management
+      type: paragraph
+      blockType: generative
+      source: ai
+      styleRole: body
+      generation:
+        task:
+          focus: "说明廉洁经营和反腐败风险管理的长期方向与推进原则。"
+        templateResidueBans:
+        - 《》、《》
+        - 代入上传的制度名称
+        - XX认证
+        - XX标准
+        - 确保XXX
+        - 保障XXX
+        - 填空
+        - 引用数据表
+        - 对应议题指标
+        - 数据表无数据
+        - 着手建立指标量化体系
+        - XXX
+        - 根据资料内容
+        - 根据行业和企业特性
+        - 尽量不要哦太具体
+        inputs:
+          evidence:
+            kind: explicit
+            intakeItems:
+            - anti_bribery_anti_corruption.q_strategy_content
+        targetChars:
+        - 140
+        - 280
+        standardDisclosureRequirementKeys:
+        - anti_bribery_anti_corruption.strategy.risk_management_required
+    - id: anti_bribery_anti_corruption.strategy_risk_response_table
+      type: table
+      blockType: generative
+      source: ai
+      generation:
+        task:
+          focus: "完成「反商业贿赂与反贪污风险内容、影响及应对措施」表格内容。"
+          noFactGuidance: |-
+            请结合报告主体的主营业务与所属行业，识别本公司实际适用的反腐败风险，逐条撰写具体内容与应对措施，并在受控选项内选取财务影响与时间范围；参考清单仅供参照取舍，不适用的不列，不得坐实本公司已发生腐败事件、监管处罚、审计发现、举报数量、协议签署比例或正式闭环机制。
+        templateResidueBans:
+        - 《》、《》
+        - 代入上传的制度名称
+        - XX认证
+        - XX标准
+        - 确保XXX
+        - 保障XXX
+        - 填空
+        - 引用数据表
+        - 对应议题指标
+        - 数据表无数据
+        - 着手建立指标量化体系
+        - XXX
+        - 根据资料内容
+        - 根据行业和企业特性
+        - 尽量不要哦太具体
+        inputs:
+          evidence:
+            kind: explicit
+        rowMode: adaptive_catalog
+        rowCount:
+        - 2
+        - 4
+        referenceCatalog:
+        - {category: 风险, name: 合规与监管风险, reference: 反腐败法规与监管要求趋严、合规义务加重对公司经营与合规成本的影响}
+        - {category: 风险, name: 人员廉洁意识风险, reference: 员工廉洁意识不足或利益冲突管理不到位带来的内部舞弊风险}
+        - {category: 风险, name: 第三方合作风险, reference: 供应商、经销商、代理等第三方合作中的商业贿赂与合规传导风险}
+        standardDisclosureRequirementKeys:
+        - anti_bribery_anti_corruption.iro.risk_response_table_required
+        disclosureStance: risk_disclosure
+        simplifiedWritingGuidance:
+          - 反腐败风险表应保持方向性风险识别口径，只写合规、人员廉洁意识和第三方合作等基础风险，不坐实已发生事件、举报、审计发现、处罚、协议签署比例或正式闭环机制。
+      table:
+        caption: 反商业贿赂与反贪污风险内容、影响及应对措施
+        iroKind: risk
+        rowSource: user
+        layoutProfile: risk_response_matrix
+        columnWidthWeights:
+          risk_type: 9
+          risk_name: 14
+          risk_content: 27
+          financial_impact: 13
+          time_horizon: 10
+          response_measures: 27
+        colDefs:
+        - key: risk_type
+          header: 风险与机遇类型
+          cellType: text
+          required: true
+          genHint: 结合主营业务与所属行业，给出简短的反腐败风险类型名称；不写成已发生事件。
+        - key: risk_name
+          header: 风险与机遇名称
+          cellType: text
+          required: true
+          genHint: 给出简短风险名称，优先使用法规合规、人员廉洁意识或第三方合作等方向；不写成已发生事件。
+        - key: risk_content
+          header: 潜在影响
+          cellType: ai_text
+          required: true
+          genHint: 结合主营业务与所属行业，说明该风险的来源与潜在影响；使用方向性、框架性口径，不写成已发生事实、具体客户事件、审计发现、举报或处罚。
+        - key: financial_impact
+          header: 财务影响
+          cellType: multi_select
+          options:
+          - 合规成本增加
+          - 营业收入下降
+          - 罚款或赔偿支出
+          - 合同损失
+        - key: time_horizon
+          header: 影响的时间范围
+          cellType: multi_select
+          options:
+          - 短期
+          - 中期
+          - 长期
+        - key: response_measures
+          header: 应对措施
+          cellType: ai_text
+          required: true
+          genHint: 使用2-3个短句，围绕廉洁要求、合规宣贯、关键岗位约束、供应商沟通或风险提示等基础方向；不编造审计项目、举报渠道、正式闭环、协议签署比例或供应商数量。
+        children:
+        - headerRow: true
+          children:
+          - type: th
+            value: 风险与机遇类型
+          - type: th
+            value: 风险与机遇名称
+          - type: th
+            value: 潜在影响
+          - type: th
+            value: 财务影响
+          - type: th
+            value: 影响的时间范围
+          - type: th
+            value: 应对措施
+  - key: anti_bribery_anti_corruption.iro
+    title: 影响、风险与机遇管理
+    pillar: iro_management
+    headingLevel: 3
+    children:
+    - key: anti_bribery_anti_corruption.iro.management_framework
+      title: 反贪污管理规范
+      headingLevel: 4
+      titleGeneration:
+        sourceBlockId: anti_bribery_anti_corruption.iro_management_framework
+        guidance: 概括本内容单元的核心行动或结果，生成简洁、准确且不引入新事实的标题。
+      blocks:
+      - id: anti_bribery_anti_corruption.iro_management_framework
+        type: paragraph
+        blockType: generative
+        source: ai
+        styleRole: body
+        generation:
+          task:
+            focus: "依据治理支柱披露的反腐败制度与责任安排，提炼公司反贪污管理规范和措施要求，形成管理框架描述。"
+            noFactGuidance: |-
+              结合报告主体的主营业务与所属行业，按利益冲突管理、关键岗位行为约束和商业行为规范等基础方向，说明公司反贪污管理关注与推进要求；不得虚构制度名称、审计安排、举报机制或量化数据。
+          templateResidueBans:
+          - 《》、《》
+          - 代入上传的制度名称
+          - XX认证
+          - XX标准
+          - 确保XXX
+          - 保障XXX
+          - 填空
+          - 引用数据表
+          - 对应议题指标
+          - 数据表无数据
+          - 着手建立指标量化体系
+          - XXX
+          - 根据资料内容
+          - 根据行业和企业特性
+          - 尽量不要哦太具体
+          inputs:
+            evidence:
+              kind: explicit
+              intakeItems:
+              - anti_bribery_anti_corruption.q_governance_policies
+              - anti_bribery_anti_corruption.q_governance_roles
+          targetChars:
+          - 180
+          - 360
+          standardDisclosureRequirementKeys:
+          - anti_bribery_anti_corruption.iro.management_measures_required
+          simplifiedWritingGuidance:
+            - "从治理支柱已披露的制度与职责事实中提炼管理规范与措施要求，不逐条罗列制度原文，不引入治理支柱未披露的机制。"
+    - key: anti_bribery_anti_corruption.iro.management_practices
+      title: 廉洁管理实践
+      headingLevel: 4
+      titleGeneration:
+        sourceBlockId: anti_bribery_anti_corruption.iro_management_measures
+        guidance: 概括本内容单元的核心行动或结果，生成简洁、准确且不引入新事实的标题。
+      appears_when:
+        all:
+        - path: intakeItems.anti_bribery_anti_corruption.q_sunshine_procurement_integrity
+          op: exists
+      blocks:
+      - id: anti_bribery_anti_corruption.iro_management_measures
+        type: paragraph
+        blockType: generative
+        source: ai
+        styleRole: body
+        generation:
+          task:
+            focus: "说明采购活动和关键岗位的廉洁风险防范实践。"
+          templateResidueBans:
+          - 《》、《》
+          - 代入上传的制度名称
+          - XX认证
+          - XX标准
+          - 确保XXX
+          - 保障XXX
+          - 填空
+          - 引用数据表
+          - 对应议题指标
+          - 数据表无数据
+          - 着手建立指标量化体系
+          - XXX
+          - 根据资料内容
+          - 根据行业和企业特性
+          - 尽量不要哦太具体
+          inputs:
+            evidence:
+              kind: explicit
+              intakeItems:
+              - anti_bribery_anti_corruption.q_sunshine_procurement_integrity
+          targetChars:
+          - 180
+          - 360
+          standardDisclosureRequirementKeys:
+          - anti_bribery_anti_corruption.iro.management_measures_required
+          - anti_bribery_anti_corruption.iro.supplier_ethics_required
+          simplifiedWritingGuidance:
+            - "采购廉洁要求、关键岗位行为规范、利益冲突管理、供应商交往要求或廉洁承诺，使用廉洁从业、商业行为规范和第三方合作管理等报告语汇。"
+    - key: anti_bribery_anti_corruption.iro.integrity_training
+      title: 廉洁培训
+      headingLevel: 4
+      titleGeneration:
+        sourceBlockId: anti_bribery_anti_corruption.iro_integrity_training
+        guidance: 概括本内容单元的核心行动或结果，生成简洁、准确且不引入新事实的标题。
+      appears_when:
+        all:
+        - path: intakeItems.anti_bribery_anti_corruption.q_integrity_training
+          op: exists
+      blocks:
+      - id: anti_bribery_anti_corruption.iro_integrity_training
+        type: paragraph
+        blockType: generative
+        source: ai
+        styleRole: body
+        generation:
+          task:
+            focus: "说明廉洁从业与反贪污培训的相关实践。"
+          templateResidueBans:
+          - 《》、《》
+          - 代入上传的制度名称
+          - XX认证
+          - XX标准
+          - 确保XXX
+          - 保障XXX
+          - 填空
+          - 引用数据表
+          - 对应议题指标
+          - 数据表无数据
+          - 着手建立指标量化体系
+          - XXX
+          - 根据资料内容
+          - 根据行业和企业特性
+          - 尽量不要哦太具体
+          inputs:
+            evidence:
+              kind: explicit
+              intakeItems:
+              - anti_bribery_anti_corruption.q_integrity_training
+          targetChars:
+          - 140
+          - 300
+          standardDisclosureRequirementKeys:
+          - anti_bribery_anti_corruption.iro.training_required
+          simplifiedWritingGuidance:
+            - "培训对象沿用用户填写的角色类别；供应商对接岗位或人员按供应商对接相关人员表达，内外部培训范围以用户事实为准。"
+    - key: anti_bribery_anti_corruption.iro.whistleblowing_mechanism
+      title: 举报机制与举报人保护
+      headingLevel: 4
+      titleGeneration:
+        sourceBlockId: anti_bribery_anti_corruption.iro_whistleblowing_mechanism
+        guidance: 概括本内容单元的核心行动或结果，生成简洁、准确且不引入新事实的标题。
+      blocks:
+      - id: anti_bribery_anti_corruption.iro_whistleblowing_mechanism
+        type: paragraph
+        blockType: generative
+        source: ai
+        styleRole: body
+        generation:
+          task:
+            focus: "说明商业道德与廉洁举报渠道、举报受理与处置安排以及举报人保护做法。"
+          templateResidueBans:
+          - 《》、《》
+          - 代入上传的制度名称
+          - XX认证
+          - XX标准
+          - 确保XXX
+          - 保障XXX
+          - 填空
+          - 引用数据表
+          - 对应议题指标
+          - 数据表无数据
+          - 着手建立指标量化体系
+          - XXX
+          - 根据资料内容
+          - 根据行业和企业特性
+          - 尽量不要哦太具体
+          inputs:
+            evidence:
+              kind: material_gated
+              intakeItems:
+              - anti_bribery_anti_corruption.q_whistleblowing_channels
+          targetChars:
+          - 160
+          - 320
+          standardDisclosureRequirementKeys:
+          - anti_bribery_anti_corruption.iro.reporting_whistleblower_required
+          simplifiedWritingGuidance:
+            - "用户提供的举报电话、邮箱等联系方式如实完整呈现；未提供的受理时限、保密措施、反报复安排或保护细节不得补写。"
+            - "不写举报数量、查处件数或具体事件情况；商业贿赂与贪污事件专项披露不在本块范围。"
+metricDisclosure:
+  catalogMetricKeys: [governance_r06, governance_r07]

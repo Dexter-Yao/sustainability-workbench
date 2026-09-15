@@ -1,0 +1,39 @@
+# ABOUTME(en): GRI 416: Customer Health and Safety 2016 disclosure requirements, grouped by the package's pillars, for the
+# ABOUTME(en): coverage audit and the key whitelist. Wording condenses the official requirement text.
+topicStandardDisclosureRequirementGroups:
+- topicSectionKey: customer_health_and_safety.gov
+  pillar: governance
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: customer_health_and_safety.gov.management_of_customer_safety
+    standardDisclosureRequirementTitle: Management of the customer health and safety topic
+    excerptFrom: GRI 3-3 with GRI 416
+    standardDisclosureRequirementText: |-
+      Report how the organization manages the customer health and safety topic, including the responsibilities and policies covering the health and safety of its products and services.
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: GRI
+      clauseRef: GRI 3-3 with GRI 416
+- topicSectionKey: customer_health_and_safety.strategy
+  pillar: strategy
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: customer_health_and_safety.strategy.impact_assessment
+    standardDisclosureRequirementTitle: Assessment of the health and safety impacts of products and services
+    excerptFrom: 416-1
+    standardDisclosureRequirementText: |-
+      Report the percentage of significant product and service categories for which health and safety impacts are assessed for improvement.
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: GRI
+      clauseRef: 416-1
+- topicSectionKey: customer_health_and_safety.iro
+  pillar: iro_management
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: customer_health_and_safety.iro.non_compliance
+    standardDisclosureRequirementTitle: Incidents of non-compliance concerning health and safety impacts
+    excerptFrom: 416-2
+    standardDisclosureRequirementText: |-
+      Report the total number of incidents of non-compliance with regulations or voluntary codes concerning the health and safety impacts of products and services within the reporting period; where none have been identified, a brief statement of that fact is sufficient.
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: GRI
+      clauseRef: 416-2

@@ -1,0 +1,144 @@
+# ABOUTME: 促进循环经济议题章节骨架，H2 标题以附录索引表“对应的本报告章节”为准。
+# ABOUTME: 本文件承载循环经济轻量版正文生成块；未映射 ESG 定量数据表指标或相邻专项 KPI。
+section:
+  key: circular_economy_promotion
+  title: 促进循环经济
+  headingLevel: 2
+  reportSectionId: circular_economy_promotion
+  conciseDisclosure:
+    id: circular_economy_promotion.concise_summary
+    type: paragraph
+    blockType: generative
+    source: ai
+    styleRole: body
+    generation:
+      task:
+        focus: "根据本议题当前可见证据形成一段连贯摘要，覆盖相关管理关注、方向与实践，不使用四要素小标题。"
+      inputs: {evidence: {kind: report_section}}
+      targetChars: [300, 600]
+  children:
+  - key: circular_economy_promotion.gov
+    title: 治理
+    pillar: governance
+    headingLevel: 3
+    blocks:
+    - id: circular_economy_promotion.gov_management_framework
+      type: paragraph
+      blockType: generative
+      source: ai
+      styleRole: body
+      generation:
+        task:
+          focus: "说明促进循环经济工作的责任安排、制度机制和协调方式。"
+        inputs:
+          evidence:
+            kind: explicit
+            intakeItems:
+            - circular_economy_promotion.q_governance_roles
+            - circular_economy_promotion.q_governance_policies
+            - circular_economy_promotion.q_governance_certifications
+        targetChars:
+        - 160
+        - 340
+        standardDisclosureRequirementKeys:
+        - circular_economy_promotion.gov.responsibility_structure_required
+        - circular_economy_promotion.gov.responsibility_structure_encouraged
+        - circular_economy_promotion.gov.framework_required
+        - circular_economy_promotion.gov.framework_encouraged
+        - circular_economy_promotion.gov.policy_documents_required
+  - key: circular_economy_promotion.strategy
+    title: 战略
+    pillar: strategy
+    headingLevel: 3
+    blocks:
+    - id: circular_economy_promotion.strategy_circular_direction
+      type: paragraph
+      blockType: generative
+      source: ai
+      styleRole: body
+      generation:
+        task:
+          focus: "说明资源效率、循环利用和包装减量相关的长期方向与推进原则。"
+        inputs:
+          evidence:
+            kind: explicit
+            intakeItems:
+            - circular_economy_promotion.q_strategy_content
+        targetChars:
+        - 180
+        - 360
+        standardDisclosureRequirementKeys:
+        - circular_economy_promotion.strategy.circular_principles_required
+        - circular_economy_promotion.strategy.circular_principles_encouraged
+        - circular_economy_promotion.strategy.targets_required
+        - circular_economy_promotion.strategy.roadmap_encouraged
+  - key: circular_economy_promotion.iro
+    title: 影响、风险与机遇管理
+    pillar: iro_management
+    headingLevel: 3
+    children:
+    - key: circular_economy_promotion.iro.circular_practices
+      title: 循环经济实践
+      headingLevel: 4
+      titleGeneration:
+        sourceBlockId: circular_economy_promotion.iro_circular_practices
+        guidance: 概括本内容单元的核心行动或结果，生成简洁、准确且不引入新事实的标题。
+      blocks:
+      - id: circular_economy_promotion.iro_circular_practices
+        type: paragraph
+        blockType: generative
+        source: ai
+        styleRole: body
+        generation:
+          task:
+            focus: "说明资源节约、循环利用和包装减量的相关实践。"
+          inputs:
+            evidence:
+              kind: explicit
+              intakeItems:
+              - circular_economy_promotion.q_circular_economy_practices
+          targetChars:
+          - 220
+          - 420
+          standardDisclosureRequirementKeys:
+          - circular_economy_promotion.iro.product_lifecycle_required
+          - circular_economy_promotion.iro.product_lifecycle_encouraged
+          - circular_economy_promotion.iro.packaging_circularity_required
+          - circular_economy_promotion.iro.packaging_circularity_encouraged
+          - circular_economy_promotion.iro.resource_efficiency_required
+          - circular_economy_promotion.iro.practice_case_encouraged
+    - key: circular_economy_promotion.iro.end_of_life_product_recovery
+      title: 废旧产品回收
+      headingLevel: 4
+      titleGeneration:
+        sourceBlockId: circular_economy_promotion.iro_end_of_life_product_recovery
+        guidance: 概括本内容单元的核心行动或结果，生成简洁、准确且不引入新事实的标题。
+      appears_when:
+        all:
+        - path: intakeItems.circular_economy_promotion.q_product_recycling_mechanism
+          op: eq
+          value: 是
+      blocks:
+      - id: circular_economy_promotion.iro_end_of_life_product_recovery
+        type: paragraph
+        blockType: constrained
+        source: ai
+        styleRole: body
+        generation:
+          task:
+            focus: "说明废旧产品回收、登记和后续处理的相关实践。"
+          inputs:
+            evidence:
+              kind: explicit
+              intakeItems:
+              - circular_economy_promotion.q_product_recycling_mechanism
+          targetChars:
+          - 140
+          - 280
+          standardDisclosureRequirementKeys:
+          - circular_economy_promotion.iro.end_of_life_recovery_required
+          - circular_economy_promotion.iro.end_of_life_recovery_encouraged
+          simplifiedWritingGuidance:
+            - "本块由既有显隐条件控制，回收对象沿用用户填写的样件、部件、包装或其他对象类别和场景。"
+metricDisclosure:
+  catalogMetricKeys: []

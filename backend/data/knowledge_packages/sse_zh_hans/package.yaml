@@ -1,0 +1,21 @@
+# ABOUTME(en): Manifest of the mainland A-share knowledge package (SSE/SZSE/BSE sustainability
+# ABOUTME(en): reporting guidelines, Simplified Chinese). Content files sit beside it under fixed names.
+schema_version: sustainability_desk.knowledge_package.v1
+id: sse_zh_hans
+language: zh-Hans
+framework: sse_sustainability_guidelines
+display_name: 上海证券交易所可持续发展报告指引
+pillar_titles:
+  governance: 治理
+  strategy: 战略
+  iro_management: 影响、风险与机遇管理
+  metrics_targets: 指标与目标
+# 上交所指引第 14 号第五条同时要求财务重要性与影响重要性两个维度。
+materiality_regime: double
+disclosure_basis:
+  mainland_standard_selectable: true
+  mainland_standard_names:
+    sse: 《上海证券交易所上市公司自律监管指引第14号——可持续发展报告（试行）》
+    szse: 《深圳证券交易所上市公司自律监管指引第17号——可持续发展报告（试行）》
+    bse: 《北京证券交易所上市公司持续监管指引第11号——可持续发展报告（试行）》
+  hong_kong_guide_name: 《香港联合交易所有限公司环境、社会及管治报告守则》

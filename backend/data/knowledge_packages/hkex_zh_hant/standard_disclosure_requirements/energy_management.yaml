@@ -1,0 +1,47 @@
+# ABOUTME(en): Appendix C2 disclosure requirements of「能源管理」(General Disclosure and KPIs), grouped by pillar,
+# ABOUTME(en): for the coverage audit and for prompt assembly by key whitelist (injection is switch-gated, off by default) and for the coverage audit. Wording awaits check against the official Chinese text.
+topicStandardDisclosureRequirementGroups:
+- topicSectionKey: energy_management.gov
+  pillar: governance
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: energy_management.gov.general_disclosure_policies
+    standardDisclosureRequirementTitle: 有效使用能源的政策
+    excerptFrom: 港交所·附錄C2·一般披露 A2
+    standardDisclosureRequirementText: 應披露有效使用資源（包括能源、水及其他原材料）的政策。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: 一般披露 A2
+- topicSectionKey: energy_management.strategy
+  pillar: strategy
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: energy_management.strategy.energy_efficiency_targets
+    standardDisclosureRequirementTitle: 能源使用效益目標及達標步驟
+    excerptFrom: 港交所·附錄C2·關鍵績效指標 A2.3
+    standardDisclosureRequirementText: 應描述所訂立的能源使用效益目標及為達到這些目標所採取的步驟。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: 關鍵績效指標 A2.3
+- topicSectionKey: energy_management.iro
+  pillar: iro_management
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: energy_management.iro.energy_efficiency_measures
+    standardDisclosureRequirementTitle: 能源效益措施
+    excerptFrom: 港交所·附錄C2·關鍵績效指標 A2.3
+    standardDisclosureRequirementText: 應說明為達到能源使用效益目標而採取的具體措施及其實施與監察方式。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: 關鍵績效指標 A2.3
+- topicSectionKey: energy_management.metrics
+  pillar: metrics_targets
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: energy_management.metrics.energy_consumption_data
+    standardDisclosureRequirementTitle: 按類型劃分的直接及間接能源總耗量及密度
+    excerptFrom: 港交所·附錄C2·關鍵績效指標 A2.1
+    standardDisclosureRequirementText: 應披露按類型劃分的直接及／或間接能源（如電、氣或油）總耗量（以千個千瓦時計算）及密度（如以每產量單位、每項設施計算）。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: 關鍵績效指標 A2.1

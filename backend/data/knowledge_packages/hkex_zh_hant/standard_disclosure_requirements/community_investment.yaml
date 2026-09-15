@@ -1,0 +1,47 @@
+# ABOUTME(en): Appendix C2 disclosure requirements of「社區投資」(General Disclosure and KPIs), grouped by pillar,
+# ABOUTME(en): for the coverage audit and for prompt assembly by key whitelist (injection is switch-gated, off by default) and for the coverage audit. Wording awaits check against the official Chinese text.
+topicStandardDisclosureRequirementGroups:
+- topicSectionKey: community_investment.gov
+  pillar: governance
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: community_investment.gov.general_disclosure_policies
+    standardDisclosureRequirementTitle: 社區參與政策
+    excerptFrom: 港交所·附錄C2·一般披露 B8
+    standardDisclosureRequirementText: 應披露有關以社區參與來了解營運所在社區需要和確保其業務活動會考慮社區利益的政策。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: 一般披露 B8
+- topicSectionKey: community_investment.strategy
+  pillar: strategy
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: community_investment.strategy.focus_areas
+    standardDisclosureRequirementTitle: 專注貢獻範疇
+    excerptFrom: 港交所·附錄C2·關鍵績效指標 B8.1
+    standardDisclosureRequirementText: 應披露專注貢獻範疇（如教育、環境事宜、勞工需求、健康、文化、體育）。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: 關鍵績效指標 B8.1
+- topicSectionKey: community_investment.iro
+  pillar: iro_management
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: community_investment.iro.community_activities
+    standardDisclosureRequirementTitle: 社區參與及公益活動
+    excerptFrom: 港交所·附錄C2·一般披露 B8
+    standardDisclosureRequirementText: 應描述匯報期間開展的社區參與活動及與社區的合作情況。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: 一般披露 B8
+- topicSectionKey: community_investment.metrics
+  pillar: metrics_targets
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: community_investment.metrics.resources_contributed_data
+    standardDisclosureRequirementTitle: 在專注範疇所動用資源
+    excerptFrom: 港交所·附錄C2·關鍵績效指標 B8.2
+    standardDisclosureRequirementText: 應披露在專注範疇所動用資源（如金錢或時間）。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: 關鍵績效指標 B8.2

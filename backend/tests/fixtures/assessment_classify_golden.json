@@ -1,0 +1,119 @@
+{
+  "cases": [
+    {
+      "name": "四象限齐全·默认阈值",
+      "scored": [
+        {
+          "id": "t_dual",
+          "financialScore": 4.4,
+          "impactScore": 4.3
+        },
+        {
+          "id": "t_fin",
+          "financialScore": 4.2,
+          "impactScore": 3.1
+        },
+        {
+          "id": "t_imp",
+          "financialScore": 3.0,
+          "impactScore": 4.5
+        },
+        {
+          "id": "t_non",
+          "financialScore": 2.8,
+          "impactScore": 3.6
+        },
+        {
+          "id": "t_edge",
+          "financialScore": 4.0,
+          "impactScore": 4.0
+        }
+      ],
+      "threshold": {
+        "financial": 4.0,
+        "impact": 4.0
+      },
+      "reportingYear": 2025,
+      "expected": {
+        "materiality": {
+          "t_dual": "dual",
+          "t_fin": "financial",
+          "t_imp": "impact",
+          "t_non": "non",
+          "t_edge": "dual"
+        },
+        "counts": {
+          "dual": 2,
+          "impact_only": 1,
+          "financial_only": 1,
+          "non_material": 1,
+          "total": 5
+        }
+      }
+    },
+    {
+      "name": "阈值收紧 4.5/3.5",
+      "scored": [
+        {
+          "id": "a",
+          "financialScore": 4.5,
+          "impactScore": 3.5
+        },
+        {
+          "id": "b",
+          "financialScore": 4.4,
+          "impactScore": 3.4
+        },
+        {
+          "id": "c",
+          "financialScore": 4.6,
+          "impactScore": 3.4
+        },
+        {
+          "id": "d",
+          "financialScore": 4.4,
+          "impactScore": 3.6
+        }
+      ],
+      "threshold": {
+        "financial": 4.5,
+        "impact": 3.5
+      },
+      "reportingYear": 2026,
+      "expected": {
+        "materiality": {
+          "a": "dual",
+          "b": "non",
+          "c": "financial",
+          "d": "impact"
+        },
+        "counts": {
+          "dual": 1,
+          "impact_only": 1,
+          "financial_only": 1,
+          "non_material": 1,
+          "total": 4
+        }
+      }
+    },
+    {
+      "name": "空议题集",
+      "scored": [],
+      "threshold": {
+        "financial": 4.0,
+        "impact": 4.0
+      },
+      "reportingYear": 2025,
+      "expected": {
+        "materiality": {},
+        "counts": {
+          "dual": 0,
+          "impact_only": 0,
+          "financial_only": 0,
+          "non_material": 0,
+          "total": 0
+        }
+      }
+    }
+  ]
+}

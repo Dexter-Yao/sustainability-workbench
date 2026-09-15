@@ -1,0 +1,51 @@
+# ABOUTME(en): GRI 405: Diversity and Equal Opportunity 2016 disclosure requirements, grouped by the package's pillars, for the
+# ABOUTME(en): coverage audit and the key whitelist. Wording condenses the official requirement text.
+topicStandardDisclosureRequirementGroups:
+- topicSectionKey: diversity_and_equal_opportunity.gov
+  pillar: governance
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: diversity_and_equal_opportunity.gov.management_of_diversity
+    standardDisclosureRequirementTitle: Management of the diversity and equal opportunity topic
+    excerptFrom: GRI 3-3 with GRI 405
+    standardDisclosureRequirementText: |-
+      Report how the organization manages the diversity and equal opportunity topic, including the policies and responsibilities covering equal opportunity in recruitment, remuneration and advancement.
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: GRI
+      clauseRef: GRI 3-3 with GRI 405
+- topicSectionKey: diversity_and_equal_opportunity.strategy
+  pillar: strategy
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: diversity_and_equal_opportunity.strategy.remuneration_ratio
+    standardDisclosureRequirementTitle: Ratio of basic salary and remuneration of women to men
+    excerptFrom: 405-2
+    standardDisclosureRequirementText: |-
+      Report the ratio of the basic salary and remuneration of women to men for each employee category, by significant locations of operation, and the definition used for significant locations of operation.
+    disclosureRequirementObligationLevel: encouraged
+    sourceClauseReferenceLabels:
+    - standard: GRI
+      clauseRef: 405-2
+- topicSectionKey: diversity_and_equal_opportunity.iro
+  pillar: iro_management
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: diversity_and_equal_opportunity.iro.equal_opportunity_measures
+    standardDisclosureRequirementTitle: Measures supporting equal opportunity
+    excerptFrom: GRI 3-3 with GRI 405
+    standardDisclosureRequirementText: |-
+      Describe the actions taken to support equal opportunity in recruitment, development and workplace conduct, and how their effectiveness is tracked.
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: GRI
+      clauseRef: GRI 3-3 with GRI 405
+- topicSectionKey: diversity_and_equal_opportunity.metrics
+  pillar: metrics_targets
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: diversity_and_equal_opportunity.metrics.composition
+    standardDisclosureRequirementTitle: Diversity of governance bodies and employees
+    excerptFrom: 405-1
+    standardDisclosureRequirementText: |-
+      Report the percentage of individuals within the organization's governance bodies and the percentage of employees per employee category in each diversity category, covering gender, age group and other relevant indicators of diversity.
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: GRI
+      clauseRef: 405-1

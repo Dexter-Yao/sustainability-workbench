@@ -1,0 +1,26 @@
+# ABOUTME(en): Topic-specific intake questions of「反貪污」; the four fixed pillar questions come from topic_intake_common.yaml.
+# ABOUTME(en): Quantitative KPIs are collected through the metric catalog, not here.
+contentScopeId: anti_corruption
+items:
+- key: anti_corruption.q_whistleblowing
+  prompt: 貴公司有哪些防範貪污的措施及舉報程序？
+  kind: text
+  collectionPriority: recommended
+  hint: 可說明利益申報、禮品與款待規定、舉報渠道、保密及調查安排；沒有可留空。
+  maxChars: 5000
+- key: anti_corruption.q_anti_corruption_training
+  prompt: 匯報期間貴公司向董事及僱員提供了哪些反貪污培訓？
+  kind: text
+  collectionPriority: recommended
+  hint: 可說明培訓對象、主題及形式；人數與時數由指標數據表承載。
+  maxChars: 5000
+- key: anti_corruption.q_corruption_cases
+  prompt: 匯報期間是否有對貴公司或其僱員提出並已審結的貪污訴訟案件？
+  kind: single_select
+  collectionPriority: recommended
+  options:
+  - 沒有
+  - 有
+  - 不確定
+  hint: 如有，請在補充說明中說明案件性質及結果。
+  maxChars: 5000

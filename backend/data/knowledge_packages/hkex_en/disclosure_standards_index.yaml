@@ -1,0 +1,101 @@
+# ABOUTME(en): Verbatim source of the appendix content index: Appendix C2 provisions (Part B mandatory
+# ABOUTME(en): paragraphs, Part C Aspects with General Disclosures and KPIs, Part D climate) → report sections.
+# ABOUTME(en): Chapter rows span the table; section titles are the merged first column; one row per provision.
+# Paragraph numbers follow the text effective 1 January 2025.
+chapters:
+  - title: Part B Mandatory Disclosure Requirements
+    sections:
+      - title: Board statement
+        clauses:
+          - {clause: Paragraph 13, reportSections: [Board Statement]}
+      - title: Reporting principles
+        clauses:
+          - {clause: Paragraph 14, reportSections: [About This Report]}
+      - title: Reporting boundary
+        clauses:
+          - {clause: Paragraph 15, reportSections: [About This Report]}
+  - title: Part C "Comply or Explain" Provisions — A. Environmental
+    sections:
+      - title: Aspect A1 Emissions
+        clauses:
+          - {clause: General Disclosure, reportSections: [Emissions, Waste Management]}
+          - {clause: KPI A1.1, reportSections: [Emissions]}
+          - {clause: KPI A1.3, reportSections: [Waste Management]}
+          - {clause: KPI A1.4, reportSections: [Waste Management]}
+          - {clause: KPI A1.5, reportSections: [Emissions]}
+          - {clause: KPI A1.6, reportSections: [Waste Management]}
+      - title: Aspect A2 Use of Resources
+        clauses:
+          - {clause: General Disclosure, reportSections: [Energy Management, Water Management, Materials and Packaging]}
+          - {clause: KPI A2.1, reportSections: [Energy Management]}
+          - {clause: KPI A2.2, reportSections: [Water Management]}
+          - {clause: KPI A2.3, reportSections: [Energy Management]}
+          - {clause: KPI A2.4, reportSections: [Water Management]}
+          - {clause: KPI A2.5, reportSections: [Materials and Packaging]}
+      - title: Aspect A3 The Environment and Natural Resources
+        clauses:
+          - {clause: General Disclosure, reportSections: [The Environment and Natural Resources]}
+          - {clause: KPI A3.1, reportSections: [The Environment and Natural Resources]}
+  - title: Part C "Comply or Explain" Provisions — B. Social
+    sections:
+      - title: Aspect B1 Employment
+        clauses:
+          - {clause: General Disclosure, reportSections: [Employment]}
+          - {clause: KPI B1.1, reportSections: [Employment]}
+          - {clause: KPI B1.2, reportSections: [Employment]}
+      - title: Aspect B2 Health and Safety
+        clauses:
+          - {clause: General Disclosure, reportSections: [Health and Safety]}
+          - {clause: KPI B2.1, reportSections: [Health and Safety]}
+          - {clause: KPI B2.2, reportSections: [Health and Safety]}
+          - {clause: KPI B2.3, reportSections: [Health and Safety]}
+      - title: Aspect B3 Development and Training
+        clauses:
+          - {clause: General Disclosure, reportSections: [Development and Training]}
+          - {clause: KPI B3.1, reportSections: [Development and Training]}
+          - {clause: KPI B3.2, reportSections: [Development and Training]}
+      - title: Aspect B4 Labour Standards
+        clauses:
+          - {clause: General Disclosure, reportSections: [Labour Standards]}
+          - {clause: KPI B4.1, reportSections: [Labour Standards]}
+          - {clause: KPI B4.2, reportSections: [Labour Standards]}
+      - title: Aspect B5 Supply Chain Management
+        clauses:
+          - {clause: General Disclosure, reportSections: [Supply Chain Management]}
+          - {clause: KPI B5.1, reportSections: [Supply Chain Management]}
+          - {clause: KPI B5.2, reportSections: [Supply Chain Management]}
+          - {clause: KPI B5.3, reportSections: [Supply Chain Management]}
+          - {clause: KPI B5.4, reportSections: [Supply Chain Management]}
+      - title: Aspect B6 Product Responsibility
+        clauses:
+          - {clause: General Disclosure, reportSections: [Product Responsibility, Data Protection and Privacy]}
+          - {clause: KPI B6.1, reportSections: [Product Responsibility]}
+          - {clause: KPI B6.2, reportSections: [Product Responsibility]}
+          - {clause: KPI B6.3, reportSections: [Product Responsibility]}
+          - {clause: KPI B6.4, reportSections: [Product Responsibility]}
+          - {clause: KPI B6.5, reportSections: [Data Protection and Privacy]}
+      - title: Aspect B7 Anti-corruption
+        clauses:
+          - {clause: General Disclosure, reportSections: [Anti-corruption]}
+          - {clause: KPI B7.1, reportSections: [Anti-corruption]}
+          - {clause: KPI B7.2, reportSections: [Anti-corruption]}
+          - {clause: KPI B7.3, reportSections: [Anti-corruption]}
+      - title: Aspect B8 Community Investment
+        clauses:
+          - {clause: General Disclosure, reportSections: [Community Investment]}
+          - {clause: KPI B8.1, reportSections: [Community Investment]}
+          - {clause: KPI B8.2, reportSections: [Community Investment]}
+  - title: Part D Climate-related Disclosures
+    sections:
+      - title: Governance
+        clauses:
+          - {clause: Paragraphs 19–20, reportSections: [Climate Change]}
+      - title: Strategy
+        clauses:
+          - {clause: Paragraphs 21–26, reportSections: [Climate Change]}
+      - title: Risk management
+        clauses:
+          - {clause: Paragraph 27, reportSections: [Climate Change]}
+      - title: Metrics and targets
+        clauses:
+          - {clause: Paragraphs 28–41, reportSections: [Climate Change]}

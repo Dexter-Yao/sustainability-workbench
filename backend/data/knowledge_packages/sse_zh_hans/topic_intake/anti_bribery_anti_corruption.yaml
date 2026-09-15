@@ -1,0 +1,30 @@
+# ABOUTME: 反商业贿赂与反贪污议题轻量版内容清单：阳光采购廉洁要求、廉洁培训与举报机制载体。
+# ABOUTME: 治理、战略和指标目标固定题由 topic_intake_common.yaml 展开；结构化数值由 ESG 定量数据表维护。
+contentScopeId: anti_bribery_anti_corruption
+items:
+- key: anti_bribery_anti_corruption.q_sunshine_procurement_integrity
+  prompt: 请简述贵司“阳光采购”和内部关键岗位人员廉洁要求。
+  kind: text
+  collectionPriority: recommended
+  hint: 可填写采购廉洁要求、关键岗位行为规范、利益冲突管理、供应商交往要求、礼品礼金管理或其他廉洁要求；没有专项内容可留空。
+  maxChars: 5000
+- key: anti_bribery_anti_corruption.q_integrity_training
+  prompt: 请简述贵司开展的针对内部人员或者供应商的廉洁培训。
+  kind: text
+  collectionPriority: recommended
+  hint: 请填写培训主题、覆盖对象和范围、培训效果等。
+  generationBoundary: 未填写具体数值时，不得生成培训人次、次数或覆盖率。
+  maxChars: 5000
+- key: anti_bribery_anti_corruption.q_whistleblowing_channels
+  prompt: 贵司设有哪些商业道德或廉洁举报渠道？
+  kind: multi_select
+  options:
+  - 举报电话
+  - 举报邮箱
+  - 线下举报信箱
+  - 在线举报平台
+  - 其他渠道
+  collectionPriority: recommended
+  hint: 未设立举报渠道可不选。可在补充说明中填写具体电话号码、邮箱地址、受理与保密安排或举报人保护做法。
+  generationBoundary: 未提供具体联系方式或制度事实时，不得编造号码、邮箱、受理时限或保护措施细节。
+  maxChars: 2000

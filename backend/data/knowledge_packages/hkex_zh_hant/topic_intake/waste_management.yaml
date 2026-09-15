@@ -1,0 +1,28 @@
+# ABOUTME(en): Topic-specific intake questions of「廢棄物管理」; the four fixed pillar questions come from topic_intake_common.yaml.
+# ABOUTME(en): Quantitative KPIs are collected through the metric catalog, not here.
+contentScopeId: waste_management
+items:
+- key: waste.q_waste_handling
+  prompt: 貴公司如何處理生產及辦公過程中產生的廢棄物？
+  kind: text
+  collectionPriority: recommended
+  hint: 可說明分類、收集、暫存、回收及委託處置的安排；沒有可留空。
+  maxChars: 5000
+- key: waste.q_hazardous_waste
+  prompt: 貴公司的營運是否產生有害廢棄物（如化學廢物、廢油、含重金屬廢料）？
+  kind: single_select
+  collectionPriority: recommended
+  options:
+  - 有，並交由持牌承辦商處置
+  - 有，處置安排尚在完善
+  - 無有害廢棄物
+  - 不確定
+  hint: 如有，請在補充說明中列出主要種類及處置安排。
+  maxChars: 5000
+- key: waste.q_waste_reduction_targets
+  prompt: 貴公司是否訂立廢棄物減量或回收目標？
+  kind: text
+  collectionPriority: recommended
+  hint: 可說明目標類型、涵蓋範圍、基準年、目標年及進度；沒有可留空。
+  generationBoundary: 未填寫目標數值時，不得生成減量比例、回收率或達成期限。
+  maxChars: 5000

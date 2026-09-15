@@ -1,0 +1,69 @@
+# ABOUTME(en): Appendix C2 disclosure requirements of "Employment" (General Disclosure and KPIs), grouped by pillar,
+# ABOUTME(en): for the coverage audit and for prompt assembly by key whitelist (injection is switch-gated, off by default) and for the coverage audit. Wording follows the English Code text.
+topicStandardDisclosureRequirementGroups:
+- topicSectionKey: employment.gov
+  pillar: governance
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: employment.gov.general_disclosure_policies
+    standardDisclosureRequirementTitle: Employment policies
+    excerptFrom: HKEX·Appendix C2·General Disclosure B1
+    standardDisclosureRequirementText: |-
+      Disclose the policies on compensation and dismissal, recruitment and promotion, working hours, rest periods, equal opportunity, diversity, anti-discrimination, and other benefits and welfare.
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: General Disclosure B1
+  - standardDisclosureRequirementKey: employment.gov.general_disclosure_compliance
+    standardDisclosureRequirementTitle: Compliance with employment-related laws and regulations
+    excerptFrom: HKEX·Appendix C2·General Disclosure B1
+    standardDisclosureRequirementText: |-
+      Disclose information on compliance with employment-related laws and regulations that have a significant impact on the issuer.
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: General Disclosure B1
+- topicSectionKey: employment.strategy
+  pillar: strategy
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: employment.strategy.employment_direction
+    standardDisclosureRequirementTitle: Talent management approach and targets
+    excerptFrom: HKEX·Appendix C2·General Disclosure B1
+    standardDisclosureRequirementText: |-
+      Describe the company's approach and targets on attracting and retaining talent, diversity and inclusion, and employee well-being.
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: General Disclosure B1
+- topicSectionKey: employment.iro
+  pillar: iro_management
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: employment.iro.employment_practices
+    standardDisclosureRequirementTitle: Employment practices
+    excerptFrom: HKEX·Appendix C2·General Disclosure B1
+    standardDisclosureRequirementText: |-
+      Describe the practices through which the company implements its employment policies, including recruitment and promotion, compensation, working hours and leave, equal opportunity and employee benefits.
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: General Disclosure B1
+- topicSectionKey: employment.metrics
+  pillar: metrics_targets
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: employment.metrics.workforce_data
+    standardDisclosureRequirementTitle: Total workforce by gender, employment type, age group and region
+    excerptFrom: HKEX·Appendix C2·KPI B1.1
+    standardDisclosureRequirementText: |-
+      Disclose the total workforce by gender, employment type (for example, full- or part-time), age group and geographical region.
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: KPI B1.1
+  - standardDisclosureRequirementKey: employment.metrics.turnover_data
+    standardDisclosureRequirementTitle: Employee turnover rate by gender, age group and region
+    excerptFrom: HKEX·Appendix C2·KPI B1.2
+    standardDisclosureRequirementText: |-
+      Disclose the employee turnover rate by gender, age group and geographical region.
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: KPI B1.2

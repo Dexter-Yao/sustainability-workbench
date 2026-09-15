@@ -1,0 +1,138 @@
+# ABOUTME: 环境合规管理议题章节骨架，H2 标题以附录索引表“对应的本报告章节”为准。
+# ABOUTME: 本文件承载环境合规管理的段落级生成块；未映射 ESG 定量数据表指标、附录 KPI 表或环境处罚证明材料。
+section:
+  key: environmental_compliance_management
+  title: 环境合规管理
+  headingLevel: 2
+  reportSectionId: environmental_compliance_management
+  conciseDisclosure:
+    id: environmental_compliance_management.concise_summary
+    type: paragraph
+    blockType: generative
+    source: ai
+    styleRole: body
+    generation:
+      task:
+        focus: "根据本议题当前可见证据形成一段连贯摘要，覆盖相关管理关注、方向与实践，不使用四要素小标题。"
+      inputs: {evidence: {kind: report_section}}
+      targetChars: [300, 600]
+  children:
+  - key: environmental_compliance_management.gov
+    title: 治理
+    pillar: governance
+    headingLevel: 3
+    blocks:
+    - id: environmental_compliance_management.gov_management_system
+      type: paragraph
+      blockType: generative
+      source: ai
+      styleRole: body
+      generation:
+        task:
+          focus: "说明环境合规工作的责任安排、制度机制和监督方式。"
+        inputs:
+          evidence:
+            kind: explicit
+            intakeItems:
+            - environmental_compliance_management.q_governance_roles
+            - environmental_compliance_management.q_governance_policies
+            - environmental_compliance_management.q_governance_certifications
+        targetChars:
+        - 180
+        - 360
+        standardDisclosureRequirementKeys:
+        - environmental_compliance_management.gov.management_system_required
+        - environmental_compliance_management.gov.management_system_encouraged
+        - environmental_compliance_management.gov.certifications_required
+        - environmental_compliance_management.gov.certifications_encouraged
+        - environmental_compliance_management.gov.responsibility_matrix_required
+        - environmental_compliance_management.gov.responsibility_matrix_encouraged
+        templateResidueBans:
+        - 《》、《》
+        - 代入资料制度名称
+        - XXX认证
+        - XX标准
+  - key: environmental_compliance_management.strategy
+    title: 战略
+    pillar: strategy
+    headingLevel: 3
+    blocks:
+    - id: environmental_compliance_management.strategy_targets
+      type: paragraph
+      blockType: generative
+      source: ai
+      styleRole: body
+      generation:
+        task:
+          focus: "说明环境合规在长期经营中的关注重点、总体方向和推进原则。"
+        inputs:
+          evidence:
+            kind: explicit
+            intakeItems:
+            - environmental_compliance_management.q_strategy_content
+        targetChars:
+        - 180
+        - 360
+        standardDisclosureRequirementKeys:
+        - environmental_compliance_management.strategy.targets_required
+        - environmental_compliance_management.strategy.targets_encouraged
+        - environmental_compliance_management.strategy.lifecycle_control_required
+        - environmental_compliance_management.strategy.lifecycle_control_encouraged
+  - key: environmental_compliance_management.iro
+    title: 影响、风险与机遇管理
+    pillar: iro_management
+    headingLevel: 3
+    blocks:
+    - id: environmental_compliance_management.iro_management_practice
+      type: paragraph
+      blockType: generative
+      source: ai
+      styleRole: body
+      generation:
+        task:
+          focus: "说明环境合规要求落实和环境风险预防的相关实践。"
+        inputs:
+          evidence:
+            kind: explicit
+            intakeItems:
+            - environmental_compliance_management.q_pollutants_waste_names
+            - environmental_compliance_management.q_compliance_training_activities
+            - environmental_compliance_management.q_violation_penalties
+        targetChars:
+        - 220
+        - 460
+        standardDisclosureRequirementKeys:
+        - environmental_compliance_management.iro.management_practice_required
+        - environmental_compliance_management.iro.management_practice_encouraged
+        - environmental_compliance_management.iro.training_required
+        - environmental_compliance_management.iro.training_encouraged
+        - environmental_compliance_management.iro.event_risk_required
+        - environmental_compliance_management.iro.event_risk_encouraged
+    children:
+    - key: environmental_compliance_management.iro.compliance_audit_evidence
+      title: 环境合规检查与审计记录
+      headingLevel: 4
+      blocks:
+      - id: environmental_compliance_management.iro_compliance_audit_evidence
+        type: paragraph
+        blockType: generative
+        source: ai
+        styleRole: body
+        generation:
+          task:
+            focus: "基于用户上传的环境合规检查、内部或外部环境审计、整改记录类资料，说明环境合规核查与整改的执行情况。"
+          inputs:
+            evidence:
+              kind: material_gated
+          targetChars:
+          - 160
+          - 320
+          standardDisclosureRequirementKeys:
+          - environmental_compliance_management.iro.environment_audit_required
+          - environmental_compliance_management.iro.environment_audit_encouraged
+          simplifiedWritingGuidance:
+            - "只作有据叙述：可独立核验的对象、名称、数值与日期须资料明确记载才可写，不得推断或补写。"
+            - "资料记载的未按期、超期或不合规情形如实保留其性质表述，不淡化省略，也不添加资料未记载的保证性评价。"
+            - "不坐实资料未记载的审计结论、处罚金额或整改完成率；数值统计由定量指标承载。"
+metricDisclosure:
+  catalogMetricKeys: []

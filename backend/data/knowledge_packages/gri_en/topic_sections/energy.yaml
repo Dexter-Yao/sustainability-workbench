@@ -1,0 +1,107 @@
+# ABOUTME(en): Topic chapter template of the GRI topic "Energy" (GRI 103: Energy 2025): management /
+# ABOUTME(en): approach / actions blocks with their intake evidence and GRI requirement keys; the metrics H3 is compiled from metricDisclosure.
+section:
+  key: energy
+  title: Energy
+  headingLevel: 2
+  reportSectionId: energy
+  conciseDisclosure:
+    id: energy.concise_summary
+    type: paragraph
+    blockType: generative
+    source: ai
+    styleRole: body
+    generation:
+      task:
+        focus: |-
+          From the evidence currently visible for this topic, write one coherent summary covering the energy policies and commitments, energy consumption and the actions taken to reduce it, without the four sub-headings.
+      inputs:
+        evidence:
+          kind: report_section
+      targetChars:
+      - 260
+      - 520
+  children:
+  - key: energy.gov
+    title: Management of the Topic
+    pillar: governance
+    headingLevel: 3
+    blocks:
+    - id: energy.gov_policy
+      type: paragraph
+      blockType: generative
+      source: ai
+      styleRole: body
+      generation:
+        task:
+          focus: |-
+            Describe the company's energy-related policies and commitments and the responsibilities for them, and how they contribute to reducing energy consumption, improving energy efficiency and moving to renewable energy sources.
+          noFactGuidance: |-
+            When the user provides no facts for this part, keep a prudent, general and low-commitment register describing the management attention and directional arrangements common to the industry; do not claim that specific systems, projects, certifications or results are in place.
+        inputs:
+          evidence:
+            kind: report_section
+        targetChars:
+        - 220
+        - 420
+        standardDisclosureRequirementKeys:
+        - energy.gov.policies_and_commitments
+  - key: energy.strategy
+    title: Approach and Targets
+    pillar: strategy
+    headingLevel: 3
+    blocks:
+    - id: energy.strategy_direction
+      type: paragraph
+      blockType: generative
+      source: ai
+      styleRole: body
+      generation:
+        task:
+          focus: |-
+            Describe the company's direction and targets for energy: the impacts on the economy, the environment and people that may result from its energy consumption and its transition to renewable energy sources, and the targets it has set.
+          noFactGuidance: |-
+            When the user provides no facts for this part, keep a prudent, general and low-commitment register describing the management attention and directional arrangements common to the industry; do not claim that specific systems, projects, certifications or results are in place.
+        inputs:
+          evidence:
+            kind: report_section
+        targetChars:
+        - 200
+        - 400
+        standardDisclosureRequirementKeys:
+        - energy.strategy.impacts_of_energy_use
+  - key: energy.iro
+    title: Actions and Processes
+    pillar: iro_management
+    headingLevel: 3
+    blocks:
+    - id: energy.iro_measures
+      type: paragraph
+      blockType: generative
+      source: ai
+      styleRole: body
+      generation:
+        task:
+          focus: |-
+            Describe the actions the company takes on energy: efficiency measures, self-generation and renewable sourcing arrangements, and how reductions in energy consumption are achieved and tracked.
+          noFactGuidance: |-
+            When the user provides no facts for this part, keep a prudent, general and low-commitment register describing the management attention and directional arrangements common to the industry; do not claim that specific systems, projects, certifications or results are in place.
+        inputs:
+          evidence:
+            kind: report_section
+        targetChars:
+        - 240
+        - 460
+        standardDisclosureRequirementKeys:
+        - energy.iro.reduction_in_consumption
+metricDisclosure:
+  catalogMetricKeys:
+  - energy_purchased_electricity
+  - energy_renewable_electricity
+  - energy_natural_gas
+  - energy_diesel
+  - energy_petrol
+  - energy_lpg
+  - energy_total
+  - energy_intensity_revenue
+  - energy_intensity_output

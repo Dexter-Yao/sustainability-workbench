@@ -1,0 +1,55 @@
+# ABOUTME(en): Appendix C2 disclosure requirements of「排放物」(General Disclosure and KPIs), grouped by pillar,
+# ABOUTME(en): for the coverage audit and for prompt assembly by key whitelist (injection is switch-gated, off by default) and for the coverage audit. Wording awaits check against the official Chinese text.
+topicStandardDisclosureRequirementGroups:
+- topicSectionKey: emissions.gov
+  pillar: governance
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: emissions.gov.general_disclosure_policies
+    standardDisclosureRequirementTitle: 排放物管理政策
+    excerptFrom: 港交所·附錄C2·一般披露 A1
+    standardDisclosureRequirementText: 應披露有關廢氣及溫室氣體排放、向水及土地的排污、有害及無害廢棄物的產生等的政策。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: 一般披露 A1
+  - standardDisclosureRequirementKey: emissions.gov.general_disclosure_compliance
+    standardDisclosureRequirementTitle: 遵守排放相關法律及規例
+    excerptFrom: 港交所·附錄C2·一般披露 A1
+    standardDisclosureRequirementText: 應披露遵守對發行人有重大影響的相關法律及規例的資料，包括匯報期間的合規情況。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: 一般披露 A1
+- topicSectionKey: emissions.strategy
+  pillar: strategy
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: emissions.strategy.emission_targets
+    standardDisclosureRequirementTitle: 排放量目標及達標步驟
+    excerptFrom: 港交所·附錄C2·關鍵績效指標 A1.5
+    standardDisclosureRequirementText: 應描述所訂立的排放量目標及為達到這些目標所採取的步驟。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: 關鍵績效指標 A1.5
+- topicSectionKey: emissions.iro
+  pillar: iro_management
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: emissions.iro.emission_control_measures
+    standardDisclosureRequirementTitle: 排放控制措施
+    excerptFrom: 港交所·附錄C2·一般披露 A1
+    standardDisclosureRequirementText: 應說明公司管理主要排放源的措施，包括廢氣及廢水的處理、監測與檢測安排；與一般披露及關鍵績效指標A1.1的排放數據相互印證。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: 一般披露 A1
+- topicSectionKey: emissions.metrics
+  pillar: metrics_targets
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: emissions.metrics.emission_types_and_data
+    standardDisclosureRequirementTitle: 排放物種類及相關排放數據
+    excerptFrom: 港交所·附錄C2·關鍵績效指標 A1.1
+    standardDisclosureRequirementText: 應披露排放物種類及相關排放數據，例如氮氧化物、硫氧化物、顆粒物及排放至水體的化學需氧量等。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: 關鍵績效指標 A1.1

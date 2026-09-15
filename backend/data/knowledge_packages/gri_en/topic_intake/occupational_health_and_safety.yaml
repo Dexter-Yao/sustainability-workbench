@@ -1,0 +1,23 @@
+# ABOUTME(en): Topic-specific intake questions of "Occupational Health and Safety"; the four fixed pillar questions come from topic_intake_common.yaml.
+# ABOUTME(en): Quantitative metrics are collected through the metric catalog, not here.
+contentScopeId: occupational_health_and_safety
+items:
+- key: health_safety.q_safety_measures
+  prompt: What measures does the company take to prevent work-related injury?
+  kind: text
+  collectionPriority: recommended
+  hint: Inspections, equipment, procedures, drills; or blank.
+  generationBoundary: |-
+    Unless specific figures are given, do not generate injury numbers, rates or investment amounts.
+  maxChars: 5000
+- key: health_safety.q_safety_training
+  prompt: Does the company provide occupational health and safety training?
+  kind: single_select
+  collectionPriority: recommended
+  options:
+  - Yes, regularly
+  - Yes, on induction only
+  - Not yet
+  - Not sure
+  hint: State the arrangement, not the hours.
+  maxChars: 5000

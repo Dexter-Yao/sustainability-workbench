@@ -1,0 +1,429 @@
+@import "tailwindcss";
+
+:root {
+  /* design.md §2.1 语义 token（亮色）；暗色经 .dark 重映射、初期不启用 */
+  /* 暖石中性，略偏绿灰，与主色同源 */
+  --background: #ffffff;
+  --surface: #f6f7f5;
+  --surface-sunken: #edf0ec;
+  --foreground: #19211d;
+  --muted-foreground: #677069;
+  --border: #e2e6e1;
+  --border-strong: #c7ccc6;
+
+  /* 主色：松墨绿 Pine */
+  --accent: #2c6e49;
+  --accent-foreground: #ffffff;
+  --accent-hover: #1f4d33;
+  --accent-subtle: #e7f0e9;
+  --accent-subtle-border: #cfe2d5;
+  --ring: #2c6e49;
+
+  /* 字段回填高亮（预览=编辑统一绿） */
+  --field-foreground: #1f4d33;
+  --field-background: #eaf2ec;
+
+  /* 语义状态 */
+  --success: #2c6e49;
+  --warning: #b27513;
+  --destructive: #bc3b2e;
+
+  /* 语义状态派生底（design.md §2.1.3：10% 底用于 Badge，6% 底用于 InlineAlert 大面积） */
+  --warning-subtle: #f7f0e2;
+  --warning-surface: #fdfaf3;
+  --destructive-subtle: #f7e7e5;
+  --destructive-surface: #fdf6f5;
+  --success-surface: #f4f9f5;
+
+  /* AI 生成态指示（不入正文） */
+  --ai: #6a55c8;
+  --ai-subtle: #ece9fa;
+
+  /* 双重重要性矩阵象限底色（与后端 matrix_chart._QUADRANT_BLUE 同值；图例色阶经 color-mix 派生） */
+  --chart-quadrant: #3d7cc9;
+
+  /* 次级正文（比 --foreground 浅、比 --muted-foreground 深；图表/表格说明、tooltip 深字。design.md §2.1） */
+  --foreground-secondary: #3c443e;
+
+  /* 圆角（design.md §2.4） */
+  --radius-control: 6px;
+  --radius-container: 12px;
+  --radius-pill: 999px;
+
+  /* 投影（design.md §2.5；暖石墨基，仅浮层突起、内容块用留白） */
+  --shadow-card: 0 1px 2px rgba(25, 33, 29, 0.05);
+  --shadow-overlay: 0 6px 20px rgba(25, 33, 29, 0.12);
+  --shadow-modal: 0 16px 48px rgba(25, 33, 29, 0.18);
+
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+    "Microsoft YaHei", "Noto Sans CJK SC", sans-serif;
+  --font-serif: "Songti SC", SimSun, "Noto Serif CJK SC", serif;
+  --font-mono: ui-monospace, "SF Mono", "Cascadia Code", Consolas, monospace;
+
+  /* design.md §2.2/§2.2.1：界面说明角色与最高字重。字号阶封闭（§2.1.2）。 */
+  /* 标题三阶，取值即 design.md §2.2 字号表的 H2/H3 与其下一档；页面 h1 用 --text-title-size。 */
+  --text-title-size: 20px; /* 页面主标题（h1）与抽屉标题 */
+  --text-section-size: 16px; /* 区块小标题（h2）、对话框标题 */
+  --text-subsection-size: 15px; /* 次级小标题、必填星标等需略大于正文的界面元素 */
+  --text-body-size: 14px;
+  --text-label-size: 13px;
+  --text-supporting-size: 12px;
+  --text-overline-size: 11px;
+  /* 图标按钮里的字形（⋯ / ×）：尺寸服务于点击目标与视觉重量，与文字层级无关，故独立成阶。 */
+  --text-glyph-size: 16px;
+
+  /* 动效令牌（design.md §2.6 分层合同）：一次性入场时长统一，微过渡与状态循环各守其位。 */
+  --motion-enter-section: 0.35s ease-out; /* 区块级一次性入场（完成时刻） */
+  --motion-enter-item: 0.2s ease-out; /* 元素级入场：新散点 / 对话框 / 就地提示 */
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+
+  /* 浮层与字段状态别名（design.md §2.1.3） */
+  --hint-surface: var(--background);
+  --hint-foreground: var(--foreground-secondary);
+  --topbar-height: 52px;
+  --field-empty-border: var(--border-strong);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-sans);
+  --font-serif: var(--font-serif);
+  --font-mono: var(--font-mono);
+}
+
+body {
+  background: var(--surface);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+}
+
+/* 表单输入聚焦：边框转主色 + 焦点环（design.md §6） */
+.gs-input {
+  transition: border-color 0.12s, box-shadow 0.12s;
+}
+.gs-input:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-subtle);
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
+
+/* 状态脉冲与骨架（design.md §2.6/§4）：进行中状态点、加载骨架、coach mark 光晕共用。 */
+@keyframes gs-pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.35;
+  }
+}
+@keyframes gs-halo {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 var(--accent-subtle);
+  }
+  50% {
+    box-shadow: 0 0 0 6px var(--accent-subtle);
+  }
+}
+.gs-status-pulse {
+  animation: gs-pulse 2s ease-in-out infinite;
+}
+.gs-skeleton {
+  animation: gs-pulse 1.6s ease-in-out infinite;
+}
+.gs-coach-halo {
+  animation: gs-halo 2s ease-in-out infinite;
+}
+/* 评分页编制区（design.md §7 重要性评分行）：单列上下堆叠，矩阵在上、评分表在下。
+   矩阵是页内一级区块，从进入页面即在场，不是填完才出现的附录。 */
+.gs-scoring-layout {
+  display: grid;
+  /* 上下堆叠：矩阵在上、评分表在下，两者各自独占整幅内容宽。
+     不采用左右并排：并排会把评分表挤进一条窄栏——22 个议题各两个输入框是这一页的主任务，
+     却只分到不足一半宽度；而矩阵在未评分时大面积留白，占着宽度不产生信息。
+     并排还会带来固定列宽与外壳 contentMaxWidth 的耦合（矩阵可能整片盖住输入框）。
+     堆叠后左栏宽度不再由矩阵列反推，输入区拿到全部可用宽度，耦合一并消失。 */
+  grid-template-columns: minmax(0, 1fr);
+  gap: 28px;
+  align-items: start;
+}
+.gs-scoring-matrix-body {
+  display: grid;
+  /* 矩阵在评分表正上方，尺寸克制（360px）——它是随填写更新的参考图，
+     不该占满首屏把真正的任务（22 个议题的输入）挤到折线以下。图例并排在右。 */
+  grid-template-columns: minmax(0, 360px) minmax(220px, 1fr);
+  gap: 24px;
+  align-items: start;
+}
+@media (max-width: 720px) {
+  .gs-scoring-matrix-body {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+.gs-scoring-matrix-panel {
+  /* 堆叠布局下矩阵在正常流中，不再 sticky：它已在评分表正上方，
+     滚动填写时抬眼即见，不需要脱流跟随。 */
+  order: -1;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-container);
+  background: var(--background);
+  padding: 18px 20px;
+}
+/* 评估完成时刻：面板一次性进入动画 + 主色浅描边常驻标记完成态。 */
+@keyframes gs-matrix-reveal {
+  from {
+    opacity: 0.35;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.gs-matrix-reveal {
+  animation: gs-matrix-reveal var(--motion-enter-section);
+  border-color: var(--accent-subtle-border);
+}
+
+/* 生成成功时交付区升到页首的一次性进入动画（design.md §7 生成与交付）。 */
+@keyframes gs-delivery-enter {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.gs-delivery-enter {
+  animation: gs-delivery-enter var(--motion-enter-section);
+}
+/* 元素级入场：均为挂载一次性动画——新散点落位、
+   就地提示出现、对话框打开。重渲染不换 key 不重放。 */
+@keyframes gs-point-enter {
+  from {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+.gs-matrix-point {
+  animation: gs-point-enter var(--motion-enter-item);
+  transform-box: fill-box;
+  transform-origin: center;
+}
+@keyframes gs-alert-enter {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.gs-alert-enter {
+  animation: gs-alert-enter var(--motion-enter-item);
+}
+@keyframes gs-dialog-enter {
+  from {
+    opacity: 0;
+    transform: scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+dialog[open] {
+  animation: gs-dialog-enter var(--motion-enter-item);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gs-status-pulse,
+  .gs-skeleton,
+  .gs-coach-halo,
+  .gs-delivery-enter,
+  .gs-matrix-reveal,
+  .gs-matrix-point,
+  .gs-alert-enter,
+  dialog[open] {
+    animation: none;
+  }
+}
+
+@media (max-width: 900px) {
+.gs-app-surface {
+    padding: 0 !important;
+  }
+
+  .gs-shell-grid {
+    grid-template-columns: minmax(0, 1fr) !important;
+    border-left: 0 !important;
+    border-right: 0 !important;
+  }
+
+  .gs-shell-nav {
+    position: static !important;
+    max-height: none !important;
+    border-right: 0 !important;
+    border-bottom: 1px solid var(--border) !important;
+  }
+
+  .gs-shell-nav[data-collapsed="true"] {
+    padding: 8px 12px !important;
+  }
+
+  .gs-shell-nav[data-collapsed="true"] nav {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0 !important;
+  }
+
+  .gs-shell-main {
+    padding: 20px 16px !important;
+  }
+
+  .gs-intake-layout {
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 24px !important;
+  }
+
+  .gs-intake-preview {
+    position: static !important;
+    max-height: none !important;
+    border-left: 0 !important;
+    border-top: 1px solid var(--border) !important;
+    padding: 20px 0 0 !important;
+  }
+
+  .gs-document-toolbar {
+    flex-wrap: wrap;
+  }
+
+  .gs-document-toolbar h1 {
+    width: 100%;
+  }
+
+  .gs-document-column {
+    padding: 0 0 40px !important;
+  }
+
+  .gs-score-entry {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
+  }
+
+  .gs-score-entry > :first-child {
+    grid-column: 1 / -1;
+  }
+}
+
+.gs-save-error {
+  align-items: center;
+  background: color-mix(in srgb, var(--destructive) 7%, var(--background));
+  border: 1px solid var(--destructive);
+  color: var(--destructive);
+  display: flex;
+  gap: 12px;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  padding: 12px 14px;
+}
+
+.gs-save-error button {
+  background: var(--background);
+  border: 1px solid currentColor;
+  color: inherit;
+  cursor: pointer;
+  flex: none;
+  padding: 6px 10px;
+}
+
+/* 可编辑正文（generative/constrained）标记类——静息态无任何底色/边框（design.md §8「不给正文加背景色」）。
+   可编辑 vs 锁定靠字色区分（§5.1，见 nodes.tsx:64）；选中/编辑中/生成的瞬态高亮由内联样式驱动（§5.2/§5.5）。
+   本类仅作 .gs-controls 悬浮显隐的挂载点，不施加视觉。 */
+.gs-editable {
+  transition: box-shadow 0.15s;
+}
+
+/* 块控件簇（生成/审阅）：默认隐藏，悬浮块或聚焦时才显现——段落密集时不杂乱 */
+.gs-controls {
+  opacity: 0;
+  transition: opacity 0.15s;
+}
+.gs-editable:hover .gs-controls,
+.gs-controls:focus-within {
+  opacity: 1;
+}
+/* shadcn 风 ghost 图标按钮：静止透明、悬浮浅底 */
+.gs-icon-btn {
+  position: relative;
+  transition: background 0.12s, color 0.12s;
+}
+.gs-icon-btn:hover {
+  background: var(--surface-sunken);
+}
+/* 文字提示：出现在控件左侧——浅色 popover（白底深字 + 细边 + 柔和阴影），shadcn/行业通用风 */
+[data-tip] {
+  position: relative;
+}
+[data-tip-right] {
+  position: relative;
+}
+[data-tip-right]:hover::after {
+  content: attr(data-tip-right);
+  position: absolute;
+  left: calc(100% + 8px);
+  top: 50%;
+  transform: translateY(-50%);
+  background: var(--background);
+  color: var(--foreground-secondary);
+  border: 1px solid var(--border);
+  font-size: 12px;
+  line-height: 1.4;
+  padding: 4px 9px;
+  border-radius: 6px;
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: 40;
+  box-shadow: var(--shadow-overlay);
+}
+[data-tip]:hover::after {
+  content: attr(data-tip);
+  position: absolute;
+  right: calc(100% + 8px);
+  top: 50%;
+  transform: translateY(-50%);
+  background: var(--background);
+  color: var(--foreground-secondary);
+  border: 1px solid var(--border);
+  font-size: 12px;
+  line-height: 1.4;
+  padding: 4px 9px;
+  border-radius: 6px;
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: 40;
+  box-shadow:
+    0 4px 6px -1px rgba(25, 33, 29, 0.1),
+    0 2px 4px -2px rgba(25, 33, 29, 0.1);
+}
+

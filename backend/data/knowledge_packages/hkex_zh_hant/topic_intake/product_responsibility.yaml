@@ -1,0 +1,29 @@
+# ABOUTME(en): Topic-specific intake questions of「產品責任」; the four fixed pillar questions come from topic_intake_common.yaml.
+# ABOUTME(en): Quantitative KPIs are collected through the metric catalog, not here.
+contentScopeId: product_responsibility
+items:
+- key: product.q_quality_assurance
+  prompt: 貴公司的質量檢定過程是怎樣的？
+  kind: text
+  collectionPriority: recommended
+  hint: 可說明來料檢驗、製程控制、出貨檢驗、質量體系認證及客戶稽核；沒有可留空。
+  maxChars: 5000
+- key: product.q_recall_procedure
+  prompt: 貴公司如何處理產品回收及客戶投訴？
+  kind: text
+  collectionPriority: recommended
+  hint: 可說明回收觸發條件、追溯機制、投訴受理渠道及處理流程；沒有可留空。
+  generationBoundary: 未填寫具體數值時，不得生成投訴數目、回收比例或處理時效。
+  maxChars: 5000
+- key: product.q_ip_practices
+  prompt: 貴公司如何維護及保障知識產權？
+  kind: text
+  collectionPriority: recommended
+  hint: 可說明專利與商標申請、保密協議、對客戶圖紙及設計的保護；沒有可留空。
+  maxChars: 5000
+- key: product.q_advertising_labelling
+  prompt: 貴公司在廣告及產品標籤方面有哪些合規要求？
+  kind: text
+  collectionPriority: recommended
+  hint: 可說明標籤內容審核、宣傳資料合規審查等；沒有可留空。
+  maxChars: 5000

@@ -1,0 +1,115 @@
+# ABOUTME(en): Topic chapter template of the HKEX Aspect "Data Protection and Privacy": governance / strategy / risk-management
+# ABOUTME(en): blocks with their intake evidence and Appendix C2 requirement keys; the metrics H3 is compiled from metricDisclosure.
+section:
+  key: data_protection_and_privacy
+  title: Data Protection and Privacy
+  headingLevel: 2
+  reportSectionId: data_protection_and_privacy
+  conciseDisclosure:
+    id: privacy.concise_summary
+    type: paragraph
+    blockType: generative
+    source: ai
+    styleRole: body
+    generation:
+      task:
+        focus: |-
+          From the evidence currently visible for this Aspect, write one coherent summary covering the consumer and customer data protection and privacy policies, data security measures and how they are implemented and monitored, without the four sub-headings.
+      inputs:
+        evidence:
+          kind: report_section
+      targetChars:
+      - 260
+      - 520
+  children:
+  - key: data_protection_and_privacy.gov
+    title: Governance
+    pillar: governance
+    headingLevel: 3
+    blocks:
+    - id: privacy.gov_policy_and_compliance
+      type: paragraph
+      blockType: generative
+      source: ai
+      styleRole: body
+      generation:
+        task:
+          focus: |-
+            Describe the company's policies and allocation of responsibility on consumer and customer data protection and privacy, and its compliance with relevant laws and regulations (such as the Hong Kong Personal Data (Privacy) Ordinance and the Mainland Personal Information Protection Law) (privacy matters under Code Aspect B6 General Disclosure).
+          noFactGuidance: |-
+            When the user provides no policy or responsibility facts, describe in a measured, general register the management attention, compliance principles and allocation of responsibility a company of this industry and business type applies to this Aspect; do not name departments, policy titles, certifications or approval flows, and do not claim that a specific system exists or that compliance checks have been completed.
+        inputs:
+          evidence:
+            kind: explicit
+            intakeItems:
+            - privacy.q_governance_roles
+            - privacy.q_governance_policies
+            - privacy.q_governance_certifications
+        targetChars:
+        - 95
+        - 230
+        standardDisclosureRequirementKeys:
+        - data_protection_and_privacy.gov.general_disclosure_policies
+        - data_protection_and_privacy.gov.general_disclosure_compliance
+        simplifiedWritingGuidance:
+        - |-
+          State compliance with relevant laws and regulations only when the user explicitly provides it; otherwise do not write conclusions such as "no non-compliance was identified" or "no material breach".
+  - key: data_protection_and_privacy.strategy
+    title: Strategy
+    pillar: strategy
+    headingLevel: 3
+    blocks:
+    - id: privacy.strategy_direction
+      type: paragraph
+      blockType: generative
+      source: ai
+      styleRole: body
+      generation:
+        task:
+          focus: |-
+            Describe the company's approach, targets and certification direction (such as ISO 27001) on data protection and information security.
+          noFactGuidance: |-
+            When the user provides no targets or plans, state that the company will keep attending to improvement directions and the setting of quantified targets for this Aspect as the business develops; do not invent target values, base years, deadlines or achieved results.
+        inputs:
+          evidence:
+            kind: explicit
+            intakeItems:
+            - privacy.q_strategy_content
+        targetChars:
+        - 70
+        - 170
+        standardDisclosureRequirementKeys:
+        - data_protection_and_privacy.strategy.privacy_direction
+  - key: data_protection_and_privacy.iro
+    title: Risk Management
+    pillar: iro_management
+    headingLevel: 3
+    blocks:
+    - id: privacy.iro_measures
+      type: paragraph
+      blockType: generative
+      source: ai
+      styleRole: body
+      generation:
+        task:
+          focus: |-
+            Describe how the consumer data protection and privacy policies are implemented and monitored: limits on data collection and use, access control, encryption and backup, employee training and incident response (Code KPI B6.5).
+          noFactGuidance: |-
+            When the user provides no specific measures, describe only the management steps and directional arrangements common to this Aspect for the industry and business type; do not claim that the company has implemented specific measures, purchased equipment, engaged contractors or achieved results.
+        inputs:
+          evidence:
+            kind: explicit
+            intakeItems:
+            - privacy.q_privacy_policies
+            - privacy.q_data_security_measures
+        targetChars:
+        - 110
+        - 240
+        standardDisclosureRequirementKeys:
+        - data_protection_and_privacy.iro.privacy_implementation
+        simplifiedWritingGuidance:
+        - |-
+          Figures are carried by the KPI data table; this passage does not state emissions, consumption, ratios or reduction percentages.
+metricDisclosure:
+  catalogMetricKeys:
+  - privacy_data_breaches

@@ -1,0 +1,900 @@
+# ABOUTME(en): Fixed skeleton of an HKEX ESG report (Appendix C2) in English: about the report (reporting boundary,
+# ABOUTME(en): period, basis, reporting principles §14), the mandatory board statement §13, company profile, ESG
+# ABOUTME(en): governance with stakeholder engagement and materiality assessment, and the appendix (KPI table, index).
+# The executable schema is contract/models.py; this file is the template-instance truth: fields carry definitions
+# only, section titles live in Section.title (titleContent when a field is referenced), body blocks are leaves;
+# an empty-title section is a pure content group. blockType: fixed = fixed text | slot = fill-in (field / user
+# input) | constrained/generative = LLM generated. Skeleton ids (about_report / company_intro / sustainability_mgmt /
+# report_appendix, sm.* / appendix.*) equal the other packages and are referenced by code; board_statement is HKEX-specific.
+# Length targets (targetChars) are word counts for this English package.
+title: Environmental, Social and Governance Report
+fields:
+  company_registered_name: {key: company_registered_name, label: Company name, type: string, source: user_input, required: true, requiredBefore: export}
+  company_short_name:      {key: company_short_name, label: Short name, type: string, source: user_input, required: true}
+  reporting_year:          {key: reporting_year, label: Reporting year, type: year, source: user_input, required: true, requiredBefore: export}
+  report_period_start:     {key: report_period_start, label: Reporting period start, type: date, source: user_input, required: false}
+  report_period_end:       {key: report_period_end, label: Reporting period end, type: date, source: user_input, required: false}
+  # The reporting boundary is a structured single choice: the option selects the boundary paragraph variant of
+  # "About This Report"; no selection falls back to the "consistent with the consolidated financial statements" sentence.
+  consolidation_scope:     {key: consolidation_scope, label: Reporting boundary, type: enum, source: user_input, required: false, options: [The Company only (no subsidiaries), The Company and all its subsidiaries, A specific boundary]}
+  consolidation_scope_note: {key: consolidation_scope_note, label: Reporting boundary note, type: string, source: user_input, required: false, appears_when: {all: [{path: fields.consolidation_scope.value, op: eq, value: A specific boundary}]}}
+  report_publication_channel: {key: report_publication_channel, label: Publication channel, type: enum, source: user_input, required: false, options: [Company website, HKEXnews and the company website, Other channels]}
+  report_publication_website_url: {key: report_publication_website_url, label: Company website, type: url, source: user_input, required: false, appears_when: {all: [{path: fields.report_publication_channel.value, op: ne, value: Other channels}]}}
+  report_approval_year:    {key: report_approval_year, label: Approval year, type: year, source: user_input, required: false}
+  report_approval_month:   {key: report_approval_month, label: Approval month, type: month, source: user_input, required: false}
+  assurance_provider_name: {key: assurance_provider_name, label: Assurance provider, type: string, source: user_input, required: false}
+  assurance_standard:      {key: assurance_standard, label: Assurance standard, type: string, source: user_input, required: false}
+  industry_major_category:  {key: industry_major_category, label: Industry, type: enum, source: user_input, required: true, options: [Manufacturing, Construction, Import/export trade and wholesale, Retail, Transportation storage and logistics, Accommodation and food services, Information and communications, Financial and insurance, Real estate, Professional and business services, Health care and social work, Education, Arts entertainment and recreation, Utilities, Other services]}
+  industry_division:        {key: industry_division, label: Principal business, type: string, source: user_input, required: false}
+  industry:                 {key: industry, label: Industry description, type: string, source: derived, required: true, computed: {from: [industry_major_category, industry_division], rule: Industry and principal business names combined}}
+  company_business_summary: {key: company_business_summary, label: Main business summary, type: string, source: derived, required: false, computed: {from: [company_profile], rule: LLM compresses the company profile into a main business summary of about 60 words (context engineering step 0)}}
+
+# User-visible input guidance: explains how to fill in and declares defaults for new reports; never enters the
+# report body, persisted facts or the LLM context.
+inputGuidance:
+  fields.industry_major_category.value:
+    termExplanation: "Industry and principal business set the industry wording and peer reference."
+  fields.report_publication_channel.value:
+    termExplanation: "Sets the access wording; with Other channels readers request it by email."
+  fields.report_publication_website_url.value:
+    helpText: "Website where readers find the report; not a file link."
+  fields.consolidation_scope.value:
+    helpText: "Entities covered; standard boundary if it matches accounts."
+    termExplanation: "Sets the boundary paragraph; default is the Company and all its subsidiaries."
+  fields.consolidation_scope_note.value:
+    helpText: "One phrase naming the entities covered, without a full stop."
+    termExplanation: "Enters the boundary paragraph verbatim; fill in only for A specific boundary."
+  fields.report_approval_year.value:
+    termExplanation: "The board approval sentence appears only when both year and month are given."
+  fields.report_approval_month.value:
+    termExplanation: "Generates the board approval sentence together with the approval year."
+  fields.assurance_provider_name.value:
+    termExplanation: "Fill in after ticking external assurance; used for the assurance paragraph."
+  appendixPackage.readerFeedbackContactInformation.email:
+    helpText: "Reader contact; also used to request the report."
+  fields.reporting_year.value:
+    defaultRule: previous_calendar_year
+  fields.report_period_start.value:
+    defaultRule: reporting_year_start
+  fields.report_period_end.value:
+    defaultRule: reporting_year_end
+assessmentScoreScale:
+  minimumExclusive: 0
+  maximum: 5
+  multipleOf: 0.1
+  financialMaterialityDefinition: Effect on the Company's business, revenue or costs.
+  financialMaterialityExplanation: Topics at or above the threshold are treated as important to the business.
+  impactMaterialityDefinition: Effect on the environment, society and stakeholders.
+  impactMaterialityExplanation: Topics at or above the threshold are treated as important to stakeholders.
+
+# Display vocabulary of the materiality assessment (tables, matrix axes, model-visible IRO labels).
+# The sm.topic_table / sm.iro_table option lists must agree with these words (guarded by tests).
+assessmentVocabulary:
+  materiality: {dual: Highly material, financial: Important to the business, impact: Important to stakeholders, non: General concern}
+  materialityAxes: {financial: Importance to the business, impact: Importance to stakeholders}
+  iroKind: {impact: Impact, risk: Risk, opportunity: Opportunity, risk_opportunity: Risk and opportunity}
+  impactClass: {actual_positive: Actual positive impact, potential_positive: Potential positive impact, potential_negative: Potential negative impact}
+
+# Wording of the quantitative metrics table that is validated or printed: the greenhouse gas accounting
+# standard choices, the "other" sentinel, and the review-only remark naming the standard behind a value.
+quantitativeMetricsVocabulary:
+  greenhouseGasAccountingStandards:
+    - GHG Protocol Corporate Accounting and Reporting Standard
+    - ISO 14064-1:2018
+  otherStandardLabel: Other
+  accountingStandardRemarkTemplate: "Accounting standard: {standard}"
+  remarkSeparator: "; "
+  noValueReasonLabels:
+    not_collected: Not yet collected
+    not_available: Not currently available
+    not_applicable: Not applicable
+    will_supplement: To be provided later
+
+intakeItems:
+  - key: company_profile
+    contentScopeId: front_company_intro
+    prompt: Company profile
+    kind: text
+    collectionPriority: core
+    hint: Plain facts are enough; no need for report prose.
+    termExplanation: Basis of "About the Company" and the business summary; rewritten on generation.
+    minChars: 100
+    maxChars: 5000
+  - key: company_certifications
+    contentScopeId: front_company_intro
+    prompt: List the professional certifications, qualifications and awards the company holds.
+    kind: text
+    collectionPriority: recommended
+    hint: Names and awarding bodies; skip uploaded certificates.
+    maxChars: 3000
+  - key: board_statement.q_oversight
+    contentScopeId: front_board_statement
+    prompt: How does the board oversee environmental, social and governance matters?
+    kind: text
+    collectionPriority: core
+    hint: Oversight duties, review frequency, reporting line.
+    termExplanation: "Code paragraph 13(i): the statement covers board oversight of ESG issues."
+    maxChars: 5000
+  - key: board_statement.q_management_approach
+    contentScopeId: front_board_statement
+    prompt: What are the board's ESG management approach and strategy, and how are material issues evaluated, prioritised and managed?
+    kind: text
+    collectionPriority: core
+    hint: Approach, strategy, and how material issues are identified.
+    termExplanation: "Code paragraph 13(ii): approach, strategy and the process for material issues."
+    maxChars: 5000
+  - key: board_statement.q_progress_review
+    contentScopeId: front_board_statement
+    prompt: How does the board review progress against ESG-related goals and targets?
+    kind: text
+    collectionPriority: core
+    hint: Targets set, review frequency and method, business link.
+    termExplanation: "Code paragraph 13(iii): progress review and how targets relate to the business."
+    maxChars: 5000
+  - key: sustainability_governance_structure
+    contentScopeId: front_sustainability_mgmt
+    prompt: Which bodies, departments or positions take part in managing the company's ESG matters?
+    kind: text
+    collectionPriority: core
+    hint: Committee or working group levels; or who does what today.
+    maxChars: 5000
+  - key: sustainability_governance_duties
+    contentScopeId: front_sustainability_mgmt
+    prompt: What are the main ESG responsibilities of those bodies, departments or positions?
+    kind: text
+    collectionPriority: core
+    hint: Responsibility boundaries and coordination; keep it real.
+    maxChars: 5000
+
+disclosureProfile:
+  mainlandStandard: sse
+  includesHongKongExchangeGuide: false
+  additionalDisclosureReferences: []
+appendixPackage:
+  externalAssuranceReport:
+    isIncluded: false
+  readerFeedbackContactInformation:
+    address: null
+    email: null
+    phone: null
+
+sections:
+  # ============ About This Report ============
+  - key: about_report
+    title: About This Report
+    headingLevel: 1
+    required: true
+    blocks:
+      - id: about.opening
+        type: paragraph
+        blockType: fixed
+        source: template
+        styleRole: body
+        content:
+          - {kind: ref, ref: company_short_name, fallback: The Company}
+          - {kind: text, text: " is committed to sustainable development, values the reasonable expectations of its stakeholders and keeps advancing its environmental, social and governance work. This report presents the Company's environmental, social and governance arrangements and its practice on material topics, and sets out objectively the management approach, progress and performance data for the reporting period."}
+    children:
+      - key: about_report.scope
+        title: Reporting Boundary
+        headingLevel: 2
+        blocks:
+          - id: about.scope
+            type: paragraph
+            blockType: slot
+            source: user_input
+            styleRole: body
+            appears_when:
+              all:
+                - {path: fields.company_short_name.value, op: exists}
+                - {path: fields.consolidation_scope.value, op: ne, value: The Company only (no subsidiaries)}
+                - {path: fields.consolidation_scope.value, op: ne, value: A specific boundary}
+            content:
+              - {kind: text, text: "The reporting boundary of this report covers "}
+              - {kind: ref, ref: company_registered_name}
+              - {kind: text, text: " and its subsidiaries (\""}
+              - {kind: ref, ref: company_short_name}
+              - {kind: text, text: "\", the \"Company\" or \"we\"), consistent with the scope of the Company's annual consolidated financial statements. Where the statistical scope of a particular data item differs from the reporting boundary, this is noted in the text."}
+          - id: about.scope_without_short_name
+            type: paragraph
+            blockType: slot
+            source: user_input
+            styleRole: body
+            appears_when:
+              all:
+                - {path: fields.company_short_name.value, op: not_exists}
+                - {path: fields.consolidation_scope.value, op: ne, value: The Company only (no subsidiaries)}
+                - {path: fields.consolidation_scope.value, op: ne, value: A specific boundary}
+            content:
+              - {kind: text, text: "The reporting boundary of this report covers "}
+              - {kind: ref, ref: company_registered_name}
+              - {kind: text, text: " and its subsidiaries (together the \"Company\" or \"we\"), consistent with the scope of the Company's annual consolidated financial statements. Where the statistical scope of a particular data item differs from the reporting boundary, this is noted in the text."}
+          - id: about.scope_parent_only
+            type: paragraph
+            blockType: slot
+            source: user_input
+            styleRole: body
+            appears_when:
+              all:
+                - {path: fields.company_short_name.value, op: exists}
+                - {path: fields.consolidation_scope.value, op: eq, value: The Company only (no subsidiaries)}
+            content:
+              - {kind: text, text: "The reporting boundary of this report covers "}
+              - {kind: ref, ref: company_registered_name}
+              - {kind: text, text: " (\""}
+              - {kind: ref, ref: company_short_name}
+              - {kind: text, text: "\", the \"Company\" or \"we\"), being the Company itself. Where the statistical scope of a particular data item differs from the reporting boundary, this is noted in the text."}
+          - id: about.scope_parent_only_without_short_name
+            type: paragraph
+            blockType: slot
+            source: user_input
+            styleRole: body
+            appears_when:
+              all:
+                - {path: fields.company_short_name.value, op: not_exists}
+                - {path: fields.consolidation_scope.value, op: eq, value: The Company only (no subsidiaries)}
+            content:
+              - {kind: text, text: "The reporting boundary of this report covers "}
+              - {kind: ref, ref: company_registered_name}
+              - {kind: text, text: " (the \"Company\" or \"we\"), being the Company itself. Where the statistical scope of a particular data item differs from the reporting boundary, this is noted in the text."}
+          - id: about.scope_special
+            type: paragraph
+            blockType: slot
+            source: user_input
+            styleRole: body
+            appears_when:
+              all:
+                - {path: fields.company_short_name.value, op: exists}
+                - {path: fields.consolidation_scope.value, op: eq, value: A specific boundary}
+            content:
+              - {kind: text, text: "The reporting boundary of this report covers "}
+              - {kind: ref, ref: company_registered_name}
+              - {kind: text, text: " (\""}
+              - {kind: ref, ref: company_short_name}
+              - {kind: text, text: "\", the \"Company\" or \"we\"). The data in this report are compiled for the following boundary: "}
+              - {kind: ref, ref: consolidation_scope_note, fallback: the disclosure boundary noted at each place in the text}
+              - {kind: text, text: ". Where the statistical scope of a particular data item differs from the reporting boundary, this is noted in the text."}
+          - id: about.scope_special_without_short_name
+            type: paragraph
+            blockType: slot
+            source: user_input
+            styleRole: body
+            appears_when:
+              all:
+                - {path: fields.company_short_name.value, op: not_exists}
+                - {path: fields.consolidation_scope.value, op: eq, value: A specific boundary}
+            content:
+              - {kind: text, text: "The reporting boundary of this report covers "}
+              - {kind: ref, ref: company_registered_name}
+              - {kind: text, text: " (the \"Company\" or \"we\"). The data in this report are compiled for the following boundary: "}
+              - {kind: ref, ref: consolidation_scope_note, fallback: the disclosure boundary noted at each place in the text}
+              - {kind: text, text: ". Where the statistical scope of a particular data item differs from the reporting boundary, this is noted in the text."}
+      - key: about_report.timeframe
+        title: Reporting Period
+        headingLevel: 2
+        blocks:
+          - id: about.timeframe
+            type: paragraph
+            blockType: slot
+            source: user_input
+            styleRole: body
+            appears_when:
+              all:
+                - {path: fields.report_period_start.value, op: exists}
+                - {path: fields.report_period_end.value, op: exists}
+            content:
+              - {kind: text, text: "This is an annual report covering the period from "}
+              - {kind: ref, ref: report_period_start}
+              - {kind: text, text: " to "}
+              - {kind: ref, ref: report_period_end}
+              - {kind: text, text: ", consistent with the financial year covered by the Company's annual report. Where data extend beyond this period, this is explained at the relevant place."}
+      - key: about_report.basis
+        title: Basis of Preparation
+        headingLevel: 2
+        blocks:
+          - id: about.basis
+            type: paragraph
+            blockType: fixed
+            source: template
+            styleRole: body
+            content:
+              - {kind: text, text: "This report is prepared in accordance with "}
+              - {kind: ref, ref: disclosureProfile.basisStatement}
+              - {kind: text, text: ". It covers the mandatory disclosure requirements of Part B of the Code, the General Disclosures and key performance indicators of each Aspect in Part C, and the climate-related disclosures of Part D; the structure of the climate-related disclosures follows IFRS S2 Climate-related Disclosures issued by the International Sustainability Standards Board (ISSB)."}
+      - key: about_report.principles
+        title: Reporting Principles
+        headingLevel: 2
+        blocks:
+          - id: about.principles
+            type: paragraph
+            blockType: fixed
+            source: template
+            styleRole: body
+            content: [{kind: text, text: "This report is prepared in accordance with the four reporting principles set out in paragraph 14 of the Code: materiality, quantitative, balance and consistency."}]
+          - {id: about.principle_materiality, type: paragraph, blockType: fixed, source: template, styleRole: body, listType: unordered, content: [{kind: text, text: "Materiality: through stakeholder engagement and a materiality assessment, the environmental, social and governance issues with a material effect on investors and other stakeholders are identified and disclosed first; the process and results are set out in the chapter \"Sustainability Governance\"."}]}
+          - {id: about.principle_quant, type: paragraph, blockType: fixed, source: template, styleRole: body, listType: unordered, content: [{kind: text, text: "Quantitative: key performance indicators are disclosed in measurable terms together with the standards, methodologies, assumptions and sources of conversion factors used, so that the information can be compared and evaluated."}]}
+          - {id: about.principle_balance, type: paragraph, blockType: fixed, source: template, styleRole: body, listType: unordered, content: [{kind: text, text: "Balance: the Company's performance is presented impartially, disclosing progress and achievements while reflecting challenges and shortcomings truthfully, and avoiding selections that could unduly influence a reader's judgement."}]}
+          - {id: about.principle_consistency, type: paragraph, blockType: fixed, source: template, styleRole: body, listType: unordered, content: [{kind: text, text: "Consistency: consistent methodologies and disclosure scope are used to allow meaningful comparison over time; any change in methodology or key performance indicators, and its effect, is explained in the report."}]}
+      - key: about_report.access
+        title: Access and Feedback
+        headingLevel: 2
+        blocks:
+          - id: about.access.website
+            type: paragraph
+            blockType: slot
+            source: user_input
+            styleRole: body
+            appears_when:
+              all:
+                - {path: fields.report_publication_channel.value, op: ne, value: Other channels}
+                - {path: fields.report_publication_website_url.value, op: exists}
+            content:
+              - {kind: text, text: "This report is published in English; where a Chinese version is also published and any discrepancy arises, the English version prevails. The report can be viewed and downloaded on the HKEXnews website of Hong Kong Exchanges and Clearing Limited and on the Company's website at "}
+              - {kind: ref, ref: report_publication_website_url}
+              - {kind: text, text: "."}
+          - id: about.access
+            type: paragraph
+            blockType: slot
+            source: user_input
+            styleRole: body
+            appears_when:
+              any:
+                - {path: fields.report_publication_channel.value, op: eq, value: Other channels}
+                - {path: fields.report_publication_website_url.value, op: not_exists}
+            content:
+              - {kind: text, text: "This report is published in English; where a Chinese version is also published and any discrepancy arises, the English version prevails."}
+          - id: about.contact
+            type: paragraph
+            blockType: slot
+            source: user_input
+            styleRole: body
+            appears_when: {all: [{path: appendixPackage.readerFeedbackContactInformation.email, op: exists}]}
+            content:
+              - {kind: text, text: "To request a copy of this report, or for any enquiry or suggestion about its content, please contact us by email at "}
+              - {kind: ref, ref: appendixPackage.readerFeedbackContactInformation.email}
+              - {kind: text, text: "."}
+      - key: about_report.assurance
+        title: Assurance
+        headingLevel: 2
+        blocks:
+          - id: about.assurance
+            type: paragraph
+            blockType: slot
+            source: user_input
+            styleRole: body
+            appears_when:
+              all:
+                - {path: appendixPackage.externalAssuranceReport.isIncluded, op: eq, value: true}
+                - {path: fields.assurance_provider_name.value, op: exists}
+                - {path: fields.assurance_standard.value, op: exists}
+            content:
+              - {kind: text, text: "The Company engaged "}
+              - {kind: ref, ref: assurance_provider_name}
+              - {kind: text, text: " to provide independent assurance on this report in accordance with "}
+              - {kind: ref, ref: assurance_standard}
+              - {kind: text, text: "; the assurance report is set out in the appendix."}
+      # The approval sentence is an unnumbered closing paragraph: placed in an empty-title group, transparent to numbering.
+      - key: about_report.approval
+        title: ""
+        headingLevel: 2
+        blocks:
+          - id: about.approval
+            type: paragraph
+            blockType: slot
+            source: user_input
+            styleRole: body
+            appears_when:
+              all:
+                - {path: fields.report_approval_year.value, op: exists}
+                - {path: fields.report_approval_month.value, op: exists}
+            content:
+              - {kind: text, text: "This report was reviewed and approved by the Board in "}
+              - {kind: ref, ref: report_approval_month}
+              - {kind: text, text: "."}
+
+  # ============ Board Statement (Code Part B paragraph 13, mandatory) ============
+  - key: board_statement
+    title: Board Statement
+    headingLevel: 1
+    required: true
+    blocks:
+      - id: board.oversight
+        type: paragraph
+        blockType: constrained
+        source: ai
+        styleRole: body
+        generation:
+          task:
+            focus: "In the board's own voice, describe the board's oversight of environmental, social and governance matters: its oversight duties, the review arrangements and the reporting line to the board."
+            noFactGuidance: |-
+              When the user provides no board oversight arrangements, state in a prudent, general way that the board holds ultimate responsibility for environmental, social and governance matters, reviews the related matters and risks periodically, and receives reports from management; do not name committees, headcounts, review frequencies or specific meetings.
+          inputs: {evidence: {kind: explicit, intakeItems: [board_statement.q_oversight]}}
+          targetChars: [90, 190]
+          simplifiedWritingGuidance:
+            - "Use \"the Board\" as the subject, or the first person plural (we), consistently through the paragraph."
+            - "Write only the oversight arrangements themselves; do not develop the measures or performance of individual Aspects here."
+      - id: board.management_approach
+        type: paragraph
+        blockType: constrained
+        source: ai
+        styleRole: body
+        generation:
+          task:
+            focus: "Describe the board's environmental, social and governance management approach and strategy, including the process used to evaluate, prioritise and manage material ESG-related issues (including risks to the Company's businesses)."
+            noFactGuidance: |-
+              When the user provides no management approach, state generally that the company considers environmental, social and governance factors in its business strategy and risk management and identifies and ranks material issues through stakeholder engagement and a materiality assessment; do not claim a specific committee, dedicated system or completed appraisal.
+          inputs: {evidence: {kind: explicit, intakeItems: [board_statement.q_management_approach]}}
+          targetChars: [110, 230]
+          simplifiedWritingGuidance:
+            - "The concrete steps and results of the materiality assessment are carried by the chapter \"Sustainability Governance\"; this paragraph states only the board-level approach and process and does not repeat the topic list."
+      - id: board.progress_review
+        type: paragraph
+        blockType: constrained
+        source: ai
+        styleRole: body
+        generation:
+          task:
+            focus: "Describe how the board reviews progress against environmental, social and governance-related goals and targets, and explain how those targets relate to the Company's businesses."
+            noFactGuidance: |-
+              When the user provides no progress review arrangements, state that the board reviews progress of the related work periodically and reconsiders the suitability of the targets as the business develops; do not invent target values, base years or deadlines.
+          inputs: {evidence: {kind: explicit, intakeItems: [board_statement.q_progress_review]}}
+          targetChars: [70, 180]
+
+  # ============ About the Company ============
+  - key: company_intro
+    title: About the Company
+    titleContent: [{kind: text, text: "About "}, {kind: ref, ref: company_short_name, fallback: the Company}]
+    headingLevel: 1
+    required: true
+    blocks:
+      - id: company_intro.body
+        type: paragraph
+        blockType: constrained
+        source: ai
+        styleRole: body
+        generation:
+          task: {focus: "From the company profile the user provided, compose a complete and accurate company introduction as the body of the chapter \"About the Company\"."}
+          inputs: {evidence: {kind: explicit, intakeItems: [company_profile, company_certifications]}}
+          targetChars: [240, 720]
+          simplifiedWritingGuidance:
+            - "The substance of this chapter is the company's own profile: background, history, business and vision are not \"background padding\" here but the body itself, and should be presented directly and completely."
+            - "Every fact category the user's profile actually provides must appear in the text: history and milestones, main products or services, sales network or market coverage, strategic vision and values, and other important facts the user provided (such as awards and qualifications); categories the user did not provide are neither invented nor supplemented."
+            - "Compose and rewrite rather than compress: order may be rearranged and slogan-like repetition removed, but verifiable facts such as specific years, product names, regions and customer segments must not be dropped; length adapts within the range to the richness of the user's material."
+      - id: company_intro.layout_assets
+        type: image
+        blockType: slot
+        source: user_input
+        styleRole: figure_inline
+        image: {layoutAssetSlot: true}
+
+  # ============ Sustainability Governance ============
+  - key: sustainability_mgmt
+    title: Sustainability Governance
+    headingLevel: 1
+    required: true
+    children:
+      - key: sm.gov_arch
+        title: Governance Structure
+        headingLevel: 2
+        required: true
+        blocks:
+          - id: sm.gov_arch_overview
+            type: paragraph
+            blockType: constrained
+            source: ai
+            styleRole: body
+            generation:
+              task:
+                focus: "Describe the governance structure the company has established or applies to manage environmental, social and governance matters, by decision-making, management and execution levels, with the responsibilities and coordination of each level; the board-level oversight statement is carried by the \"Board Statement\" and is not repeated here."
+                noFactGuidance: |-
+                  When the user provides no governance structure, describe generic responsibilities at three levels — decision-making, management and execution — without naming committees, departments, positions or headcounts:
+                  the decision-making level oversees the assessment of ESG-related risks and opportunities, reviews the related approach, strategy and targets, and reviews progress periodically;
+                  the management level coordinates the management of material topics, allocates the resources needed and reports to the decision-making level;
+                  the execution level implements the measures, compiles and analyses data, communicates with stakeholders and coordinates the preparation of this report.
+                  Do not write that a dedicated committee has been established, that a closed loop has formed, that periodic reviews take place or that appraisals have been completed unless the user confirms it.
+              inputs: {evidence: {kind: explicit, intakeItems: [sustainability_governance_structure, sustainability_governance_duties]}}
+              targetChars: [170, 360]
+              simplifiedWritingGuidance:
+                - Write only the organisational levels, responsibility boundaries and directions of coordination; do not expand existing departments acting alongside their duties into mature dedicated committees, complete closed loops or dedicated appraisal arrangements.
+          - id: sm.layout_assets
+            type: image
+            blockType: slot
+            source: user_input
+            styleRole: figure_inline
+            image: {layoutAssetSlot: true}
+
+      - key: sm.stakeholder
+        title: Stakeholder Engagement
+        headingLevel: 2
+        blocks:
+          - id: sm.stakeholder_intro
+            type: paragraph
+            blockType: fixed
+            source: template
+            styleRole: body
+            content: [{kind: text, text: "Stakeholder engagement helps the Company understand the concerns of each party on environmental, social and governance matters and is the basis for identifying material topics and improving the related management. The Company keeps in touch with its main stakeholders through diverse channels; the main stakeholders, their concerns and the means of communication are summarised below."}]
+          - id: sm.stakeholder_table
+            type: table
+            blockType: slot
+            source: user_input
+            styleRole: table_three_line
+            table:
+              caption: Stakeholder engagement
+              firstColumnNarrow: true
+              rowSource: stakeholder_engagement
+              colDefs:
+                - {key: stk_party, header: Stakeholder, cellType: text}
+                - {key: stk_topics, header: Topics of concern, cellType: text}
+                - {key: stk_methods, header: Communication and engagement, cellType: text}
+              children:
+                - headerRow: true
+                  children:
+                    - {type: th, value: Stakeholder}
+                    - {type: th, value: Topics of concern}
+                    - {type: th, value: Communication and engagement}
+      - key: sm.materiality
+        title: Materiality Assessment
+        headingLevel: 2
+        blocks:
+          # —— unscored branch (meta.materialityStrategy == complete_coverage) ——
+          - id: sm.unscored_purpose
+            type: paragraph
+            blockType: fixed
+            source: template
+            styleRole: body
+            appears_when: {all: [{path: meta.materialityStrategy, op: eq, value: complete_coverage}]}
+            content: [{kind: text, text: "The materiality assessment is the foundation for setting the focus of environmental, social and governance reporting. It helps the Company concentrate on the matters most important to its business and stakeholders and provides the basis for its management approach and targets."}]
+          - id: sm.unscored_identification
+            type: paragraph
+            blockType: fixed
+            source: template
+            styleRole: body
+            appears_when: {all: [{path: meta.materialityStrategy, op: eq, value: complete_coverage}]}
+            content:
+              - {kind: text, text: "In "}
+              - {kind: ref, ref: reporting_year}
+              - {kind: text, text: ", the Company identified the environmental, social and governance impacts of its operations across its business and value chain, followed regulatory requirements, industry trends and stakeholder expectations to judge the potential effects of external factors on its business, and brought the concerns of its main stakeholders into the assessment framework."}
+          - id: sm.unscored_screening
+            type: paragraph
+            blockType: fixed
+            source: template
+            styleRole: body
+            appears_when: {all: [{path: meta.materialityStrategy, op: eq, value: complete_coverage}]}
+            content: [{kind: text, text: "Against the General Disclosures and key performance indicators of each Aspect of the Code, and with regard to the characteristics of its industry, the Company screened the environmental, social and governance topics with a substantive effect on it."}]
+          - id: sm.unscored_coverage
+            type: paragraph
+            blockType: fixed
+            source: template
+            styleRole: body
+            appears_when: {all: [{path: meta.materialityStrategy, op: eq, value: complete_coverage}]}
+            content:
+              - {kind: text, text: "This report discloses "}
+              - {kind: ref, ref: assessment.applicableTopicCount}
+              - {kind: text, text: " environmental, social and governance topics in total, covering every Aspect of the two Subject Areas, Environmental and Social, and the climate-related disclosures of "}
+              - {kind: ref, ref: disclosureProfile.selectedStandardNames}
+              - {kind: text, text: "."}
+          # —— scored branch ——
+          - id: sm.materiality_intro
+            type: paragraph
+            blockType: fixed
+            source: template
+            styleRole: body
+            appears_when: {all: [{path: meta.materialityStrategy, op: ne, value: complete_coverage}]}
+            content: [{kind: text, text: "The materiality assessment gives this report a structured reference that focuses it on the key areas and organises the disclosure priorities. Environmental and social topics are presented by the Aspects of the Code and the climate-related disclosures."}]
+          - id: sm.topic_library
+            type: paragraph
+            blockType: fixed
+            source: template
+            styleRole: body
+            appears_when: {all: [{path: meta.materialityStrategy, op: ne, value: complete_coverage}]}
+            content:
+              - {kind: text, text: "Drawing on the characteristics of its industry and the topic framework of the Code, the Company compiled this year's list of environmental, social and governance topics as the basis of the materiality assessment and of the chapter disclosures."}
+          - id: sm.process_step1
+            type: paragraph
+            blockType: fixed
+            source: template
+            styleRole: body
+            listType: ordered
+            appears_when: {all: [{path: meta.materialityStrategy, op: ne, value: complete_coverage}]}
+            content: [{kind: text, text: "Understanding the business context: identifying environmental, social and governance impacts across operations and the value chain, following regulatory requirements, industry trends and stakeholder expectations, and mapping the main stakeholders and their concerns."}]
+          - id: sm.process_step2
+            type: paragraph
+            blockType: fixed
+            source: template
+            styleRole: body
+            listType: ordered
+            appears_when: {all: [{path: meta.materialityStrategy, op: ne, value: complete_coverage}]}
+            content: [{kind: text, text: "Building the topic list: against the Aspects of the Code and the climate-related disclosures, and with regard to industry characteristics and peer practice, compiling a complete and clearly structured list of topics."}]
+          - id: sm.process_step3
+            appears_when: {all: [{path: meta.materialityStrategy, op: ne, value: complete_coverage}]}
+            type: paragraph
+            blockType: fixed
+            source: template
+            styleRole: body
+            listType: ordered
+            content: [{kind: text, text: "Assessing materiality: evaluating each topic on two dimensions, importance to stakeholders (the Company's impact on the environment, society and stakeholders) and importance to the business (the effect on the Company's business, revenue or costs over the short, medium and long term)."}]
+          - id: sm.process_step4
+            appears_when: {all: [{path: meta.materialityStrategy, op: ne, value: complete_coverage}]}
+            type: paragraph
+            blockType: fixed
+            source: template
+            styleRole: body
+            listType: ordered
+            content: [{kind: text, text: "Confirming and presenting: setting materiality thresholds, drawing the materiality matrix, and disclosing the results in this report after confirmation by management and review by the Board."}]
+          - id: sm.result_counts
+            type: paragraph
+            blockType: slot
+            source: assessment
+            styleRole: body
+            content:
+              - {kind: text, text: "The "}
+              - {kind: ref, ref: reporting_year}
+              - {kind: text, text: " materiality assessment identified "}
+              - {kind: ref, ref: assessment.counts.dual}
+              - {kind: text, text: " highly material topics, "}
+              - {kind: ref, ref: assessment.counts.financial_only}
+              - {kind: text, text: " topics important to the business, "}
+              - {kind: ref, ref: assessment.counts.impact_only}
+              - {kind: text, text: " topics important to stakeholders and "}
+              - {kind: ref, ref: assessment.counts.non_material}
+              - {kind: text, text: " topics of general concern."}
+          - id: sm.matrix_image
+            type: image
+            blockType: slot
+            source: assessment
+            styleRole: figure_inline
+            image:
+              caption: Materiality matrix
+              placeholder: Materiality matrix generated from the assessment results
+          - id: sm.topic_table
+            type: table
+            blockType: slot
+            source: assessment
+            styleRole: table_three_line
+            table:
+              caption: Materiality assessment results
+              firstColumnNarrow: true
+              rowSource: assessment_topics
+              colDefs:
+                - {key: topic_dimension, header: Subject area, cellType: text}
+                - {key: topic_name, header: Topic, cellType: text}
+                - {key: topic_materiality, header: Materiality, cellType: single_select, options: [Highly material, Important to stakeholders, Important to the business, General concern]}
+              children:
+                - headerRow: true
+                  children:
+                    - {type: th, value: Subject area}
+                    - {type: th, value: Topic}
+                    - {type: th, value: Materiality}
+          - id: sm.iro_intro
+            type: paragraph
+            blockType: fixed
+            source: template
+            styleRole: body
+            appears_when:
+              any:
+                - {path: assessment.counts.dual, op: gt, value: 0}
+                - {path: assessment.counts.financial_only, op: gt, value: 0}
+            content:
+              - {kind: text, text: "For the topics that are highly material or important to the business, the Company has set out the impacts, risks and opportunities of "}
+              - {kind: ref, ref: company_short_name, fallback: the Company}
+              - {kind: text, text: " on the basis of the assessment results, summarised below."}
+          - id: sm.iro_table
+            type: table
+            blockType: constrained
+            source: ai
+            styleRole: table_three_line
+            appears_when:
+              any:
+                - {path: assessment.counts.dual, op: gt, value: 0}
+                - {path: assessment.counts.financial_only, op: gt, value: 0}
+            generation:
+              task:
+                focus: "For each topic within the highly material or important-to-the-business range, give the impact disclosure and the risk and opportunity disclosure separately; topic names and applicable scope are fixed by the assessment, and the model completes only the remaining disclosure cells."
+                noFactGuidance: "Where the company's specific impacts, risks and opportunities are absent, describe only the potential impacts, risks or opportunities relevant to the industry and business type; do not claim that the company has experienced, identified or established any specific system, project, meeting, appraisal or result, and do not classify anything as \"Actual positive impact\"."
+              inputs:
+                evidence: {kind: explicit}
+              producesConclusion: topic_iro
+              rowMode: expanded_rows
+              rowExpansion:
+                sharedColumnKeys: [iro_topic, iro_value_chain, iro_time_horizon]
+                units:
+                  - key: impact
+                    label: Impact description
+                    columnKeys: [iro_desc, iro_class]
+                    optionsNarrowing:
+                      iro_class: [Actual positive impact, Potential positive impact, Potential negative impact]
+                    genHintOverride:
+                      iro_desc: "Write only the topic's impact on the external environment and society, not the risks or opportunities to the company itself; one paragraph of no more than 70 words, without repeating the topic name."
+                  - key: risk_opportunity
+                    label: Risk and/or opportunity description
+                    columnKeys: [iro_desc, iro_class]
+                    optionsNarrowing:
+                      iro_class: [Opportunity, Risk]
+                    genHintOverride:
+                      iro_desc: "Write only the risk the topic poses to, or the opportunity it brings, the company itself, without repeating the impact sub-row; one paragraph of no more than 70 words, without repeating the topic name."
+            table:
+              caption: Impacts, risks and opportunities of highly material topics and topics important to the business
+              firstColumnNarrow: true
+              columnWidthWeights: {iro_topic: 12, iro_desc: 45, iro_class: 15, iro_value_chain: 18, iro_time_horizon: 10}
+              rowSource: assessment_iro
+              colDefs:
+                - {key: iro_topic, header: Topic, cellType: text}
+                - {key: iro_desc, header: "Description of impact, risk and opportunity", cellType: ai_text}
+                - {key: iro_class, header: Classification, cellType: multi_select, options: [Actual positive impact, Potential positive impact, Potential negative impact, Opportunity, Risk]}
+                - {key: iro_value_chain, header: Where it arises, cellType: multi_select, options: [Upstream value chain, Own operations, Downstream value chain]}
+                - {key: iro_time_horizon, header: Time horizon, cellType: multi_select, options: [Short term, Medium term, Long term]}
+              children:
+                - headerRow: true
+                  children:
+                    - {type: th, value: Topic}
+                    - {type: th, value: "Description of impact, risk and opportunity"}
+                    - {type: th, value: Classification}
+                    - {type: th, value: Where it arises}
+                    - {type: th, value: Time horizon}
+  # ============ Certifications and Qualifications (absent when no certificates) ============
+  - key: sustainable_achievements
+    title: Certifications and Qualifications
+    headingLevel: 1
+    required: false
+    children:
+      - key: achievements_certificates
+        title: Professional Certifications and Qualifications
+        headingLevel: 2
+        blocks:
+          - id: achievements.certificate_table
+            type: table
+            blockType: slot
+            source: user_input
+            styleRole: table_three_line
+            table:
+              caption: Professional certifications and qualifications of the Company
+              firstColumnNarrow: false
+              rowSource: certificate_facts
+              colDefs:
+                - {key: cert_name, header: Certification, cellType: text}
+                - {key: cert_issuer, header: Issuing body, cellType: text}
+                - {key: cert_scope, header: Scope, cellType: text}
+              children:
+                - headerRow: true
+                  children:
+                    - {type: th, value: Certification}
+                    - {type: th, value: Issuing body}
+                    - {type: th, value: Scope}
+          - id: achievements.layout_assets
+            type: image
+            blockType: slot
+            source: user_input
+            styleRole: figure_inline
+            image:
+              layoutAssetSlot: true
+  # ============ Appendix ============
+  - key: report_appendix
+    title: Appendix
+    headingLevel: 1
+    required: true
+    children:
+      - key: report_appendix.esg_key_performance_metrics
+        title: Key Performance Indicators
+        headingLevel: 2
+        blocks:
+          - id: appendix.esg_key_performance_metrics
+            type: table
+            blockType: fixed
+            source: derived
+            styleRole: table_three_line
+            table:
+              caption: Environmental, social and governance key performance indicators
+              firstColumnNarrow: false
+              colDefs:
+                - {key: category, header: Aspect, cellType: text}
+                - {key: kpi_code, header: KPI, cellType: text}
+                - {key: metric, header: Indicator, cellType: text}
+                - {key: unit, header: Unit, cellType: text}
+                - {key: value, header: Reporting year, cellType: text}
+                - {key: remark, header: Basis remark, cellType: text}
+              children:
+                - type: tr
+                  headerRow: true
+                  children:
+                    - {type: th, value: Aspect}
+                    - {type: th, value: KPI}
+                    - {type: th, value: Indicator}
+                    - {type: th, value: Unit}
+                    - {type: th, value: Reporting year}
+                    - {type: th, value: Basis remark}
+      - key: report_appendix.sustainability_disclosure_standards_index
+        title: Code Content Index
+        headingLevel: 2
+        blocks:
+          - id: appendix.standards_index.intro
+            type: paragraph
+            blockType: fixed
+            source: template
+            styleRole: body
+            content:
+              - {kind: ref, ref: disclosureProfile.selectedStandardNames}
+          - id: appendix.standards_index.table
+            type: table
+            blockType: fixed
+            source: derived
+            styleRole: table_three_line
+            table:
+              caption: Content index of the Environmental, Social and Governance Reporting Code
+              colDefs:
+                - {key: disclosure_requirement, header: Aspect / requirement, cellType: text}
+                - {key: clause_reference, header: Provision, cellType: text}
+                - {key: report_section, header: Section of this report, cellType: text}
+              children:
+                - type: tr
+                  headerRow: true
+                  children:
+                    - {type: th, value: Aspect / requirement}
+                    - {type: th, value: Provision}
+                    - {type: th, value: Section of this report}
+      - key: report_appendix.external_assurance_report
+        title: Independent Assurance Report
+        headingLevel: 2
+        appears_when: {all: [{path: appendixPackage.externalAssuranceReport.isIncluded, op: eq, value: true}]}
+        blocks:
+          - id: appendix.external_assurance_report.placeholder
+            type: paragraph
+            blockType: slot
+            source: user_input
+            styleRole: body
+            appears_when: {all: [{path: appendixPackage.externalAssuranceReport.fileLabel, op: exists}]}
+            content:
+              - {kind: text, text: "Independent assurance report attachment: "}
+              - {kind: ref, ref: appendixPackage.externalAssuranceReport.fileLabel}
+              - {kind: text, text: "."}
+      - key: report_appendix.reader_feedback_contact_information
+        title: Reader Feedback
+        headingLevel: 2
+        appears_when:
+          any:
+            - {path: appendixPackage.readerFeedbackContactInformation.address, op: exists}
+            - {path: appendixPackage.readerFeedbackContactInformation.email, op: exists}
+            - {path: appendixPackage.readerFeedbackContactInformation.phone, op: exists}
+        blocks:
+          - id: appendix.reader_feedback.opening
+            type: paragraph
+            blockType: fixed
+            source: template
+            styleRole: body
+            content:
+              - {kind: text, text: "Thank you for reading the environmental, social and governance report of "}
+              - {kind: ref, ref: company_short_name, fallback: the Company}
+              - {kind: text, text: ". We welcome your comments and suggestions on its content."}
+          - id: appendix.reader_feedback.company_name
+            type: paragraph
+            blockType: slot
+            source: user_input
+            styleRole: body
+            appears_when: {all: [{path: fields.company_registered_name.value, op: exists}]}
+            content:
+              - {kind: ref, ref: company_registered_name}
+          - id: appendix.reader_feedback.address
+            type: paragraph
+            blockType: slot
+            source: user_input
+            styleRole: body
+            appears_when: {all: [{path: appendixPackage.readerFeedbackContactInformation.address, op: exists}]}
+            content:
+              - {kind: text, text: "Address: "}
+              - {kind: ref, ref: appendixPackage.readerFeedbackContactInformation.address}
+          - id: appendix.reader_feedback.email
+            type: paragraph
+            blockType: slot
+            source: user_input
+            styleRole: body
+            appears_when: {all: [{path: appendixPackage.readerFeedbackContactInformation.email, op: exists}]}
+            content:
+              - {kind: text, text: "Email: "}
+              - {kind: ref, ref: appendixPackage.readerFeedbackContactInformation.email}
+          - id: appendix.reader_feedback.phone
+            type: paragraph
+            blockType: slot
+            source: user_input
+            styleRole: body
+            appears_when: {all: [{path: appendixPackage.readerFeedbackContactInformation.phone, op: exists}]}
+            content:
+              - {kind: text, text: "Telephone: "}
+              - {kind: ref, ref: appendixPackage.readerFeedbackContactInformation.phone}

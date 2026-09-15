@@ -1,0 +1,1140 @@
+{
+  "$defs": {
+    "AppendixPackage": {
+      "additionalProperties": false,
+      "description": "附录事实包：独立于议题与前四章正文，供附录章节、诊断与导出使用。",
+      "properties": {
+        "externalAssuranceReport": {
+          "$ref": "#/$defs/ExternalAssuranceReport",
+          "default": {
+            "isIncluded": false,
+            "fileLabel": null
+          }
+        },
+        "readerFeedbackContactInformation": {
+          "$ref": "#/$defs/ReaderFeedbackContactInformation",
+          "default": {
+            "address": null,
+            "email": null,
+            "phone": null
+          }
+        }
+      },
+      "title": "AppendixPackage",
+      "type": "object",
+      "required": []
+    },
+    "BlockState": {
+      "enum": [
+        "pending",
+        "generating",
+        "ready",
+        "locked",
+        "failed",
+        "omitted"
+      ],
+      "type": "string"
+    },
+    "CustomEngagementMethod": {
+      "additionalProperties": false,
+      "description": "用户补充的沟通、参与或合作方式；类别用于确定性排序，正文只呈现 label。",
+      "properties": {
+        "kind": {
+          "$ref": "#/$defs/EngagementMethodKind"
+        },
+        "label": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "kind",
+        "label"
+      ],
+      "title": "CustomEngagementMethod",
+      "type": "object"
+    },
+    "DisclosureProfile": {
+      "additionalProperties": false,
+      "description": "报告级披露配置（SSOT §3.D）：大陆准则单选，港交所与其他文件为附加参考。",
+      "properties": {
+        "mainlandStandard": {
+          "default": "sse",
+          "enum": [
+            "sse",
+            "szse",
+            "bse"
+          ],
+          "type": "string"
+        },
+        "includesHongKongExchangeGuide": {
+          "default": false,
+          "type": "boolean"
+        },
+        "additionalDisclosureReferences": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        }
+      },
+      "title": "DisclosureProfile",
+      "type": "object",
+      "required": [
+        "additionalDisclosureReferences"
+      ]
+    },
+    "EngagementMethodKind": {
+      "enum": [
+        "communication_channel",
+        "participation_mechanism",
+        "collaboration_activity"
+      ],
+      "type": "string"
+    },
+    "ExternalAssuranceReport": {
+      "additionalProperties": false,
+      "description": "外部鉴证报告附件事实：只记录是否纳入及对外展示标签。",
+      "properties": {
+        "isIncluded": {
+          "default": false,
+          "type": "boolean"
+        },
+        "fileLabel": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        }
+      },
+      "title": "ExternalAssuranceReport",
+      "type": "object",
+      "required": []
+    },
+    "IROItem": {
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "enum": [
+            "impact",
+            "risk",
+            "opportunity"
+          ],
+          "type": "string"
+        },
+        "description": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "classes": {
+          "anyOf": [
+            {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "valueChain": {
+          "anyOf": [
+            {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "timeHorizon": {
+          "anyOf": [
+            {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "state": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/BlockState"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        }
+      },
+      "required": [
+        "kind"
+      ],
+      "title": "IROItem",
+      "type": "object"
+    },
+    "Inline": {
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "enum": [
+            "text",
+            "ref"
+          ],
+          "type": "string"
+        },
+        "text": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "ref": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "fallback": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "marks": {
+          "anyOf": [
+            {
+              "items": {
+                "$ref": "#/$defs/Mark"
+              },
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        }
+      },
+      "required": [
+        "kind"
+      ],
+      "title": "Inline",
+      "type": "object"
+    },
+    "Mark": {
+      "enum": [
+        "bold",
+        "italic",
+        "underline"
+      ],
+      "type": "string"
+    },
+    "MaterialityAssessmentInput": {
+      "additionalProperties": false,
+      "description": "重要性评估的持久化输入；固定分类与计数均不在此重复保存。",
+      "properties": {
+        "reportingYear": {
+          "type": "integer"
+        },
+        "threshold": {
+          "$ref": "#/$defs/MaterialityThreshold"
+        },
+        "scores": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/MaterialityScoreInput"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "reportingYear",
+        "threshold",
+        "scores"
+      ],
+      "title": "MaterialityAssessmentInput",
+      "type": "object"
+    },
+    "MaterialityScoreInput": {
+      "additionalProperties": false,
+      "description": "用户为一个 scored 评分议题提供的原始双重重要性输入。",
+      "properties": {
+        "assessmentTopicId": {
+          "type": "string"
+        },
+        "financialScore": {
+          "type": "number"
+        },
+        "impactScore": {
+          "type": "number"
+        },
+        "iroItems": {
+          "anyOf": [
+            {
+              "items": {
+                "$ref": "#/$defs/IROItem"
+              },
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        }
+      },
+      "required": [
+        "assessmentTopicId",
+        "financialScore",
+        "impactScore"
+      ],
+      "title": "MaterialityScoreInput",
+      "type": "object"
+    },
+    "MaterialityThreshold": {
+      "additionalProperties": false,
+      "properties": {
+        "financial": {
+          "type": "number"
+        },
+        "impact": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "financial",
+        "impact"
+      ],
+      "title": "MaterialityThreshold",
+      "type": "object"
+    },
+    "PrimaryInputMode": {
+      "enum": [
+        "materials",
+        "questions"
+      ],
+      "type": "string"
+    },
+    "QuantitativeMetricDraft": {
+      "additionalProperties": false,
+      "description": "单个 ESG 定量指标的用户填写值（report.meta.quantitativeMetrics.metrics 的元素）；形状受控。",
+      "properties": {
+        "value": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "noValueReason": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/QuantitativeNoValueReason"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "department": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "note": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        }
+      },
+      "title": "QuantitativeMetricDraft",
+      "type": "object",
+      "required": []
+    },
+    "QuantitativeMetricsMeta": {
+      "additionalProperties": false,
+      "description": "ESG 定量数据表的受控形状：指标草稿字典 + 温室气体核算标准。",
+      "properties": {
+        "metrics": {
+          "additionalProperties": {
+            "$ref": "#/$defs/QuantitativeMetricDraft"
+          },
+          "default": {},
+          "type": "object"
+        },
+        "greenhouseGasAccountingStandard": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "greenhouseGasAccountingStandardOther": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        }
+      },
+      "title": "QuantitativeMetricsMeta",
+      "type": "object",
+      "required": [
+        "metrics"
+      ]
+    },
+    "QuantitativeNoValueReason": {
+      "enum": [
+        "not_collected",
+        "not_available",
+        "not_applicable",
+        "will_supplement"
+      ],
+      "type": "string"
+    },
+    "ReaderFeedbackContactInformation": {
+      "additionalProperties": false,
+      "description": "读者反馈固定文本所需联系方式。",
+      "properties": {
+        "address": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "email": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "phone": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        }
+      },
+      "title": "ReaderFeedbackContactInformation",
+      "type": "object",
+      "required": []
+    },
+    "SectionDisplayTitle": {
+      "additionalProperties": false,
+      "description": "章节的实例级用户可见标题；稳定导航标题仍由 Section.title 拥有。",
+      "properties": {
+        "text": {
+          "type": "string"
+        },
+        "origin": {
+          "enum": [
+            "generated",
+            "user"
+          ],
+          "type": "string"
+        },
+        "inputFingerprint": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "text",
+        "origin",
+        "inputFingerprint"
+      ],
+      "title": "SectionDisplayTitle",
+      "type": "object"
+    },
+    "StakeholderEngagementEntry": {
+      "additionalProperties": false,
+      "description": "一类稳定利益相关方对应的适用议题与沟通方式引用。",
+      "properties": {
+        "stakeholderType": {
+          "$ref": "#/$defs/StakeholderType"
+        },
+        "assessmentTopicIds": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "methodIds": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "customMethods": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/CustomEngagementMethod"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "stakeholderType",
+        "assessmentTopicIds",
+        "methodIds",
+        "customMethods"
+      ],
+      "title": "StakeholderEngagementEntry",
+      "type": "object"
+    },
+    "StakeholderEngagementProfile": {
+      "additionalProperties": false,
+      "description": "利益相关方沟通的 parse-first 真相；表格、诊断与 Word 均由此确定性投影。",
+      "properties": {
+        "scopeAssessmentTopicIds": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "entries": {
+          "items": {
+            "$ref": "#/$defs/StakeholderEngagementEntry"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "entries",
+        "scopeAssessmentTopicIds"
+      ],
+      "title": "StakeholderEngagementProfile",
+      "type": "object"
+    },
+    "StakeholderType": {
+      "enum": [
+        "government_regulators",
+        "shareholders_investors",
+        "customers",
+        "management",
+        "employees",
+        "suppliers",
+        "partners",
+        "community_public"
+      ],
+      "type": "string"
+    },
+    "StoredCompanyBusinessSummary": {
+      "additionalProperties": false,
+      "description": "公司业务摘要快照项：派生值与其来源指纹同体保存。\n\n指纹取自压缩来源 `company_profile`；来源变化即摘要过期，须重算。\n值与指纹分开保存会让两者可能不一致，故合为一项。",
+      "properties": {
+        "text": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "sourceFingerprint": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        }
+      },
+      "required": [
+        "text",
+        "sourceFingerprint"
+      ],
+      "title": "StoredCompanyBusinessSummary",
+      "type": "object"
+    },
+    "StoredGeneratedBlock": {
+      "additionalProperties": false,
+      "description": "生成段落快照项：仅允许正文与生命周期状态。",
+      "properties": {
+        "content": {
+          "anyOf": [
+            {
+              "items": {
+                "$ref": "#/$defs/Inline"
+              },
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "state": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/BlockState"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        }
+      },
+      "title": "StoredGeneratedBlock",
+      "type": "object",
+      "required": []
+    },
+    "StoredImageBlock": {
+      "additionalProperties": false,
+      "description": "素材图片承载位快照项：仅保存按序放置的资产引用，题注与替代文本归资产 owner。",
+      "properties": {
+        "layoutAssetIds": {
+          "default": [],
+          "items": {
+            "format": "uuid",
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "state": {
+          "const": "ready",
+          "default": "ready",
+          "type": "string"
+        }
+      },
+      "title": "StoredImageBlock",
+      "type": "object",
+      "required": [
+        "layoutAssetIds"
+      ]
+    },
+    "StoredIntakeAnswer": {
+      "additionalProperties": false,
+      "description": "用户答案快照项：只保留实例答案，不接受题目结构。",
+      "properties": {
+        "answer": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "supplement": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        }
+      },
+      "title": "StoredIntakeAnswer",
+      "type": "object",
+      "required": []
+    },
+    "StoredReportMetaV4": {
+      "additionalProperties": false,
+      "description": "V4 报告级状态；缺失处置由输入义务与 Block 合同拥有。",
+      "properties": {
+        "quantitativeMetrics": {
+          "$ref": "#/$defs/QuantitativeMetricsMeta"
+        },
+        "materialityStrategy": {
+          "anyOf": [
+            {
+              "const": "complete_coverage",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "primaryInputMode": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/PrimaryInputMode"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        }
+      },
+      "title": "StoredReportMetaV4",
+      "type": "object",
+      "required": []
+    },
+    "StoredRowOrigin": {
+      "additionalProperties": false,
+      "description": "AI 定行的可重生成事实；不包含行级生成规格。",
+      "properties": {
+        "from": {
+          "default": "ai",
+          "enum": [
+            "ai",
+            "user"
+          ],
+          "type": "string"
+        },
+        "theme": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "category": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "driver_hint": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        }
+      },
+      "title": "StoredRowOrigin",
+      "type": "object",
+      "required": []
+    },
+    "StoredTableBlock": {
+      "additionalProperties": false,
+      "description": "表格实例快照项：表头和列合同仍由运行时模板提供。\n\n``state=\"omitted\"`` 与空行共同表示本轮没有足以形成数据行的用户资料；\n该处置是报告状态的一部分，不能由导出器临时猜测。",
+      "properties": {
+        "children": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/StoredTableRow"
+          },
+          "type": "array"
+        },
+        "state": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/BlockState"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        }
+      },
+      "title": "StoredTableBlock",
+      "type": "object",
+      "required": [
+        "children"
+      ]
+    },
+    "StoredTableCell": {
+      "additionalProperties": false,
+      "description": "表格单元格快照：保留用户值，不接受 Plate 文本骨架或列合同。",
+      "properties": {
+        "type": {
+          "default": "td",
+          "enum": [
+            "td",
+            "th"
+          ],
+          "type": "string"
+        },
+        "colKey": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "value": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "options": {
+          "anyOf": [
+            {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "colSpan": {
+          "default": 1,
+          "minimum": 1,
+          "type": "integer"
+        },
+        "rowSpan": {
+          "default": 1,
+          "minimum": 1,
+          "type": "integer"
+        },
+        "cellState": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/BlockState"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        }
+      },
+      "title": "StoredTableCell",
+      "type": "object",
+      "required": []
+    },
+    "StoredTableRow": {
+      "additionalProperties": false,
+      "description": "表格用户行快照：结构、generation 与 appears_when 均由运行时模板拥有。",
+      "properties": {
+        "type": {
+          "const": "tr",
+          "default": "tr",
+          "type": "string"
+        },
+        "headerRow": {
+          "default": false,
+          "type": "boolean"
+        },
+        "state": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/BlockState"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "origin": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/StoredRowOrigin"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "children": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/StoredTableCell"
+          },
+          "type": "array"
+        }
+      },
+      "title": "StoredTableRow",
+      "type": "object",
+      "required": [
+        "children"
+      ]
+    },
+    "StructuredInputFreshness": {
+      "additionalProperties": false,
+      "description": "V4 只保存最近一次成功导入所对应的上下文，不复制工作簿内容。",
+      "properties": {
+        "assessmentContextFingerprint": {
+          "anyOf": [
+            {
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "quantitativeMetricsContextFingerprint": {
+          "anyOf": [
+            {
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        }
+      },
+      "title": "StructuredInputFreshness",
+      "type": "object",
+      "required": []
+    }
+  },
+  "additionalProperties": false,
+  "description": "V4 严格状态边界；不接受旧缺失策略，未完成输入交由 readiness 处理。",
+  "properties": {
+    "version": {
+      "const": 4,
+      "type": "integer"
+    },
+    "fields": {
+      "additionalProperties": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "integer"
+          },
+          {
+            "type": "number"
+          },
+          {
+            "type": "null"
+          }
+        ]
+      },
+      "default": {},
+      "type": "object"
+    },
+    "intakeItems": {
+      "additionalProperties": {
+        "$ref": "#/$defs/StoredIntakeAnswer"
+      },
+      "default": {},
+      "type": "object"
+    },
+    "assessmentInput": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/MaterialityAssessmentInput"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "disclosureProfile": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/DisclosureProfile"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "appendixPackage": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/AppendixPackage"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "meta": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/StoredReportMetaV4"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "stakeholderEngagement": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/StakeholderEngagementProfile"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "sectionTitles": {
+      "additionalProperties": {
+        "$ref": "#/$defs/SectionDisplayTitle"
+      },
+      "default": {},
+      "type": "object"
+    },
+    "generatedBlocks": {
+      "additionalProperties": {
+        "$ref": "#/$defs/StoredGeneratedBlock"
+      },
+      "default": {},
+      "type": "object"
+    },
+    "tableBlocks": {
+      "additionalProperties": {
+        "$ref": "#/$defs/StoredTableBlock"
+      },
+      "default": {},
+      "type": "object"
+    },
+    "imageBlocks": {
+      "additionalProperties": {
+        "$ref": "#/$defs/StoredImageBlock"
+      },
+      "default": {},
+      "type": "object"
+    },
+    "structuredInputFreshness": {
+      "$ref": "#/$defs/StructuredInputFreshness"
+    },
+    "companyBusinessSummary": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/StoredCompanyBusinessSummary"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    }
+  },
+  "required": [
+    "version",
+    "fields",
+    "intakeItems",
+    "sectionTitles",
+    "generatedBlocks",
+    "tableBlocks",
+    "imageBlocks"
+  ],
+  "title": "StoredReportStateV4",
+  "type": "object"
+}

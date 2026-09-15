@@ -1,0 +1,55 @@
+# ABOUTME(en): Appendix C2 disclosure requirements of「供應鏈管理」(General Disclosure and KPIs), grouped by pillar,
+# ABOUTME(en): for the coverage audit and for prompt assembly by key whitelist (injection is switch-gated, off by default) and for the coverage audit. Wording awaits check against the official Chinese text.
+topicStandardDisclosureRequirementGroups:
+- topicSectionKey: supply_chain_management.gov
+  pillar: governance
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: supply_chain_management.gov.general_disclosure_policies
+    standardDisclosureRequirementTitle: 供應鏈環境及社會風險管理政策
+    excerptFrom: 港交所·附錄C2·一般披露 B5
+    standardDisclosureRequirementText: 應披露管理供應鏈的環境及社會風險政策。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: 一般披露 B5
+- topicSectionKey: supply_chain_management.strategy
+  pillar: strategy
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: supply_chain_management.strategy.green_procurement
+    standardDisclosureRequirementTitle: 促使多用環保產品及服務的慣例
+    excerptFrom: 港交所·附錄C2·關鍵績效指標 B5.4
+    standardDisclosureRequirementText: 應描述在挑選供應商時促使多用環保產品及服務的慣例，以及相關執行及監察方法。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: 關鍵績效指標 B5.4
+- topicSectionKey: supply_chain_management.iro
+  pillar: iro_management
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: supply_chain_management.iro.supplier_engagement
+    standardDisclosureRequirementTitle: 聘用供應商的慣例
+    excerptFrom: 港交所·附錄C2·關鍵績效指標 B5.2
+    standardDisclosureRequirementText: 應描述有關聘用供應商的慣例、向其執行有關慣例的供應商數目、以及有關慣例的執行及監察方法。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: 關鍵績效指標 B5.2
+  - standardDisclosureRequirementKey: supply_chain_management.iro.supply_chain_risk_identification
+    standardDisclosureRequirementTitle: 識別供應鏈環境及社會風險的慣例
+    excerptFrom: 港交所·附錄C2·關鍵績效指標 B5.3
+    standardDisclosureRequirementText: 應描述有關識別供應鏈每個環節的環境及社會風險的慣例，以及相關執行及監察方法。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: 關鍵績效指標 B5.3
+- topicSectionKey: supply_chain_management.metrics
+  pillar: metrics_targets
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: supply_chain_management.metrics.suppliers_by_region_data
+    standardDisclosureRequirementTitle: 按地區劃分的供應商數目
+    excerptFrom: 港交所·附錄C2·關鍵績效指標 B5.1
+    standardDisclosureRequirementText: 應披露按地區劃分的供應商數目。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: 關鍵績效指標 B5.1

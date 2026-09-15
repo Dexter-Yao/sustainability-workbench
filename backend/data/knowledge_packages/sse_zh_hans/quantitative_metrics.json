@@ -1,0 +1,1939 @@
+[
+  {
+    "key": "economic_environment_r02",
+    "sheet": "经济+环境",
+    "category": "经济绩效",
+    "groupPath": [
+      "经济绩效"
+    ],
+    "metricLabel": "总资产",
+    "unit": "百万元",
+    "metricDefinition": "报告期末合并资产负债表的资产总计。",
+    "termExplanation": "与年度财务报告保持一致，用于计算各项强度指标的分母口径。"
+  },
+  {
+    "key": "economic_environment_r03",
+    "sheet": "经济+环境",
+    "category": "经济绩效",
+    "groupPath": [
+      "经济绩效"
+    ],
+    "metricLabel": "营业收入",
+    "unit": "百万元",
+    "metricDefinition": "报告期合并利润表的营业收入。",
+    "termExplanation": "与年度财务报告保持一致；碳排放强度、耗水强度等均以此为分母。"
+  },
+  {
+    "key": "economic_environment_r04",
+    "sheet": "经济+环境",
+    "category": "应对气候变化",
+    "groupPath": [
+      "应对气候变化",
+      "碳排放"
+    ],
+    "metricLabel": "范围一：温室气体排放总量",
+    "unit": "吨二氧化碳当量",
+    "requiresGreenhouseGasAccountingStandard": true,
+    "metricDefinition": "公司自有或控制的排放源直接产生，如自有锅炉、窑炉、公务车燃油。",
+    "termExplanation": "范围一为直接排放，范围二为外购能源产生的间接排放。各类温室气体按全球变暖潜势换算为二氧化碳当量后合计。"
+  },
+  {
+    "key": "economic_environment_r05",
+    "sheet": "经济+环境",
+    "category": "应对气候变化",
+    "groupPath": [
+      "应对气候变化",
+      "碳排放"
+    ],
+    "metricLabel": "范围二：温室气体排放总量",
+    "unit": "吨二氧化碳当量",
+    "requiresGreenhouseGasAccountingStandard": true,
+    "metricDefinition": "外购电力、热力、蒸汽所对应的间接排放，按用量乘以排放因子核算。",
+    "termExplanation": "排放因子可采用生态环境部公布的全国电网平均值，或供电方提供的实际因子；所选来源需在报告中说明。"
+  },
+  {
+    "key": "economic_environment_r06",
+    "sheet": "经济+环境",
+    "category": "应对气候变化",
+    "groupPath": [
+      "应对气候变化",
+      "碳排放"
+    ],
+    "metricLabel": "范围三：温室气体排放总量",
+    "unit": "吨二氧化碳当量",
+    "metricDefinition": "价值链上下游活动产生的其他间接排放，如采购原料、运输、员工差旅。",
+    "termExplanation": "范围三为自愿披露项，可先核算重点类别；所选类别与方法需在报告中说明。"
+  },
+  {
+    "key": "economic_environment_r07",
+    "sheet": "经济+环境",
+    "category": "应对气候变化",
+    "groupPath": [
+      "应对气候变化",
+      "碳排放"
+    ],
+    "metricLabel": "温室气体排放总量",
+    "standaloneLabel": "温室气体排放总量（范围一+范围二）",
+    "unit": "吨二氧化碳当量",
+    "sumOfMetricKeys": [
+      "economic_environment_r04",
+      "economic_environment_r05"
+    ],
+    "requiresGreenhouseGasAccountingStandard": true,
+    "metricDefinition": "由范围一与范围二自动求和，填写这两项后自动得出。",
+    "termExplanation": "范围三为价值链上下游的其他间接排放，本报告不作要求。"
+  },
+  {
+    "key": "economic_environment_r08",
+    "sheet": "经济+环境",
+    "category": "应对气候变化",
+    "groupPath": [
+      "应对气候变化",
+      "碳排放"
+    ],
+    "metricLabel": "温室气体排放密度",
+    "unit": "吨/百万营业收入",
+    "requiresGreenhouseGasAccountingStandard": true,
+    "metricDefinition": "温室气体排放总量（范围一+范围二）÷ 营业收入（百万元）。",
+    "termExplanation": "分子取排放总量、分母取营业收入，口径与两项指标一致；填写自算结果即可。"
+  },
+  {
+    "key": "economic_environment_r09",
+    "sheet": "经济+环境",
+    "category": "能源管理",
+    "groupPath": [
+      "能源管理"
+    ],
+    "metricLabel": "直接能源消耗量",
+    "unit": "吨标准煤",
+    "metricDefinition": "煤、油、天然气等燃料在本公司燃烧产生的能源消耗，折算为吨标准煤。",
+    "termExplanation": "与间接能源之和为能源消耗总量；折标系数可采用国家统计局公布值。"
+  },
+  {
+    "key": "economic_environment_r10",
+    "sheet": "经济+环境",
+    "category": "能源管理",
+    "groupPath": [
+      "能源管理"
+    ],
+    "metricLabel": "间接能源消耗量",
+    "unit": "吨标准煤",
+    "metricDefinition": "外购电力、热力、蒸汽对应的能源消耗量，折算为吨标准煤。",
+    "termExplanation": "燃料在厂内燃烧为直接能源，外购二次能源为间接能源，两者互不重叠。"
+  },
+  {
+    "key": "economic_environment_r11",
+    "sheet": "经济+环境",
+    "category": "能源管理",
+    "groupPath": [
+      "能源管理",
+      "传统能源消耗量"
+    ],
+    "metricLabel": "电力消耗量",
+    "unit": "吨标准煤",
+    "metricDefinition": "报告期外购电力总量，按等价值折算为吨标准煤后填写。",
+    "termExplanation": "能源品种口径不一，统一折标准煤后才可加总与比较。折标系数可采用国家统计局公布值。"
+  },
+  {
+    "key": "economic_environment_r12",
+    "sheet": "经济+环境",
+    "category": "能源管理",
+    "groupPath": [
+      "能源管理",
+      "传统能源消耗量"
+    ],
+    "metricLabel": "煤消耗量",
+    "unit": "吨标准煤",
+    "metricDefinition": "报告期原煤等煤炭燃料消耗量，折算为吨标准煤。",
+    "termExplanation": "按入炉实物量乘以折标系数核算，口径与能源统计台账一致。"
+  },
+  {
+    "key": "economic_environment_r13",
+    "sheet": "经济+环境",
+    "category": "能源管理",
+    "groupPath": [
+      "能源管理",
+      "传统能源消耗量"
+    ],
+    "metricLabel": "汽油消耗量",
+    "unit": "吨标准煤",
+    "metricDefinition": "报告期公务车辆与设备用汽油消耗量，折算为吨标准煤。",
+    "termExplanation": "含自有及控制车辆的用油，可依据加油记录或财务台账归集。"
+  },
+  {
+    "key": "economic_environment_r14",
+    "sheet": "经济+环境",
+    "category": "能源管理",
+    "groupPath": [
+      "能源管理",
+      "传统能源消耗量"
+    ],
+    "metricLabel": "柴油消耗量",
+    "unit": "吨标准煤",
+    "metricDefinition": "报告期柴油消耗量，折算为吨标准煤。",
+    "termExplanation": "含货车、叉车、发电机等用油；外包物流车辆的油耗不计入。"
+  },
+  {
+    "key": "economic_environment_r15",
+    "sheet": "经济+环境",
+    "category": "能源管理",
+    "groupPath": [
+      "能源管理",
+      "传统能源消耗量"
+    ],
+    "metricLabel": "天然气消耗量",
+    "unit": "吨标准煤",
+    "metricDefinition": "报告期天然气消耗量，按用气量折算为吨标准煤。",
+    "termExplanation": "依据燃气账单归集用气量；液化石油气等其他气体燃料计入「其他」。"
+  },
+  {
+    "key": "economic_environment_r16",
+    "sheet": "经济+环境",
+    "category": "能源管理",
+    "groupPath": [
+      "能源管理",
+      "传统能源消耗量"
+    ],
+    "metricLabel": "蒸汽",
+    "unit": "吨标准煤",
+    "metricDefinition": "报告期外购蒸汽消耗量，折算为吨标准煤。",
+    "termExplanation": "外购蒸汽属间接能源；自产蒸汽的燃料已按品种计入，不重复填写。"
+  },
+  {
+    "key": "economic_environment_r17",
+    "sheet": "经济+环境",
+    "category": "能源管理",
+    "groupPath": [
+      "能源管理",
+      "传统能源消耗量"
+    ],
+    "metricLabel": "其他",
+    "standaloneLabel": "传统能源消耗量：其他",
+    "unit": "吨标准煤",
+    "metricDefinition": "煤、天然气、汽柴油等其他传统能源的消耗量合计，折算为吨标准煤。",
+    "termExplanation": "指来自化石燃料的不可再生能源；已单列的电力不重复计入。"
+  },
+  {
+    "key": "economic_environment_r18",
+    "sheet": "经济+环境",
+    "category": "能源管理",
+    "groupPath": [
+      "能源管理",
+      "清洁能源消耗量"
+    ],
+    "metricLabel": "风能消耗量",
+    "unit": "吨标准煤",
+    "metricDefinition": "自有风电设施自发自用的电量，折算为吨标准煤。",
+    "termExplanation": "外购绿电如已计入电力消耗量，此处不重复填写，避免两次计入。"
+  },
+  {
+    "key": "economic_environment_r19",
+    "sheet": "经济+环境",
+    "category": "能源管理",
+    "groupPath": [
+      "能源管理",
+      "清洁能源消耗量"
+    ],
+    "metricLabel": "太阳能消耗量",
+    "unit": "吨标准煤",
+    "metricDefinition": "自建光伏等太阳能设施的发电或供热量，折算为吨标准煤。",
+    "termExplanation": "清洁能源指风能、太阳能、水能、地热能、生物质能等非化石能源。"
+  },
+  {
+    "key": "economic_environment_r20",
+    "sheet": "经济+环境",
+    "category": "能源管理",
+    "groupPath": [
+      "能源管理",
+      "清洁能源消耗量"
+    ],
+    "metricLabel": "水能消耗量",
+    "unit": "吨标准煤",
+    "metricDefinition": "自有水电设施自发自用的电量，折算为吨标准煤。",
+    "termExplanation": "指自建小水电等自用部分；外购电力已单列，不重复计入。"
+  },
+  {
+    "key": "economic_environment_r21",
+    "sheet": "经济+环境",
+    "category": "能源管理",
+    "groupPath": [
+      "能源管理",
+      "清洁能源消耗量"
+    ],
+    "metricLabel": "生物质燃料消耗量",
+    "unit": "吨标准煤",
+    "metricDefinition": "秸秆、木屑颗粒、沼气等生物质燃料消耗量，折算为吨标准煤。",
+    "termExplanation": "生物质属可再生能源，与煤、油、气等化石燃料分列统计。"
+  },
+  {
+    "key": "economic_environment_r22",
+    "sheet": "经济+环境",
+    "category": "能源管理",
+    "groupPath": [
+      "能源管理",
+      "清洁能源消耗量"
+    ],
+    "metricLabel": "其他",
+    "standaloneLabel": "清洁能源消耗量：其他",
+    "unit": "吨标准煤",
+    "metricDefinition": "风能、水能、生物质能等其他清洁能源的消耗量合计，折算为吨标准煤。",
+    "termExplanation": "外购绿电如已计入电力消耗量，此处不重复填写，避免同一用量两次计入。"
+  },
+  {
+    "key": "economic_environment_r23",
+    "sheet": "经济+环境",
+    "category": "能源管理",
+    "groupPath": [
+      "能源管理"
+    ],
+    "metricLabel": "能源消耗总量",
+    "unit": "吨标准煤",
+    "metricDefinition": "报告期各类能源消耗折标准煤后的合计。",
+    "termExplanation": "等于直接与间接能源之和，也等于传统与清洁能源之和，两套拆分口径同源。"
+  },
+  {
+    "key": "economic_environment_r24",
+    "sheet": "经济+环境",
+    "category": "能源管理",
+    "groupPath": [
+      "能源管理",
+      "能耗强度"
+    ],
+    "metricLabel": "百万元营收综合能耗",
+    "unit": "吨标煤/百万营业收入",
+    "metricDefinition": "能源消耗总量 ÷ 营业收入（百万元）。",
+    "termExplanation": "强度指标反映单位营收能耗，便于跨年度与同行比较，可弱化规模变动影响。"
+  },
+  {
+    "key": "economic_environment_r25",
+    "sheet": "经济+环境",
+    "category": "污染物排放管理",
+    "groupPath": [
+      "污染物排放管理",
+      "大气污染物"
+    ],
+    "metricLabel": "颗粒排放物（PM）",
+    "unit": "吨",
+    "metricDefinition": "报告期废气中颗粒物的排放量，通常取环保台账或在线监测数据。",
+    "termExplanation": "颗粒物含烟尘与粉尘；排放量一般由监测浓度与废气排放量核算得出。"
+  },
+  {
+    "key": "economic_environment_r26",
+    "sheet": "经济+环境",
+    "category": "污染物排放管理",
+    "groupPath": [
+      "污染物排放管理",
+      "大气污染物"
+    ],
+    "metricLabel": "硫氧化物（SOx）",
+    "unit": "吨",
+    "metricDefinition": "报告期二氧化硫等硫氧化物的排放量。",
+    "termExplanation": "主要来自含硫燃料燃烧，是《大气污染物综合排放标准》的常规控制指标。"
+  },
+  {
+    "key": "economic_environment_r27",
+    "sheet": "经济+环境",
+    "category": "污染物排放管理",
+    "groupPath": [
+      "污染物排放管理",
+      "大气污染物"
+    ],
+    "metricLabel": "氮氧化物（NOX）",
+    "unit": "吨",
+    "metricDefinition": "报告期一氧化氮、二氧化氮等氮氧化物的排放量。",
+    "termExplanation": "主要来自燃料高温燃烧，与颗粒物、硫氧化物同为大气常规控制指标。"
+  },
+  {
+    "key": "economic_environment_r28",
+    "sheet": "经济+环境",
+    "category": "污染物排放管理",
+    "groupPath": [
+      "污染物排放管理",
+      "大气污染物"
+    ],
+    "metricLabel": "挥发性有机化合物（VOC）",
+    "unit": "吨",
+    "metricDefinition": "报告期挥发性有机物的排放量，常见于涂装、印刷、溶剂使用环节。",
+    "termExplanation": "指常温下易挥发并参与光化学反应的有机化合物，是臭氧与细颗粒物的前体物。"
+  },
+  {
+    "key": "economic_environment_r29",
+    "sheet": "经济+环境",
+    "category": "污染物排放管理",
+    "groupPath": [
+      "污染物排放管理",
+      "大气污染物"
+    ],
+    "metricLabel": "其它",
+    "unit": "吨",
+    "metricDefinition": "上述四类之外的其他受控大气污染物排放量合计。",
+    "termExplanation": "如氟化物、氯化氢、重金属等；无相应排放环节时填 0。"
+  },
+  {
+    "key": "economic_environment_r30",
+    "sheet": "经济+环境",
+    "category": "污染物排放管理",
+    "groupPath": [
+      "污染物排放管理",
+      "水污染物"
+    ],
+    "metricLabel": "工业废水总量",
+    "unit": "吨",
+    "metricDefinition": "报告期生产过程产生并排放的废水总量。",
+    "termExplanation": "与生活废水分列，便于识别工艺环节的减排空间。"
+  },
+  {
+    "key": "economic_environment_r31",
+    "sheet": "经济+环境",
+    "category": "污染物排放管理",
+    "groupPath": [
+      "污染物排放管理",
+      "水污染物"
+    ],
+    "metricLabel": "生活废水总量",
+    "unit": "吨",
+    "metricDefinition": "报告期食堂、宿舍、办公等生活设施产生的废水总量。",
+    "termExplanation": "通常按用水量折算，或依据排水协议与市政计量口径确定。"
+  },
+  {
+    "key": "economic_environment_r32",
+    "sheet": "经济+环境",
+    "category": "污染物排放管理",
+    "groupPath": [
+      "污染物排放管理",
+      "水污染物"
+    ],
+    "metricLabel": "化学需氧量（COD）",
+    "unit": "吨",
+    "metricDefinition": "报告期废水中化学需氧量的排放量。",
+    "termExplanation": "反映水中还原性物质总量，是废水有机污染程度的综合指标。"
+  },
+  {
+    "key": "economic_environment_r33",
+    "sheet": "经济+环境",
+    "category": "污染物排放管理",
+    "groupPath": [
+      "污染物排放管理",
+      "水污染物"
+    ],
+    "metricLabel": "生化需氧量（BOD）",
+    "unit": "吨",
+    "metricDefinition": "报告期废水中生化需氧量的排放量。",
+    "termExplanation": "反映可被微生物分解的有机物含量，通常小于化学需氧量。"
+  },
+  {
+    "key": "economic_environment_r34",
+    "sheet": "经济+环境",
+    "category": "污染物排放管理",
+    "groupPath": [
+      "污染物排放管理",
+      "水污染物"
+    ],
+    "metricLabel": "氨氮（NH3- N）",
+    "unit": "吨",
+    "metricDefinition": "报告期废水中氨氮的排放量。",
+    "termExplanation": "氨氮是水体富营养化的主要致因之一，属重点控制指标。"
+  },
+  {
+    "key": "economic_environment_r35",
+    "sheet": "经济+环境",
+    "category": "污染物排放管理",
+    "groupPath": [
+      "污染物排放管理",
+      "水污染物"
+    ],
+    "metricLabel": "总氮（TN）",
+    "unit": "吨",
+    "metricDefinition": "报告期废水中总氮的排放量。",
+    "termExplanation": "总氮涵盖氨氮、硝态氮与有机氮，口径大于氨氮，两者不可相互替代。"
+  },
+  {
+    "key": "economic_environment_r36",
+    "sheet": "经济+环境",
+    "category": "污染物排放管理",
+    "groupPath": [
+      "污染物排放管理",
+      "水污染物"
+    ],
+    "metricLabel": "总磷（TP）",
+    "unit": "吨",
+    "metricDefinition": "报告期废水中总磷的排放量。",
+    "termExplanation": "与总氮同为水体富营养化的控制指标，常见于含磷助剂与清洗环节。"
+  },
+  {
+    "key": "economic_environment_r37",
+    "sheet": "经济+环境",
+    "category": "污染物排放管理",
+    "groupPath": [
+      "污染物排放管理",
+      "水污染物"
+    ],
+    "metricLabel": "其它",
+    "unit": "吨",
+    "metricDefinition": "上述指标之外的其他受控水污染物排放量合计。",
+    "termExplanation": "如石油类、重金属、氰化物等；无相应排放环节时填 0。"
+  },
+  {
+    "key": "economic_environment_r38",
+    "sheet": "经济+环境",
+    "category": "废弃物管理",
+    "groupPath": [
+      "废弃物管理",
+      "废弃物管理"
+    ],
+    "metricLabel": "废弃物总量",
+    "unit": "吨",
+    "metricDefinition": "报告期产生的固体废弃物总量，为无害与有害废弃物之和。",
+    "termExplanation": "按产生量而非处置量统计，口径需与环保台账一致。"
+  },
+  {
+    "key": "economic_environment_r39",
+    "sheet": "经济+环境",
+    "category": "废弃物管理",
+    "groupPath": [
+      "废弃物管理",
+      "废弃物管理"
+    ],
+    "metricLabel": "无害废弃物",
+    "unit": "吨",
+    "metricDefinition": "一般工业固体废弃物与生活垃圾等不具危险特性的废弃物产生量。",
+    "termExplanation": "与有害废弃物合计即为废弃物总量，两者不应重复计入。"
+  },
+  {
+    "key": "economic_environment_r40",
+    "sheet": "经济+环境",
+    "category": "废弃物管理",
+    "groupPath": [
+      "废弃物管理",
+      "废弃物管理"
+    ],
+    "metricLabel": "有害废弃物",
+    "unit": "吨",
+    "metricDefinition": "列入《国家危险废物名录》或经鉴别具有危险特性的废弃物产生量。",
+    "termExplanation": "危险废物须交有资质单位处置并留存转移联单，是环保合规的重点核查项。"
+  },
+  {
+    "key": "economic_environment_r41",
+    "sheet": "经济+环境",
+    "category": "废弃物管理",
+    "groupPath": [
+      "废弃物管理",
+      "废弃物管理"
+    ],
+    "metricLabel": "废弃物回收再利用总量",
+    "unit": "吨",
+    "metricDefinition": "报告期经回收、循环或再利用处理的废弃物量。",
+    "termExplanation": "体现减量化与资源化成效；填报时不计入直接填埋或焚烧处置的部分。"
+  },
+  {
+    "key": "economic_environment_r42",
+    "sheet": "经济+环境",
+    "category": "水资源管理",
+    "groupPath": [
+      "水资源管理",
+      "取水"
+    ],
+    "metricLabel": "所有地区取水总量",
+    "unit": "吨",
+    "metricDefinition": "报告期从市政管网、地表水、地下水等所有来源取用的水量合计。",
+    "termExplanation": "取水量为进入厂界的总量，耗水量为实际消耗未回到水体的部分，两者口径不同。"
+  },
+  {
+    "key": "economic_environment_r43",
+    "sheet": "经济+环境",
+    "category": "水资源管理",
+    "groupPath": [
+      "水资源管理",
+      "耗水"
+    ],
+    "metricLabel": "所有地区耗水量",
+    "unit": "吨",
+    "metricDefinition": "报告期实际消耗的水量，即取水量扣除排水量后的部分。",
+    "termExplanation": "缺水地区取水可行性如存在困难，可在议题问答中一并说明。"
+  },
+  {
+    "key": "economic_environment_r44",
+    "sheet": "经济+环境",
+    "category": "水资源管理",
+    "groupPath": [
+      "水资源管理",
+      "耗水"
+    ],
+    "metricLabel": "百万元营收耗水强度",
+    "unit": "吨/百万营业收入",
+    "metricDefinition": "由所有地区耗水量与营业收入自动计算，填齐这两项后得出。",
+    "termExplanation": "强度指标反映单位经营规模的资源消耗，便于跨年度与同行比较，可弱化企业规模变动的影响。"
+  },
+  {
+    "key": "economic_environment_r45",
+    "sheet": "经济+环境",
+    "category": "水资源管理",
+    "groupPath": [
+      "水资源管理",
+      "节水"
+    ],
+    "metricLabel": "节水量",
+    "unit": "吨",
+    "metricDefinition": "报告期通过节水改造、工艺优化等措施相对减少的用水量。",
+    "termExplanation": "通常以改造前后的单耗对比测算，测算方法需在报告中说明。"
+  },
+  {
+    "key": "economic_environment_r46",
+    "sheet": "经济+环境",
+    "category": "水资源管理",
+    "groupPath": [
+      "水资源管理",
+      "节水"
+    ],
+    "metricLabel": "循环用水量",
+    "unit": "吨",
+    "metricDefinition": "报告期经处理后重复利用的水量，如中水回用、冷却水循环。",
+    "termExplanation": "循环用水不重复计入取水总量，两者是不同环节的口径。"
+  },
+  {
+    "key": "social_r02",
+    "sheet": "社会",
+    "category": "人力资本发展-员工多元化",
+    "groupPath": [
+      "人力资本发展-员工多元化"
+    ],
+    "metricLabel": "员工总数",
+    "unit": "人",
+    "metricDefinition": "报告期末在册员工人数。",
+    "termExplanation": "通常指签订劳动合同的正式员工；如含劳务派遣或实习生，需保持逐年口径一致。"
+  },
+  {
+    "key": "social_r03",
+    "sheet": "社会",
+    "category": "人力资本发展-员工多元化",
+    "groupPath": [
+      "人力资本发展-员工多元化",
+      "按性别划分的员工人数"
+    ],
+    "metricLabel": "男性员工",
+    "unit": "人",
+    "metricDefinition": "报告期末男性员工人数。",
+    "termExplanation": "与女性员工人数合计应等于员工总数。"
+  },
+  {
+    "key": "social_r04",
+    "sheet": "社会",
+    "category": "人力资本发展-员工多元化",
+    "groupPath": [
+      "人力资本发展-员工多元化",
+      "按性别划分的员工人数"
+    ],
+    "metricLabel": "女性员工",
+    "unit": "人",
+    "metricDefinition": "报告期末女性员工人数。",
+    "termExplanation": "性别构成是人力资本多元化披露的基础数据。"
+  },
+  {
+    "key": "social_r05",
+    "sheet": "社会",
+    "category": "人力资本发展-员工多元化",
+    "groupPath": [
+      "人力资本发展-员工多元化",
+      "按年龄划分的员工人数"
+    ],
+    "metricLabel": "30岁以下",
+    "unit": "人",
+    "metricDefinition": "报告期末年龄在 30 岁以下的员工人数。",
+    "termExplanation": "三个年龄段人数合计应等于员工总数，边界年龄的归档需逐年一致。"
+  },
+  {
+    "key": "social_r06",
+    "sheet": "社会",
+    "category": "人力资本发展-员工多元化",
+    "groupPath": [
+      "人力资本发展-员工多元化",
+      "按年龄划分的员工人数"
+    ],
+    "metricLabel": "30-50岁",
+    "unit": "人",
+    "metricDefinition": "报告期末年龄在 30 至 50 岁之间的员工人数。",
+    "termExplanation": "边界年龄归入哪一档需前后一致，三档合计应等于员工总数。"
+  },
+  {
+    "key": "social_r07",
+    "sheet": "社会",
+    "category": "人力资本发展-员工多元化",
+    "groupPath": [
+      "人力资本发展-员工多元化",
+      "按年龄划分的员工人数"
+    ],
+    "metricLabel": "50岁以上",
+    "unit": "人",
+    "metricDefinition": "报告期末年龄在 50 岁以上的员工人数。",
+    "termExplanation": "按年龄划分的三档人数合计应等于员工总数。"
+  },
+  {
+    "key": "social_r08",
+    "sheet": "社会",
+    "category": "人力资本发展-员工多元化",
+    "groupPath": [
+      "人力资本发展-员工多元化",
+      "按地区划分的员工人数"
+    ],
+    "metricLabel": "中国大陆员工",
+    "unit": "人",
+    "metricDefinition": "报告期末主要工作地在中国大陆的员工人数。",
+    "termExplanation": "与海外及港澳台地区员工合计应等于员工总数。"
+  },
+  {
+    "key": "social_r09",
+    "sheet": "社会",
+    "category": "人力资本发展-员工多元化",
+    "groupPath": [
+      "人力资本发展-员工多元化",
+      "按地区划分的员工人数"
+    ],
+    "metricLabel": "海外及港澳台地区员工",
+    "unit": "人",
+    "metricDefinition": "报告期末主要工作地在海外及港澳台地区的员工人数。",
+    "termExplanation": "与中国大陆员工合计应等于员工总数；无相应员工时填 0。"
+  },
+  {
+    "key": "social_r10",
+    "sheet": "社会",
+    "category": "人力资本发展-员工多元化",
+    "groupPath": [
+      "人力资本发展-员工多元化",
+      "按学历划分的员工人数"
+    ],
+    "metricLabel": "博士",
+    "unit": "人",
+    "metricDefinition": "报告期末具有博士学位的员工人数。",
+    "termExplanation": "按最高学历统计，四档学历人数合计应等于员工总数。"
+  },
+  {
+    "key": "social_r11",
+    "sheet": "社会",
+    "category": "人力资本发展-员工多元化",
+    "groupPath": [
+      "人力资本发展-员工多元化",
+      "按学历划分的员工人数"
+    ],
+    "metricLabel": "硕士",
+    "unit": "人",
+    "metricDefinition": "报告期末具有硕士学位的员工人数。",
+    "termExplanation": "按最高学历统计，同一员工不重复计入两档。"
+  },
+  {
+    "key": "social_r12",
+    "sheet": "社会",
+    "category": "人力资本发展-员工多元化",
+    "groupPath": [
+      "人力资本发展-员工多元化",
+      "按学历划分的员工人数"
+    ],
+    "metricLabel": "本科",
+    "unit": "人",
+    "metricDefinition": "报告期末具有本科学历的员工人数。",
+    "termExplanation": "按最高学历统计，不含在读未取得学位者。"
+  },
+  {
+    "key": "social_r13",
+    "sheet": "社会",
+    "category": "人力资本发展-员工多元化",
+    "groupPath": [
+      "人力资本发展-员工多元化",
+      "按学历划分的员工人数"
+    ],
+    "metricLabel": "本科以下学历",
+    "unit": "人",
+    "metricDefinition": "报告期末学历在本科以下的员工人数。",
+    "termExplanation": "含大专、中专、高中及以下，与前三档合计应等于员工总数。"
+  },
+  {
+    "key": "social_r14",
+    "sheet": "社会",
+    "category": "人力资本发展-员工多元化",
+    "groupPath": [
+      "人力资本发展-员工多元化"
+    ],
+    "metricLabel": "管理层员工女性占比（不含董事会）",
+    "unit": "%",
+    "metricDefinition": "管理层女性人数 ÷ 管理层总人数 × 100%，均不含董事会成员。",
+    "termExplanation": "管理层范围以公司任命的管理岗位为准，统计口径需逐年一致。"
+  },
+  {
+    "key": "social_r15",
+    "sheet": "社会",
+    "category": "人力资本发展-员工沟通",
+    "groupPath": [
+      "人力资本发展-员工沟通"
+    ],
+    "metricLabel": "员工沟通覆盖率",
+    "unit": "%",
+    "metricDefinition": "报告期参与员工沟通活动的员工数 ÷ 员工总数 × 100%。",
+    "termExplanation": "沟通形式含座谈、调研、意见箱与工会渠道等；同一员工只计一次。"
+  },
+  {
+    "key": "social_r16",
+    "sheet": "社会",
+    "category": "人力资本发展-员工沟通",
+    "groupPath": [
+      "人力资本发展-员工沟通"
+    ],
+    "metricLabel": "员工满意度",
+    "unit": "%",
+    "metricDefinition": "满意度调研中满意及以上评价人数 ÷ 有效回复人数 × 100%。",
+    "termExplanation": "以报告期调研结果为准；评分制结果可折算为满意比例，方法需逐年一致。"
+  },
+  {
+    "key": "social_r17",
+    "sheet": "社会",
+    "category": "人力资本发展-员工流失情况",
+    "groupPath": [
+      "人力资本发展-员工流失情况"
+    ],
+    "metricLabel": "员工流失率",
+    "unit": "%",
+    "metricDefinition": "报告期离职员工人数 ÷ 员工总数 × 100%。",
+    "termExplanation": "离职口径通常含主动离职与被动解除，不含退休与劳务派遣期满；所采用口径需逐年一致。"
+  },
+  {
+    "key": "social_r18",
+    "sheet": "社会",
+    "category": "人力资本发展-员工流失情况",
+    "groupPath": [
+      "人力资本发展-员工流失情况",
+      "按性别划分"
+    ],
+    "metricLabel": "男性员工",
+    "unit": "%",
+    "metricDefinition": "报告期离职男性员工数 ÷ 男性员工总数 × 100%。",
+    "termExplanation": "分母为该类别员工数而非员工总数；离职口径与总体流失率一致。"
+  },
+  {
+    "key": "social_r19",
+    "sheet": "社会",
+    "category": "人力资本发展-员工流失情况",
+    "groupPath": [
+      "人力资本发展-员工流失情况",
+      "按性别划分"
+    ],
+    "metricLabel": "女性员工",
+    "unit": "%",
+    "metricDefinition": "报告期离职女性员工数 ÷ 女性员工总数 × 100%。",
+    "termExplanation": "与男性分项分别核算，各分项不能直接相加得出总体流失率。"
+  },
+  {
+    "key": "social_r20",
+    "sheet": "社会",
+    "category": "人力资本发展-员工流失情况",
+    "groupPath": [
+      "人力资本发展-员工流失情况",
+      "按年龄划分"
+    ],
+    "metricLabel": "30岁以下",
+    "unit": "%",
+    "metricDefinition": "报告期离职的 30 岁以下员工数 ÷ 该年龄段员工总数 × 100%。",
+    "termExplanation": "年龄段划分与员工多元化部分的年龄口径一致。"
+  },
+  {
+    "key": "social_r21",
+    "sheet": "社会",
+    "category": "人力资本发展-员工流失情况",
+    "groupPath": [
+      "人力资本发展-员工流失情况",
+      "按年龄划分"
+    ],
+    "metricLabel": "30-50岁",
+    "unit": "%",
+    "metricDefinition": "报告期离职的 30-50 岁员工数 ÷ 该年龄段员工总数 × 100%。",
+    "termExplanation": "离职口径与总体员工流失率保持一致。"
+  },
+  {
+    "key": "social_r22",
+    "sheet": "社会",
+    "category": "人力资本发展-员工流失情况",
+    "groupPath": [
+      "人力资本发展-员工流失情况",
+      "按年龄划分"
+    ],
+    "metricLabel": "50岁以上",
+    "unit": "%",
+    "metricDefinition": "报告期离职的 50 岁以上员工数 ÷ 该年龄段员工总数 × 100%。",
+    "termExplanation": "按年龄划分的流失率反映不同年龄层的队伍稳定性。"
+  },
+  {
+    "key": "social_r23",
+    "sheet": "社会",
+    "category": "人力资本发展-员工流失情况",
+    "groupPath": [
+      "人力资本发展-员工流失情况",
+      "按地区划分"
+    ],
+    "metricLabel": "中国大陆员工",
+    "unit": "%",
+    "metricDefinition": "报告期离职的中国大陆员工数 ÷ 中国大陆员工总数 × 100%。",
+    "termExplanation": "地区归属与按地区划分的员工人数口径一致。"
+  },
+  {
+    "key": "social_r24",
+    "sheet": "社会",
+    "category": "人力资本发展-员工流失情况",
+    "groupPath": [
+      "人力资本发展-员工流失情况",
+      "按地区划分"
+    ],
+    "metricLabel": "海外及港澳台地区员工",
+    "unit": "%",
+    "metricDefinition": "报告期离职的海外及港澳台员工数 ÷ 该地区员工总数 × 100%。",
+    "termExplanation": "无该地区员工时可不填写；有员工而无离职时填 0。"
+  },
+  {
+    "key": "social_r25",
+    "sheet": "社会",
+    "category": "人力资本发展-培训与发展",
+    "groupPath": [
+      "人力资本发展-培训与发展",
+      "培训投入"
+    ],
+    "metricLabel": "全年培训投入金额",
+    "unit": "万元人民币",
+    "metricDefinition": "报告期用于员工培训的费用合计，含课程、师资、平台与差旅支出。",
+    "termExplanation": "反映人力资本投入强度，与培训覆盖率配合可体现投入与广度两个侧面。"
+  },
+  {
+    "key": "social_r26",
+    "sheet": "社会",
+    "category": "人力资本发展-培训与发展",
+    "groupPath": [
+      "人力资本发展-培训与发展",
+      "培训覆盖率"
+    ],
+    "metricLabel": "员工培训覆盖率",
+    "unit": "%",
+    "metricDefinition": "报告期参加过培训的员工数 ÷ 员工总数 × 100%。",
+    "termExplanation": "同一员工参加多次培训只计一次，覆盖率不应超过 100%。"
+  },
+  {
+    "key": "social_r27",
+    "sheet": "社会",
+    "category": "人力资本发展-培训与发展",
+    "groupPath": [
+      "人力资本发展-培训与发展",
+      "培训覆盖率",
+      "按性别划分"
+    ],
+    "metricLabel": "男性员工",
+    "unit": "%",
+    "metricDefinition": "报告期参加过培训的男性员工数 ÷ 男性员工总数 × 100%。",
+    "termExplanation": "分母为该类别员工数；同一员工参加多次培训只计一次。"
+  },
+  {
+    "key": "social_r28",
+    "sheet": "社会",
+    "category": "人力资本发展-培训与发展",
+    "groupPath": [
+      "人力资本发展-培训与发展",
+      "培训覆盖率",
+      "按性别划分"
+    ],
+    "metricLabel": "女性员工",
+    "unit": "%",
+    "metricDefinition": "报告期参加过培训的女性员工数 ÷ 女性员工总数 × 100%。",
+    "termExplanation": "与男性分项同为培训覆盖率的性别拆分，口径与总体一致。"
+  },
+  {
+    "key": "social_r29",
+    "sheet": "社会",
+    "category": "人力资本发展-培训与发展",
+    "groupPath": [
+      "人力资本发展-培训与发展",
+      "培训覆盖率",
+      "按职级划分"
+    ],
+    "metricLabel": "高级管理层",
+    "unit": "%",
+    "metricDefinition": "报告期参加过培训的高级管理人员数 ÷ 高级管理人员总数 × 100%。",
+    "termExplanation": "高级管理层通常指总经理、副总经理等公司级管理人员，范围需逐年一致。"
+  },
+  {
+    "key": "social_r30",
+    "sheet": "社会",
+    "category": "人力资本发展-培训与发展",
+    "groupPath": [
+      "人力资本发展-培训与发展",
+      "培训覆盖率",
+      "按职级划分"
+    ],
+    "metricLabel": "一般管理层",
+    "unit": "%",
+    "metricDefinition": "报告期参加过培训的一般管理人员数 ÷ 一般管理人员总数 × 100%。",
+    "termExplanation": "一般管理层指高级管理层以外的中层与基层管理岗位。"
+  },
+  {
+    "key": "social_r31",
+    "sheet": "社会",
+    "category": "人力资本发展-培训与发展",
+    "groupPath": [
+      "人力资本发展-培训与发展",
+      "培训覆盖率",
+      "按职级划分"
+    ],
+    "metricLabel": "基层员工",
+    "unit": "%",
+    "metricDefinition": "报告期参加过培训的基层员工数 ÷ 基层员工总数 × 100%。",
+    "termExplanation": "基层员工指不担任管理职务的员工，三个职级合计覆盖全体员工。"
+  },
+  {
+    "key": "social_r32",
+    "sheet": "社会",
+    "category": "人力资本发展-培训与发展",
+    "groupPath": [
+      "人力资本发展-培训与发展",
+      "培训覆盖率",
+      "按年龄划分"
+    ],
+    "metricLabel": "30岁以下",
+    "unit": "%",
+    "metricDefinition": "报告期参加过培训的 30 岁以下员工数 ÷ 该年龄段员工总数 × 100%。",
+    "termExplanation": "年龄段口径与员工多元化部分一致。"
+  },
+  {
+    "key": "social_r33",
+    "sheet": "社会",
+    "category": "人力资本发展-培训与发展",
+    "groupPath": [
+      "人力资本发展-培训与发展",
+      "培训覆盖率",
+      "按年龄划分"
+    ],
+    "metricLabel": "30-50岁",
+    "unit": "%",
+    "metricDefinition": "报告期参加过培训的 30-50 岁员工数 ÷ 该年龄段员工总数 × 100%。",
+    "termExplanation": "同一员工参加多次培训只计一次，覆盖率不应超过 100%。"
+  },
+  {
+    "key": "social_r34",
+    "sheet": "社会",
+    "category": "人力资本发展-培训与发展",
+    "groupPath": [
+      "人力资本发展-培训与发展",
+      "培训覆盖率",
+      "按年龄划分"
+    ],
+    "metricLabel": "50岁以上",
+    "unit": "%",
+    "metricDefinition": "报告期参加过培训的 50 岁以上员工数 ÷ 该年龄段员工总数 × 100%。",
+    "termExplanation": "按年龄拆分反映培训资源在不同年龄层的分布。"
+  },
+  {
+    "key": "social_r35",
+    "sheet": "社会",
+    "category": "人力资本发展-培训与发展",
+    "groupPath": [
+      "人力资本发展-培训与发展",
+      "培训平均小时数"
+    ],
+    "metricLabel": "总体培训平均小时数",
+    "unit": "小时",
+    "metricDefinition": "报告期员工培训总学时 ÷ 员工总数。",
+    "termExplanation": "分母为全体员工而非受训员工，未参加培训的员工同样计入。"
+  },
+  {
+    "key": "social_r36",
+    "sheet": "社会",
+    "category": "人力资本发展-培训与发展",
+    "groupPath": [
+      "人力资本发展-培训与发展",
+      "培训平均小时数",
+      "按性别划分"
+    ],
+    "metricLabel": "男性员工",
+    "unit": "小时",
+    "metricDefinition": "报告期男性员工培训总学时 ÷ 男性员工总数。",
+    "termExplanation": "人均学时与覆盖率配合，分别反映培训的深度与广度。"
+  },
+  {
+    "key": "social_r37",
+    "sheet": "社会",
+    "category": "人力资本发展-培训与发展",
+    "groupPath": [
+      "人力资本发展-培训与发展",
+      "培训平均小时数",
+      "按性别划分"
+    ],
+    "metricLabel": "女性员工",
+    "unit": "小时",
+    "metricDefinition": "报告期女性员工培训总学时 ÷ 女性员工总数。",
+    "termExplanation": "分母为该类别全部员工数，口径与总体培训平均小时数一致。"
+  },
+  {
+    "key": "social_r38",
+    "sheet": "社会",
+    "category": "人力资本发展-培训与发展",
+    "groupPath": [
+      "人力资本发展-培训与发展",
+      "培训平均小时数",
+      "按职级划分"
+    ],
+    "metricLabel": "高级管理层",
+    "unit": "小时",
+    "metricDefinition": "报告期高级管理人员培训总学时 ÷ 高级管理人员总数。",
+    "termExplanation": "职级范围与培训覆盖率的职级划分保持一致。"
+  },
+  {
+    "key": "social_r39",
+    "sheet": "社会",
+    "category": "人力资本发展-培训与发展",
+    "groupPath": [
+      "人力资本发展-培训与发展",
+      "培训平均小时数",
+      "按职级划分"
+    ],
+    "metricLabel": "一般管理层",
+    "unit": "小时",
+    "metricDefinition": "报告期一般管理人员培训总学时 ÷ 一般管理人员总数。",
+    "termExplanation": "指高级管理层以外管理岗位的人均培训学时。"
+  },
+  {
+    "key": "social_r40",
+    "sheet": "社会",
+    "category": "人力资本发展-培训与发展",
+    "groupPath": [
+      "人力资本发展-培训与发展",
+      "培训平均小时数",
+      "按职级划分"
+    ],
+    "metricLabel": "基层员工",
+    "unit": "小时",
+    "metricDefinition": "报告期基层员工培训总学时 ÷ 基层员工总数。",
+    "termExplanation": "基层员工指不担任管理职务的员工，口径与职级划分一致。"
+  },
+  {
+    "key": "social_r41",
+    "sheet": "社会",
+    "category": "职业健康与安全",
+    "groupPath": [
+      "职业健康与安全",
+      "职业病防治"
+    ],
+    "metricLabel": "防治职业病投入",
+    "unit": "万元",
+    "metricDefinition": "报告期用于职业病预防的投入，含体检、防护设施、作业环境治理等支出。",
+    "termExplanation": "职业病防治是《职业病防治法》的法定义务，投入情况体现管理实效。"
+  },
+  {
+    "key": "social_r42",
+    "sheet": "社会",
+    "category": "职业健康与安全",
+    "groupPath": [
+      "职业健康与安全",
+      "职业病防治"
+    ],
+    "metricLabel": "防治职业病培训次数",
+    "unit": "次",
+    "metricDefinition": "报告期开展职业病防治培训的场次。",
+    "termExplanation": "含防尘、防毒、噪声防护等主题，以培训签到或记录为计数依据。"
+  },
+  {
+    "key": "social_r43",
+    "sheet": "社会",
+    "category": "职业健康与安全",
+    "groupPath": [
+      "职业健康与安全",
+      "职业病防治"
+    ],
+    "metricLabel": "年度新增职业病人数",
+    "unit": "人",
+    "metricDefinition": "报告期新确诊的职业病病例数。",
+    "termExplanation": "以职业病诊断机构出具的诊断结论为准，无新增时填 0，不留空。"
+  },
+  {
+    "key": "social_r44",
+    "sheet": "社会",
+    "category": "职业健康与安全",
+    "groupPath": [
+      "职业健康与安全",
+      "健康与安全"
+    ],
+    "metricLabel": "员工健康安全培训覆盖率",
+    "unit": "%",
+    "metricDefinition": "报告期接受健康安全培训的员工数 ÷ 员工总数 × 100%。",
+    "termExplanation": "与安全培训总时长配合，分别反映培训的广度与深度。"
+  },
+  {
+    "key": "social_r45",
+    "sheet": "社会",
+    "category": "职业健康与安全",
+    "groupPath": [
+      "职业健康与安全",
+      "健康与安全"
+    ],
+    "metricLabel": "安全培训总时长",
+    "unit": "小时",
+    "metricDefinition": "报告期全体员工安全培训学时合计。",
+    "termExplanation": "按人次时长累加，同一课程多人参加需分别计入。"
+  },
+  {
+    "key": "social_r46",
+    "sheet": "社会",
+    "category": "职业健康与安全",
+    "groupPath": [
+      "职业健康与安全",
+      "健康与安全"
+    ],
+    "metricLabel": "安全应急演练次数",
+    "unit": "次",
+    "metricDefinition": "报告期组织的消防、危化品泄漏等应急演练场次。",
+    "termExplanation": "演练是应急预案有效性的检验环节，通常按年度计划开展。"
+  },
+  {
+    "key": "social_r47",
+    "sheet": "社会",
+    "category": "职业健康与安全",
+    "groupPath": [
+      "职业健康与安全",
+      "健康与安全"
+    ],
+    "metricLabel": "安全演练参与人数",
+    "unit": "人",
+    "metricDefinition": "报告期参加安全应急演练的人次合计。",
+    "termExplanation": "同一员工参加多场演练按人次累计，与演练次数配合反映参与广度。"
+  },
+  {
+    "key": "social_r48",
+    "sheet": "社会",
+    "category": "职业健康与安全",
+    "groupPath": [
+      "职业健康与安全",
+      "健康与安全"
+    ],
+    "metricLabel": "年度重大安全事故数量",
+    "unit": "件",
+    "metricDefinition": "报告期发生的重大安全事故起数。",
+    "termExplanation": "重大事故的认定以《生产安全事故报告和调查处理条例》的分级为准；无事故时填 0，不留空。"
+  },
+  {
+    "key": "social_r49",
+    "sheet": "社会",
+    "category": "职业健康与安全",
+    "groupPath": [
+      "职业健康与安全",
+      "健康与安全"
+    ],
+    "metricLabel": "百万工时损工事件率",
+    "unit": "次/百万工时",
+    "metricDefinition": "报告期损工事件数 ÷ 实际总工时 × 1,000,000。",
+    "termExplanation": "损工事件指造成缺勤至少一个工作日的工伤事件；总工时按实际出勤统计。"
+  },
+  {
+    "key": "social_r50",
+    "sheet": "社会",
+    "category": "职业健康与安全",
+    "groupPath": [
+      "职业健康与安全",
+      "健康与安全"
+    ],
+    "metricLabel": "因工亡故员工人数",
+    "unit": "人",
+    "metricDefinition": "报告期因工死亡的员工人数。",
+    "termExplanation": "以工伤认定结论为准；无相关情况时填 0，不留空。"
+  },
+  {
+    "key": "social_r51",
+    "sheet": "社会",
+    "category": "职业健康与安全",
+    "groupPath": [
+      "职业健康与安全",
+      "健康与安全"
+    ],
+    "metricLabel": "因工亡故员工比率",
+    "unit": "%",
+    "metricDefinition": "报告期因工死亡员工人数 ÷ 员工总数 × 100%。",
+    "termExplanation": "口径与因工亡故员工人数一致；无相关情况时填 0。"
+  },
+  {
+    "key": "social_r52",
+    "sheet": "社会",
+    "category": "职业健康与安全",
+    "groupPath": [
+      "职业健康与安全",
+      "健康与安全"
+    ],
+    "metricLabel": "因工伤/工作相关疾病损失工作日数",
+    "unit": "天",
+    "metricDefinition": "报告期因工伤或工作相关疾病损失的工作日合计。",
+    "termExplanation": "自缺勤首日起按工作日累计，跨年度事件计入实际缺勤年度。"
+  },
+  {
+    "key": "social_r53",
+    "sheet": "社会",
+    "category": "产品质量与安全",
+    "groupPath": [
+      "产品质量与安全",
+      "产品召回"
+    ],
+    "metricLabel": "产品召回事件数量",
+    "unit": "件",
+    "metricDefinition": "报告期因安全或质量原因发起的产品召回事件起数。",
+    "termExplanation": "按事件计，同一批次的一次召回记为一起；无召回时填 0，不留空。"
+  },
+  {
+    "key": "social_r54",
+    "sheet": "社会",
+    "category": "产品质量与安全",
+    "groupPath": [
+      "产品质量与安全",
+      "产品召回"
+    ],
+    "metricLabel": "已售或已运送产品总数中因安全与质量理由而须回收的比例",
+    "unit": "%",
+    "metricDefinition": "报告期召回产品数 ÷ 已售及已运送产品总数 × 100%。",
+    "termExplanation": "与召回事件数配合，分别反映召回的频次与影响范围。"
+  },
+  {
+    "key": "social_r55",
+    "sheet": "社会",
+    "category": "客户服务质量管理",
+    "groupPath": [
+      "客户服务质量管理",
+      "客诉&客户满意度"
+    ],
+    "metricLabel": "关于产品及服务的投诉数量",
+    "unit": "件",
+    "metricDefinition": "报告期收到的产品与服务投诉件数。",
+    "termExplanation": "宜涵盖电话、线上、书面等全部受理渠道，口径需逐年一致。"
+  },
+  {
+    "key": "social_r56",
+    "sheet": "社会",
+    "category": "客户服务质量管理",
+    "groupPath": [
+      "客户服务质量管理",
+      "客诉&客户满意度"
+    ],
+    "metricLabel": "投诉处理率",
+    "unit": "%",
+    "metricDefinition": "报告期已处理完毕的投诉件数 ÷ 投诉总数 × 100%。",
+    "termExplanation": "反映响应闭环情况；跨年度未结案的投诉需说明统计口径。"
+  },
+  {
+    "key": "social_r57",
+    "sheet": "社会",
+    "category": "客户服务质量管理",
+    "groupPath": [
+      "客户服务质量管理",
+      "客诉&客户满意度"
+    ],
+    "metricLabel": "客户满意度调研中持满意回复的客户比例",
+    "unit": "%",
+    "metricDefinition": "调研中持满意回复的客户数 ÷ 有效回复客户数 × 100%。",
+    "termExplanation": "以报告期客户满意度调研为准，评分制结果可折算为满意比例。"
+  },
+  {
+    "key": "social_r58",
+    "sheet": "社会",
+    "category": "数据安全与客户隐私保护",
+    "groupPath": [
+      "数据安全与客户隐私保护",
+      "客户隐私保护"
+    ],
+    "metricLabel": "客户隐私保护培训次数",
+    "unit": "次",
+    "metricDefinition": "报告期开展客户隐私保护培训的场次。",
+    "termExplanation": "内容通常涵盖个人信息保护法规、数据脱敏与最小化使用要求。"
+  },
+  {
+    "key": "social_r59",
+    "sheet": "社会",
+    "category": "数据安全与客户隐私保护",
+    "groupPath": [
+      "数据安全与客户隐私保护",
+      "客户隐私保护"
+    ],
+    "metricLabel": "因泄漏客户信息受到投诉的次数",
+    "unit": "次",
+    "metricDefinition": "报告期因客户信息泄露而收到的投诉次数。",
+    "termExplanation": "含监管转办、客户直接投诉等各类来源；无相关投诉时填 0，不留空。"
+  },
+  {
+    "key": "social_r60",
+    "sheet": "社会",
+    "category": "数据安全与客户隐私保护",
+    "groupPath": [
+      "数据安全与客户隐私保护",
+      "数据安全"
+    ],
+    "metricLabel": "信息安全事故次数",
+    "unit": "次",
+    "metricDefinition": "报告期发生的信息安全事件次数，如数据泄露、系统入侵、勒索攻击。",
+    "termExplanation": "与隐私投诉次数分列：前者为技术安全事件，后者为客户提出的诉求。"
+  },
+  {
+    "key": "social_r61",
+    "sheet": "社会",
+    "category": "数据安全与客户隐私保护",
+    "groupPath": [
+      "数据安全与客户隐私保护",
+      "数据安全"
+    ],
+    "metricLabel": "数据泄露事件次数",
+    "unit": "次",
+    "metricDefinition": "报告期确认发生的数据泄露事件次数。",
+    "termExplanation": "与信息安全事故分列，泄露特指数据外泄；无事件时填 0，不留空。"
+  },
+  {
+    "key": "social_r62",
+    "sheet": "社会",
+    "category": "数据安全与客户隐私保护",
+    "groupPath": [
+      "数据安全与客户隐私保护",
+      "数据安全"
+    ],
+    "metricLabel": "数据泄露事件影响的用户数量",
+    "unit": "人",
+    "metricDefinition": "报告期数据泄露事件影响的人数合计，按去重后统计。",
+    "termExplanation": "以事件调查确认的影响范围为准；无泄露事件时填 0。"
+  },
+  {
+    "key": "social_r63",
+    "sheet": "社会",
+    "category": "数据安全与客户隐私保护",
+    "groupPath": [
+      "数据安全与客户隐私保护",
+      "数据安全"
+    ],
+    "metricLabel": "专业IT技术人员信息安全培训覆盖率",
+    "unit": "%",
+    "metricDefinition": "报告期接受信息安全培训的 IT 技术人员数 ÷ IT 技术人员总数 × 100%。",
+    "termExplanation": "针对专业岗位的专项培训，与全员安全意识培训口径不同。"
+  },
+  {
+    "key": "social_r64",
+    "sheet": "社会",
+    "category": "可持续供应链管理",
+    "groupPath": [
+      "可持续供应链管理"
+    ],
+    "metricLabel": "供应商总数",
+    "unit": "家",
+    "metricDefinition": "报告期末有实际业务往来的供应商家数。",
+    "termExplanation": "通常指报告期内产生采购交易的在册供应商，与按地区分列的家数合计一致。"
+  },
+  {
+    "key": "social_r65",
+    "sheet": "社会",
+    "category": "可持续供应链管理",
+    "groupPath": [
+      "可持续供应链管理",
+      "按地区分类的供应商总数"
+    ],
+    "metricLabel": "中国内地",
+    "unit": "家",
+    "metricDefinition": "注册地在中国内地的供应商家数。",
+    "termExplanation": "地区划分用于识别供应链的地域集中度与相应风险。"
+  },
+  {
+    "key": "social_r66",
+    "sheet": "社会",
+    "category": "可持续供应链管理",
+    "groupPath": [
+      "可持续供应链管理",
+      "按地区分类的供应商总数"
+    ],
+    "metricLabel": "港澳台地区",
+    "unit": "家",
+    "metricDefinition": "注册地在香港、澳门、台湾地区的供应商家数。",
+    "termExplanation": "与内地、国外两项合计应等于供应商总数。"
+  },
+  {
+    "key": "social_r67",
+    "sheet": "社会",
+    "category": "可持续供应链管理",
+    "groupPath": [
+      "可持续供应链管理",
+      "按地区分类的供应商总数"
+    ],
+    "metricLabel": "国外供应商",
+    "unit": "家",
+    "metricDefinition": "注册地在中国境外的供应商家数。",
+    "termExplanation": "境外供应商通常涉及跨境合规与物流中断等额外风险。"
+  },
+  {
+    "key": "social_r68",
+    "sheet": "社会",
+    "category": "可持续供应链管理",
+    "groupPath": [
+      "可持续供应链管理"
+    ],
+    "metricLabel": "使用可持续维度筛选的新供应商百分比",
+    "unit": "%",
+    "metricDefinition": "按可持续维度筛选的新供应商数 ÷ 新供应商总数 × 100%。",
+    "termExplanation": "筛选形式含环境与社会维度的准入评估、资质审查或承诺书签署。"
+  },
+  {
+    "key": "social_r69",
+    "sheet": "社会",
+    "category": "可持续供应链管理",
+    "groupPath": [
+      "可持续供应链管理"
+    ],
+    "metricLabel": "年度淘汰供应商总数",
+    "unit": "家",
+    "metricDefinition": "报告期因评估不合格或违约等原因终止合作的供应商家数。",
+    "termExplanation": "体现供应商准入与退出机制的执行情况，淘汰原因可在议题问答中说明。"
+  },
+  {
+    "key": "social_r70",
+    "sheet": "社会",
+    "category": "可持续供应链管理",
+    "groupPath": [
+      "可持续供应链管理"
+    ],
+    "metricLabel": "年度供应商培训场次",
+    "unit": "次",
+    "metricDefinition": "报告期面向供应商开展培训的场次合计。",
+    "termExplanation": "含质量、安全、合规等全部主题；可持续发展专题培训另行单列。"
+  },
+  {
+    "key": "social_r71",
+    "sheet": "社会",
+    "category": "可持续供应链管理",
+    "groupPath": [
+      "可持续供应链管理"
+    ],
+    "metricLabel": "年度供应商可持续发展培训场次",
+    "unit": "次",
+    "metricDefinition": "报告期面向供应商开展的可持续发展专题培训场次。",
+    "termExplanation": "是供应商培训场次的组成部分，主题涵盖环境、劳工与商业道德等。"
+  },
+  {
+    "key": "social_r72",
+    "sheet": "社会",
+    "category": "可持续供应链管理",
+    "groupPath": [
+      "可持续供应链管理"
+    ],
+    "metricLabel": "年度参与培训的供应商数量",
+    "unit": "家",
+    "metricDefinition": "报告期参加过培训的供应商家数。",
+    "termExplanation": "同一供应商参加多场培训只计一家，与场次配合反映覆盖广度。"
+  },
+  {
+    "key": "social_r73",
+    "sheet": "社会",
+    "category": "可持续供应链管理",
+    "groupPath": [
+      "可持续供应链管理"
+    ],
+    "metricLabel": "年度接受公司尽职调查审核的供应商数量",
+    "unit": "家",
+    "metricDefinition": "报告期接受尽职调查或审核的供应商家数。",
+    "termExplanation": "含书面审查、现场审核与第三方审验；同一供应商多次审核只计一家。"
+  },
+  {
+    "key": "social_r74",
+    "sheet": "社会",
+    "category": "创新驱动",
+    "groupPath": [
+      "创新驱动",
+      "知识产权",
+      "已授权专利项目数"
+    ],
+    "metricLabel": "境内",
+    "standaloneLabel": "已授权专利项目数（境内）",
+    "unit": "件",
+    "metricDefinition": "报告期末在中国境内已获授权的专利件数。",
+    "termExplanation": "已授权指已取得专利证书，与在申请中的专利分别统计，不重复计入。"
+  },
+  {
+    "key": "social_r75",
+    "sheet": "社会",
+    "category": "创新驱动",
+    "groupPath": [
+      "创新驱动",
+      "知识产权",
+      "已授权专利项目数"
+    ],
+    "metricLabel": "境外",
+    "standaloneLabel": "已授权专利项目数（境外）",
+    "unit": "件",
+    "metricDefinition": "报告期末在境外已获授权的专利件数。",
+    "termExplanation": "同一发明在多地授权按授权地分别计件；无境外专利时填 0。"
+  },
+  {
+    "key": "social_r76",
+    "sheet": "社会",
+    "category": "创新驱动",
+    "groupPath": [
+      "创新驱动",
+      "知识产权"
+    ],
+    "metricLabel": "在申请中专利项目数",
+    "unit": "件",
+    "metricDefinition": "报告期末已提交申请但尚未获得授权的专利件数。",
+    "termExplanation": "含发明、实用新型与外观设计三类，反映在研成果的储备情况。"
+  },
+  {
+    "key": "social_r77",
+    "sheet": "社会",
+    "category": "创新驱动",
+    "groupPath": [
+      "创新驱动",
+      "研发"
+    ],
+    "metricLabel": "研发经费总额",
+    "unit": "亿元",
+    "metricDefinition": "报告期研发费用总额，口径与财务报告的研发投入一致。",
+    "termExplanation": "研发投入强度通常以研发经费占营业收入的比重衡量。"
+  },
+  {
+    "key": "social_r78",
+    "sheet": "社会",
+    "category": "创新驱动",
+    "groupPath": [
+      "创新驱动",
+      "研发"
+    ],
+    "metricLabel": "研发投入占营业收入比例",
+    "unit": "%",
+    "metricDefinition": "报告期研发经费总额 ÷ 营业收入 × 100%。",
+    "termExplanation": "分子口径与研发经费总额一致，对应财务报告披露的研发投入强度。"
+  },
+  {
+    "key": "social_r79",
+    "sheet": "社会",
+    "category": "创新驱动",
+    "groupPath": [
+      "创新驱动",
+      "研发"
+    ],
+    "metricLabel": "研发人员数量",
+    "unit": "人",
+    "metricDefinition": "报告期末从事研发工作的人员数。",
+    "termExplanation": "通常含专职研发人员；如含兼职人员需保持逐年口径一致。"
+  },
+  {
+    "key": "social_r80",
+    "sheet": "社会",
+    "category": "创新驱动",
+    "groupPath": [
+      "创新驱动",
+      "研发"
+    ],
+    "metricLabel": "研究人员占员工总人数比率",
+    "unit": "%",
+    "metricDefinition": "报告期末研发人员数 ÷ 员工总数 × 100%。",
+    "termExplanation": "分子口径与研发人员数量一致；兼职人员的计入方式需逐年一致。"
+  },
+  {
+    "key": "social_r81",
+    "sheet": "社会",
+    "category": "乡村振兴与社会贡献",
+    "groupPath": [
+      "乡村振兴与社会贡献",
+      "乡村振兴"
+    ],
+    "metricLabel": "乡村振兴总投入金额",
+    "unit": "万元",
+    "metricDefinition": "报告期用于乡村振兴的资金、物资与项目投入合计。",
+    "termExplanation": "含产业帮扶、消费帮扶、就业帮扶等形式；物资投入按公允价值折算。"
+  },
+  {
+    "key": "social_r82",
+    "sheet": "社会",
+    "category": "乡村振兴与社会贡献",
+    "groupPath": [
+      "乡村振兴与社会贡献",
+      "乡村振兴"
+    ],
+    "metricLabel": "乡村振兴惠及人数",
+    "unit": "人",
+    "metricDefinition": "报告期乡村振兴项目直接惠及的人数。",
+    "termExplanation": "按项目覆盖对象统计，测算方法可在议题问答中说明。"
+  },
+  {
+    "key": "social_r83",
+    "sheet": "社会",
+    "category": "乡村振兴与社会贡献",
+    "groupPath": [
+      "乡村振兴与社会贡献",
+      "社会贡献"
+    ],
+    "metricLabel": "公益慈善、志愿活动等投入金额",
+    "unit": "万元",
+    "metricDefinition": "报告期用于公益慈善与志愿活动的捐赠及项目投入合计。",
+    "termExplanation": "与乡村振兴投入分列，避免同一笔支出在两项中重复计入。"
+  },
+  {
+    "key": "governance_r02",
+    "sheet": "治理",
+    "category": "公司治理-董事会",
+    "groupPath": [
+      "公司治理-董事会"
+    ],
+    "metricLabel": "董事总人数",
+    "unit": "人",
+    "metricDefinition": "报告期末董事会成员总人数。",
+    "termExplanation": "含独立董事与非独立董事，以选举或工商登记结果为准。"
+  },
+  {
+    "key": "governance_r03",
+    "sheet": "治理",
+    "category": "公司治理-董事会",
+    "groupPath": [
+      "公司治理-董事会"
+    ],
+    "metricLabel": "男性董事人数",
+    "unit": "人",
+    "metricDefinition": "报告期末董事会中男性董事人数。",
+    "termExplanation": "与女性董事人数合计应等于董事总人数。"
+  },
+  {
+    "key": "governance_r04",
+    "sheet": "治理",
+    "category": "公司治理-董事会",
+    "groupPath": [
+      "公司治理-董事会"
+    ],
+    "metricLabel": "女性董事人数",
+    "unit": "人",
+    "metricDefinition": "报告期末董事会中女性董事人数。",
+    "termExplanation": "董事会性别构成是治理多元化的常见观察点；无女性董事时填 0。"
+  },
+  {
+    "key": "governance_r05",
+    "sheet": "治理",
+    "category": "公司治理-董事会",
+    "groupPath": [
+      "公司治理-董事会"
+    ],
+    "metricLabel": "独立董事人数",
+    "unit": "人",
+    "metricDefinition": "报告期末独立董事人数。",
+    "termExplanation": "独立董事指不在公司担任其他职务且无利害关系的董事；未设置时填 0。"
+  },
+  {
+    "key": "governance_r06",
+    "sheet": "治理",
+    "category": "反商业贿赂与反贪污",
+    "groupPath": [
+      "反商业贿赂与反贪污"
+    ],
+    "metricLabel": "反贪腐培训总次数",
+    "unit": "次",
+    "metricDefinition": "报告期开展的反贪腐相关培训场次。",
+    "termExplanation": "培训内容通常涵盖商业贿赂识别、利益冲突申报与举报渠道。"
+  },
+  {
+    "key": "governance_r07",
+    "sheet": "治理",
+    "category": "反商业贿赂与反贪污",
+    "groupPath": [
+      "反商业贿赂与反贪污"
+    ],
+    "metricLabel": "反贪腐培训总人数",
+    "unit": "人",
+    "metricDefinition": "报告期参加反贪腐培训的人次或人数，口径需与培训场次相互对应。",
+    "termExplanation": "董事、高管与员工可分层统计，以体现覆盖的层级完整性。"
+  },
+  {
+    "key": "governance_r08",
+    "sheet": "治理",
+    "category": "反商业贿赂与反贪污",
+    "groupPath": [
+      "反商业贿赂与反贪污",
+      "反贪腐培训次数"
+    ],
+    "metricLabel": "董事",
+    "unit": "次",
+    "metricDefinition": "报告期面向董事开展的反贪腐培训场次。",
+    "termExplanation": "为反贪腐培训总次数的分层统计；同场培训覆盖多层级时各层分别计入。"
+  },
+  {
+    "key": "governance_r09",
+    "sheet": "治理",
+    "category": "反商业贿赂与反贪污",
+    "groupPath": [
+      "反商业贿赂与反贪污",
+      "反贪腐培训次数"
+    ],
+    "metricLabel": "高管",
+    "unit": "次",
+    "metricDefinition": "报告期面向高级管理人员开展的反贪腐培训场次。",
+    "termExplanation": "高管指总经理、副总经理、财务负责人等公司级管理人员。"
+  },
+  {
+    "key": "governance_r10",
+    "sheet": "治理",
+    "category": "反商业贿赂与反贪污",
+    "groupPath": [
+      "反商业贿赂与反贪污",
+      "反贪腐培训次数"
+    ],
+    "metricLabel": "员工",
+    "unit": "次",
+    "metricDefinition": "报告期面向董事、高管以外员工开展的反贪腐培训场次。",
+    "termExplanation": "三个层级的场次分别统计，体现培训覆盖的层级完整性。"
+  },
+  {
+    "key": "governance_r11",
+    "sheet": "治理",
+    "category": "反商业贿赂与反贪污",
+    "groupPath": [
+      "反商业贿赂与反贪污",
+      "反贪腐培训覆盖率"
+    ],
+    "metricLabel": "董事",
+    "unit": "%",
+    "metricDefinition": "报告期参加过反贪腐培训的董事人数 ÷ 董事总人数 × 100%。",
+    "termExplanation": "同一人参加多次培训只计一次，覆盖率不应超过 100%。"
+  },
+  {
+    "key": "governance_r12",
+    "sheet": "治理",
+    "category": "反商业贿赂与反贪污",
+    "groupPath": [
+      "反商业贿赂与反贪污",
+      "反贪腐培训覆盖率"
+    ],
+    "metricLabel": "高管",
+    "unit": "%",
+    "metricDefinition": "报告期参加过反贪腐培训的高管人数 ÷ 高管总人数 × 100%。",
+    "termExplanation": "高管范围与反贪腐培训次数的层级划分保持一致。"
+  },
+  {
+    "key": "governance_r13",
+    "sheet": "治理",
+    "category": "反商业贿赂与反贪污",
+    "groupPath": [
+      "反商业贿赂与反贪污",
+      "反贪腐培训覆盖率"
+    ],
+    "metricLabel": "员工",
+    "unit": "%",
+    "metricDefinition": "报告期参加过反贪腐培训的员工数 ÷ 员工总数 × 100%。",
+    "termExplanation": "员工层指董事、高管以外的全体员工。"
+  },
+  {
+    "key": "governance_r14",
+    "sheet": "治理",
+    "category": "反商业贿赂与反贪污",
+    "groupPath": [
+      "反商业贿赂与反贪污",
+      "反贪腐培训时长"
+    ],
+    "metricLabel": "董事",
+    "unit": "小时",
+    "metricDefinition": "报告期董事接受反贪腐培训的学时合计。",
+    "termExplanation": "按参训人次的时长累计，同一课程多人参加分别计入。"
+  },
+  {
+    "key": "governance_r15",
+    "sheet": "治理",
+    "category": "反商业贿赂与反贪污",
+    "groupPath": [
+      "反商业贿赂与反贪污",
+      "反贪腐培训时长"
+    ],
+    "metricLabel": "高管",
+    "unit": "小时",
+    "metricDefinition": "报告期高级管理人员接受反贪腐培训的学时合计。",
+    "termExplanation": "口径与董事层一致，按参训人次的时长累计。"
+  },
+  {
+    "key": "governance_r16",
+    "sheet": "治理",
+    "category": "反商业贿赂与反贪污",
+    "groupPath": [
+      "反商业贿赂与反贪污",
+      "反贪腐培训时长"
+    ],
+    "metricLabel": "员工",
+    "unit": "小时",
+    "metricDefinition": "报告期员工接受反贪腐培训的学时合计。",
+    "termExplanation": "员工层指董事、高管以外人员，与另两层分别统计不重复。"
+  },
+  {
+    "key": "governance_r17",
+    "sheet": "治理",
+    "category": "反不正当竞争",
+    "groupPath": [
+      "反不正当竞争",
+      "培训与教育"
+    ],
+    "metricLabel": "接受反不正当竞争培训的员工比例",
+    "unit": "%",
+    "metricDefinition": "报告期参加过反不正当竞争培训的员工数 ÷ 员工总数 × 100%。",
+    "termExplanation": "培训内容通常涵盖反垄断、商业秘密保护、公平竞争与合规采购等主题。"
+  },
+  {
+    "key": "governance_r18",
+    "sheet": "治理",
+    "category": "反不正当竞争",
+    "groupPath": [
+      "反不正当竞争",
+      "培训与教育"
+    ],
+    "metricLabel": "接受反不正当竞争培训的供应商比例",
+    "unit": "%",
+    "metricDefinition": "报告期接受过相关培训或签署合规承诺的供应商数 ÷ 供应商总数 × 100%。",
+    "termExplanation": "将合规要求延伸至供应链，是可持续供应链管理的常见做法。"
+  },
+  {
+    "key": "governance_r19",
+    "sheet": "治理",
+    "category": "风险管理",
+    "groupPath": [
+      "风险管理"
+    ],
+    "metricLabel": "风险排查覆盖率",
+    "unit": "%",
+    "metricDefinition": "报告期完成风险排查的部门或业务单元数 ÷ 部门或业务单元总数 × 100%。",
+    "termExplanation": "排查形式含风险辨识、隐患排查与内控自查，口径与公司风险管理制度保持一致。"
+  },
+  {
+    "key": "governance_r20",
+    "sheet": "治理",
+    "category": "风险管理",
+    "groupPath": [
+      "风险管理"
+    ],
+    "metricLabel": "风险事项整改率",
+    "unit": "%",
+    "metricDefinition": "报告期完成整改的风险事项数 ÷ 已识别风险事项总数 × 100%。",
+    "termExplanation": "整改完成以复查关闭为准；跨期事项计入识别年度，与内部风险台账口径一致。"
+  },
+  {
+    "key": "governance_r21",
+    "sheet": "治理",
+    "category": "风险管理",
+    "groupPath": [
+      "风险管理"
+    ],
+    "metricLabel": "前置风险识别覆盖率",
+    "unit": "%",
+    "metricDefinition": "实施前完成风险评估的重大决策或项目数 ÷ 同期重大决策或项目总数 × 100%。",
+    "termExplanation": "重大决策与项目的范围以公司风险管理制度或投资管理制度的界定为准。"
+  },
+  {
+    "key": "governance_r22",
+    "sheet": "治理",
+    "category": "风险管理",
+    "groupPath": [
+      "风险管理"
+    ],
+    "metricLabel": "风险培训覆盖率",
+    "unit": "%",
+    "metricDefinition": "报告期参加过风险管理培训的员工数 ÷ 员工总数 × 100%。",
+    "termExplanation": "培训形式含专题培训、线上课程与案例宣贯；员工总数按报告期末在册口径。"
+  },
+  {
+    "key": "governance_r23",
+    "sheet": "治理",
+    "category": "风险管理",
+    "groupPath": [
+      "风险管理"
+    ],
+    "metricLabel": "风险管理阶段性复盘次数",
+    "unit": "次",
+    "metricDefinition": "报告期开展风险管理阶段性复盘或总结会议的次数。",
+    "termExplanation": "含年度、半年度与专项复盘，以会议纪要或复盘记录为计数依据。"
+  }
+]

@@ -1,0 +1,107 @@
+# ABOUTME: 产品质量与安全议题准则披露要求库，供覆盖审计与按 key 白名单注入生成上下文（注入受开关控制，默认关闭）。
+# ABOUTME: 本文件不作为用户可见准则批注来源；用户可见条款原文来自 user_visible_disclosure_clause_annotations。
+topicStandardDisclosureRequirementGroups:
+- topicSectionKey: product_quality_safety.gov
+  pillar: governance
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: product_quality_safety.gov.quality_governance_required
+    standardDisclosureRequirementTitle: 产品质量安全组织保障体系
+    excerptFrom: 附录索引表第四十七条；参考模板“治理”
+    standardDisclosureRequirementText: 应说明产品质量与安全管理组织保障体系，包括决策层、质量安全风险管控委员会、质量管理部、事业部或执行层职责、风险监测识别、信息传递、风险评估、处置汇报和责任界定。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 第四十七条
+    - standard: SZSE
+      clauseRef: 第四十七条
+    - standard: BSE
+      clauseRef: 第四十七条
+  - standardDisclosureRequirementKey: product_quality_safety.gov.quality_system_required
+    standardDisclosureRequirementTitle: 质量管理体系、制度和认证
+    excerptFrom: 附录索引表第四十七条
+    standardDisclosureRequirementText: 应说明产品和服务质量管理体系、制度建设与执行情况、具体措施、质量手册、产品安全管理、质量追责、风险管控实施细则，以及公司获得的质量管理相关认证、主要产品和服务质量管理体系认证情况。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 第四十七条
+    - standard: SZSE
+      clauseRef: 第四十七条
+    - standard: BSE
+      clauseRef: 第四十七条
+- topicSectionKey: product_quality_safety.strategy
+  pillar: strategy
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: product_quality_safety.strategy.quality_strategy_required
+    standardDisclosureRequirementTitle: 产品质量战略与目标闭环
+    excerptFrom: 参考模板“战略”
+    standardDisclosureRequirementText: 应说明质量战略定位、质量方针、关键质量绩效指标、年度管理评审、目标动态设定、逐级分解、系统落实、质量文化和持续质量改进。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: ReferenceTemplate
+      clauseRef: 产品质量与安全：战略
+  - standardDisclosureRequirementKey: product_quality_safety.strategy.quality_strategy_encouraged
+    standardDisclosureRequirementTitle: 卓越产品交付与质量文化
+    excerptFrom: 参考模板“质量文化融入组织运营”
+    standardDisclosureRequirementText: 可进一步披露说明质量文化、卓越产品交付、客户价值和组织运营全流程质量意识。
+    disclosureRequirementObligationLevel: encouraged
+    sourceClauseReferenceLabels:
+    - standard: ReferenceTemplate
+      clauseRef: 产品质量与安全：战略
+- topicSectionKey: product_quality_safety.iro
+  pillar: iro_management
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: product_quality_safety.iro.lifecycle_control_required
+    standardDisclosureRequirementTitle: 全生命周期质量安全风险管控
+    excerptFrom: 附录索引表第四十七条；参考模板“三层联动管理体系”
+    standardDisclosureRequirementText: 应说明产品全生命周期质量安全风险管控，包括风险分级、预警响应、FMEA、控制计划、作业文件、供应链安全责任传导、生产过程能力管控、审核、不合格品追溯、紧急追回、记录存档和责任追究。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 第四十七条
+    - standard: SZSE
+      clauseRef: 第四十七条
+    - standard: BSE
+      clauseRef: 第四十七条
+  - standardDisclosureRequirementKey: product_quality_safety.iro.recall_complaint_required
+    standardDisclosureRequirementTitle: 产品召回、售后服务与客户投诉处理
+    excerptFrom: 附录索引表第四十七条；参考模板“产品召回机制”
+    standardDisclosureRequirementText: 应说明售后服务、产品召回制度的建立与执行情况，以及针对客户投诉的受理途径、处理流程和处理情况；如涉及已交付产品重大安全缺陷处理、客户通知或风险控制措施，应准确引用。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 第四十七条
+    - standard: SZSE
+      clauseRef: 第四十七条
+    - standard: BSE
+      clauseRef: 第四十七条
+  - standardDisclosureRequirementKey: product_quality_safety.iro.major_incidents_conditional
+    standardDisclosureRequirementTitle: 安全与质量重大责任事故
+    excerptFrom: 附录索引表第四十七条
+    standardDisclosureRequirementText: 如涉及报告期内产品和服务相关的安全与质量重大责任事故，应准确说明事件性质、行政处罚、造成影响、损害涉及金额、采取的应对措施及进展。
+    disclosureRequirementObligationLevel: conditional
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 第四十七条
+    - standard: SZSE
+      clauseRef: 第四十七条
+    - standard: BSE
+      clauseRef: 第四十七条
+  - standardDisclosureRequirementKey: product_quality_safety.iro.quality_digitalization_required
+    standardDisclosureRequirementTitle: 数字化质量管理
+    excerptFrom: 参考模板“以数字化驱动质量管理水平跃升”
+    standardDisclosureRequirementText: 应说明 QMS、质量追溯、变更管理、检测数据采集、实时分析、质量数据链路、事前预防、事中可控、事后可溯或数据驱动质量改进。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: ReferenceTemplate
+      clauseRef: 产品质量与安全：数字化质量管理
+- topicSectionKey: product_quality_safety.metrics
+  pillar: metrics_targets
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: product_quality_safety.metrics.quality_metrics_required
+    standardDisclosureRequirementTitle: 产品质量与安全关键指标
+    excerptFrom: 参考模板“指标目标”
+    standardDisclosureRequirementText: 如企业在本议题提供产品质量与安全指标，应准确呈现产品合格率、产品和服务相关安全事故次数、因安全与质量理由回收的产品数量、客户投诉数量、召回数量、质量审核覆盖率或质量改进项目数量。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: ReferenceTemplate
+      clauseRef: 产品质量与安全：指标目标

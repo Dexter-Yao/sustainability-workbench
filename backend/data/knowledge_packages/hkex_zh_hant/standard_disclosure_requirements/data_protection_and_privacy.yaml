@@ -1,0 +1,55 @@
+# ABOUTME(en): Appendix C2 disclosure requirements of「資料保障及私隱」(General Disclosure and KPIs), grouped by pillar,
+# ABOUTME(en): for the coverage audit and for prompt assembly by key whitelist (injection is switch-gated, off by default) and for the coverage audit. Wording awaits check against the official Chinese text.
+topicStandardDisclosureRequirementGroups:
+- topicSectionKey: data_protection_and_privacy.gov
+  pillar: governance
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: data_protection_and_privacy.gov.general_disclosure_policies
+    standardDisclosureRequirementTitle: 資料保障及私隱政策
+    excerptFrom: 港交所·附錄C2·一般披露 B6
+    standardDisclosureRequirementText: 應披露有關私隱事宜的政策。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: 一般披露 B6
+  - standardDisclosureRequirementKey: data_protection_and_privacy.gov.general_disclosure_compliance
+    standardDisclosureRequirementTitle: 遵守私隱相關法律及規例
+    excerptFrom: 港交所·附錄C2·一般披露 B6
+    standardDisclosureRequirementText: 應披露遵守對發行人有重大影響的私隱相關法律及規例的資料。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: 一般披露 B6
+- topicSectionKey: data_protection_and_privacy.strategy
+  pillar: strategy
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: data_protection_and_privacy.strategy.privacy_direction
+    standardDisclosureRequirementTitle: 資料保障方針及目標
+    excerptFrom: 港交所·附錄C2·一般披露 B6
+    standardDisclosureRequirementText: 應說明公司在資料保障及資訊安全方面的方針及目標。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: 一般披露 B6
+- topicSectionKey: data_protection_and_privacy.iro
+  pillar: iro_management
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: data_protection_and_privacy.iro.privacy_implementation
+    standardDisclosureRequirementTitle: 消費者資料保障及私隱政策的執行及監察
+    excerptFrom: 港交所·附錄C2·關鍵績效指標 B6.5
+    standardDisclosureRequirementText: 應描述消費者資料保障及私隱政策，以及相關執行及監察方法。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: 關鍵績效指標 B6.5
+- topicSectionKey: data_protection_and_privacy.metrics
+  pillar: metrics_targets
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: data_protection_and_privacy.metrics.data_breach_data
+    standardDisclosureRequirementTitle: 個人資料外洩事故
+    excerptFrom: 港交所·附錄C2·關鍵績效指標 B6.5
+    standardDisclosureRequirementText: 如有已確認的個人資料外洩事故，應披露其數目及處理情況。
+    disclosureRequirementObligationLevel: conditional
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: 關鍵績效指標 B6.5

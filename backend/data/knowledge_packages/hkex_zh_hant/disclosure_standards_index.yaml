@@ -1,0 +1,101 @@
+# ABOUTME(en): Verbatim source of the appendix content index: Appendix C2 provisions (Part B mandatory
+# ABOUTME(en): paragraphs, Part C Aspects with General Disclosures and KPIs, Part D climate) → report sections.
+# ABOUTME(en): Chapter rows span the table; section titles are the merged first column; one row per provision.
+# 條文編號以 2025 年 1 月 1 日生效版本為準，待與繁體版守則逐條核對。
+chapters:
+  - title: B部 強制披露規定
+    sections:
+      - title: 董事會聲明
+        clauses:
+          - {clause: 第13段, reportSections: [董事會聲明]}
+      - title: 匯報原則
+        clauses:
+          - {clause: 第14段, reportSections: [關於本報告]}
+      - title: 匯報範圍
+        clauses:
+          - {clause: 第15段, reportSections: [關於本報告]}
+  - title: C部 「不遵守就解釋」條文 — A 環境
+    sections:
+      - title: 層面A1 排放物
+        clauses:
+          - {clause: 一般披露, reportSections: [排放物, 廢棄物管理]}
+          - {clause: 關鍵績效指標A1.1, reportSections: [排放物]}
+          - {clause: 關鍵績效指標A1.3, reportSections: [廢棄物管理]}
+          - {clause: 關鍵績效指標A1.4, reportSections: [廢棄物管理]}
+          - {clause: 關鍵績效指標A1.5, reportSections: [排放物]}
+          - {clause: 關鍵績效指標A1.6, reportSections: [廢棄物管理]}
+      - title: 層面A2 資源使用
+        clauses:
+          - {clause: 一般披露, reportSections: [能源管理, 水資源管理, 物料及包裝]}
+          - {clause: 關鍵績效指標A2.1, reportSections: [能源管理]}
+          - {clause: 關鍵績效指標A2.2, reportSections: [水資源管理]}
+          - {clause: 關鍵績效指標A2.3, reportSections: [能源管理]}
+          - {clause: 關鍵績效指標A2.4, reportSections: [水資源管理]}
+          - {clause: 關鍵績效指標A2.5, reportSections: [物料及包裝]}
+      - title: 層面A3 環境及天然資源
+        clauses:
+          - {clause: 一般披露, reportSections: [環境及天然資源]}
+          - {clause: 關鍵績效指標A3.1, reportSections: [環境及天然資源]}
+  - title: C部 「不遵守就解釋」條文 — B 社會
+    sections:
+      - title: 層面B1 僱傭
+        clauses:
+          - {clause: 一般披露, reportSections: [僱傭]}
+          - {clause: 關鍵績效指標B1.1, reportSections: [僱傭]}
+          - {clause: 關鍵績效指標B1.2, reportSections: [僱傭]}
+      - title: 層面B2 健康與安全
+        clauses:
+          - {clause: 一般披露, reportSections: [健康與安全]}
+          - {clause: 關鍵績效指標B2.1, reportSections: [健康與安全]}
+          - {clause: 關鍵績效指標B2.2, reportSections: [健康與安全]}
+          - {clause: 關鍵績效指標B2.3, reportSections: [健康與安全]}
+      - title: 層面B3 發展及培訓
+        clauses:
+          - {clause: 一般披露, reportSections: [發展及培訓]}
+          - {clause: 關鍵績效指標B3.1, reportSections: [發展及培訓]}
+          - {clause: 關鍵績效指標B3.2, reportSections: [發展及培訓]}
+      - title: 層面B4 勞工準則
+        clauses:
+          - {clause: 一般披露, reportSections: [勞工準則]}
+          - {clause: 關鍵績效指標B4.1, reportSections: [勞工準則]}
+          - {clause: 關鍵績效指標B4.2, reportSections: [勞工準則]}
+      - title: 層面B5 供應鏈管理
+        clauses:
+          - {clause: 一般披露, reportSections: [供應鏈管理]}
+          - {clause: 關鍵績效指標B5.1, reportSections: [供應鏈管理]}
+          - {clause: 關鍵績效指標B5.2, reportSections: [供應鏈管理]}
+          - {clause: 關鍵績效指標B5.3, reportSections: [供應鏈管理]}
+          - {clause: 關鍵績效指標B5.4, reportSections: [供應鏈管理]}
+      - title: 層面B6 產品責任
+        clauses:
+          - {clause: 一般披露, reportSections: [產品責任, 資料保障及私隱]}
+          - {clause: 關鍵績效指標B6.1, reportSections: [產品責任]}
+          - {clause: 關鍵績效指標B6.2, reportSections: [產品責任]}
+          - {clause: 關鍵績效指標B6.3, reportSections: [產品責任]}
+          - {clause: 關鍵績效指標B6.4, reportSections: [產品責任]}
+          - {clause: 關鍵績效指標B6.5, reportSections: [資料保障及私隱]}
+      - title: 層面B7 反貪污
+        clauses:
+          - {clause: 一般披露, reportSections: [反貪污]}
+          - {clause: 關鍵績效指標B7.1, reportSections: [反貪污]}
+          - {clause: 關鍵績效指標B7.2, reportSections: [反貪污]}
+          - {clause: 關鍵績效指標B7.3, reportSections: [反貪污]}
+      - title: 層面B8 社區投資
+        clauses:
+          - {clause: 一般披露, reportSections: [社區投資]}
+          - {clause: 關鍵績效指標B8.1, reportSections: [社區投資]}
+          - {clause: 關鍵績效指標B8.2, reportSections: [社區投資]}
+  - title: D部 氣候相關披露
+    sections:
+      - title: 管治
+        clauses:
+          - {clause: 第19至20段, reportSections: [氣候變化]}
+      - title: 策略
+        clauses:
+          - {clause: 第21至26段, reportSections: [氣候變化]}
+      - title: 風險管理
+        clauses:
+          - {clause: 第27段, reportSections: [氣候變化]}
+      - title: 指標及目標
+        clauses:
+          - {clause: 第28至41段, reportSections: [氣候變化]}

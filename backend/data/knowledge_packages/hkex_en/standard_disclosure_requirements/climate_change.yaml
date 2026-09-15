@@ -1,0 +1,125 @@
+# ABOUTME(en): Appendix C2 disclosure requirements of "Climate Change" (General Disclosure and KPIs), grouped by pillar,
+# ABOUTME(en): for the coverage audit and for prompt assembly by key whitelist (injection is switch-gated, off by default) and for the coverage audit. Wording follows the English Code text.
+topicStandardDisclosureRequirementGroups:
+- topicSectionKey: climate_change.gov
+  pillar: governance
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: climate_change.gov.board_oversight
+    standardDisclosureRequirementTitle: Board oversight of climate-related risks and opportunities
+    excerptFrom: HKEX·Appendix C2·Part D paragraph 19
+    standardDisclosureRequirementText: |-
+      Disclose the governance body or individuals responsible for oversight of climate-related risks and opportunities, including how their responsibilities are reflected in terms of reference, their relevant skills and competencies, how and how often they are informed, how they take climate-related risks and opportunities into account when overseeing strategy and major transactions, and how they oversee target setting and progress.
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: Part D paragraph 19
+  - standardDisclosureRequirementKey: climate_change.gov.management_role
+    standardDisclosureRequirementTitle: Management's role in climate-related matters
+    excerptFrom: HKEX·Appendix C2·Part D paragraph 20
+    standardDisclosureRequirementText: |-
+      Disclose management's role in the governance processes, controls and procedures used to monitor, manage and oversee climate-related risks and opportunities, including whether the role is delegated to a specific position or committee, how oversight is exercised, and whether management uses controls and procedures to support that oversight.
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: Part D paragraph 20
+- topicSectionKey: climate_change.strategy
+  pillar: strategy
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: climate_change.strategy.risks_and_opportunities
+    standardDisclosureRequirementTitle: Climate-related risks and opportunities
+    excerptFrom: HKEX·Appendix C2·Part D paragraph 21
+    standardDisclosureRequirementText: |-
+      Disclose the climate-related risks and opportunities that could reasonably be expected to affect the company's prospects, explain whether each risk is physical or transition, and state the time horizons (short, medium or long term) over which effects could reasonably be expected and how those horizons are defined.
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: Part D paragraph 21
+  - standardDisclosureRequirementKey: climate_change.strategy.business_model_and_value_chain
+    standardDisclosureRequirementTitle: Effects on the business model and value chain
+    excerptFrom: HKEX·Appendix C2·Part D paragraph 22
+    standardDisclosureRequirementText: |-
+      Disclose the current and anticipated effects of climate-related risks and opportunities on the company's business model and value chain, and where in the business model and value chain they are concentrated.
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: Part D paragraph 22
+  - standardDisclosureRequirementKey: climate_change.strategy.strategy_and_transition_plan
+    standardDisclosureRequirementTitle: Strategy, decision-making and transition plan
+    excerptFrom: HKEX·Appendix C2·Part D paragraphs 23–24
+    standardDisclosureRequirementText: |-
+      Disclose how the company responds to climate-related risks and opportunities, including current and anticipated changes to the business model and resource allocation, direct and indirect mitigation and adaptation efforts, the transition plan and the key assumptions it relies on, the resources planned, and progress against the plan.
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: Part D paragraphs 23–24
+  - standardDisclosureRequirementKey: climate_change.strategy.financial_effects
+    standardDisclosureRequirementTitle: Effects on financial position, performance and cash flows
+    excerptFrom: HKEX·Appendix C2·Part D paragraph 24
+    standardDisclosureRequirementText: |-
+      Disclose the effects of climate-related risks and opportunities on the company's financial position, financial performance and cash flows for the reporting period and the anticipated effects over the short, medium and long term; where quantitative information cannot be provided, explain why and provide qualitative information.
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: Part D paragraph 24
+  - standardDisclosureRequirementKey: climate_change.strategy.climate_resilience
+    standardDisclosureRequirementTitle: Climate resilience
+    excerptFrom: HKEX·Appendix C2·Part D paragraphs 25–26
+    standardDisclosureRequirementText: |-
+      Disclose the company's assessment of the resilience of its strategy and business model to climate-related changes, developments and uncertainties, including the method (such as scenario analysis), the scenarios and assumptions used, and the time horizons and conclusions; where scenario analysis is not used, the reasons and plans may be explained under the implementation relief.
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: Part D paragraphs 25–26
+  - standardDisclosureRequirementKey: climate_change.strategy.climate_targets
+    standardDisclosureRequirementTitle: Climate-related targets
+    excerptFrom: HKEX·Appendix C2·Part D paragraphs 33–35
+    standardDisclosureRequirementText: |-
+      Disclose the quantitative and qualitative climate-related targets set to monitor progress towards strategic goals, including the metric, objective, scope, base period, target period, milestones and progress; greenhouse gas reduction targets must state the gases covered and whether carbon credits are used.
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: Part D paragraphs 33–35
+- topicSectionKey: climate_change.iro
+  pillar: iro_management
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: climate_change.iro.risk_management_process
+    standardDisclosureRequirementTitle: |-
+      Process for identifying, assessing and managing climate-related risks and opportunities
+    excerptFrom: HKEX·Appendix C2·Part D paragraph 27
+    standardDisclosureRequirementText: |-
+      Disclose the processes and related policies used to identify, assess, prioritise and monitor climate-related risks and opportunities, including the inputs and parameters used, whether scenario analysis is used, how the nature, likelihood and magnitude of effects are assessed, how risks are prioritised and monitored, and how the process is integrated into overall risk management.
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: Part D paragraph 27
+- topicSectionKey: climate_change.metrics
+  pillar: metrics_targets
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: climate_change.metrics.ghg_emissions
+    standardDisclosureRequirementTitle: Greenhouse gas emissions (Scope 1, Scope 2 and Scope 3)
+    excerptFrom: HKEX·Appendix C2·Part D paragraphs 28–32
+    standardDisclosureRequirementText: |-
+      Disclose absolute Scope 1 and Scope 2 greenhouse gas emissions for the reporting period in tonnes of CO2 equivalent and the measurement approach, assumptions and emission factors used; disclose Scope 3 emissions under the transitional arrangements or explain the work plan.
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: Part D paragraphs 28–32
+  - standardDisclosureRequirementKey: climate_change.metrics.climate_related_metrics
+    standardDisclosureRequirementTitle: |-
+      Climate-related risks, opportunities, capital deployment and internal carbon price
+    excerptFrom: HKEX·Appendix C2·Part D paragraphs 36–37
+    standardDisclosureRequirementText: |-
+      Where relevant, disclose the assets or business activities vulnerable to climate-related transition and physical risks, those aligned with climate-related opportunities, the capital expenditure and investment deployed towards climate-related risks and opportunities, and the internal carbon price and how it is applied.
+    disclosureRequirementObligationLevel: conditional
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: Part D paragraphs 36–37
+  - standardDisclosureRequirementKey: climate_change.metrics.industry_based_metrics
+    standardDisclosureRequirementTitle: Industry-based metrics
+    excerptFrom: HKEX·Appendix C2·Part D paragraph 38
+    standardDisclosureRequirementText: |-
+      Issuers are encouraged to disclose climate-related metrics relevant to their industry with reference to industry-based guidance.
+    disclosureRequirementObligationLevel: encouraged
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: Part D paragraph 38

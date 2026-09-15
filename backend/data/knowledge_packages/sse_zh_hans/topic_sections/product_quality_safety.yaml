@@ -1,0 +1,151 @@
+# ABOUTME: 产品质量与安全议题章节骨架，H2 标题以附录索引表“对应的本报告章节”为准。
+# ABOUTME: 本文件承载产品质量与安全的段落级生成块；指标表按声明读取 ESG 定量数据表的受控投影。
+# templateResidueBans 只登记参考模板独有的短语型事实与口号——照抄即他司事实。
+# 数值与区间类示例值（0件/0次/99.99%/时长区间）一律不入表：子串匹配既会误伤资料记载的
+# 合法数值（"1200件"含"0件"），也会拦下企业零事故或真实时效承诺的如实陈述；
+# 数值是否有据由未支撑数字断言判定。四个块同一口径，勿分头维护。
+section:
+  key: product_quality_safety
+  title: 产品质量与安全
+  headingLevel: 2
+  reportSectionId: product_quality_safety
+  conciseDisclosure:
+    id: product_quality_safety.concise_summary
+    type: paragraph
+    blockType: generative
+    source: ai
+    styleRole: body
+    generation:
+      task:
+        focus: "根据本议题当前可见证据形成一段连贯摘要，覆盖相关管理关注、方向与实践，不使用四要素小标题。"
+      inputs: {evidence: {kind: report_section}}
+      targetChars: [300, 600]
+  children:
+  - key: product_quality_safety.gov
+    title: 治理
+    pillar: governance
+    headingLevel: 3
+    blocks:
+    - id: product_quality_safety.gov_quality_system_policies_certifications
+      type: paragraph
+      blockType: generative
+      source: ai
+      styleRole: body
+      generation:
+        task:
+          focus: "说明产品质量与安全的责任安排、管理制度和决策机制。"
+        inputs:
+          evidence:
+            kind: explicit
+            intakeItems:
+            - product_quality_safety.q_governance_roles
+            - product_quality_safety.q_governance_policies
+            - product_quality_safety.q_governance_certifications
+        targetChars:
+        - 180
+        - 360
+        standardDisclosureRequirementKeys:
+        - product_quality_safety.gov.quality_governance_required
+        - product_quality_safety.gov.quality_system_required
+        templateResidueBans:
+        - 2025年启动QMS升级项目
+        - 智享电力，不止前行
+        - 做与一流公司相持平的高品质产品
+        - 信息贯通、流程闭环、数据赋能
+        simplifiedWritingGuidance:
+          - "下游客户可作为产品质量责任的受益对象，客户名称、专门标准和协同结果来自本块用户事实。"
+  - key: product_quality_safety.strategy
+    title: 战略
+    pillar: strategy
+    headingLevel: 3
+    blocks:
+    - id: product_quality_safety.strategy_quality_targets
+      type: paragraph
+      blockType: generative
+      source: ai
+      styleRole: body
+      generation:
+        task:
+          focus: "说明产品质量与安全在长期经营中的关注重点、总体方向和推进原则。"
+        inputs:
+          evidence:
+            kind: explicit
+            intakeItems:
+            - product_quality_safety.q_strategy_content
+        targetChars:
+        - 180
+        - 340
+        standardDisclosureRequirementKeys:
+        - product_quality_safety.strategy.quality_strategy_required
+        - product_quality_safety.strategy.quality_strategy_encouraged
+        templateResidueBans:
+        - 2025年启动QMS升级项目
+        - 智享电力，不止前行
+        - 做与一流公司相持平的高品质产品
+        - 信息贯通、流程闭环、数据赋能
+  - key: product_quality_safety.iro
+    title: 影响、风险与机遇管理
+    pillar: iro_management
+    headingLevel: 3
+    blocks:
+    - id: product_quality_safety.iro_lifecycle_quality_safety_controls
+      type: paragraph
+      blockType: generative
+      source: ai
+      styleRole: body
+      generation:
+        task:
+          focus: "说明产品全流程质量管理和安全风险预防的相关实践。"
+        inputs:
+          evidence:
+            kind: explicit
+            intakeItems:
+            - product_quality_safety.q_quality_system_name
+            - product_quality_safety.q_quality_management_requirements
+            - product_quality_safety.q_quality_training_activities
+        targetChars:
+        - 220
+        - 460
+        standardDisclosureRequirementKeys:
+        - product_quality_safety.iro.lifecycle_control_required
+        - product_quality_safety.iro.recall_complaint_required
+        - product_quality_safety.iro.quality_digitalization_required
+        templateResidueBans:
+        - 2025年启动QMS升级项目
+        - 智享电力，不止前行
+        - 做与一流公司相持平的高品质产品
+        - 信息贯通、流程闭环、数据赋能
+        simplifiedWritingGuidance:
+          - "按预防性质量管理、过程质量控制、问题纠偏改进、供应商质量协同、客户质量反馈和内部质量意识组织用户已披露的实践。"
+    children:
+    - key: product_quality_safety.iro.recall_feedback_evidence
+      title: 产品召回与客户反馈处理
+      headingLevel: 4
+      blocks:
+      - id: product_quality_safety.iro_recall_feedback_evidence
+        type: paragraph
+        blockType: generative
+        source: ai
+        styleRole: body
+        generation:
+          task:
+            focus: "基于用户上传的产品召回记录、客户投诉处理记录或售后处理台账类资料，说明产品召回与客户质量反馈的处理执行情况。"
+          templateResidueBans:
+          - 2025年启动QMS升级项目
+          - 智享电力，不止前行
+          - 做与一流公司相持平的高品质产品
+          - 信息贯通、流程闭环、数据赋能
+          inputs:
+            evidence:
+              kind: material_gated
+          targetChars:
+          - 160
+          - 320
+          standardDisclosureRequirementKeys:
+          - product_quality_safety.iro.recall_complaint_required
+          simplifiedWritingGuidance:
+            - "只作有据叙述：可独立核验的对象、名称、数值与日期须资料明确记载才可写，不得推断或补写。"
+            - "资料记载的未按期、超期或不合规情形如实保留其性质表述，不淡化省略，也不添加资料未记载的保证性评价。"
+            - "召回批次、涉及数量等可核验值须资料明确记载；重大质量安全责任事故专项披露不在本块。"
+metricDisclosure:
+  catalogMetricKeys: [social_r53, social_r54]

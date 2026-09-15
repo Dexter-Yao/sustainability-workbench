@@ -1,0 +1,117 @@
+# ABOUTME(en): Topic chapter template of the HKEX Aspect "Water Management": governance / strategy / risk-management
+# ABOUTME(en): blocks with their intake evidence and Appendix C2 requirement keys; the metrics H3 is compiled from metricDisclosure.
+section:
+  key: water_management
+  title: Water Management
+  headingLevel: 2
+  reportSectionId: water_management
+  conciseDisclosure:
+    id: water.concise_summary
+    type: paragraph
+    blockType: generative
+    source: ai
+    styleRole: body
+    generation:
+      task:
+        focus: |-
+          From the evidence currently visible for this Aspect, write one coherent summary covering the water use policy, any issue in sourcing water, water efficiency targets and measures, without the four sub-headings.
+      inputs:
+        evidence:
+          kind: report_section
+      targetChars:
+      - 260
+      - 520
+  children:
+  - key: water_management.gov
+    title: Governance
+    pillar: governance
+    headingLevel: 3
+    blocks:
+    - id: water.gov_policy
+      type: paragraph
+      blockType: generative
+      source: ai
+      styleRole: body
+      generation:
+        task:
+          focus: |-
+            Describe the company's policy on efficient use of water and the allocation of responsibility (Code Aspect A2 General Disclosure).
+          noFactGuidance: |-
+            When the user provides no policy or responsibility facts, describe in a measured, general register the management attention, compliance principles and allocation of responsibility a company of this industry and business type applies to this Aspect; do not name departments, policy titles, certifications or approval flows, and do not claim that a specific system exists or that compliance checks have been completed.
+        inputs:
+          evidence:
+            kind: explicit
+            intakeItems:
+            - water.q_governance_roles
+            - water.q_governance_policies
+            - water.q_governance_certifications
+        targetChars:
+        - 85
+        - 190
+        standardDisclosureRequirementKeys:
+        - water_management.gov.general_disclosure_policies
+  - key: water_management.strategy
+    title: Strategy
+    pillar: strategy
+    headingLevel: 3
+    blocks:
+    - id: water.strategy_targets
+      type: paragraph
+      blockType: generative
+      source: ai
+      styleRole: body
+      generation:
+        task:
+          focus: |-
+            Describe the water efficiency targets the company has set and the steps taken to achieve them (Code KPI A2.4).
+          noFactGuidance: |-
+            When the user provides no targets or plans, state that the company will keep attending to improvement directions and the setting of quantified targets for this Aspect as the business develops; do not invent target values, base years, deadlines or achieved results.
+        inputs:
+          evidence:
+            kind: explicit
+            intakeItems:
+            - water.q_strategy_content
+        targetChars:
+        - 85
+        - 190
+        standardDisclosureRequirementKeys:
+        - water_management.strategy.water_efficiency_targets
+        simplifiedWritingGuidance:
+        - |-
+          Figures are carried by the KPI data table; this passage does not state emissions, consumption, ratios or reduction percentages.
+  - key: water_management.iro
+    title: Risk Management
+    pillar: iro_management
+    headingLevel: 3
+    blocks:
+    - id: water.iro_measures
+      type: paragraph
+      blockType: generative
+      source: ai
+      styleRole: body
+      generation:
+        task:
+          focus: |-
+            Describe whether the company has any issue in sourcing water that is fit for purpose, and its water saving, recycling and monitoring measures (Code KPI A2.4).
+          noFactGuidance: |-
+            When the user provides no specific measures, describe only the management steps and directional arrangements common to this Aspect for the industry and business type; do not claim that the company has implemented specific measures, purchased equipment, engaged contractors or achieved results.
+        inputs:
+          evidence:
+            kind: explicit
+            intakeItems:
+            - water.q_water_sourcing_issue
+            - water.q_water_saving_measures
+        targetChars:
+        - 95
+        - 230
+        standardDisclosureRequirementKeys:
+        - water_management.iro.water_sourcing_and_measures
+        simplifiedWritingGuidance:
+        - |-
+          Figures are carried by the KPI data table; this passage does not state emissions, consumption, ratios or reduction percentages.
+metricDisclosure:
+  catalogMetricKeys:
+  - water_consumption_total
+  - water_intensity_revenue
+  - water_intensity_output
+  - water_recycled

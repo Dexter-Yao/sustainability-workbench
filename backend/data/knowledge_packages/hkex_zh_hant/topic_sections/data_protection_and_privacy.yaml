@@ -1,0 +1,108 @@
+# ABOUTME(en): Topic chapter template of the HKEX Aspect「資料保障及私隱」: governance / strategy / risk-management
+# ABOUTME(en): blocks with their intake evidence and Appendix C2 requirement keys; the metrics H3 is compiled from metricDisclosure.
+section:
+  key: data_protection_and_privacy
+  title: 資料保障及私隱
+  headingLevel: 2
+  reportSectionId: data_protection_and_privacy
+  conciseDisclosure:
+    id: privacy.concise_summary
+    type: paragraph
+    blockType: generative
+    source: ai
+    styleRole: body
+    generation:
+      task:
+        focus: 根據本層面當前可見證據形成一段連貫摘要，涵蓋消費者及客戶資料保障與私隱政策、資料安全措施及其實施與監察，不使用四項小標題。
+      inputs:
+        evidence:
+          kind: report_section
+      targetChars:
+      - 260
+      - 520
+  children:
+  - key: data_protection_and_privacy.gov
+    title: 管治
+    pillar: governance
+    headingLevel: 3
+    blocks:
+    - id: privacy.gov_policy_and_compliance
+      type: paragraph
+      blockType: generative
+      source: ai
+      styleRole: body
+      generation:
+        task:
+          focus: |-
+            說明公司有關消費者及客戶資料保障與私隱的政策、職責安排，以及遵守相關法律及規例（如香港《個人資料（私隱）條例》、內地《個人信息保護法》）的情況（守則層面B6一般披露之私隱事宜）。
+          noFactGuidance: |-
+            用戶未提供政策或職責資料時，以審慎、概括的語態說明公司按所屬行業及業務類型對本層面採取的一般管理關注、合規原則及職責安排；不指名部門、制度名稱、認證或審批流程，不聲稱已建立特定制度或已完成合規檢查。
+        inputs:
+          evidence:
+            kind: explicit
+            intakeItems:
+            - privacy.q_governance_roles
+            - privacy.q_governance_policies
+            - privacy.q_governance_certifications
+        targetChars:
+        - 160
+        - 380
+        standardDisclosureRequirementKeys:
+        - data_protection_and_privacy.gov.general_disclosure_policies
+        - data_protection_and_privacy.gov.general_disclosure_compliance
+        simplifiedWritingGuidance:
+        - 遵守相關法律及規例的情況只在用戶明確提供時陳述；未提供時不寫「未發現違規」或「無重大違規」等結論。
+  - key: data_protection_and_privacy.strategy
+    title: 策略
+    pillar: strategy
+    headingLevel: 3
+    blocks:
+    - id: privacy.strategy_direction
+      type: paragraph
+      blockType: generative
+      source: ai
+      styleRole: body
+      generation:
+        task:
+          focus: 說明公司在資料保障及資訊安全方面的方針、目標及認證方向（如ISO 27001）。
+          noFactGuidance: 用戶未提供目標或計劃時，說明公司會結合業務發展持續關注本層面的改善方向與量化目標的訂立；不虛構目標數值、基準年、達成期限或已取得的成效。
+        inputs:
+          evidence:
+            kind: explicit
+            intakeItems:
+            - privacy.q_strategy_content
+        targetChars:
+        - 120
+        - 280
+        standardDisclosureRequirementKeys:
+        - data_protection_and_privacy.strategy.privacy_direction
+  - key: data_protection_and_privacy.iro
+    title: 風險管理
+    pillar: iro_management
+    headingLevel: 3
+    blocks:
+    - id: privacy.iro_measures
+      type: paragraph
+      blockType: generative
+      source: ai
+      styleRole: body
+      generation:
+        task:
+          focus: 描述公司的消費者資料保障及私隱政策的執行與監察方法：資料收集與使用的限制、存取控制、加密與備份、僱員培訓及事故應對（守則關鍵績效指標B6.5）。
+          noFactGuidance: 用戶未提供具體措施時，僅結合行業及業務類型說明本層面常見的管理環節與方向性安排；不聲稱公司已實施特定措施、已購置設備、已委聘服務商或已取得成效。
+        inputs:
+          evidence:
+            kind: explicit
+            intakeItems:
+            - privacy.q_privacy_policies
+            - privacy.q_data_security_measures
+        targetChars:
+        - 180
+        - 400
+        standardDisclosureRequirementKeys:
+        - data_protection_and_privacy.iro.privacy_implementation
+        simplifiedWritingGuidance:
+        - 數值由關鍵績效指標數據表承載；本段不寫排放量、耗用量、比率或減幅等數字。
+metricDisclosure:
+  catalogMetricKeys:
+  - privacy_data_breaches

@@ -1,0 +1,20 @@
+# ABOUTME(en): Topic-specific intake questions of "Employment"; the four fixed pillar questions come from topic_intake_common.yaml.
+# ABOUTME(en): Quantitative metrics are collected through the metric catalog, not here.
+contentScopeId: employment
+items:
+- key: employment.q_recruitment_and_retention
+  prompt: What arrangements does the company have for recruitment and retention?
+  kind: text
+  collectionPriority: recommended
+  hint: Hiring channels, probation, retention measures; or blank.
+  generationBoundary: |-
+    Unless specific figures are given, do not generate headcounts, turnover rates or salary levels.
+  maxChars: 5000
+- key: employment.q_benefits_offered
+  prompt: Which benefits does the company provide beyond statutory requirements?
+  kind: text
+  collectionPriority: recommended
+  hint: Insurance, leave, allowances, wellbeing; or blank.
+  generationBoundary: |-
+    Name only the benefit types provided; do not generate amounts or coverage rates.
+  maxChars: 5000

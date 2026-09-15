@@ -1,0 +1,112 @@
+# ABOUTME(en): Topic chapter template of the HKEX Aspect "Labour Standards": governance / strategy / risk-management
+# ABOUTME(en): blocks with their intake evidence and Appendix C2 requirement keys; the metrics H3 is compiled from metricDisclosure.
+section:
+  key: labour_standards
+  title: Labour Standards
+  headingLevel: 2
+  reportSectionId: labour_standards
+  conciseDisclosure:
+    id: labour_standards.concise_summary
+    type: paragraph
+    blockType: generative
+    source: ai
+    styleRole: body
+    generation:
+      task:
+        focus: |-
+          From the evidence currently visible for this Aspect, write one coherent summary covering the policies and compliance on preventing child and forced labour, the measures to review employment practices and the steps taken when violations are found, without the four sub-headings.
+      inputs:
+        evidence:
+          kind: report_section
+      targetChars:
+      - 260
+      - 520
+  children:
+  - key: labour_standards.gov
+    title: Governance
+    pillar: governance
+    headingLevel: 3
+    blocks:
+    - id: labour_standards.gov_policy_and_compliance
+      type: paragraph
+      blockType: generative
+      source: ai
+      styleRole: body
+      generation:
+        task:
+          focus: |-
+            Describe the company's policies and allocation of responsibility on preventing child and forced labour, and its compliance with relevant laws and regulations (Code Aspect B4 General Disclosure).
+          noFactGuidance: |-
+            When the user provides no policy or responsibility facts, describe in a measured, general register the management attention, compliance principles and allocation of responsibility a company of this industry and business type applies to this Aspect; do not name departments, policy titles, certifications or approval flows, and do not claim that a specific system exists or that compliance checks have been completed.
+        inputs:
+          evidence:
+            kind: explicit
+            intakeItems:
+            - labour_standards.q_governance_roles
+            - labour_standards.q_governance_policies
+            - labour_standards.q_governance_certifications
+        targetChars:
+        - 95
+        - 215
+        standardDisclosureRequirementKeys:
+        - labour_standards.gov.general_disclosure_policies
+        - labour_standards.gov.general_disclosure_compliance
+        simplifiedWritingGuidance:
+        - |-
+          State compliance with relevant laws and regulations only when the user explicitly provides it; otherwise do not write conclusions such as "no non-compliance was identified" or "no material breach".
+  - key: labour_standards.strategy
+    title: Strategy
+    pillar: strategy
+    headingLevel: 3
+    blocks:
+    - id: labour_standards.strategy_direction
+      type: paragraph
+      blockType: generative
+      source: ai
+      styleRole: body
+      generation:
+        task:
+          focus: |-
+            Describe the company's commitment and direction on labour standards, including its expectations of the supply chain.
+          noFactGuidance: |-
+            When the user provides no targets or plans, state that the company will keep attending to improvement directions and the setting of quantified targets for this Aspect as the business develops; do not invent target values, base years, deadlines or achieved results.
+        inputs:
+          evidence:
+            kind: explicit
+            intakeItems:
+            - labour_standards.q_strategy_content
+        targetChars:
+        - 70
+        - 170
+        standardDisclosureRequirementKeys:
+        - labour_standards.strategy.labour_commitment
+  - key: labour_standards.iro
+    title: Risk Management
+    pillar: iro_management
+    headingLevel: 3
+    blocks:
+    - id: labour_standards.iro_review_and_remediation
+      type: paragraph
+      blockType: generative
+      source: ai
+      styleRole: body
+      generation:
+        task:
+          focus: |-
+            Describe the measures to review recruitment and employment practices to avoid child and forced labour (such as age verification, voluntary employment and working-hour management) and the steps taken to eliminate violations when discovered (Code KPIs B4.1 and B4.2).
+          noFactGuidance: |-
+            When the user provides no specific measures, describe only the management steps and directional arrangements common to this Aspect for the industry and business type; do not claim that the company has implemented specific measures, purchased equipment, engaged contractors or achieved results.
+        inputs:
+          evidence:
+            kind: explicit
+            intakeItems:
+            - labour_standards.q_labour_review_measures
+            - labour_standards.q_labour_violations
+        targetChars:
+        - 110
+        - 240
+        standardDisclosureRequirementKeys:
+        - labour_standards.iro.review_measures
+        - labour_standards.iro.remediation_steps
+metricDisclosure:
+  catalogMetricKeys: []

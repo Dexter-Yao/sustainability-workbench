@@ -1,0 +1,149 @@
+# ABOUTME: 职业健康与安全议题章节骨架，H2 标题以附录索引表“对应的本报告章节”为准。
+# ABOUTME: 本文件按轻量版收敛为治理、战略、安全劳动保护实践、培训演练和指标；事故台账、危化品台账和图片资产留待专项材料承载。
+section:
+  key: occupational_health_safety
+  title: 职业健康与安全
+  headingLevel: 2
+  reportSectionId: occupational_health_safety
+  conciseDisclosure:
+    id: occupational_health_safety.concise_summary
+    type: paragraph
+    blockType: generative
+    source: ai
+    styleRole: body
+    generation:
+      task:
+        focus: "根据本议题当前可见证据形成一段连贯摘要，覆盖相关管理关注、方向与实践，不使用四要素小标题。"
+      inputs: {evidence: {kind: report_section}}
+      targetChars: [300, 600]
+  children:
+  - key: occupational_health_safety.gov
+    title: 治理
+    pillar: governance
+    headingLevel: 3
+    blocks:
+    - id: occupational_health_safety.gov_safety_governance
+      type: paragraph
+      blockType: generative
+      source: ai
+      styleRole: body
+      generation:
+        task:
+          focus: "说明职业健康与安全的责任安排、制度机制和协调方式。"
+        inputs:
+          evidence:
+            kind: explicit
+            intakeItems:
+            - occupational_health_safety.q_governance_roles
+            - occupational_health_safety.q_governance_policies
+            - occupational_health_safety.q_governance_certifications
+        targetChars:
+        - 180
+        - 320
+        standardDisclosureRequirementKeys:
+        - occupational_health_safety.gov.organization_responsibilities_required
+        - occupational_health_safety.gov.policy_documents_required
+        - occupational_health_safety.gov.iso45001_encouraged
+        templateResidueBans:
+        - 《》、《》
+        - 代入上传制度名称
+  - key: occupational_health_safety.strategy
+    title: 战略
+    pillar: strategy
+    headingLevel: 3
+    blocks:
+    - id: occupational_health_safety.strategy_safety_strategy_targets
+      type: paragraph
+      blockType: generative
+      source: ai
+      styleRole: body
+      generation:
+        task:
+          focus: "说明职业健康与安全的长期方向、目标意识和推进原则。"
+        inputs:
+          evidence:
+            kind: explicit
+            intakeItems:
+            - occupational_health_safety.q_strategy_content
+        targetChars:
+        - 180
+        - 360
+        standardDisclosureRequirementKeys:
+        - occupational_health_safety.strategy.strategy_targets_required
+        - occupational_health_safety.strategy.safety_first_encouraged
+  - key: occupational_health_safety.iro
+    title: 影响、风险与机遇管理
+    pillar: iro_management
+    headingLevel: 3
+    children:
+    - key: occupational_health_safety.iro.safety_protection_measures
+      title: 安全风险与劳动保护
+      headingLevel: 4
+      titleGeneration:
+        sourceBlockId: occupational_health_safety.iro_safety_protection_measures
+        guidance: 概括本内容单元的核心行动或结果，生成简洁、准确且不引入新事实的标题。
+      blocks:
+      - id: occupational_health_safety.iro_safety_protection_measures
+        type: paragraph
+        blockType: generative
+        source: ai
+        styleRole: body
+        generation:
+          task:
+            focus: "说明安全风险防控、劳动保护和健康保障的相关实践。"
+          inputs:
+            evidence:
+              kind: explicit
+              intakeItems:
+              - occupational_health_safety.q_safety_investments_measures
+              - occupational_health_safety.q_hazardous_chemicals_categories
+          targetChars:
+          - 220
+          - 440
+          standardDisclosureRequirementKeys:
+          - occupational_health_safety.iro.risk_framework_required
+          - occupational_health_safety.iro.safety_measures_required
+          - occupational_health_safety.iro.occupational_disease_required
+          - occupational_health_safety.iro.hazardous_chemicals_conditional
+          simplifiedWritingGuidance:
+            - "危险化学品内容只按用户勾选的类别作管控方向表述；未选择类别时不展开危化品管理，不坐实台账、专柜或专项制度。"
+    - key: occupational_health_safety.iro.training_drills
+      title: 安全培训与应急演练
+      headingLevel: 4
+      titleGeneration:
+        sourceBlockId: occupational_health_safety.iro_training_drills
+        guidance: 概括本内容单元的核心行动或结果，生成简洁、准确且不引入新事实的标题。
+      appears_when:
+        any:
+        - path: intakeItems.occupational_health_safety.q_safety_training_publicity
+          op: eq
+          value: 是
+        - path: intakeItems.occupational_health_safety.q_safety_drills
+          op: eq
+          value: 是
+      blocks:
+      - id: occupational_health_safety.iro_training_drills
+        type: paragraph
+        blockType: generative
+        source: ai
+        styleRole: body
+        generation:
+          task:
+            focus: "说明职业健康与安全培训、应急演练和能力提升的相关实践。"
+          inputs:
+            evidence:
+              kind: explicit
+              intakeItems:
+              - occupational_health_safety.q_safety_training_publicity
+              - occupational_health_safety.q_safety_drills
+          targetChars:
+          - 180
+          - 360
+          standardDisclosureRequirementKeys:
+          - occupational_health_safety.iro.emergency_management_required
+          - occupational_health_safety.iro.training_drills_required
+          templateResidueBans:
+          - 同样用AI生成图片替换
+          - 以免肖像权问题
+metricDisclosure:
+  catalogMetricKeys: [social_r41, social_r43, social_r44, social_r45, social_r46, social_r48]

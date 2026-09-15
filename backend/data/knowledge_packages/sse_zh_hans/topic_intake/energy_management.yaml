@@ -1,0 +1,11 @@
+# ABOUTME: 能源管理议题轻量版内容清单，仅保留节能降耗措施目标、内容和成效问题。
+# ABOUTME: 治理、战略和指标目标固定题由 topic_intake_common.yaml 展开；结构化数值由 ESG 定量数据表维护。
+contentScopeId: energy_management
+items:
+- key: energy_management.q_energy_saving_measures
+  prompt: 贵公司在节能降耗、用能效率提升、清洁能源使用或能源管理方面采取了哪些措施？
+  kind: text
+  collectionPriority: recommended
+  hint: 可填写相关措施目标、措施内容、措施成效等。
+  generationBoundary: 未填写具体数值时，不得生成节能量、比例、金额或完成率。
+  maxChars: 5000

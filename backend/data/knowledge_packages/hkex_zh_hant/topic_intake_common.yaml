@@ -1,0 +1,49 @@
+# ABOUTME(en): Fixed per-Aspect questions expanded for every report section: policy owner, policies and
+# ABOUTME(en): compliance, certifications (governance) and approach & targets (strategy). {topic_title} is the
+# ABOUTME(en): section title; keys become <prefix>.<keySuffix>.
+fixedPillarQuestionTemplates:
+- keySuffix: q_governance_roles
+  pillar: governance
+  prompt: 貴公司「{topic_title}」相關工作由哪些部門或崗位負責？
+  kind: single_select
+  collectionPriority: recommended
+  options:
+  - 設有專責部門或崗位負責
+  - 由其他部門或崗位兼管
+  - 暫未設置專責部門或崗位
+  hint: 如設有專責或兼管部門，請在補充說明中填寫名稱、職責及協作方式。
+  termExplanation: 暫未設置的可不補充，生成時會結合公司行業及業務作一般性表述。
+  maxChars: 3000
+- keySuffix: q_governance_policies
+  pillar: governance
+  prompt: 貴公司是否設有「{topic_title}」相關政策、程序或管理要求？
+  kind: single_select
+  collectionPriority: recommended
+  options:
+  - 設有相關政策、程序或管理要求
+  - 暫無成文政策，但有日常管理做法
+  - 不確定
+  hint: 如設有相關政策，請補充政策名稱、適用範圍及主要要求；遵守相關法規的情況亦可一併說明。
+  maxChars: 5000
+- keySuffix: q_governance_certifications
+  pillar: governance
+  prompt: 貴公司是否持有「{topic_title}」相關認證？
+  kind: single_select
+  collectionPriority: recommended
+  options:
+  - 持有相關認證
+  - 暫無相關認證
+  - 不確定
+  hint: 如持有相關認證，請在補充說明中填寫認證名稱、範圍及發證機構。
+  # 認證覆蓋的產品及業務範圍屬公司整體情況，由「關於本公司」承載；逐個層面複述會令同一串
+  # 產品名在多個章節重複出現。邊界隨本題投影，只進消費本題的管治塊。
+  generationBoundary: 只寫認證名稱及其與本層面的關係；認證覆蓋的產品及業務範圍不寫入本段。
+  maxChars: 3000
+- keySuffix: q_strategy_content
+  pillar: strategy
+  prompt: 貴公司在「{topic_title}」方面有哪些管理方針、目標、行動計劃或重點工作？
+  kind: text
+  collectionPriority: recommended
+  hint: 可填寫管理方針、已訂立的目標及達成步驟，或年度重點工作；沒有可留空。
+  generationBoundary: 未填寫具體目標數值或時間表時，不得生成目標數值、基準年或達成期限。
+  maxChars: 5000

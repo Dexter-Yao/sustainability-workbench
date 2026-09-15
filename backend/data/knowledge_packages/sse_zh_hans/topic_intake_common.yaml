@@ -1,0 +1,52 @@
+# ABOUTME: 议题四支柱固定问题模板，按 report section 展开为各议题 IntakeItem。
+# ABOUTME: 模板字段使用 {topic_title} 变量；与定量指标投影共用同一合同，不另维护副本。
+fixedPillarQuestionTemplates:
+- keySuffix: q_governance_roles
+  pillar: governance
+  prompt: 贵公司“{topic_title}”相关工作的组织设置情况如何？
+  kind: single_select
+  collectionPriority: recommended
+  options:
+  - 设有专职部门或岗位负责
+  - 由其他部门或岗位兼管
+  - 暂未设置组织或岗位负责
+  hint: 如设有专职或兼管的组织与岗位，请在补充说明中填写名称、职责与协作方式。
+  termExplanation: 暂未设置的可不补充，生成时会结合企业行业和业务给出一般性表述。
+  maxChars: 3000
+- keySuffix: q_governance_policies
+  pillar: governance
+  prompt: 贵公司是否有“{topic_title}”相关制度、流程或管理要求？
+  kind: single_select
+  collectionPriority: recommended
+  options:
+  - 有相关制度、流程或管理要求
+  - 暂无成文制度，但有日常管理做法
+  - 不确定
+  hint: 如选择有相关制度，请在补充说明中填写制度名称、适用范围、主要要求，或粘贴制度全文/关键内容；如有多个制度，可逐项列明。
+  maxChars: 5000
+- keySuffix: q_governance_certifications
+  pillar: governance
+  prompt: 贵公司是否有“{topic_title}”相关认证？
+  kind: single_select
+  collectionPriority: recommended
+  options:
+  - 有相关认证
+  - 暂无相关认证
+  - 不确定
+  hint: 如有相关认证，请在补充说明中填写认证名称、范围和发证机构。
+  # 不问有效期：用户填写的有效期从不进入报告正文，纯属白填。
+  # 用户主动提供的认证默认视为有效，与「用户上传即声明为报告主体自有或经授权使用」
+  # 的既有归属推定同源——系统没有立场替用户判定他的证书过没过期。
+  # 认证范围（证书覆盖的产品与业务）是企业整体情况，由「关于公司」承载。一张体系认证
+  # 常横跨多个议题（如 ISO 14001 同时适用环境、能源、污染物、废弃物、水资源），
+  # 逐个议题复述其覆盖范围会让同一串产品名在多个议题正文里重复出现。
+  # 边界随本题投影，只进消费本题的治理块，不进全局正文合同。
+  generationBoundary: 只写认证名称及其与本议题的关系；认证覆盖的产品与业务范围不写入本段。
+  maxChars: 3000
+- keySuffix: q_strategy_content
+  pillar: strategy
+  prompt: 贵公司在“{topic_title}”方面有哪些战略方向、管理目标、行动计划或重点工作？
+  kind: text
+  collectionPriority: recommended
+  hint: 可填写战略目标、管理方向、年度计划、重点举措或阶段性安排。没有专项战略可留空，系统将结合企业行业和业务生成一般性表述。
+  maxChars: 3000

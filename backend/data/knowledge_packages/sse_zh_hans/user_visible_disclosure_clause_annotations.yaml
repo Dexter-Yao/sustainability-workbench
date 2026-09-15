@@ -1,0 +1,835 @@
+# ABOUTME: 用户可见准则批注的大陆交易所条款原文事实源，来源为附录索引表与三所原始准则文件。
+# ABOUTME: 本文件只服务前端批注与诊断，不进入 Prompt；准则披露要求映射由 standard_disclosure_requirements 独立承担。
+
+entries:
+- reportContentTopicName: 应对气候变化
+  reportSectionKey: climate_change
+  mainlandStandard: sse
+  appendixIndexClauseReferences:
+  - 第二十条
+  - 第二十一条
+  - 第二十二条
+  - 第二十三条
+  - 第二十四条
+  - 第二十五条
+  - 第二十六条
+  - 第二十七条
+  - 第二十八条
+  - 第三十四条
+  - 第三十五条
+  clauseOriginalTexts:
+  - clauseReference: 第二十条
+    clauseOriginalText: 披露主体应当积极通过改进工艺、升级生产设备、优化能源结构、提高生产能效、研发和提供绿色产品与服务、改进和强化管理等措施，实现绿色低碳发展，支持美丽中国建设。
+  - clauseReference: 第二十一条
+    clauseOriginalText: 披露主体除按照本指引第二章的规定披露应对气候变化相关治理，战略，影响、风险和机遇管理，指标与目标等内容外，还应当按照本节规定披露应对气候变化的相关信息。
+  - clauseReference: 第二十二条
+    clauseOriginalText: 披露主体应当结合所识别的气候相关风险和机遇，评估公司的战略、商业模式等对气候变化的适应性，并披露下列事项：（一）公司关于气候变化对其战略和商业模式影响的评估情况，以及应对相关影响的方法；（二）公司在评估其气候适应性时考虑的重大不确定性因素；（三）公司在短期、中期和长期内为适应气候变化调整其战略和商业模式的能力。本所鼓励有条件的披露主体采用情景分析等方式进行气候适应性评估，并披露情景分析关键假设、分析过程等。
+  - clauseReference: 第二十三条
+    clauseOriginalText: 披露主体应当披露为应对气候相关风险和机遇的转型计划、措施及其进展，包括但不限于下列内容：（一）公司为应对气候相关风险和机遇而对当前和未来战略、商业模式和资源分配进行调整的情况；（二）公司已经或者计划为直接或间接应对气候相关风险和机遇所采取的改进生产工艺、更新设备等措施；（三）公司为应对气候相关风险和机遇所制定的转型计划，及制定该计划所依赖的基本假设；（四）公司为实施转型计划提供的资源；（五）公司实施转型计划的进展情况。
+  - clauseReference: 第二十四条
+    clauseOriginalText: 披露主体应当核算并披露报告期内的温室气体排放总量，并将不同温室气体排放量换算成二氧化碳当量公吨数。披露主体应当披露温室气体范围1排放量、范围2排放量，鼓励有条件的披露主体披露温室气体范围3排放量。披露主体涉及使用碳信用额度的，应当披露所使用的碳信用额度的来源与数量。披露主体参与碳排放权交易的，应当披露报告期内是否完成清缴以及是否存在被有关部门要求整改或立案调查的情形。本所鼓励有条件的披露主体聘请第三方机构对公司温室气体排放等数据进行核查或鉴证。
+  - clauseReference: 第二十五条
+    clauseOriginalText: 为提高温室气体排放透明度和可比性，本所鼓励披露主体按照下列分类提供不同范围温室气体排放情况：（一）业务单位或设施；（二）国家或地区；（三）来源类型（燃烧、加工、电力、供暖、制冷和蒸汽等）。
+  - clauseReference: 第二十六条
+    clauseOriginalText: 披露主体应当披露核算温室气体排放量所依据的标准、方法、假设或计算工具，并说明排放量的合并方法（如股权比例、财务控制、运营控制等）。报告期内核算标准、方法、假设等发生变化的，应当说明原因并披露具体影响。
+  - clauseReference: 第二十七条
+    clauseOriginalText: 披露主体应当披露温室气体减排实践的相关信息，包括参与各项减排机制的情况、减排目标、减排措施（如管理措施、资金投入、技术开发等）及其成效等。披露主体应当按照不同温室气体排放范围分类披露因重新设计生产流程、改造设备、改进工艺、更换燃料等减排措施直接减少的温室气体排放量，并换算成二氧化碳当量公吨数，披露主体可以按照不同减排措施分别披露减排情况。披露主体应当披露其在全国温室气体自愿减排项目和核证自愿减排量（CCER）的登记与交易情况、参与其他减排机制的项目和减排量登记与交易情况等内容（如有）。
+  - clauseReference: 第二十八条
+    clauseOriginalText: 披露主体披露有利于减少碳排放、实现碳中和的新技术、新产品、新服务以及相关研发进展的，应当客观、审慎地披露相关工艺技术形成的产品或服务的具体情况、相关业务的研发投入及进度、已取得的审批或认证、已具备的规模化生产能力、已取得的订单情况等，鼓励说明对披露主体当期及未来财务状况和经营成果的影响，以及可能存在的不确定性和风险等。
+  - clauseReference: 第三十四条
+    clauseOriginalText: 披露主体应当集约、高效利用能源、水、原材料等资源，加强资源使用过程节约管理，推动生产、流通过程的减量化、再利用、再循环。
+  - clauseReference: 第三十五条
+    clauseOriginalText: 披露主体应当披露报告期内使用能源的具体情况，包括但不限于下列内容：（一）能源使用的基本情况，包括但不限于按类型划分的直接及间接能源（如煤、电、气或油）总能耗量（以吨标准煤计算）、结构及总能耗强度（如以每产量单位计算）等；（二）清洁能源使用情况，包括但不限于风能、太阳能、水能、地热能、生物质资源、海洋能、天然气等清洁能源的种类、总量、比例等；（三）能源节约目标以及具体措施，包括但不限于采购节能生产设备、节能照明设备、节能温控设备，采用余热余压利用、能源梯级利用等措施，能源使用存在的具体困难（如有）。
+- reportContentTopicName: 应对气候变化
+  reportSectionKey: climate_change
+  mainlandStandard: szse
+  appendixIndexClauseReferences:
+  - 第二十条
+  - 第二十一条
+  - 第二十二条
+  - 第二十三条
+  - 第二十四条
+  - 第二十五条
+  - 第二十六条
+  - 第二十七条
+  - 第二十八条
+  - 第三十四条
+  - 第三十五条
+  clauseOriginalTexts:
+  - clauseReference: 第二十条
+    clauseOriginalText: 披露主体应当积极通过改进工艺、升级生产设备、优化能源结构、提高生产能效、研发和提供绿色产品与服务、改进和强化管理等措施，实现绿色低碳发展，支持美丽中国建设。
+  - clauseReference: 第二十一条
+    clauseOriginalText: 披露主体除按照本指引第二章的规定披露应对气候变化相关治理，战略，影响、风险和机遇管理，指标与目标等内容外，还应当按照本节规定披露应对气候变化的相关信息。
+  - clauseReference: 第二十二条
+    clauseOriginalText: 披露主体应当结合所识别的气候相关风险和机遇，评估公司的战略、商业模式等对气候变化的适应性，并披露下列事项：（一）公司关于气候变化对其战略和商业模式影响的评估情况，以及应对相关影响的方法；（二）公司在评估其气候适应性时考虑的重大不确定性因素；（三）公司在短期、中期和长期内为适应气候变化调整其战略和商业模式的能力。本所鼓励有条件的披露主体采用情景分析等方式进行气候适应性评估，并披露情景分析关键假设、分析过程等。
+  - clauseReference: 第二十三条
+    clauseOriginalText: 披露主体应当披露为应对气候相关风险和机遇的转型计划、措施及其进展，包括但不限于下列内容：（一）公司为应对气候相关风险和机遇而对当前和未来战略、商业模式和资源分配进行调整的情况；（二）公司已经或者计划为直接或间接应对气候相关风险和机遇所采取的改进生产工艺、更新设备等措施；（三）公司为应对气候相关风险和机遇所制定的转型计划，及制定该计划所依赖的基本假设；（四）公司为实施转型计划提供的资源；（五）公司实施转型计划的进展情况。
+  - clauseReference: 第二十四条
+    clauseOriginalText: 披露主体应当核算并披露报告期内的温室气体排放总量，并将不同温室气体排放量换算成二氧化碳当量公吨数。披露主体应当披露温室气体范围1排放量、范围2排放量，鼓励有条件的披露主体披露温室气体范围3排放量。披露主体涉及使用碳信用额度的，应当披露所使用的碳信用额度的来源与数量。披露主体参与碳排放权交易的，应当披露报告期内是否完成清缴以及是否存在被有关部门要求整改或立案调查的情形。本所鼓励有条件的披露主体聘请第三方机构对公司温室气体排放等数据进行核查或鉴证。
+  - clauseReference: 第二十五条
+    clauseOriginalText: 为提高温室气体排放透明度和可比性，本所鼓励披露主体按照下列分类提供不同范围温室气体排放情况：（一）业务单位或设施；（二）国家或地区；（三）来源类型（燃烧、加工、电力、供暖、制冷和蒸汽等）。
+  - clauseReference: 第二十六条
+    clauseOriginalText: 披露主体应当披露核算温室气体排放量所依据的标准、方法、假设或计算工具，并说明排放量的合并方法（如股权比例、财务控制、运营控制等）。报告期内核算标准、方法、假设等发生变化的，应当说明原因并披露具体影响。
+  - clauseReference: 第二十七条
+    clauseOriginalText: 披露主体应当披露温室气体减排实践的相关信息，包括参与各项减排机制的情况、减排目标、减排措施（如管理措施、资金投入、技术开发等）及其成效等。披露主体应当按照不同温室气体排放范围分类披露因重新设计生产流程、改造设备、改进工艺、更换燃料等减排措施直接减少的温室气体排放量，并换算成二氧化碳当量公吨数，披露主体可以按照不同减排措施分别披露减排情况。披露主体应当披露其在全国温室气体自愿减排项目和核证自愿减排量（CCER）的登记与交易情况、参与其他减排机制的项目和减排量登记与交易情况等内容（如有）。
+  - clauseReference: 第二十八条
+    clauseOriginalText: 披露主体披露有利于减少碳排放、实现碳中和的新技术、新产品、新服务以及相关研发进展的，应当客观、审慎地披露相关工艺技术形成的产品或服务的具体情况、相关业务的研发投入及进度、已取得的审批或认证、已具备的规模化生产能力、已取得的订单情况等，鼓励说明对披露主体当期及未来财务状况和经营成果的影响，以及可能存在的不确定性和风险等。
+  - clauseReference: 第三十四条
+    clauseOriginalText: 披露主体应当集约、高效利用能源、水、原材料等资源，加强资源使用过程节约管理，推动生产、流通过程的减量化、再利用、再循环。
+  - clauseReference: 第三十五条
+    clauseOriginalText: 披露主体应当披露报告期内使用能源的具体情况，包括但不限于下列内容：（一）能源使用的基本情况，包括但不限于按类型划分的直接及间接能源（如煤、电、气或油）总能耗量（以吨标准煤计算）、结构及总能耗强度（如以每产量单位计算）等；（二）清洁能源使用情况，包括但不限于风能、太阳能、水能、地热能、生物质资源、海洋能、天然气等清洁能源的种类、总量、比例等；（三）能源节约目标以及具体措施，包括但不限于采购节能生产设备、节能照明设备、节能温控设备，采用余热余压利用、能源梯级利用等措施，能源使用存在的具体困难（如有）。
+- reportContentTopicName: 应对气候变化
+  reportSectionKey: climate_change
+  mainlandStandard: bse
+  appendixIndexClauseReferences:
+  - 第二十条
+  - 第二十一条
+  - 第二十二条
+  - 第二十三条
+  - 第二十四条
+  - 第二十五条
+  - 第二十六条
+  - 第二十七条
+  - 第二十八条
+  - 第三十四条
+  - 第三十五条
+  clauseOriginalTexts:
+  - clauseReference: 第二十条
+    clauseOriginalText: 披露主体应当积极通过改进工艺、升级生产设备、优化能源结构、提高生产能效、研发和提供绿色产品与服务、改进和强化管理等措施，实现绿色低碳发展，支持美丽中国建设。
+  - clauseReference: 第二十一条
+    clauseOriginalText: 披露主体除按照本指引第二章的规定披露应对气候变化相关治理，战略，影响、风险和机遇管理，指标与目标等内容外，还应当按照本节规定披露应对气候变化的相关信息。
+  - clauseReference: 第二十二条
+    clauseOriginalText: 披露主体应当结合所识别的气候相关风险和机遇，评估公司的战略、商业模式等对气候变化的适应性，并披露下列事项：（一）公司关于气候变化对其战略和商业模式影响的评估情况，以及应对相关影响的方法；（二）公司在评估其气候适应性时考虑的重大不确定性因素；（三）公司在短期、中期和长期内为适应气候变化调整其战略和商业模式的能力。本所鼓励有条件的披露主体采用情景分析等方式进行气候适应性评估，并披露情景分析关键假设、分析过程等。
+  - clauseReference: 第二十三条
+    clauseOriginalText: 披露主体应当披露为应对气候相关风险和机遇的转型计划、措施及其进展，包括但不限于下列内容：（一）公司为应对气候相关风险和机遇而对当前和未来战略、商业模式和资源分配进行调整的情况；（二）公司已经或者计划为直接或间接应对气候相关风险和机遇所采取的改进生产工艺、更新设备等措施；（三）公司为应对气候相关风险和机遇所制定的转型计划，及制定该计划所依赖的基本假设；（四）公司为实施转型计划提供的资源；（五）公司实施转型计划的进展情况。
+  - clauseReference: 第二十四条
+    clauseOriginalText: 披露主体应当核算并披露报告期内的温室气体排放总量，并将不同温室气体排放量换算成二氧化碳当量公吨数。披露主体应当披露温室气体范围1排放量、范围2排放量，鼓励有条件的披露主体披露温室气体范围3排放量。披露主体涉及使用碳信用额度的，应当披露所使用的碳信用额度的来源与数量。披露主体参与碳排放权交易的，应当披露报告期内是否完成清缴以及是否存在被有关部门要求整改或立案调查的情形。本所鼓励有条件的披露主体聘请第三方机构对公司温室气体排放等数据进行核查或鉴证。
+  - clauseReference: 第二十五条
+    clauseOriginalText: 为提高温室气体排放透明度和可比性，本所鼓励披露主体按照下列分类提供不同范围温室气体排放情况：（一）业务单位或设施；（二）国家或地区；（三）来源类型（燃烧、加工、电力、供暖、制冷和蒸汽等）。
+  - clauseReference: 第二十六条
+    clauseOriginalText: 披露主体应当披露核算温室气体排放量所依据的标准、方法、假设或计算工具，并说明排放量的合并方法（如股权比例、财务控制、运营控制等）。报告期内核算标准、方法、假设等发生变化的，应当说明原因并披露具体影响。
+  - clauseReference: 第二十七条
+    clauseOriginalText: 披露主体应当披露温室气体减排实践的相关信息，包括参与各项减排机制的情况、减排目标、减排措施（如管理措施、资金投入、技术开发等）及其成效等。披露主体应当按照不同温室气体排放范围分类披露因重新设计生产流程、改造设备、改进工艺、更换燃料等减排措施直接减少的温室气体排放量，并换算成二氧化碳当量公吨数，披露主体可以按照不同减排措施分别披露减排情况。披露主体应当披露其在全国温室气体自愿减排项目和核证自愿减排量（CCER）的登记与交易情况、参与其他减排机制的项目和减排量登记与交易情况等内容（如有）。
+  - clauseReference: 第二十八条
+    clauseOriginalText: 披露主体披露有利于减少碳排放、实现碳中和的新技术、新产品、新服务以及相关研发进展的，应当客观、审慎地披露相关工艺技术形成的产品或服务的具体情况、相关业务的研发投入及进度、已取得的审批或认证、已具备的规模化生产能力、已取得的订单情况等，鼓励说明对披露主体当期及未来财务状况和经营成果的影响，以及可能存在的不确定性和风险等。
+  - clauseReference: 第三十四条
+    clauseOriginalText: 披露主体应当集约、高效利用能源、水、原材料等资源，加强资源使用过程节约管理，推动生产、流通过程的减量化、再利用、再循环。
+  - clauseReference: 第三十五条
+    clauseOriginalText: 披露主体应当披露报告期内使用能源的具体情况，包括但不限于下列内容：（一）能源使用的基本情况，包括但不限于按类型划分的直接及间接能源（如煤、电、气或油）总能耗量（以吨标准煤计算）、结构及总能耗强度（如以每产量单位计算）等；（二）清洁能源使用情况，包括但不限于风能、太阳能、水能、地热能、生物质资源、海洋能、天然气等清洁能源的种类、总量、比例等；（三）能源节约目标以及具体措施，包括但不限于采购节能生产设备、节能照明设备、节能温控设备，采用余热余压利用、能源梯级利用等措施，能源使用存在的具体困难（如有）。
+- reportContentTopicName: 环境合规管理
+  reportSectionKey: environmental_compliance_management
+  mainlandStandard: sse
+  appendixIndexClauseReferences:
+  - 第二十九条
+  - 第三十三条
+  clauseOriginalTexts:
+  - clauseReference: 第二十九条
+    clauseOriginalText: 披露主体应当将支持美丽中国建设、生态环境保护融入公司发展战略和公司治理过程，并根据自身生产经营特点、生态环境管理要求、对环境的影响、受影响公众的一致诉求等实际情况，落实相关环境管理制度，采取有效措施履行生态环境保护责任，防治环境污染，保护生物多样性。
+  - clauseReference: 第三十三条
+    clauseOriginalText: 披露主体应当结合报告期内的实际情况，披露下列环境信息：（一）针对环境事件的风险评估、预防相关风险的管理措施和针对突发环境事件的应急预案总体情况；（二）报告期内突发重大环境事件的发生日期、地点和持续时间，事件等级、事件处理方式和处理结果，对公司、社会公众的影响以及整改措施；（三）报告期内因环境事件受到生态环境等有关部门重大行政处罚或被追究刑事责任的情况，包括但不限于违规情形、处罚原因、处罚金额、对披露主体生产经营的影响以及公司的整改措施等。
+- reportContentTopicName: 环境合规管理
+  reportSectionKey: environmental_compliance_management
+  mainlandStandard: szse
+  appendixIndexClauseReferences:
+  - 第二十九条
+  - 第三十三条
+  clauseOriginalTexts:
+  - clauseReference: 第二十九条
+    clauseOriginalText: 披露主体应当将支持美丽中国建设、生态环境保护融入公司发展战略和公司治理过程，并根据自身生产经营特点、生态环境管理要求、对环境的影响、受影响公众的一致诉求等实际情况，落实相关环境管理制度，采取有效措施履行生态环境保护责任，防治环境污染，保护生物多样性。
+  - clauseReference: 第三十三条
+    clauseOriginalText: 披露主体应当结合报告期内的实际情况，披露下列环境信息：（一）针对环境事件的风险评估、预防相关风险的管理措施和针对突发环境事件的应急预案总体情况；（二）报告期内突发重大环境事件的发生日期、地点和持续时间，事件等级、事件处理方式和处理结果，对公司、社会公众的影响以及整改措施；（三）报告期内因环境事件受到生态环境等有关部门重大行政处罚或被追究刑事责任的情况，包括但不限于违规情形、处罚原因、处罚金额、对披露主体生产经营的影响以及公司的整改措施等。
+- reportContentTopicName: 环境合规管理
+  reportSectionKey: environmental_compliance_management
+  mainlandStandard: bse
+  appendixIndexClauseReferences:
+  - 第二十九条
+  - 第三十三条
+  clauseOriginalTexts:
+  - clauseReference: 第二十九条
+    clauseOriginalText: 披露主体应当将支持美丽中国建设、生态环境保护融入公司发展战略和公司治理过程，并根据自身生产经营特点、生态环境管理要求、对环境的影响、受影响公众的一致诉求等实际情况，落实相关环境管理制度，采取有效措施履行生态环境保护责任，防治环境污染，保护生物多样性。
+  - clauseReference: 第三十三条
+    clauseOriginalText: 披露主体应当结合报告期内的实际情况，披露下列环境信息：（一）针对环境事件的风险评估、预防相关风险的管理措施和针对突发环境事件的应急预案总体情况；（二）报告期内突发重大环境事件的发生日期、地点和持续时间，事件等级、事件处理方式和处理结果，对公司、社会公众的影响以及整改措施；（三）报告期内因环境事件受到生态环境等有关部门重大行政处罚或被追究刑事责任的情况，包括但不限于违规情形、处罚原因、处罚金额、对披露主体生产经营的影响以及公司的整改措施等。
+- reportContentTopicName: 污染物排放管理
+  reportSectionKey: pollutant_emissions_management
+  mainlandStandard: sse
+  appendixIndexClauseReferences:
+  - 第二十九条
+  - 第三十条
+  - 第三十三条
+  clauseOriginalTexts:
+  - clauseReference: 第二十九条
+    clauseOriginalText: 披露主体应当将支持美丽中国建设、生态环境保护融入公司发展战略和公司治理过程，并根据自身生产经营特点、生态环境管理要求、对环境的影响、受影响公众的一致诉求等实际情况，落实相关环境管理制度，采取有效措施履行生态环境保护责任，防治环境污染，保护生物多样性。
+  - clauseReference: 第三十条
+    clauseOriginalText: 披露主体或者其重要控股子公司被列入环境信息依法披露企业名单的，应当披露下列信息：（一）排污信息，包括但不限于主要污染物、特征污染物以及国际环境公约规定的受控物质的种类、名称、排放总量、核定的排放总量、超标排放情况、环保绩效等级情况（如有）等，鼓励披露主体按照业务单位或设施、来源类型、活动类型等分类披露污染物排放的具体情况；（二）对污染物的处理技术和处理方式，污染防治设施的建设、运行情况和实施成果（例如排放浓度、强度或排放总量的降幅）；（三）主要污染物减排目标及为达到相关目标所采取的具体措施；（四）污染物排放对员工、当地社区居民等群体的影响；（五）报告期内因污染物排放受到重大行政处罚或被追究刑事责任的情况，以及公司环境监测方案和风险管理措施是否存在重大缺陷。本所鼓励其他披露主体参照前款规定进行披露。
+  - clauseReference: 第三十三条
+    clauseOriginalText: 披露主体应当结合报告期内的实际情况，披露下列环境信息：（一）针对环境事件的风险评估、预防相关风险的管理措施和针对突发环境事件的应急预案总体情况；（二）报告期内突发重大环境事件的发生日期、地点和持续时间，事件等级、事件处理方式和处理结果，对公司、社会公众的影响以及整改措施；（三）报告期内因环境事件受到生态环境等有关部门重大行政处罚或被追究刑事责任的情况，包括但不限于违规情形、处罚原因、处罚金额、对披露主体生产经营的影响以及公司的整改措施等。
+- reportContentTopicName: 污染物排放管理
+  reportSectionKey: pollutant_emissions_management
+  mainlandStandard: szse
+  appendixIndexClauseReferences:
+  - 第二十九条
+  - 第三十条
+  - 第三十三条
+  clauseOriginalTexts:
+  - clauseReference: 第二十九条
+    clauseOriginalText: 披露主体应当将支持美丽中国建设、生态环境保护融入公司发展战略和公司治理过程，并根据自身生产经营特点、生态环境管理要求、对环境的影响、受影响公众的一致诉求等实际情况，落实相关环境管理制度，采取有效措施履行生态环境保护责任，防治环境污染，保护生物多样性。
+  - clauseReference: 第三十条
+    clauseOriginalText: 披露主体或者其重要控股子公司被列入环境信息依法披露企业名单的，应当披露下列信息：（一）排污信息，包括但不限于主要污染物、特征污染物以及国际环境公约规定的受控物质的种类、名称、排放总量、核定的排放总量、超标排放情况、环保绩效等级情况（如有）等，鼓励披露主体按照业务单位或设施、来源类型、活动类型等分类披露污染物排放的具体情况；（二）对污染物的处理技术和处理方式，污染防治设施的建设、运行情况和实施成果（例如排放浓度、强度或排放总量的降幅）；（三）主要污染物减排目标及为达到相关目标所采取的具体措施；（四）污染物排放对员工、当地社区居民等群体的影响；（五）报告期内因污染物排放受到重大行政处罚或被追究刑事责任的情况，以及公司环境监测方案和风险管理措施是否存在重大缺陷。本所鼓励其他披露主体参照前款规定进行披露。
+  - clauseReference: 第三十三条
+    clauseOriginalText: 披露主体应当结合报告期内的实际情况，披露下列环境信息：（一）针对环境事件的风险评估、预防相关风险的管理措施和针对突发环境事件的应急预案总体情况；（二）报告期内突发重大环境事件的发生日期、地点和持续时间，事件等级、事件处理方式和处理结果，对公司、社会公众的影响以及整改措施；（三）报告期内因环境事件受到生态环境等有关部门重大行政处罚或被追究刑事责任的情况，包括但不限于违规情形、处罚原因、处罚金额、对披露主体生产经营的影响以及公司的整改措施等。
+- reportContentTopicName: 污染物排放管理
+  reportSectionKey: pollutant_emissions_management
+  mainlandStandard: bse
+  appendixIndexClauseReferences:
+  - 第二十九条
+  - 第三十条
+  - 第三十三条
+  clauseOriginalTexts:
+  - clauseReference: 第二十九条
+    clauseOriginalText: 披露主体应当将支持美丽中国建设、生态环境保护融入公司发展战略和公司治理过程，并根据自身生产经营特点、生态环境管理要求、对环境的影响、受影响公众的一致诉求等实际情况，落实相关环境管理制度，采取有效措施履行生态环境保护责任，防治环境污染，保护生物多样性。
+  - clauseReference: 第三十条
+    clauseOriginalText: 披露主体或者其重要控股子公司被列入环境信息依法披露企业名单的，应当披露下列信息：（一）排污信息，包括但不限于主要污染物、特征污染物以及国际环境公约规定的受控物质的种类、名称、排放总量、核定的排放总量、超标排放情况、环保绩效等级情况（如有）等，鼓励披露主体按照业务单位或设施、来源类型、活动类型等分类披露污染物排放的具体情况；（二）对污染物的处理技术和处理方式，污染防治设施的建设、运行情况和实施成果（例如排放浓度、强度或排放总量的降幅）；（三）主要污染物减排目标及为达到相关目标所采取的具体措施；（四）污染物排放对员工、当地社区居民等群体的影响；（五）报告期内因污染物排放受到重大行政处罚或被追究刑事责任的情况，以及公司环境监测方案和风险管理措施是否存在重大缺陷。本所鼓励其他披露主体参照前款规定进行披露。
+  - clauseReference: 第三十三条
+    clauseOriginalText: 披露主体应当结合报告期内的实际情况，披露下列环境信息：（一）针对环境事件的风险评估、预防相关风险的管理措施和针对突发环境事件的应急预案总体情况；（二）报告期内突发重大环境事件的发生日期、地点和持续时间，事件等级、事件处理方式和处理结果，对公司、社会公众的影响以及整改措施；（三）报告期内因环境事件受到生态环境等有关部门重大行政处罚或被追究刑事责任的情况，包括但不限于违规情形、处罚原因、处罚金额、对披露主体生产经营的影响以及公司的整改措施等。
+- reportContentTopicName: 废弃物管理
+  reportSectionKey: waste_management
+  mainlandStandard: sse
+  appendixIndexClauseReferences:
+  - 第二十九条
+  - 第三十一条
+  - 第三十三条
+  clauseOriginalTexts:
+  - clauseReference: 第二十九条
+    clauseOriginalText: 披露主体应当将支持美丽中国建设、生态环境保护融入公司发展战略和公司治理过程，并根据自身生产经营特点、生态环境管理要求、对环境的影响、受影响公众的一致诉求等实际情况，落实相关环境管理制度，采取有效措施履行生态环境保护责任，防治环境污染，保护生物多样性。
+  - clauseReference: 第三十一条
+    clauseOriginalText: 披露主体生产经营活动产生的废弃物对环境产生重大影响的，应当披露报告期内产生的废弃物的基本情况：（一）产生的有害废弃物、无害废弃物的总量（以吨计算）及密度（如以单位营收、单位产量、每项设施计算）；（二）有害废弃物、无害废弃物的处理方法、处置情况；（三）废弃物减排目标及为达到目标所采取的具体措施。
+  - clauseReference: 第三十三条
+    clauseOriginalText: 披露主体应当结合报告期内的实际情况，披露下列环境信息：（一）针对环境事件的风险评估、预防相关风险的管理措施和针对突发环境事件的应急预案总体情况；（二）报告期内突发重大环境事件的发生日期、地点和持续时间，事件等级、事件处理方式和处理结果，对公司、社会公众的影响以及整改措施；（三）报告期内因环境事件受到生态环境等有关部门重大行政处罚或被追究刑事责任的情况，包括但不限于违规情形、处罚原因、处罚金额、对披露主体生产经营的影响以及公司的整改措施等。
+- reportContentTopicName: 废弃物管理
+  reportSectionKey: waste_management
+  mainlandStandard: szse
+  appendixIndexClauseReferences:
+  - 第二十九条
+  - 第三十一条
+  - 第三十三条
+  clauseOriginalTexts:
+  - clauseReference: 第二十九条
+    clauseOriginalText: 披露主体应当将支持美丽中国建设、生态环境保护融入公司发展战略和公司治理过程，并根据自身生产经营特点、生态环境管理要求、对环境的影响、受影响公众的一致诉求等实际情况，落实相关环境管理制度，采取有效措施履行生态环境保护责任，防治环境污染，保护生物多样性。
+  - clauseReference: 第三十一条
+    clauseOriginalText: 披露主体生产经营活动产生的废弃物对环境产生重大影响的，应当披露报告期内产生的废弃物的基本情况：（一）产生的有害废弃物、无害废弃物的总量（以吨计算）及密度（如以单位营收、单位产量、每项设施计算）；（二）有害废弃物、无害废弃物的处理方法、处置情况；（三）废弃物减排目标及为达到目标所采取的具体措施。
+  - clauseReference: 第三十三条
+    clauseOriginalText: 披露主体应当结合报告期内的实际情况，披露下列环境信息：（一）针对环境事件的风险评估、预防相关风险的管理措施和针对突发环境事件的应急预案总体情况；（二）报告期内突发重大环境事件的发生日期、地点和持续时间，事件等级、事件处理方式和处理结果，对公司、社会公众的影响以及整改措施；（三）报告期内因环境事件受到生态环境等有关部门重大行政处罚或被追究刑事责任的情况，包括但不限于违规情形、处罚原因、处罚金额、对披露主体生产经营的影响以及公司的整改措施等。
+- reportContentTopicName: 废弃物管理
+  reportSectionKey: waste_management
+  mainlandStandard: bse
+  appendixIndexClauseReferences:
+  - 第二十九条
+  - 第三十一条
+  - 第三十三条
+  clauseOriginalTexts:
+  - clauseReference: 第二十九条
+    clauseOriginalText: 披露主体应当将支持美丽中国建设、生态环境保护融入公司发展战略和公司治理过程，并根据自身生产经营特点、生态环境管理要求、对环境的影响、受影响公众的一致诉求等实际情况，落实相关环境管理制度，采取有效措施履行生态环境保护责任，防治环境污染，保护生物多样性。
+  - clauseReference: 第三十一条
+    clauseOriginalText: 披露主体生产经营活动产生的废弃物对环境产生重大影响的，应当披露报告期内产生的废弃物的基本情况：（一）产生的有害废弃物、无害废弃物的总量（以吨计算）及密度（如以单位营收、单位产量、每项设施计算）；（二）有害废弃物、无害废弃物的处理方法、处置情况；（三）废弃物减排目标及为达到目标所采取的具体措施。
+  - clauseReference: 第三十三条
+    clauseOriginalText: 披露主体应当结合报告期内的实际情况，披露下列环境信息：（一）针对环境事件的风险评估、预防相关风险的管理措施和针对突发环境事件的应急预案总体情况；（二）报告期内突发重大环境事件的发生日期、地点和持续时间，事件等级、事件处理方式和处理结果，对公司、社会公众的影响以及整改措施；（三）报告期内因环境事件受到生态环境等有关部门重大行政处罚或被追究刑事责任的情况，包括但不限于违规情形、处罚原因、处罚金额、对披露主体生产经营的影响以及公司的整改措施等。
+- reportContentTopicName: 生态系统与生物多样性保护
+  reportSectionKey: ecosystem_biodiversity_protection
+  mainlandStandard: sse
+  appendixIndexClauseReferences:
+  - 第二十九条
+  - 第三十二条
+  - 第三十三条
+  clauseOriginalTexts:
+  - clauseReference: 第二十九条
+    clauseOriginalText: 披露主体应当将支持美丽中国建设、生态环境保护融入公司发展战略和公司治理过程，并根据自身生产经营特点、生态环境管理要求、对环境的影响、受影响公众的一致诉求等实际情况，落实相关环境管理制度，采取有效措施履行生态环境保护责任，防治环境污染，保护生物多样性。
+  - clauseReference: 第三十二条
+    clauseOriginalText: 披露主体生产经营活动对生态系统和生物多样性产生重大影响的，应当披露报告期内的下列内容：（一）生态保护红线范围内，退出生产经营活动、处置相关设施等情况；（二）在生产经营场所周边和陆地、海洋重点生态功能区、生态保护红线、自然保护地，以及其他具有重要生态功能或生态环境敏感脆弱区域的保护和恢复等方面采取的措施与取得的效果；（三）在野生动植物保护、自然栖息地保护恢复等方面采取的措施与取得的效果；（四）在生物遗传资源的保护、可持续利用、获取与惠益分享、监测预警和风险管理等方面采取的措施与取得的效果；（五）为降低产品全生命周期等对生态系统、生物物种及其栖息地、生物遗传资源等的影响和依赖，采取的行动与取得的效果。
+  - clauseReference: 第三十三条
+    clauseOriginalText: 披露主体应当结合报告期内的实际情况，披露下列环境信息：（一）针对环境事件的风险评估、预防相关风险的管理措施和针对突发环境事件的应急预案总体情况；（二）报告期内突发重大环境事件的发生日期、地点和持续时间，事件等级、事件处理方式和处理结果，对公司、社会公众的影响以及整改措施；（三）报告期内因环境事件受到生态环境等有关部门重大行政处罚或被追究刑事责任的情况，包括但不限于违规情形、处罚原因、处罚金额、对披露主体生产经营的影响以及公司的整改措施等。
+- reportContentTopicName: 生态系统与生物多样性保护
+  reportSectionKey: ecosystem_biodiversity_protection
+  mainlandStandard: szse
+  appendixIndexClauseReferences:
+  - 第二十九条
+  - 第三十二条
+  - 第三十三条
+  clauseOriginalTexts:
+  - clauseReference: 第二十九条
+    clauseOriginalText: 披露主体应当将支持美丽中国建设、生态环境保护融入公司发展战略和公司治理过程，并根据自身生产经营特点、生态环境管理要求、对环境的影响、受影响公众的一致诉求等实际情况，落实相关环境管理制度，采取有效措施履行生态环境保护责任，防治环境污染，保护生物多样性。
+  - clauseReference: 第三十二条
+    clauseOriginalText: 披露主体生产经营活动对生态系统和生物多样性产生重大影响的，应当披露报告期内的下列内容：（一）生态保护红线范围内，退出生产经营活动、处置相关设施等情况；（二）在生产经营场所周边和陆地、海洋重点生态功能区、生态保护红线、自然保护地，以及其他具有重要生态功能或生态环境敏感脆弱区域的保护和恢复等方面采取的措施与取得的效果；（三）在野生动植物保护、自然栖息地保护恢复等方面采取的措施与取得的效果；（四）在生物遗传资源的保护、可持续利用、获取与惠益分享、监测预警和风险管理等方面采取的措施与取得的效果；（五）为降低产品全生命周期等对生态系统、生物物种及其栖息地、生物遗传资源等的影响和依赖，采取的行动与取得的效果。
+  - clauseReference: 第三十三条
+    clauseOriginalText: 披露主体应当结合报告期内的实际情况，披露下列环境信息：（一）针对环境事件的风险评估、预防相关风险的管理措施和针对突发环境事件的应急预案总体情况；（二）报告期内突发重大环境事件的发生日期、地点和持续时间，事件等级、事件处理方式和处理结果，对公司、社会公众的影响以及整改措施；（三）报告期内因环境事件受到生态环境等有关部门重大行政处罚或被追究刑事责任的情况，包括但不限于违规情形、处罚原因、处罚金额、对披露主体生产经营的影响以及公司的整改措施等。
+- reportContentTopicName: 生态系统与生物多样性保护
+  reportSectionKey: ecosystem_biodiversity_protection
+  mainlandStandard: bse
+  appendixIndexClauseReferences:
+  - 第二十九条
+  - 第三十二条
+  - 第三十三条
+  clauseOriginalTexts:
+  - clauseReference: 第二十九条
+    clauseOriginalText: 披露主体应当将支持美丽中国建设、生态环境保护融入公司发展战略和公司治理过程，并根据自身生产经营特点、生态环境管理要求、对环境的影响、受影响公众的一致诉求等实际情况，落实相关环境管理制度，采取有效措施履行生态环境保护责任，防治环境污染，保护生物多样性。
+  - clauseReference: 第三十二条
+    clauseOriginalText: 披露主体生产经营活动对生态系统和生物多样性产生重大影响的，应当披露报告期内的下列内容：（一）生态保护红线范围内，退出生产经营活动、相关设施处置等情况；（二）在生产经营场所周边和陆地、海洋重点生态功能区、生态保护红线、自然保护地，以及其他具有重要生态功能或生态环境敏感脆弱区域的保护和恢复等方面采取的措施与取得的效果；（三）在野生动植物保护、自然栖息地保护恢复等方面采取的措施与取得的效果；（四）在生物遗传资源的保护、可持续利用、获取与惠益分享、监测预警和风险管理等方面采取的措施与取得的效果；（五）为降低产品全生命周期等对生态系统、生物物种及其栖息地、生物遗传资源等的影响和依赖，采取的行动与取得的效果。
+  - clauseReference: 第三十三条
+    clauseOriginalText: 披露主体应当结合报告期内的实际情况，披露下列环境信息：（一）针对环境事件的风险评估、预防相关风险的管理措施和针对突发环境事件的应急预案总体情况；（二）报告期内突发重大环境事件的发生日期、地点和持续时间，事件等级、事件处理方式和处理结果，对公司、社会公众的影响以及整改措施；（三）报告期内因环境事件受到生态环境等有关部门重大行政处罚或被追究刑事责任的情况，包括但不限于违规情形、处罚原因、处罚金额、对披露主体生产经营的影响以及公司的整改措施等。
+- reportContentTopicName: 能源管理
+  reportSectionKey: energy_management
+  mainlandStandard: sse
+  appendixIndexClauseReferences:
+  - 第三十四条
+  - 第三十五条
+  clauseOriginalTexts:
+  - clauseReference: 第三十四条
+    clauseOriginalText: 披露主体应当集约、高效利用能源、水、原材料等资源，加强资源使用过程节约管理，推动生产、流通过程的减量化、再利用、再循环。
+  - clauseReference: 第三十五条
+    clauseOriginalText: 披露主体应当披露报告期内使用能源的具体情况，包括但不限于下列内容：（一）能源使用的基本情况，包括但不限于按类型划分的直接及间接能源（如煤、电、气或油）总能耗量（以吨标准煤计算）、结构及总能耗强度（如以每产量单位计算）等；（二）清洁能源使用情况，包括但不限于风能、太阳能、水能、地热能、生物质资源、海洋能、天然气等清洁能源的种类、总量、比例等；（三）能源节约目标以及具体措施，包括但不限于采购节能生产设备、节能照明设备、节能温控设备，采用余热余压利用、能源梯级利用等措施，能源使用存在的具体困难（如有）。
+- reportContentTopicName: 能源管理
+  reportSectionKey: energy_management
+  mainlandStandard: szse
+  appendixIndexClauseReferences:
+  - 第三十四条
+  - 第三十五条
+  clauseOriginalTexts:
+  - clauseReference: 第三十四条
+    clauseOriginalText: 披露主体应当集约、高效利用能源、水、原材料等资源，加强资源使用过程节约管理，推动生产、流通过程的减量化、再利用、再循环。
+  - clauseReference: 第三十五条
+    clauseOriginalText: 披露主体应当披露报告期内使用能源的具体情况，包括但不限于下列内容：（一）能源使用的基本情况，包括但不限于按类型划分的直接及间接能源（如煤、电、气或油）总能耗量（以吨标准煤计算）、结构及总能耗强度（如以每产量单位计算）等；（二）清洁能源使用情况，包括但不限于风能、太阳能、水能、地热能、生物质资源、海洋能、天然气等清洁能源的种类、总量、比例等；（三）能源节约目标以及具体措施，包括但不限于采购节能生产设备、节能照明设备、节能温控设备，采用余热余压利用、能源梯级利用等措施，能源使用存在的具体困难（如有）。
+- reportContentTopicName: 能源管理
+  reportSectionKey: energy_management
+  mainlandStandard: bse
+  appendixIndexClauseReferences:
+  - 第三十四条
+  - 第三十五条
+  clauseOriginalTexts:
+  - clauseReference: 第三十四条
+    clauseOriginalText: 披露主体应当集约、高效利用能源、水、原材料等资源，加强资源使用过程节约管理，推动生产、流通过程的减量化、再利用、再循环。
+  - clauseReference: 第三十五条
+    clauseOriginalText: 披露主体应当披露报告期内使用能源的具体情况，包括但不限于下列内容：（一）能源使用的基本情况，包括但不限于按类型划分的直接及间接能源（如煤、电、气或油）总能耗量（以吨标准煤计算）、结构及总能耗强度（如以每产量单位计算）等；（二）清洁能源使用情况，包括但不限于风能、太阳能、水能、地热能、生物质资源、海洋能、天然气等清洁能源的种类、总量、比例等；（三）能源节约目标以及具体措施，包括但不限于采购节能生产设备、节能照明设备、节能温控设备，采用余热余压利用、能源梯级利用等措施，能源使用存在的具体困难（如有）。
+- reportContentTopicName: 水资源管理
+  reportSectionKey: water_resource_management
+  mainlandStandard: sse
+  appendixIndexClauseReferences:
+  - 第三十四条
+  - 第三十六条
+  clauseOriginalTexts:
+  - clauseReference: 第三十四条
+    clauseOriginalText: 披露主体应当集约、高效利用能源、水、原材料等资源，加强资源使用过程节约管理，推动生产、流通过程的减量化、再利用、再循环。
+  - clauseReference: 第三十六条
+    clauseOriginalText: 披露主体应当披露报告期内使用水资源的具体情况，包括但不限于下列内容：（一）水资源使用的基本情况，包括但不限于总耗水量（以吨计算）及使用强度（如以每产量单位计算）等；（二）水资源节约目标以及具体措施，水资源回收利用情况及水资源使用存在的具体困难（如有）。
+- reportContentTopicName: 水资源管理
+  reportSectionKey: water_resource_management
+  mainlandStandard: szse
+  appendixIndexClauseReferences:
+  - 第三十四条
+  - 第三十六条
+  clauseOriginalTexts:
+  - clauseReference: 第三十四条
+    clauseOriginalText: 披露主体应当集约、高效利用能源、水、原材料等资源，加强资源使用过程节约管理，推动生产、流通过程的减量化、再利用、再循环。
+  - clauseReference: 第三十六条
+    clauseOriginalText: 披露主体应当披露报告期内使用水资源的具体情况，包括但不限于下列内容：（一）水资源使用的基本情况，包括但不限于总耗水量（以吨计算）及使用强度（如以每产量单位计算）等；（二）水资源节约目标以及具体措施，水资源回收利用情况及水资源使用存在的具体困难（如有）。
+- reportContentTopicName: 水资源管理
+  reportSectionKey: water_resource_management
+  mainlandStandard: bse
+  appendixIndexClauseReferences:
+  - 第三十四条
+  - 第三十六条
+  clauseOriginalTexts:
+  - clauseReference: 第三十四条
+    clauseOriginalText: 披露主体应当集约、高效利用能源、水、原材料等资源，加强资源使用过程节约管理，推动生产、流通过程的减量化、再利用、再循环。
+  - clauseReference: 第三十六条
+    clauseOriginalText: 披露主体应当披露报告期内使用水资源的具体情况，包括但不限于下列内容：（一）水资源使用的基本情况，包括但不限于总耗水量（以吨计算）及使用强度（如以每产量单位计算）等；（二）水资源节约目标以及具体措施，水资源回收利用情况及水资源使用存在的具体困难（如有）。
+- reportContentTopicName: 促进循环经济
+  reportSectionKey: circular_economy_promotion
+  mainlandStandard: sse
+  appendixIndexClauseReferences:
+  - 第三十四条
+  - 第三十七条
+  clauseOriginalTexts:
+  - clauseReference: 第三十四条
+    clauseOriginalText: 披露主体应当集约、高效利用能源、水、原材料等资源，加强资源使用过程节约管理，推动生产、流通过程的减量化、再利用、再循环。
+  - clauseReference: 第三十七条
+    clauseOriginalText: 披露主体应当披露报告期内循环经济的具体情况，包括但不限于下列内容：（一）为实现循环经济而制定的具体目标和计划；（二）报告期内为实现循环经济而采取的具体措施，包括节省资源、提高资源利用率、使用可再生资源、预防和减少废弃物的产生以及回收利用废弃物等；（三）报告期内公司在实现循环经济目标方面取得的具体进展及成效，包括废弃物的回收及综合利用情况（含废弃物循环利用量）、可再生资源消耗量及占相应资源总消耗量的比例等。
+- reportContentTopicName: 促进循环经济
+  reportSectionKey: circular_economy_promotion
+  mainlandStandard: szse
+  appendixIndexClauseReferences:
+  - 第三十四条
+  - 第三十七条
+  clauseOriginalTexts:
+  - clauseReference: 第三十四条
+    clauseOriginalText: 披露主体应当集约、高效利用能源、水、原材料等资源，加强资源使用过程节约管理，推动生产、流通过程的减量化、再利用、再循环。
+  - clauseReference: 第三十七条
+    clauseOriginalText: 披露主体应当披露报告期内循环经济的具体情况，包括但不限于下列内容：（一）为实现循环经济而制定的具体目标和计划；（二）报告期内为实现循环经济而采取的具体措施，包括节省资源、提高资源利用率、使用可再生资源、预防和减少废弃物的产生以及回收利用废弃物等；（三）报告期内公司在实现循环经济目标方面取得的具体进展及成效，包括废弃物的回收及综合利用情况（含废弃物循环利用量）、可再生资源消耗量及占相应资源总消耗量的比例等。
+- reportContentTopicName: 促进循环经济
+  reportSectionKey: circular_economy_promotion
+  mainlandStandard: bse
+  appendixIndexClauseReferences:
+  - 第三十四条
+  - 第三十七条
+  clauseOriginalTexts:
+  - clauseReference: 第三十四条
+    clauseOriginalText: 披露主体应当集约、高效利用能源、水、原材料等资源，加强资源使用过程节约管理，推动生产、流通过程的减量化、再利用、再循环。
+  - clauseReference: 第三十七条
+    clauseOriginalText: 披露主体应当披露报告期内循环经济的具体情况，包括但不限于下列内容：（一）为实现循环经济而制定的具体目标和计划；（二）报告期内为实现循环经济而采取的具体措施，包括节省资源、提高资源利用率、使用可再生资源、预防和减少废弃物的产生以及回收利用废弃物等；（三）报告期内公司在实现循环经济目标方面取得的具体进展及成效，包括废弃物的回收及综合利用情况（含废弃物循环利用量）、可再生资源消耗量及占相应资源总消耗量的比例等。
+- reportContentTopicName: 乡村振兴与社会贡献
+  reportSectionKey: rural_revitalization_social_contribution
+  mainlandStandard: sse
+  appendixIndexClauseReferences:
+  - 第三十八条
+  - 第三十九条
+  - 第四十条
+  clauseOriginalTexts:
+  - clauseReference: 第三十八条
+    clauseOriginalText: 本所鼓励披露主体结合自身主营业务开展情况支持乡村振兴、社会公益事业，在保障公司健康发展、持续回报投资者的同时促进经济社会可持续发展。
+  - clauseReference: 第三十九条
+    clauseOriginalText: 披露主体应当披露报告期内支持乡村振兴的具体情况，包括但不限于下列内容：（一）披露主体在乡村和脱贫地区业务占比较高的，应当结合业务开展情况披露公司将支持乡村振兴、巩固拓展脱贫攻坚成果融入公司战略的具体情况；（二）结合在乡村和脱贫地区业务开展情况，披露支持乡村特色产业发展、支持当地就业等方面采取的具体措施，以及其他支持乡村振兴工作的具体措施；（三）具体工作成果，包括报告期内总投入金额、惠及群体范围及数量，对公司品牌和业务开展的影响等。
+  - clauseReference: 第四十条
+    clauseOriginalText: 披露主体应当披露报告期内对公众及社会作出贡献的基本情况，包括但不限于开展公益慈善、志愿活动等方面的具体情况，以及投入资金金额、人员、时间、取得的效果、对公司品牌和业务开展的影响等。
+- reportContentTopicName: 乡村振兴与社会贡献
+  reportSectionKey: rural_revitalization_social_contribution
+  mainlandStandard: szse
+  appendixIndexClauseReferences:
+  - 第三十八条
+  - 第三十九条
+  - 第四十条
+  clauseOriginalTexts:
+  - clauseReference: 第三十八条
+    clauseOriginalText: 本所鼓励披露主体结合自身主营业务开展情况支持乡村振兴、社会公益事业，在保障公司健康发展、持续回报投资者的同时促进经济社会可持续发展。
+  - clauseReference: 第三十九条
+    clauseOriginalText: 披露主体应当披露报告期内支持乡村振兴的具体情况，包括但不限于下列内容：（一）披露主体在乡村和脱贫地区业务占比较高的，应当结合业务开展情况披露公司将支持乡村振兴、巩固拓展脱贫攻坚成果融入公司战略的具体情况；（二）结合在乡村和脱贫地区业务开展情况，披露支持乡村特色产业发展、支持当地就业等方面采取的具体措施，以及其他支持乡村振兴工作的具体措施；（三）具体工作成果，包括报告期内总投入金额、惠及群体范围及数量，对公司品牌和业务开展的影响等。
+  - clauseReference: 第四十条
+    clauseOriginalText: 披露主体应当披露报告期内对公众及社会作出贡献的基本情况，包括但不限于开展公益慈善、志愿活动等方面的具体情况，以及投入资金金额、人员、时间、取得的效果、对公司品牌和业务开展的影响等。
+- reportContentTopicName: 乡村振兴与社会贡献
+  reportSectionKey: rural_revitalization_social_contribution
+  mainlandStandard: bse
+  appendixIndexClauseReferences:
+  - 第三十八条
+  - 第三十九条
+  - 第四十条
+  clauseOriginalTexts:
+  - clauseReference: 第三十八条
+    clauseOriginalText: 本所鼓励披露主体结合自身主营业务开展情况支持乡村振兴、社会公益事业，在保障公司健康发展、持续回报投资者的同时促进经济社会可持续发展。
+  - clauseReference: 第三十九条
+    clauseOriginalText: 披露主体应当披露报告期内支持乡村振兴的具体情况，包括但不限于下列内容：（一）披露主体在乡村和脱贫地区业务占比较高的，应当结合业务开展情况披露公司将支持乡村振兴、巩固拓展脱贫攻坚成果融入公司战略的具体情况；（二）结合在乡村和脱贫地区业务开展情况，披露支持乡村特色产业发展、支持当地就业等方面采取的具体措施，以及其他支持乡村振兴工作的具体措施；（三）具体工作成果，包括报告期内总投入金额、惠及群体范围及数量，对公司品牌和业务开展的影响等。
+  - clauseReference: 第四十条
+    clauseOriginalText: 披露主体应当披露报告期内对公众及社会作出贡献的基本情况，包括但不限于开展公益慈善、志愿活动等方面的具体情况，以及投入资金金额、人员、时间、取得的效果、对公司品牌和业务开展的影响等。
+- reportContentTopicName: 创新驱动
+  reportSectionKey: innovation_driven
+  mainlandStandard: sse
+  appendixIndexClauseReferences:
+  - 第四十一条
+  - 第四十二条
+  clauseOriginalTexts:
+  - clauseReference: 第四十一条
+    clauseOriginalText: 本所鼓励披露主体积极践行创新驱动发展战略，持续提升创新能力和竞争力，在创新决策和实践中遵守科学伦理规范，尊重科学精神，发挥科学技术的正面效应。
+  - clauseReference: 第四十二条
+    clauseOriginalText: 在不涉及国家安全、国家秘密，兼顾保护商业秘密的前提下，本所鼓励披露主体自愿披露报告期内推动科技创新、加强科技成果转化应用、提高科技竞争力的具体情况，包括但不限于下列内容：（一）科技创新的战略和目标，涉及投入金额的，应当同时披露相关资金的筹措安排及保障措施；（二）开展科技创新的具体情况，包括研发创新管理制度体系建设，参与研发创新、科技合作项目的情况，研发投入金额及占主营业务收入比例、研发人员数量及占比、应用于主营业务的发明专利数量等；（三）取得的研发进展及成果、获得的专业资质和重要奖项等，包括报告期内发明专利的申请数和授权数、有效专利数，高新技术企业认定情况、国家科学技术奖项获奖情况等；（四）科技创新成果及其应用对推动发展新质生产力的作用，以及对经济、社会、环境和利益相关方的影响等。
+- reportContentTopicName: 创新驱动
+  reportSectionKey: innovation_driven
+  mainlandStandard: szse
+  appendixIndexClauseReferences:
+  - 第四十一条
+  - 第四十二条
+  clauseOriginalTexts:
+  - clauseReference: 第四十一条
+    clauseOriginalText: 本所鼓励披露主体积极践行创新驱动发展战略，持续提升创新能力和竞争力，在创新决策和实践中遵守科学伦理规范，尊重科学精神，发挥科学技术的正面效应。
+  - clauseReference: 第四十二条
+    clauseOriginalText: 在不涉及国家安全、国家秘密，兼顾保护商业秘密的前提下，本所鼓励披露主体自愿披露报告期内推动科技创新、加强科技成果转化应用、提高科技竞争力的具体情况，包括但不限于下列内容：（一）科技创新的战略和目标，涉及投入金额的，应当同时披露相关资金的筹措安排及保障措施；（二）开展科技创新的具体情况，包括研发创新管理制度体系建设，参与研发创新、科技合作项目的情况，研发投入金额及占主营业务收入比例、研发人员数量及占比、应用于主营业务的发明专利数量等；（三）取得的研发进展及成果、获得的专业资质和重要奖项等，包括报告期内发明专利的申请数和授权数、有效专利数，高新技术企业认定情况、国家科学技术奖项获奖情况等；（四）科技创新成果及其应用对推动发展新质生产力的作用，以及对经济、社会、环境和利益相关方的影响等。
+- reportContentTopicName: 创新驱动
+  reportSectionKey: innovation_driven
+  mainlandStandard: bse
+  appendixIndexClauseReferences:
+  - 第四十一条
+  - 第四十二条
+  clauseOriginalTexts:
+  - clauseReference: 第四十一条
+    clauseOriginalText: 本所鼓励披露主体积极践行创新驱动发展战略，持续提升创新能力和竞争力，在创新决策和实践中遵守科学伦理规范，尊重科学精神，发挥科学技术的正面效应。
+  - clauseReference: 第四十二条
+    clauseOriginalText: 在不涉及国家安全、国家秘密，兼顾保护商业秘密的前提下，本所鼓励披露主体自愿披露报告期内推动科技创新、加强科技成果转化应用、提高科技竞争力的具体情况，包括但不限于下列内容：（一）科技创新的战略和目标，涉及投入金额的，应当同时披露相关资金的筹措安排及保障措施；（二）开展科技创新的具体情况，包括研发创新管理制度体系建设，参与研发创新、科技合作项目的情况，研发投入金额及占主营业务收入比例、研发人员数量及占比、应用于主营业务的发明专利数量等；（三）取得的研发进展及成果、获得的专业资质和重要奖项等，包括报告期内发明专利的申请数和授权数、有效专利数，高新技术企业认定情况、国家科学技术奖项获奖情况等；（四）科技创新成果及其应用对推动发展新质生产力的作用，以及对经济、社会、环境和利益相关方的影响等。
+- reportContentTopicName: 科技伦理
+  reportSectionKey: technology_ethics
+  mainlandStandard: sse
+  appendixIndexClauseReferences:
+  - 第四十三条
+  clauseOriginalTexts:
+  - clauseReference: 第四十三条
+    clauseOriginalText: 披露主体从事生命科学、人工智能等科技伦理敏感领域的科学研究、技术开发等活动的，应当披露报告期内遵守科技伦理的基本情况，包括但不限于下列内容：（一）从事科技研究、技术开发等科技活动的领域及遵守的科技伦理规范；（二）内部管理制度中关于科技伦理的规定及其落实情况，科技伦理（审查）委员会的设置及其运作情况（如有）；（三）违反科技伦理的行为，包括相关行为的基本情况、被有权机关处罚的情况，内部调查处理与责任追究情况，以及采取的整改措施（如有）；（四）开展科技伦理内外部培训及科普宣传等情况。
+- reportContentTopicName: 科技伦理
+  reportSectionKey: technology_ethics
+  mainlandStandard: szse
+  appendixIndexClauseReferences:
+  - 第四十三条
+  clauseOriginalTexts:
+  - clauseReference: 第四十三条
+    clauseOriginalText: 披露主体从事生命科学、人工智能等科技伦理敏感领域的科学研究、技术开发等活动的，应当披露报告期内遵守科技伦理的基本情况，包括但不限于下列内容：（一）从事科技研究、技术开发等科技活动的领域及遵守的科技伦理规范；（二）内部管理制度中关于科技伦理的规定及其落实情况，科技伦理（审查）委员会的设置及其运作情况（如有）；（三）违反科技伦理的行为，包括相关行为的基本情况、被有权机关处罚的情况，内部调查处理与责任追究情况，以及采取的整改措施（如有）；（四）开展科技伦理内外部培训及科普宣传等情况。
+- reportContentTopicName: 科技伦理
+  reportSectionKey: technology_ethics
+  mainlandStandard: bse
+  appendixIndexClauseReferences:
+  - 第四十三条
+  clauseOriginalTexts:
+  - clauseReference: 第四十三条
+    clauseOriginalText: 披露主体从事生命科学、人工智能等科技伦理敏感领域的科学研究、技术开发等活动的，应当披露报告期内遵守科技伦理的基本情况，包括但不限于下列内容：（一）从事科技研究、技术开发等科技活动的领域及遵守的科技伦理规范；（二）内部管理制度中关于科技伦理的规定及其落实情况，科技伦理（审查）委员会的设置及其运作情况（如有）；（三）违反科技伦理的行为，包括相关行为的基本情况、被有权机关处罚的情况，内部调查处理与责任追究情况，以及采取的整改措施（如有）；（四）开展科技伦理内外部培训及科普宣传等情况。
+- reportContentTopicName: 可持续供应链管理
+  reportSectionKey: sustainable_supply_chain_management
+  mainlandStandard: sse
+  appendixIndexClauseReferences:
+  - 第四十四条
+  - 第四十五条
+  clauseOriginalTexts:
+  - clauseReference: 第四十四条
+    clauseOriginalText: 披露主体应当在追求经济效益、保护股东利益的同时，保护债权人利益，诚信对待供应商、客户和消费者。
+  - clauseReference: 第四十五条
+    clauseOriginalText: 披露主体应当披露报告期内加强供应链风险管理、保障供应链安全稳定的情况，包括但不限于下列内容：（一）供应链风险管理的基本情况，包括但不限于公司制定的供应链风险管理目标及具体计划、供应链风险应对机制、措施及实施效果；（二）通过并购重组、科技创新等保障自身供应链安全、强化供应链优势等方面的举措和积极效果。本所鼓励披露主体披露加强供应链管理、促进供应链可持续发展的行动和举措。
+- reportContentTopicName: 可持续供应链管理
+  reportSectionKey: sustainable_supply_chain_management
+  mainlandStandard: szse
+  appendixIndexClauseReferences:
+  - 第四十四条
+  - 第四十五条
+  clauseOriginalTexts:
+  - clauseReference: 第四十四条
+    clauseOriginalText: 披露主体应当在追求经济效益、保护股东利益的同时，保护债权人利益，诚信对待供应商、客户和消费者。
+  - clauseReference: 第四十五条
+    clauseOriginalText: 披露主体应当披露报告期内加强供应链风险管理、保障供应链安全稳定的情况，包括但不限于下列内容：（一）供应链风险管理的基本情况，包括但不限于公司制定的供应链风险管理目标及具体计划、供应链风险应对机制、措施及实施效果；（二）通过并购重组、科技创新等保障自身供应链安全、强化供应链优势等方面的举措和积极效果。本所鼓励披露主体披露加强供应链管理、促进供应链可持续发展的行动和举措。
+- reportContentTopicName: 可持续供应链管理
+  reportSectionKey: sustainable_supply_chain_management
+  mainlandStandard: bse
+  appendixIndexClauseReferences:
+  - 第四十四条
+  - 第四十五条
+  clauseOriginalTexts:
+  - clauseReference: 第四十四条
+    clauseOriginalText: 披露主体应当在追求经济效益、保护股东利益的同时，保护债权人利益，诚信对待供应商、客户和消费者。
+  - clauseReference: 第四十五条
+    clauseOriginalText: 披露主体应当披露报告期内加强供应链风险管理、保障供应链安全稳定的情况，包括但不限于下列内容：（一）供应链风险管理的基本情况，包括但不限于公司制定的供应链风险管理目标及具体计划、供应链风险应对机制、措施及实施效果；（二）通过并购重组、科技创新等保障自身供应链安全、强化供应链优势等方面的举措和积极效果。本所鼓励披露主体披露加强供应链管理、促进供应链可持续发展的行动和举措。
+- reportContentTopicName: 平等对待中小企业
+  reportSectionKey: sme_fair_treatment
+  mainlandStandard: sse
+  appendixIndexClauseReferences:
+  - 第四十四条
+  - 第四十六条
+  clauseOriginalTexts:
+  - clauseReference: 第四十四条
+    clauseOriginalText: 披露主体应当在追求经济效益、保护股东利益的同时，保护债权人利益，诚信对待供应商、客户和消费者。
+  - clauseReference: 第四十六条
+    clauseOriginalText: 披露主体报告期末应付账款（含应付票据）余额超过300亿元或占总资产的比重超过50%的，应当披露报告期末逾期未支付款项的金额，以及拟采取的解决方案。披露主体或者其控股子公司通过国家企业信用信息公示系统向社会公示逾期尚未支付中小企业款项信息的，应当披露逾期未支付中小企业款项的金额、对中小企业供应商的账期设置、逾期账款的形成原因、是否涉及诉讼仲裁等情况，并披露解决方案。本所鼓励其他披露主体参照前两款规定进行披露。
+- reportContentTopicName: 平等对待中小企业
+  reportSectionKey: sme_fair_treatment
+  mainlandStandard: szse
+  appendixIndexClauseReferences:
+  - 第四十四条
+  - 第四十六条
+  clauseOriginalTexts:
+  - clauseReference: 第四十四条
+    clauseOriginalText: 披露主体应当在追求经济效益、保护股东利益的同时，保护债权人利益，诚信对待供应商、客户和消费者。
+  - clauseReference: 第四十六条
+    clauseOriginalText: 披露主体报告期末应付账款（含应付票据）余额超过300亿元或占总资产的比重超过50%的，应当披露报告期末逾期未支付款项的金额，以及拟采取的解决方案。披露主体或者其控股子公司通过国家企业信用信息公示系统向社会公示逾期尚未支付中小企业款项信息的，应当披露逾期未支付中小企业款项的金额、对中小企业供应商的账期设置、逾期账款的形成原因、是否涉及诉讼仲裁等情况，并披露解决方案。本所鼓励其他披露主体参照前两款规定进行披露。
+- reportContentTopicName: 平等对待中小企业
+  reportSectionKey: sme_fair_treatment
+  mainlandStandard: bse
+  appendixIndexClauseReferences:
+  - 第四十四条
+  - 第四十六条
+  clauseOriginalTexts:
+  - clauseReference: 第四十四条
+    clauseOriginalText: 披露主体应当在追求经济效益、保护股东利益的同时，保护债权人利益，诚信对待供应商、客户和消费者。
+  - clauseReference: 第四十六条
+    clauseOriginalText: 披露主体报告期末应付账款（含应付票据）余额占总资产的比重超过50%的，应当披露报告期末逾期未支付款项的金额，以及拟采取的解决方案。披露主体或者其控股子公司通过国家企业信用信息公示系统向社会公示逾期尚未支付中小企业款项信息的，应当披露逾期未支付中小企业款项的金额、对中小企业供应商的账期设置、逾期账款的形成原因、是否涉及诉讼仲裁等情况，并披露解决方案。本所鼓励其他披露主体参照前两款规定进行披露。
+- reportContentTopicName: 产品质量与安全
+  reportSectionKey: product_quality_safety
+  mainlandStandard: sse
+  appendixIndexClauseReferences:
+  - 第四十四条
+  - 第四十七条
+  clauseOriginalTexts:
+  - clauseReference: 第四十四条
+    clauseOriginalText: 披露主体应当在追求经济效益、保护股东利益的同时，保护债权人利益，诚信对待供应商、客户和消费者。
+  - clauseReference: 第四十七条
+    clauseOriginalText: 披露主体应当披露报告期内产品和服务的安全与质量管理的基本情况，包括但不限于下列内容：（一）产品和服务质量管理体系、制度的建设、执行情况以及具体措施；（二）公司获得的质量管理相关的认证、主要产品和服务质量管理体系认证情况；（三）报告期内发生的产品和服务相关的安全与质量重大责任事故，包括事件性质（如行政处罚等）、造成的影响及损害涉及的金额、采取的应对措施及进展（如有）；（四）售后服务、产品召回制度的建立与执行情况，针对客户投诉的受理途径、处理流程及处理情况。本所鼓励金融、医疗、电力、通讯、公用事业等行业的披露主体披露报告期内产品和服务的可获得性（如普惠金融、普惠医疗等）相关信息。
+- reportContentTopicName: 产品质量与安全
+  reportSectionKey: product_quality_safety
+  mainlandStandard: szse
+  appendixIndexClauseReferences:
+  - 第四十四条
+  - 第四十七条
+  clauseOriginalTexts:
+  - clauseReference: 第四十四条
+    clauseOriginalText: 披露主体应当在追求经济效益、保护股东利益的同时，保护债权人利益，诚信对待供应商、客户和消费者。
+  - clauseReference: 第四十七条
+    clauseOriginalText: 披露主体应当披露报告期内产品和服务的安全与质量管理的基本情况，包括但不限于下列内容：（一）产品和服务质量管理体系、制度的建设、执行情况以及具体措施；（二）公司获得的质量管理相关的认证、主要产品和服务质量管理体系认证情况；（三）报告期内发生的产品和服务相关的安全与质量重大责任事故，包括事件性质（如行政处罚等）、造成的影响及损害涉及的金额、采取的应对措施及进展（如有）；（四）售后服务、产品召回制度的建立与执行情况，针对客户投诉的受理途径、处理流程及处理情况。本所鼓励金融、医疗、电力、通讯、公用事业等行业的披露主体披露报告期内产品和服务的可获得性（如普惠金融、普惠医疗等）相关信息。
+- reportContentTopicName: 产品质量与安全
+  reportSectionKey: product_quality_safety
+  mainlandStandard: bse
+  appendixIndexClauseReferences:
+  - 第四十四条
+  - 第四十七条
+  clauseOriginalTexts:
+  - clauseReference: 第四十四条
+    clauseOriginalText: 披露主体应当在追求经济效益、保护股东利益的同时，保护债权人利益，诚信对待供应商、客户和消费者。
+  - clauseReference: 第四十七条
+    clauseOriginalText: 披露主体应当披露报告期内产品和服务的安全与质量管理的基本情况，包括但不限于下列内容：（一）产品和服务质量管理体系、制度的建设、执行情况以及具体措施；（二）公司获得的质量管理相关的认证、主要产品和服务质量管理体系认证情况；（三）报告期内发生的产品和服务相关的安全与质量重大责任事故，包括事件性质（如行政处罚等）、造成的影响及损害涉及的金额、采取的应对措施及进展（如有）；（四）售后服务、产品召回制度的建立与执行情况，针对客户投诉的受理途径、处理流程及处理情况。本所鼓励金融、医疗、电力、通讯、公用事业等行业的披露主体披露报告期内产品和服务的可获得性（如普惠金融、普惠医疗等）相关信息。
+- reportContentTopicName: 客户服务质量管理
+  reportSectionKey: customer_service_quality_management
+  mainlandStandard: sse
+  appendixIndexClauseReferences:
+  - 第四十四条
+  - 第四十七条
+  clauseOriginalTexts:
+  - clauseReference: 第四十四条
+    clauseOriginalText: 披露主体应当在追求经济效益、保护股东利益的同时，保护债权人利益，诚信对待供应商、客户和消费者。
+  - clauseReference: 第四十七条
+    clauseOriginalText: 披露主体应当披露报告期内产品和服务的安全与质量管理的基本情况，包括但不限于下列内容：（一）产品和服务质量管理体系、制度的建设、执行情况以及具体措施；（二）公司获得的质量管理相关的认证、主要产品和服务质量管理体系认证情况；（三）报告期内发生的产品和服务相关的安全与质量重大责任事故，包括事件性质（如行政处罚等）、造成的影响及损害涉及的金额、采取的应对措施及进展（如有）；（四）售后服务、产品召回制度的建立与执行情况，针对客户投诉的受理途径、处理流程及处理情况。本所鼓励金融、医疗、电力、通讯、公用事业等行业的披露主体披露报告期内产品和服务的可获得性（如普惠金融、普惠医疗等）相关信息。
+- reportContentTopicName: 客户服务质量管理
+  reportSectionKey: customer_service_quality_management
+  mainlandStandard: szse
+  appendixIndexClauseReferences:
+  - 第四十四条
+  - 第四十七条
+  clauseOriginalTexts:
+  - clauseReference: 第四十四条
+    clauseOriginalText: 披露主体应当在追求经济效益、保护股东利益的同时，保护债权人利益，诚信对待供应商、客户和消费者。
+  - clauseReference: 第四十七条
+    clauseOriginalText: 披露主体应当披露报告期内产品和服务的安全与质量管理的基本情况，包括但不限于下列内容：（一）产品和服务质量管理体系、制度的建设、执行情况以及具体措施；（二）公司获得的质量管理相关的认证、主要产品和服务质量管理体系认证情况；（三）报告期内发生的产品和服务相关的安全与质量重大责任事故，包括事件性质（如行政处罚等）、造成的影响及损害涉及的金额、采取的应对措施及进展（如有）；（四）售后服务、产品召回制度的建立与执行情况，针对客户投诉的受理途径、处理流程及处理情况。本所鼓励金融、医疗、电力、通讯、公用事业等行业的披露主体披露报告期内产品和服务的可获得性（如普惠金融、普惠医疗等）相关信息。
+- reportContentTopicName: 客户服务质量管理
+  reportSectionKey: customer_service_quality_management
+  mainlandStandard: bse
+  appendixIndexClauseReferences:
+  - 第四十四条
+  - 第四十七条
+  clauseOriginalTexts:
+  - clauseReference: 第四十四条
+    clauseOriginalText: 披露主体应当在追求经济效益、保护股东利益的同时，保护债权人利益，诚信对待供应商、客户和消费者。
+  - clauseReference: 第四十七条
+    clauseOriginalText: 披露主体应当披露报告期内产品和服务的安全与质量管理的基本情况，包括但不限于下列内容：（一）产品和服务质量管理体系、制度的建设、执行情况以及具体措施；（二）公司获得的质量管理相关的认证、主要产品和服务质量管理体系认证情况；（三）报告期内发生的产品和服务相关的安全与质量重大责任事故，包括事件性质（如行政处罚等）、造成的影响及损害涉及的金额、采取的应对措施及进展（如有）；（四）售后服务、产品召回制度的建立与执行情况，针对客户投诉的受理途径、处理流程及处理情况。本所鼓励金融、医疗、电力、通讯、公用事业等行业的披露主体披露报告期内产品和服务的可获得性（如普惠金融、普惠医疗等）相关信息。
+- reportContentTopicName: 数据安全与客户隐私保护
+  reportSectionKey: data_security_customer_privacy_protection
+  mainlandStandard: sse
+  appendixIndexClauseReferences:
+  - 第四十八条
+  clauseOriginalTexts:
+  - clauseReference: 第四十八条
+    clauseOriginalText: 披露主体应当披露报告期内数据安全与客户隐私保护的基本情况，包括但不限于下列内容：（一）数据安全管理制度体系建立与运行情况及具体措施，获得的认证情况（如有）；（二）报告期内发生的数据安全事件的具体情况，包括造成的影响、涉及的金额、采取的应对措施及进展（如有）；（三）客户隐私保护制度体系建设与运行情况；（四）报告期内发生的泄露客户隐私事件的具体情况，包括造成的影响、涉及的金额、采取的应对措施及进展（如有）。
+- reportContentTopicName: 数据安全与客户隐私保护
+  reportSectionKey: data_security_customer_privacy_protection
+  mainlandStandard: szse
+  appendixIndexClauseReferences:
+  - 第四十八条
+  clauseOriginalTexts:
+  - clauseReference: 第四十八条
+    clauseOriginalText: 披露主体应当披露报告期内数据安全与客户隐私保护的基本情况，包括但不限于下列内容：（一）数据安全管理制度体系建立与运行情况及具体措施，获得的认证情况（如有）；（二）报告期内发生的数据安全事件的具体情况，包括造成的影响、涉及的金额、采取的应对措施及进展（如有）；（三）客户隐私保护制度体系建设与运行情况；（四）报告期内发生的泄露客户隐私事件的具体情况，包括造成的影响、涉及的金额、采取的应对措施及进展（如有）。
+- reportContentTopicName: 数据安全与客户隐私保护
+  reportSectionKey: data_security_customer_privacy_protection
+  mainlandStandard: bse
+  appendixIndexClauseReferences:
+  - 第四十八条
+  clauseOriginalTexts:
+  - clauseReference: 第四十八条
+    clauseOriginalText: 披露主体应当披露报告期内数据安全与客户隐私保护的基本情况，包括但不限于下列内容：（一）数据安全管理制度体系建立与运行情况及具体措施，获得的认证情况（如有）；（二）报告期内发生的数据安全事件的具体情况，包括造成的影响、涉及的金额、采取的应对措施及进展（如有）；（三）客户隐私保护制度体系建设与运行情况；（四）报告期内发生的泄露客户隐私事件的具体情况，包括造成的影响、涉及的金额、采取的应对措施及进展（如有）。
+- reportContentTopicName: 人力资本发展
+  reportSectionKey: human_capital_development
+  mainlandStandard: sse
+  appendixIndexClauseReferences:
+  - 第四十九条
+  - 第五十条
+  clauseOriginalTexts:
+  - clauseReference: 第四十九条
+    clauseOriginalText: 披露主体应当依法保护员工合法权益，为员工提供健康与安全的工作条件，及时支付员工薪酬、缴纳员工社保，加强员工培训，建立合理有效的员工申诉制度。
+  - clauseReference: 第五十条
+    clauseOriginalText: 披露主体应当披露报告期内员工的总体情况，包括但不限于下列内容：（一）员工的聘用与待遇等方面的政策及执行情况，包括但不限于报告期内吸纳就业、创造灵活就业岗位的情况，期末在职员工的性别、年龄等构成情况，报告期内支付员工工资和缴纳员工社保、公司劳工纠纷、员工变动、对灵活就业人员的权益保障、招聘录用程序合规与公平透明情况等；（二）职业健康与安全的基本情况，包括但不限于针对公司职业安全风险及来源的识别与评估情况，职业健康安全管理体系的建立及实施情况、相应资质认证获得情况、相关培训情况，工伤保险、安全生产责任险的投入金额及人员覆盖率，报告期内安全事故的具体情况（如有）等；（三）员工职业发展与培训的基本情况，包括但不限于公司职位体系设置情况，员工晋升、选拔与职业发展机制，员工培训类型、次数、开展情况，以及年度培训支出金额、员工培训覆盖率等。
+- reportContentTopicName: 人力资本发展
+  reportSectionKey: human_capital_development
+  mainlandStandard: szse
+  appendixIndexClauseReferences:
+  - 第四十九条
+  - 第五十条
+  clauseOriginalTexts:
+  - clauseReference: 第四十九条
+    clauseOriginalText: 披露主体应当依法保护员工合法权益，为员工提供健康与安全的工作条件，及时支付员工薪酬、缴纳员工社保，加强员工培训，建立合理有效的员工申诉制度。
+  - clauseReference: 第五十条
+    clauseOriginalText: 披露主体应当披露报告期内员工的总体情况，包括但不限于下列内容：（一）员工的聘用与待遇等方面的政策及执行情况，包括但不限于报告期内吸纳就业、创造灵活就业岗位的情况，期末在职员工的性别、年龄等构成情况，报告期内支付员工工资和缴纳员工社保、公司劳工纠纷、员工变动、对灵活就业人员的权益保障、招聘录用程序合规与公平透明情况等；（二）职业健康与安全的基本情况，包括但不限于针对公司职业安全风险及来源的识别与评估情况，职业健康安全管理体系的建立及实施情况、相应资质认证获得情况、相关培训情况，工伤保险、安全生产责任险的投入金额及人员覆盖率，报告期内安全事故的具体情况（如有）等；（三）员工职业发展与培训的基本情况，包括但不限于公司职位体系设置情况，员工晋升、选拔与职业发展机制，员工培训类型、次数、开展情况，以及年度培训支出金额、员工培训覆盖率等。
+- reportContentTopicName: 人力资本发展
+  reportSectionKey: human_capital_development
+  mainlandStandard: bse
+  appendixIndexClauseReferences:
+  - 第四十九条
+  - 第五十条
+  clauseOriginalTexts:
+  - clauseReference: 第四十九条
+    clauseOriginalText: 披露主体应当依法保护员工合法权益，为员工提供健康与安全的工作条件，及时支付员工薪酬、缴纳员工社保，加强员工培训，建立合理有效的员工申诉制度。
+  - clauseReference: 第五十条
+    clauseOriginalText: 披露主体应当披露报告期内员工的总体情况，包括但不限于下列内容：（一）员工的聘用与待遇等方面的政策及执行情况，包括但不限于报告期内吸纳就业、创造灵活就业岗位的情况，期末在职员工的性别、年龄等构成情况，报告期内支付员工工资和缴纳员工社保、公司劳工纠纷、员工变动、对灵活就业人员的权益保障、招聘录用程序合规与公平透明情况等；（二）职业健康与安全的基本情况，包括但不限于针对公司职业安全风险及来源的识别与评估情况，职业健康安全管理体系的建立及实施情况、相应资质认证获得情况、相关培训情况，工伤保险、安全生产责任险的投入金额及人员覆盖率，报告期内安全事故的具体情况（如有）等；（三）员工职业发展与培训的基本情况，包括但不限于公司职位体系设置情况，员工晋升、选拔与职业发展机制，员工培训类型、次数、开展情况，以及年度培训支出金额、员工培训覆盖率等。
+- reportContentTopicName: 职业健康与安全
+  reportSectionKey: occupational_health_safety
+  mainlandStandard: sse
+  appendixIndexClauseReferences:
+  - 第四十九条
+  - 第五十条
+  clauseOriginalTexts:
+  - clauseReference: 第四十九条
+    clauseOriginalText: 披露主体应当依法保护员工合法权益，为员工提供健康与安全的工作条件，及时支付员工薪酬、缴纳员工社保，加强员工培训，建立合理有效的员工申诉制度。
+  - clauseReference: 第五十条
+    clauseOriginalText: 披露主体应当披露报告期内员工的总体情况，包括但不限于下列内容：（一）员工的聘用与待遇等方面的政策及执行情况，包括但不限于报告期内吸纳就业、创造灵活就业岗位的情况，期末在职员工的性别、年龄等构成情况，报告期内支付员工工资和缴纳员工社保、公司劳工纠纷、员工变动、对灵活就业人员的权益保障、招聘录用程序合规与公平透明情况等；（二）职业健康与安全的基本情况，包括但不限于针对公司职业安全风险及来源的识别与评估情况，职业健康安全管理体系的建立及实施情况、相应资质认证获得情况、相关培训情况，工伤保险、安全生产责任险的投入金额及人员覆盖率，报告期内安全事故的具体情况（如有）等；（三）员工职业发展与培训的基本情况，包括但不限于公司职位体系设置情况，员工晋升、选拔与职业发展机制，员工培训类型、次数、开展情况，以及年度培训支出金额、员工培训覆盖率等。
+- reportContentTopicName: 职业健康与安全
+  reportSectionKey: occupational_health_safety
+  mainlandStandard: szse
+  appendixIndexClauseReferences:
+  - 第四十九条
+  - 第五十条
+  clauseOriginalTexts:
+  - clauseReference: 第四十九条
+    clauseOriginalText: 披露主体应当依法保护员工合法权益，为员工提供健康与安全的工作条件，及时支付员工薪酬、缴纳员工社保，加强员工培训，建立合理有效的员工申诉制度。
+  - clauseReference: 第五十条
+    clauseOriginalText: 披露主体应当披露报告期内员工的总体情况，包括但不限于下列内容：（一）员工的聘用与待遇等方面的政策及执行情况，包括但不限于报告期内吸纳就业、创造灵活就业岗位的情况，期末在职员工的性别、年龄等构成情况，报告期内支付员工工资和缴纳员工社保、公司劳工纠纷、员工变动、对灵活就业人员的权益保障、招聘录用程序合规与公平透明情况等；（二）职业健康与安全的基本情况，包括但不限于针对公司职业安全风险及来源的识别与评估情况，职业健康安全管理体系的建立及实施情况、相应资质认证获得情况、相关培训情况，工伤保险、安全生产责任险的投入金额及人员覆盖率，报告期内安全事故的具体情况（如有）等；（三）员工职业发展与培训的基本情况，包括但不限于公司职位体系设置情况，员工晋升、选拔与职业发展机制，员工培训类型、次数、开展情况，以及年度培训支出金额、员工培训覆盖率等。
+- reportContentTopicName: 职业健康与安全
+  reportSectionKey: occupational_health_safety
+  mainlandStandard: bse
+  appendixIndexClauseReferences:
+  - 第四十九条
+  - 第五十条
+  clauseOriginalTexts:
+  - clauseReference: 第四十九条
+    clauseOriginalText: 披露主体应当依法保护员工合法权益，为员工提供健康与安全的工作条件，及时支付员工薪酬、缴纳员工社保，加强员工培训，建立合理有效的员工申诉制度。
+  - clauseReference: 第五十条
+    clauseOriginalText: 披露主体应当披露报告期内员工的总体情况，包括但不限于下列内容：（一）员工的聘用与待遇等方面的政策及执行情况，包括但不限于报告期内吸纳就业、创造灵活就业岗位的情况，期末在职员工的性别、年龄等构成情况，报告期内支付员工工资和缴纳员工社保、公司劳工纠纷、员工变动、对灵活就业人员的权益保障、招聘录用程序合规与公平透明情况等；（二）职业健康与安全的基本情况，包括但不限于针对公司职业安全风险及来源的识别与评估情况，职业健康安全管理体系的建立及实施情况、相应资质认证获得情况、相关培训情况，工伤保险、安全生产责任险的投入金额及人员覆盖率，报告期内安全事故的具体情况（如有）等；（三）员工职业发展与培训的基本情况，包括但不限于公司职位体系设置情况，员工晋升、选拔与职业发展机制，员工培训类型、次数、开展情况，以及年度培训支出金额、员工培训覆盖率等。
+- reportContentTopicName: 可持续发展管理
+  reportSectionKey: sustainability_mgmt
+  mainlandStandard: sse
+  appendixIndexClauseReferences:
+  - 第五十一条
+  clauseOriginalTexts:
+  - clauseReference: 第五十一条
+    clauseOriginalText: 披露主体应当结合公司实际情况以及本指引的要求，积极将可持续发展理念融入公司治理的各项制度和流程，进一步健全和完善公司治理机制，推动公司可持续发展。
+- reportContentTopicName: 可持续发展管理
+  reportSectionKey: sustainability_mgmt
+  mainlandStandard: szse
+  appendixIndexClauseReferences:
+  - 第五十一条
+  clauseOriginalTexts:
+  - clauseReference: 第五十一条
+    clauseOriginalText: 披露主体应当结合公司实际情况以及本指引的要求，积极将可持续发展理念融入公司治理的各项制度和流程，进一步健全和完善公司治理机制，推动公司可持续发展。
+- reportContentTopicName: 可持续发展管理
+  reportSectionKey: sustainability_mgmt
+  mainlandStandard: bse
+  appendixIndexClauseReferences:
+  - 第五十一条
+  clauseOriginalTexts:
+  - clauseReference: 第五十一条
+    clauseOriginalText: 披露主体应当结合公司实际情况以及本指引的要求，积极将可持续发展理念融入公司治理的各项制度和流程，进一步健全和完善公司治理机制，推动公司可持续发展。
+- reportContentTopicName: 尽职调查
+  reportSectionKey: due_diligence
+  mainlandStandard: sse
+  appendixIndexClauseReferences:
+  - 第五十二条
+  clauseOriginalTexts:
+  - clauseReference: 第五十二条
+    clauseOriginalText: 本所鼓励披露主体结合实际情况披露报告期内识别和应对可持续发展相关负面影响或风险的尽职调查情况，包括但不限于负责尽职调查的机构或人员、尽职调查的范围、识别可持续发展相关负面影响或风险的程序及应对相关负面影响和风险的具体情况。
+- reportContentTopicName: 尽职调查
+  reportSectionKey: due_diligence
+  mainlandStandard: szse
+  appendixIndexClauseReferences:
+  - 第五十二条
+  clauseOriginalTexts:
+  - clauseReference: 第五十二条
+    clauseOriginalText: 本所鼓励披露主体结合实际情况披露报告期内识别和应对可持续发展相关负面影响或风险的尽职调查情况，包括但不限于负责尽职调查的机构或人员、尽职调查的范围、识别可持续发展相关负面影响或风险的程序及应对相关负面影响和风险的具体情况。
+- reportContentTopicName: 尽职调查
+  reportSectionKey: due_diligence
+  mainlandStandard: bse
+  appendixIndexClauseReferences:
+  - 第五十二条
+  clauseOriginalTexts:
+  - clauseReference: 第五十二条
+    clauseOriginalText: 本所鼓励披露主体结合实际情况披露报告期内识别和应对可持续发展相关负面影响或风险的尽职调查情况，包括但不限于负责尽职调查的机构或人员、尽职调查的范围、识别可持续发展相关负面影响或风险的程序及应对相关负面影响和风险的具体情况。
+- reportContentTopicName: 利益相关方沟通
+  reportSectionKey: sm.stakeholder
+  mainlandStandard: sse
+  appendixIndexClauseReferences:
+  - 第五十三条
+  clauseOriginalTexts:
+  - clauseReference: 第五十三条
+    clauseOriginalText: 披露主体应当披露报告期内与包括投资者在内的利益相关方沟通的具体情况，包括但不限于下列内容：（一）利益相关方沟通制度的建设、执行情况；（二）听取、反馈利益相关方意见建议的渠道及执行情况，如沟通方式、沟通频率、沟通内容等。
+- reportContentTopicName: 利益相关方沟通
+  reportSectionKey: sm.stakeholder
+  mainlandStandard: szse
+  appendixIndexClauseReferences:
+  - 第五十三条
+  clauseOriginalTexts:
+  - clauseReference: 第五十三条
+    clauseOriginalText: 披露主体应当披露报告期内与包括投资者在内的利益相关方沟通的具体情况，包括但不限于下列内容：（一）利益相关方沟通制度的建设、执行情况；（二）听取、反馈利益相关方意见建议的渠道及执行情况，如沟通方式、沟通频率、沟通内容等。
+- reportContentTopicName: 利益相关方沟通
+  reportSectionKey: sm.stakeholder
+  mainlandStandard: bse
+  appendixIndexClauseReferences:
+  - 第五十三条
+  clauseOriginalTexts:
+  - clauseReference: 第五十三条
+    clauseOriginalText: 披露主体应当披露报告期内与包括投资者在内的利益相关方沟通的具体情况，包括但不限于下列内容：（一）利益相关方沟通制度的建设、执行情况；（二）听取、反馈利益相关方意见建议的渠道及执行情况，如沟通方式、沟通频率、沟通内容等。
+- reportContentTopicName: 反商业贿赂与反贪污
+  reportSectionKey: anti_bribery_anti_corruption
+  mainlandStandard: sse
+  appendixIndexClauseReferences:
+  - 第五十四条
+  - 第五十五条
+  clauseOriginalTexts:
+  - clauseReference: 第五十四条
+    clauseOriginalText: 披露主体在经营活动中，应当遵循自愿、公平、等价有偿、诚实信用的原则，遵守社会公德、商业道德，不得通过贿赂等非法活动谋取不正当利益，不得侵犯他人的商标权、专利权和著作权等知识产权，不得从事不正当竞争行为。
+  - clauseReference: 第五十五条
+    clauseOriginalText: 披露主体应当披露报告期内反商业贿赂及反贪污工作的具体情况，包括但不限于下列内容：（一）反商业贿赂及反贪污风险管理制度体系建立与运行情况、是否建立举报者保护政策；（二）对商业贿赂及贪污风险进行评估的情况；（三）接受反商业贿赂及反贪污培训的董事、管理层人员、员工总数和百分比；（四）报告期内发生的商业贿赂及贪污事件的具体情况，包括董事、管理层人员、员工由于商业贿赂或贪污行为而被解雇或受到处分、被有权部门调查、与业务合作伙伴的合同被终止或未续约以及针对公司或其董事、管理层人员、员工商业贿赂或贪污行为的诉讼案件具体情况（如有）。
+- reportContentTopicName: 反商业贿赂与反贪污
+  reportSectionKey: anti_bribery_anti_corruption
+  mainlandStandard: szse
+  appendixIndexClauseReferences:
+  - 第五十四条
+  - 第五十五条
+  clauseOriginalTexts:
+  - clauseReference: 第五十四条
+    clauseOriginalText: 披露主体在经营活动中，应当遵循自愿、公平、等价有偿、诚实信用的原则，遵守社会公德、商业道德，不得通过贿赂等非法活动谋取不正当利益，不得侵犯他人的商标权、专利权和著作权等知识产权，不得从事不正当竞争行为。
+  - clauseReference: 第五十五条
+    clauseOriginalText: 披露主体应当披露报告期内反商业贿赂及反贪污工作的具体情况，包括但不限于下列内容：（一）反商业贿赂及反贪污风险管理制度体系建立与运行情况、是否建立举报者保护政策；（二）对商业贿赂及贪污风险进行评估的情况；（三）接受反商业贿赂及反贪污培训的董事、管理层人员、员工总数和百分比；（四）报告期内发生的商业贿赂及贪污事件的具体情况，包括董事、管理层人员、员工由于商业贿赂或贪污行为而被解雇或受到处分、被有权部门调查、与业务合作伙伴的合同被终止或未续约以及针对公司或其董事、管理层人员、员工商业贿赂或贪污行为的诉讼案件具体情况（如有）。
+- reportContentTopicName: 反商业贿赂与反贪污
+  reportSectionKey: anti_bribery_anti_corruption
+  mainlandStandard: bse
+  appendixIndexClauseReferences:
+  - 第五十四条
+  - 第五十五条
+  clauseOriginalTexts:
+  - clauseReference: 第五十四条
+    clauseOriginalText: 披露主体在经营活动中，应当遵循自愿、公平、等价有偿、诚实信用的原则，遵守社会公德、商业道德，不得通过贿赂等非法活动谋取不正当利益，不得侵犯他人的商标权、专利权和著作权等知识产权，不得从事不正当竞争行为。
+  - clauseReference: 第五十五条
+    clauseOriginalText: 披露主体应当披露报告期内反商业贿赂及反贪污工作的具体情况，包括但不限于下列内容：（一）反商业贿赂及反贪污风险管理制度体系建立与运行情况、是否建立举报者保护政策；（二）对商业贿赂及贪污风险进行评估的情况；（三）接受反商业贿赂及反贪污培训的董事、管理层人员、员工总数和百分比；（四）报告期内发生的商业贿赂及贪污事件的具体情况，包括董事、管理层人员、员工由于商业贿赂或贪污行为而被解雇或受到处分、被有权部门调查、与业务合作伙伴的合同被终止或未续约以及针对公司或其董事、管理层人员、员工商业贿赂或贪污行为的诉讼案件具体情况（如有）。
+- reportContentTopicName: 反不正当竞争
+  reportSectionKey: anti_unfair_competition
+  mainlandStandard: sse
+  appendixIndexClauseReferences:
+  - 第五十四条
+  - 第五十六条
+  clauseOriginalTexts:
+  - clauseReference: 第五十四条
+    clauseOriginalText: 披露主体在经营活动中，应当遵循自愿、公平、等价有偿、诚实信用的原则，遵守社会公德、商业道德，不得通过贿赂等非法活动谋取不正当利益，不得侵犯他人的商标权、专利权和著作权等知识产权，不得从事不正当竞争行为。
+  - clauseReference: 第五十六条
+    clauseOriginalText: 披露主体应当披露报告期内反不正当竞争工作的具体情况，包括但不限于下列内容：（一）防范不正当竞争行为（如虚假宣传、实施垄断行为、侵犯商业秘密等）管理制度体系建立与运作情况及具体措施；（二）报告期内因公司不正当竞争行为导致诉讼或重大行政处罚的，应当披露具体诉讼情况、涉案金额、受到的行政处罚相关情况以及整改措施。
+- reportContentTopicName: 反不正当竞争
+  reportSectionKey: anti_unfair_competition
+  mainlandStandard: szse
+  appendixIndexClauseReferences:
+  - 第五十四条
+  - 第五十六条
+  clauseOriginalTexts:
+  - clauseReference: 第五十四条
+    clauseOriginalText: 披露主体在经营活动中，应当遵循自愿、公平、等价有偿、诚实信用的原则，遵守社会公德、商业道德，不得通过贿赂等非法活动谋取不正当利益，不得侵犯他人的商标权、专利权和著作权等知识产权，不得从事不正当竞争行为。
+  - clauseReference: 第五十六条
+    clauseOriginalText: 披露主体应当披露报告期内反不正当竞争工作的具体情况，包括但不限于下列内容：（一）防范不正当竞争行为（如虚假宣传、实施垄断行为、侵犯商业秘密等）管理制度体系建立与运作情况及具体措施；（二）报告期内因公司不正当竞争行为导致诉讼或重大行政处罚的，应当披露具体诉讼情况、涉案金额、受到的行政处罚相关情况以及整改措施。
+- reportContentTopicName: 反不正当竞争
+  reportSectionKey: anti_unfair_competition
+  mainlandStandard: bse
+  appendixIndexClauseReferences:
+  - 第五十四条
+  - 第五十六条
+  clauseOriginalTexts:
+  - clauseReference: 第五十四条
+    clauseOriginalText: 披露主体在经营活动中，应当遵循自愿、公平、等价有偿、诚实信用的原则，遵守社会公德、商业道德，不得通过贿赂等非法活动谋取不正当利益，不得侵犯他人的商标权、专利权和著作权等知识产权，不得从事不正当竞争行为。
+  - clauseReference: 第五十六条
+    clauseOriginalText: 披露主体应当披露报告期内反不正当竞争工作的具体情况，包括但不限于下列内容：（一）防范不正当竞争行为（如虚假宣传、实施垄断行为、侵犯商业秘密等）管理制度体系建立与运作情况及具体措施；（二）报告期内因公司不正当竞争行为导致诉讼或重大行政处罚的，应当披露具体诉讼情况、涉案金额、受到的行政处罚相关情况以及整改措施。

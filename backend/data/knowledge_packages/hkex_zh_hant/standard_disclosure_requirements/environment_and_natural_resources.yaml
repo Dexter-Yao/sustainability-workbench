@@ -1,0 +1,36 @@
+# ABOUTME(en): Appendix C2 disclosure requirements of「環境及天然資源」(General Disclosure and KPIs), grouped by pillar,
+# ABOUTME(en): for the coverage audit and for prompt assembly by key whitelist (injection is switch-gated, off by default) and for the coverage audit. Wording awaits check against the official Chinese text.
+topicStandardDisclosureRequirementGroups:
+- topicSectionKey: environment_and_natural_resources.gov
+  pillar: governance
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: environment_and_natural_resources.gov.general_disclosure_policies
+    standardDisclosureRequirementTitle: 減低對環境及天然資源重大影響的政策
+    excerptFrom: 港交所·附錄C2·一般披露 A3
+    standardDisclosureRequirementText: 應披露減低發行人對環境及天然資源造成重大影響的政策。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: 一般披露 A3
+- topicSectionKey: environment_and_natural_resources.strategy
+  pillar: strategy
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: environment_and_natural_resources.strategy.environmental_direction
+    standardDisclosureRequirementTitle: 環境及天然資源管理方向
+    excerptFrom: 港交所·附錄C2·一般披露 A3
+    standardDisclosureRequirementText: 應說明公司在環境保護及天然資源管理方面的方向及原則。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: 一般披露 A3
+- topicSectionKey: environment_and_natural_resources.iro
+  pillar: iro_management
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: environment_and_natural_resources.iro.significant_impacts_and_actions
+    standardDisclosureRequirementTitle: 業務活動對環境及天然資源的重大影響及行動
+    excerptFrom: 港交所·附錄C2·關鍵績效指標 A3.1
+    standardDisclosureRequirementText: 應描述業務活動對環境及天然資源的重大影響及已採取管理有關影響的行動。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: 關鍵績效指標 A3.1

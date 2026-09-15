@@ -1,0 +1,21 @@
+# ABOUTME(en): Topic-specific intake questions of "Labour Standards"; the four fixed pillar questions come from topic_intake_common.yaml.
+# ABOUTME(en): Quantitative KPIs are collected through the metric catalog, not here.
+contentScopeId: labour_standards
+items:
+- key: labour_standards.q_labour_review_measures
+  prompt: |-
+    How does the company review its recruitment and employment practices to avoid child and forced labour?
+  kind: text
+  collectionPriority: recommended
+  hint: Age checks, ID checks, voluntary employment, overtime rules.
+  maxChars: 5000
+- key: labour_standards.q_labour_violations
+  prompt: Was any child or forced labour discovered during the reporting period?
+  kind: single_select
+  collectionPriority: recommended
+  options:
+  - None discovered
+  - Discovered and addressed
+  - Not sure
+  hint: If discovered, describe handling and elimination steps.
+  maxChars: 5000

@@ -1,0 +1,60 @@
+# ABOUTME(en): GRI 403: Occupational Health and Safety 2018 disclosure requirements, grouped by the package's pillars, for the
+# ABOUTME(en): coverage audit and the key whitelist. Wording condenses the official requirement text.
+topicStandardDisclosureRequirementGroups:
+- topicSectionKey: occupational_health_and_safety.gov
+  pillar: governance
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: occupational_health_and_safety.gov.management_system
+    standardDisclosureRequirementTitle: Occupational health and safety management system
+    excerptFrom: 403-1
+    standardDisclosureRequirementText: |-
+      State whether an occupational health and safety management system has been implemented, whether because of legal requirements or based on recognized risk management or management system standards, and describe the scope of workers, activities and workplaces covered.
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: GRI
+      clauseRef: 403-1
+- topicSectionKey: occupational_health_and_safety.strategy
+  pillar: strategy
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: occupational_health_and_safety.strategy.worker_participation
+    standardDisclosureRequirementTitle: Worker participation, consultation and communication
+    excerptFrom: 403-4
+    standardDisclosureRequirementText: |-
+      Describe the processes for worker participation and consultation in the development, implementation and evaluation of the occupational health and safety management system, and for communicating relevant information to workers.
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: GRI
+      clauseRef: 403-4
+- topicSectionKey: occupational_health_and_safety.iro
+  pillar: iro_management
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: occupational_health_and_safety.iro.hazard_identification
+    standardDisclosureRequirementTitle: Hazard identification, risk assessment and incident investigation
+    excerptFrom: 403-2
+    standardDisclosureRequirementText: |-
+      Describe the processes used to identify work-related hazards and assess risks on a routine and non-routine basis, how the quality of those processes is ensured, how workers report hazards and remove themselves from situations they believe could cause injury, and the processes to investigate work-related incidents.
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: GRI
+      clauseRef: 403-2
+  - standardDisclosureRequirementKey: occupational_health_and_safety.iro.worker_training
+    standardDisclosureRequirementTitle: Worker training on occupational health and safety
+    excerptFrom: 403-5
+    standardDisclosureRequirementText: |-
+      Describe the occupational health and safety training provided to workers, including generic training and training on specific work-related hazards, hazardous activities or hazardous situations.
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: GRI
+      clauseRef: 403-5
+- topicSectionKey: occupational_health_and_safety.metrics
+  pillar: metrics_targets
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: occupational_health_and_safety.metrics.injuries
+    standardDisclosureRequirementTitle: Work-related injuries and ill health
+    excerptFrom: 403-9, 403-10
+    standardDisclosureRequirementText: |-
+      Report the number and rate of fatalities as a result of work-related injury, of high-consequence work-related injuries and of recordable work-related injuries, the main types of work-related injury, and the corresponding figures for work-related ill health.
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: GRI
+      clauseRef: 403-9, 403-10

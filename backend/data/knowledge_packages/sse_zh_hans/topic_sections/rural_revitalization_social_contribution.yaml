@@ -1,0 +1,134 @@
+# ABOUTME: 乡村振兴与社会贡献议题章节骨架，标题以附录索引表“对应的本报告章节”为准。
+# ABOUTME: 评分表中乡村振兴、社会贡献两行在 registry 层映射至本议题；指标块按声明读取ESG 定量数据表的受控投影。
+section:
+  key: rural_revitalization_social_contribution
+  title: 乡村振兴与社会贡献
+  headingLevel: 2
+  reportSectionId: rural_revitalization_social_contribution
+  conciseDisclosure:
+    id: rural_revitalization_social_contribution.concise_summary
+    type: paragraph
+    blockType: generative
+    source: ai
+    styleRole: body
+    generation:
+      task:
+        focus: "根据本议题当前可见证据形成一段连贯摘要，覆盖相关管理关注、方向与实践，不使用四要素小标题。"
+      inputs: {evidence: {kind: report_section}}
+      targetChars: [300, 600]
+  children:
+  - key: rural_revitalization_social_contribution.gov
+    title: 治理
+    pillar: governance
+    headingLevel: 3
+    blocks:
+    - id: rural_revitalization_social_contribution.gov_responsibility_department
+      type: paragraph
+      blockType: generative
+      source: ai
+      styleRole: body
+      generation:
+        task:
+          focus: "说明企业参与乡村发展和社区事务的基本治理关注与安排。"
+        templateResidueBans:
+        - XX部门
+        - 代入用户填写部门
+        - 根据资料生成
+        - 资料：
+        - 若无资料
+        - 引用数据表
+        - 对应议题指标
+        - 数据表对应议题
+        - 202X
+        - 202X年
+        - XXX
+        - XXXX
+        inputs:
+          evidence:
+            kind: explicit
+            intakeItems:
+            - rural_revitalization_social_contribution.q_governance_roles
+            - rural_revitalization_social_contribution.q_governance_policies
+            - rural_revitalization_social_contribution.q_governance_certifications
+        targetChars:
+        - 160
+        - 320
+        standardDisclosureRequirementKeys:
+        - rural_revitalization_social_contribution.gov.responsibility_department_required
+  - key: rural_revitalization_social_contribution.strategy
+    title: 战略
+    pillar: strategy
+    headingLevel: 3
+    blocks:
+    - id: rural_revitalization_social_contribution.strategy_social_responsibility_strategy
+      type: paragraph
+      blockType: generative
+      source: ai
+      styleRole: body
+      generation:
+        task:
+          focus: "说明乡村振兴与社会贡献在长期经营中的关注重点、基本方向和推进原则。"
+        templateResidueBans:
+        - XX部门
+        - 代入用户填写部门
+        - 根据资料生成
+        - 资料：
+        - 若无资料
+        - 引用数据表
+        - 对应议题指标
+        - 数据表对应议题
+        - 202X
+        - 202X年
+        - XXX
+        - XXXX
+        inputs:
+          evidence:
+            kind: explicit
+            intakeItems:
+            - rural_revitalization_social_contribution.q_strategy_content
+        targetChars:
+        - 180
+        - 360
+        standardDisclosureRequirementKeys:
+        - rural_revitalization_social_contribution.strategy.social_responsibility_strategy_required
+        - rural_revitalization_social_contribution.strategy.national_strategy_encouraged
+  - key: rural_revitalization_social_contribution.iro
+    title: 影响、风险与机遇管理
+    pillar: iro_management
+    headingLevel: 3
+    blocks:
+    - id: rural_revitalization_social_contribution.iro_rural_and_social_contribution_practices
+      type: paragraph
+      blockType: generative
+      source: ai
+      styleRole: body
+      generation:
+        task:
+          focus: "说明企业参与乡村发展、属地就业和社会贡献的相关行动。"
+        templateResidueBans:
+        - XX部门
+        - 代入用户填写部门
+        - 根据资料生成
+        - 资料：
+        - 若无资料
+        - 引用数据表
+        - 对应议题指标
+        - 数据表对应议题
+        - 202X
+        - 202X年
+        - XXX
+        - XXXX
+        inputs:
+          evidence:
+            kind: explicit
+            intakeItems:
+            - rural_revitalization_social_contribution.q_social_contribution_actions
+            - rural_revitalization_social_contribution.q_rural_products_services
+        targetChars:
+        - 220
+        - 440
+        standardDisclosureRequirementKeys:
+        - rural_revitalization_social_contribution.iro.rural_actions_required
+        - rural_revitalization_social_contribution.iro.social_contribution_required
+metricDisclosure:
+  catalogMetricKeys: [social_r81, social_r83]

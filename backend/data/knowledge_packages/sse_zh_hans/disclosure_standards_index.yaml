@@ -1,0 +1,64 @@
+# ABOUTME: 附录披露索引表的逐字事实源——复刻《可持续报告模板-附录》索引表（准则章/节/条款→报告章节固定映射）。
+# ABOUTME: 前两列与分组结构必须与模板一字不差；唯一条件单元格是科技伦理（议题不适用时显示“不涉及”），不得由模型改写。
+chapters:
+  - title: 第三章 环境信息披露
+    sections:
+      - title: 第一节 应对气候变化
+        clauses:
+          - {clause: 第二十条, reportSections: [应对气候变化]}
+          - {clause: 第二十一条, reportSections: [应对气候变化]}
+          - {clause: 第二十二条, reportSections: [应对气候变化]}
+          - {clause: 第二十三条, reportSections: [应对气候变化]}
+          - {clause: 第二十四条, reportSections: [应对气候变化]}
+          - {clause: 第二十五条, reportSections: [应对气候变化]}
+          - {clause: 第二十六条, reportSections: [应对气候变化]}
+          - {clause: 第二十七条, reportSections: [应对气候变化]}
+          - {clause: 第二十八条, reportSections: [应对气候变化]}
+      - title: 第二节 污染防治与生态系统保护
+        clauses:
+          - {clause: 第二十九条, reportSections: [环境合规管理, 污染物排放管理, 废弃物管理, 生态系统与生物多样性保护]}
+          - {clause: 第三十条, reportSections: [污染物排放管理]}
+          - {clause: 第三十一条, reportSections: [废弃物管理]}
+          - {clause: 第三十二条, reportSections: [生态系统与生物多样性保护]}
+          - {clause: 第三十三条, reportSections: [环境合规管理, 污染物排放管理, 废弃物管理, 生态系统与生物多样性保护]}
+      - title: 第三节 资源利用与循环经济
+        clauses:
+          - {clause: 第三十四条, reportSections: [应对气候变化, 能源管理, 水资源管理, 促进循环经济]}
+          - {clause: 第三十五条, reportSections: [应对气候变化, 能源管理]}
+          - {clause: 第三十六条, reportSections: [水资源管理]}
+          - {clause: 第三十七条, reportSections: [促进循环经济]}
+  - title: 第四章 社会信息披露
+    sections:
+      - title: 第一节 乡村振兴与社会贡献
+        clauses:
+          - {clause: 第三十八条, reportSections: [乡村振兴与社会贡献]}
+          - {clause: 第三十九条, reportSections: [乡村振兴与社会贡献]}
+          - {clause: 第四十条, reportSections: [乡村振兴与社会贡献]}
+      - title: 第二节 创新驱动与科技伦理
+        clauses:
+          - {clause: 第四十一条, reportSections: [创新驱动]}
+          - {clause: 第四十二条, reportSections: [创新驱动]}
+          - {clause: 第四十三条, reportSections: [科技伦理], conditionalOnTechnologyEthics: true}
+      - title: 第三节 供应商与客户
+        clauses:
+          - {clause: 第四十四条, reportSections: [可持续供应链管理, 平等对待中小企业, 产品质量与安全, 客户服务质量管理]}
+          - {clause: 第四十五条, reportSections: [可持续供应链管理]}
+          - {clause: 第四十六条, reportSections: [平等对待中小企业]}
+          - {clause: 第四十七条, reportSections: [产品质量与安全, 客户服务质量管理]}
+          - {clause: 第四十八条, reportSections: [数据安全与客户隐私保护]}
+      - title: 第四节 员工
+        clauses:
+          - {clause: 第四十九条, reportSections: [人力资本发展, 职业健康与安全]}
+          - {clause: 第五十条, reportSections: [人力资本发展, 职业健康与安全]}
+  - title: 第五章 可持续发展相关治理信息披露
+    sections:
+      - title: 第一节 可持续发展相关治理机制
+        clauses:
+          - {clause: 第五十一条, reportSections: [可持续发展管理]}
+          - {clause: 第五十二条, reportSections: [尽职调查]}
+          - {clause: 第五十三条, reportSections: [利益相关方沟通]}
+      - title: 第二节 商业行为
+        clauses:
+          - {clause: 第五十四条, reportSections: [反商业贿赂与反贪污, 反不正当竞争]}
+          - {clause: 第五十五条, reportSections: [反商业贿赂与反贪污]}
+          - {clause: 第五十六条, reportSections: [反不正当竞争]}

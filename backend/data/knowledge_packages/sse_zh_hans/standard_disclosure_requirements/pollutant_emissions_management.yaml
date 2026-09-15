@@ -1,0 +1,174 @@
+# ABOUTME: 污染物排放管理议题准则披露要求库，条目按上交所《指南第三号 污染物排放》披露要点与《指引第14号》条款建模。
+# ABOUTME: 本文件不作为用户可见准则批注来源；用户可见条款原文来自 user_visible_disclosure_clause_annotations。
+topicStandardDisclosureRequirementGroups:
+- topicSectionKey: pollutant_emissions_management.gov
+  pillar: governance
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: pollutant_emissions_management.gov.responsibility_structure
+    standardDisclosureRequirementTitle: 污染物排放管理组织架构与职责
+    excerptFrom: 上交所·指南第三号·第三章（治理要素参照指南第一号披露）
+    standardDisclosureRequirementText: 应说明公司污染物排放管理的组织架构、职能部门、职责分工和协同关系，边界主要包括废水、废气、噪声等污染物排放管理。固体废物在废弃物处理议题中披露，不得将固体废弃物管理职责混入本议题。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 指南第三号·第三章（指引第14号第二十九条、第三十条）
+    - standard: SZSE
+      clauseRef: 第二十九条、第三十条
+    - standard: BSE
+      clauseRef: 第二十九条、第三十条
+    note: 指南第三号第三章明确：已建立整体性治理结构和内部制度的，可对治理要素整合披露，无需单独披露污染物排放相关治理信息。
+  - standardDisclosureRequirementKey: pollutant_emissions_management.gov.pollution_control_system
+    standardDisclosureRequirementTitle: 污染物排放全过程管理体系与制度文件
+    excerptFrom: 上交所·指南第三号·第二章 污染物排放量核算；第三章
+    standardDisclosureRequirementText: 应说明公司围绕废水、废气、噪声等污染因子建立的制度、责任分工、排污许可、监测计划、治理设施、达标管理和风险防控安排，并覆盖主要污染物、特征污染物、排放总量、核定排放总量和超标排放等关键披露口径。如涉及污染物排放管理制度、流程或制度目标，应说明制度名称、适用范围、关键流程以及制度对达标排放、风险防控或减排目标的保障作用。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 指南第三号·第二章（指引第14号第二十九条、第三十条）
+    - standard: SZSE
+      clauseRef: 第二十九条、第三十条
+    - standard: BSE
+      clauseRef: 第二十九条、第三十条
+  - standardDisclosureRequirementKey: pollutant_emissions_management.gov.accounting_scope
+    standardDisclosureRequirementTitle: 污染物排放量核算范围与数据来源
+    excerptFrom: 上交所·指南第三号·第二章 二、污染物排放量核算范围；四、污染物排放量数据来源
+    standardDisclosureRequirementText: 披露主体污染物排放量核算范围应当与合并报表范围保持一致，若不一致应当列明纳入核算范围的公司清单；初期汇总核算时可以充分考虑成本的可负担性，核算范围至少需涵盖被列入环境信息依法披露企业名单的合并报表范围内的主体。数据来源方式包括：已在排污许可管理信息中披露排污总量的可引用该数据合并汇总；具有稳定监测设备且监测数据完整的鼓励优先采用监督性监测数据法、实测计算法；生产工艺相对固定、原料和产品数据易于获取的可采用物料衡算法、排污系数法；其他情形可采用经验系数法。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 指南第三号·第二章（指引第14号第三十条）
+    - standard: SZSE
+      clauseRef: 第三十条
+    - standard: BSE
+      clauseRef: 第三十条
+  - standardDisclosureRequirementKey: pollutant_emissions_management.gov.disclosure_permit_compliance
+    standardDisclosureRequirementTitle: 依法披露环境信息与排污许可合规口径
+    excerptFrom: 上交所·指南第三号·第二章 二、污染物排放量核算范围；披露要点1
+    standardDisclosureRequirementText: 如公司属于依法披露环境信息企业，或持有排污许可证、纳入重点排污单位管理，应说明排污许可、主要污染物或特征污染物、排放口、核定排放总量、超标排放、环保处罚、整改措施、整改完成情况或证明材料等重点披露口径内容。
+    disclosureRequirementObligationLevel: conditional
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 指南第三号·披露要点1（指引第14号第三十条、第三十三条）
+    - standard: SZSE
+      clauseRef: 第三十条、第三十三条
+    - standard: BSE
+      clauseRef: 第三十条、第三十三条
+- topicSectionKey: pollutant_emissions_management.strategy
+  pillar: strategy
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: pollutant_emissions_management.strategy.risk_opportunity
+    standardDisclosureRequirementTitle: 污染物排放相关风险和机遇评估
+    excerptFrom: 上交所·指南第三号·第一章 污染物排放相关风险和机遇评估
+    standardDisclosureRequirementText: 应围绕污染物排放相关风险与机遇，说明具体内容、可能财务影响、影响时间范围和应对措施。指南第三号第一章分类：物理风险（突发环境事件、重污染天气导致无法获得清洁生产环境或充足生产资料供给；自然环境逐渐变化导致产品质量下降、服务环境恶化）；转型风险（排放总量控制导致产能限制、高额环境保护税或绿色交易、行政处罚、声誉与品牌影响、治理技术瓶颈、更严格的排放限制政策）；机遇（新污染防治技术开发与清洁生产、减量化再利用再循环、治理市场需求增加、满足绿色金融标准、排污权交易）。财务影响涉及收入、支出、资产和负债、现金流四类。公司自身业务模式或者所面临的政策环境、自然环境未发生重大变化的，无需每年开展评估工作。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 指南第三号·第一章（指引第14号第三十条、第三十三条）
+    - standard: SZSE
+      clauseRef: 第三十条、第三十三条
+    - standard: BSE
+      clauseRef: 第三十条、第三十三条
+  - standardDisclosureRequirementKey: pollutant_emissions_management.strategy.reduction_target
+    standardDisclosureRequirementTitle: 污染物减排目标与减排类型
+    excerptFrom: 上交所·指南第三号·披露要点2 污染物减排信息（第1、2、3项）
+    standardDisclosureRequirementText: 1．纳入减排目标的污染物名称。2．减排类型，包括主动减排（为实现绿色发展自行、自愿制定）和按规定减排（根据法律法规要求应当实现，如区域大气污染物总量削减目标）。3．减排目标，包括目标年份和目标减排量，可以披露总量、强度值或浓度值降低目标以及其他类型的目标。部分行业由于现阶段工艺流程、安全设计及用料限制等原因，污染物排放量短期难以下降、较难设置污染物减排目标的，也可以充分说明相关情况。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 指南第三号·披露要点2（指引第14号第三十条）
+    - standard: SZSE
+      clauseRef: 第三十条
+    - standard: BSE
+      clauseRef: 第三十条
+    note: 准则内置合规出口：较难设置减排目标的，可以充分说明相关情况替代目标披露。
+- topicSectionKey: pollutant_emissions_management.iro
+  pillar: iro_management
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: pollutant_emissions_management.iro.treatment_and_facilities
+    standardDisclosureRequirementTitle: 污染物处理技术方式与防治设施
+    excerptFrom: 上交所·指南第三号·披露要点1 污染物排放信息（第3项）
+    standardDisclosureRequirementText: 3．对污染物的处理技术和处理方式，污染防治设施的建设、运行情况和实施成果（例如排放浓度、强度或者排放总量的降幅）。应覆盖废气（粉尘、VOCs、NOx、SOx 等大气污染物的产生环节、收集处置设施、源头削减、过程控制、末端治理、监测计划、达标排放）、废水（生活污水、工业废水、预处理、水质监测、委外处理、市政管网、达标排放）与噪声（厂界噪声监测、设备隔声降噪、运营时段控制、厂界达标、整改措施）三类污染因子。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 指南第三号·披露要点1（指引第14号第三十条）
+    - standard: SZSE
+      clauseRef: 第三十条
+    - standard: BSE
+      clauseRef: 第三十条
+  - standardDisclosureRequirementKey: pollutant_emissions_management.iro.reduction_measures_and_effect
+    standardDisclosureRequirementTitle: 减排措施、投入与成效
+    excerptFrom: 上交所·指南第三号·披露要点2 污染物减排信息（第4、5项）
+    standardDisclosureRequirementText: 4．为实现减排目标采取的措施和投入，包括工程措施、管理措施，例如优化现有的生产设备及工艺流程、采用先进的污染物治理设备或者技术，改造升级污染物监测系统等；可以披露应用减排技术和资金投入情况。5．上述污染物减排举措的具体成效（如排放浓度、强度或者排放总量的降幅、对社区的改善）和减排目标的进展情况。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 指南第三号·披露要点2（指引第14号第三十条）
+    - standard: SZSE
+      clauseRef: 第三十条
+    - standard: BSE
+      clauseRef: 第三十条
+  - standardDisclosureRequirementKey: pollutant_emissions_management.iro.policy_practice
+    standardDisclosureRequirementTitle: 污染物排放制度执行与整改闭环
+    excerptFrom: 上交所·指南第三号·第三章（制度执行与监测整改）
+    standardDisclosureRequirementText: 应依据治理模块提供的制度文件事实，按管理框架说明污染物排放制度执行、过程监测、排放台账、检查整改、根因分析和闭环管理。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 指南第三号·第三章（指引第14号第二十九条、第三十条）
+    - standard: SZSE
+      clauseRef: 第二十九条、第三十条
+    - standard: BSE
+      clauseRef: 第二十九条、第三十条
+  - standardDisclosureRequirementKey: pollutant_emissions_management.iro.community_employee_impact
+    standardDisclosureRequirementTitle: 对员工、当地社区居民等群体的影响
+    excerptFrom: 上交所·指南第三号·披露要点3 对员工、当地社区居民等群体的影响
+    standardDisclosureRequirementText: 披露主体应当披露污染物排放对员工、当地社区居民等群体的影响，其中污染物排放对员工的影响可以在员工议题进行合并披露，如有因环境污染问题受到当地社区居民等群体重大投诉的情况，可以披露相关投诉信息。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 指南第三号·披露要点3（指引第14号第三十条）
+    - standard: SZSE
+      clauseRef: 第三十条
+    - standard: BSE
+      clauseRef: 第三十条
+    note: 对员工的影响可在员工（人力资本发展、职业健康与安全）议题合并披露。
+- topicSectionKey: pollutant_emissions_management.metrics
+  pillar: metrics_targets
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: pollutant_emissions_management.metrics.discharge_information
+    standardDisclosureRequirementTitle: 污染物排放信息（种类、名称、排放总量、核定总量、超标情况）
+    excerptFrom: 上交所·指南第三号·披露要点1 污染物排放信息（第1项）
+    standardDisclosureRequirementText: 1．结合行业属性、生产流程和自身实际，披露对自身生产经营具有重大影响，且排污许可证涉及的污染物种类，包括主要污染物、特征污染物以及国际环境公约规定的受控物质的种类（如大气污染物、水污染物等）、名称（如二氧化氮、二氧化硫、总氮等）、排放总量、核定的排放总量、超标排放情况（可以采用表格形式，也可以就排放超标情况进行总结性披露）、环保绩效等级情况（如有）等。超标排放是指大气污染物、地表水污染物的排放速率和/或排放浓度，或者土壤和地下水污染程度，或者噪声数值超过所适用排放标准中规定的限值。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 指南第三号·披露要点1（指引第14号第三十条）
+    - standard: SZSE
+      clauseRef: 第三十条
+    - standard: BSE
+      clauseRef: 第三十条
+  - standardDisclosureRequirementKey: pollutant_emissions_management.metrics.discharge_intensity_and_classification
+    standardDisclosureRequirementTitle: 排放强度与分类披露
+    excerptFrom: 上交所·指南第三号·披露要点1 污染物排放信息（第1项末句、第2、4项）
+    standardDisclosureRequirementText: 鼓励披露污染物排放强度数据，如单位产出污染物排放量。2．对于业务类型较为复杂的披露主体，鼓励按照业务单位或者设施、来源类型、污染物类型、活动类型等分类核算披露污染物排放的具体情况。4．鼓励说明污染物排放量的合并方法和数据来源（如说明污染物排放数据所包含的运营主体），核算污染物排放量所依据的标准、方法等。
+    disclosureRequirementObligationLevel: encouraged
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 指南第三号·披露要点1（指引第14号第三十条）
+    - standard: SZSE
+      clauseRef: 第三十条
+    - standard: BSE
+      clauseRef: 第三十条
+  - standardDisclosureRequirementKey: pollutant_emissions_management.metrics.environmental_compliance
+    standardDisclosureRequirementTitle: 环境合规信息（重大行政处罚与监测方案缺陷）
+    excerptFrom: 上交所·指南第三号·披露要点4 环境合规信息
+    standardDisclosureRequirementText: 披露主体应当披露报告期内因污染物排放受到重大行政处罚或者被追究刑事责任的情况，以及公司环境监测方案和风险管理措施是否存在重大缺陷。鼓励披露所采取的改进举措。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 指南第三号·披露要点4（指引第14号第三十条、第三十三条）
+    - standard: SZSE
+      clauseRef: 第三十条、第三十三条
+    - standard: BSE
+      clauseRef: 第三十条、第三十三条

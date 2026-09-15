@@ -1,0 +1,72 @@
+# ABOUTME: 平等对待中小企业议题准则披露要求库，供覆盖审计与按 key 白名单注入生成上下文（注入受开关控制，默认关闭）。
+# ABOUTME: 本文件不作为用户可见准则批注来源；用户可见条款原文来自 user_visible_disclosure_clause_annotations。
+topicStandardDisclosureRequirementGroups:
+- topicSectionKey: sme_fair_treatment.gov
+  pillar: governance
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: sme_fair_treatment.gov.fair_cooperation_required
+    standardDisclosureRequirementTitle: 公开、公平、公正合作原则
+    excerptFrom: 附录索引表第四十四条；参考模板“平等对待中小企业”
+    standardDisclosureRequirementText: 应说明公司坚持公开、公平、公正合作原则，在供应商准入、采购机会、合同条款、沟通反馈、投诉处理和供应商权益保护方面的制度规范、流程安排或责任主体。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 第四十四条
+    - standard: SZSE
+      clauseRef: 第四十四条
+    - standard: BSE
+      clauseRef: 第四十四条
+  - standardDisclosureRequirementKey: sme_fair_treatment.gov.fair_cooperation_encouraged
+    standardDisclosureRequirementTitle: 流程优化与数字化工具
+    excerptFrom: 参考模板“制度、流程及数字化工具”
+    standardDisclosureRequirementText: 可进一步披露说明公司如何通过完善制度、优化流程及数字化工具提升中小企业合作效率和付款结算稳定性。
+    disclosureRequirementObligationLevel: encouraged
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 第四十四条、第四十六条
+    - standard: SZSE
+      clauseRef: 第四十四条、第四十六条
+    - standard: BSE
+      clauseRef: 第四十四条、第四十六条
+- topicSectionKey: sme_fair_treatment.strategy
+  pillar: strategy
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: sme_fair_treatment.strategy.fair_cooperation_strategy_required
+    standardDisclosureRequirementTitle: 平等合作战略与管理方向
+    excerptFrom: 参考模板“平等对待中小企业”
+    standardDisclosureRequirementText: 应说明公司在供应链合作、采购管理或付款保障中平等对待中小企业的管理方向，包括公开公平合作、合同条款公平、流程优化、权益保护、付款结算稳定性或长期合作关系建设。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 第四十四条、第四十六条
+    - standard: SZSE
+      clauseRef: 第四十四条、第四十六条
+    - standard: BSE
+      clauseRef: 第四十四条、第四十六条
+- topicSectionKey: sme_fair_treatment.iro
+  pillar: iro_management
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: sme_fair_treatment.iro.payment_settlement_required
+    standardDisclosureRequirementTitle: 付款结算效率与账期稳定性
+    excerptFrom: 附录索引表第四十六条；参考模板“支付结算效率与稳定性”
+    standardDisclosureRequirementText: 应说明公司通过制度规范、流程优化、数字化工具、付款账期管理、对账审批流程、付款监控、异常预警或逾期处理，提升面向中小企业的支付结算效率与稳定性，保障中小企业合法权益；如涉及按时支付、付款周期、逾期金额或诉讼仲裁等事实，应准确披露。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 第四十六条
+    - standard: SZSE
+      clauseRef: 第四十六条
+    - standard: BSE
+      clauseRef: 第四十六条
+  - standardDisclosureRequirementKey: sme_fair_treatment.iro.overdue_payment_conditional
+    standardDisclosureRequirementTitle: 逾期未支付款项披露
+    excerptFrom: 附录索引表第四十六条
+    standardDisclosureRequirementText: 如涉及报告期末逾期未支付款项、触发应付账款比例或国家企业信用信息公示系统披露情形，应准确说明逾期未支付款项金额、拟采取的解决方案、对中小企业供应商的账期设置、逾期账款形成原因、是否涉及诉讼仲裁等。
+    disclosureRequirementObligationLevel: conditional
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 第四十六条
+    - standard: SZSE
+      clauseRef: 第四十六条
+    - standard: BSE
+      clauseRef: 第四十六条

@@ -1,0 +1,67 @@
+# ABOUTME(en): Topic-specific intake questions of "Climate Change"; the four fixed pillar questions come from topic_intake_common.yaml.
+# ABOUTME(en): Quantitative KPIs are collected through the metric catalog, not here.
+contentScopeId: climate_change
+items:
+- key: climate.q_climate_risks
+  prompt: Which climate-related risks has the company identified?
+  kind: multi_select
+  collectionPriority: recommended
+  options:
+  - Extreme weather (typhoons, rainstorms, flooding)
+  - Prolonged heat
+  - Sea level rise
+  - Carbon pricing and emissions regulation
+  - Low-carbon requirements from customers and markets
+  - Energy price volatility
+  - Changes in financing cost and investor expectations
+  - Not yet systematically identified
+  hint: Select all that apply; note effects and time horizons.
+  maxChars: 5000
+- key: climate.q_climate_opportunities
+  prompt: Which climate-related opportunities has the company identified?
+  kind: multi_select
+  collectionPriority: recommended
+  options:
+  - Energy and resource efficiency
+  - Low-carbon products or services
+  - Use of renewable energy
+  - Green financing
+  - New markets or customer demand
+  - Not yet systematically identified
+  hint: Select all that apply; note the company's response.
+  maxChars: 5000
+- key: climate.q_transition_plan
+  prompt: |-
+    Does the company have a transition plan or resource arrangements for responding to climate-related risks and opportunities?
+  kind: text
+  collectionPriority: recommended
+  hint: Plan, main measures, assumptions and resources; or blank.
+  generationBoundary: |-
+    Unless specific amounts or timelines are given, do not generate investment amounts, completion dates or emission reductions.
+  maxChars: 5000
+- key: climate.q_scenario_analysis
+  prompt: Has the company carried out scenario analysis of its climate resilience?
+  kind: single_select
+  collectionPriority: recommended
+  options:
+  - Scenario analysis carried out
+  - Planned
+  - Not yet carried out
+  - Not sure
+  hint: If carried out, list scenarios, assumptions and results.
+  maxChars: 5000
+- key: climate.q_climate_targets
+  prompt: |-
+    Has the company set greenhouse gas reduction or other climate-related targets?
+  kind: text
+  collectionPriority: recommended
+  hint: Type, scope, base year, target year, progress; or blank.
+  generationBoundary: |-
+    Unless target values, base year or target year are given, do not generate any specific target or progress percentage.
+  maxChars: 5000
+- key: climate.q_risk_management_process
+  prompt: How does the company identify, assess and manage climate-related risks?
+  kind: text
+  collectionPriority: recommended
+  hint: Owner, method, frequency, link to risk management; or blank.
+  maxChars: 5000

@@ -1,0 +1,63 @@
+# ABOUTME(en): Topic-specific intake questions of「氣候變化」; the four fixed pillar questions come from topic_intake_common.yaml.
+# ABOUTME(en): Quantitative KPIs are collected through the metric catalog, not here.
+contentScopeId: climate_change
+items:
+- key: climate.q_climate_risks
+  prompt: 貴公司識別到哪些氣候相關風險？
+  kind: multi_select
+  collectionPriority: recommended
+  options:
+  - 極端天氣（颱風、暴雨、水浸）
+  - 持續高溫
+  - 海平面上升
+  - 碳定價及排放監管政策變化
+  - 客戶及市場的低碳要求
+  - 能源價格波動
+  - 融資成本及投資者要求變化
+  - 暫未系統識別
+  hint: 可多選；請在補充說明中簡述各風險對業務的潛在影響及時間範圍。
+  maxChars: 5000
+- key: climate.q_climate_opportunities
+  prompt: 貴公司識別到哪些氣候相關機遇？
+  kind: multi_select
+  collectionPriority: recommended
+  options:
+  - 能源及資源效率提升
+  - 低碳產品或服務
+  - 可再生能源使用
+  - 綠色融資
+  - 新市場或客戶需求
+  - 暫未系統識別
+  hint: 可多選；請在補充說明中簡述機遇及公司的應對方向。
+  maxChars: 5000
+- key: climate.q_transition_plan
+  prompt: 貴公司是否訂有應對氣候相關風險與機遇的過渡計劃或資源安排？
+  kind: text
+  collectionPriority: recommended
+  hint: 可說明計劃內容、主要措施、所依賴的假設及投入的資源；沒有可留空。
+  generationBoundary: 未填寫具體資源金額或時間表時，不得生成投資金額、完成期限或減排量。
+  maxChars: 5000
+- key: climate.q_scenario_analysis
+  prompt: 貴公司是否已就氣候韌性開展情景分析？
+  kind: single_select
+  collectionPriority: recommended
+  options:
+  - 已開展情景分析
+  - 計劃開展
+  - 暫未開展
+  - 不確定
+  hint: 如已開展，請在補充說明中列出所採用的情景、主要假設及結論。
+  maxChars: 5000
+- key: climate.q_climate_targets
+  prompt: 貴公司是否訂立溫室氣體減排或其他氣候相關目標？
+  kind: text
+  collectionPriority: recommended
+  hint: 可說明目標類型（絕對量或密度）、涵蓋範圍、基準年、目標年及進度；沒有可留空。
+  generationBoundary: 未填寫目標數值、基準年或目標年時，不得生成任何具體目標或進度百分比。
+  maxChars: 5000
+- key: climate.q_risk_management_process
+  prompt: 貴公司如何識別、評估及管理氣候相關風險？
+  kind: text
+  collectionPriority: recommended
+  hint: 可說明負責部門、評估方法、頻次及與整體風險管理的關係；沒有可留空。
+  maxChars: 5000

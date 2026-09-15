@@ -1,0 +1,51 @@
+# ABOUTME(en): GRI 101: Biodiversity 2024 disclosure requirements, grouped by the package's pillars, for the
+# ABOUTME(en): coverage audit and the key whitelist. Wording condenses the official requirement text.
+topicStandardDisclosureRequirementGroups:
+- topicSectionKey: biodiversity.gov
+  pillar: governance
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: biodiversity.gov.policies
+    standardDisclosureRequirementTitle: Policies to halt and reverse biodiversity loss
+    excerptFrom: 101-1
+    standardDisclosureRequirementText: |-
+      Describe the policies or commitments to halt and reverse biodiversity loss, including how they apply to the organization's activities and its upstream and downstream value chain, and the responsibilities for implementing them.
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: GRI
+      clauseRef: 101-1
+- topicSectionKey: biodiversity.strategy
+  pillar: strategy
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: biodiversity.strategy.identification
+    standardDisclosureRequirementTitle: Identification of biodiversity impacts
+    excerptFrom: 101-4
+    standardDisclosureRequirementText: |-
+      Describe the approach used to identify the organization's actual and potential biodiversity impacts across its activities and its upstream and downstream value chain, including the scope of assessments and the tools or methodologies used.
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: GRI
+      clauseRef: 101-4
+- topicSectionKey: biodiversity.iro
+  pillar: iro_management
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: biodiversity.iro.management
+    standardDisclosureRequirementTitle: Management of biodiversity impacts
+    excerptFrom: 101-2
+    standardDisclosureRequirementText: |-
+      Describe how the organization manages its biodiversity impacts by applying the mitigation hierarchy — avoiding, minimizing, restoring and rehabilitating, and where relevant offsetting — and the actions taken at each step.
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: GRI
+      clauseRef: 101-2
+- topicSectionKey: biodiversity.metrics
+  pillar: metrics_targets
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: biodiversity.metrics.locations
+    standardDisclosureRequirementTitle: Locations with biodiversity impacts
+    excerptFrom: 101-5
+    standardDisclosureRequirementText: |-
+      Report the locations with the most significant biodiversity impacts, including whether they are in or near areas of biodiversity importance, and the activities that cause those impacts.
+    disclosureRequirementObligationLevel: encouraged
+    sourceClauseReferenceLabels:
+    - standard: GRI
+      clauseRef: 101-5

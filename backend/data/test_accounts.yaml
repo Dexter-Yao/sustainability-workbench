@@ -1,0 +1,18 @@
+# ABOUTME: 本机受控测试账号注册表；不保存密码、token 或认证服务密钥。
+# ABOUTME: 自动 E2E 只使用 internal_automation；internal_manual 仅供受控人工完整路径测试。
+schema_version: 2
+accounts:
+  - email: internal-automation@example.com
+    role: internal_automation
+    bootstrap_profile_id: local_single_user@1
+    auth_mode: managed_auth
+    password_env: SUSTAINABILITY_DESK_INTERNAL_AUTOMATION_PASSWORD
+    organization_name: 本机测试
+    operator_permissions: [internal_audit_reviewer]
+  - email: internal-manual@example.com
+    role: internal_manual
+    bootstrap_profile_id: local_single_user@1
+    auth_mode: managed_auth
+    password_env: SUSTAINABILITY_DESK_INTERNAL_MANUAL_PASSWORD
+    organization_name: 本机测试
+    operator_permissions: []

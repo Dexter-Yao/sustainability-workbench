@@ -1,0 +1,216 @@
+# ABOUTME: 促进循环经济议题准则披露要求库，供覆盖审计与按 key 白名单注入生成上下文（注入受开关控制，默认关闭）。
+# ABOUTME: 本文件不作为用户可见准则批注来源；用户可见条款原文来自 user_visible_disclosure_clause_annotations。
+topicStandardDisclosureRequirementGroups:
+- topicSectionKey: circular_economy_promotion.gov
+  pillar: governance
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: circular_economy_promotion.gov.responsibility_structure_required
+    standardDisclosureRequirementTitle: 循环经济议题组织架构与职责分工
+    excerptFrom: 参考模板“循环经济议题管理组织架构（职能部门）及职责分工”
+    standardDisclosureRequirementText: 应说明公司循环经济议题的组织架构、职能部门、职责分工和协同机制，覆盖资源循环利用、绿色包装、产品设计、报废产品回收或供应链协同相关职责。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 第三十七条
+    - standard: SZSE
+      clauseRef: 第三十七条
+    - standard: BSE
+      clauseRef: 第三十七条
+  - standardDisclosureRequirementKey: circular_economy_promotion.gov.responsibility_structure_encouraged
+    standardDisclosureRequirementTitle: 循环经济职责边界与跨部门协同
+    excerptFrom: 参考模板“组织架构描述和主要分工职责情况”
+    standardDisclosureRequirementText: 可进一步披露说明产品设计、包装管理、报废产品回收、资源循环利用、供应商和客户联动、政策跟踪和内部宣导的职责边界。
+    disclosureRequirementObligationLevel: encouraged
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 第三十七条
+    - standard: SZSE
+      clauseRef: 第三十七条
+    - standard: BSE
+      clauseRef: 第三十七条
+  - standardDisclosureRequirementKey: circular_economy_promotion.gov.framework_required
+    standardDisclosureRequirementTitle: 循环经济工作框架
+    excerptFrom: 附录索引表第三十七条；参考模板“确立公司促进循环经济工作框架”
+    standardDisclosureRequirementText: 应说明公司是否建立循环经济工作框架、职责分工或推进机制，覆盖产品生态设计、绿色包装、产品全生命周期循环利用、资源能源循环利用或政策动态跟踪。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 第三十七条
+    - standard: SZSE
+      clauseRef: 第三十七条
+    - standard: BSE
+      clauseRef: 第三十七条
+  - standardDisclosureRequirementKey: circular_economy_promotion.gov.framework_encouraged
+    standardDisclosureRequirementTitle: 跨部门协同与外部伙伴联动
+    excerptFrom: 参考模板“绿色包装研发与应用全流程、联动供应商、客户、政府部门及行业协会”
+    standardDisclosureRequirementText: 可进一步披露说明跨部门协同、供应商和客户联动、政府部门或行业协会合作、政策跟踪、同业实践研究和内部职责边界。
+    disclosureRequirementObligationLevel: encouraged
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 第三十七条
+    - standard: SZSE
+      clauseRef: 第三十七条
+    - standard: BSE
+      clauseRef: 第三十七条
+  - standardDisclosureRequirementKey: circular_economy_promotion.gov.policy_documents_required
+    standardDisclosureRequirementTitle: 循环经济相关制度文件
+    excerptFrom: 参考模板“根据制度名称生成内容”
+    standardDisclosureRequirementText: 如涉及循环经济、资源循环利用、包装循环利用、报废产品回收、固体废弃物资源化利用或绿色低碳运营相关制度，应说明制度名称、目标、适用范围、关键流程和制度保障作用；制度名称和目标必须来自相关事实。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 第三十七条
+    - standard: SZSE
+      clauseRef: 第三十七条
+    - standard: BSE
+      clauseRef: 第三十七条
+- topicSectionKey: circular_economy_promotion.strategy
+  pillar: strategy
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: circular_economy_promotion.strategy.circular_principles_required
+    standardDisclosureRequirementTitle: 减量化、再利用、资源化循环发展理念
+    excerptFrom: 参考模板“公司秉承减量化、再利用、资源化的循环发展理念”
+    standardDisclosureRequirementText: 应说明公司循环经济战略理念，包括减量化、再利用、资源化，全链条资源高效利用，原生资源节约，生产物料复用，再生资源流转，资源消耗强度降低，内部循环发展配套机制或绿色经营理念宣导。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 第三十七条
+    - standard: SZSE
+      clauseRef: 第三十七条
+    - standard: BSE
+      clauseRef: 第三十七条
+  - standardDisclosureRequirementKey: circular_economy_promotion.strategy.circular_principles_encouraged
+    standardDisclosureRequirementTitle: 全链条资源高效利用与配套机制
+    excerptFrom: 参考模板“全链条资源高效利用、原生资源节约、生产物料复用、再生资源流转”
+    standardDisclosureRequirementText: 可进一步披露说明资源消耗强度管理、生产物料复用、再生资源流转、内部循环发展配套管理机制、绿色经营理念宣导和资源利用效能提升。
+    disclosureRequirementObligationLevel: encouraged
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 第三十七条
+    - standard: SZSE
+      clauseRef: 第三十七条
+    - standard: BSE
+      clauseRef: 第三十七条
+  - standardDisclosureRequirementKey: circular_economy_promotion.strategy.targets_required
+    standardDisclosureRequirementTitle: 循环经济具体目标和计划
+    excerptFrom: 附录索引表第三十七条；参考模板“促进循环经济 2030 年目标”
+    standardDisclosureRequirementText: 应说明公司为实现循环经济制定的具体目标和计划，包括资源节约、资源利用率提升、废弃物零填埋、固体废弃物无害化处理、绿色包装或循环利用相关目标。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 第三十七条
+    - standard: SZSE
+      clauseRef: 第三十七条
+    - standard: BSE
+      clauseRef: 第三十七条
+  - standardDisclosureRequirementKey: circular_economy_promotion.strategy.roadmap_encouraged
+    standardDisclosureRequirementTitle: 分阶段实施目标与任务
+    excerptFrom: 参考模板“细化促进循环经济分阶段实施目标与任务”
+    standardDisclosureRequirementText: 可进一步披露说明短期、中期、长期分阶段目标、实施路径、循环经济管理系统、生产资源计量、固废数字化追踪、设备绿色化改造或智能循环管理平台。
+    disclosureRequirementObligationLevel: encouraged
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 第三十七条
+    - standard: SZSE
+      clauseRef: 第三十七条
+    - standard: BSE
+      clauseRef: 第三十七条
+- topicSectionKey: circular_economy_promotion.iro
+  pillar: iro_management
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: circular_economy_promotion.iro.product_lifecycle_required
+    standardDisclosureRequirementTitle: 产品设计与材料循环
+    excerptFrom: 参考模板“产品设计方案中贯彻材料减量化、利用再生原材料、可循环材料”
+    standardDisclosureRequirementText: 应说明公司在产品设计方案中贯彻材料减量化、利用再生原材料、可循环材料、可拆解或可回收设计等具体措施、要求和成果。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 第三十七条
+    - standard: SZSE
+      clauseRef: 第三十七条
+    - standard: BSE
+      clauseRef: 第三十七条
+  - standardDisclosureRequirementKey: circular_economy_promotion.iro.product_lifecycle_encouraged
+    standardDisclosureRequirementTitle: 产品设计循环要求与成果
+    excerptFrom: 参考模板“具体措施、要求和成果情况”
+    standardDisclosureRequirementText: 可进一步披露说明涉及产品、材料类别、设计要求、供应商协同、质量控制、实施范围、阶段进展和成果。
+    disclosureRequirementObligationLevel: encouraged
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 第三十七条
+    - standard: SZSE
+      clauseRef: 第三十七条
+    - standard: BSE
+      clauseRef: 第三十七条
+  - standardDisclosureRequirementKey: circular_economy_promotion.iro.resource_efficiency_required
+    standardDisclosureRequirementTitle: 节省资源、提高资源利用率与回收利用
+    excerptFrom: 附录索引表第三十七条
+    standardDisclosureRequirementText: 应覆盖报告期内为实现循环经济而采取的具体措施，包括节省资源、提高资源利用率、使用可再生资源、预防和减少废弃物产生以及回收利用废弃物。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 第三十七条
+    - standard: SZSE
+      clauseRef: 第三十七条
+    - standard: BSE
+      clauseRef: 第三十七条
+  - standardDisclosureRequirementKey: circular_economy_promotion.iro.packaging_circularity_required
+    standardDisclosureRequirementTitle: 包装材料减量化与循环利用
+    excerptFrom: 参考模板“产品包装材料减量化、减少一次性包装材料使用和包装材料循环利用”
+    standardDisclosureRequirementText: 应说明公司在产品包装材料减量化、减少一次性包装材料使用、包装材料循环利用、周转箱或可重复包装替代、绿色低碳包装设计方面的措施和实施成果。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 第三十七条
+    - standard: SZSE
+      clauseRef: 第三十七条
+    - standard: BSE
+      clauseRef: 第三十七条
+  - standardDisclosureRequirementKey: circular_economy_promotion.iro.packaging_circularity_encouraged
+    standardDisclosureRequirementTitle: 包装替代路径与协同机制
+    excerptFrom: 参考模板“包装材料减量化、减少一次性包装材料使用和包装材料循环利用方面的措施和实施成果”
+    standardDisclosureRequirementText: 可进一步披露说明包装材料类型、替代方式、循环使用路径、供应商或客户协同、实施范围、阶段进展和成果。
+    disclosureRequirementObligationLevel: encouraged
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 第三十七条
+    - standard: SZSE
+      clauseRef: 第三十七条
+    - standard: BSE
+      clauseRef: 第三十七条
+  - standardDisclosureRequirementKey: circular_economy_promotion.iro.end_of_life_recovery_required
+    standardDisclosureRequirementTitle: 报废产品回收机制
+    excerptFrom: 参考模板“公司报废产品回收机制描述”
+    standardDisclosureRequirementText: 应说明经终端客户投入使用、产品全生命周期完全终结后的废旧成品回收机制相关管理要求和运行情况；不得把生产环节产生的不合格原材料、半成品或残次产成品写入本块。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 第三十七条
+    - standard: SZSE
+      clauseRef: 第三十七条
+    - standard: BSE
+      clauseRef: 第三十七条
+  - standardDisclosureRequirementKey: circular_economy_promotion.iro.end_of_life_recovery_encouraged
+    standardDisclosureRequirementTitle: 终端废旧成品回收运行情况
+    excerptFrom: 参考模板“经终端客户投入使用、产品全生命周期完全终结后回收的废旧成品”
+    standardDisclosureRequirementText: 可进一步披露说明终端废旧成品回收管理要求、运行情况、合作方、回收处理路径、试点进展和资源化利用方式。
+    disclosureRequirementObligationLevel: encouraged
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 第三十七条
+    - standard: SZSE
+      clauseRef: 第三十七条
+    - standard: BSE
+      clauseRef: 第三十七条
+  - standardDisclosureRequirementKey: circular_economy_promotion.iro.practice_case_encouraged
+    standardDisclosureRequirementTitle: 循环经济实践案例
+    excerptFrom: 参考模板“IT设备升级改造与再利用、塑料回料自循环利用、包装纸箱改周转箱”
+    standardDisclosureRequirementText: 可进一步披露说明 IT 设备升级改造与再利用、塑料回料自循环利用、包装纸箱改周转箱、固废分类台账、循环经济数字化管理等案例。
+    disclosureRequirementObligationLevel: encouraged
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 第三十七条
+    - standard: SZSE
+      clauseRef: 第三十七条
+    - standard: BSE
+      clauseRef: 第三十七条

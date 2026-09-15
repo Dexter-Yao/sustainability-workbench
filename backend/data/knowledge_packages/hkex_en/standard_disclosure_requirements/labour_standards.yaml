@@ -1,0 +1,54 @@
+# ABOUTME(en): Appendix C2 disclosure requirements of "Labour Standards" (General Disclosure and KPIs), grouped by pillar,
+# ABOUTME(en): for the coverage audit and for prompt assembly by key whitelist (injection is switch-gated, off by default) and for the coverage audit. Wording follows the English Code text.
+topicStandardDisclosureRequirementGroups:
+- topicSectionKey: labour_standards.gov
+  pillar: governance
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: labour_standards.gov.general_disclosure_policies
+    standardDisclosureRequirementTitle: Policies on preventing child and forced labour
+    excerptFrom: HKEX·Appendix C2·General Disclosure B4
+    standardDisclosureRequirementText: Disclose the policies on preventing child and forced labour.
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: General Disclosure B4
+  - standardDisclosureRequirementKey: labour_standards.gov.general_disclosure_compliance
+    standardDisclosureRequirementTitle: Compliance with labour standards laws and regulations
+    excerptFrom: HKEX·Appendix C2·General Disclosure B4
+    standardDisclosureRequirementText: |-
+      Disclose information on compliance with laws and regulations on preventing child and forced labour that have a significant impact on the issuer.
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: General Disclosure B4
+- topicSectionKey: labour_standards.strategy
+  pillar: strategy
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: labour_standards.strategy.labour_commitment
+    standardDisclosureRequirementTitle: Labour standards commitment and direction
+    excerptFrom: HKEX·Appendix C2·General Disclosure B4
+    standardDisclosureRequirementText: Describe the company's commitment and direction on labour standards.
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: General Disclosure B4
+- topicSectionKey: labour_standards.iro
+  pillar: iro_management
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: labour_standards.iro.review_measures
+    standardDisclosureRequirementTitle: Measures to review employment practices
+    excerptFrom: HKEX·Appendix C2·KPI B4.1
+    standardDisclosureRequirementText: |-
+      Description of measures to review employment practices to avoid child and forced labour.
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: KPI B4.1
+  - standardDisclosureRequirementKey: labour_standards.iro.remediation_steps
+    standardDisclosureRequirementTitle: Steps taken to eliminate violations
+    excerptFrom: HKEX·Appendix C2·KPI B4.2
+    standardDisclosureRequirementText: Description of steps taken to eliminate such practices when discovered.
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: KPI B4.2

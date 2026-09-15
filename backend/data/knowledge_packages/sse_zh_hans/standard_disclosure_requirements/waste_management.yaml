@@ -1,0 +1,255 @@
+# ABOUTME: 废弃物管理议题准则披露要求库，供覆盖审计与按 key 白名单注入生成上下文（注入受开关控制，默认关闭）。
+# ABOUTME: 本文件不作为用户可见准则批注来源；用户可见条款原文来自 user_visible_disclosure_clause_annotations。
+topicStandardDisclosureRequirementGroups:
+- topicSectionKey: waste_management.gov
+  pillar: governance
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: waste_management.gov.responsibility_structure_required
+    standardDisclosureRequirementTitle: 废弃物管理组织架构与职责分工
+    excerptFrom: 参考模板“废弃物管理组织架构（职能部门）及职责分工”
+    standardDisclosureRequirementText: 应说明公司废弃物管理的组织架构、职能部门、职责分工、台账归集和处置商协同关系。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 第二十九条、第三十一条
+    - standard: SZSE
+      clauseRef: 第二十九条、第三十一条
+    - standard: BSE
+      clauseRef: 第二十九条、第三十一条
+  - standardDisclosureRequirementKey: waste_management.gov.responsibility_structure_encouraged
+    standardDisclosureRequirementTitle: 废弃物职责边界与外部协同
+    excerptFrom: 参考模板“组织架构描述和主要分工职责情况”
+    standardDisclosureRequirementText: 可进一步披露说明归口部门、生产业务单位、现场管理人员、处置商管理、台账归集、巡检核查和合规监督职责。
+    disclosureRequirementObligationLevel: encouraged
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 第二十九条、第三十一条
+    - standard: SZSE
+      clauseRef: 第二十九条、第三十一条
+    - standard: BSE
+      clauseRef: 第二十九条、第三十一条
+  - standardDisclosureRequirementKey: waste_management.gov.waste_management_required
+    standardDisclosureRequirementTitle: 废弃物管理体系与职责安排
+    excerptFrom: 附录索引表第二十九条、第三十一条；参考模板“废弃物管理体系”
+    standardDisclosureRequirementText: 应说明公司围绕有害废弃物、无害废弃物、分类收集、过程记录、合规处置和资源化利用建立的制度、职责分工、台账管理、供应商资质审核或风险防控安排。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 第二十九条、第三十一条
+    - standard: SZSE
+      clauseRef: 第二十九条、第三十一条
+    - standard: BSE
+      clauseRef: 第二十九条、第三十一条
+  - standardDisclosureRequirementKey: waste_management.gov.waste_management_encouraged
+    standardDisclosureRequirementTitle: 废弃物闭环管理和外部协同
+    excerptFrom: 参考模板“废弃物管理体系”
+    standardDisclosureRequirementText: 可进一步披露说明归口统筹、专业分工、源头负责的管理架构，危险废弃物专用容器收集、规范化暂存、电子转移联单、外部处置商绩效管理和年度环保培训安排。
+    disclosureRequirementObligationLevel: encouraged
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 第二十九条、第三十一条
+    - standard: SZSE
+      clauseRef: 第二十九条、第三十一条
+    - standard: BSE
+      clauseRef: 第二十九条、第三十一条
+  - standardDisclosureRequirementKey: waste_management.gov.policy_documents_required
+    standardDisclosureRequirementTitle: 固体废弃物管理制度文件
+    excerptFrom: 参考模板“固体废弃物管理制度”
+    standardDisclosureRequirementText: 如涉及固体废弃物管理制度、流程或制度目标，应说明制度名称、适用范围、关键流程以及制度对分类收集、暂存、转移、委外处置、资源化利用、台账归集或巡检核查的保障作用；制度名称和目标必须来自相关事实。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 第二十九条、第三十一条
+    - standard: SZSE
+      clauseRef: 第二十九条、第三十一条
+    - standard: BSE
+      clauseRef: 第二十九条、第三十一条
+  - standardDisclosureRequirementKey: waste_management.gov.policy_documents_encouraged
+    standardDisclosureRequirementTitle: 制度目标、流程和合规监督
+    excerptFrom: 参考模板“根据制度名称生成内容”
+    standardDisclosureRequirementText: 可进一步披露说明固体废弃物分类收集、暂存、转移、委外处置、资源化利用、台账归集、巡检核查和合规监督制度。
+    disclosureRequirementObligationLevel: encouraged
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 第二十九条、第三十一条
+    - standard: SZSE
+      clauseRef: 第二十九条、第三十一条
+    - standard: BSE
+      clauseRef: 第二十九条、第三十一条
+- topicSectionKey: waste_management.strategy
+  pillar: strategy
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: waste_management.strategy.control_framework_required
+    standardDisclosureRequirementTitle: 减量化、资源化、无害化管控框架
+    excerptFrom: 参考模板“减量化、资源化、无害化处置原则”
+    standardDisclosureRequirementText: 应说明公司如何将废弃物管理纳入环境目标管控体系，并围绕减量化、资源化、无害化原则，从源头减量、分类收纳、规范处置、日常监测或巡检核查维度管控废弃物环境风险。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 第三十一条
+    - standard: SZSE
+      clauseRef: 第三十一条
+    - standard: BSE
+      clauseRef: 第三十一条
+  - standardDisclosureRequirementKey: waste_management.strategy.control_framework_encouraged
+    standardDisclosureRequirementTitle: 源头减量、分类处置与巡检核查
+    excerptFrom: 参考模板“源头减量、分类收纳、规范处置、日常监测”
+    standardDisclosureRequirementText: 可进一步披露说明运营流程优化、物料使用效率提升、危险废弃物和一般废弃物分区分类存放、可再生废弃物归集回收、无资源化条件废弃物委外无害化处置、暂存区域巡检和处置台账核查。
+    disclosureRequirementObligationLevel: encouraged
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 第三十一条
+    - standard: SZSE
+      clauseRef: 第三十一条
+    - standard: BSE
+      clauseRef: 第三十一条
+  - standardDisclosureRequirementKey: waste_management.strategy.waste_reduction_required
+    standardDisclosureRequirementTitle: 废弃物减排目标与措施计划
+    excerptFrom: 附录索引表第三十一条；参考模板“废弃物产生与处置情况”
+    standardDisclosureRequirementText: 应说明废弃物减排目标及为达到目标所采取的具体措施，包括源头减量、分类收集、资源化利用、包装材料优化、周转箱循环使用、绿色包装或下一年度改进计划。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 第三十一条
+    - standard: SZSE
+      clauseRef: 第三十一条
+    - standard: BSE
+      clauseRef: 第三十一条
+  - standardDisclosureRequirementKey: waste_management.strategy.waste_reduction_encouraged
+    standardDisclosureRequirementTitle: 废弃物管理成效改进
+    excerptFrom: 参考模板“废弃物产生与处置情况”
+    standardDisclosureRequirementText: 可进一步披露说明废弃物零填埋、固体废弃物无害化处理率、绿色包装使用率、回收率、台账分析和下一年度改进计划。
+    disclosureRequirementObligationLevel: encouraged
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 第三十一条
+    - standard: SZSE
+      clauseRef: 第三十一条
+    - standard: BSE
+      clauseRef: 第三十一条
+- topicSectionKey: waste_management.iro
+  pillar: iro_management
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: waste_management.iro.waste_classification_required
+    standardDisclosureRequirementTitle: 废弃物分类收集和现场管理
+    excerptFrom: 附录索引表第三十一条；参考模板“废弃物管理体系”
+    standardDisclosureRequirementText: 应说明一般废弃物和危险废弃物的主要类型、产生环节、处理方式、减排目标，以及危险废物、一般工业固体废物、生活垃圾、建筑垃圾或其他类别的分类、收集、暂存和过程记录，并体现减量化、资源化、无害化的优先次序。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 第三十一条
+    - standard: SZSE
+      clauseRef: 第三十一条
+    - standard: BSE
+      clauseRef: 第三十一条
+  - standardDisclosureRequirementKey: waste_management.iro.hazardous_waste_control_required
+    standardDisclosureRequirementTitle: 危险废弃物合规处置
+    excerptFrom: 附录索引表第三十一条；参考模板“废弃物管理体系”
+    standardDisclosureRequirementText: 如涉及危险废弃物，应说明危险废弃物的产生、收集、暂存、转移、委托资质单位处置、无害化处理和合规处置情况。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 第三十一条
+    - standard: SZSE
+      clauseRef: 第三十一条
+    - standard: BSE
+      clauseRef: 第三十一条
+  - standardDisclosureRequirementKey: waste_management.iro.hazardous_waste_compliance_required
+    standardDisclosureRequirementTitle: 危险废弃物闭环管控与证明材料口径
+    excerptFrom: 参考模板“危险废弃物、一般废弃物分区分类存放；合规第三方机构无害化处置；处置台账”
+    standardDisclosureRequirementText: 如涉及危险废弃物闭环管控、规范暂存、转移、处置单位资质、电子转移联单、无害化处理、合规处置率或证明材料留存，应说明危险废弃物合规管理情况。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 第三十一条
+    - standard: SZSE
+      clauseRef: 第三十一条
+    - standard: BSE
+      clauseRef: 第三十一条
+  - standardDisclosureRequirementKey: waste_management.iro.recycling_disposal_required
+    standardDisclosureRequirementTitle: 无害废弃物资源化和委外处置
+    excerptFrom: 附录索引表第三十一条；参考模板“废弃物管理体系”
+    standardDisclosureRequirementText: 应说明无害废弃物、一般工业固体废物、生活垃圾或包装废弃物的资源化利用、市场化回收、委外分拣清运、处理方法和处置情况。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 第三十一条
+    - standard: SZSE
+      clauseRef: 第三十一条
+    - standard: BSE
+      clauseRef: 第三十一条
+  - standardDisclosureRequirementKey: waste_management.iro.waste_disposal_encouraged
+    standardDisclosureRequirementTitle: 废弃物处置成效和培训
+    excerptFrom: 参考模板“废弃物产生与处置情况”
+    standardDisclosureRequirementText: 可进一步披露说明全年环保培训、台账数据分析、处置违规预防、回收率、合规处置率和管理成效总结。
+    disclosureRequirementObligationLevel: encouraged
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 第三十一条
+    - standard: SZSE
+      clauseRef: 第三十一条
+    - standard: BSE
+      clauseRef: 第三十一条
+  - standardDisclosureRequirementKey: waste_management.iro.policy_practice_required
+    standardDisclosureRequirementTitle: 废弃物管理制度执行
+    excerptFrom: 参考模板“根据治理模块上传的制度资料，生成描述”
+    standardDisclosureRequirementText: 应依据治理模块提供的固体废弃物管理制度文件事实，按管理框架说明制度执行、分类暂存、台账记录、巡检核查、委外处置和整改闭环。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 第二十九条、第三十一条
+    - standard: SZSE
+      clauseRef: 第二十九条、第三十一条
+    - standard: BSE
+      clauseRef: 第二十九条、第三十一条
+  - standardDisclosureRequirementKey: waste_management.iro.policy_practice_encouraged
+    standardDisclosureRequirementTitle: 制度运行、巡检与整改闭环
+    excerptFrom: 参考模板“治理模块上传资料”
+    standardDisclosureRequirementText: 可进一步披露说明制度运行机制、暂存区域巡检、台账核查、转移记录、处置商资质复核、异常问题整改和持续改进；巡检频次、问题数量和整改结果必须来自相关事实。
+    disclosureRequirementObligationLevel: encouraged
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 第二十九条、第三十一条
+    - standard: SZSE
+      clauseRef: 第二十九条、第三十一条
+    - standard: BSE
+      clauseRef: 第二十九条、第三十一条
+- topicSectionKey: waste_management.metrics
+  pillar: metrics_targets
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: waste_management.metrics.waste_generation_required
+    standardDisclosureRequirementTitle: 废弃物产生与处置数据
+    excerptFrom: 附录索引表第三十一条
+    standardDisclosureRequirementText: 如企业在本议题提供废弃物数据，正文应准确说明有害废弃物、无害废弃物的总量、密度、处理方法、处置情况、废弃物减排目标及为达到目标所采取的具体措施。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 第三十一条
+    - standard: SZSE
+      clauseRef: 第三十一条
+    - standard: BSE
+      clauseRef: 第三十一条
+  - standardDisclosureRequirementKey: waste_management.metrics.waste_generation_encouraged
+    standardDisclosureRequirementTitle: 废弃物指标对比与目标进展
+    excerptFrom: 附录索引表第三十一条；参考模板“废弃物产生与处置情况”
+    standardDisclosureRequirementText: 可进一步披露补充废弃物总量、无害废弃物、有害废弃物、废弃物回收总量、回收率、有害废弃物合规处置率、总体合规处置率、历史对比和目标进展。
+    disclosureRequirementObligationLevel: encouraged
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 第三十一条
+    - standard: SZSE
+      clauseRef: 第三十一条
+    - standard: BSE
+      clauseRef: 第三十一条
+  - standardDisclosureRequirementKey: waste_management.metrics.environmental_event_conditional
+    standardDisclosureRequirementTitle: 废弃物相关环境事件或处罚
+    excerptFrom: 附录索引表第三十三条
+    standardDisclosureRequirementText: 若企业在本议题填写废弃物相关环境事件、重大行政处罚、刑事责任、违规情形、处罚金额、影响或整改措施，应如实披露环境事件和整改情况。
+    disclosureRequirementObligationLevel: conditional
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 第三十三条
+    - standard: SZSE
+      clauseRef: 第三十三条
+    - standard: BSE
+      clauseRef: 第三十三条

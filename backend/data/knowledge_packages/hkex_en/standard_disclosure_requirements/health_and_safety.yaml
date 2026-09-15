@@ -1,0 +1,70 @@
+# ABOUTME(en): Appendix C2 disclosure requirements of "Health and Safety" (General Disclosure and KPIs), grouped by pillar,
+# ABOUTME(en): for the coverage audit and for prompt assembly by key whitelist (injection is switch-gated, off by default) and for the coverage audit. Wording follows the English Code text.
+topicStandardDisclosureRequirementGroups:
+- topicSectionKey: health_and_safety.gov
+  pillar: governance
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: health_and_safety.gov.general_disclosure_policies
+    standardDisclosureRequirementTitle: Occupational health and safety policies
+    excerptFrom: HKEX·Appendix C2·General Disclosure B2
+    standardDisclosureRequirementText: |-
+      Disclose the policies on providing a safe working environment and protecting employees from occupational hazards.
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: General Disclosure B2
+  - standardDisclosureRequirementKey: health_and_safety.gov.general_disclosure_compliance
+    standardDisclosureRequirementTitle: Compliance with occupational safety and health laws and regulations
+    excerptFrom: HKEX·Appendix C2·General Disclosure B2
+    standardDisclosureRequirementText: |-
+      Disclose information on compliance with occupational safety and health laws and regulations that have a significant impact on the issuer.
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: General Disclosure B2
+- topicSectionKey: health_and_safety.strategy
+  pillar: strategy
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: health_and_safety.strategy.ohs_targets
+    standardDisclosureRequirementTitle: Occupational health and safety targets
+    excerptFrom: HKEX·Appendix C2·General Disclosure B2
+    standardDisclosureRequirementText: |-
+      Describe the company's occupational health and safety targets and the direction for achieving them.
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: General Disclosure B2
+- topicSectionKey: health_and_safety.iro
+  pillar: iro_management
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: health_and_safety.iro.ohs_measures
+    standardDisclosureRequirementTitle: |-
+      Occupational health and safety measures adopted, and how they are implemented and monitored
+    excerptFrom: HKEX·Appendix C2·KPI B2.3
+    standardDisclosureRequirementText: |-
+      Description of occupational health and safety measures adopted, and how they are implemented and monitored.
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: KPI B2.3
+- topicSectionKey: health_and_safety.metrics
+  pillar: metrics_targets
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: health_and_safety.metrics.fatalities_data
+    standardDisclosureRequirementTitle: |-
+      Number and rate of work-related fatalities in each of the past three years
+    excerptFrom: HKEX·Appendix C2·KPI B2.1
+    standardDisclosureRequirementText: |-
+      Disclose the number and rate of work-related fatalities occurred in each of the past three years including the reporting year.
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: KPI B2.1
+  - standardDisclosureRequirementKey: health_and_safety.metrics.lost_days_data
+    standardDisclosureRequirementTitle: Lost days due to work injury
+    excerptFrom: HKEX·Appendix C2·KPI B2.2
+    standardDisclosureRequirementText: Disclose the lost days due to work injury.
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: KPI B2.2

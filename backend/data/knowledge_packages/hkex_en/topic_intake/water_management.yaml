@@ -1,0 +1,22 @@
+# ABOUTME(en): Topic-specific intake questions of "Water Management"; the four fixed pillar questions come from topic_intake_common.yaml.
+# ABOUTME(en): Quantitative KPIs are collected through the metric catalog, not here.
+contentScopeId: water_management
+items:
+- key: water.q_water_sourcing_issue
+  prompt: Has the company had any issue in sourcing water that is fit for purpose?
+  kind: single_select
+  collectionPriority: recommended
+  options:
+  - No issue
+  - Issues encountered (unstable supply or quality)
+  - Not sure
+  hint: If issues arose, describe them and the response.
+  maxChars: 5000
+- key: water.q_water_saving_measures
+  prompt: What water saving or recycling measures has the company taken?
+  kind: text
+  collectionPriority: recommended
+  hint: Fixtures, recycling, monitoring, management; or blank.
+  generationBoundary: |-
+    Unless specific figures are given, do not generate water savings, recycling rates or investment amounts.
+  maxChars: 5000

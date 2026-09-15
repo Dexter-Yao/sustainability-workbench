@@ -1,0 +1,24 @@
+# ABOUTME(en): Topic-specific intake questions of「排放物」; the four fixed pillar questions come from topic_intake_common.yaml.
+# ABOUTME(en): Quantitative KPIs are collected through the metric catalog, not here.
+contentScopeId: emissions
+items:
+- key: emissions.q_emission_sources
+  prompt: 貴公司的主要排放源包括哪些？
+  kind: multi_select
+  collectionPriority: recommended
+  options:
+  - 燃燒設備（鍋爐、發電機）
+  - 公司車輛
+  - 生產工序（噴塗、焊接、清洗等）
+  - 生產廢水排放
+  - 生活污水排放
+  - 無重大排放源
+  hint: 可多選；請在補充說明中簡述各排放源的處理或控制方式。
+  maxChars: 5000
+- key: emissions.q_emission_reduction_measures
+  prompt: 貴公司採取了哪些減少排放的措施？
+  kind: text
+  collectionPriority: recommended
+  hint: 可說明廢氣或廢水處理設施、監測安排、減排項目及成效；沒有可留空。
+  generationBoundary: 未填寫具體數值時，不得生成減排量、達標率或監測結果數字。
+  maxChars: 5000

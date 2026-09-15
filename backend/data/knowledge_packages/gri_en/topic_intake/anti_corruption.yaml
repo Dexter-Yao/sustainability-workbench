@@ -1,0 +1,23 @@
+# ABOUTME(en): Topic-specific intake questions of "Anti-corruption"; the four fixed pillar questions come from topic_intake_common.yaml.
+# ABOUTME(en): Quantitative metrics are collected through the metric catalog, not here.
+contentScopeId: anti_corruption
+items:
+- key: anti_corruption.q_anti_corruption_measures
+  prompt: What measures does the company take to prevent corruption and bribery?
+  kind: text
+  collectionPriority: recommended
+  hint: Policies, controls, reporting channel; or blank.
+  generationBoundary: |-
+    Unless specific facts are given, do not generate case numbers, training coverage or system names.
+  maxChars: 5000
+- key: anti_corruption.q_anti_corruption_training
+  prompt: Does the company provide anti-corruption training?
+  kind: single_select
+  collectionPriority: recommended
+  options:
+  - Yes, to directors and employees
+  - Yes, to employees only
+  - Not yet
+  - Not sure
+  hint: State the arrangement, not the hours or coverage.
+  maxChars: 5000

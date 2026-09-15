@@ -1,0 +1,20 @@
+# ABOUTME: 促进循环经济议题轻量版内容清单，聚焦废旧产品回收机制和循环经济实践。
+# ABOUTME: 治理、战略和指标目标固定题由 topic_intake_common.yaml 展开；结构化数值由 ESG 定量数据表维护。
+contentScopeId: circular_economy_promotion
+items:
+- key: circular_economy_promotion.q_product_recycling_mechanism
+  prompt: 贵公司是否有废旧产品回收机制？
+  kind: single_select
+  collectionPriority: recommended
+  options:
+  - 是
+  - 否
+  - 不确定
+  hint: 如选择是，请在补充说明中简述机制内容，可包括回收对象、回收渠道、参与主体、处理方式或管理流程。
+  maxChars: 5000
+- key: circular_economy_promotion.q_circular_economy_practices
+  prompt: 贵公司报告期内开展了哪些循环经济相关实践？
+  kind: text
+  collectionPriority: recommended
+  hint: 可填写相关实践目标、具体实践内容、实践范围、实践成果等；没有相关实践可填写“无”或留空。
+  maxChars: 5000

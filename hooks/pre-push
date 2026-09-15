@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+# ABOUTME: git pre-push 钩子，委托给 scripts/dev/pre-push-verify.sh 执行全链路验证。
+# ABOUTME: 本目录由 core.hooksPath 指向并纳入版本控制，重新 clone 后执行安装脚本即可恢复。
+set -euo pipefail
+
+ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+
+# git 以 <local ref> <local oid> <remote ref> <remote oid> 逐行送入待推送引用。
+# local oid 全零表示删除远程分支，本地没有新提交可验证，无需跑 3.5 分钟全链路。
+has_commits=0
+while read -r _local_ref local_oid _remote_ref _remote_oid; do
+  [[ "$local_oid" =~ ^0+$ ]] || has_commits=1
+done
+
+if (( has_commits == 0 )); then
+  echo "pre-push: 本次推送只删除远程引用，跳过验证。"
+  exit 0
+fi
+
+exec "$ROOT/scripts/dev/pre-push-verify.sh"

@@ -1,0 +1,129 @@
+# ABOUTME: 创新驱动议题章节骨架，H2 标题以附录索引表“对应的本报告章节”为准。
+# ABOUTME: 本文件按轻量版收敛为治理、战略、研发团队实践、创新工作举措和指标；细分产品、合作、知识产权成果留待专项材料承载。
+section:
+  key: innovation_driven
+  title: 创新驱动
+  headingLevel: 2
+  reportSectionId: innovation_driven
+  conciseDisclosure:
+    id: innovation_driven.concise_summary
+    type: paragraph
+    blockType: generative
+    source: ai
+    styleRole: body
+    generation:
+      task:
+        focus: "根据本议题当前可见证据形成一段连贯摘要，覆盖相关管理关注、方向与实践，不使用四要素小标题。"
+      inputs: {evidence: {kind: report_section}}
+      targetChars: [300, 600]
+  children:
+  - key: innovation_driven.gov
+    title: 治理
+    pillar: governance
+    headingLevel: 3
+    blocks:
+    - id: innovation_driven.gov_rd_governance
+      type: paragraph
+      blockType: generative
+      source: ai
+      styleRole: body
+      generation:
+        task:
+          focus: "说明创新活动的责任安排、协作关系和项目管理机制。"
+        inputs:
+          evidence:
+            kind: explicit
+            intakeItems:
+            - innovation_driven.q_governance_roles
+            - innovation_driven.q_governance_policies
+            - innovation_driven.q_governance_certifications
+        targetChars:
+        - 160
+        - 320
+        standardDisclosureRequirementKeys:
+        - innovation_driven.gov.rd_governance_required
+  - key: innovation_driven.strategy
+    title: 战略
+    pillar: strategy
+    headingLevel: 3
+    blocks:
+    - id: innovation_driven.strategy_rd_strategy_innovation_philosophy
+      type: paragraph
+      blockType: generative
+      source: ai
+      styleRole: body
+      generation:
+        task:
+          focus: "说明公司在技术积累与创新能力方面的长期方向和推进原则。"
+        inputs:
+          evidence:
+            kind: explicit
+            intakeItems:
+            - innovation_driven.q_strategy_content
+        targetChars:
+        - 220
+        - 420
+        standardDisclosureRequirementKeys:
+        - innovation_driven.strategy.rd_strategy_required
+        - innovation_driven.strategy.science_ethics_encouraged
+  - key: innovation_driven.iro
+    title: 影响、风险与机遇管理
+    pillar: iro_management
+    headingLevel: 3
+    children:
+    - key: innovation_driven.iro.rd_team_management_incentives
+      title: 研发团队管理与激励
+      headingLevel: 4
+      titleGeneration:
+        sourceBlockId: innovation_driven.iro_rd_team_management_incentives
+        guidance: 概括本内容单元的核心行动或结果，生成简洁、准确且不引入新事实的标题。
+      blocks:
+      - id: innovation_driven.iro_rd_team_management_incentives
+        type: paragraph
+        blockType: generative
+        source: ai
+        styleRole: body
+        generation:
+          task:
+            focus: "说明研发团队建设、能力发展和激励支持的相关实践。"
+          inputs:
+            evidence:
+              kind: explicit
+              intakeItems:
+              - innovation_driven.q_rd_team_incentives
+          targetChars:
+          - 160
+          - 320
+          standardDisclosureRequirementKeys:
+          - innovation_driven.iro.rd_system_investment_required
+    - key: innovation_driven.iro.innovation_work_measures
+      title: 创新举措与成果
+      headingLevel: 4
+      titleGeneration:
+        sourceBlockId: innovation_driven.iro_innovation_work_measures
+        guidance: 概括本内容单元的核心行动或结果，生成简洁、准确且不引入新事实的标题。
+      blocks:
+      - id: innovation_driven.iro_innovation_work_measures
+        type: paragraph
+        blockType: generative
+        source: ai
+        styleRole: body
+        generation:
+          task:
+            focus: "说明技术研发、工艺改进和创新成果转化的相关实践。"
+          inputs:
+            evidence:
+              kind: explicit
+              intakeItems:
+              - innovation_driven.q_innovation_work_measures
+          targetChars:
+          - 220
+          - 460
+          standardDisclosureRequirementKeys:
+          - innovation_driven.iro.rd_system_investment_required
+          - innovation_driven.iro.products_technologies_required
+          - innovation_driven.iro.digital_transformation_required
+          - innovation_driven.iro.external_ecosystem_required
+          - innovation_driven.iro.ip_recognition_required
+metricDisclosure:
+  catalogMetricKeys: [social_r74, social_r76, social_r77, social_r79]

@@ -1,0 +1,87 @@
+# ABOUTME: 反不正当竞争议题准则披露要求库，供覆盖审计与按 key 白名单注入生成上下文（注入受开关控制，默认关闭）。
+# ABOUTME: 本文件不作为用户可见准则批注来源；用户可见条款原文来自 user_visible_disclosure_clause_annotations。
+topicStandardDisclosureRequirementGroups:
+- topicSectionKey: anti_unfair_competition.gov
+  pillar: governance
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: anti_unfair_competition.gov.policy_system_required
+    standardDisclosureRequirementTitle: 防范不正当竞争管理制度体系
+    excerptFrom: 附录索引表第五十六条；参考模板“治理”
+    standardDisclosureRequirementText: 应说明防范不正当竞争行为管理制度体系建立与运作情况及具体措施，包括反不正当竞争、反垄断、公平竞争、商业信息保密、员工行为规范、责任部门、风险排查评估、品牌宣传与营销审核。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 第五十六条
+    - standard: SZSE
+      clauseRef: 第五十六条
+    - standard: BSE
+      clauseRef: 第五十六条
+  - standardDisclosureRequirementKey: anti_unfair_competition.gov.policy_system_encouraged
+    standardDisclosureRequirementTitle: 反垄断与公平竞争合规
+    excerptFrom: 参考模板“反垄断与公平竞争相关内部管理制度”
+    standardDisclosureRequirementText: 可进一步披露说明反垄断合规风险排查评估、商业信息保密准则、品牌宣传与营销活动规范、维护产品与服务市场稳定运行等内容。
+    disclosureRequirementObligationLevel: encouraged
+    sourceClauseReferenceLabels:
+    - standard: ReferenceTemplate
+      clauseRef: 反不正当竞争：治理
+- topicSectionKey: anti_unfair_competition.strategy
+  pillar: strategy
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: anti_unfair_competition.strategy.fair_competition_required
+    standardDisclosureRequirementTitle: 公平竞争与反垄断合规战略
+    excerptFrom: 参考模板“战略”
+    standardDisclosureRequirementText: 应说明公司如何将公平竞争、反垄断合规管理纳入中长期经营发展规划，并将公平竞争管控要求嵌入市场营销、业务运营、商务合作等对外经营环节。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: ReferenceTemplate
+      clauseRef: 反不正当竞争：战略
+- topicSectionKey: anti_unfair_competition.iro
+  pillar: iro_management
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: anti_unfair_competition.iro.controls_required
+    standardDisclosureRequirementTitle: 防范虚假宣传、垄断行为和侵犯商业秘密措施
+    excerptFrom: 附录索引表第五十六条；参考模板“反不正当竞争和反虚假宣传”
+    standardDisclosureRequirementText: 应说明公司防范虚假宣传、实施垄断行为、侵犯商业秘密等不正当竞争行为的管理制度、具体措施和运行情况，包括广告宣传审核、价格与渠道合规、竞品信息使用、招投标合规、反垄断审查、投诉举报、违规处理和整改跟踪。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 第五十六条
+    - standard: SZSE
+      clauseRef: 第五十六条
+    - standard: BSE
+      clauseRef: 第五十六条
+  - standardDisclosureRequirementKey: anti_unfair_competition.iro.partner_requirements_required
+    standardDisclosureRequirementTitle: 合作伙伴反不正当竞争要求
+    excerptFrom: 参考模板“供应商、经销商及其他合作伙伴要求”
+    standardDisclosureRequirementText: 应说明公司对于供应商、经销商及其他合作伙伴的反不正当竞争相关要求，包括行为准则、合同条款、反虚假宣传、商业秘密保护、反垄断要求、培训宣导、监督检查和违反要求的处理。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: ReferenceTemplate
+      clauseRef: 反不正当竞争：合作伙伴要求
+  - standardDisclosureRequirementKey: anti_unfair_competition.iro.litigation_penalties_conditional
+    standardDisclosureRequirementTitle: 不正当竞争诉讼和重大行政处罚
+    excerptFrom: 附录索引表第五十六条
+    standardDisclosureRequirementText: 如涉及报告期内因公司不正当竞争行为导致诉讼或重大行政处罚，应准确说明具体诉讼情况、涉案金额、受到的行政处罚相关情况以及整改措施。
+    disclosureRequirementObligationLevel: conditional
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 第五十六条
+    - standard: SZSE
+      clauseRef: 第五十六条
+    - standard: BSE
+      clauseRef: 第五十六条
+- topicSectionKey: anti_unfair_competition.metrics
+  pillar: metrics_targets
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: anti_unfair_competition.metrics.metrics_required
+    standardDisclosureRequirementTitle: 反不正当竞争指标
+    excerptFrom: 附录索引表第五十六条；参考模板“指标目标”
+    standardDisclosureRequirementText: 如本议题涉及相关指标，应准确说明公平竞争培训覆盖、广告宣传审核次数、反垄断审查次数、合作伙伴签署比例、投诉举报数量、诉讼/处罚数量或整改完成率。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 第五十六条
+    - standard: SZSE
+      clauseRef: 第五十六条
+    - standard: BSE
+      clauseRef: 第五十六条

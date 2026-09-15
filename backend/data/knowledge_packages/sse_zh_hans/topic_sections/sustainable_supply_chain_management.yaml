@@ -1,0 +1,265 @@
+# ABOUTME: 可持续供应链管理议题章节骨架，H2 标题以附录索引表“对应的本报告章节”为准。
+# ABOUTME: 本文件承载可持续供应链管理的段落级生成块；指标块按声明读取ESG 定量数据表的受控投影，详细付款专题由独立合同承载。
+section:
+  key: sustainable_supply_chain_management
+  title: 可持续供应链管理
+  headingLevel: 2
+  reportSectionId: sustainable_supply_chain_management
+  conciseDisclosure:
+    id: sustainable_supply_chain_management.concise_summary
+    type: paragraph
+    blockType: generative
+    source: ai
+    styleRole: body
+    generation:
+      task:
+        focus: "根据本议题当前可见证据形成一段连贯摘要，覆盖相关管理关注、方向与实践，不使用四要素小标题。"
+      inputs: {evidence: {kind: report_section}}
+      targetChars: [300, 600]
+  children:
+  - key: sustainable_supply_chain_management.gov
+    title: 治理
+    pillar: governance
+    headingLevel: 3
+    blocks:
+    - id: sustainable_supply_chain_management.gov_governance_structure_responsibilities
+      type: paragraph
+      blockType: generative
+      source: ai
+      styleRole: body
+      generation:
+        task:
+          focus: "说明供应链可持续管理的责任安排、协作关系和制度机制。"
+        templateResidueBans:
+        - 《》、《》、《》
+        - 代入上传
+        - 根据资料内容生成
+        - 直接引用绩效表
+        - 对应议题的指标表
+        - 绩效表对应议题
+        - XXX
+        - 范文：
+        - 按照上面意思生成
+        - 无逾期拖欠情况
+        - 内部溯源覆盖XXX
+        - 外部溯源包含XXX
+        inputs:
+          evidence:
+            kind: explicit
+            intakeItems:
+            - sustainable_supply_chain_management.q_governance_roles
+            - sustainable_supply_chain_management.q_governance_policies
+            - sustainable_supply_chain_management.q_governance_certifications
+        targetChars:
+        - 180
+        - 360
+        standardDisclosureRequirementKeys:
+        - sustainable_supply_chain_management.gov.governance_structure_required
+        simplifiedWritingGuidance:
+          - "聚焦供应链可持续管理的职责安排、制度框架和治理能力；供应商评价、培训帮扶和风险应对由对应管理实践块承载。"
+  - key: sustainable_supply_chain_management.strategy
+    title: 战略
+    pillar: strategy
+    headingLevel: 3
+    blocks:
+    - id: sustainable_supply_chain_management.strategy_targets
+      type: paragraph
+      blockType: generative
+      source: ai
+      styleRole: body
+      generation:
+        task:
+          focus: "说明供应链可持续性、韧性和合作关系相关的长期方向与推进原则。"
+        templateResidueBans:
+        - 《》、《》、《》
+        - 代入上传
+        - 根据资料内容生成
+        - 直接引用绩效表
+        - 对应议题的指标表
+        - 绩效表对应议题
+        - XXX
+        - 范文：
+        - 按照上面意思生成
+        - 无逾期拖欠情况
+        - 内部溯源覆盖XXX
+        - 外部溯源包含XXX
+        inputs:
+          evidence:
+            kind: explicit
+            intakeItems:
+            - sustainable_supply_chain_management.q_strategy_content
+        targetChars:
+        - 200
+        - 400
+        standardDisclosureRequirementKeys:
+        - sustainable_supply_chain_management.strategy.targets_required
+        simplifiedWritingGuidance:
+          - "聚焦供应稳定、质量协同、负责任采购和数字化管理等总体方向；管理实践与指标由对应块承载。"
+  - key: sustainable_supply_chain_management.iro
+    title: 影响、风险与机遇管理
+    pillar: iro_management
+    headingLevel: 3
+    children:
+    - key: sustainable_supply_chain_management.iro.resilience_risk_management
+      title: 供应链韧性与风险管理
+      headingLevel: 4
+      titleGeneration:
+        sourceBlockId: sustainable_supply_chain_management.iro_resilience_risk_management
+        guidance: 概括本内容单元的核心行动或结果，生成简洁、准确且不引入新事实的标题。
+      blocks:
+      - id: sustainable_supply_chain_management.iro_resilience_risk_management
+        type: paragraph
+        blockType: generative
+        source: ai
+        styleRole: body
+        generation:
+          task:
+            focus: "说明供应链风险识别、韧性建设和协同应对的相关实践。"
+          disclosureStance: risk_disclosure
+          templateResidueBans:
+          - 《》、《》、《》
+          - 代入上传
+          - 根据资料内容生成
+          - 直接引用绩效表
+          - 对应议题的指标表
+          - 绩效表对应议题
+          - XXX
+          - 范文：
+          - 按照上面意思生成
+          - 无逾期拖欠情况
+          - 内部溯源覆盖XXX
+          - 外部溯源包含XXX
+          inputs:
+            evidence:
+              kind: explicit
+              intakeItems:
+              - sustainable_supply_chain_management.q_supplier_evaluation_dimensions
+          targetChars:
+          - 220
+          - 420
+          standardDisclosureRequirementKeys:
+          - sustainable_supply_chain_management.iro.resilience_risk_management_required
+          simplifiedWritingGuidance:
+            - "聚焦供应中断、质量稳定和合作连续性等影响与风险；用户选择项既表示评价关注维度，也可支撑与其直接相关的一般性管理安排，具体运行细节以用户事实为准。"
+    - key: sustainable_supply_chain_management.iro.supplier_training_and_capacity_building
+      title: 供应商赋能与培训
+      headingLevel: 4
+      titleGeneration:
+        sourceBlockId: sustainable_supply_chain_management.iro_supplier_training_and_capacity_building
+        guidance: 概括本内容单元的核心行动或结果，生成简洁、准确且不引入新事实的标题。
+      appears_when:
+        all:
+        - path: intakeItems.sustainable_supply_chain_management.q_supplier_training_support
+          op: exists
+      blocks:
+      - id: sustainable_supply_chain_management.iro_supplier_training_and_capacity_building
+        type: paragraph
+        blockType: generative
+        source: ai
+        styleRole: body
+        generation:
+          task:
+            focus: "说明供应商沟通、能力建设和培训支持的相关实践。"
+          templateResidueBans:
+          - 《》、《》、《》
+          - 代入上传
+          - 根据资料内容生成
+          - 直接引用绩效表
+          - 对应议题的指标表
+          - 绩效表对应议题
+          - XXX
+          - 范文：
+          - 按照上面意思生成
+          - 无逾期拖欠情况
+          - 内部溯源覆盖XXX
+          - 外部溯源包含XXX
+          inputs:
+            evidence:
+              kind: explicit
+              intakeItems:
+              - sustainable_supply_chain_management.q_supplier_training_support
+          targetChars:
+          - 200
+          - 400
+          standardDisclosureRequirementKeys:
+          - sustainable_supply_chain_management.iro.supplier_training_required
+          - sustainable_supply_chain_management.iro.supplier_training_encouraged
+          simplifiedWritingGuidance:
+            - "围绕用户已披露的培训或帮扶对象、主题、方式、投入和结果组织内容。"
+    - key: sustainable_supply_chain_management.iro.supplier_traceability_commitments
+      title: 供应商追溯与承诺管理
+      headingLevel: 4
+      blocks:
+      - id: sustainable_supply_chain_management.iro_supplier_traceability_commitments
+        type: paragraph
+        blockType: generative
+        source: ai
+        styleRole: body
+        generation:
+          task:
+            focus: "基于用户上传的供应商台账、承诺书、追溯记录或尽调问卷回收记录类资料，说明供应商追溯与承诺管理的执行情况。"
+          templateResidueBans:
+          - 《》、《》、《》
+          - 代入上传
+          - 根据资料内容生成
+          - 直接引用绩效表
+          - 对应议题的指标表
+          - 绩效表对应议题
+          - XXX
+          - 范文：
+          - 按照上面意思生成
+          - 无逾期拖欠情况
+          - 内部溯源覆盖XXX
+          - 外部溯源包含XXX
+          inputs:
+            evidence:
+              kind: material_gated
+          targetChars:
+          - 160
+          - 320
+          simplifiedWritingGuidance:
+            - "只作有据叙述：可独立核验的对象、名称、数值与日期须资料明确记载才可写，不得推断或补写。"
+            - "资料记载的未按期、超期或不合规情形如实保留其性质表述，不淡化省略，也不添加资料未记载的保证性评价。"
+            - "不写供应商数量、签署率或覆盖率数值，除非资料明确记载；不展开反贪污培训或质量事故内容（分属相邻议题）。"
+    - key: sustainable_supply_chain_management.iro.responsible_minerals
+      title: 负责任矿产供应链管理
+      headingLevel: 4
+      appears_when:
+        all:
+        - path: intakeItems.sustainable_supply_chain_management.q_conflict_minerals_involvement
+          op: eq
+          value: 涉及
+      blocks:
+      - id: sustainable_supply_chain_management.iro_responsible_minerals
+        type: paragraph
+        blockType: generative
+        source: ai
+        styleRole: body
+        generation:
+          task:
+            focus: "基于用户上传的负责任矿产采购政策、供应商尽调问卷或矿产追溯记录类资料，说明高风险矿产供应链的尽责管理安排。"
+          templateResidueBans:
+          - 《》、《》、《》
+          - 代入上传
+          - 根据资料内容生成
+          - 直接引用绩效表
+          - 对应议题的指标表
+          - 绩效表对应议题
+          - XXX
+          - 范文：
+          - 按照上面意思生成
+          - 无逾期拖欠情况
+          - 内部溯源覆盖XXX
+          - 外部溯源包含XXX
+          inputs:
+            evidence:
+              kind: material_gated
+          targetChars:
+          - 160
+          - 320
+          simplifiedWritingGuidance:
+            - "只作有据叙述：可独立核验的对象、名称、数值与日期须资料明确记载才可写，不得推断或补写。"
+            - "资料记载的未按期、超期或不合规情形如实保留其性质表述，不淡化省略，也不添加资料未记载的保证性评价。"
+            - "不坐实冶炼厂清单、审验结论或第三方认证，除非资料明确记载。"
+metricDisclosure:
+  catalogMetricKeys: [social_r64, social_r65, social_r66, social_r67, social_r69]

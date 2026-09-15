@@ -1,0 +1,69 @@
+# ABOUTME(en): Appendix C2 disclosure requirements of "Anti-corruption" (General Disclosure and KPIs), grouped by pillar,
+# ABOUTME(en): for the coverage audit and for prompt assembly by key whitelist (injection is switch-gated, off by default) and for the coverage audit. Wording follows the English Code text.
+topicStandardDisclosureRequirementGroups:
+- topicSectionKey: anti_corruption.gov
+  pillar: governance
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: anti_corruption.gov.general_disclosure_policies
+    standardDisclosureRequirementTitle: Anti-corruption policies
+    excerptFrom: HKEX·Appendix C2·General Disclosure B7
+    standardDisclosureRequirementText: |-
+      Disclose the policies on preventing bribery, extortion, fraud and money laundering.
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: General Disclosure B7
+  - standardDisclosureRequirementKey: anti_corruption.gov.general_disclosure_compliance
+    standardDisclosureRequirementTitle: Compliance with anti-corruption laws and regulations
+    excerptFrom: HKEX·Appendix C2·General Disclosure B7
+    standardDisclosureRequirementText: |-
+      Disclose information on compliance with anti-corruption laws and regulations that have a significant impact on the issuer.
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: General Disclosure B7
+- topicSectionKey: anti_corruption.strategy
+  pillar: strategy
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: anti_corruption.strategy.integrity_direction
+    standardDisclosureRequirementTitle: Business ethics and integrity approach
+    excerptFrom: HKEX·Appendix C2·General Disclosure B7
+    standardDisclosureRequirementText: |-
+      Describe the company's approach to business ethics and integrity and its requirements of employees and business partners.
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: General Disclosure B7
+- topicSectionKey: anti_corruption.iro
+  pillar: iro_management
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: anti_corruption.iro.preventive_measures_and_whistleblowing
+    standardDisclosureRequirementTitle: Preventive measures and whistle-blowing procedures
+    excerptFrom: HKEX·Appendix C2·KPI B7.2
+    standardDisclosureRequirementText: |-
+      Description of preventive measures and whistle-blowing procedures, and how they are implemented and monitored.
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: KPI B7.2
+  - standardDisclosureRequirementKey: anti_corruption.iro.anti_corruption_training
+    standardDisclosureRequirementTitle: Anti-corruption training provided to directors and staff
+    excerptFrom: HKEX·Appendix C2·KPI B7.3
+    standardDisclosureRequirementText: Description of anti-corruption training provided to directors and staff.
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: KPI B7.3
+- topicSectionKey: anti_corruption.metrics
+  pillar: metrics_targets
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: anti_corruption.metrics.legal_cases_data
+    standardDisclosureRequirementTitle: |-
+      Number of concluded legal cases regarding corrupt practices and their outcomes
+    excerptFrom: HKEX·Appendix C2·KPI B7.1
+    standardDisclosureRequirementText: |-
+      Disclose the number of concluded legal cases regarding corrupt practices brought against the issuer or its employees during the reporting period and the outcomes of the cases.
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: KPI B7.1

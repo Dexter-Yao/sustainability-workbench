@@ -1,0 +1,16 @@
+# ABOUTME: 风险管理议题轻量版内容清单，仅保留两道影响、风险与机遇管理个性化问题。
+# ABOUTME: 治理、战略和指标目标固定题由 topic_intake_common.yaml 展开；结构化数值由 ESG 定量数据表维护。
+contentScopeId: risk_management
+items:
+- key: risk_management.q_iro_impacts_risks_opportunities
+  prompt: 贵公司主要风险管理工作覆盖哪些风险类别、业务环节、影响、风险或机会？
+  kind: text
+  collectionPriority: recommended
+  hint: 可填写风险管理相关的主要影响、风险、机遇、适用场景、涉及业务环节或管理重点；没有专项内容可留空。
+  maxChars: 4000
+- key: risk_management.q_iro_management_actions
+  prompt: 贵公司风险管理流程如何覆盖风险识别、风险评估、风险应对和持续跟踪？
+  kind: text
+  collectionPriority: recommended
+  hint: 可填写风险管理相关管理措施、控制流程、应对行动、报告期实践、事件处理或改进情况；没有专项内容可留空。
+  maxChars: 4500

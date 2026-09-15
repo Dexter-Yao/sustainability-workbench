@@ -1,0 +1,161 @@
+# ABOUTME: 水资源管理议题准则披露要求库，条目按上交所《指南第五号 水资源利用》披露要点与《指引第14号》条款建模。
+# ABOUTME: 本文件不作为用户可见准则批注来源；用户可见条款原文来自 user_visible_disclosure_clause_annotations。
+topicStandardDisclosureRequirementGroups:
+- topicSectionKey: water_resource_management.gov
+  pillar: governance
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: water_resource_management.gov.responsibility_structure
+    standardDisclosureRequirementTitle: 水资源管理组织架构与职责分工
+    excerptFrom: 上交所·指南第五号·披露要点2（节约措施“水资源管理”环节）
+    standardDisclosureRequirementText: 应说明公司水资源管理或节水管理的组织架构、主管部门、职责分工、用水设施责任主体、计量统计、巡检自查、整改跟踪或跨部门协同职责。指南第五号披露要点2列举的管理环节包括：完善水资源管理组织架构（如由董事会统筹公司用水、节水工作，设置水资源管理部门和专（兼）职管理人员，明确岗位职责）。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 指南第五号·披露要点2（指引第14号第三十四条、第三十六条）
+    - standard: SZSE
+      clauseRef: 第三十四条、第三十六条
+    - standard: BSE
+      clauseRef: 第三十四条、第三十六条
+    note: 指南第五号第三章明确：已建立整体性治理结构和内部制度的，可对治理要素整合披露，无需单独披露水资源利用相关治理信息。
+  - standardDisclosureRequirementKey: water_resource_management.gov.management_system
+    standardDisclosureRequirementTitle: 水资源管理制度与用水管理统计核算
+    excerptFrom: 上交所·指南第五号·披露要点2（节约措施“水资源管理”环节）
+    standardDisclosureRequirementText: 应说明公司围绕节水与可持续水资源利用建立的制度、职责、用水巡回检查、计量统计、监督检查、节水目标承接或闭环整改安排。指南第五号披露要点2列举：制定节水政策和制度，开展员工用水效率培训；建立用水管理统计核算制度，定期统计核算用水情况、动态调整用水计划；建立清晰的水资源管理物理边界（确定运营边界的取水水源地及对应水权属性）；加强智能化管理，完善用水计量设施。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 指南第五号·披露要点2（指引第14号第三十四条、第三十六条）
+    - standard: SZSE
+      clauseRef: 第三十四条、第三十六条
+    - standard: BSE
+      clauseRef: 第三十四条、第三十六条
+  - standardDisclosureRequirementKey: water_resource_management.gov.policy_documents
+    standardDisclosureRequirementTitle: 水资源管理或节水管理制度文件
+    excerptFrom: 上交所·指南第五号·披露要点2（节约措施“水资源管理”环节）
+    standardDisclosureRequirementText: 如涉及水资源管理制度、节水管理制度，或嵌入其他管理规定中的水资源管理内容，应说明制度名称、制度目标、适用范围、关键流程以及制度对依法用水、护水节水、用水计量、节水巡检、循环利用或整改闭环的保障作用。
+    disclosureRequirementObligationLevel: conditional
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 指南第五号·披露要点2（指引第14号第三十四条、第三十六条）
+    - standard: SZSE
+      clauseRef: 第三十四条、第三十六条
+    - standard: BSE
+      clauseRef: 第三十四条、第三十六条
+- topicSectionKey: water_resource_management.strategy
+  pillar: strategy
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: water_resource_management.strategy.saving_strategy
+    standardDisclosureRequirementTitle: 水资源节约策略与全流程节水安排
+    excerptFrom: 上交所·指南第五号·第一章；披露要点2（规划和设计、取水环节、供水储水用水环节）
+    standardDisclosureRequirementText: 应说明公司水资源管理战略和策略。指南第五号第一章要求企业集约、高效利用水资源，加强水资源使用过程节约管理，推动生产、流通过程的减量化、再利用、再循环；披露要点2列举的环节包括规划和设计（选址水资源适配性原则、节水设施三同时、重复利用与非常规水源利用）、取水环节（总量控制定额管理、合理选择水源、因地制宜利用非常规水资源）、供水储水用水环节（管网漏损控制、分质供水、高效冷却和洗涤、循环用水、废水处理回用、优化水平衡）。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 指南第五号·披露要点2（指引第14号第三十四条、第三十六条）
+    - standard: SZSE
+      clauseRef: 第三十四条、第三十六条
+    - standard: BSE
+      clauseRef: 第三十四条、第三十六条
+  - standardDisclosureRequirementKey: water_resource_management.strategy.water_risk
+    standardDisclosureRequirementTitle: 水资源相关风险和机遇评估
+    excerptFrom: 上交所·指南第五号·第一章 水资源相关风险和机遇评估
+    standardDisclosureRequirementText: 如涉及水资源风险识别内容，应说明区域水压力、取水稳定性、供排水基础设施、水资源短缺对运营的潜在影响以及相应管理措施。指南第五号第一章给出三步评估法：了解各业务环节用水数据并评估关键环节；了解运营所在区域水环境现状及用水政策，识别位于缺水或高风险区域的运营地；综合分析用水情况、业务重要性与区域状况，识别风险集中的运营地及潜在财务影响。公司自身业务模式或所面临的政策环境、自然环境未发生重大变化的，无需每年开展评估工作。
+    disclosureRequirementObligationLevel: conditional
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 指南第五号·第一章（指引第14号第三十四条、第三十六条）
+    - standard: SZSE
+      clauseRef: 第三十四条、第三十六条
+    - standard: BSE
+      clauseRef: 第三十四条、第三十六条
+- topicSectionKey: water_resource_management.iro
+  pillar: iro_management
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: water_resource_management.iro.saving_target_and_measures
+    standardDisclosureRequirementTitle: 水资源节约目标以及具体措施情况
+    excerptFrom: 上交所·指南第五号·披露要点2 水资源节约目标以及具体措施情况（第1、2项）
+    standardDisclosureRequirementText: 1．水资源节约目标。披露主体可以考虑从耗水量、重复用水、非常规水资源利用等方面设置量化且易于考核的目标。目标的选取可结合行业特点、企业实际运营情况以及相关的政策及标准，以确保其具有针对性和可比性。2．节约水资源的具体措施。企业可结合自身情况，从水资源管理、规划和设计、取水环节、供水储水用水环节等入手，如用水计量、巡检维护、节水器具、设备改造、员工培训、漏损治理、节水自查或绩效激励。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 指南第五号·披露要点2（指引第14号第三十六条）
+    - standard: SZSE
+      clauseRef: 第三十六条
+    - standard: BSE
+      clauseRef: 第三十六条
+  - standardDisclosureRequirementKey: water_resource_management.iro.water_reuse
+    standardDisclosureRequirementTitle: 水资源回收利用情况
+    excerptFrom: 上交所·指南第五号·披露要点2 水资源节约目标以及具体措施情况（第3项）
+    standardDisclosureRequirementText: 3．描述水资源回收利用的情况。如描述水资源回收利用的具体举措及成效，可与节约水资源的具体措施合并披露，成效可以通过重复利用水在总用水量中的占比等量化指标进行衡量与披露。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 指南第五号·披露要点2（指引第14号第三十六条）
+    - standard: SZSE
+      clauseRef: 第三十六条
+    - standard: BSE
+      clauseRef: 第三十六条
+  - standardDisclosureRequirementKey: water_resource_management.iro.policy_practice
+    standardDisclosureRequirementTitle: 水资源管理制度执行与闭环改进
+    excerptFrom: 上交所·指南第五号·披露要点2（节约措施“水资源管理”环节）
+    standardDisclosureRequirementText: 应依据治理模块提供的水资源管理或节水管理制度文件事实，按管理框架说明制度执行、用水计量、巡检自查、节水整改、回用水管理和闭环改进。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 指南第五号·披露要点2（指引第14号第三十四条、第三十六条）
+    - standard: SZSE
+      clauseRef: 第三十四条、第三十六条
+    - standard: BSE
+      clauseRef: 第三十四条、第三十六条
+  - standardDisclosureRequirementKey: water_resource_management.iro.site_water_assessment
+    standardDisclosureRequirementTitle: 运营场所水资源和用水设施评估
+    excerptFrom: 上交所·指南第五号·第一章 步骤一至步骤三（业务环节用水评估）
+    standardDisclosureRequirementText: 如涉及运营场所水资源、用水设施或水资源利用情况评估，应说明评估目标、评估范围、评估对象、评估结果、发现事项、节水提升空间或后续改进方向。
+    disclosureRequirementObligationLevel: conditional
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 指南第五号·第一章（指引第14号第三十四条、第三十六条）
+    - standard: SZSE
+      clauseRef: 第三十四条、第三十六条
+    - standard: BSE
+      clauseRef: 第三十四条、第三十六条
+- topicSectionKey: water_resource_management.metrics
+  pillar: metrics_targets
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: water_resource_management.metrics.total_water_consumption
+    standardDisclosureRequirementTitle: 总耗水量
+    excerptFrom: 上交所·指南第五号·披露要点1 水资源使用的基本情况（第1项）
+    standardDisclosureRequirementText: 1．总耗水量。披露主体应当披露总耗水量（以吨为单位）。耗水量是指在生产经营活动中，以各种形式消耗和损失而不能回归到地表水体或地下含水层的水量，一般可以通过取水量减去排水量计算。当排水量无实测数据或无法获得、统计成本较高时，企业可结合自身实际，核算并披露总取水量。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 指南第五号·披露要点1（指引第14号第三十六条）
+    - standard: SZSE
+      clauseRef: 第三十六条
+    - standard: BSE
+      clauseRef: 第三十六条
+    note: 准则内置替代口径：排水量无实测时可改披露总取水量，属合规的替代披露而非缺口。
+  - standardDisclosureRequirementKey: water_resource_management.metrics.water_use_intensity
+    standardDisclosureRequirementTitle: 水资源使用强度
+    excerptFrom: 上交所·指南第五号·披露要点1 水资源使用的基本情况（第2项）
+    standardDisclosureRequirementText: 2．水资源使用强度。披露主体应当披露水资源使用强度（如以每单位产品、每单位营收等计算）。对于产品类型相对集中的企业，可以披露单位产品用水强度；对于产品类型较为分散、产品多元或服务导向型企业，可以披露每单位营收用水强度。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 指南第五号·披露要点1（指引第14号第三十六条）
+    - standard: SZSE
+      clauseRef: 第三十六条
+    - standard: BSE
+      clauseRef: 第三十六条
+  - standardDisclosureRequirementKey: water_resource_management.metrics.water_difficulty
+    standardDisclosureRequirementTitle: 水资源使用存在的具体困难
+    excerptFrom: 上交所·指南第五号·披露要点2 水资源节约目标以及具体措施情况（第4项）
+    standardDisclosureRequirementText: 4．描述水资源使用存在的具体困难（如有）。应说明水资源使用存在的具体困难、形成原因、对公司运营或节水目标的影响以及后续应对计划。
+    disclosureRequirementObligationLevel: conditional
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 指南第五号·披露要点2（指引第14号第三十六条）
+    - standard: SZSE
+      clauseRef: 第三十六条
+    - standard: BSE
+      clauseRef: 第三十六条

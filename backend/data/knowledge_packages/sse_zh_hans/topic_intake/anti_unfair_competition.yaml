@@ -1,0 +1,27 @@
+# ABOUTME: 反不正当竞争议题轻量版内容清单，聚焦宣传审核和诉讼举报事实。
+# ABOUTME: 治理、战略和指标目标固定题由 topic_intake_common.yaml 展开；结构化数值由 ESG 定量数据表维护。
+contentScopeId: anti_unfair_competition
+items:
+- key: anti_unfair_competition.q_advertising_review_requirements
+  prompt: 请简述贵司对于广告或宣传内容的审核要求。
+  kind: text
+  collectionPriority: recommended
+  hint: 可填写审核标准、审核机制、职责分工、审批流程、留痕管理或其他广告宣传合规要求；没有专项内容可留空。
+  maxChars: 5000
+- key: anti_unfair_competition.q_litigation_reports
+  prompt: 贵司报告期内是否发生垄断或不正当竞争方面的诉讼或举报情形？
+  kind: single_select
+  collectionPriority: recommended
+  options:
+  - 是
+  - 否
+  - 不确定
+  hint: 如选择是，请在补充说明中简述事件概况。
+  generationBoundary: 未选择是或未填写具体内容时，不得生成诉讼、举报、处罚或整改事实。
+  maxChars: 5000
+- key: anti_unfair_competition.q_trade_secret_protection
+  prompt: 贵司在商业秘密保护方面有哪些管理安排？
+  kind: text
+  collectionPriority: recommended
+  hint: 可填写保密制度、保密协议签署范围、涉密信息管理要求等；没有专项安排可留空。
+  maxChars: 3000

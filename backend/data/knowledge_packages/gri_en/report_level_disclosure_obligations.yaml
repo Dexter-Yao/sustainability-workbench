@@ -1,0 +1,76 @@
+# ABOUTME(en): Report-level obligations of reporting with reference to the GRI Standards: obligations that
+# ABOUTME(en): belong to the report as a whole, not to one topic. Carriers are declared here; the judging
+# ABOUTME(en): rules live in contract/disclosure_coverage.py.
+#
+# obligationKind values:
+#   structural  structural obligations satisfied by the report skeleton (sections exist in order)
+#   statement   statements that must appear in the body (board statement, reporting principles, boundary), judged per instance
+#   process     obligations to disclose a process or mechanism (materiality assessment process)
+#   fallback_statement  a built-in exit that, when not triggered, leaves no gap
+#
+# Sources: GRI 1: Foundation 2021 (reporting with reference, section "Reporting with reference to the
+# GRI Standards") and GRI 2: General Disclosures 2021.
+reportLevelDisclosureObligations:
+- obligationKey: gri.content_index
+  obligationTitle: GRI content index
+  sourceLabel: GRI 1 Foundation 2021 · Reporting with reference · Publish a GRI content index
+  obligationText: |-
+    Publish a GRI content index that includes the title "GRI content index", the statement of use, the title of GRI 1 used, a list of the reported disclosures including the disclosure titles, the titles of the GRI Standards the reported disclosures come from, and the location where the information reported for each disclosure can be found.
+  obligationKind: statement
+  carrierSectionKeys: []
+  carrierBlockIds: [appendix.standards_index.table]
+  userFacingNote: The report does not contain a GRI content index. Publishing one is required for reporting with reference to the GRI Standards.
+- obligationKey: gri.statement_of_use
+  obligationTitle: Statement of use
+  sourceLabel: GRI 1 Foundation 2021 · Reporting with reference · Provide a statement of use
+  obligationText: |-
+    Include in the GRI content index the statement: "[Name of organization] has reported the information cited in this GRI content index for the period [reporting period start and end dates] with reference to the GRI Standards." The organization name and the reporting period start and end dates must be inserted.
+  obligationKind: statement
+  carrierSectionKeys: []
+  carrierBlockIds: [appendix.standards_index.intro]
+  userFacingNote: The GRI content index does not carry the required statement of use. Its wording is fixed by GRI 1 and must not be rephrased.
+- obligationKey: gri.reporting_principles
+  obligationTitle: Reporting principles
+  sourceLabel: GRI 1 Foundation 2021 · Section 4 Reporting principles
+  obligationText: |-
+    Apply the reporting principles of GRI 1: Foundation 2021 — accuracy, balance, clarity, comparability, completeness, sustainability context, timeliness and verifiability — to ensure high-quality reporting.
+  obligationKind: statement
+  carrierSectionKeys: [about_report.principles]
+  carrierBlockIds: [about.principles]
+  userFacingNote: The report does not state the reporting principles it applies. Reporting with reference should still apply the GRI 1 reporting principles.
+- obligationKey: gri.reporting_entities
+  obligationTitle: Entities included in the sustainability reporting
+  sourceLabel: GRI 2 General Disclosures 2021 · Disclosure 2-2
+  obligationText: |-
+    Report the entities included in the organization's sustainability reporting and, where the report covers a different set of entities than the financial reporting, explain the difference.
+  obligationKind: statement
+  carrierSectionKeys: [about_report.scope]
+  carrierBlockIds: []
+  userFacingNote: The report does not set out which entities its sustainability reporting covers.
+- obligationKey: gri.reporting_period
+  obligationTitle: Reporting period, frequency and contact point
+  sourceLabel: GRI 2 General Disclosures 2021 · Disclosure 2-3
+  obligationText: |-
+    Report the reporting period for and the frequency of the sustainability reporting, the reporting period for the financial reporting where it differs, the publication date of the report, and the contact point for questions about the report.
+  obligationKind: statement
+  carrierSectionKeys: [about_report.timeframe]
+  carrierBlockIds: [about.timeframe]
+  userFacingNote: The report does not state its reporting period, reporting frequency or a contact point for questions.
+- obligationKey: gri.material_topics_process
+  obligationTitle: Process to determine material topics
+  sourceLabel: GRI 3 Material Topics 2021 · Disclosures 3-1 and 3-2
+  obligationText: |-
+    Report the process followed to determine material topics and the list of material topics determined, including how the process considered impacts on the economy, the environment and people.
+  obligationKind: process
+  carrierSectionKeys: [sm.materiality]
+  carrierBlockIds: []
+  userFacingNote: The report does not describe how the material topics were determined or list them.
+- obligationKey: gri.notify_gri
+  obligationTitle: Notify GRI
+  sourceLabel: GRI 1 Foundation 2021 · Reporting with reference · Notify GRI
+  obligationText: |-
+    Notify GRI of the use of the GRI Standards and of the statement of use by sending an email to reportregistration@globalreporting.org. There is no cost associated with the notification. This is an action for the reporting organization; the report itself carries no evidence of it.
+  obligationKind: fallback_statement
+  carrierSectionKeys: []
+  carrierBlockIds: []
+  userFacingNote: Notifying GRI is the reporting organization's own action, to be done after publication; it is listed here so it is not forgotten.

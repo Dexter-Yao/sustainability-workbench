@@ -1,0 +1,192 @@
+# ABOUTME: 数据安全与客户隐私保护议题章节骨架，H2 标题以附录索引表“对应的本报告章节”为准。
+# ABOUTME: 本文件按轻量版收敛为治理、战略、客户信息保护实践和指标；事件、演练、培训留待专项材料承载。
+section:
+  key: data_security_customer_privacy_protection
+  title: 数据安全与客户隐私保护
+  headingLevel: 2
+  reportSectionId: data_security_customer_privacy_protection
+  conciseDisclosure:
+    id: data_security_customer_privacy_protection.concise_summary
+    type: paragraph
+    blockType: generative
+    source: ai
+    styleRole: body
+    generation:
+      task:
+        focus: "根据本议题当前可见证据形成一段连贯摘要，覆盖相关管理关注、方向与实践，不使用四要素小标题。"
+      inputs: {evidence: {kind: report_section}}
+      targetChars: [300, 600]
+  children:
+  - key: data_security_customer_privacy_protection.gov
+    title: 治理
+    pillar: governance
+    headingLevel: 3
+    blocks:
+    - id: data_security_customer_privacy_protection.gov_security_management_system
+      type: paragraph
+      blockType: generative
+      source: ai
+      styleRole: body
+      generation:
+        task:
+          focus: "说明数据安全与客户隐私保护的责任安排和管理机制。"
+        templateResidueBans:
+        - 国际公认的最佳实践水平
+        - 第三方权威机构认证
+        - 年度培训覆盖率不低于95%
+        - 集团《数据安全和隐私保护管理程序》
+        - 15分钟内完成信息同步与初步研判
+        - 10分钟内启动隔离操作
+        - 计划停电超6小时
+        - 2025年5月
+        - 2025年10月
+        - 业务无感知
+        - 489人次
+        - 20名相关岗位人员
+        - 引用数据表
+        - 对应议题指标
+        - 202X
+        - XXXX
+        inputs:
+          evidence:
+            kind: explicit
+            intakeItems:
+            - data_security_customer_privacy_protection.q_governance_roles
+            - data_security_customer_privacy_protection.q_governance_policies
+            - data_security_customer_privacy_protection.q_governance_certifications
+        targetChars:
+        - 180
+        - 360
+        standardDisclosureRequirementKeys:
+        - data_security_customer_privacy_protection.gov.security_management_system_required
+        - data_security_customer_privacy_protection.gov.security_certification_encouraged
+        simplifiedWritingGuidance:
+          - "聚焦数据安全与客户隐私保护的职责安排、制度框架和治理能力；访问控制、事件响应、演练和培训由对应管理实践块承载。"
+  - key: data_security_customer_privacy_protection.strategy
+    title: 战略
+    pillar: strategy
+    headingLevel: 3
+    blocks:
+    - id: data_security_customer_privacy_protection.strategy_security_targets
+      type: paragraph
+      blockType: generative
+      source: ai
+      styleRole: body
+      generation:
+        task:
+          focus: "说明数据安全与客户隐私保护的长期方向、目标意识和推进原则。"
+        templateResidueBans:
+        - 国际公认的最佳实践水平
+        - 第三方权威机构认证
+        - 年度培训覆盖率不低于95%
+        - 集团《数据安全和隐私保护管理程序》
+        - 15分钟内完成信息同步与初步研判
+        - 10分钟内启动隔离操作
+        - 计划停电超6小时
+        - 2025年5月
+        - 2025年10月
+        - 业务无感知
+        - 489人次
+        - 20名相关岗位人员
+        - 引用数据表
+        - 对应议题指标
+        - 202X
+        - XXXX
+        inputs:
+          evidence:
+            kind: explicit
+            intakeItems:
+            - data_security_customer_privacy_protection.q_strategy_content
+        targetChars:
+        - 160
+        - 320
+        standardDisclosureRequirementKeys:
+        - data_security_customer_privacy_protection.strategy.security_targets_required
+  - key: data_security_customer_privacy_protection.iro
+    title: 影响、风险与机遇管理
+    pillar: iro_management
+    headingLevel: 3
+    blocks:
+    - id: data_security_customer_privacy_protection.iro_customer_information_protection_controls
+      type: paragraph
+      blockType: generative
+      source: ai
+      styleRole: body
+      generation:
+        task:
+          focus: "说明客户信息保密、访问控制和隐私风险防范的相关实践。"
+        templateResidueBans:
+        - 国际公认的最佳实践水平
+        - 第三方权威机构认证
+        - 年度培训覆盖率不低于95%
+        - 集团《数据安全和隐私保护管理程序》
+        - 15分钟内完成信息同步与初步研判
+        - 10分钟内启动隔离操作
+        - 计划停电超6小时
+        - 2025年5月
+        - 2025年10月
+        - 业务无感知
+        - 489人次
+        - 20名相关岗位人员
+        - 引用数据表
+        - 对应议题指标
+        - 202X
+        - XXXX
+        inputs:
+          evidence:
+            kind: explicit
+            intakeItems:
+            - data_security_customer_privacy_protection.q_customer_info_confidentiality
+            - data_security_customer_privacy_protection.q_customer_info_access_permissions
+        targetChars:
+        - 220
+        - 420
+        standardDisclosureRequirementKeys:
+        - data_security_customer_privacy_protection.iro.data_lifecycle_required
+        - data_security_customer_privacy_protection.iro.access_account_required
+        simplifiedWritingGuidance:
+          - "聚焦客户信息保密、访问权限和使用边界；具体控制维度与实施状态来自本块用户事实。"
+    children:
+    - key: data_security_customer_privacy_protection.iro.drills_continuity_evidence
+      title: 应急演练与业务连续性
+      headingLevel: 4
+      blocks:
+      - id: data_security_customer_privacy_protection.iro_drills_continuity_evidence
+        type: paragraph
+        blockType: generative
+        source: ai
+        styleRole: body
+        generation:
+          task:
+            focus: "基于用户上传的应急响应演练记录、业务连续性或系统切换演练复盘类资料，说明数据安全应急演练与业务连续性保障的执行情况。"
+          templateResidueBans:
+          - 国际公认的最佳实践水平
+          - 第三方权威机构认证
+          - 年度培训覆盖率不低于95%
+          - 集团《数据安全和隐私保护管理程序》
+          - 15分钟内完成信息同步与初步研判
+          - 10分钟内启动隔离操作
+          - 计划停电超6小时
+          - 2025年5月
+          - 2025年10月
+          - 业务无感知
+          - 489人次
+          - 20名相关岗位人员
+          - 引用数据表
+          - 对应议题指标
+          - 202X
+          - XXXX
+          inputs:
+            evidence:
+              kind: material_gated
+          targetChars:
+          - 160
+          - 320
+          standardDisclosureRequirementKeys:
+          - data_security_customer_privacy_protection.iro.drills_improvement_required
+          simplifiedWritingGuidance:
+            - "只作有据叙述：可独立核验的对象、名称、数值与日期须资料明确记载才可写，不得推断或补写。"
+            - "资料记载的未按期、超期或不合规情形如实保留其性质表述，不淡化省略，也不添加资料未记载的保证性评价。"
+            - "不写数据安全事件、隐私泄露或投诉情况（专项披露不在本块）；演练次数与覆盖范围须资料明确记载。"
+metricDisclosure:
+  catalogMetricKeys: [social_r59, social_r60, social_r63]

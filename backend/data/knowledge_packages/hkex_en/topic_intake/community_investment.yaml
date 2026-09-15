@@ -1,0 +1,28 @@
+# ABOUTME(en): Topic-specific intake questions of "Community Investment"; the four fixed pillar questions come from topic_intake_common.yaml.
+# ABOUTME(en): Quantitative KPIs are collected through the metric catalog, not here.
+contentScopeId: community_investment
+items:
+- key: community_investment.q_focus_areas
+  prompt: Which areas does the company's community investment focus on?
+  kind: multi_select
+  collectionPriority: recommended
+  options:
+  - Education
+  - Environmental concerns
+  - Labour needs
+  - Health
+  - Culture
+  - Sport
+  - Poverty relief and vulnerable groups
+  - No specific focus area
+  hint: Select all that apply; note reasons and main partners.
+  maxChars: 5000
+- key: community_investment.q_community_activities
+  prompt: |-
+    What community engagement or charitable activities did the company carry out during the reporting period?
+  kind: text
+  collectionPriority: recommended
+  hint: Activities, partners, employees, resources; via KPIs.
+  generationBoundary: |-
+    Unless specific figures are given, do not generate donation amounts, volunteer hours or beneficiary numbers.
+  maxChars: 5000

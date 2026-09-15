@@ -1,0 +1,24 @@
+# ABOUTME(en): Topic-specific intake questions of "Customer Health and Safety"; the four fixed pillar questions come from topic_intake_common.yaml.
+# ABOUTME(en): Quantitative metrics are collected through the metric catalog, not here.
+contentScopeId: customer_health_and_safety
+items:
+- key: customer_safety.q_quality_control
+  prompt: What quality control arrangements does the company have for product or service safety?
+  kind: text
+  collectionPriority: recommended
+  hint: Inspection, testing, supplier control; or blank.
+  generationBoundary: |-
+    Unless specific facts are given, do not generate pass rates, defect rates or certification names.
+  maxChars: 5000
+- key: customer_safety.q_recall_arrangements
+  prompt: Does the company have a recall or complaint handling procedure?
+  kind: single_select
+  collectionPriority: recommended
+  options:
+  - Yes, both
+  - Complaint handling only
+  - Not yet
+  - Not applicable to the business
+  - Not sure
+  hint: State the arrangement, not the case numbers.
+  maxChars: 5000

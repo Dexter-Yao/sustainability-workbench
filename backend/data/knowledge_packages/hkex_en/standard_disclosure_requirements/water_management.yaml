@@ -1,0 +1,51 @@
+# ABOUTME(en): Appendix C2 disclosure requirements of "Water Management" (General Disclosure and KPIs), grouped by pillar,
+# ABOUTME(en): for the coverage audit and for prompt assembly by key whitelist (injection is switch-gated, off by default) and for the coverage audit. Wording follows the English Code text.
+topicStandardDisclosureRequirementGroups:
+- topicSectionKey: water_management.gov
+  pillar: governance
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: water_management.gov.general_disclosure_policies
+    standardDisclosureRequirementTitle: Policy on efficient use of water
+    excerptFrom: HKEX·Appendix C2·General Disclosure A2
+    standardDisclosureRequirementText: |-
+      Disclose the policies on the efficient use of resources, including water.
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: General Disclosure A2
+- topicSectionKey: water_management.strategy
+  pillar: strategy
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: water_management.strategy.water_efficiency_targets
+    standardDisclosureRequirementTitle: Water efficiency targets and steps taken to achieve them
+    excerptFrom: HKEX·Appendix C2·KPI A2.4
+    standardDisclosureRequirementText: |-
+      Description of water efficiency target(s) set and steps taken to achieve them.
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: KPI A2.4
+- topicSectionKey: water_management.iro
+  pillar: iro_management
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: water_management.iro.water_sourcing_and_measures
+    standardDisclosureRequirementTitle: Issues in sourcing water and water measures
+    excerptFrom: HKEX·Appendix C2·KPI A2.4
+    standardDisclosureRequirementText: |-
+      Description of whether there is any issue in sourcing water that is fit for purpose, and the water saving and recycling measures and how they are implemented.
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: KPI A2.4
+- topicSectionKey: water_management.metrics
+  pillar: metrics_targets
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: water_management.metrics.water_consumption_data
+    standardDisclosureRequirementTitle: Water consumption in total and intensity
+    excerptFrom: HKEX·Appendix C2·KPI A2.2
+    standardDisclosureRequirementText: |-
+      Disclose water consumption in total and intensity (e.g. per unit of production volume, per facility).
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: KPI A2.2

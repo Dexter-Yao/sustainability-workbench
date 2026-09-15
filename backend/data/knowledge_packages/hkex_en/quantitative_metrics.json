@@ -1,0 +1,1168 @@
+[
+  {
+    "key": "economic_revenue",
+    "sheet": "Economic",
+    "category": "Economic Performance",
+    "groupPath": [
+      "Economic Performance"
+    ],
+    "metricLabel": "Revenue",
+    "unit": "HK$ million",
+    "metricDefinition": "Revenue in the consolidated income statement for the period.",
+    "termExplanation": "Consistent with the annual report; denominator of the intensity metrics."
+  },
+  {
+    "key": "economic_total_employees",
+    "sheet": "Economic",
+    "category": "Economic Performance",
+    "groupPath": [
+      "Economic Performance"
+    ],
+    "metricLabel": "Total employees (year end)",
+    "unit": "persons",
+    "metricDefinition": "Employees in service on the last day of the period.",
+    "termExplanation": "Equals the B1.1 total workforce; denominator of per-capita metrics."
+  },
+  {
+    "key": "climate_ghg_scope1",
+    "sheet": "Environmental",
+    "category": "Climate Change",
+    "groupPath": [
+      "Climate Change",
+      "Greenhouse gas emissions"
+    ],
+    "metricLabel": "Scope 1 greenhouse gas emissions",
+    "unit": "tCO2e",
+    "requiresGreenhouseGasAccountingStandard": true,
+    "kpiCode": "D28(a)",
+    "metricDefinition": "Direct emissions from sources the company owns or controls.",
+    "termExplanation": "Scope 1 is direct, Scope 2 is purchased energy; gases converted to CO2e by GWP."
+  },
+  {
+    "key": "climate_ghg_scope2",
+    "sheet": "Environmental",
+    "category": "Climate Change",
+    "groupPath": [
+      "Climate Change",
+      "Greenhouse gas emissions"
+    ],
+    "metricLabel": "Scope 2 greenhouse gas emissions",
+    "unit": "tCO2e",
+    "requiresGreenhouseGasAccountingStandard": true,
+    "kpiCode": "D28(b)",
+    "metricDefinition": "Indirect emissions from purchased electricity, heat, steam.",
+    "termExplanation": "Use the regional grid or supplier emission factor and state its source."
+  },
+  {
+    "key": "climate_ghg_scope1_2_total",
+    "sheet": "Environmental",
+    "category": "Climate Change",
+    "groupPath": [
+      "Climate Change",
+      "Greenhouse gas emissions"
+    ],
+    "metricLabel": "Total Scope 1 and Scope 2 greenhouse gas emissions",
+    "unit": "tCO2e",
+    "sumOfMetricKeys": [
+      "climate_ghg_scope1",
+      "climate_ghg_scope2"
+    ],
+    "kpiCode": "D28",
+    "metricDefinition": "Scope 1 plus Scope 2 emissions, computed automatically."
+  },
+  {
+    "key": "climate_ghg_scope3",
+    "sheet": "Environmental",
+    "category": "Climate Change",
+    "groupPath": [
+      "Climate Change",
+      "Greenhouse gas emissions"
+    ],
+    "metricLabel": "Scope 3 greenhouse gas emissions",
+    "unit": "tCO2e",
+    "requiresGreenhouseGasAccountingStandard": true,
+    "kpiCode": "D28(c)",
+    "metricDefinition": "Other indirect value-chain emissions, if calculated.",
+    "termExplanation": "Transitional relief: describe the work plan and timeline if not disclosed."
+  },
+  {
+    "key": "climate_ghg_intensity_revenue",
+    "sheet": "Environmental",
+    "category": "Climate Change",
+    "groupPath": [
+      "Climate Change",
+      "Greenhouse gas emissions"
+    ],
+    "metricLabel": "Greenhouse gas emission intensity (by revenue)",
+    "unit": "tCO2e / HK$ million",
+    "kpiCode": "D28",
+    "metricDefinition": "Total Scope 1 and Scope 2 emissions divided by revenue."
+  },
+  {
+    "key": "climate_ghg_intensity_output",
+    "sheet": "Environmental",
+    "category": "Climate Change",
+    "groupPath": [
+      "Climate Change",
+      "Greenhouse gas emissions"
+    ],
+    "metricLabel": "Greenhouse gas emission intensity (by output or area)",
+    "unit": "tCO2e / unit of output",
+    "kpiCode": "D28",
+    "metricDefinition": "Scope 1 and 2 emissions per unit of output or floor area.",
+    "termExplanation": "State the denominator unit in the remark."
+  },
+  {
+    "key": "climate_internal_carbon_price",
+    "sheet": "Environmental",
+    "category": "Climate Change",
+    "groupPath": [
+      "Climate Change",
+      "Climate-related metrics"
+    ],
+    "metricLabel": "Internal carbon price",
+    "unit": "HK$ / tCO2e",
+    "kpiCode": "D37",
+    "metricDefinition": "Internal carbon price used in decision-making, if any."
+  },
+  {
+    "key": "climate_capital_deployment",
+    "sheet": "Environmental",
+    "category": "Climate Change",
+    "groupPath": [
+      "Climate Change",
+      "Climate-related metrics"
+    ],
+    "metricLabel": "Capital deployed towards climate-related risks and opportunities",
+    "unit": "HK$ million",
+    "kpiCode": "D36",
+    "metricDefinition": "Capex, financing or investment on climate-related matters."
+  },
+  {
+    "key": "emissions_nox",
+    "sheet": "Environmental",
+    "category": "Emissions",
+    "groupPath": [
+      "Emissions",
+      "Air pollutants"
+    ],
+    "metricLabel": "Nitrogen oxides emissions",
+    "unit": "kg",
+    "kpiCode": "A1.1",
+    "metricDefinition": "Nitrogen oxides from stationary and mobile sources.",
+    "termExplanation": "Categories follow A1.1; vehicle emissions may follow HKEX reporting guidance."
+  },
+  {
+    "key": "emissions_sox",
+    "sheet": "Environmental",
+    "category": "Emissions",
+    "groupPath": [
+      "Emissions",
+      "Air pollutants"
+    ],
+    "metricLabel": "Sulphur oxides emissions",
+    "unit": "kg",
+    "kpiCode": "A1.1",
+    "metricDefinition": "Sulphur oxides from fuel combustion."
+  },
+  {
+    "key": "emissions_pm",
+    "sheet": "Environmental",
+    "category": "Emissions",
+    "groupPath": [
+      "Emissions",
+      "Air pollutants"
+    ],
+    "metricLabel": "Particulate matter emissions",
+    "unit": "kg",
+    "kpiCode": "A1.1",
+    "metricDefinition": "Particulate matter from fuel combustion and production."
+  },
+  {
+    "key": "emissions_voc",
+    "sheet": "Environmental",
+    "category": "Emissions",
+    "groupPath": [
+      "Emissions",
+      "Air pollutants"
+    ],
+    "metricLabel": "Volatile organic compound emissions",
+    "unit": "kg",
+    "kpiCode": "A1.1",
+    "metricDefinition": "VOCs from processes such as spraying and cleaning."
+  },
+  {
+    "key": "emissions_wastewater_discharge",
+    "sheet": "Environmental",
+    "category": "Emissions",
+    "groupPath": [
+      "Emissions",
+      "Discharges into water and land"
+    ],
+    "metricLabel": "Wastewater discharged",
+    "unit": "m³",
+    "kpiCode": "A1.1",
+    "metricDefinition": "Treated wastewater discharged to sewers or water bodies."
+  },
+  {
+    "key": "emissions_cod",
+    "sheet": "Environmental",
+    "category": "Emissions",
+    "groupPath": [
+      "Emissions",
+      "Discharges into water and land"
+    ],
+    "metricLabel": "Chemical oxygen demand discharged",
+    "unit": "kg",
+    "kpiCode": "A1.1",
+    "metricDefinition": "Chemical oxygen demand load in discharged wastewater."
+  },
+  {
+    "key": "waste_hazardous_total",
+    "sheet": "Environmental",
+    "category": "Waste Management",
+    "groupPath": [
+      "Waste Management",
+      "Hazardous waste"
+    ],
+    "metricLabel": "Total hazardous waste",
+    "unit": "tonnes",
+    "kpiCode": "A1.3",
+    "metricDefinition": "Hazardous waste produced and handed to licensed contractors.",
+    "termExplanation": "Hazardous waste as defined locally, e.g. chemical waste under the WDO."
+  },
+  {
+    "key": "waste_hazardous_intensity",
+    "sheet": "Environmental",
+    "category": "Waste Management",
+    "groupPath": [
+      "Waste Management",
+      "Hazardous waste"
+    ],
+    "metricLabel": "Hazardous waste intensity",
+    "unit": "tonnes / HK$ million",
+    "kpiCode": "A1.3",
+    "metricDefinition": "Total hazardous waste divided by revenue."
+  },
+  {
+    "key": "waste_non_hazardous_total",
+    "sheet": "Environmental",
+    "category": "Waste Management",
+    "groupPath": [
+      "Waste Management",
+      "Non-hazardous waste"
+    ],
+    "metricLabel": "Total non-hazardous waste",
+    "unit": "tonnes",
+    "kpiCode": "A1.4",
+    "metricDefinition": "General industrial and domestic waste produced."
+  },
+  {
+    "key": "waste_non_hazardous_intensity",
+    "sheet": "Environmental",
+    "category": "Waste Management",
+    "groupPath": [
+      "Waste Management",
+      "Non-hazardous waste"
+    ],
+    "metricLabel": "Non-hazardous waste intensity",
+    "unit": "tonnes / HK$ million",
+    "kpiCode": "A1.4",
+    "metricDefinition": "Total non-hazardous waste divided by revenue."
+  },
+  {
+    "key": "waste_recycled_total",
+    "sheet": "Environmental",
+    "category": "Waste Management",
+    "groupPath": [
+      "Waste Management",
+      "Recycling"
+    ],
+    "metricLabel": "Waste recycled",
+    "unit": "tonnes",
+    "kpiCode": "A1.6",
+    "metricDefinition": "Waste sorted for reuse or handed to recyclers."
+  },
+  {
+    "key": "waste_recycling_rate",
+    "sheet": "Environmental",
+    "category": "Waste Management",
+    "groupPath": [
+      "Waste Management",
+      "Recycling"
+    ],
+    "metricLabel": "Waste recycling rate",
+    "unit": "%",
+    "kpiCode": "A1.6",
+    "metricDefinition": "Waste recycled as a percentage of total waste."
+  },
+  {
+    "key": "energy_purchased_electricity",
+    "sheet": "Environmental",
+    "category": "Energy Management",
+    "groupPath": [
+      "Energy Management",
+      "Indirect energy"
+    ],
+    "metricLabel": "Purchased electricity consumption",
+    "unit": "MWh",
+    "kpiCode": "A2.1",
+    "metricDefinition": "Total electricity purchased in the period.",
+    "termExplanation": "The Code reports energy in kWh in thousands (MWh)."
+  },
+  {
+    "key": "energy_renewable_electricity",
+    "sheet": "Environmental",
+    "category": "Energy Management",
+    "groupPath": [
+      "Energy Management",
+      "Indirect energy"
+    ],
+    "metricLabel": "Renewable electricity consumption",
+    "unit": "MWh",
+    "kpiCode": "A2.1",
+    "metricDefinition": "Own solar photovoltaic or purchased renewable electricity."
+  },
+  {
+    "key": "energy_natural_gas",
+    "sheet": "Environmental",
+    "category": "Energy Management",
+    "groupPath": [
+      "Energy Management",
+      "Direct energy"
+    ],
+    "metricLabel": "Natural gas consumption",
+    "unit": "MWh",
+    "kpiCode": "A2.1",
+    "metricDefinition": "Natural gas converted to MWh by calorific value."
+  },
+  {
+    "key": "energy_diesel",
+    "sheet": "Environmental",
+    "category": "Energy Management",
+    "groupPath": [
+      "Energy Management",
+      "Direct energy"
+    ],
+    "metricLabel": "Diesel consumption",
+    "unit": "MWh",
+    "kpiCode": "A2.1",
+    "metricDefinition": "Diesel for vehicles, generators and equipment, in MWh."
+  },
+  {
+    "key": "energy_petrol",
+    "sheet": "Environmental",
+    "category": "Energy Management",
+    "groupPath": [
+      "Energy Management",
+      "Direct energy"
+    ],
+    "metricLabel": "Petrol consumption",
+    "unit": "MWh",
+    "kpiCode": "A2.1",
+    "metricDefinition": "Petrol for vehicles converted to MWh."
+  },
+  {
+    "key": "energy_lpg",
+    "sheet": "Environmental",
+    "category": "Energy Management",
+    "groupPath": [
+      "Energy Management",
+      "Direct energy"
+    ],
+    "metricLabel": "LPG consumption",
+    "unit": "MWh",
+    "kpiCode": "A2.1",
+    "metricDefinition": "LPG for canteens and equipment converted to MWh."
+  },
+  {
+    "key": "energy_total",
+    "sheet": "Environmental",
+    "category": "Energy Management",
+    "groupPath": [
+      "Energy Management",
+      "Total energy"
+    ],
+    "metricLabel": "Total energy consumption",
+    "unit": "MWh",
+    "sumOfMetricKeys": [
+      "energy_purchased_electricity",
+      "energy_renewable_electricity",
+      "energy_natural_gas",
+      "energy_diesel",
+      "energy_petrol",
+      "energy_lpg"
+    ],
+    "kpiCode": "A2.1",
+    "metricDefinition": "Sum of direct and indirect energy, computed automatically."
+  },
+  {
+    "key": "energy_intensity_revenue",
+    "sheet": "Environmental",
+    "category": "Energy Management",
+    "groupPath": [
+      "Energy Management",
+      "Total energy"
+    ],
+    "metricLabel": "Energy consumption intensity (by revenue)",
+    "unit": "MWh / HK$ million",
+    "kpiCode": "A2.1",
+    "metricDefinition": "Total energy consumption divided by revenue."
+  },
+  {
+    "key": "energy_intensity_output",
+    "sheet": "Environmental",
+    "category": "Energy Management",
+    "groupPath": [
+      "Energy Management",
+      "Total energy"
+    ],
+    "metricLabel": "Energy consumption intensity (by output or area)",
+    "unit": "MWh / unit of output",
+    "kpiCode": "A2.1",
+    "metricDefinition": "Total energy per unit of output or floor area.",
+    "termExplanation": "State the denominator unit in the remark."
+  },
+  {
+    "key": "water_consumption_total",
+    "sheet": "Environmental",
+    "category": "Water Management",
+    "groupPath": [
+      "Water Management"
+    ],
+    "metricLabel": "Total water consumption",
+    "unit": "m³",
+    "kpiCode": "A2.2",
+    "metricDefinition": "Municipal and other water consumed in the period."
+  },
+  {
+    "key": "water_intensity_revenue",
+    "sheet": "Environmental",
+    "category": "Water Management",
+    "groupPath": [
+      "Water Management"
+    ],
+    "metricLabel": "Water consumption intensity (by revenue)",
+    "unit": "m³ / HK$ million",
+    "kpiCode": "A2.2",
+    "metricDefinition": "Total water consumption divided by revenue."
+  },
+  {
+    "key": "water_intensity_output",
+    "sheet": "Environmental",
+    "category": "Water Management",
+    "groupPath": [
+      "Water Management"
+    ],
+    "metricLabel": "Water consumption intensity (by output or area)",
+    "unit": "m³ / unit of output",
+    "kpiCode": "A2.2",
+    "metricDefinition": "Total water per unit of output or floor area.",
+    "termExplanation": "State the denominator unit in the remark."
+  },
+  {
+    "key": "water_recycled",
+    "sheet": "Environmental",
+    "category": "Water Management",
+    "groupPath": [
+      "Water Management"
+    ],
+    "metricLabel": "Water recycled and reused",
+    "unit": "m³",
+    "kpiCode": "A2.4",
+    "metricDefinition": "Treated water reused in production or cleaning."
+  },
+  {
+    "key": "packaging_total",
+    "sheet": "Environmental",
+    "category": "Materials and Packaging",
+    "groupPath": [
+      "Materials and Packaging"
+    ],
+    "metricLabel": "Total packaging material used for finished products",
+    "unit": "tonnes",
+    "kpiCode": "A2.5",
+    "metricDefinition": "Cartons, bags, pallets and other packaging shipped."
+  },
+  {
+    "key": "packaging_per_unit",
+    "sheet": "Environmental",
+    "category": "Materials and Packaging",
+    "groupPath": [
+      "Materials and Packaging"
+    ],
+    "metricLabel": "Packaging material per unit of product",
+    "unit": "kg / unit of product",
+    "kpiCode": "A2.5",
+    "metricDefinition": "Total packaging material divided by units produced."
+  },
+  {
+    "key": "packaging_recycled_content_rate",
+    "sheet": "Environmental",
+    "category": "Materials and Packaging",
+    "groupPath": [
+      "Materials and Packaging"
+    ],
+    "metricLabel": "Share of recyclable or recycled packaging material",
+    "unit": "%",
+    "kpiCode": "A2.5",
+    "metricDefinition": "Recyclable or recycled-content packaging as share of total."
+  },
+  {
+    "key": "employment_total_workforce",
+    "sheet": "Social",
+    "category": "Employment",
+    "groupPath": [
+      "Employment",
+      "Total workforce"
+    ],
+    "metricLabel": "Total workforce",
+    "unit": "persons",
+    "kpiCode": "B1.1",
+    "metricDefinition": "Employees in service at period end, excluding contractors."
+  },
+  {
+    "key": "employment_female",
+    "sheet": "Social",
+    "category": "Employment",
+    "groupPath": [
+      "Employment",
+      "By gender"
+    ],
+    "metricLabel": "Female employees",
+    "unit": "persons",
+    "kpiCode": "B1.1",
+    "metricDefinition": "Female employees in service."
+  },
+  {
+    "key": "employment_male",
+    "sheet": "Social",
+    "category": "Employment",
+    "groupPath": [
+      "Employment",
+      "By gender"
+    ],
+    "metricLabel": "Male employees",
+    "unit": "persons",
+    "kpiCode": "B1.1",
+    "metricDefinition": "Male employees in service."
+  },
+  {
+    "key": "employment_full_time",
+    "sheet": "Social",
+    "category": "Employment",
+    "groupPath": [
+      "Employment",
+      "By employment type"
+    ],
+    "metricLabel": "Full-time employees",
+    "unit": "persons",
+    "kpiCode": "B1.1",
+    "metricDefinition": "Full-time employees."
+  },
+  {
+    "key": "employment_part_time",
+    "sheet": "Social",
+    "category": "Employment",
+    "groupPath": [
+      "Employment",
+      "By employment type"
+    ],
+    "metricLabel": "Part-time employees",
+    "unit": "persons",
+    "kpiCode": "B1.1",
+    "metricDefinition": "Part-time and temporary employees."
+  },
+  {
+    "key": "employment_age_under_30",
+    "sheet": "Social",
+    "category": "Employment",
+    "groupPath": [
+      "Employment",
+      "By age group"
+    ],
+    "metricLabel": "Employees under 30",
+    "unit": "persons",
+    "kpiCode": "B1.1",
+    "metricDefinition": "Employees aged under 30."
+  },
+  {
+    "key": "employment_age_30_50",
+    "sheet": "Social",
+    "category": "Employment",
+    "groupPath": [
+      "Employment",
+      "By age group"
+    ],
+    "metricLabel": "Employees aged 30 to 50",
+    "unit": "persons",
+    "kpiCode": "B1.1",
+    "metricDefinition": "Employees aged 30 to 50."
+  },
+  {
+    "key": "employment_age_over_50",
+    "sheet": "Social",
+    "category": "Employment",
+    "groupPath": [
+      "Employment",
+      "By age group"
+    ],
+    "metricLabel": "Employees over 50",
+    "unit": "persons",
+    "kpiCode": "B1.1",
+    "metricDefinition": "Employees aged over 50."
+  },
+  {
+    "key": "employment_region_hong_kong",
+    "sheet": "Social",
+    "category": "Employment",
+    "groupPath": [
+      "Employment",
+      "By region"
+    ],
+    "metricLabel": "Employees in Hong Kong",
+    "unit": "persons",
+    "kpiCode": "B1.1",
+    "metricDefinition": "Employees whose workplace is in Hong Kong."
+  },
+  {
+    "key": "employment_region_mainland",
+    "sheet": "Social",
+    "category": "Employment",
+    "groupPath": [
+      "Employment",
+      "By region"
+    ],
+    "metricLabel": "Employees in Mainland China",
+    "unit": "persons",
+    "kpiCode": "B1.1",
+    "metricDefinition": "Employees whose workplace is in Mainland China."
+  },
+  {
+    "key": "employment_region_other",
+    "sheet": "Social",
+    "category": "Employment",
+    "groupPath": [
+      "Employment",
+      "By region"
+    ],
+    "metricLabel": "Employees in other regions",
+    "unit": "persons",
+    "kpiCode": "B1.1",
+    "metricDefinition": "Employees outside Hong Kong and Mainland China."
+  },
+  {
+    "key": "employment_turnover_rate_total",
+    "sheet": "Social",
+    "category": "Employment",
+    "groupPath": [
+      "Employment",
+      "Employee turnover"
+    ],
+    "metricLabel": "Employee turnover rate",
+    "unit": "%",
+    "kpiCode": "B1.2",
+    "metricDefinition": "Leavers in the period divided by year-end headcount.",
+    "termExplanation": "KPI B1.2 requires the rate by gender, age group and region."
+  },
+  {
+    "key": "employment_turnover_rate_female",
+    "sheet": "Social",
+    "category": "Employment",
+    "groupPath": [
+      "Employment",
+      "Employee turnover"
+    ],
+    "metricLabel": "Female employee turnover rate",
+    "unit": "%",
+    "kpiCode": "B1.2",
+    "metricDefinition": "Female leavers divided by year-end female headcount."
+  },
+  {
+    "key": "employment_turnover_rate_male",
+    "sheet": "Social",
+    "category": "Employment",
+    "groupPath": [
+      "Employment",
+      "Employee turnover"
+    ],
+    "metricLabel": "Male employee turnover rate",
+    "unit": "%",
+    "kpiCode": "B1.2",
+    "metricDefinition": "Male leavers divided by year-end male headcount."
+  },
+  {
+    "key": "employment_turnover_rate_under_30",
+    "sheet": "Social",
+    "category": "Employment",
+    "groupPath": [
+      "Employment",
+      "Employee turnover"
+    ],
+    "metricLabel": "Turnover rate, employees under 30",
+    "unit": "%",
+    "kpiCode": "B1.2",
+    "metricDefinition": "Turnover rate of the age group."
+  },
+  {
+    "key": "employment_turnover_rate_30_50",
+    "sheet": "Social",
+    "category": "Employment",
+    "groupPath": [
+      "Employment",
+      "Employee turnover"
+    ],
+    "metricLabel": "Turnover rate, employees aged 30 to 50",
+    "unit": "%",
+    "kpiCode": "B1.2",
+    "metricDefinition": "Turnover rate of the age group."
+  },
+  {
+    "key": "employment_turnover_rate_over_50",
+    "sheet": "Social",
+    "category": "Employment",
+    "groupPath": [
+      "Employment",
+      "Employee turnover"
+    ],
+    "metricLabel": "Turnover rate, employees over 50",
+    "unit": "%",
+    "kpiCode": "B1.2",
+    "metricDefinition": "Turnover rate of the age group."
+  },
+  {
+    "key": "health_safety_fatalities_current",
+    "sheet": "Social",
+    "category": "Health and Safety",
+    "groupPath": [
+      "Health and Safety",
+      "Work-related fatalities"
+    ],
+    "metricLabel": "Work-related fatalities, reporting year",
+    "unit": "persons",
+    "kpiCode": "B2.1",
+    "metricDefinition": "Employees who died from work-related incidents in the year.",
+    "termExplanation": "KPI B2.1 requires the number and rate for each of the past three years."
+  },
+  {
+    "key": "health_safety_fatalities_prior_1",
+    "sheet": "Social",
+    "category": "Health and Safety",
+    "groupPath": [
+      "Health and Safety",
+      "Work-related fatalities"
+    ],
+    "metricLabel": "Work-related fatalities, previous year",
+    "unit": "persons",
+    "kpiCode": "B2.1",
+    "metricDefinition": "Work-related fatalities in the previous year."
+  },
+  {
+    "key": "health_safety_fatalities_prior_2",
+    "sheet": "Social",
+    "category": "Health and Safety",
+    "groupPath": [
+      "Health and Safety",
+      "Work-related fatalities"
+    ],
+    "metricLabel": "Work-related fatalities, two years prior",
+    "unit": "persons",
+    "kpiCode": "B2.1",
+    "metricDefinition": "Work-related fatalities two years before the reporting year."
+  },
+  {
+    "key": "health_safety_fatality_rate",
+    "sheet": "Social",
+    "category": "Health and Safety",
+    "groupPath": [
+      "Health and Safety",
+      "Work-related fatalities"
+    ],
+    "metricLabel": "Work-related fatality rate",
+    "unit": "per 1,000 employees",
+    "kpiCode": "B2.1",
+    "metricDefinition": "Fatalities divided by total workforce, per thousand."
+  },
+  {
+    "key": "health_safety_lost_days",
+    "sheet": "Social",
+    "category": "Health and Safety",
+    "groupPath": [
+      "Health and Safety",
+      "Work injuries"
+    ],
+    "metricLabel": "Lost days due to work injury",
+    "unit": "days",
+    "kpiCode": "B2.2",
+    "metricDefinition": "Total days of absence caused by work injuries."
+  },
+  {
+    "key": "health_safety_injury_cases",
+    "sheet": "Social",
+    "category": "Health and Safety",
+    "groupPath": [
+      "Health and Safety",
+      "Work injuries"
+    ],
+    "metricLabel": "Work injury cases",
+    "unit": "cases",
+    "kpiCode": "B2.2",
+    "metricDefinition": "Work injury cases reportable to the labour authority."
+  },
+  {
+    "key": "training_employees_trained_rate",
+    "sheet": "Social",
+    "category": "Development and Training",
+    "groupPath": [
+      "Development and Training",
+      "Percentage trained"
+    ],
+    "metricLabel": "Percentage of employees trained",
+    "unit": "%",
+    "kpiCode": "B3.1",
+    "metricDefinition": "Employees trained as a share of the total workforce.",
+    "termExplanation": "KPI B3.1 requires the percentage by gender and employee category."
+  },
+  {
+    "key": "training_rate_female",
+    "sheet": "Social",
+    "category": "Development and Training",
+    "groupPath": [
+      "Development and Training",
+      "Percentage trained"
+    ],
+    "metricLabel": "Percentage of female employees trained",
+    "unit": "%",
+    "kpiCode": "B3.1",
+    "metricDefinition": "Female employees trained as a share of female employees."
+  },
+  {
+    "key": "training_rate_male",
+    "sheet": "Social",
+    "category": "Development and Training",
+    "groupPath": [
+      "Development and Training",
+      "Percentage trained"
+    ],
+    "metricLabel": "Percentage of male employees trained",
+    "unit": "%",
+    "kpiCode": "B3.1",
+    "metricDefinition": "Male employees trained as a share of male employees."
+  },
+  {
+    "key": "training_rate_senior_management",
+    "sheet": "Social",
+    "category": "Development and Training",
+    "groupPath": [
+      "Development and Training",
+      "Percentage trained"
+    ],
+    "metricLabel": "Percentage of senior management trained",
+    "unit": "%",
+    "kpiCode": "B3.1",
+    "metricDefinition": "Senior management trained as a share of the category."
+  },
+  {
+    "key": "training_rate_middle_management",
+    "sheet": "Social",
+    "category": "Development and Training",
+    "groupPath": [
+      "Development and Training",
+      "Percentage trained"
+    ],
+    "metricLabel": "Percentage of middle management trained",
+    "unit": "%",
+    "kpiCode": "B3.1",
+    "metricDefinition": "Middle management trained as a share of the category."
+  },
+  {
+    "key": "training_rate_general_staff",
+    "sheet": "Social",
+    "category": "Development and Training",
+    "groupPath": [
+      "Development and Training",
+      "Percentage trained"
+    ],
+    "metricLabel": "Percentage of general staff trained",
+    "unit": "%",
+    "kpiCode": "B3.1",
+    "metricDefinition": "General staff trained as a share of the category."
+  },
+  {
+    "key": "training_hours_average",
+    "sheet": "Social",
+    "category": "Development and Training",
+    "groupPath": [
+      "Development and Training",
+      "Average training hours"
+    ],
+    "metricLabel": "Average training hours per employee",
+    "unit": "hours",
+    "kpiCode": "B3.2",
+    "metricDefinition": "Total training hours divided by total workforce.",
+    "termExplanation": "KPI B3.2 requires the average by gender and employee category."
+  },
+  {
+    "key": "training_hours_female",
+    "sheet": "Social",
+    "category": "Development and Training",
+    "groupPath": [
+      "Development and Training",
+      "Average training hours"
+    ],
+    "metricLabel": "Average training hours, female employees",
+    "unit": "hours",
+    "kpiCode": "B3.2",
+    "metricDefinition": "Female training hours divided by female headcount."
+  },
+  {
+    "key": "training_hours_male",
+    "sheet": "Social",
+    "category": "Development and Training",
+    "groupPath": [
+      "Development and Training",
+      "Average training hours"
+    ],
+    "metricLabel": "Average training hours, male employees",
+    "unit": "hours",
+    "kpiCode": "B3.2",
+    "metricDefinition": "Male training hours divided by male headcount."
+  },
+  {
+    "key": "training_hours_senior_management",
+    "sheet": "Social",
+    "category": "Development and Training",
+    "groupPath": [
+      "Development and Training",
+      "Average training hours"
+    ],
+    "metricLabel": "Average training hours, senior management",
+    "unit": "hours",
+    "kpiCode": "B3.2",
+    "metricDefinition": "Average training hours of the employee category."
+  },
+  {
+    "key": "training_hours_middle_management",
+    "sheet": "Social",
+    "category": "Development and Training",
+    "groupPath": [
+      "Development and Training",
+      "Average training hours"
+    ],
+    "metricLabel": "Average training hours, middle management",
+    "unit": "hours",
+    "kpiCode": "B3.2",
+    "metricDefinition": "Average training hours of the employee category."
+  },
+  {
+    "key": "training_hours_general_staff",
+    "sheet": "Social",
+    "category": "Development and Training",
+    "groupPath": [
+      "Development and Training",
+      "Average training hours"
+    ],
+    "metricLabel": "Average training hours, general staff",
+    "unit": "hours",
+    "kpiCode": "B3.2",
+    "metricDefinition": "Average training hours of the employee category."
+  },
+  {
+    "key": "supply_chain_suppliers_total",
+    "sheet": "Social",
+    "category": "Supply Chain Management",
+    "groupPath": [
+      "Supply Chain Management",
+      "By region"
+    ],
+    "metricLabel": "Total suppliers",
+    "unit": "suppliers",
+    "kpiCode": "B5.1",
+    "metricDefinition": "Suppliers with transactions in the period.",
+    "termExplanation": "KPI B5.1 requires the number by geographical region."
+  },
+  {
+    "key": "supply_chain_suppliers_hong_kong",
+    "sheet": "Social",
+    "category": "Supply Chain Management",
+    "groupPath": [
+      "Supply Chain Management",
+      "By region"
+    ],
+    "metricLabel": "Suppliers in Hong Kong",
+    "unit": "suppliers",
+    "kpiCode": "B5.1",
+    "metricDefinition": "Suppliers registered or mainly operating in Hong Kong."
+  },
+  {
+    "key": "supply_chain_suppliers_mainland",
+    "sheet": "Social",
+    "category": "Supply Chain Management",
+    "groupPath": [
+      "Supply Chain Management",
+      "By region"
+    ],
+    "metricLabel": "Suppliers in Mainland China",
+    "unit": "suppliers",
+    "kpiCode": "B5.1",
+    "metricDefinition": "Suppliers registered or mainly operating in Mainland China."
+  },
+  {
+    "key": "supply_chain_suppliers_other",
+    "sheet": "Social",
+    "category": "Supply Chain Management",
+    "groupPath": [
+      "Supply Chain Management",
+      "By region"
+    ],
+    "metricLabel": "Suppliers in other regions",
+    "unit": "suppliers",
+    "kpiCode": "B5.1",
+    "metricDefinition": "Suppliers outside Hong Kong and Mainland China."
+  },
+  {
+    "key": "supply_chain_suppliers_assessed",
+    "sheet": "Social",
+    "category": "Supply Chain Management",
+    "groupPath": [
+      "Supply Chain Management",
+      "Supplier management"
+    ],
+    "metricLabel": "Suppliers where engagement practices are implemented",
+    "unit": "suppliers",
+    "kpiCode": "B5.2",
+    "metricDefinition": "Suppliers assessed, code-of-conduct signed or audited."
+  },
+  {
+    "key": "product_recall_rate",
+    "sheet": "Social",
+    "category": "Product Responsibility",
+    "groupPath": [
+      "Product Responsibility"
+    ],
+    "metricLabel": "Percentage of products recalled for safety and health reasons",
+    "unit": "%",
+    "kpiCode": "B6.1",
+    "metricDefinition": "Products recalled as a share of products sold or shipped."
+  },
+  {
+    "key": "product_complaints",
+    "sheet": "Social",
+    "category": "Product Responsibility",
+    "groupPath": [
+      "Product Responsibility"
+    ],
+    "metricLabel": "Products and service related complaints received",
+    "unit": "cases",
+    "kpiCode": "B6.2",
+    "metricDefinition": "Product and service complaints received in the period."
+  },
+  {
+    "key": "product_complaints_resolved_rate",
+    "sheet": "Social",
+    "category": "Product Responsibility",
+    "groupPath": [
+      "Product Responsibility"
+    ],
+    "metricLabel": "Complaint resolution rate",
+    "unit": "%",
+    "kpiCode": "B6.2",
+    "metricDefinition": "Complaints resolved as a share of complaints received."
+  },
+  {
+    "key": "privacy_data_breaches",
+    "sheet": "Social",
+    "category": "Data Protection and Privacy",
+    "groupPath": [
+      "Data Protection and Privacy"
+    ],
+    "metricLabel": "Confirmed personal data breach incidents",
+    "unit": "cases",
+    "kpiCode": "B6.5",
+    "metricDefinition": "Confirmed, notifiable personal data breaches in the period."
+  },
+  {
+    "key": "anti_corruption_legal_cases",
+    "sheet": "Social",
+    "category": "Anti-corruption",
+    "groupPath": [
+      "Anti-corruption"
+    ],
+    "metricLabel": "Concluded legal cases regarding corrupt practices",
+    "unit": "cases",
+    "kpiCode": "B7.1",
+    "metricDefinition": "Concluded corruption cases against the company or employees."
+  },
+  {
+    "key": "anti_corruption_training_directors",
+    "sheet": "Social",
+    "category": "Anti-corruption",
+    "groupPath": [
+      "Anti-corruption"
+    ],
+    "metricLabel": "Directors receiving anti-corruption training",
+    "unit": "persons",
+    "kpiCode": "B7.3",
+    "metricDefinition": "Directors given anti-corruption training in the period."
+  },
+  {
+    "key": "anti_corruption_training_employees",
+    "sheet": "Social",
+    "category": "Anti-corruption",
+    "groupPath": [
+      "Anti-corruption"
+    ],
+    "metricLabel": "Employees receiving anti-corruption training",
+    "unit": "persons",
+    "kpiCode": "B7.3",
+    "metricDefinition": "Employees given anti-corruption training in the period."
+  },
+  {
+    "key": "anti_corruption_training_hours",
+    "sheet": "Social",
+    "category": "Anti-corruption",
+    "groupPath": [
+      "Anti-corruption"
+    ],
+    "metricLabel": "Total anti-corruption training hours",
+    "unit": "hours",
+    "kpiCode": "B7.3",
+    "metricDefinition": "Total hours of anti-corruption training in the period."
+  },
+  {
+    "key": "community_donations",
+    "sheet": "Social",
+    "category": "Community Investment",
+    "groupPath": [
+      "Community Investment"
+    ],
+    "metricLabel": "Community donations and sponsorships",
+    "unit": "HK$ thousand",
+    "kpiCode": "B8.2",
+    "metricDefinition": "Total cash donations and sponsorships in the period."
+  },
+  {
+    "key": "community_volunteer_hours",
+    "sheet": "Social",
+    "category": "Community Investment",
+    "groupPath": [
+      "Community Investment"
+    ],
+    "metricLabel": "Volunteer service hours",
+    "unit": "hours",
+    "kpiCode": "B8.2",
+    "metricDefinition": "Total hours of employee volunteer service."
+  },
+  {
+    "key": "community_volunteer_participants",
+    "sheet": "Social",
+    "category": "Community Investment",
+    "groupPath": [
+      "Community Investment"
+    ],
+    "metricLabel": "Employees participating in volunteer service",
+    "unit": "persons",
+    "kpiCode": "B8.2",
+    "metricDefinition": "Employees who took part in volunteer service in the period."
+  }
+]

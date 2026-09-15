@@ -1,0 +1,22 @@
+# ABOUTME(en): Topic-specific intake questions of "Biodiversity"; the four fixed pillar questions come from topic_intake_common.yaml.
+# ABOUTME(en): Quantitative metrics are collected through the metric catalog, not here.
+contentScopeId: biodiversity
+items:
+- key: biodiversity.q_biodiversity_sites
+  prompt: Are any of the company's sites in or near an area of biodiversity importance?
+  kind: single_select
+  collectionPriority: recommended
+  options:
+  - Yes, one or more sites
+  - "No"
+  - Not sure
+  hint: Protected or key biodiversity areas, or nearby.
+  maxChars: 5000
+- key: biodiversity.q_biodiversity_measures
+  prompt: What measures has the company taken to reduce impacts on biodiversity?
+  kind: text
+  collectionPriority: recommended
+  hint: Site design, restoration, monitoring; or blank.
+  generationBoundary: |-
+    Unless specific facts are given, do not generate restoration areas, species outcomes or investment amounts.
+  maxChars: 5000

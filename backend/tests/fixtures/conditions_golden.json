@@ -1,0 +1,986 @@
+{
+  "_about": "条件求值跨端 golden 一致性 fixture——前后端各跑 isVisible/_visible 断言 == expected，防 conditions 双写漂移（杠杆2 H2）。",
+  "cases": [
+    {
+      "name": "no_condition_visible",
+      "appears_when": null,
+      "report": {
+        "title": "t",
+        "fields": {},
+        "sections": []
+      },
+      "expected": true
+    },
+    {
+      "name": "fields_exists_true",
+      "appears_when": {
+        "all": [
+          {
+            "path": "fields.x.value",
+            "op": "exists"
+          }
+        ]
+      },
+      "report": {
+        "title": "t",
+        "fields": {
+          "x": {
+            "key": "x",
+            "label": "x",
+            "type": "string",
+            "source": "user_input",
+            "value": "v"
+          }
+        },
+        "sections": []
+      },
+      "expected": true
+    },
+    {
+      "name": "fields_exists_empty_false",
+      "appears_when": {
+        "all": [
+          {
+            "path": "fields.x.value",
+            "op": "exists"
+          }
+        ]
+      },
+      "report": {
+        "title": "t",
+        "fields": {
+          "x": {
+            "key": "x",
+            "label": "x",
+            "type": "string",
+            "source": "user_input",
+            "value": ""
+          }
+        },
+        "sections": []
+      },
+      "expected": false
+    },
+    {
+      "name": "fields_not_exists_true_on_empty",
+      "appears_when": {
+        "all": [
+          {
+            "path": "fields.x.value",
+            "op": "not_exists"
+          }
+        ]
+      },
+      "report": {
+        "title": "t",
+        "fields": {
+          "x": {
+            "key": "x",
+            "label": "x",
+            "type": "string",
+            "source": "user_input",
+            "value": ""
+          }
+        },
+        "sections": []
+      },
+      "expected": true
+    },
+    {
+      "name": "fields_eq_true",
+      "appears_when": {
+        "all": [
+          {
+            "path": "fields.x.value",
+            "op": "eq",
+            "value": "yes"
+          }
+        ]
+      },
+      "report": {
+        "title": "t",
+        "fields": {
+          "x": {
+            "key": "x",
+            "label": "x",
+            "type": "string",
+            "source": "user_input",
+            "value": "yes"
+          }
+        },
+        "sections": []
+      },
+      "expected": true
+    },
+    {
+      "name": "fields_eq_false",
+      "appears_when": {
+        "all": [
+          {
+            "path": "fields.x.value",
+            "op": "eq",
+            "value": "yes"
+          }
+        ]
+      },
+      "report": {
+        "title": "t",
+        "fields": {
+          "x": {
+            "key": "x",
+            "label": "x",
+            "type": "string",
+            "source": "user_input",
+            "value": "no"
+          }
+        },
+        "sections": []
+      },
+      "expected": false
+    },
+    {
+      "name": "fields_ne_true",
+      "appears_when": {
+        "all": [
+          {
+            "path": "fields.x.value",
+            "op": "ne",
+            "value": "yes"
+          }
+        ]
+      },
+      "report": {
+        "title": "t",
+        "fields": {
+          "x": {
+            "key": "x",
+            "label": "x",
+            "type": "string",
+            "source": "user_input",
+            "value": "no"
+          }
+        },
+        "sections": []
+      },
+      "expected": true
+    },
+    {
+      "name": "fields_gt_true",
+      "appears_when": {
+        "all": [
+          {
+            "path": "fields.n.value",
+            "op": "gt",
+            "value": 3
+          }
+        ]
+      },
+      "report": {
+        "title": "t",
+        "fields": {
+          "n": {
+            "key": "n",
+            "label": "n",
+            "type": "number",
+            "source": "user_input",
+            "value": 5
+          }
+        },
+        "sections": []
+      },
+      "expected": true
+    },
+    {
+      "name": "fields_gt_false",
+      "appears_when": {
+        "all": [
+          {
+            "path": "fields.n.value",
+            "op": "gt",
+            "value": 3
+          }
+        ]
+      },
+      "report": {
+        "title": "t",
+        "fields": {
+          "n": {
+            "key": "n",
+            "label": "n",
+            "type": "number",
+            "source": "user_input",
+            "value": 2
+          }
+        },
+        "sections": []
+      },
+      "expected": false
+    },
+    {
+      "name": "fields_in_true",
+      "appears_when": {
+        "all": [
+          {
+            "path": "fields.x.value",
+            "op": "in",
+            "value": [
+              "a",
+              "b"
+            ]
+          }
+        ]
+      },
+      "report": {
+        "title": "t",
+        "fields": {
+          "x": {
+            "key": "x",
+            "label": "x",
+            "type": "string",
+            "source": "user_input",
+            "value": "a"
+          }
+        },
+        "sections": []
+      },
+      "expected": true
+    },
+    {
+      "name": "intake_in_matches_multi_select_answer",
+      "appears_when": {
+        "all": [
+          {
+            "path": "intakeItems.k1",
+            "op": "in",
+            "value": [
+              "B",
+              "C"
+            ]
+          }
+        ]
+      },
+      "report": {
+        "title": "t",
+        "fields": {},
+        "sections": [],
+        "intakeItems": [
+          {
+            "key": "k1",
+            "contentScopeId": "t",
+            "prompt": "q",
+            "kind": "multi_select",
+            "answer": [
+              "A",
+              "C"
+            ]
+          }
+        ]
+      },
+      "expected": true
+    },
+    {
+      "name": "intake_contains_any_text_true",
+      "appears_when": {
+        "all": [
+          {
+            "path": "intakeItems.k1",
+            "op": "contains_any",
+            "value": [
+              "节能",
+              "减排"
+            ]
+          }
+        ]
+      },
+      "report": {
+        "title": "t",
+        "fields": {},
+        "sections": [],
+        "intakeItems": [
+          {
+            "key": "k1",
+            "contentScopeId": "t",
+            "prompt": "q",
+            "kind": "text",
+            "answer": "公司推进节能改造。"
+          }
+        ]
+      },
+      "expected": true
+    },
+    {
+      "name": "intake_contains_any_text_false",
+      "appears_when": {
+        "all": [
+          {
+            "path": "intakeItems.k1",
+            "op": "contains_any",
+            "value": [
+              "节能",
+              "减排"
+            ]
+          }
+        ]
+      },
+      "report": {
+        "title": "t",
+        "fields": {},
+        "sections": [],
+        "intakeItems": [
+          {
+            "key": "k1",
+            "contentScopeId": "t",
+            "prompt": "q",
+            "kind": "text",
+            "answer": "公司关注气候相关风险。"
+          }
+        ]
+      },
+      "expected": false
+    },
+    {
+      "name": "assessment_materiality_eq_true",
+      "appears_when": {
+        "all": [
+          {
+            "path": "assessment.topics.climate_change.materiality",
+            "op": "eq",
+            "value": "dual"
+          }
+        ]
+      },
+      "report": {
+        "title": "t",
+        "fields": {},
+        "sections": [],
+        "assessment": {
+          "reportingYear": 2025,
+          "topics": [
+            {
+              "assessmentTopicId": "climate_change",
+              "determination": "scored",
+              "materiality": "dual",
+              "financialScore": 5,
+              "impactScore": 5
+            }
+          ]
+        }
+      },
+      "expected": true
+    },
+    {
+      "name": "intake_exists_true",
+      "appears_when": {
+        "all": [
+          {
+            "path": "intakeItems.doc1",
+            "op": "exists"
+          }
+        ]
+      },
+      "report": {
+        "title": "t",
+        "fields": {},
+        "sections": [],
+        "intakeItems": [
+          {
+            "key": "doc1",
+            "contentScopeId": "t",
+            "prompt": "q",
+            "kind": "text",
+            "answer": "资料正文"
+          }
+        ]
+      },
+      "expected": true
+    },
+    {
+      "name": "blocks_state_eq_true",
+      "appears_when": {
+        "all": [
+          {
+            "path": "blocks.b1.state",
+            "op": "eq",
+            "value": "ready"
+          }
+        ]
+      },
+      "report": {
+        "title": "t",
+        "fields": {},
+        "sections": [
+          {
+            "key": "s",
+            "title": "S",
+            "headingLevel": 1,
+            "blocks": [
+              {
+                "id": "b1",
+                "type": "paragraph",
+                "blockType": "generative",
+                "source": "ai",
+                "state": "ready"
+              }
+            ]
+          }
+        ]
+      },
+      "expected": true
+    },
+    {
+      "name": "unknown_path_failclosed_false",
+      "appears_when": {
+        "all": [
+          {
+            "path": "unknown.x",
+            "op": "exists"
+          }
+        ]
+      },
+      "report": {
+        "title": "t",
+        "fields": {},
+        "sections": []
+      },
+      "expected": false
+    },
+    {
+      "name": "any_one_true",
+      "appears_when": {
+        "any": [
+          {
+            "path": "fields.x.value",
+            "op": "exists"
+          },
+          {
+            "path": "fields.y.value",
+            "op": "exists"
+          }
+        ]
+      },
+      "report": {
+        "title": "t",
+        "fields": {
+          "x": {
+            "key": "x",
+            "label": "x",
+            "type": "string",
+            "source": "user_input",
+            "value": ""
+          },
+          "y": {
+            "key": "y",
+            "label": "y",
+            "type": "string",
+            "source": "user_input",
+            "value": "v"
+          }
+        },
+        "sections": []
+      },
+      "expected": true
+    },
+    {
+      "name": "all_one_false",
+      "appears_when": {
+        "all": [
+          {
+            "path": "fields.x.value",
+            "op": "exists"
+          },
+          {
+            "path": "fields.y.value",
+            "op": "exists"
+          }
+        ]
+      },
+      "report": {
+        "title": "t",
+        "fields": {
+          "x": {
+            "key": "x",
+            "label": "x",
+            "type": "string",
+            "source": "user_input",
+            "value": "v"
+          },
+          "y": {
+            "key": "y",
+            "label": "y",
+            "type": "string",
+            "source": "user_input",
+            "value": ""
+          }
+        },
+        "sections": []
+      },
+      "expected": false
+    },
+    {
+      "name": "gt_equal_false_boundary",
+      "appears_when": {
+        "all": [
+          {
+            "path": "fields.n.value",
+            "op": "gt",
+            "value": 5
+          }
+        ]
+      },
+      "report": {
+        "title": "t",
+        "fields": {
+          "n": {
+            "key": "n",
+            "label": "n",
+            "type": "number",
+            "source": "user_input",
+            "value": 5
+          }
+        },
+        "sections": []
+      },
+      "expected": false
+    },
+    {
+      "name": "gt_nonnumber_value_false",
+      "appears_when": {
+        "all": [
+          {
+            "path": "fields.s.value",
+            "op": "gt",
+            "value": 3
+          }
+        ]
+      },
+      "report": {
+        "title": "t",
+        "fields": {
+          "s": {
+            "key": "s",
+            "label": "s",
+            "type": "string",
+            "source": "user_input",
+            "value": "5"
+          }
+        },
+        "sections": []
+      },
+      "expected": false
+    },
+    {
+      "name": "in_value_not_array_failclosed",
+      "appears_when": {
+        "all": [
+          {
+            "path": "fields.x.value",
+            "op": "in",
+            "value": "a"
+          }
+        ]
+      },
+      "report": {
+        "title": "t",
+        "fields": {
+          "x": {
+            "key": "x",
+            "label": "x",
+            "type": "string",
+            "source": "user_input",
+            "value": "a"
+          }
+        },
+        "sections": []
+      },
+      "expected": false
+    },
+    {
+      "name": "in_array_miss_false",
+      "appears_when": {
+        "all": [
+          {
+            "path": "fields.x.value",
+            "op": "in",
+            "value": [
+              "a",
+              "b"
+            ]
+          }
+        ]
+      },
+      "report": {
+        "title": "t",
+        "fields": {
+          "x": {
+            "key": "x",
+            "label": "x",
+            "type": "string",
+            "source": "user_input",
+            "value": "c"
+          }
+        },
+        "sections": []
+      },
+      "expected": false
+    },
+    {
+      "name": "assessment_missing_exists_failclosed",
+      "appears_when": {
+        "all": [
+          {
+            "path": "assessment.topics.climate_change.materiality",
+            "op": "exists"
+          }
+        ]
+      },
+      "report": {
+        "title": "t",
+        "fields": {},
+        "sections": []
+      },
+      "expected": false
+    },
+    {
+      "name": "assessment_ne_true",
+      "appears_when": {
+        "all": [
+          {
+            "path": "assessment.topics.climate_change.materiality",
+            "op": "ne",
+            "value": "dual"
+          }
+        ]
+      },
+      "report": {
+        "title": "t",
+        "fields": {},
+        "sections": [],
+        "assessment": {
+          "reportingYear": 2025,
+          "topics": [
+            {
+              "assessmentTopicId": "climate_change",
+              "determination": "scored",
+              "materiality": "impact",
+              "financialScore": 5,
+              "impactScore": 5
+            }
+          ]
+        }
+      },
+      "expected": true
+    },
+    {
+      "name": "intake_missing_not_exists_true",
+      "appears_when": {
+        "all": [
+          {
+            "path": "intakeItems.doc1",
+            "op": "not_exists"
+          }
+        ]
+      },
+      "report": {
+        "title": "t",
+        "fields": {},
+        "sections": []
+      },
+      "expected": true
+    },
+    {
+      "name": "blocks_missing_eq_failclosed",
+      "appears_when": {
+        "all": [
+          {
+            "path": "blocks.nope.state",
+            "op": "eq",
+            "value": "ready"
+          }
+        ]
+      },
+      "report": {
+        "title": "t",
+        "fields": {},
+        "sections": []
+      },
+      "expected": false
+    },
+    {
+      "name": "intake_text_exists_true",
+      "appears_when": {
+        "all": [
+          {
+            "path": "intakeItems.k1",
+            "op": "exists"
+          }
+        ]
+      },
+      "report": {
+        "title": "t",
+        "fields": {},
+        "sections": [],
+        "intakeItems": [
+          {
+            "key": "k1",
+            "contentScopeId": "t",
+            "prompt": "q",
+            "kind": "text",
+            "answer": "有"
+          }
+        ]
+      },
+      "expected": true
+    },
+    {
+      "name": "intake_unanswered_exists_false",
+      "appears_when": {
+        "all": [
+          {
+            "path": "intakeItems.k1",
+            "op": "exists"
+          }
+        ]
+      },
+      "report": {
+        "title": "t",
+        "fields": {},
+        "sections": [],
+        "intakeItems": [
+          {
+            "key": "k1",
+            "contentScopeId": "t",
+            "prompt": "q",
+            "kind": "text"
+          }
+        ]
+      },
+      "expected": false
+    },
+    {
+      "name": "intake_multi_exists_true",
+      "appears_when": {
+        "all": [
+          {
+            "path": "intakeItems.k2",
+            "op": "exists"
+          }
+        ]
+      },
+      "report": {
+        "title": "t",
+        "fields": {},
+        "sections": [],
+        "intakeItems": [
+          {
+            "key": "k2",
+            "contentScopeId": "t",
+            "prompt": "q",
+            "kind": "multi_select",
+            "options": [
+              "A",
+              "B"
+            ],
+            "answer": [
+              "A"
+            ]
+          }
+        ]
+      },
+      "expected": true
+    },
+    {
+      "name": "intake_empty_array_exists_false",
+      "appears_when": {
+        "all": [
+          {
+            "path": "intakeItems.k2",
+            "op": "exists"
+          }
+        ]
+      },
+      "report": {
+        "title": "t",
+        "fields": {},
+        "sections": [],
+        "intakeItems": [
+          {
+            "key": "k2",
+            "contentScopeId": "t",
+            "prompt": "q",
+            "kind": "multi_select",
+            "options": [
+              "A",
+              "B"
+            ],
+            "answer": []
+          }
+        ]
+      },
+      "expected": false
+    },
+    {
+      "name": "quantitative_metric_not_exists_true_when_value_missing",
+      "appears_when": {
+        "all": [
+          {
+            "path": "quantitativeMetrics.economic_environment_r11",
+            "op": "not_exists"
+          }
+        ]
+      },
+      "report": {
+        "title": "t",
+        "fields": {},
+        "sections": [],
+        "meta": {
+          "quantitativeMetrics": {
+            "metrics": {
+              "economic_environment_r11": {
+                "value": null
+              }
+            }
+          }
+        }
+      },
+      "expected": true
+    },
+    {
+      "name": "quantitative_metric_not_exists_false_when_value_present",
+      "appears_when": {
+        "all": [
+          {
+            "path": "quantitativeMetrics.economic_environment_r11",
+            "op": "not_exists"
+          }
+        ]
+      },
+      "report": {
+        "title": "t",
+        "fields": {},
+        "sections": [],
+        "meta": {
+          "quantitativeMetrics": {
+            "metrics": {
+              "economic_environment_r11": {
+                "value": "123.45"
+              }
+            }
+          }
+        }
+      },
+      "expected": false
+    },
+    {
+      "name": "assessment_counts_dual_gt_zero_true",
+      "appears_when": {
+        "any": [
+          {
+            "path": "assessment.counts.dual",
+            "op": "gt",
+            "value": 0
+          },
+          {
+            "path": "assessment.counts.financial_only",
+            "op": "gt",
+            "value": 0
+          }
+        ]
+      },
+      "report": {
+        "title": "t",
+        "fields": {},
+        "sections": [],
+        "assessment": {
+          "reportingYear": 2025,
+          "topics": [
+            {
+              "assessmentTopicId": "climate_change",
+              "determination": "scored",
+              "materiality": "dual",
+              "financialScore": 5,
+              "impactScore": 5
+            }
+          ]
+        }
+      },
+      "expected": true
+    },
+    {
+      "name": "assessment_counts_financial_alias_gt_zero_true",
+      "appears_when": {
+        "any": [
+          {
+            "path": "assessment.counts.dual",
+            "op": "gt",
+            "value": 0
+          },
+          {
+            "path": "assessment.counts.financial_only",
+            "op": "gt",
+            "value": 0
+          }
+        ]
+      },
+      "report": {
+        "title": "t",
+        "fields": {},
+        "sections": [],
+        "assessment": {
+          "reportingYear": 2025,
+          "topics": [
+            {
+              "assessmentTopicId": "energy_management",
+              "determination": "scored",
+              "materiality": "financial",
+              "financialScore": 5,
+              "impactScore": 5
+            }
+          ]
+        }
+      },
+      "expected": true
+    },
+    {
+      "name": "assessment_counts_all_non_material_false",
+      "appears_when": {
+        "any": [
+          {
+            "path": "assessment.counts.dual",
+            "op": "gt",
+            "value": 0
+          },
+          {
+            "path": "assessment.counts.financial_only",
+            "op": "gt",
+            "value": 0
+          }
+        ]
+      },
+      "report": {
+        "title": "t",
+        "fields": {},
+        "sections": [],
+        "assessment": {
+          "reportingYear": 2025,
+          "topics": [
+            {
+              "assessmentTopicId": "water_management",
+              "determination": "scored",
+              "materiality": "non",
+              "financialScore": 5,
+              "impactScore": 5
+            },
+            {
+              "assessmentTopicId": "waste_management",
+              "determination": "scored",
+              "materiality": "impact",
+              "financialScore": 5,
+              "impactScore": 5
+            }
+          ]
+        }
+      },
+      "expected": false
+    }
+  ]
+}

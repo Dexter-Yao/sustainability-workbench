@@ -1,0 +1,109 @@
+# ABOUTME(en): Topic chapter template of the HKEX Aspect「物料及包裝」: governance / strategy / risk-management
+# ABOUTME(en): blocks with their intake evidence and Appendix C2 requirement keys; the metrics H3 is compiled from metricDisclosure.
+section:
+  key: materials_and_packaging
+  title: 物料及包裝
+  headingLevel: 2
+  reportSectionId: materials_and_packaging
+  conciseDisclosure:
+    id: materials.concise_summary
+    type: paragraph
+    blockType: generative
+    source: ai
+    styleRole: body
+    generation:
+      task:
+        focus: 根據本層面當前可見證據形成一段連貫摘要，涵蓋原材料及包裝材料的使用政策、減量與回收措施，不使用四項小標題。
+      inputs:
+        evidence:
+          kind: report_section
+      targetChars:
+      - 260
+      - 520
+  children:
+  - key: materials_and_packaging.gov
+    title: 管治
+    pillar: governance
+    headingLevel: 3
+    blocks:
+    - id: materials.gov_policy
+      type: paragraph
+      blockType: generative
+      source: ai
+      styleRole: body
+      generation:
+        task:
+          focus: 說明公司有效使用原材料及包裝材料的政策與職責安排（守則層面A2一般披露）。
+          noFactGuidance: |-
+            用戶未提供政策或職責資料時，以審慎、概括的語態說明公司按所屬行業及業務類型對本層面採取的一般管理關注、合規原則及職責安排；不指名部門、制度名稱、認證或審批流程，不聲稱已建立特定制度或已完成合規檢查。
+        inputs:
+          evidence:
+            kind: explicit
+            intakeItems:
+            - materials.q_governance_roles
+            - materials.q_governance_policies
+            - materials.q_governance_certifications
+        targetChars:
+        - 140
+        - 320
+        standardDisclosureRequirementKeys:
+        - materials_and_packaging.gov.general_disclosure_policies
+  - key: materials_and_packaging.strategy
+    title: 策略
+    pillar: strategy
+    headingLevel: 3
+    blocks:
+    - id: materials.strategy_targets
+      type: paragraph
+      blockType: generative
+      source: ai
+      styleRole: body
+      generation:
+        task:
+          focus: 說明公司在包裝材料減量、輕量化及採用可回收或再生材料方面的目標與方向。
+          noFactGuidance: 用戶未提供目標或計劃時，說明公司會結合業務發展持續關注本層面的改善方向與量化目標的訂立；不虛構目標數值、基準年、達成期限或已取得的成效。
+        inputs:
+          evidence:
+            kind: explicit
+            intakeItems:
+            - materials.q_strategy_content
+            - materials.q_packaging_reduction
+        targetChars:
+        - 140
+        - 320
+        standardDisclosureRequirementKeys:
+        - materials_and_packaging.strategy.packaging_reduction_direction
+        simplifiedWritingGuidance:
+        - 數值由關鍵績效指標數據表承載；本段不寫排放量、耗用量、比率或減幅等數字。
+  - key: materials_and_packaging.iro
+    title: 風險管理
+    pillar: iro_management
+    headingLevel: 3
+    blocks:
+    - id: materials.iro_measures
+      type: paragraph
+      blockType: generative
+      source: ai
+      styleRole: body
+      generation:
+        task:
+          focus: 說明公司製成品所用包裝材料的種類及管理措施：包裝設計優化、可循環使用的周轉容器、回收安排及與客戶協同的減包裝做法。
+          noFactGuidance: 用戶未提供具體措施時，僅結合行業及業務類型說明本層面常見的管理環節與方向性安排；不聲稱公司已實施特定措施、已購置設備、已委聘服務商或已取得成效。
+        inputs:
+          evidence:
+            kind: explicit
+            intakeItems:
+            - materials.q_packaging_materials
+            - materials.q_packaging_reduction
+        targetChars:
+        - 160
+        - 380
+        standardDisclosureRequirementKeys:
+        - materials_and_packaging.iro.packaging_management
+        simplifiedWritingGuidance:
+        - 數值由關鍵績效指標數據表承載；本段不寫排放量、耗用量、比率或減幅等數字。
+metricDisclosure:
+  catalogMetricKeys:
+  - packaging_total
+  - packaging_per_unit
+  - packaging_recycled_content_rate

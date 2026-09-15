@@ -1,0 +1,41 @@
+# ABOUTME(en): Appendix C2 disclosure requirements of "The Environment and Natural Resources" (General Disclosure and KPIs), grouped by pillar,
+# ABOUTME(en): for the coverage audit and for prompt assembly by key whitelist (injection is switch-gated, off by default) and for the coverage audit. Wording follows the English Code text.
+topicStandardDisclosureRequirementGroups:
+- topicSectionKey: environment_and_natural_resources.gov
+  pillar: governance
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: environment_and_natural_resources.gov.general_disclosure_policies
+    standardDisclosureRequirementTitle: |-
+      Policy on minimising significant impacts on the environment and natural resources
+    excerptFrom: HKEX·Appendix C2·General Disclosure A3
+    standardDisclosureRequirementText: |-
+      Disclose the policies on minimising the issuer's significant impacts on the environment and natural resources.
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: General Disclosure A3
+- topicSectionKey: environment_and_natural_resources.strategy
+  pillar: strategy
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: environment_and_natural_resources.strategy.environmental_direction
+    standardDisclosureRequirementTitle: Environment and natural resources management direction
+    excerptFrom: HKEX·Appendix C2·General Disclosure A3
+    standardDisclosureRequirementText: |-
+      Describe the company's direction and principles on environmental protection and natural resource management.
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: General Disclosure A3
+- topicSectionKey: environment_and_natural_resources.iro
+  pillar: iro_management
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: environment_and_natural_resources.iro.significant_impacts_and_actions
+    standardDisclosureRequirementTitle: |-
+      Significant impacts of activities on the environment and natural resources and actions taken
+    excerptFrom: HKEX·Appendix C2·KPI A3.1
+    standardDisclosureRequirementText: |-
+      Description of the significant impacts of activities on the environment and natural resources and the actions taken to manage them.
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: KPI A3.1

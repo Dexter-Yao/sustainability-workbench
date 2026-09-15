@@ -1,0 +1,32 @@
+# ABOUTME: 环境合规管理议题轻量版内容清单，收敛污染废弃物、培训活动和违规处罚问题。
+# ABOUTME: 治理、战略和指标目标固定题由 topic_intake_common.yaml 展开；结构化数值由 ESG 定量数据表维护。
+contentScopeId: environmental_compliance_management
+items:
+- key: environmental_compliance_management.q_pollutants_waste_names
+  prompt: 贵公司运营过程涉及哪些主要污染物和废弃物？
+  kind: text
+  collectionPriority: recommended
+  hint: 填写主要污染物和废弃物名称；不涉及可填写「无」。
+  termExplanation: 可包括废水、废气、噪声、一般固体废弃物、危险废弃物、包装废弃物等与运营相关的类别。
+  maxChars: 4000
+- key: environmental_compliance_management.q_compliance_training_activities
+  prompt: 贵公司报告期内是否开展过环境合规相关培训或活动？
+  kind: single_select
+  collectionPriority: recommended
+  options:
+  - 是
+  - 否
+  - 不确定
+  hint: 如选择是，请在补充说明中简述培训或活动主题、覆盖范围和对象、培训或活动效果；没有或不确定可不补充。
+  maxChars: 5000
+- key: environmental_compliance_management.q_violation_penalties
+  prompt: 贵公司在报告期内是否因环境违规事件被监管部门通报或处罚？
+  kind: single_select
+  collectionPriority: recommended
+  options:
+  - 是
+  - 否
+  - 不确定
+  hint: 如选择是，请在补充说明中简述相关违规事件和处罚情况。
+  generationBoundary: 未选择是或未填写具体内容时，不得生成环境违规、处罚或整改事实。
+  maxChars: 5000

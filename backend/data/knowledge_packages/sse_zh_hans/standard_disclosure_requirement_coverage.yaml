@@ -1,0 +1,408 @@
+# ABOUTME: 准则披露要求覆盖审定表——每条 required 要求在轻量版 schema 中的承载处置，是人工审定的权威事实。
+# ABOUTME: 运行期由披露覆盖判定读取；coverageStatus 表达设计期处置，不表达某次报告的运行期结果。
+#
+# coverageStatus 取值：
+#   bound_to_block           由议题章节的生成块承载（块实际是否产出由运行期证据门控决定）
+#   metric_disclosure_catalog 由定量指标目录与附录 ESG 关键绩效表承载，不设独立生成块
+#   integrated_report_level   按准则允许的整合披露，由报告级章节或相邻议题承载
+#   excluded_for_simplified   轻量版有意不承载（须给 exclusionRationaleCode，构成对用户的产品承诺）
+#   conditional_applicability 准则为鼓励或「如涉及」，按适用性触发，不构成缺口
+#
+# exclusionRationaleCode 供审阅稿「准则对照说明」页确定性投影中文措辞，不得直接展示本文件的 key。
+# topicStatus 为 requirements_pending 的议题尚未建立要求库，审阅稿以汇总句说明，不冒充已审定。
+topicRequirementCoverage:
+  anti_bribery_anti_corruption:
+    topicStatus: reviewed
+    requirements:
+      anti_bribery_anti_corruption.gov.structure_required:
+        coverageStatus: bound_to_block
+      anti_bribery_anti_corruption.gov.policy_system_required:
+        coverageStatus: bound_to_block
+      anti_bribery_anti_corruption.strategy.risk_management_required:
+        coverageStatus: bound_to_block
+      anti_bribery_anti_corruption.iro.risk_response_table_required:
+        coverageStatus: bound_to_block
+      anti_bribery_anti_corruption.iro.management_measures_required:
+        coverageStatus: bound_to_block
+      anti_bribery_anti_corruption.iro.training_required:
+        coverageStatus: bound_to_block
+      anti_bribery_anti_corruption.iro.supplier_ethics_required:
+        coverageStatus: bound_to_block
+      anti_bribery_anti_corruption.iro.audit_supervision_required:
+        coverageStatus: integrated_report_level
+        exclusionRationaleCode: integrated_governance
+      anti_bribery_anti_corruption.iro.reporting_whistleblower_required:
+        coverageStatus: bound_to_block
+      anti_bribery_anti_corruption.metrics.metrics_required:
+        coverageStatus: metric_disclosure_catalog
+  anti_unfair_competition:
+    topicStatus: reviewed
+    requirements:
+      anti_unfair_competition.gov.policy_system_required:
+        coverageStatus: bound_to_block
+      anti_unfair_competition.strategy.fair_competition_required:
+        coverageStatus: bound_to_block
+      anti_unfair_competition.iro.controls_required:
+        coverageStatus: bound_to_block
+      anti_unfair_competition.iro.partner_requirements_required:
+        coverageStatus: bound_to_block
+      anti_unfair_competition.metrics.metrics_required:
+        coverageStatus: metric_disclosure_catalog
+  circular_economy_promotion:
+    topicStatus: reviewed
+    requirements:
+      circular_economy_promotion.gov.responsibility_structure_required:
+        coverageStatus: bound_to_block
+      circular_economy_promotion.gov.framework_required:
+        coverageStatus: bound_to_block
+      circular_economy_promotion.gov.policy_documents_required:
+        coverageStatus: bound_to_block
+      circular_economy_promotion.strategy.circular_principles_required:
+        coverageStatus: bound_to_block
+      circular_economy_promotion.strategy.targets_required:
+        coverageStatus: bound_to_block
+      circular_economy_promotion.iro.product_lifecycle_required:
+        coverageStatus: bound_to_block
+      circular_economy_promotion.iro.resource_efficiency_required:
+        coverageStatus: bound_to_block
+      circular_economy_promotion.iro.packaging_circularity_required:
+        coverageStatus: bound_to_block
+      circular_economy_promotion.iro.end_of_life_recovery_required:
+        coverageStatus: bound_to_block
+  climate_change:
+    topicStatus: reviewed
+    requirements:
+      climate.gov.governance_body:
+        coverageStatus: bound_to_block
+      climate.gov.expertise:
+        coverageStatus: bound_to_block
+      climate.gov.information_mechanism:
+        coverageStatus: bound_to_block
+      climate.gov.supervision:
+        coverageStatus: bound_to_block
+      climate.gov.decision_integration:
+        coverageStatus: bound_to_block
+      climate.strategy.material_impact:
+        coverageStatus: bound_to_block
+      climate.strategy.risks_opportunities:
+        coverageStatus: bound_to_block
+      climate.strategy.strategy_decision:
+        coverageStatus: bound_to_block
+      climate.strategy.transition_plan:
+        coverageStatus: excluded_for_simplified
+        exclusionRationaleCode: transition_plan_out_of_scope
+      climate.strategy.current_financial:
+        coverageStatus: excluded_for_simplified
+        exclusionRationaleCode: quantitative_capability
+      climate.strategy.resilience:
+        coverageStatus: conditional_applicability
+        exclusionRationaleCode: scenario_analysis_encouraged
+      climate.iro.management_process:
+        coverageStatus: bound_to_block
+      climate.metrics.targets:
+        coverageStatus: metric_disclosure_catalog
+      climate.metrics.target_progress:
+        coverageStatus: metric_disclosure_catalog
+      climate.metrics.ghg_emissions:
+        coverageStatus: metric_disclosure_catalog
+      climate.metrics.reduction_practice:
+        coverageStatus: bound_to_block
+  customer_service_quality_management:
+    topicStatus: reviewed
+    requirements:
+      customer_service_quality_management.gov.service_management_required:
+        coverageStatus: bound_to_block
+      customer_service_quality_management.strategy.service_strategy_required:
+        coverageStatus: bound_to_block
+      customer_service_quality_management.iro.complaint_process_required:
+        coverageStatus: bound_to_block
+      customer_service_quality_management.iro.satisfaction_survey_required:
+        coverageStatus: bound_to_block
+      customer_service_quality_management.iro.feedback_channel_required:
+        coverageStatus: bound_to_block
+      customer_service_quality_management.iro.product_safety_feedback_linkage_required:
+        coverageStatus: integrated_report_level
+        exclusionRationaleCode: integrated_adjacent_topic
+      customer_service_quality_management.metrics.service_metrics_required:
+        coverageStatus: metric_disclosure_catalog
+  data_security_customer_privacy_protection:
+    topicStatus: reviewed
+    requirements:
+      data_security_customer_privacy_protection.gov.security_management_system_required:
+        coverageStatus: bound_to_block
+      data_security_customer_privacy_protection.strategy.security_targets_required:
+        coverageStatus: bound_to_block
+      data_security_customer_privacy_protection.iro.data_lifecycle_required:
+        coverageStatus: bound_to_block
+      data_security_customer_privacy_protection.iro.access_account_required:
+        coverageStatus: bound_to_block
+      data_security_customer_privacy_protection.iro.incident_response_required:
+        coverageStatus: excluded_for_simplified
+        exclusionRationaleCode: not_in_simplified_scope
+      data_security_customer_privacy_protection.iro.drills_improvement_required:
+        coverageStatus: bound_to_block
+      data_security_customer_privacy_protection.iro.security_training_required:
+        coverageStatus: excluded_for_simplified
+        exclusionRationaleCode: not_in_simplified_scope
+      data_security_customer_privacy_protection.metrics.security_privacy_metrics_required:
+        coverageStatus: metric_disclosure_catalog
+  due_diligence:
+    topicStatus: requirements_pending
+    requirements: {}
+  ecosystem_biodiversity_protection:
+    topicStatus: reviewed
+    requirements:
+      ecosystem_biodiversity_protection.gov.ecological_governance_required:
+        coverageStatus: bound_to_block
+      ecosystem_biodiversity_protection.gov.policy_documents_required:
+        coverageStatus: bound_to_block
+      ecosystem_biodiversity_protection.strategy.protection_approach_required:
+        coverageStatus: bound_to_block
+      ecosystem_biodiversity_protection.iro.policy_practice_required:
+        coverageStatus: bound_to_block
+      ecosystem_biodiversity_protection.iro.sensitive_area_and_impact_required:
+        coverageStatus: bound_to_block
+      ecosystem_biodiversity_protection.iro.protection_measures_and_activities_required:
+        coverageStatus: bound_to_block
+  energy_management:
+    topicStatus: reviewed
+    requirements:
+      energy_management.gov.responsibility_structure:
+        coverageStatus: bound_to_block
+      energy_management.gov.energy_management_system:
+        coverageStatus: bound_to_block
+      energy_management.gov.energy_review:
+        coverageStatus: bound_to_block
+      energy_management.strategy.risk_opportunity:
+        coverageStatus: bound_to_block
+      energy_management.strategy.clean_energy_transition:
+        coverageStatus: bound_to_block
+      energy_management.iro.saving_target_and_measures:
+        coverageStatus: bound_to_block
+      energy_management.iro.policy_practice:
+        coverageStatus: bound_to_block
+      energy_management.iro.operational_control:
+        coverageStatus: bound_to_block
+      energy_management.metrics.energy_use_basics:
+        coverageStatus: metric_disclosure_catalog
+      energy_management.metrics.clean_energy_usage:
+        coverageStatus: metric_disclosure_catalog
+      energy_management.metrics.targets_progress:
+        coverageStatus: metric_disclosure_catalog
+  environmental_compliance_management:
+    topicStatus: reviewed
+    requirements:
+      environmental_compliance_management.gov.management_system_required:
+        coverageStatus: bound_to_block
+      environmental_compliance_management.gov.certifications_required:
+        coverageStatus: bound_to_block
+      environmental_compliance_management.gov.responsibility_matrix_required:
+        coverageStatus: bound_to_block
+      environmental_compliance_management.strategy.targets_required:
+        coverageStatus: bound_to_block
+      environmental_compliance_management.strategy.lifecycle_control_required:
+        coverageStatus: bound_to_block
+      environmental_compliance_management.iro.management_practice_required:
+        coverageStatus: bound_to_block
+      environmental_compliance_management.iro.environment_audit_required:
+        coverageStatus: bound_to_block
+      environmental_compliance_management.iro.training_required:
+        coverageStatus: bound_to_block
+      environmental_compliance_management.iro.event_risk_required:
+        coverageStatus: bound_to_block
+  human_capital_development:
+    topicStatus: reviewed
+    requirements:
+      human_capital_development.gov.hr_responsibility_required:
+        coverageStatus: bound_to_block
+      human_capital_development.gov.labor_rights_required:
+        coverageStatus: bound_to_block
+      human_capital_development.gov.hr_policy_documents_required:
+        coverageStatus: bound_to_block
+      human_capital_development.strategy.talent_development_required:
+        coverageStatus: bound_to_block
+      human_capital_development.iro.employee_rights_and_inclusion_required:
+        coverageStatus: bound_to_block
+      human_capital_development.iro.recruitment_compensation_required:
+        coverageStatus: bound_to_block
+      human_capital_development.iro.compensation_incentives_required:
+        coverageStatus: bound_to_block
+      human_capital_development.iro.welfare_benefits_required:
+        coverageStatus: bound_to_block
+      human_capital_development.iro.training_development_required:
+        coverageStatus: bound_to_block
+      human_capital_development.metrics.workforce_metrics_required:
+        coverageStatus: metric_disclosure_catalog
+  innovation_driven:
+    topicStatus: reviewed
+    requirements:
+      innovation_driven.gov.rd_governance_required:
+        coverageStatus: bound_to_block
+      innovation_driven.strategy.rd_strategy_required:
+        coverageStatus: bound_to_block
+      innovation_driven.iro.rd_system_investment_required:
+        coverageStatus: bound_to_block
+      innovation_driven.iro.products_technologies_required:
+        coverageStatus: bound_to_block
+      innovation_driven.iro.digital_transformation_required:
+        coverageStatus: bound_to_block
+      innovation_driven.iro.external_ecosystem_required:
+        coverageStatus: bound_to_block
+      innovation_driven.iro.ip_recognition_required:
+        coverageStatus: bound_to_block
+      innovation_driven.metrics.innovation_metrics_required:
+        coverageStatus: metric_disclosure_catalog
+  occupational_health_safety:
+    topicStatus: reviewed
+    requirements:
+      occupational_health_safety.gov.organization_responsibilities_required:
+        coverageStatus: bound_to_block
+      occupational_health_safety.gov.policy_documents_required:
+        coverageStatus: bound_to_block
+      occupational_health_safety.strategy.strategy_targets_required:
+        coverageStatus: bound_to_block
+      occupational_health_safety.iro.risk_framework_required:
+        coverageStatus: bound_to_block
+      occupational_health_safety.iro.safety_measures_required:
+        coverageStatus: bound_to_block
+      occupational_health_safety.iro.occupational_disease_required:
+        coverageStatus: bound_to_block
+      occupational_health_safety.iro.emergency_management_required:
+        coverageStatus: bound_to_block
+      occupational_health_safety.iro.training_drills_required:
+        coverageStatus: bound_to_block
+      occupational_health_safety.metrics.safety_metrics_required:
+        coverageStatus: metric_disclosure_catalog
+  pollutant_emissions_management:
+    topicStatus: reviewed
+    requirements:
+      pollutant_emissions_management.gov.responsibility_structure:
+        coverageStatus: bound_to_block
+      pollutant_emissions_management.gov.pollution_control_system:
+        coverageStatus: bound_to_block
+      pollutant_emissions_management.gov.accounting_scope:
+        coverageStatus: bound_to_block
+      pollutant_emissions_management.strategy.risk_opportunity:
+        coverageStatus: bound_to_block
+      pollutant_emissions_management.strategy.reduction_target:
+        coverageStatus: bound_to_block
+      pollutant_emissions_management.iro.treatment_and_facilities:
+        coverageStatus: bound_to_block
+      pollutant_emissions_management.iro.reduction_measures_and_effect:
+        coverageStatus: bound_to_block
+      pollutant_emissions_management.iro.policy_practice:
+        coverageStatus: bound_to_block
+      pollutant_emissions_management.iro.community_employee_impact:
+        coverageStatus: bound_to_block
+      pollutant_emissions_management.metrics.discharge_information:
+        coverageStatus: bound_to_block
+      pollutant_emissions_management.metrics.environmental_compliance:
+        coverageStatus: bound_to_block
+  product_quality_safety:
+    topicStatus: reviewed
+    requirements:
+      product_quality_safety.gov.quality_governance_required:
+        coverageStatus: bound_to_block
+      product_quality_safety.gov.quality_system_required:
+        coverageStatus: bound_to_block
+      product_quality_safety.strategy.quality_strategy_required:
+        coverageStatus: bound_to_block
+      product_quality_safety.iro.lifecycle_control_required:
+        coverageStatus: bound_to_block
+      product_quality_safety.iro.recall_complaint_required:
+        coverageStatus: bound_to_block
+      product_quality_safety.iro.quality_digitalization_required:
+        coverageStatus: bound_to_block
+      product_quality_safety.metrics.quality_metrics_required:
+        coverageStatus: metric_disclosure_catalog
+  risk_management:
+    topicStatus: requirements_pending
+    requirements: {}
+  rural_revitalization_social_contribution:
+    topicStatus: reviewed
+    requirements:
+      rural_revitalization_social_contribution.gov.responsibility_department_required:
+        coverageStatus: bound_to_block
+      rural_revitalization_social_contribution.strategy.social_responsibility_strategy_required:
+        coverageStatus: bound_to_block
+      rural_revitalization_social_contribution.iro.rural_actions_required:
+        coverageStatus: bound_to_block
+      rural_revitalization_social_contribution.iro.social_contribution_required:
+        coverageStatus: bound_to_block
+      rural_revitalization_social_contribution.metrics.results_required:
+        coverageStatus: metric_disclosure_catalog
+  sme_fair_treatment:
+    topicStatus: reviewed
+    requirements:
+      sme_fair_treatment.gov.fair_cooperation_required:
+        coverageStatus: bound_to_block
+      sme_fair_treatment.strategy.fair_cooperation_strategy_required:
+        coverageStatus: bound_to_block
+      sme_fair_treatment.iro.payment_settlement_required:
+        coverageStatus: bound_to_block
+  sustainable_supply_chain_management:
+    topicStatus: reviewed
+    requirements:
+      sustainable_supply_chain_management.gov.governance_structure_required:
+        coverageStatus: bound_to_block
+      sustainable_supply_chain_management.strategy.targets_required:
+        coverageStatus: bound_to_block
+      sustainable_supply_chain_management.iro.resilience_risk_management_required:
+        coverageStatus: bound_to_block
+      sustainable_supply_chain_management.iro.supplier_training_required:
+        coverageStatus: bound_to_block
+      sustainable_supply_chain_management.metrics.supplier_metrics_required:
+        coverageStatus: metric_disclosure_catalog
+  technology_ethics:
+    topicStatus: reviewed
+    requirements:
+      technology_ethics.gov.activity_norms_required:
+        coverageStatus: bound_to_block
+      technology_ethics.strategy.ethics_management_strategy_required:
+        coverageStatus: bound_to_block
+      technology_ethics.iro.training_public_education_required:
+        coverageStatus: bound_to_block
+  waste_management:
+    topicStatus: reviewed
+    requirements:
+      waste_management.gov.responsibility_structure_required:
+        coverageStatus: bound_to_block
+      waste_management.gov.waste_management_required:
+        coverageStatus: bound_to_block
+      waste_management.gov.policy_documents_required:
+        coverageStatus: bound_to_block
+      waste_management.strategy.control_framework_required:
+        coverageStatus: bound_to_block
+      waste_management.strategy.waste_reduction_required:
+        coverageStatus: bound_to_block
+      waste_management.iro.waste_classification_required:
+        coverageStatus: bound_to_block
+      waste_management.iro.hazardous_waste_control_required:
+        coverageStatus: bound_to_block
+      waste_management.iro.hazardous_waste_compliance_required:
+        coverageStatus: bound_to_block
+      waste_management.iro.recycling_disposal_required:
+        coverageStatus: bound_to_block
+      waste_management.iro.policy_practice_required:
+        coverageStatus: bound_to_block
+      waste_management.metrics.waste_generation_required:
+        coverageStatus: metric_disclosure_catalog
+  water_resource_management:
+    topicStatus: reviewed
+    requirements:
+      water_resource_management.gov.responsibility_structure:
+        coverageStatus: bound_to_block
+      water_resource_management.gov.management_system:
+        coverageStatus: bound_to_block
+      water_resource_management.strategy.saving_strategy:
+        coverageStatus: bound_to_block
+      water_resource_management.iro.saving_target_and_measures:
+        coverageStatus: bound_to_block
+      water_resource_management.iro.water_reuse:
+        coverageStatus: bound_to_block
+      water_resource_management.iro.policy_practice:
+        coverageStatus: bound_to_block
+      water_resource_management.metrics.total_water_consumption:
+        coverageStatus: metric_disclosure_catalog
+      water_resource_management.metrics.water_use_intensity:
+        coverageStatus: metric_disclosure_catalog

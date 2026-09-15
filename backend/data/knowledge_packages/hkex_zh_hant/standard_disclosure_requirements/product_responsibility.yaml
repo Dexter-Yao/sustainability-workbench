@@ -1,0 +1,79 @@
+# ABOUTME(en): Appendix C2 disclosure requirements of「產品責任」(General Disclosure and KPIs), grouped by pillar,
+# ABOUTME(en): for the coverage audit and for prompt assembly by key whitelist (injection is switch-gated, off by default) and for the coverage audit. Wording awaits check against the official Chinese text.
+topicStandardDisclosureRequirementGroups:
+- topicSectionKey: product_responsibility.gov
+  pillar: governance
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: product_responsibility.gov.general_disclosure_policies
+    standardDisclosureRequirementTitle: 產品責任政策
+    excerptFrom: 港交所·附錄C2·一般披露 B6
+    standardDisclosureRequirementText: 應披露有關所提供產品和服務的健康與安全、廣告、標籤及私隱事宜以及補救方法的政策。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: 一般披露 B6
+  - standardDisclosureRequirementKey: product_responsibility.gov.general_disclosure_compliance
+    standardDisclosureRequirementTitle: 遵守產品責任相關法律及規例
+    excerptFrom: 港交所·附錄C2·一般披露 B6
+    standardDisclosureRequirementText: 應披露遵守對發行人有重大影響的產品責任相關法律及規例的資料。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: 一般披露 B6
+- topicSectionKey: product_responsibility.strategy
+  pillar: strategy
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: product_responsibility.strategy.quality_direction
+    standardDisclosureRequirementTitle: 產品質量及客戶服務方針
+    excerptFrom: 港交所·附錄C2·一般披露 B6
+    standardDisclosureRequirementText: 應說明公司在產品質量、廣告及標籤合規方面的方針及目標。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: 一般披露 B6
+- topicSectionKey: product_responsibility.iro
+  pillar: iro_management
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: product_responsibility.iro.quality_assurance_and_recall
+    standardDisclosureRequirementTitle: 質量檢定過程及產品回收程序
+    excerptFrom: 港交所·附錄C2·關鍵績效指標 B6.4
+    standardDisclosureRequirementText: 應描述質量檢定過程及產品回收程序。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: 關鍵績效指標 B6.4
+  - standardDisclosureRequirementKey: product_responsibility.iro.complaints_handling
+    standardDisclosureRequirementTitle: 投訴處理方法
+    excerptFrom: 港交所·附錄C2·關鍵績效指標 B6.2
+    standardDisclosureRequirementText: 應描述接獲關於產品及服務投訴的處理方法。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: 關鍵績效指標 B6.2
+  - standardDisclosureRequirementKey: product_responsibility.iro.intellectual_property
+    standardDisclosureRequirementTitle: 維護及保障知識產權的慣例
+    excerptFrom: 港交所·附錄C2·關鍵績效指標 B6.3
+    standardDisclosureRequirementText: 應描述與維護及保障知識產權有關的慣例。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: 關鍵績效指標 B6.3
+- topicSectionKey: product_responsibility.metrics
+  pillar: metrics_targets
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: product_responsibility.metrics.recall_data
+    standardDisclosureRequirementTitle: 因安全與健康理由而須回收的產品百分比
+    excerptFrom: 港交所·附錄C2·關鍵績效指標 B6.1
+    standardDisclosureRequirementText: 應披露已售或已運送產品總數中因安全與健康理由而須回收的百分比。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: 關鍵績效指標 B6.1
+  - standardDisclosureRequirementKey: product_responsibility.metrics.complaints_data
+    standardDisclosureRequirementTitle: 接獲關於產品及服務的投訴數目
+    excerptFrom: 港交所·附錄C2·關鍵績效指標 B6.2
+    standardDisclosureRequirementText: 應披露接獲關於產品及服務的投訴數目。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: 關鍵績效指標 B6.2

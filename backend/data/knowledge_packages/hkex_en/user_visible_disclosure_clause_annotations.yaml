@@ -1,0 +1,4 @@
+# ABOUTME(en): User-visible clause annotations are a mainland-standard feature (disclosureProfile selects one
+# ABOUTME(en): of three exchanges). The HKEX package declares a fixed disclosure basis and has no such entries;
+# ABOUTME(en): the file exists because every package carries the same fixed file set.
+entries: []

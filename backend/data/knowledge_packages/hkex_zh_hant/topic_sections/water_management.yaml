@@ -1,0 +1,109 @@
+# ABOUTME(en): Topic chapter template of the HKEX Aspect「水資源管理」: governance / strategy / risk-management
+# ABOUTME(en): blocks with their intake evidence and Appendix C2 requirement keys; the metrics H3 is compiled from metricDisclosure.
+section:
+  key: water_management
+  title: 水資源管理
+  headingLevel: 2
+  reportSectionId: water_management
+  conciseDisclosure:
+    id: water.concise_summary
+    type: paragraph
+    blockType: generative
+    source: ai
+    styleRole: body
+    generation:
+      task:
+        focus: 根據本層面當前可見證據形成一段連貫摘要，涵蓋用水政策、求取水源的情況、用水效益目標及措施，不使用四項小標題。
+      inputs:
+        evidence:
+          kind: report_section
+      targetChars:
+      - 260
+      - 520
+  children:
+  - key: water_management.gov
+    title: 管治
+    pillar: governance
+    headingLevel: 3
+    blocks:
+    - id: water.gov_policy
+      type: paragraph
+      blockType: generative
+      source: ai
+      styleRole: body
+      generation:
+        task:
+          focus: 說明公司有效使用水資源的政策與職責安排（守則層面A2一般披露）。
+          noFactGuidance: |-
+            用戶未提供政策或職責資料時，以審慎、概括的語態說明公司按所屬行業及業務類型對本層面採取的一般管理關注、合規原則及職責安排；不指名部門、制度名稱、認證或審批流程，不聲稱已建立特定制度或已完成合規檢查。
+        inputs:
+          evidence:
+            kind: explicit
+            intakeItems:
+            - water.q_governance_roles
+            - water.q_governance_policies
+            - water.q_governance_certifications
+        targetChars:
+        - 140
+        - 320
+        standardDisclosureRequirementKeys:
+        - water_management.gov.general_disclosure_policies
+  - key: water_management.strategy
+    title: 策略
+    pillar: strategy
+    headingLevel: 3
+    blocks:
+    - id: water.strategy_targets
+      type: paragraph
+      blockType: generative
+      source: ai
+      styleRole: body
+      generation:
+        task:
+          focus: 說明公司訂立的用水效益目標及為達到目標所採取的步驟（守則關鍵績效指標A2.4）。
+          noFactGuidance: 用戶未提供目標或計劃時，說明公司會結合業務發展持續關注本層面的改善方向與量化目標的訂立；不虛構目標數值、基準年、達成期限或已取得的成效。
+        inputs:
+          evidence:
+            kind: explicit
+            intakeItems:
+            - water.q_strategy_content
+        targetChars:
+        - 140
+        - 320
+        standardDisclosureRequirementKeys:
+        - water_management.strategy.water_efficiency_targets
+        simplifiedWritingGuidance:
+        - 數值由關鍵績效指標數據表承載；本段不寫排放量、耗用量、比率或減幅等數字。
+  - key: water_management.iro
+    title: 風險管理
+    pillar: iro_management
+    headingLevel: 3
+    blocks:
+    - id: water.iro_measures
+      type: paragraph
+      blockType: generative
+      source: ai
+      styleRole: body
+      generation:
+        task:
+          focus: 說明公司在求取適用水源上是否遇到任何問題，以及節約用水、循環再用及用水監測的措施（守則關鍵績效指標A2.4）。
+          noFactGuidance: 用戶未提供具體措施時，僅結合行業及業務類型說明本層面常見的管理環節與方向性安排；不聲稱公司已實施特定措施、已購置設備、已委聘服務商或已取得成效。
+        inputs:
+          evidence:
+            kind: explicit
+            intakeItems:
+            - water.q_water_sourcing_issue
+            - water.q_water_saving_measures
+        targetChars:
+        - 160
+        - 380
+        standardDisclosureRequirementKeys:
+        - water_management.iro.water_sourcing_and_measures
+        simplifiedWritingGuidance:
+        - 數值由關鍵績效指標數據表承載；本段不寫排放量、耗用量、比率或減幅等數字。
+metricDisclosure:
+  catalogMetricKeys:
+  - water_consumption_total
+  - water_intensity_revenue
+  - water_intensity_output
+  - water_recycled

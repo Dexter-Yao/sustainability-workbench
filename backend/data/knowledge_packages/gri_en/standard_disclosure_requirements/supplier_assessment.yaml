@@ -1,0 +1,39 @@
+# ABOUTME(en): GRI 308: Supplier Environmental Assessment 2016 and GRI 414: Supplier Social Assessment 2016 disclosure requirements, grouped by the package's pillars, for the
+# ABOUTME(en): coverage audit and the key whitelist. Wording condenses the official requirement text.
+topicStandardDisclosureRequirementGroups:
+- topicSectionKey: supplier_assessment.gov
+  pillar: governance
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: supplier_assessment.gov.management_of_supplier_assessment
+    standardDisclosureRequirementTitle: Management of the supplier assessment topics
+    excerptFrom: GRI 3-3 with GRI 308 and GRI 414
+    standardDisclosureRequirementText: |-
+      Report how the organization manages the supplier environmental assessment and supplier social assessment topics, including the responsibilities and policies covering environmental and social criteria in supplier selection and management.
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: GRI
+      clauseRef: GRI 3-3 with GRI 308 and GRI 414
+- topicSectionKey: supplier_assessment.strategy
+  pillar: strategy
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: supplier_assessment.strategy.screening
+    standardDisclosureRequirementTitle: New suppliers screened using environmental and social criteria
+    excerptFrom: 308-1, 414-1
+    standardDisclosureRequirementText: |-
+      Report the percentage of new suppliers that were screened using environmental criteria and the percentage screened using social criteria.
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: GRI
+      clauseRef: 308-1, 414-1
+- topicSectionKey: supplier_assessment.iro
+  pillar: iro_management
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: supplier_assessment.iro.negative_impacts
+    standardDisclosureRequirementTitle: Negative environmental and social impacts in the supply chain and actions taken
+    excerptFrom: 308-2, 414-2
+    standardDisclosureRequirementText: |-
+      Report the number of suppliers assessed for environmental and social impacts, the number identified as having significant actual and potential negative impacts, the impacts identified, and the percentage of those suppliers with which improvements were agreed or relationships terminated as a result of assessment.
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: GRI
+      clauseRef: 308-2, 414-2

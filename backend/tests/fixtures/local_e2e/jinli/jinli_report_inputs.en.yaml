@@ -1,0 +1,934 @@
+contract: sustainability_desk.local_e2e_report_input_fixture.v1
+fixtureId: jinli-synthetic-full-hkex-en-v1
+artifactPurpose: local_e2e_test
+fixtureBasis: simulated_for_local_e2e
+reportProfileId: hkex_en@1
+corpusId: jinli-synthetic-corpus
+reportingEntity: Jinli Precision Industrial Holdings Limited
+reportingYear: 2025
+consolidationScope: The Company and all its subsidiaries
+assessmentScores:
+  climate_change:
+    financialScore: 4.4
+    impactScore: 4.3
+  emissions:
+    financialScore: 4.1
+    impactScore: 4.4
+  waste_management:
+    financialScore: 3.6
+    impactScore: 4.2
+  energy_management:
+    financialScore: 4.5
+    impactScore: 4.1
+  water_management:
+    financialScore: 3.2
+    impactScore: 3.8
+  materials_and_packaging:
+    financialScore: 3.5
+    impactScore: 3.6
+  environment_and_natural_resources:
+    financialScore: 3.0
+    impactScore: 3.7
+  employment:
+    financialScore: 4.2
+    impactScore: 4.3
+  health_and_safety:
+    financialScore: 4.3
+    impactScore: 4.6
+  development_and_training:
+    financialScore: 3.8
+    impactScore: 4.0
+  labour_standards:
+    financialScore: 3.4
+    impactScore: 4.2
+  supply_chain_management:
+    financialScore: 4.2
+    impactScore: 4.0
+  product_responsibility:
+    financialScore: 4.6
+    impactScore: 4.2
+  data_protection_and_privacy:
+    financialScore: 3.9
+    impactScore: 3.7
+  anti_corruption:
+    financialScore: 4.1
+    impactScore: 4.2
+  community_investment:
+    financialScore: 3.0
+    impactScore: 3.9
+greenhouseGasAccountingStandard: GHG Protocol Corporate Accounting and Reporting Standard
+inputWrites:
+- target_key: field.company_short_name
+  answer: Jinli Precision
+  expected_definition_fingerprint: 2d1207dce47c1a9fe1829866df7a5d30144550bae1a36e4f37e2ab61ba7cddab
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+- target_key: field.industry_major_category
+  answer: Manufacturing
+  expected_definition_fingerprint: 694bd11fb9914900ce64c3259f74e06115c4dbae301567e72e3cad20bb598d58
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+- target_key: field.industry_division
+  answer: Precision metal stamping parts and connectors
+  expected_definition_fingerprint: 02dffbaa4240b00b95b61c22f05c9f3be2933aa2b1a663367afb28ecb6322e11
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+- target_key: field.report_publication_channel
+  answer: HKEXnews and the company website
+  expected_definition_fingerprint: c6c15d167d597fdb4eb966edf15bc89650657ba0cf2a8614c57f247956e84f86
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+- target_key: field.report_publication_website_url
+  answer: https://www.jinli-precision.example.hk
+  expected_definition_fingerprint: c11954f5cd5762a22534194332dbb7781e2622db68ee0db1c2996d40dee937bc
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+- target_key: field.report_approval_year
+  answer: 2026
+  expected_definition_fingerprint: 6cf4c29f456a4d60561f1f968e5e35b19fa6b007dbc84b4d34c37fa00ffebf52
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+- target_key: field.report_approval_month
+  answer: 2026-03
+  expected_definition_fingerprint: 8ca7ce7e8ce802f56c7b4aff8ae3ad3e19573a91280d043c452b24ec46ddd48e
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+- target_key: company_profile
+  answer: 'Jinli Precision Industrial Holdings Limited was founded in Hong Kong in
+    2006 and listed on the Main Board of The Stock Exchange of Hong Kong Limited in
+    2016. It develops, manufactures and sells precision metal stamping parts, connectors
+    and assembled modules. The head office is in Kwun Tong, Hong Kong, and the production
+    base in Songshan Lake, Dongguan, Guangdong, is held and operated by the wholly
+    owned subsidiary Dongguan Jinli Precision Electronics Co., Ltd. The group employed
+    612 people as at 31 December 2025.
+
+
+    Products fall into three lines — precision metal stamping parts, connectors and
+    assembled modules — serving consumer electronics, industrial equipment and new
+    energy vehicle component customers. Revenue for 2025 was HK$486.2 million, of
+    which consumer electronics accounted for about 46%, new energy vehicle components
+    about 33% and industrial equipment and others about 21%. The company runs precision
+    progressive die development, high-speed stamping with in-line inspection and in-house
+    heat treatment; the Dongguan stamping shop is about 68% automated and a 1.2 MWp
+    rooftop solar system has operated since June 2023.
+
+
+    The company holds ISO 9001, ISO 14001, ISO 45001 and IATF 16949 certifications,
+    employs about 86 research and engineering staff and spent about HK$21.4 million
+    on research and development in 2025. Guided by precision manufacturing, prudent
+    operation and a people-first culture, it advances energy saving, waste recovery
+    and supply chain collaboration and values employee development, product responsibility
+    and community participation.'
+  expected_definition_fingerprint: cb78b7647d7445bcd2556e2182bf2eabcb8f107b2c9d9e38b862e2b919331b96
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+- target_key: company_certifications
+  answer: ISO 9001 quality management, ISO 14001 environmental management, ISO 45001
+    occupational health and safety management, IATF 16949 automotive quality management
+  expected_definition_fingerprint: ab4fef819417a9f2c22cc77219c6803698f1bf91ffb89c77a8531e57044d3000
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+- target_key: board_statement.q_oversight
+  answer: 'The Board holds ultimate responsibility for environmental, social and governance
+    matters, including setting the management approach and strategy, approving the
+    materiality assessment results, approving targets and reviewing progress, and
+    approving the annual report. In 2025 the Board considered these matters at two
+    dedicated sessions (March: the 2024 report and materiality results; September:
+    target progress and the climate scenario analysis). Day-to-day management is delegated
+    to the ESG working group led by the executive director and chief financial officer,
+    which meets quarterly, reports to the Board in writing every half year and must
+    report material matters to the Chairman and the Chief Executive within two working
+    days.'
+  expected_definition_fingerprint: 30bd2dc42589456f26ace2c0b0a84f93e81962f397e60b645a20b2213f65065d
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+- target_key: board_statement.q_management_approach
+  answer: 'The Board has set a management approach built on compliant operation, green
+    manufacturing and a people-first culture. Material issues are identified and ranked
+    each year in three steps: a list of 16 topics built from the Aspects of the Code
+    and the climate-related disclosures; a stakeholder questionnaire in October 2025
+    (312 responses from employees, customers, suppliers and investors) assessing importance
+    to stakeholders; and a management workshop in November in which the working group
+    and department heads scored importance to the business (revenue, cost, compliance
+    and reputation over the short, medium and long term), with a threshold of 4.0
+    on both axes. Eight topics were highly material and the Board reviewed the results
+    in December. Climate-related risks are entered in the group risk register reviewed
+    by the Audit Committee.'
+  expected_definition_fingerprint: 99d2739f4946c23e0cc5cc55cd5628ae40414d6a02eeeb75cf3e624de04dc383
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+- target_key: board_statement.q_progress_review
+  answer: 'In 2024 the Board approved three quantified targets and reviews progress
+    every September: a 30% reduction in Scope 1 and Scope 2 greenhouse gas emission
+    intensity by 2030 against 2023 (16.6 tCO2e per HK$ million in 2025, down 22.4%);
+    a 15% reduction in energy consumption intensity by 2027 against 2023 (38.9 MWh
+    per HK$ million in 2025, down 13.2%); and no more work injury cases than the previous
+    year (7 in 2025 against 9 in 2024). Emission and energy intensity bear directly
+    on electricity costs and customers'' carbon footprint requirements, and the injury
+    rate on production continuity and employee retention; the Board may adjust the
+    targets as the business develops.'
+  expected_definition_fingerprint: 6f1b3c655594abe3c19b639115d6f1771777c457cc6880f97859cd0f2f3cbff0
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+- target_key: sustainability_governance_structure
+  answer: 'Environmental, social and governance matters are managed at three levels:
+    the Board, the ESG working group and departmental coordinators. The Board holds
+    ultimate responsibility and receives a written report every half year. The working
+    group, formed in 2021 with terms of reference JL-GOV-001, is led by the executive
+    director and chief financial officer Wong Chung-yan and comprises the Dongguan
+    plant general manager Chow Kai-ming, the EHS manager Law Tsz-hin, the production
+    manager Ng Chi-keung, the quality manager Cheung Wing-lok, the procurement manager
+    Fung Ka-yan, the human resources manager Li Wai-shan, the IT manager Kwok Chun-kit
+    and the sales and customer service manager Ko Mei-ling, with the company secretary
+    Tam Wing-sze as secretary; it meets quarterly and met four times in 2025. Each
+    department appoints a coordinator who submits data and progress quarterly.'
+  expected_definition_fingerprint: 81d847b0e85686b741e7cb84a6a3408226e374fc0505a25490eaedd8bfcf07c6
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+- target_key: sustainability_governance_duties
+  answer: The Board approves the management approach, targets and annual report and
+    reviews target progress. The working group coordinates the materiality assessment,
+    target allocation and tracking, climate risk assessment, data consolidation and
+    review, and report preparation, and reviews the making and revision of related
+    policies. The EHS department owns emissions, waste, energy, water and occupational
+    safety data; human resources owns employment, training, labour standards and community
+    investment; procurement owns supply chain management and supplier evaluation;
+    quality and sales and customer service own product responsibility and complaints;
+    IT owns data protection; and the company secretary's office owns anti-corruption,
+    compliance and Board reporting. Data are signed off by department heads, environmental
+    and safety data are reviewed by the EHS manager and the rest by the company secretary.
+  expected_definition_fingerprint: 3e2f034f44ef6edf4b7315ac36e1014724f9765f6102965c4a91ed77810b8621
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+- target_key: appendix.reader_feedback.address
+  answer: 12/F, Jinli Centre, 1 Hung To Road, Kwun Tong, Kowloon, Hong Kong
+  expected_definition_fingerprint: 76a95bae24c96ee0b72db329560cbb926ccdc1799654d0d12dc989c8d35b3277
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+- target_key: appendix.reader_feedback.email
+  answer: esg@jinli-precision.example.hk
+  expected_definition_fingerprint: f1ae8d7349f9be177adc7b07db59f47a6821adb92d2b60659cbeb7dc374ce825
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+- target_key: appendix.reader_feedback.phone
+  answer: +852 0000 0000
+  expected_definition_fingerprint: ef3f5bd0d0c32ccaadd599db60827d47779b213d3f9536ad2b9a92ef13044ee1
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+- target_key: climate.q_climate_risks
+  answer:
+  - Extreme weather (typhoons, rainstorms, flooding)
+  - Prolonged heat
+  - Carbon pricing and emissions regulation
+  - Low-carbon requirements from customers and markets
+  - Energy price volatility
+  expected_definition_fingerprint: 6ff2ac63aae086b2fe600f278bf42e6329947333d1f28a8c03f2c6e3c97ef8ed
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: The Dongguan plant and Hong Kong office lie on the South China coast;
+    a typhoon warning halted production for two days in 2025; consumer electronics
+    and automotive customers ask for carbon footprints and reduction commitments.
+- target_key: climate.q_climate_opportunities
+  answer:
+  - Energy and resource efficiency
+  - Low-carbon products or services
+  - Use of renewable energy
+  expected_definition_fingerprint: 55802f756c9cdd6c2d8e790cd6dc8f5515d31d6b49491b7de6608f11419a7d64
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: Energy retrofits save about 1,350 MWh a year; new energy vehicle components
+    rose to 33% of revenue; a warehouse rooftop solar extension is under evaluation.
+- target_key: climate.q_scenario_analysis
+  answer: Scenario analysis carried out
+  expected_definition_fingerprint: 020998366a6149a6f597d5cc680d0d9c0f6aad5eb54acee13d820f6caaeee642
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: First qualitative scenario analysis in 2025 against a 2°C orderly transition
+    and a 4°C high-emission scenario; financial effects not quantified, a quantitative
+    sensitivity test is planned for 2026.
+- target_key: emissions.q_emission_sources
+  answer:
+  - Combustion equipment (boilers, generators)
+  - Company vehicles
+  - Production processes (spraying, welding, cleaning, etc.)
+  - Industrial wastewater discharge
+  - Domestic sewage discharge
+  expected_definition_fingerprint: 69d01aea05dddf43c56cc804f98cd97c9cb69b12553f9fb2e10423d17b5f53d0
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: Natural gas annealing and heat treatment furnaces, standby generators,
+    solvent evaporation from cleaning and degreasing; wastewater is pre-treated before
+    discharge to the park sewer. All plating is outsourced.
+- target_key: energy.q_renewable_energy
+  answer: Own solar photovoltaic or other renewable installations
+  expected_definition_fingerprint: 51e2b657bd845d1b28f5d03af5f28294a16349af2b995c097ac2832282009c58
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: A 1.2 MWp rooftop solar system at the Dongguan plant, operating since
+    June 2023, supplied 1,360 MWh for own use in 2025.
+- target_key: waste.q_hazardous_waste
+  answer: Yes, disposed of through licensed contractors
+  expected_definition_fingerprint: b05a44138c7a958ff1baf5d11eeaca03138b3907ac40c5ae622c727307471ada
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: Waste cutting fluid and oil, oily rags and gloves, spent activated carbon
+    and chemical packaging, all under electronic transfer manifests.
+- target_key: water.q_water_sourcing_issue
+  answer: No issue
+  expected_definition_fingerprint: a432597cff37cafcc151918ab3740431f6f47cd995bc78edcd33421be438f28e
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: Both the Dongguan plant and the Hong Kong office use municipal water.
+- target_key: natural_resources.q_significant_impacts
+  answer:
+  - Noise
+  - Raw material extraction or sourcing
+  expected_definition_fingerprint: a31bb6f544de294754f6b88fa9e2951f9cb04edc0d25dfdbfc1e016aba5d5f01
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: High-speed presses are the main noise source and boundary noise passed
+    the annual test; main raw materials are copper alloy and stainless steel strip.
+- target_key: health_safety.q_ohs_incidents
+  answer: Injuries occurred, no fatality
+  expected_definition_fingerprint: d1743a5945bbe7b91e551a4780fd16f117c2028672f9ad81f9df84a19bfb8dc9
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: Seven work injury cases and 126 lost days in 2025; no work-related fatality
+    for three consecutive years.
+- target_key: labour_standards.q_labour_violations
+  answer: None discovered
+  expected_definition_fingerprint: fc8aa38b4b4493dc66bd743fde92ae4d08455230d7c83f27c0fb990d5296171b
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: Sixty personnel files were sampled in May and again in November 2025;
+    no child or forced labour was found.
+- target_key: anti_corruption.q_corruption_cases
+  answer: None
+  expected_definition_fingerprint: 95913cc1086cfc670f01380b7da0adc89a6f70aa3e88ccb495e02896888a429a
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: No concluded corruption case against the group or its employees in 2025;
+    two reports were received, one substantiated and dealt with.
+- target_key: community_investment.q_focus_areas
+  answer:
+  - Education
+  - Environmental concerns
+  - Poverty relief and vulnerable groups
+  expected_definition_fingerprint: b317df7ec168fd4b516df6501a8714dc1041f83805ddd2f3de5e665cd42b6a15
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 'Focused on the Kwun Tong and Songshan Lake communities: vocational
+    school scholarships, tree planting and coastal clean-ups, elderly visits.'
+- target_key: climate.q_governance_roles
+  answer: A dedicated department or position is responsible
+  expected_definition_fingerprint: 396b4a48b8fd8675105e77c70943f8154d9fb102e688b04d632425d5cbfc44cf
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: The EHS and finance departments jointly assess climate-related risks
+    and own emissions data; the ESG working group convener coordinates.
+- target_key: climate.q_governance_policies
+  answer: Policies, procedures or management requirements in place
+  expected_definition_fingerprint: 1e8a4fef2b92a1815683d3e3fab5c68614ac255db3acecd8006ff3d7a316d3e8
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: Climate-related Risk Management Guideline (JL-EHS-005).
+- target_key: climate.q_governance_certifications
+  answer: Certifications held
+  expected_definition_fingerprint: d93f3ca423d80bc6750d302d09e763fe0beaaff93994f8b0dfa769aa0a8a4bbf
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: ISO 14001 environmental management system.
+- target_key: emissions.q_governance_roles
+  answer: A dedicated department or position is responsible
+  expected_definition_fingerprint: 572777e3cd2e0040e7b0847f61ad0bdc4ac852178c63cac92f9748861cdb0201
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: The EHS department monitors air and water emissions and manages the
+    pollutant discharge permit.
+- target_key: emissions.q_governance_policies
+  answer: Policies, procedures or management requirements in place
+  expected_definition_fingerprint: 5d66c7229f872c3697b58cb5f8cb576c6af19e021122983ee5566cac31cf5543
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: Environmental Management Policy (JL-EHS-001); the Dongguan plant holds
+    a pollutant discharge permit.
+- target_key: emissions.q_governance_certifications
+  answer: Certifications held
+  expected_definition_fingerprint: 9ae09af2631d3bfb36c45de79095b2d1ec56d1244ad367b78525204159561bf2
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: ISO 14001 environmental management system.
+- target_key: waste.q_governance_roles
+  answer: A dedicated department or position is responsible
+  expected_definition_fingerprint: 85854f101d1c47e0b9af65895ac3556a33c8c4c0eb774f30525668d2df70fe6a
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: The EHS department manages waste sorting, storage, transfer and records.
+- target_key: waste.q_governance_policies
+  answer: Policies, procedures or management requirements in place
+  expected_definition_fingerprint: 366e4dced0682be60e70a22ddbc4233577a2b6309ede25c03636aecfef406fcc
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: Waste Management Procedure (JL-EHS-003).
+- target_key: waste.q_governance_certifications
+  answer: Certifications held
+  expected_definition_fingerprint: d8ccf3cfae5f045c2e13dc18f29893b13bfd75a61c33b5710d6246bf3b409a95
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: ISO 14001 environmental management system.
+- target_key: energy.q_governance_roles
+  answer: A dedicated department or position is responsible
+  expected_definition_fingerprint: e1c9e7a27a467463bdf27b508ce40328d472b5c2c2f422805563df46171f88f8
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: The production department owns equipment efficiency and retrofits; the
+    EHS department owns metering and statistics.
+- target_key: energy.q_governance_policies
+  answer: Policies, procedures or management requirements in place
+  expected_definition_fingerprint: 5c44d3e6a76d02a0ad12a9b009c26af028aa6fd607a7b3d19587fb0a990c9014
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: Energy Management Procedure (JL-EHS-002).
+- target_key: energy.q_governance_certifications
+  answer: Certifications held
+  expected_definition_fingerprint: 37cc6b30c8ba0b915c8444acf61de26ab2f0422d931fc88c16d7bcd617613670
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: ISO 14001 environmental management system.
+- target_key: water.q_governance_roles
+  answer: A dedicated department or position is responsible
+  expected_definition_fingerprint: eaeab2481340b8c2eceb0419eac99659a87de56d58e3dd3528babf5e6458e13c
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: The EHS department owns water metering and wastewater pre-treatment;
+    administration owns water saving in living areas.
+- target_key: water.q_governance_policies
+  answer: Policies, procedures or management requirements in place
+  expected_definition_fingerprint: 74a55e7a537e2472193ec9ebe75d4221af98f33f544f004b1f30b48528787f6d
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: Environmental Management Policy (JL-EHS-001), chapter 3.
+- target_key: water.q_governance_certifications
+  answer: Certifications held
+  expected_definition_fingerprint: 92d5671ef76b41cadc4d3521c382e3a79cca0a5535fb35a4dc71bdd8efb3be86
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: ISO 14001 environmental management system.
+- target_key: materials.q_governance_roles
+  answer: A dedicated department or position is responsible
+  expected_definition_fingerprint: 5761d7a7dd7cc50dcde5710a4db97948d57c88eda389729c56aa51aa0d4c5eb6
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: The logistics team of the production department selects and records
+    packaging; procurement checks recycled-content declarations.
+- target_key: materials.q_governance_policies
+  answer: Policies, procedures or management requirements in place
+  expected_definition_fingerprint: 2af85ac7e646eaec486c097b0aef533390c3ec71ec9c9b1d3c92003be9258172
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: Packaging Material Guideline (JL-EHS-006).
+- target_key: materials.q_governance_certifications
+  answer: No related certification
+  expected_definition_fingerprint: 68e9b2e11c61937c25b80a3ed63248a7c9c6f2a719bfa5e286d1263c4b809b38
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+- target_key: natural_resources.q_governance_roles
+  answer: A dedicated department or position is responsible
+  expected_definition_fingerprint: 03a9b2a0da724c368bf27ce6d12a725f9aebdd03fa7109b1d7955df8a5444019
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: The EHS department monitors noise and identifies environmental aspects.
+- target_key: natural_resources.q_governance_policies
+  answer: Policies, procedures or management requirements in place
+  expected_definition_fingerprint: 4fbc87c538110d9f0a4d28ff9fd8c5e0d538a108f78c2c949a85b71a86e6a494
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: Environmental Management Policy (JL-EHS-001).
+- target_key: natural_resources.q_governance_certifications
+  answer: Certifications held
+  expected_definition_fingerprint: 113506490af180eeb9178ec7a94fee2b1c326449bc420a68e8c9ab18d003132c
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: ISO 14001 environmental management system.
+- target_key: employment.q_governance_roles
+  answer: A dedicated department or position is responsible
+  expected_definition_fingerprint: bb30630621abf972b99e53cbdad40155282a2b10df9a74663a9988d50402c6a0
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: Human resources owns recruitment, pay, benefits and employee relations.
+- target_key: employment.q_governance_policies
+  answer: Policies, procedures or management requirements in place
+  expected_definition_fingerprint: 9fd43961ad864c46621de1f72c4e1bb8095ae520dbbc6754f8aa60ab4221c8d1
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: Employee Handbook (JL-HR-001); compliant with the Hong Kong Employment
+    Ordinance and the Mainland Labour Contract Law.
+- target_key: employment.q_governance_certifications
+  answer: No related certification
+  expected_definition_fingerprint: 60120b570e1bdb955c29c4a907506ae3854e0769ca5630f9f09bdb4f8a8f3a6a
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+- target_key: health_safety.q_governance_roles
+  answer: A dedicated department or position is responsible
+  expected_definition_fingerprint: 7cfa4ce91803844e7707c991cabd97bdf66e9eadcdb5d80ec7664a2f7010e936
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: The EHS department manages occupational health and safety; the Dongguan
+    plant safety committee reviews quarterly.
+- target_key: health_safety.q_governance_policies
+  answer: Policies, procedures or management requirements in place
+  expected_definition_fingerprint: 44768866a661f8c65f610ac0f9e447143c1f41b206cb3254845099bd89170d81
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: Occupational Health and Safety Management Policy (JL-EHS-004).
+- target_key: health_safety.q_governance_certifications
+  answer: Certifications held
+  expected_definition_fingerprint: 8a8e6b08c3ee5befe8ec23320ee6db3516130cd30794d79e4eb2e3105f10d915
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: ISO 45001 occupational health and safety management system.
+- target_key: training.q_governance_roles
+  answer: A dedicated department or position is responsible
+  expected_definition_fingerprint: 777dc64dd510e86794f34649fe27033b9345b32d0327d3095607c520e02d8f53
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: Human resources owns the training needs survey, annual training plan
+    and records.
+- target_key: training.q_governance_policies
+  answer: Policies, procedures or management requirements in place
+  expected_definition_fingerprint: 57673db62dc25431be8cc575f9caedaa55159294f9b513742b712890e647c60f
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: Employee Handbook (JL-HR-001), chapter 6 on training and development.
+- target_key: training.q_governance_certifications
+  answer: No related certification
+  expected_definition_fingerprint: ab7d0087437fd5c19c7f09eaf6b6226dd6cf4a9976ba452c5ee8185213d2c7ef
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+- target_key: labour_standards.q_governance_roles
+  answer: A dedicated department or position is responsible
+  expected_definition_fingerprint: 7caa630adefae8d0befb40068582d1889672abdbd5402a74b7bcc05f8b7d5729
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: Human resources verifies new hires and samples personnel files; procurement
+    extends the same requirements to suppliers.
+- target_key: labour_standards.q_governance_policies
+  answer: Policies, procedures or management requirements in place
+  expected_definition_fingerprint: 85f2e6698bfda165f4fbeea63cfa7db3eb46cc977a5c81a97bf888fef4b27d63
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: Employee Handbook (JL-HR-001), chapters 2 and 3; Supplier Code of Conduct.
+- target_key: labour_standards.q_governance_certifications
+  answer: No related certification
+  expected_definition_fingerprint: c4f814d9ab77524afb70090df5f078f194c4c755f973daa53fc280c3174462d3
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+- target_key: supply_chain.q_governance_roles
+  answer: A dedicated department or position is responsible
+  expected_definition_fingerprint: 6b700e78abf08da65f9d07724769f93156d1586388bf210df5b3bbed79b11ee6
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: Procurement owns supplier admission, evaluation, audits and exit; quality
+    and EHS join on-site audits.
+- target_key: supply_chain.q_governance_policies
+  answer: Policies, procedures or management requirements in place
+  expected_definition_fingerprint: dffc53701f35e6dd614ed2ed6e432511ea6bfbe83b4a0881546288fe80e6cdfa
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: Supplier Management Procedure (JL-PUR-001) and the Supplier Code of
+    Conduct.
+- target_key: supply_chain.q_governance_certifications
+  answer: No related certification
+  expected_definition_fingerprint: ee1bbff862a46e1963c59d72f37d6adbf433894d6b7cce6105f1fe7add9383e1
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+- target_key: product.q_governance_roles
+  answer: A dedicated department or position is responsible
+  expected_definition_fingerprint: f14e2fd7aa3b7791997ad0ee113608770f39f1bd01c88b2169223fb6359a4cd9
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: Quality owns quality assurance, product safety and recall procedures;
+    sales and customer service owns complaints.
+- target_key: product.q_governance_policies
+  answer: Policies, procedures or management requirements in place
+  expected_definition_fingerprint: a394bfef5601580487f4cb3b788166dd67a31bdcf0e124e90b29d9c5f55f1e4e
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: Quality Manual (JL-QA-001); Customer Service and Complaint Handling
+    Procedure (JL-CS-001).
+- target_key: product.q_governance_certifications
+  answer: Certifications held
+  expected_definition_fingerprint: 87ee2f08e8d5d45983833c1668949d928169cf201fae327d7eea077119c1ce0f
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: ISO 9001 quality management system; IATF 16949 automotive quality management
+    system.
+- target_key: privacy.q_governance_roles
+  answer: A dedicated department or position is responsible
+  expected_definition_fingerprint: afd2fdd9a284fdf55e57dbaea705482278a2c6911588d16eddf068ce0311b5df
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: IT owns data security measures; the company secretary reviews legal
+    compliance.
+- target_key: privacy.q_governance_policies
+  answer: Policies, procedures or management requirements in place
+  expected_definition_fingerprint: 1c9f9e24ed62dd30b60430a737606be47b446e56517780915e02b7599c38a5cc
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: Data Protection and Privacy Policy (JL-IT-001).
+- target_key: privacy.q_governance_certifications
+  answer: No related certification
+  expected_definition_fingerprint: 622169a64cb51a54dfe5385f0ca968b220d6bd022387fc5ac2dc601fdf61d87a
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+- target_key: anti_corruption.q_governance_roles
+  answer: A dedicated department or position is responsible
+  expected_definition_fingerprint: 84d45f20342a8181fce870306a70121298d72d1ef0c5ca9e7400070b0493448e
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: The company secretary's office implements the policy and investigates
+    reports; the Audit Committee oversees.
+- target_key: anti_corruption.q_governance_policies
+  answer: Policies, procedures or management requirements in place
+  expected_definition_fingerprint: aa73cdc122fcf0a58e56862507ccedc149cc14f4ceeca463146e83cda6ae887a
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: Anti-corruption and Whistle-blowing Policy (JL-LEG-001); compliant with
+    the Hong Kong Prevention of Bribery Ordinance.
+- target_key: anti_corruption.q_governance_certifications
+  answer: No related certification
+  expected_definition_fingerprint: 0d7d9bbd57532e1a223e5b296eb7c0fb73efea37291990269f3b36712fc39823
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+- target_key: community_investment.q_governance_roles
+  answer: A dedicated department or position is responsible
+  expected_definition_fingerprint: a667b2e897f60835a7c903fd7820beb722791492fb1943fdf158ce62404fe048
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: The corporate social responsibility team of human resources coordinates
+    community investment and volunteering.
+- target_key: community_investment.q_governance_policies
+  answer: Policies, procedures or management requirements in place
+  expected_definition_fingerprint: 0f024665d5f208048efbcbf531fdfcf6fd6e45de7af3c7427a21b9177b4089fc
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: Community investment focuses on education, the environment and community
+    service; one day of volunteer leave a year.
+- target_key: community_investment.q_governance_certifications
+  answer: No related certification
+  expected_definition_fingerprint: aa4a6135d414c20310e0b2d87c6119e11dd7e76890ed1d96ed9ce67697af55fa
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+- target_key: metric.economic_revenue
+  answer: 486.2
+  expected_definition_fingerprint: 7aa753f7f1dbf793ac4552b02d7a17948d4a7b1c45779e78ed20bae8b62e7bdb
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 2025 年度綜合收入
+- target_key: metric.economic_total_employees
+  answer: 612
+  expected_definition_fingerprint: fbed198486eb697925015cd5fa45af4c876d41ba1e817cbe53e70814037aeca6
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 2025 年 12 月 31 日在冊僱員
+- target_key: metric.climate_ghg_scope1
+  answer: 1240
+  expected_definition_fingerprint: 2ea48e0f551ea49013944e52a37a5f7d694818fd2880e15cb3a2a56eeb4859eb
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 天然氣退火及熱處理爐 968、柴油 109、汽油 80、石油氣 19、製冷劑逸散 64
+- target_key: metric.climate_ghg_scope2
+  answer: 6830
+  expected_definition_fingerprint: 4705fbbeb1f2fe3ab158bdf8ec5b7c9d65bcc31b0ea6fcb7ce4c2d7598dd7803
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 外購電力 11,920 MWh × 0.5730 tCO₂e/MWh（地點法）
+- target_key: metric.climate_ghg_intensity_revenue
+  answer: 16.6
+  expected_definition_fingerprint: ab21541e61e84aef04930fd1c03bd66cbbc776ac2aa453b6c368f149a17a6b29
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 範圍 1+2 合計 8,070 ÷ 營業收入 486.2 百萬港元
+- target_key: metric.climate_capital_deployment
+  answer: 3.2
+  expected_definition_fingerprint: 1f796cfcd0c1839f91a65c271c4be584caa7a927590cd75b705cfb90328c74ab
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 空壓機及冷卻塔節能改造資本開支
+- target_key: metric.emissions_nox
+  answer: 1860
+  expected_definition_fingerprint: 799774f0d9d32a3694daba2a2a7bdc23a5073f08b209d80b8d84155fa4e4ac83
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 熱處理爐 1,555（監測）、車輛 305（因子法）
+- target_key: metric.emissions_sox
+  answer: 12
+  expected_definition_fingerprint: f2423a6277090745ea71153778336f5566e5741afe95944b7f6065d8b89fcca9
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 柴油及汽油含硫量計算
+- target_key: metric.emissions_pm
+  answer: 96
+  expected_definition_fingerprint: f980db3336759327ad2f0bffab38511f4b78b1e55a96f6855fcd3c6f2663bcf4
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 熱處理爐 60（監測）、車輛 36（因子法）
+- target_key: metric.emissions_voc
+  answer: 340
+  expected_definition_fingerprint: 0675b77515ab37f6aadac0cb3619974979d3a36a281ed82754081833290ae7fe
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 清洗及脫脂工序 290（物料衡算）、車輛 50
+- target_key: metric.emissions_wastewater_discharge
+  answer: 41200
+  expected_definition_fingerprint: 45c3739ef476dc5b7865278864d19ff94a7ccc602b60d223670bec69c41c6c3b
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 東莞廠排放口流量計
+- target_key: metric.emissions_cod
+  answer: 1650
+  expected_definition_fingerprint: 6ee4c360ffb8e69394265cb5f7d74dc8e89016c191b1ac0721509c0ab3cad4c6
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 季度第三方檢測平均濃度 40 mg/L × 排放量
+- target_key: metric.waste_hazardous_total
+  answer: 36.5
+  expected_definition_fingerprint: d0c49ce90c64e3ca85665e489d13984cde3694e1053460fbaf3791d0778f5bfa
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 轉移聯單重量合計
+- target_key: metric.waste_hazardous_intensity
+  answer: 0.075
+  expected_definition_fingerprint: e7e29653e45997552cb8ff494b69026958161eb5d3aa4beefa04d196691dde6f
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 36.5 噸 ÷ 486.2 百萬港元
+- target_key: metric.waste_non_hazardous_total
+  answer: 412
+  expected_definition_fingerprint: 4e3685fcfee4be01b5590fdf6621ea4462264ab6ecad44a44bf531129a156f74
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 回收商及環衛過磅單合計
+- target_key: metric.waste_non_hazardous_intensity
+  answer: 0.847
+  expected_definition_fingerprint: 36a4946ebeb458bcbd9431ce2409f36e601d8faad3aa59acafd2b46f82812271
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 412 噸 ÷ 486.2 百萬港元
+- target_key: metric.waste_recycled_total
+  answer: 268
+  expected_definition_fingerprint: 7fcea1a909a5b9701ec1e306679599b66bb46ff5c02dd7a6f574b8c6a5a2af71
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 金屬 232、紙 28、塑膠 8
+- target_key: metric.waste_recycling_rate
+  answer: 59.8
+  expected_definition_fingerprint: 159b2d11364a4870017d4c01bb23dd4fd6a6ab9a66a0c11d9a21d316ca1e2335
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 268 ÷ (36.5 + 412)
+- target_key: metric.energy_purchased_electricity
+  answer: 11920
+  expected_definition_fingerprint: 025d669866e705ce978cdb5fc5de0290baaa632f2420c0e80ae847b06a084dcb
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 東莞廠 11,690、香港辦公室 230
+- target_key: metric.energy_renewable_electricity
+  answer: 1360
+  expected_definition_fingerprint: 627dbceab7d25e18a10f5581d2445a625cf6224382bc0d207275336bb5903e14
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 屋頂光伏自發自用；上網 120 MWh 不計入
+- target_key: metric.energy_natural_gas
+  answer: 4800
+  expected_definition_fingerprint: 345dc0947a1d56cad48007a93316ffb7743f9dbc0846bbeac1b4d04359c3067a
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 退火及熱處理爐
+- target_key: metric.energy_diesel
+  answer: 410
+  expected_definition_fingerprint: 44254a40df0a379bc94c70e77177d1f439e90d8c1293725010014a42814c1fba
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 備用發電機、廠區貨車
+- target_key: metric.energy_petrol
+  answer: 320
+  expected_definition_fingerprint: 514ba21bc525f7dd883113ddd988bec1145fb2938bd07735854b5bd53b55b922
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 公司車輛
+- target_key: metric.energy_lpg
+  answer: 85
+  expected_definition_fingerprint: 90c96f4121e1ae9958e14630452871443af9d772f74a55d857c7450571c1d444
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 員工飯堂、叉車
+- target_key: metric.energy_intensity_revenue
+  answer: 38.9
+  expected_definition_fingerprint: 4393a67661ed09e786f894a7c834c85928793d8873b5c61e7d1ea97a146043e9
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 能源總量 18,895 MWh ÷ 486.2 百萬港元
+- target_key: metric.water_consumption_total
+  answer: 58400
+  expected_definition_fingerprint: 0313c896fc6eff010e6dae24103cf3830e7bf98d6d61546fafec52eaa081c2a3
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 東莞廠 56,900（水錶）、香港辦公室 1,500（物業分攤估算）
+- target_key: metric.water_intensity_revenue
+  answer: 120.1
+  expected_definition_fingerprint: e8bd38ed324f75df267ca76eedf306246afdabf2d027bf046a835261af4ceccb
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 58,400 ÷ 486.2 百萬港元
+- target_key: metric.water_recycled
+  answer: 6200
+  expected_definition_fingerprint: f8d967001645583df259732bb55843990cfb710e38f5ab851baab24b8b19a829
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 雨水收集 2,400、中水回用 3,800
+- target_key: metric.packaging_total
+  answer: 186
+  expected_definition_fingerprint: 716be5e8ba21853f9edc008d1ffb023efa6c4b6dc15fa41502f46336c7628fd4
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 紙箱 124、塑膠托盤及膠袋 47、其他 15
+- target_key: metric.packaging_recycled_content_rate
+  answer: 62
+  expected_definition_fingerprint: a19ca71941bb84a4f8d327a5acf1caee9230a9f26a8bc3b6f2a0fca4de2f455c
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 按供應商再生材料含量聲明加權
+- target_key: metric.employment_total_workforce
+  answer: 612
+  expected_definition_fingerprint: 78e42cd6c87e39ea7e61872397b134c8a2b43650c139387deaa927d58c2dba45
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 期末在冊
+- target_key: metric.employment_female
+  answer: 268
+  expected_definition_fingerprint: 678e43e58dac3181a10995898e67b290c2dc0696d0acabed3392fc1192a508de
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+- target_key: metric.employment_male
+  answer: 344
+  expected_definition_fingerprint: 5da34ebf8df7655969ad8f4255c61fe669a003645d14802ef0ef52fb63bc48d2
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+- target_key: metric.employment_full_time
+  answer: 598
+  expected_definition_fingerprint: 14d8ac4e8290cfce6b1727debb1d3bc26696419ac6b26ba01cf87a23599fcbd6
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+- target_key: metric.employment_part_time
+  answer: 14
+  expected_definition_fingerprint: 79343982b93338e79a9570060bfa4f1adc72bdce335b175b50309bb67dd3aec7
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 香港辦公室行政及清潔崗位
+- target_key: metric.employment_age_under_30
+  answer: 214
+  expected_definition_fingerprint: 9fb45b2ae0bebb840e4dd50c50776381e653430cf820047b8207b57c632e5304
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+- target_key: metric.employment_age_30_50
+  answer: 336
+  expected_definition_fingerprint: cbcc6cad4a34c2cbe78553650d2c1b037e8735c008260158437239cc12b4e754
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+- target_key: metric.employment_age_over_50
+  answer: 62
+  expected_definition_fingerprint: 45615408e8e0bd6b300258aaaaf81320ba44aaf9b58f4a979f5d9f414194e6f2
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+- target_key: metric.employment_region_hong_kong
+  answer: 38
+  expected_definition_fingerprint: c5ac48e3bd8e4d34e7e430eb9e9fef35690c59ba797bb2409bec4114fb942bb1
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+- target_key: metric.employment_region_mainland
+  answer: 574
+  expected_definition_fingerprint: 44292356b8cc99bed1c8d3d0d9dbc01b505dc4d7fc5056dadeded6c1dffa5720
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+- target_key: metric.employment_region_other
+  answer: 0
+  expected_definition_fingerprint: ca77fe8711d27069b6f458918b4408e2111efbe86a3019da27e7c002a76609f8
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+- target_key: metric.employment_turnover_rate_total
+  answer: 11.1
+  expected_definition_fingerprint: 58325fb30b437cee19a0b0f01dff06157ee0a967962a11db40acd65ec6abb75b
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 離職 68 ÷ 期末 612
+- target_key: metric.employment_turnover_rate_female
+  answer: 12.3
+  expected_definition_fingerprint: a2ae5475e7b07042752c7757355956cc0baf3884da6e53d02b818f113c2bd8c5
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 33 ÷ 268
+- target_key: metric.employment_turnover_rate_male
+  answer: 10.2
+  expected_definition_fingerprint: 3a6afab10b33a3a6ae06cbc8297f961c6629a29f60c3ac2b4c7f050dc209f381
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 35 ÷ 344
+- target_key: metric.employment_turnover_rate_under_30
+  answer: 15.0
+  expected_definition_fingerprint: 0479068c3f3f3661133edac6ede7963dc692b590a3c68f0d81a04b6db1f6f6ca
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 32 ÷ 214
+- target_key: metric.employment_turnover_rate_30_50
+  answer: 9.2
+  expected_definition_fingerprint: 25962b9eaba2937592f5eced7145288e36354d6e53261fbbe3ba6fe1e4f05590
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 31 ÷ 336
+- target_key: metric.employment_turnover_rate_over_50
+  answer: 8.1
+  expected_definition_fingerprint: b8249eb073a48e1621de0f5778a991f4d735f7a6ff4cdd84e56ad18b0ee861b7
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 5 ÷ 62
+- target_key: metric.health_safety_fatalities_current
+  answer: 0
+  expected_definition_fingerprint: 1862c37c2b6ffa393ebee433381d9195a990b5537f93169b8bfbc8c69ed6d537
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+- target_key: metric.health_safety_fatalities_prior_1
+  answer: 0
+  expected_definition_fingerprint: 1f7ee43d85f7577744d674addf3821738f089557781a0ba354725b9e61cdcec7
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 2024 年
+- target_key: metric.health_safety_fatalities_prior_2
+  answer: 0
+  expected_definition_fingerprint: f682326c6b3e3824713511aad70bc92f60ac39676422fb848113aa35c23c7bc5
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 2023 年
+- target_key: metric.health_safety_fatality_rate
+  answer: 0
+  expected_definition_fingerprint: 2d46947178175001e251f8a6d99561c6d9f3b5abe6bc7ff9781cbc331b90c051
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+- target_key: metric.health_safety_lost_days
+  answer: 126
+  expected_definition_fingerprint: 9ddb2826e44071cba831ec7f388a38b350640c00f06f6729d3b2993faf627b5d
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 7 宗工傷個案合計
+- target_key: metric.health_safety_injury_cases
+  answer: 7
+  expected_definition_fingerprint: dc86262313528a5375efa727e48f6f682cb355b12d7fae0247309ebc5e67fc67
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 損失工作日 1 天或以上
+- target_key: metric.training_employees_trained_rate
+  answer: 91
+  expected_definition_fingerprint: cf52c4a9a6559abf720071db0f698cba604589ce1b11d4fa402a846493cef455
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 557 ÷ 612
+- target_key: metric.training_rate_female
+  answer: 90
+  expected_definition_fingerprint: 6ae493c3a75ee1ff82d24b411a8e1b301272568302d87883858f4dcab4f9204c
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 241 ÷ 268
+- target_key: metric.training_rate_male
+  answer: 92
+  expected_definition_fingerprint: 7630c38e2ed82b7840df850c86f755172389fbd52a6589def101e7e135b7bf53
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 316 ÷ 344
+- target_key: metric.training_rate_senior_management
+  answer: 100
+  expected_definition_fingerprint: 205e90b181b150a14cdad70c866e2f7d5b978b57552543012b858e989a7c3dde
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 12 ÷ 12
+- target_key: metric.training_rate_middle_management
+  answer: 95
+  expected_definition_fingerprint: 65891ca0778bb2de7bf713f63cac833f73deec277a1ea40e209276168613702b
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 55 ÷ 58
+- target_key: metric.training_rate_general_staff
+  answer: 90
+  expected_definition_fingerprint: 61d2d7865344c3ee99535956425a22ebfc8c23ba886054e94e1ad36bdd9577bd
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 490 ÷ 542
+- target_key: metric.training_hours_average
+  answer: 18.5
+  expected_definition_fingerprint: 66a374bf9c53f0ec9070d4bccfa0e4a1d09369d3a4b07da6c032f1151e06a39c
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 總時數 11,322 ÷ 612
+- target_key: metric.training_hours_female
+  answer: 17.2
+  expected_definition_fingerprint: 2eca1cc290172fa6c2a03aa4db95d94e2c0571f8b215fc0d96aa702a89a93cbd
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 4,614 ÷ 268
+- target_key: metric.training_hours_male
+  answer: 19.5
+  expected_definition_fingerprint: 24a521fdf4d7dc5b924c9d8baa956227ade1c19d4b4109cfe3d7390996a1cf77
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 6,708 ÷ 344
+- target_key: metric.training_hours_senior_management
+  answer: 24.0
+  expected_definition_fingerprint: 7ce2437cb7da59a0395760fd14f007b55600f9868558ddd6d3f61974a7a5f546
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 288 ÷ 12
+- target_key: metric.training_hours_middle_management
+  answer: 22.5
+  expected_definition_fingerprint: 1d905efe526d8420f6749583262fc6ca2d15d66fb00029e93414ac9df58f93ef
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 1,305 ÷ 58
+- target_key: metric.training_hours_general_staff
+  answer: 18.0
+  expected_definition_fingerprint: 34bb32b602b9987ab646358f73b831633730ca4b44b28735b7dbee1a0536c53b
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 9,729 ÷ 542
+- target_key: metric.supply_chain_suppliers_total
+  answer: 213
+  expected_definition_fingerprint: 3b2f5571eb3f3fddd03e1d5111813be9bfb999675151f5aebd6f3523b8ce42e2
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 年內有交易的活躍供應商
+- target_key: metric.supply_chain_suppliers_hong_kong
+  answer: 26
+  expected_definition_fingerprint: f170173bb63f339434ca4c17c22023340ca2154e1b510e3b013634033d98d79f
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+- target_key: metric.supply_chain_suppliers_mainland
+  answer: 171
+  expected_definition_fingerprint: 953adac17cc212a8dd7af2bfa4eeaa0865a47db23c8b2466de515f410b0d5935
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+- target_key: metric.supply_chain_suppliers_other
+  answer: 16
+  expected_definition_fingerprint: 45dfaaa0bd59544a4d52add189d299634047d55785de73dda3b0a4bc8e6283f0
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 日本、台灣、德國、馬來西亞
+- target_key: metric.supply_chain_suppliers_assessed
+  answer: 213
+  expected_definition_fingerprint: a2fdea8184323613b662edefbad09f530fcb397efab939f3990f82277d538f23
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 全部簽署《供應商行為準則》並完成 ESG 自評；現場審核 42 家
+- target_key: metric.product_recall_rate
+  answer: 0
+  expected_definition_fingerprint: dc3778c5e87334e6c8de0f79ef5306c7d0c85371015c715bb02216cdbf477210
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 無因安全與健康理由的回收
+- target_key: metric.product_complaints
+  answer: 9
+  expected_definition_fingerprint: 93347203758d9d752457c1612fdcf5cb6915af9fd84112c60a610b2fc56f1258
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 品質 6、交付 2、包裝 1
+- target_key: metric.product_complaints_resolved_rate
+  answer: 100
+  expected_definition_fingerprint: 0dd8372f758b2e4f3ba531faeca96282271d9d630b0a50609659ed38486b6e9b
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 全部於期內關閉，平均 6.4 天
+- target_key: metric.privacy_data_breaches
+  answer: 0
+  expected_definition_fingerprint: 77f1588af3e27239fd47fa6b5eaf29953484bcff4d8457b5a40a0d2e0e5673e7
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+- target_key: metric.anti_corruption_legal_cases
+  answer: 0
+  expected_definition_fingerprint: 6d03835400c2d17dab3743dde17b149771764106a33efc31fa33d2e99fdbcc86
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+- target_key: metric.anti_corruption_training_directors
+  answer: 7
+  expected_definition_fingerprint: 506560859152533a5aeaddbab106d5e36e1fd773d30b9bbed2fa49b536cacf9f
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 全體董事，各 2 小時
+- target_key: metric.anti_corruption_training_employees
+  answer: 486
+  expected_definition_fingerprint: 0ed1626b8a97988288b9cdb088a434ea19113e9152705688e37ed87ef2dac350
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 入職 74、高風險崗位 126、全員線上 286
+- target_key: metric.anti_corruption_training_hours
+  answer: 1120
+  expected_definition_fingerprint: ede8bfea69ea94d1488acd201e3da2eda419bd9213f2efbd3b0f3e6a147db35b
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 董事 14 + 僱員 1,106
+- target_key: metric.community_donations
+  answer: 186
+  expected_definition_fingerprint: a57c0983711237c64ef42319aa227f80e09c32196f1f8114ec8eabc24e8145d8
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 教育 96、環境 40、社區服務 50
+- target_key: metric.community_volunteer_hours
+  answer: 640
+  expected_definition_fingerprint: 07acf62f75ce1cd0a34e625be971abc6c6686babcb813b8a639b9a91b2f772a2
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 6 次活動
+- target_key: metric.community_volunteer_participants
+  answer: 112
+  expected_definition_fingerprint: c57feb16b00e518e172591af5fb860e085b8bdd16aea7be91603ed38ce28ed61
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 143 人次去重

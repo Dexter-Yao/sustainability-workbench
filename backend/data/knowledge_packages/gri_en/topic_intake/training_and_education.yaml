@@ -1,0 +1,23 @@
+# ABOUTME(en): Topic-specific intake questions of "Training and Education"; the four fixed pillar questions come from topic_intake_common.yaml.
+# ABOUTME(en): Quantitative metrics are collected through the metric catalog, not here.
+contentScopeId: training_and_education
+items:
+- key: training.q_training_programs
+  prompt: What training does the company provide to employees?
+  kind: text
+  collectionPriority: recommended
+  hint: Induction, skills, compliance training; or blank.
+  generationBoundary: |-
+    Unless specific figures are given, do not generate training hours, coverage rates or budgets.
+  maxChars: 5000
+- key: training.q_career_development
+  prompt: Does the company have career development or performance review arrangements?
+  kind: single_select
+  collectionPriority: recommended
+  options:
+  - Yes, for all employees
+  - Yes, for some employee categories
+  - Not yet
+  - Not sure
+  hint: State the arrangement, not the rates.
+  maxChars: 5000

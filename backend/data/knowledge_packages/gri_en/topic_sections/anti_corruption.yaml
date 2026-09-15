@@ -1,0 +1,99 @@
+# ABOUTME(en): Topic chapter template of the GRI topic "Anti-corruption" (GRI 205: Anti-corruption 2016): management /
+# ABOUTME(en): approach / actions blocks with their intake evidence and GRI requirement keys; the metrics H3 is compiled from metricDisclosure.
+section:
+  key: anti_corruption
+  title: Anti-corruption
+  headingLevel: 2
+  reportSectionId: anti_corruption
+  conciseDisclosure:
+    id: anti_corruption.concise_summary
+    type: paragraph
+    blockType: generative
+    source: ai
+    styleRole: body
+    generation:
+      task:
+        focus: |-
+          From the evidence currently visible for this topic, write one coherent summary covering the anti-corruption policies, the assessment of corruption risks, communication and training, and how incidents are handled, without the four sub-headings.
+      inputs:
+        evidence:
+          kind: report_section
+      targetChars:
+      - 260
+      - 520
+  children:
+  - key: anti_corruption.gov
+    title: Management of the Topic
+    pillar: governance
+    headingLevel: 3
+    blocks:
+    - id: anti_corruption.gov_policy
+      type: paragraph
+      blockType: generative
+      source: ai
+      styleRole: body
+      generation:
+        task:
+          focus: |-
+            Describe how the company manages anti-corruption: the anti-corruption policies and procedures, the responsibilities for them, and compliance with the applicable anti-corruption requirements.
+          noFactGuidance: |-
+            When the user provides no facts for this part, keep a prudent, general and low-commitment register describing the management attention and directional arrangements common to the industry; do not claim that specific systems, projects, certifications or results are in place.
+        inputs:
+          evidence:
+            kind: report_section
+        targetChars:
+        - 220
+        - 420
+        standardDisclosureRequirementKeys:
+        - anti_corruption.gov.management_of_anti_corruption
+  - key: anti_corruption.strategy
+    title: Approach and Targets
+    pillar: strategy
+    headingLevel: 3
+    blocks:
+    - id: anti_corruption.strategy_direction
+      type: paragraph
+      blockType: generative
+      source: ai
+      styleRole: body
+      generation:
+        task:
+          focus: |-
+            Describe the company's direction on business integrity, including how operations are assessed for risks related to corruption and what significant risks were identified.
+          noFactGuidance: |-
+            When the user provides no facts for this part, keep a prudent, general and low-commitment register describing the management attention and directional arrangements common to the industry; do not claim that specific systems, projects, certifications or results are in place.
+        inputs:
+          evidence:
+            kind: report_section
+        targetChars:
+        - 200
+        - 400
+        standardDisclosureRequirementKeys:
+        - anti_corruption.strategy.risk_assessment
+  - key: anti_corruption.iro
+    title: Actions and Processes
+    pillar: iro_management
+    headingLevel: 3
+    blocks:
+    - id: anti_corruption.iro_measures
+      type: paragraph
+      blockType: generative
+      source: ai
+      styleRole: body
+      generation:
+        task:
+          focus: |-
+            Describe the actions and processes the company applies against corruption: how anti-corruption policies and procedures are communicated, the training provided, and how reported incidents are investigated and handled.
+          noFactGuidance: |-
+            When the user provides no facts for this part, keep a prudent, general and low-commitment register describing the management attention and directional arrangements common to the industry; do not claim that specific systems, projects, certifications or results are in place.
+        inputs:
+          evidence:
+            kind: report_section
+        targetChars:
+        - 240
+        - 460
+        standardDisclosureRequirementKeys:
+        - anti_corruption.iro.communication_and_training
+        - anti_corruption.iro.incidents
+metricDisclosure:
+  catalogMetricKeys: []

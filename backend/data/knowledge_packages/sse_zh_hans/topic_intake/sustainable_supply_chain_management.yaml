@@ -1,0 +1,39 @@
+# ABOUTME: 可持续供应链管理议题轻量版内容清单，聚焦供应商评价维度和供应商培训帮扶。
+# ABOUTME: 治理、战略和指标目标固定题由 topic_intake_common.yaml 展开；结构化数值由 ESG 定量数据表维护。
+contentScopeId: sustainable_supply_chain_management
+items:
+- key: sustainable_supply_chain_management.q_supplier_evaluation_dimensions
+  prompt: 请选择贵公司供应商管理或评价的主要维度。
+  kind: multi_select
+  collectionPriority: recommended
+  options:
+  - 质量表现
+  - 交付及时性
+  - 供应稳定性
+  - 成本竞争力
+  - 资质与体系认证
+  - 环境合规表现
+  - 劳工与安全等社会责任表现
+  - 合作稳定性
+  - 其他
+  generationOptionLabels:
+    成本竞争力: 长期价值与可持续运营效率
+  hint: 可多选；如选择“其他”或需要说明具体评价口径，请填写补充说明。
+  maxChars: 5000
+- key: sustainable_supply_chain_management.q_supplier_training_support
+  prompt: 公司开展过哪些面向供应商的培训和帮扶？
+  kind: text
+  collectionPriority: recommended
+  hint: 请简述培训或帮扶内容、覆盖供应商类型或范围、培训或帮扶成果等。
+  generationBoundary: 未填写具体数值时，不得生成供应商数量、培训次数或覆盖率。
+  maxChars: 5000
+- key: sustainable_supply_chain_management.q_conflict_minerals_involvement
+  prompt: 贵司产品或原材料是否涉及锡、钽、钨、金、钴等高风险矿产？
+  kind: single_select
+  options:
+  - 涉及
+  - 不涉及
+  - 不确定
+  collectionPriority: recommended
+  hint: 选择涉及时，可上传负责任矿产采购政策、供应商尽调问卷或追溯记录等资料，正文按资料出具相关管理内容。
+  maxChars: 2000

@@ -1,0 +1,116 @@
+# ABOUTME(en): Topic chapter template of the HKEX Aspect「廢棄物管理」: governance / strategy / risk-management
+# ABOUTME(en): blocks with their intake evidence and Appendix C2 requirement keys; the metrics H3 is compiled from metricDisclosure.
+section:
+  key: waste_management
+  title: 廢棄物管理
+  headingLevel: 2
+  reportSectionId: waste_management
+  conciseDisclosure:
+    id: waste.concise_summary
+    type: paragraph
+    blockType: generative
+    source: ai
+    styleRole: body
+    generation:
+      task:
+        focus: 根據本層面當前可見證據形成一段連貫摘要，涵蓋有害及無害廢棄物的管理方針、處理方法、減量目標及措施，不使用四項小標題。
+      inputs:
+        evidence:
+          kind: report_section
+      targetChars:
+      - 260
+      - 520
+  children:
+  - key: waste_management.gov
+    title: 管治
+    pillar: governance
+    headingLevel: 3
+    blocks:
+    - id: waste.gov_policy_and_compliance
+      type: paragraph
+      blockType: generative
+      source: ai
+      styleRole: body
+      generation:
+        task:
+          focus: |-
+            說明公司有關有害及無害廢棄物產生與處置的政策、職責安排，以及遵守相關法律及規例（如香港《廢物處置條例》或內地固體廢物相關法規）的情況（守則層面A1一般披露）。
+          noFactGuidance: |-
+            用戶未提供政策或職責資料時，以審慎、概括的語態說明公司按所屬行業及業務類型對本層面採取的一般管理關注、合規原則及職責安排；不指名部門、制度名稱、認證或審批流程，不聲稱已建立特定制度或已完成合規檢查。
+        inputs:
+          evidence:
+            kind: explicit
+            intakeItems:
+            - waste.q_governance_roles
+            - waste.q_governance_policies
+            - waste.q_governance_certifications
+        targetChars:
+        - 180
+        - 400
+        standardDisclosureRequirementKeys:
+        - waste_management.gov.general_disclosure_policies
+        - waste_management.gov.general_disclosure_compliance
+        simplifiedWritingGuidance:
+        - 遵守相關法律及規例的情況只在用戶明確提供時陳述；未提供時不寫「未發現違規」或「無重大違規」等結論。
+  - key: waste_management.strategy
+    title: 策略
+    pillar: strategy
+    headingLevel: 3
+    blocks:
+    - id: waste.strategy_targets
+      type: paragraph
+      blockType: generative
+      source: ai
+      styleRole: body
+      generation:
+        task:
+          focus: 說明公司訂立的廢棄物減量目標及為達到目標所採取的步驟，包括源頭減量、分類回收及資源化利用的方向（守則關鍵績效指標A1.6）。
+          noFactGuidance: 用戶未提供目標或計劃時，說明公司會結合業務發展持續關注本層面的改善方向與量化目標的訂立；不虛構目標數值、基準年、達成期限或已取得的成效。
+        inputs:
+          evidence:
+            kind: explicit
+            intakeItems:
+            - waste.q_strategy_content
+            - waste.q_waste_reduction_targets
+        targetChars:
+        - 160
+        - 360
+        standardDisclosureRequirementKeys:
+        - waste_management.strategy.waste_reduction_targets
+        simplifiedWritingGuidance:
+        - 數值由關鍵績效指標數據表承載；本段不寫排放量、耗用量、比率或減幅等數字。
+  - key: waste_management.iro
+    title: 風險管理
+    pillar: iro_management
+    headingLevel: 3
+    blocks:
+    - id: waste.iro_handling
+      type: paragraph
+      blockType: generative
+      source: ai
+      styleRole: body
+      generation:
+        task:
+          focus: 說明公司處理有害及無害廢棄物的方法：分類、收集、暫存、交由持牌承辦商處置或回收的安排，以及相關記錄與監察（守則關鍵績效指標A1.6）。
+          noFactGuidance: 用戶未提供具體措施時，僅結合行業及業務類型說明本層面常見的管理環節與方向性安排；不聲稱公司已實施特定措施、已購置設備、已委聘服務商或已取得成效。
+        inputs:
+          evidence:
+            kind: explicit
+            intakeItems:
+            - waste.q_waste_handling
+            - waste.q_hazardous_waste
+        targetChars:
+        - 200
+        - 440
+        standardDisclosureRequirementKeys:
+        - waste_management.iro.waste_handling
+        simplifiedWritingGuidance:
+        - 數值由關鍵績效指標數據表承載；本段不寫排放量、耗用量、比率或減幅等數字。
+metricDisclosure:
+  catalogMetricKeys:
+  - waste_hazardous_total
+  - waste_hazardous_intensity
+  - waste_non_hazardous_total
+  - waste_non_hazardous_intensity
+  - waste_recycled_total
+  - waste_recycling_rate

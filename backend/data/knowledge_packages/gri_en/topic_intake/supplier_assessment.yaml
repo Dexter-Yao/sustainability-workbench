@@ -1,0 +1,24 @@
+# ABOUTME(en): Topic-specific intake questions of "Supplier Assessment"; the four fixed pillar questions come from topic_intake_common.yaml.
+# ABOUTME(en): Quantitative metrics are collected through the metric catalog, not here.
+contentScopeId: supplier_assessment
+items:
+- key: supplier.q_supplier_criteria
+  prompt: What environmental or social criteria does the company apply when selecting suppliers?
+  kind: text
+  collectionPriority: recommended
+  hint: Qualification, audits, codes of conduct; or blank.
+  generationBoundary: |-
+    Unless specific facts are given, do not generate supplier numbers, audit counts or pass rates.
+  maxChars: 5000
+- key: supplier.q_supplier_assessment
+  prompt: Does the company assess existing suppliers on environmental or social performance?
+  kind: single_select
+  collectionPriority: recommended
+  options:
+  - Yes, both
+  - Environmental only
+  - Social only
+  - Not yet
+  - Not sure
+  hint: State the arrangement, not the counts.
+  maxChars: 5000

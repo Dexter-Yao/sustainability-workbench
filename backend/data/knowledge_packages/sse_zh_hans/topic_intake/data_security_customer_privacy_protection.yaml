@@ -1,0 +1,16 @@
+# ABOUTME: 数据安全与客户隐私保护议题轻量版内容清单，聚焦客户信息保密要求和权限设置。
+# ABOUTME: 治理、战略和指标目标固定题由 topic_intake_common.yaml 展开；结构化数值由 ESG 定量数据表维护。
+contentScopeId: data_security_customer_privacy_protection
+items:
+- key: data_security_customer_privacy_protection.q_customer_info_confidentiality
+  prompt: 请简述贵司对于客户信息的保密规定或要求。
+  kind: text
+  collectionPriority: recommended
+  hint: 可填写客户信息保密要求、数据使用限制、员工保密义务、第三方合作要求、信息披露限制或其他管理规定；没有可留空。
+  maxChars: 5000
+- key: data_security_customer_privacy_protection.q_customer_info_access_permissions
+  prompt: 请简述贵司针对查阅或使用客户信息的权限设置。
+  kind: text
+  collectionPriority: recommended
+  hint: 可填写权限审批、账号管理、分级授权、访问记录、使用范围控制、离职权限回收或其他客户信息访问控制安排；没有可留空。
+  maxChars: 5000

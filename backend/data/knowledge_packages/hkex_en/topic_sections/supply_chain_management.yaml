@@ -1,0 +1,117 @@
+# ABOUTME(en): Topic chapter template of the HKEX Aspect "Supply Chain Management": governance / strategy / risk-management
+# ABOUTME(en): blocks with their intake evidence and Appendix C2 requirement keys; the metrics H3 is compiled from metricDisclosure.
+section:
+  key: supply_chain_management
+  title: Supply Chain Management
+  headingLevel: 2
+  reportSectionId: supply_chain_management
+  conciseDisclosure:
+    id: supply_chain.concise_summary
+    type: paragraph
+    blockType: generative
+    source: ai
+    styleRole: body
+    generation:
+      task:
+        focus: |-
+          From the evidence currently visible for this Aspect, write one coherent summary covering the policies on managing environmental and social risks of the supply chain, supplier engagement practices, risk identification and the promotion of environmentally preferable products and services, without the four sub-headings.
+      inputs:
+        evidence:
+          kind: report_section
+      targetChars:
+      - 260
+      - 520
+  children:
+  - key: supply_chain_management.gov
+    title: Governance
+    pillar: governance
+    headingLevel: 3
+    blocks:
+    - id: supply_chain.gov_policy
+      type: paragraph
+      blockType: generative
+      source: ai
+      styleRole: body
+      generation:
+        task:
+          focus: |-
+            Describe the company's policies and allocation of responsibility on managing environmental and social risks of the supply chain (Code Aspect B5 General Disclosure).
+          noFactGuidance: |-
+            When the user provides no policy or responsibility facts, describe in a measured, general register the management attention, compliance principles and allocation of responsibility a company of this industry and business type applies to this Aspect; do not name departments, policy titles, certifications or approval flows, and do not claim that a specific system exists or that compliance checks have been completed.
+        inputs:
+          evidence:
+            kind: explicit
+            intakeItems:
+            - supply_chain.q_governance_roles
+            - supply_chain.q_governance_policies
+            - supply_chain.q_governance_certifications
+        targetChars:
+        - 85
+        - 190
+        standardDisclosureRequirementKeys:
+        - supply_chain_management.gov.general_disclosure_policies
+  - key: supply_chain_management.strategy
+    title: Strategy
+    pillar: strategy
+    headingLevel: 3
+    blocks:
+    - id: supply_chain.strategy_green_procurement
+      type: paragraph
+      blockType: generative
+      source: ai
+      styleRole: body
+      generation:
+        task:
+          focus: |-
+            Describe the company's practices used to promote environmentally preferable products and services when selecting suppliers, and its direction on supply chain sustainability (Code KPI B5.4).
+          noFactGuidance: |-
+            When the user provides no targets or plans, state that the company will keep attending to improvement directions and the setting of quantified targets for this Aspect as the business develops; do not invent target values, base years, deadlines or achieved results.
+        inputs:
+          evidence:
+            kind: explicit
+            intakeItems:
+            - supply_chain.q_strategy_content
+            - supply_chain.q_green_procurement
+        targetChars:
+        - 85
+        - 205
+        standardDisclosureRequirementKeys:
+        - supply_chain_management.strategy.green_procurement
+  - key: supply_chain_management.iro
+    title: Risk Management
+    pillar: iro_management
+    headingLevel: 3
+    blocks:
+    - id: supply_chain.iro_engagement_and_risk
+      type: paragraph
+      blockType: generative
+      source: ai
+      styleRole: body
+      generation:
+        task:
+          focus: |-
+            Describe the practices relating to engaging suppliers (screening, evaluation, code of conduct sign-off, audits), the suppliers to whom the practices are implemented, and the practices used to identify environmental and social risks along each stage of the supply chain and how they are monitored (Code KPIs B5.2 and B5.3).
+          noFactGuidance: |-
+            When the user provides no specific measures, describe only the management steps and directional arrangements common to this Aspect for the industry and business type; do not claim that the company has implemented specific measures, purchased equipment, engaged contractors or achieved results.
+        inputs:
+          evidence:
+            kind: explicit
+            intakeItems:
+            - supply_chain.q_supplier_engagement
+            - supply_chain.q_supplier_esg_risk
+        targetChars:
+        - 130
+        - 290
+        standardDisclosureRequirementKeys:
+        - supply_chain_management.iro.supplier_engagement
+        - supply_chain_management.iro.supply_chain_risk_identification
+        simplifiedWritingGuidance:
+        - |-
+          Figures are carried by the KPI data table; this passage does not state emissions, consumption, ratios or reduction percentages.
+metricDisclosure:
+  catalogMetricKeys:
+  - supply_chain_suppliers_total
+  - supply_chain_suppliers_hong_kong
+  - supply_chain_suppliers_mainland
+  - supply_chain_suppliers_other
+  - supply_chain_suppliers_assessed

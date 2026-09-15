@@ -1,0 +1,7 @@
+# ABOUTME: 本机单用户权益注册表；运行时授权只认当前 Grant 指向的 Profile。
+# ABOUTME: 已发布版本不得原地修改；权益变化必须新增版本，并通过显式 Grant 切换账户。
+schema_version: 1
+profiles:
+  local_single_user@1:
+    active_report_limit: 20
+    section_regeneration_limit: 10

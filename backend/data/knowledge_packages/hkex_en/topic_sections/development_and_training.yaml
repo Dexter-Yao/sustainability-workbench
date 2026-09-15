@@ -1,0 +1,125 @@
+# ABOUTME(en): Topic chapter template of the HKEX Aspect "Development and Training": governance / strategy / risk-management
+# ABOUTME(en): blocks with their intake evidence and Appendix C2 requirement keys; the metrics H3 is compiled from metricDisclosure.
+section:
+  key: development_and_training
+  title: Development and Training
+  headingLevel: 2
+  reportSectionId: development_and_training
+  conciseDisclosure:
+    id: training.concise_summary
+    type: paragraph
+    blockType: generative
+    source: ai
+    styleRole: body
+    generation:
+      task:
+        focus: |-
+          From the evidence currently visible for this Aspect, write one coherent summary covering the policies, training activities and direction on improving employees' knowledge and skills for discharging duties at work, without the four sub-headings.
+      inputs:
+        evidence:
+          kind: report_section
+      targetChars:
+      - 260
+      - 520
+  children:
+  - key: development_and_training.gov
+    title: Governance
+    pillar: governance
+    headingLevel: 3
+    blocks:
+    - id: training.gov_policy
+      type: paragraph
+      blockType: generative
+      source: ai
+      styleRole: body
+      generation:
+        task:
+          focus: |-
+            Describe the company's policies and allocation of responsibility on improving employees' knowledge and skills for discharging duties at work (Code Aspect B3 General Disclosure).
+          noFactGuidance: |-
+            When the user provides no policy or responsibility facts, describe in a measured, general register the management attention, compliance principles and allocation of responsibility a company of this industry and business type applies to this Aspect; do not name departments, policy titles, certifications or approval flows, and do not claim that a specific system exists or that compliance checks have been completed.
+        inputs:
+          evidence:
+            kind: explicit
+            intakeItems:
+            - training.q_governance_roles
+            - training.q_governance_policies
+            - training.q_governance_certifications
+        targetChars:
+        - 85
+        - 190
+        standardDisclosureRequirementKeys:
+        - development_and_training.gov.general_disclosure_policies
+  - key: development_and_training.strategy
+    title: Strategy
+    pillar: strategy
+    headingLevel: 3
+    blocks:
+    - id: training.strategy_direction
+      type: paragraph
+      blockType: generative
+      source: ai
+      styleRole: body
+      generation:
+        task:
+          focus: |-
+            Describe the company's approach and targets on talent development: training needs identification, capability development paths and priority training areas.
+          noFactGuidance: |-
+            When the user provides no targets or plans, state that the company will keep attending to improvement directions and the setting of quantified targets for this Aspect as the business develops; do not invent target values, base years, deadlines or achieved results.
+        inputs:
+          evidence:
+            kind: explicit
+            intakeItems:
+            - training.q_strategy_content
+            - training.q_training_needs
+        targetChars:
+        - 85
+        - 190
+        standardDisclosureRequirementKeys:
+        - development_and_training.strategy.training_direction
+        simplifiedWritingGuidance:
+        - |-
+          Figures are carried by the KPI data table; this passage does not state emissions, consumption, ratios or reduction percentages.
+  - key: development_and_training.iro
+    title: Risk Management
+    pillar: iro_management
+    headingLevel: 3
+    blocks:
+    - id: training.iro_programmes
+      type: paragraph
+      blockType: generative
+      source: ai
+      styleRole: body
+      generation:
+        task:
+          focus: |-
+            Describe the training activities carried out during the reporting period: induction, professional skills, management capability, safety and compliance training, and how training is organised and evaluated.
+          noFactGuidance: |-
+            When the user provides no specific measures, describe only the management steps and directional arrangements common to this Aspect for the industry and business type; do not claim that the company has implemented specific measures, purchased equipment, engaged contractors or achieved results.
+        inputs:
+          evidence:
+            kind: explicit
+            intakeItems:
+            - training.q_training_programmes
+        targetChars:
+        - 110
+        - 240
+        standardDisclosureRequirementKeys:
+        - development_and_training.iro.training_activities
+        simplifiedWritingGuidance:
+        - |-
+          Figures are carried by the KPI data table; this passage does not state emissions, consumption, ratios or reduction percentages.
+metricDisclosure:
+  catalogMetricKeys:
+  - training_employees_trained_rate
+  - training_rate_female
+  - training_rate_male
+  - training_rate_senior_management
+  - training_rate_middle_management
+  - training_rate_general_staff
+  - training_hours_average
+  - training_hours_female
+  - training_hours_male
+  - training_hours_senior_management
+  - training_hours_middle_management
+  - training_hours_general_staff

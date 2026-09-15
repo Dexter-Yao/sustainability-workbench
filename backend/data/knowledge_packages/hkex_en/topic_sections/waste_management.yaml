@@ -1,0 +1,124 @@
+# ABOUTME(en): Topic chapter template of the HKEX Aspect "Waste Management": governance / strategy / risk-management
+# ABOUTME(en): blocks with their intake evidence and Appendix C2 requirement keys; the metrics H3 is compiled from metricDisclosure.
+section:
+  key: waste_management
+  title: Waste Management
+  headingLevel: 2
+  reportSectionId: waste_management
+  conciseDisclosure:
+    id: waste.concise_summary
+    type: paragraph
+    blockType: generative
+    source: ai
+    styleRole: body
+    generation:
+      task:
+        focus: |-
+          From the evidence currently visible for this Aspect, write one coherent summary covering the policies, handling methods, reduction targets and measures for hazardous and non-hazardous waste, without the four sub-headings.
+      inputs:
+        evidence:
+          kind: report_section
+      targetChars:
+      - 260
+      - 520
+  children:
+  - key: waste_management.gov
+    title: Governance
+    pillar: governance
+    headingLevel: 3
+    blocks:
+    - id: waste.gov_policy_and_compliance
+      type: paragraph
+      blockType: generative
+      source: ai
+      styleRole: body
+      generation:
+        task:
+          focus: |-
+            Describe the company's policies and allocation of responsibility on the generation and disposal of hazardous and non-hazardous waste, and its compliance with relevant laws and regulations (such as the Hong Kong Waste Disposal Ordinance or Mainland solid waste legislation) (Code Aspect A1 General Disclosure).
+          noFactGuidance: |-
+            When the user provides no policy or responsibility facts, describe in a measured, general register the management attention, compliance principles and allocation of responsibility a company of this industry and business type applies to this Aspect; do not name departments, policy titles, certifications or approval flows, and do not claim that a specific system exists or that compliance checks have been completed.
+        inputs:
+          evidence:
+            kind: explicit
+            intakeItems:
+            - waste.q_governance_roles
+            - waste.q_governance_policies
+            - waste.q_governance_certifications
+        targetChars:
+        - 110
+        - 240
+        standardDisclosureRequirementKeys:
+        - waste_management.gov.general_disclosure_policies
+        - waste_management.gov.general_disclosure_compliance
+        simplifiedWritingGuidance:
+        - |-
+          State compliance with relevant laws and regulations only when the user explicitly provides it; otherwise do not write conclusions such as "no non-compliance was identified" or "no material breach".
+  - key: waste_management.strategy
+    title: Strategy
+    pillar: strategy
+    headingLevel: 3
+    blocks:
+    - id: waste.strategy_targets
+      type: paragraph
+      blockType: generative
+      source: ai
+      styleRole: body
+      generation:
+        task:
+          focus: |-
+            Describe the waste reduction targets the company has set and the steps taken to achieve them, including the direction on source reduction, sorted recycling and resource recovery (Code KPI A1.6).
+          noFactGuidance: |-
+            When the user provides no targets or plans, state that the company will keep attending to improvement directions and the setting of quantified targets for this Aspect as the business develops; do not invent target values, base years, deadlines or achieved results.
+        inputs:
+          evidence:
+            kind: explicit
+            intakeItems:
+            - waste.q_strategy_content
+            - waste.q_waste_reduction_targets
+        targetChars:
+        - 95
+        - 215
+        standardDisclosureRequirementKeys:
+        - waste_management.strategy.waste_reduction_targets
+        simplifiedWritingGuidance:
+        - |-
+          Figures are carried by the KPI data table; this passage does not state emissions, consumption, ratios or reduction percentages.
+  - key: waste_management.iro
+    title: Risk Management
+    pillar: iro_management
+    headingLevel: 3
+    blocks:
+    - id: waste.iro_handling
+      type: paragraph
+      blockType: generative
+      source: ai
+      styleRole: body
+      generation:
+        task:
+          focus: |-
+            Describe how the company handles hazardous and non-hazardous waste: sorting, collection, temporary storage, disposal or recycling through licensed contractors, and the related records and monitoring (Code KPI A1.6).
+          noFactGuidance: |-
+            When the user provides no specific measures, describe only the management steps and directional arrangements common to this Aspect for the industry and business type; do not claim that the company has implemented specific measures, purchased equipment, engaged contractors or achieved results.
+        inputs:
+          evidence:
+            kind: explicit
+            intakeItems:
+            - waste.q_waste_handling
+            - waste.q_hazardous_waste
+        targetChars:
+        - 120
+        - 265
+        standardDisclosureRequirementKeys:
+        - waste_management.iro.waste_handling
+        simplifiedWritingGuidance:
+        - |-
+          Figures are carried by the KPI data table; this passage does not state emissions, consumption, ratios or reduction percentages.
+metricDisclosure:
+  catalogMetricKeys:
+  - waste_hazardous_total
+  - waste_hazardous_intensity
+  - waste_non_hazardous_total
+  - waste_non_hazardous_intensity
+  - waste_recycled_total
+  - waste_recycling_rate

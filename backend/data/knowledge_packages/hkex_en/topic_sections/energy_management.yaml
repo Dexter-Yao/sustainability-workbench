@@ -1,0 +1,123 @@
+# ABOUTME(en): Topic chapter template of the HKEX Aspect "Energy Management": governance / strategy / risk-management
+# ABOUTME(en): blocks with their intake evidence and Appendix C2 requirement keys; the metrics H3 is compiled from metricDisclosure.
+section:
+  key: energy_management
+  title: Energy Management
+  headingLevel: 2
+  reportSectionId: energy_management
+  conciseDisclosure:
+    id: energy.concise_summary
+    type: paragraph
+    blockType: generative
+    source: ai
+    styleRole: body
+    generation:
+      task:
+        focus: |-
+          From the evidence currently visible for this Aspect, write one coherent summary covering the energy use policy, energy efficiency targets and measures, without the four sub-headings.
+      inputs:
+        evidence:
+          kind: report_section
+      targetChars:
+      - 260
+      - 520
+  children:
+  - key: energy_management.gov
+    title: Governance
+    pillar: governance
+    headingLevel: 3
+    blocks:
+    - id: energy.gov_policy
+      type: paragraph
+      blockType: generative
+      source: ai
+      styleRole: body
+      generation:
+        task:
+          focus: |-
+            Describe the company's policy on efficient use of energy, the allocation of responsibility and any energy management certification (Code Aspect A2 General Disclosure).
+          noFactGuidance: |-
+            When the user provides no policy or responsibility facts, describe in a measured, general register the management attention, compliance principles and allocation of responsibility a company of this industry and business type applies to this Aspect; do not name departments, policy titles, certifications or approval flows, and do not claim that a specific system exists or that compliance checks have been completed.
+        inputs:
+          evidence:
+            kind: explicit
+            intakeItems:
+            - energy.q_governance_roles
+            - energy.q_governance_policies
+            - energy.q_governance_certifications
+        targetChars:
+        - 95
+        - 215
+        standardDisclosureRequirementKeys:
+        - energy_management.gov.general_disclosure_policies
+  - key: energy_management.strategy
+    title: Strategy
+    pillar: strategy
+    headingLevel: 3
+    blocks:
+    - id: energy.strategy_targets
+      type: paragraph
+      blockType: generative
+      source: ai
+      styleRole: body
+      generation:
+        task:
+          focus: |-
+            Describe the energy use efficiency targets the company has set and the steps taken to achieve them, including the direction on equipment efficiency, renewable energy use and management measures (Code KPI A2.3).
+          noFactGuidance: |-
+            When the user provides no targets or plans, state that the company will keep attending to improvement directions and the setting of quantified targets for this Aspect as the business develops; do not invent target values, base years, deadlines or achieved results.
+        inputs:
+          evidence:
+            kind: explicit
+            intakeItems:
+            - energy.q_strategy_content
+            - energy.q_renewable_energy
+        targetChars:
+        - 95
+        - 215
+        standardDisclosureRequirementKeys:
+        - energy_management.strategy.energy_efficiency_targets
+        simplifiedWritingGuidance:
+        - |-
+          Figures are carried by the KPI data table; this passage does not state emissions, consumption, ratios or reduction percentages.
+  - key: energy_management.iro
+    title: Risk Management
+    pillar: iro_management
+    headingLevel: 3
+    blocks:
+    - id: energy.iro_measures
+      type: paragraph
+      blockType: generative
+      source: ai
+      styleRole: body
+      generation:
+        task:
+          focus: |-
+            Describe the company's specific energy efficiency measures: replacement of energy-intensive equipment, lighting and air-conditioning savings, production scheduling, energy monitoring and renewable energy arrangements.
+          noFactGuidance: |-
+            When the user provides no specific measures, describe only the management steps and directional arrangements common to this Aspect for the industry and business type; do not claim that the company has implemented specific measures, purchased equipment, engaged contractors or achieved results.
+        inputs:
+          evidence:
+            kind: explicit
+            intakeItems:
+            - energy.q_energy_efficiency_measures
+            - energy.q_renewable_energy
+        targetChars:
+        - 110
+        - 240
+        standardDisclosureRequirementKeys:
+        - energy_management.iro.energy_efficiency_measures
+        simplifiedWritingGuidance:
+        - |-
+          Figures are carried by the KPI data table; this passage does not state emissions, consumption, ratios or reduction percentages.
+metricDisclosure:
+  catalogMetricKeys:
+  - energy_purchased_electricity
+  - energy_renewable_electricity
+  - energy_natural_gas
+  - energy_diesel
+  - energy_petrol
+  - energy_lpg
+  - energy_total
+  - energy_intensity_revenue
+  - energy_intensity_output

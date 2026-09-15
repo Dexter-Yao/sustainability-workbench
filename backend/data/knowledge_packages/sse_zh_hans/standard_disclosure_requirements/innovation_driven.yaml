@@ -1,0 +1,95 @@
+# ABOUTME: 创新驱动议题准则披露要求库，供覆盖审计与按 key 白名单注入生成上下文（注入受开关控制，默认关闭）。
+# ABOUTME: 本文件不作为用户可见准则批注来源；用户可见条款原文来自 user_visible_disclosure_clause_annotations。
+topicStandardDisclosureRequirementGroups:
+- topicSectionKey: innovation_driven.gov
+  pillar: governance
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: innovation_driven.gov.rd_governance_required
+    standardDisclosureRequirementTitle: 研发创新治理与职责安排
+    excerptFrom: 参考模板“研发体系建设”“知识产权管理与行业认可”
+    standardDisclosureRequirementText: 应说明公司围绕研发创新建立的治理安排，包括研发部门、研发流程、创新资源统筹、知识产权管理、标准或认证管理、外部合作协调等职责。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: ReferenceTemplate
+      clauseRef: 创新驱动：研发体系建设、知识产权管理与行业认可
+- topicSectionKey: innovation_driven.strategy
+  pillar: strategy
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: innovation_driven.strategy.rd_strategy_required
+    standardDisclosureRequirementTitle: 创新驱动战略与创新理念
+    excerptFrom: 附录索引表第四十一条；参考模板“研发战略与创新理念”
+    standardDisclosureRequirementText: 应说明公司创新驱动发展战略、研发战略、创新理念、技术战略核心、重点市场机会、低碳/智能化/数字化方向、客户价值和与主营业务结合的创新目标；不得引用模板示例公司的项目、产品或荣誉。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 第四十一条
+    - standard: SZSE
+      clauseRef: 第四十一条
+    - standard: BSE
+      clauseRef: 第四十一条
+  - standardDisclosureRequirementKey: innovation_driven.strategy.science_ethics_encouraged
+    standardDisclosureRequirementTitle: 科学伦理与科技正面效应
+    excerptFrom: 附录索引表第四十一条
+    standardDisclosureRequirementText: 可进一步披露说明公司在创新决策和实践中遵守科学伦理规范、尊重科学精神并发挥科学技术正面效应；如涉及生命科学、人工智能等科技伦理敏感活动，应由“科技伦理”条件议题承载具体合规内容。
+    disclosureRequirementObligationLevel: encouraged
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 第四十一条
+    - standard: SZSE
+      clauseRef: 第四十一条
+    - standard: BSE
+      clauseRef: 第四十一条
+- topicSectionKey: innovation_driven.iro
+  pillar: iro_management
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: innovation_driven.iro.rd_system_investment_required
+    standardDisclosureRequirementTitle: 研发体系与资源投入
+    excerptFrom: 参考模板“研发体系与资源投入”
+    standardDisclosureRequirementText: 应说明研发中心、研发部门、研发制度、研发流程、研发人员、研发投入、实验室、测试平台、全球化研发布局或产学研组织机制；研发投入金额、占比和人员数据必须来自相关事实。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: ReferenceTemplate
+      clauseRef: 创新驱动：研发体系与资源投入
+  - standardDisclosureRequirementKey: innovation_driven.iro.products_technologies_required
+    standardDisclosureRequirementTitle: 创新产品与核心技术
+    excerptFrom: 参考模板“创新产品与核心技术”
+    standardDisclosureRequirementText: 应说明创新产品、核心技术、技术突破、创新应用场景、性能提升、客户价值、节能降耗、质量提升、认证或商业化进展。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: ReferenceTemplate
+      clauseRef: 创新驱动：创新产品与核心技术
+  - standardDisclosureRequirementKey: innovation_driven.iro.digital_transformation_required
+    standardDisclosureRequirementTitle: 智能制造与数字化转型
+    excerptFrom: 参考模板“智能制造与数字化转型”
+    standardDisclosureRequirementText: 应说明智能工厂、5G 工厂、柔性制造、自动化产线、AI 应用、工业互联网、数字孪生、预测性维护、研发设计数字化、运营管控或供应链协同等创新实践。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: ReferenceTemplate
+      clauseRef: 创新驱动：智能制造与数字化转型
+  - standardDisclosureRequirementKey: innovation_driven.iro.external_ecosystem_required
+    standardDisclosureRequirementTitle: 产学研合作与外部创新生态
+    excerptFrom: 参考模板“产学研合作与外部创新生态”
+    standardDisclosureRequirementText: 应说明高校、科研机构、客户、供应商、产业联盟等外部创新合作，以及联合研发、技术攻关、创新平台、标准共建或外部创新资源引入。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: ReferenceTemplate
+      clauseRef: 创新驱动：产学研合作与外部创新生态
+  - standardDisclosureRequirementKey: innovation_driven.iro.ip_recognition_required
+    standardDisclosureRequirementTitle: 知识产权管理与行业认可
+    excerptFrom: 参考模板“知识产权管理与行业认可”
+    standardDisclosureRequirementText: 应说明知识产权管理体系认证、专利、发明专利、PCT 国际专利、软件著作权、商标、主导或参与标准、科技奖项、高新技术企业、专精特新、创新型中小企业或行业荣誉。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: ReferenceTemplate
+      clauseRef: 创新驱动：知识产权管理与行业认可
+- topicSectionKey: innovation_driven.metrics
+  pillar: metrics_targets
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: innovation_driven.metrics.innovation_metrics_required
+    standardDisclosureRequirementTitle: 创新投入与成果指标
+    excerptFrom: 参考模板“研发投入、专利、标准和认可”
+    standardDisclosureRequirementText: 如企业在本议题提供创新驱动相关指标，应准确说明研发投入金额、研发投入占营业收入比例、研发人员数量及占比、专利数量、发明专利数量、PCT 国际专利、标准数量、创新项目数量、数字化项目数量或获奖数量。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: ReferenceTemplate
+      clauseRef: 创新驱动：指标目标

@@ -1,0 +1,581 @@
+{
+  "stakeholders": [
+    {
+      "id": "government_regulators",
+      "label": "政府及监管机构",
+      "order": 10,
+      "defaultMethodIds": [
+        "regulatory_communication",
+        "document_submission_correspondence",
+        "supervision_inspection_support"
+      ]
+    },
+    {
+      "id": "shareholders_investors",
+      "label": "股东及投资者",
+      "order": 20,
+      "defaultMethodIds": [
+        "shareholder_meeting",
+        "information_disclosure",
+        "investor_communication"
+      ]
+    },
+    {
+      "id": "customers",
+      "label": "客户",
+      "order": 30,
+      "defaultMethodIds": [
+        "customer_visits",
+        "customer_service_channels",
+        "satisfaction_survey",
+        "complaints_feedback"
+      ]
+    },
+    {
+      "id": "management",
+      "label": "管理层",
+      "order": 40,
+      "defaultMethodIds": [
+        "management_meeting",
+        "special_reporting",
+        "issue_review_decision"
+      ]
+    },
+    {
+      "id": "employees",
+      "label": "员工",
+      "order": 50,
+      "defaultMethodIds": [
+        "employee_representative_communication",
+        "employee_forum",
+        "opinion_channels",
+        "training"
+      ]
+    },
+    {
+      "id": "suppliers",
+      "label": "供应商",
+      "order": 60,
+      "defaultMethodIds": [
+        "supplier_meeting",
+        "daily_business_communication",
+        "supplier_admission_evaluation",
+        "supply_chain_collaborative_improvement"
+      ]
+    },
+    {
+      "id": "partners",
+      "label": "合作伙伴",
+      "order": 70,
+      "defaultMethodIds": [
+        "business_meeting",
+        "industry_exchange",
+        "joint_working_group",
+        "project_cooperation"
+      ]
+    },
+    {
+      "id": "community_public",
+      "label": "社区与公众",
+      "order": 80,
+      "defaultMethodIds": [
+        "community_visits",
+        "public_consultation",
+        "opinion_solicitation",
+        "community_co_creation"
+      ]
+    }
+  ],
+  "methods": [
+    {
+      "id": "regulatory_communication",
+      "label": "监管沟通",
+      "kind": "communication_channel",
+      "allowedStakeholderTypes": [
+        "government_regulators"
+      ]
+    },
+    {
+      "id": "document_submission_correspondence",
+      "label": "文件报送与函件往来",
+      "kind": "communication_channel",
+      "allowedStakeholderTypes": [
+        "government_regulators"
+      ]
+    },
+    {
+      "id": "policy_briefing_roundtable",
+      "label": "政策宣贯与专题座谈",
+      "kind": "participation_mechanism",
+      "allowedStakeholderTypes": [
+        "government_regulators"
+      ]
+    },
+    {
+      "id": "supervision_inspection_support",
+      "label": "监督检查配合",
+      "kind": "participation_mechanism",
+      "allowedStakeholderTypes": [
+        "government_regulators"
+      ]
+    },
+    {
+      "id": "government_enterprise_exchange",
+      "label": "政企交流",
+      "kind": "collaboration_activity",
+      "allowedStakeholderTypes": [
+        "government_regulators"
+      ]
+    },
+    {
+      "id": "shareholder_meeting",
+      "label": "股东会",
+      "kind": "communication_channel",
+      "allowedStakeholderTypes": [
+        "shareholders_investors"
+      ]
+    },
+    {
+      "id": "information_disclosure",
+      "label": "信息披露",
+      "kind": "communication_channel",
+      "allowedStakeholderTypes": [
+        "shareholders_investors"
+      ]
+    },
+    {
+      "id": "investor_communication",
+      "label": "投资者沟通",
+      "kind": "communication_channel",
+      "allowedStakeholderTypes": [
+        "shareholders_investors"
+      ]
+    },
+    {
+      "id": "inquiries_feedback",
+      "label": "问询与意见反馈",
+      "kind": "participation_mechanism",
+      "allowedStakeholderTypes": [
+        "shareholders_investors"
+      ]
+    },
+    {
+      "id": "thematic_exchange",
+      "label": "专题交流",
+      "kind": "collaboration_activity",
+      "allowedStakeholderTypes": [
+        "shareholders_investors"
+      ]
+    },
+    {
+      "id": "customer_visits",
+      "label": "客户走访",
+      "kind": "communication_channel",
+      "allowedStakeholderTypes": [
+        "customers"
+      ]
+    },
+    {
+      "id": "customer_service_channels",
+      "label": "客服热线与在线渠道",
+      "kind": "communication_channel",
+      "allowedStakeholderTypes": [
+        "customers"
+      ]
+    },
+    {
+      "id": "satisfaction_survey",
+      "label": "满意度调查",
+      "kind": "participation_mechanism",
+      "allowedStakeholderTypes": [
+        "customers",
+        "employees"
+      ]
+    },
+    {
+      "id": "complaints_feedback",
+      "label": "投诉与反馈",
+      "kind": "participation_mechanism",
+      "allowedStakeholderTypes": [
+        "customers",
+        "community_public"
+      ]
+    },
+    {
+      "id": "technical_exchange_joint_solution",
+      "label": "技术交流与联合解决方案",
+      "kind": "collaboration_activity",
+      "allowedStakeholderTypes": [
+        "customers"
+      ]
+    },
+    {
+      "id": "management_meeting",
+      "label": "经营管理会议",
+      "kind": "communication_channel",
+      "allowedStakeholderTypes": [
+        "management"
+      ]
+    },
+    {
+      "id": "special_reporting",
+      "label": "专题汇报",
+      "kind": "communication_channel",
+      "allowedStakeholderTypes": [
+        "management"
+      ]
+    },
+    {
+      "id": "issue_review_decision",
+      "label": "议题审议与决策",
+      "kind": "participation_mechanism",
+      "allowedStakeholderTypes": [
+        "management"
+      ]
+    },
+    {
+      "id": "cross_department_coordination",
+      "label": "跨部门协调",
+      "kind": "participation_mechanism",
+      "allowedStakeholderTypes": [
+        "management"
+      ]
+    },
+    {
+      "id": "special_working_group",
+      "label": "专项工作组",
+      "kind": "collaboration_activity",
+      "allowedStakeholderTypes": [
+        "management"
+      ]
+    },
+    {
+      "id": "employee_representative_communication",
+      "label": "职工代表沟通",
+      "kind": "communication_channel",
+      "allowedStakeholderTypes": [
+        "employees"
+      ]
+    },
+    {
+      "id": "employee_forum",
+      "label": "员工座谈",
+      "kind": "communication_channel",
+      "allowedStakeholderTypes": [
+        "employees"
+      ]
+    },
+    {
+      "id": "opinion_channels",
+      "label": "意见渠道",
+      "kind": "communication_channel",
+      "allowedStakeholderTypes": [
+        "employees"
+      ]
+    },
+    {
+      "id": "grievance_feedback",
+      "label": "申诉与反馈",
+      "kind": "participation_mechanism",
+      "allowedStakeholderTypes": [
+        "employees"
+      ]
+    },
+    {
+      "id": "training",
+      "label": "培训",
+      "kind": "participation_mechanism",
+      "allowedStakeholderTypes": [
+        "employees"
+      ]
+    },
+    {
+      "id": "employee_improvement_activities",
+      "label": "员工改善活动",
+      "kind": "collaboration_activity",
+      "allowedStakeholderTypes": [
+        "employees"
+      ]
+    },
+    {
+      "id": "supplier_meeting",
+      "label": "供应商会议",
+      "kind": "communication_channel",
+      "allowedStakeholderTypes": [
+        "suppliers"
+      ]
+    },
+    {
+      "id": "daily_business_communication",
+      "label": "日常业务沟通",
+      "kind": "communication_channel",
+      "allowedStakeholderTypes": [
+        "suppliers"
+      ]
+    },
+    {
+      "id": "supplier_admission_evaluation",
+      "label": "准入与评估",
+      "kind": "participation_mechanism",
+      "allowedStakeholderTypes": [
+        "suppliers"
+      ]
+    },
+    {
+      "id": "on_site_audit",
+      "label": "现场审核",
+      "kind": "participation_mechanism",
+      "allowedStakeholderTypes": [
+        "suppliers"
+      ]
+    },
+    {
+      "id": "supplier_grievance_feedback",
+      "label": "申诉反馈",
+      "kind": "participation_mechanism",
+      "allowedStakeholderTypes": [
+        "suppliers"
+      ]
+    },
+    {
+      "id": "capability_building",
+      "label": "能力建设",
+      "kind": "collaboration_activity",
+      "allowedStakeholderTypes": [
+        "suppliers"
+      ]
+    },
+    {
+      "id": "supply_chain_collaborative_improvement",
+      "label": "供应链协同改善",
+      "kind": "collaboration_activity",
+      "allowedStakeholderTypes": [
+        "suppliers"
+      ]
+    },
+    {
+      "id": "business_meeting",
+      "label": "业务会谈",
+      "kind": "communication_channel",
+      "allowedStakeholderTypes": [
+        "partners"
+      ]
+    },
+    {
+      "id": "industry_exchange",
+      "label": "行业交流",
+      "kind": "communication_channel",
+      "allowedStakeholderTypes": [
+        "partners"
+      ]
+    },
+    {
+      "id": "industry_association_forum",
+      "label": "行业协会与论坛",
+      "kind": "participation_mechanism",
+      "allowedStakeholderTypes": [
+        "partners"
+      ]
+    },
+    {
+      "id": "joint_working_group",
+      "label": "联合工作组",
+      "kind": "participation_mechanism",
+      "allowedStakeholderTypes": [
+        "partners"
+      ]
+    },
+    {
+      "id": "industry_academia_research_cooperation",
+      "label": "产学研交流与合作",
+      "kind": "collaboration_activity",
+      "allowedStakeholderTypes": [
+        "partners"
+      ]
+    },
+    {
+      "id": "joint_research_development",
+      "label": "联合研发",
+      "kind": "collaboration_activity",
+      "allowedStakeholderTypes": [
+        "partners"
+      ]
+    },
+    {
+      "id": "project_cooperation",
+      "label": "项目合作",
+      "kind": "collaboration_activity",
+      "allowedStakeholderTypes": [
+        "partners"
+      ]
+    },
+    {
+      "id": "community_visits",
+      "label": "社区走访",
+      "kind": "communication_channel",
+      "allowedStakeholderTypes": [
+        "community_public"
+      ]
+    },
+    {
+      "id": "public_consultation",
+      "label": "公众咨询",
+      "kind": "communication_channel",
+      "allowedStakeholderTypes": [
+        "community_public"
+      ]
+    },
+    {
+      "id": "opinion_solicitation",
+      "label": "意见征集",
+      "kind": "participation_mechanism",
+      "allowedStakeholderTypes": [
+        "community_public"
+      ]
+    },
+    {
+      "id": "community_co_creation",
+      "label": "社区共建",
+      "kind": "collaboration_activity",
+      "allowedStakeholderTypes": [
+        "community_public"
+      ]
+    },
+    {
+      "id": "public_welfare_activities",
+      "label": "公益活动",
+      "kind": "collaboration_activity",
+      "allowedStakeholderTypes": [
+        "community_public"
+      ]
+    }
+  ],
+  "topics": [
+    {
+      "id": "climate_change",
+      "label": "应对气候变化",
+      "dimension": "环境",
+      "order": 10
+    },
+    {
+      "id": "environmental_compliance_management",
+      "label": "环境合规管理",
+      "dimension": "环境",
+      "order": 20
+    },
+    {
+      "id": "pollutant_emissions_management",
+      "label": "污染物排放管理",
+      "dimension": "环境",
+      "order": 30
+    },
+    {
+      "id": "waste_management",
+      "label": "废弃物管理",
+      "dimension": "环境",
+      "order": 40
+    },
+    {
+      "id": "circular_economy_promotion",
+      "label": "促进循环经济",
+      "dimension": "环境",
+      "order": 50
+    },
+    {
+      "id": "energy_management",
+      "label": "能源管理",
+      "dimension": "环境",
+      "order": 60
+    },
+    {
+      "id": "water_resource_management",
+      "label": "水资源管理",
+      "dimension": "环境",
+      "order": 70
+    },
+    {
+      "id": "ecosystem_biodiversity_protection",
+      "label": "生态系统与生物多样性保护",
+      "dimension": "环境",
+      "order": 80
+    },
+    {
+      "id": "human_capital_development",
+      "label": "人力资本发展",
+      "dimension": "社会",
+      "order": 10
+    },
+    {
+      "id": "occupational_health_safety",
+      "label": "职业健康与安全",
+      "dimension": "社会",
+      "order": 20
+    },
+    {
+      "id": "rural_revitalization",
+      "label": "乡村振兴",
+      "dimension": "社会",
+      "order": 30
+    },
+    {
+      "id": "social_contribution",
+      "label": "社会贡献",
+      "dimension": "社会",
+      "order": 40
+    },
+    {
+      "id": "sustainable_supply_chain_management",
+      "label": "可持续供应链管理",
+      "dimension": "社会",
+      "order": 50
+    },
+    {
+      "id": "sme_fair_treatment",
+      "label": "平等对待中小企业",
+      "dimension": "社会",
+      "order": 60
+    },
+    {
+      "id": "technology_ethics",
+      "label": "科技伦理",
+      "dimension": "社会",
+      "order": 70
+    },
+    {
+      "id": "innovation_driven",
+      "label": "创新驱动",
+      "dimension": "社会",
+      "order": 80
+    },
+    {
+      "id": "product_quality_safety",
+      "label": "产品质量与安全",
+      "dimension": "社会",
+      "order": 90
+    },
+    {
+      "id": "customer_service_quality_management",
+      "label": "客户服务质量管理",
+      "dimension": "社会",
+      "order": 100
+    },
+    {
+      "id": "data_security_customer_privacy_protection",
+      "label": "数据安全与客户隐私保护",
+      "dimension": "社会",
+      "order": 110
+    },
+    {
+      "id": "anti_bribery_anti_corruption",
+      "label": "反商业贿赂与反贪污",
+      "dimension": "治理",
+      "order": 10
+    },
+    {
+      "id": "anti_unfair_competition",
+      "label": "反不正当竞争",
+      "dimension": "治理",
+      "order": 20
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+# ABOUTME: 平等对待中小企业议题轻量版内容清单，聚焦账款拖欠和中小供应商培训帮扶。
+# ABOUTME: 治理、战略和指标目标固定题由 topic_intake_common.yaml 展开；结构化数值由 ESG 定量数据表维护。
+contentScopeId: sme_fair_treatment
+items:
+- key: sme_fair_treatment.q_supplier_payment_arrears
+  prompt: 贵公司报告期内是否存在拖欠中小企业供应商应付账款情况？
+  kind: single_select
+  collectionPriority: recommended
+  options:
+  - 是
+  - 否
+  - 不确定
+  hint: 如选择是，请在补充说明中简述拖欠金额、拖欠原因和付款计划。
+  generationBoundary: 拖欠金额、原因和付款安排属于需要由“是”及补充说明直接支持的具体事实。
+  maxChars: 5000
+- key: sme_fair_treatment.q_sme_supplier_training_support
+  prompt: 贵公司针对中小企业供应商开展过哪些培训和帮扶？
+  kind: text
+  collectionPriority: recommended
+  hint: 请简述培训或帮扶内容、覆盖供应商类型或范围、培训或帮扶成果等。
+  generationBoundary: 供应商数量、培训次数和覆盖率属于需要由补充说明直接支持的定量事实。
+  maxChars: 5000

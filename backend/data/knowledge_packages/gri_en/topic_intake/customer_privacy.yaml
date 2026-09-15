@@ -1,0 +1,22 @@
+# ABOUTME(en): Topic-specific intake questions of "Customer Privacy"; the four fixed pillar questions come from topic_intake_common.yaml.
+# ABOUTME(en): Quantitative metrics are collected through the metric catalog, not here.
+contentScopeId: customer_privacy
+items:
+- key: privacy.q_data_protection_measures
+  prompt: What measures does the company take to protect customer data?
+  kind: text
+  collectionPriority: recommended
+  hint: Access control, encryption, staff rules, audits; or blank.
+  generationBoundary: |-
+    Unless specific facts are given, do not generate system names, certification names or incident numbers.
+  maxChars: 5000
+- key: privacy.q_privacy_incidents
+  prompt: Were there any substantiated customer privacy complaints or data breaches in the reporting period?
+  kind: single_select
+  collectionPriority: recommended
+  options:
+  - "None"
+  - Yes, and they have been handled
+  - Not sure
+  hint: The count itself is collected in the metric table.
+  maxChars: 5000

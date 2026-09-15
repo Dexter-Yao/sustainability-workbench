@@ -1,0 +1,31 @@
+# ABOUTME(en): Topic-specific intake questions of "Waste Management"; the four fixed pillar questions come from topic_intake_common.yaml.
+# ABOUTME(en): Quantitative KPIs are collected through the metric catalog, not here.
+contentScopeId: waste_management
+items:
+- key: waste.q_waste_handling
+  prompt: |-
+    How does the company handle waste generated in production and office operations?
+  kind: text
+  collectionPriority: recommended
+  hint: Sorting, collection, storage, recycling, disposal; or blank.
+  maxChars: 5000
+- key: waste.q_hazardous_waste
+  prompt: |-
+    Do the company's operations generate hazardous waste (such as chemical waste, waste oil or heavy-metal-bearing waste)?
+  kind: single_select
+  collectionPriority: recommended
+  options:
+  - Yes, disposed of through licensed contractors
+  - Yes, disposal arrangements still being improved
+  - No hazardous waste
+  - Not sure
+  hint: If yes, list main types and disposal arrangements.
+  maxChars: 5000
+- key: waste.q_waste_reduction_targets
+  prompt: Has the company set waste reduction or recycling targets?
+  kind: text
+  collectionPriority: recommended
+  hint: Type, scope, base year, target year, progress; or blank.
+  generationBoundary: |-
+    Unless target values are given, do not generate reduction percentages, recycling rates or deadlines.
+  maxChars: 5000

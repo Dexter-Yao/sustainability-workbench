@@ -1,0 +1,120 @@
+# ABOUTME(en): Topic chapter template of the HKEX Aspect "Anti-corruption": governance / strategy / risk-management
+# ABOUTME(en): blocks with their intake evidence and Appendix C2 requirement keys; the metrics H3 is compiled from metricDisclosure.
+section:
+  key: anti_corruption
+  title: Anti-corruption
+  headingLevel: 2
+  reportSectionId: anti_corruption
+  conciseDisclosure:
+    id: anti_corruption.concise_summary
+    type: paragraph
+    blockType: generative
+    source: ai
+    styleRole: body
+    generation:
+      task:
+        focus: |-
+          From the evidence currently visible for this Aspect, write one coherent summary covering the policies and compliance on preventing bribery, extortion, fraud and money laundering, preventive measures, whistle-blowing procedures and anti-corruption training, without the four sub-headings.
+      inputs:
+        evidence:
+          kind: report_section
+      targetChars:
+      - 260
+      - 520
+  children:
+  - key: anti_corruption.gov
+    title: Governance
+    pillar: governance
+    headingLevel: 3
+    blocks:
+    - id: anti_corruption.gov_policy_and_compliance
+      type: paragraph
+      blockType: generative
+      source: ai
+      styleRole: body
+      generation:
+        task:
+          focus: |-
+            Describe the company's policies and allocation of responsibility on preventing bribery, extortion, fraud and money laundering, and its compliance with relevant laws and regulations (such as the Hong Kong Prevention of Bribery Ordinance) (Code Aspect B7 General Disclosure).
+          noFactGuidance: |-
+            When the user provides no policy or responsibility facts, describe in a measured, general register the management attention, compliance principles and allocation of responsibility a company of this industry and business type applies to this Aspect; do not name departments, policy titles, certifications or approval flows, and do not claim that a specific system exists or that compliance checks have been completed.
+        inputs:
+          evidence:
+            kind: explicit
+            intakeItems:
+            - anti_corruption.q_governance_roles
+            - anti_corruption.q_governance_policies
+            - anti_corruption.q_governance_certifications
+        targetChars:
+        - 110
+        - 240
+        standardDisclosureRequirementKeys:
+        - anti_corruption.gov.general_disclosure_policies
+        - anti_corruption.gov.general_disclosure_compliance
+        simplifiedWritingGuidance:
+        - |-
+          State compliance with relevant laws and regulations only when the user explicitly provides it; otherwise do not write conclusions such as "no non-compliance was identified" or "no material breach".
+  - key: anti_corruption.strategy
+    title: Strategy
+    pillar: strategy
+    headingLevel: 3
+    blocks:
+    - id: anti_corruption.strategy_direction
+      type: paragraph
+      blockType: generative
+      source: ai
+      styleRole: body
+      generation:
+        task:
+          focus: |-
+            Describe the company's approach to business ethics and integrity, its requirements of employees and business partners, and the direction for building an anti-corruption culture.
+          noFactGuidance: |-
+            When the user provides no targets or plans, state that the company will keep attending to improvement directions and the setting of quantified targets for this Aspect as the business develops; do not invent target values, base years, deadlines or achieved results.
+        inputs:
+          evidence:
+            kind: explicit
+            intakeItems:
+            - anti_corruption.q_strategy_content
+        targetChars:
+        - 70
+        - 170
+        standardDisclosureRequirementKeys:
+        - anti_corruption.strategy.integrity_direction
+  - key: anti_corruption.iro
+    title: Risk Management
+    pillar: iro_management
+    headingLevel: 3
+    blocks:
+    - id: anti_corruption.iro_measures_and_training
+      type: paragraph
+      blockType: generative
+      source: ai
+      styleRole: body
+      generation:
+        task:
+          focus: |-
+            Describe the preventive measures and whistle-blowing procedures (reporting channels, confidentiality and protection from retaliation, investigation and follow-up) and how they are implemented and monitored, and the anti-corruption training provided to directors and staff (Code KPIs B7.2 and B7.3).
+          noFactGuidance: |-
+            When the user provides no specific measures, describe only the management steps and directional arrangements common to this Aspect for the industry and business type; do not claim that the company has implemented specific measures, purchased equipment, engaged contractors or achieved results.
+        inputs:
+          evidence:
+            kind: explicit
+            intakeItems:
+            - anti_corruption.q_whistleblowing
+            - anti_corruption.q_anti_corruption_training
+            - anti_corruption.q_corruption_cases
+        targetChars:
+        - 130
+        - 275
+        standardDisclosureRequirementKeys:
+        - anti_corruption.iro.preventive_measures_and_whistleblowing
+        - anti_corruption.iro.anti_corruption_training
+        simplifiedWritingGuidance:
+        - |-
+          Figures are carried by the KPI data table; this passage does not state emissions, consumption, ratios or reduction percentages.
+metricDisclosure:
+  catalogMetricKeys:
+  - anti_corruption_legal_cases
+  - anti_corruption_training_directors
+  - anti_corruption_training_employees
+  - anti_corruption_training_hours

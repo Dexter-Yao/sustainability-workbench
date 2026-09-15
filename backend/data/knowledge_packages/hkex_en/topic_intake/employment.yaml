@@ -1,0 +1,18 @@
+# ABOUTME(en): Topic-specific intake questions of "Employment"; the four fixed pillar questions come from topic_intake_common.yaml.
+# ABOUTME(en): Quantitative KPIs are collected through the metric catalog, not here.
+contentScopeId: employment
+items:
+- key: employment.q_employment_practices
+  prompt: |-
+    What are the company's practices on recruitment, promotion, compensation, working hours and equal opportunity?
+  kind: text
+  collectionPriority: recommended
+  hint: Recruitment, promotion, pay, hours, anti-discrimination.
+  maxChars: 5000
+- key: employment.q_employee_benefits
+  prompt: |-
+    What benefits and welfare beyond statutory requirements does the company provide?
+  kind: text
+  collectionPriority: recommended
+  hint: Medical cover, study allowances, flexible work, activities.
+  maxChars: 5000

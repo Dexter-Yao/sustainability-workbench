@@ -1,0 +1,17 @@
+# ABOUTME(en): Topic-specific intake questions of「物料及包裝」; the four fixed pillar questions come from topic_intake_common.yaml.
+# ABOUTME(en): Quantitative KPIs are collected through the metric catalog, not here.
+contentScopeId: materials_and_packaging
+items:
+- key: materials.q_packaging_materials
+  prompt: 貴公司製成品主要使用哪些包裝材料？
+  kind: text
+  collectionPriority: recommended
+  hint: 可說明紙箱、膠袋、發泡膠、托盤等種類及來源；沒有可留空。
+  maxChars: 5000
+- key: materials.q_packaging_reduction
+  prompt: 貴公司採取了哪些減少包裝材料或提高可回收比例的措施？
+  kind: text
+  collectionPriority: recommended
+  hint: 可說明包裝輕量化、周轉容器循環使用、再生材料使用等；沒有可留空。
+  generationBoundary: 未填寫具體數值時，不得生成減量比例或用量數字。
+  maxChars: 5000

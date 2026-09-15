@@ -1,0 +1,60 @@
+# ABOUTME(en): Appendix C2 disclosure requirements of "Data Protection and Privacy" (General Disclosure and KPIs), grouped by pillar,
+# ABOUTME(en): for the coverage audit and for prompt assembly by key whitelist (injection is switch-gated, off by default) and for the coverage audit. Wording follows the English Code text.
+topicStandardDisclosureRequirementGroups:
+- topicSectionKey: data_protection_and_privacy.gov
+  pillar: governance
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: data_protection_and_privacy.gov.general_disclosure_policies
+    standardDisclosureRequirementTitle: Data protection and privacy policies
+    excerptFrom: HKEX·Appendix C2·General Disclosure B6
+    standardDisclosureRequirementText: Disclose the policies on privacy matters.
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: General Disclosure B6
+  - standardDisclosureRequirementKey: data_protection_and_privacy.gov.general_disclosure_compliance
+    standardDisclosureRequirementTitle: Compliance with privacy laws and regulations
+    excerptFrom: HKEX·Appendix C2·General Disclosure B6
+    standardDisclosureRequirementText: |-
+      Disclose information on compliance with privacy laws and regulations that have a significant impact on the issuer.
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: General Disclosure B6
+- topicSectionKey: data_protection_and_privacy.strategy
+  pillar: strategy
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: data_protection_and_privacy.strategy.privacy_direction
+    standardDisclosureRequirementTitle: Data protection approach and targets
+    excerptFrom: HKEX·Appendix C2·General Disclosure B6
+    standardDisclosureRequirementText: |-
+      Describe the company's approach and targets on data protection and information security.
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: General Disclosure B6
+- topicSectionKey: data_protection_and_privacy.iro
+  pillar: iro_management
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: data_protection_and_privacy.iro.privacy_implementation
+    standardDisclosureRequirementTitle: |-
+      Consumer data protection and privacy policies, and how they are implemented and monitored
+    excerptFrom: HKEX·Appendix C2·KPI B6.5
+    standardDisclosureRequirementText: |-
+      Description of consumer data protection and privacy policies, and how they are implemented and monitored.
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: KPI B6.5
+- topicSectionKey: data_protection_and_privacy.metrics
+  pillar: metrics_targets
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: data_protection_and_privacy.metrics.data_breach_data
+    standardDisclosureRequirementTitle: Personal data breach incidents
+    excerptFrom: HKEX·Appendix C2·KPI B6.5
+    standardDisclosureRequirementText: |-
+      Where confirmed personal data breach incidents occurred, disclose their number and how they were handled.
+    disclosureRequirementObligationLevel: conditional
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: KPI B6.5

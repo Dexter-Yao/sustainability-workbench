@@ -1,0 +1,467 @@
+contract: sustainability_desk.local_e2e_selection_manifest.v3
+manifestId: shengyuan-synthetic-corpus
+artifactPurpose: local_e2e_test
+corpusRootRelative: backend/tests/fixtures/local_e2e/shengyuan/materials_docx
+selectionBasis: path_and_filename_only
+selectionPolicyVersion: shengyuan-synthetic-corpus.v1
+selectedFileCount: 26
+excludedPathSegments: []
+uploadBatches:
+- - material-01
+  - material-02
+  - material-03
+  - material-04
+  - material-05
+  - material-06
+  - material-07
+  - material-08
+  - material-09
+  - material-10
+- - material-11
+  - material-12
+  - material-13
+  - material-14
+  - material-15
+  - material-16
+  - material-17
+  - material-18
+  - material-19
+  - material-20
+- - material-21
+  - material-22
+  - material-23
+  - material-24
+  - material-25
+  - material-26
+files:
+- caseId: material-01
+  ordinal: 1
+  relativePath: 2025年度人力资源统计表.docx
+  selectionRationale: 晟原合成 corpus 的语义资料，按文件名表达内容归属。
+  expectedKind: docx
+  expectedMediaType: application/vnd.openxmlformats-officedocument.wordprocessingml.document
+  expectedSizeBytes: 20374
+  expectedSha256: 25538f5d62af63123c15ef5a4e73efc0cdf9e091bd82ea57fe961bb773c864c1
+  expectedPdfPageCount: null
+  declaration:
+    description: 2025年度人力资源统计表，晟原精密 2025 年度可持续发展相关资料。
+    role: semantic_material
+    topic_tags:
+    - uncertain
+- caseId: material-02
+  ordinal: 2
+  relativePath: 2025年度供应商名录与评价记录.docx
+  selectionRationale: 晟原合成 corpus 的语义资料，按文件名表达内容归属。
+  expectedKind: docx
+  expectedMediaType: application/vnd.openxmlformats-officedocument.wordprocessingml.document
+  expectedSizeBytes: 23186
+  expectedSha256: 2ede8a4397095bf083f4c70f836863a09cdd935bdda4b7a6c831c02aab0edb8d
+  expectedPdfPageCount: null
+  declaration:
+    description: 2025年度供应商名录与评价记录，晟原精密 2025 年度可持续发展相关资料。
+    role: semantic_material
+    topic_tags:
+    - uncertain
+- caseId: material-03
+  ordinal: 3
+  relativePath: 2025年度可持续发展委员会会议纪要.docx
+  selectionRationale: 晟原合成 corpus 的语义资料，按文件名表达内容归属。
+  expectedKind: docx
+  expectedMediaType: application/vnd.openxmlformats-officedocument.wordprocessingml.document
+  expectedSizeBytes: 20781
+  expectedSha256: 535ca8ff187a9329b7c14f605e6a5eb9c0783851ac8642f40775038e761ed358
+  expectedPdfPageCount: null
+  declaration:
+    description: 2025年度可持续发展委员会会议纪要，晟原精密 2025 年度可持续发展相关资料。
+    role: semantic_material
+    topic_tags:
+    - uncertain
+- caseId: material-04
+  ordinal: 4
+  relativePath: 2025年度安全培训记录.docx
+  selectionRationale: 晟原合成 corpus 的语义资料，按文件名表达内容归属。
+  expectedKind: docx
+  expectedMediaType: application/vnd.openxmlformats-officedocument.wordprocessingml.document
+  expectedSizeBytes: 22150
+  expectedSha256: aee89cf843933ddf1553e7f3efc3e96291de683958b7a11233a3249529979b5c
+  expectedPdfPageCount: null
+  declaration:
+    description: 2025年度安全培训记录，晟原精密 2025 年度可持续发展相关资料。
+    role: semantic_material
+    topic_tags:
+    - uncertain
+- caseId: material-05
+  ordinal: 5
+  relativePath: 2025年度客户投诉处理记录.docx
+  selectionRationale: 晟原合成 corpus 的语义资料，按文件名表达内容归属。
+  expectedKind: docx
+  expectedMediaType: application/vnd.openxmlformats-officedocument.wordprocessingml.document
+  expectedSizeBytes: 19644
+  expectedSha256: 71ebc2ad1b8f579216ba9b71bff70c779793f62b2437489f979c05ddc4af49f7
+  expectedPdfPageCount: null
+  declaration:
+    description: 2025年度客户投诉处理记录，晟原精密 2025 年度可持续发展相关资料。
+    role: semantic_material
+    topic_tags:
+    - uncertain
+- caseId: material-06
+  ordinal: 6
+  relativePath: 2025年度废弃物与水资源台账.docx
+  selectionRationale: 晟原合成 corpus 的语义资料，按文件名表达内容归属。
+  expectedKind: docx
+  expectedMediaType: application/vnd.openxmlformats-officedocument.wordprocessingml.document
+  expectedSizeBytes: 18723
+  expectedSha256: aaee03f507c1fe3f4038568c452fae73233ec6ef49a425c66b9ac0ad05d37dc3
+  expectedPdfPageCount: null
+  declaration:
+    description: 2025年度废弃物与水资源台账，晟原精密 2025 年度可持续发展相关资料。
+    role: semantic_material
+    topic_tags:
+    - uncertain
+- caseId: material-07
+  ordinal: 7
+  relativePath: 2025年度经营情况说明.docx
+  selectionRationale: 晟原合成 corpus 的语义资料，按文件名表达内容归属。
+  expectedKind: docx
+  expectedMediaType: application/vnd.openxmlformats-officedocument.wordprocessingml.document
+  expectedSizeBytes: 13129
+  expectedSha256: 922e8f37abc70dba45055ebefcd47db9778d711ed93bdeec80d38c128d58fb82
+  expectedPdfPageCount: null
+  declaration:
+    description: 2025年度经营情况说明，晟原精密 2025 年度可持续发展相关资料。
+    role: semantic_material
+    topic_tags:
+    - uncertain
+- caseId: material-08
+  ordinal: 8
+  relativePath: 2025年度能源与排放台账.docx
+  selectionRationale: 晟原合成 corpus 的语义资料，按文件名表达内容归属。
+  expectedKind: docx
+  expectedMediaType: application/vnd.openxmlformats-officedocument.wordprocessingml.document
+  expectedSizeBytes: 18170
+  expectedSha256: d829cd51f8308624dbe879e75b4aa57597ed4c62c9cefdf164e6f535a69a0ca6
+  expectedPdfPageCount: null
+  declaration:
+    description: 2025年度能源与排放台账，晟原精密 2025 年度可持续发展相关资料。
+    role: semantic_material
+    topic_tags:
+    - uncertain
+- caseId: material-09
+  ordinal: 9
+  relativePath: 2025年度董事会与治理运作说明.docx
+  selectionRationale: 晟原合成 corpus 的语义资料，按文件名表达内容归属。
+  expectedKind: docx
+  expectedMediaType: application/vnd.openxmlformats-officedocument.wordprocessingml.document
+  expectedSizeBytes: 13556
+  expectedSha256: a3113f18c5e8c1576ae30bdcc6b5f3d148ddb34ea85b490cfef60809a190b087
+  expectedPdfPageCount: null
+  declaration:
+    description: 2025年度董事会与治理运作说明，晟原精密 2025 年度可持续发展相关资料。
+    role: semantic_material
+    topic_tags:
+    - uncertain
+- caseId: material-10
+  ordinal: 10
+  relativePath: 2025年度质量数据统计表.docx
+  selectionRationale: 晟原合成 corpus 的语义资料，按文件名表达内容归属。
+  expectedKind: docx
+  expectedMediaType: application/vnd.openxmlformats-officedocument.wordprocessingml.document
+  expectedSizeBytes: 21238
+  expectedSha256: a4e28036bdc6bd909c903a3bf14a881f7acee336e794c9fd6e2cd301dae7dfef
+  expectedPdfPageCount: null
+  declaration:
+    description: 2025年度质量数据统计表，晟原精密 2025 年度可持续发展相关资料。
+    role: semantic_material
+    topic_tags:
+    - uncertain
+- caseId: material-11
+  ordinal: 11
+  relativePath: 供应商管理办法.docx
+  selectionRationale: 晟原合成 corpus 的语义资料，按文件名表达内容归属。
+  expectedKind: docx
+  expectedMediaType: application/vnd.openxmlformats-officedocument.wordprocessingml.document
+  expectedSizeBytes: 20707
+  expectedSha256: 149dfe1225f06a221412619061cbda6edf4346700e1399608de82ec7ecf05f78
+  expectedPdfPageCount: null
+  declaration:
+    description: 供应商管理办法，晟原精密 2025 年度可持续发展相关资料。
+    role: semantic_material
+    topic_tags:
+    - uncertain
+- caseId: material-12
+  ordinal: 12
+  relativePath: 供应链尽职调查管理办法.docx
+  selectionRationale: 晟原合成 corpus 的语义资料，按文件名表达内容归属。
+  expectedKind: docx
+  expectedMediaType: application/vnd.openxmlformats-officedocument.wordprocessingml.document
+  expectedSizeBytes: 18530
+  expectedSha256: 6a94e272fa2c6a94087a680f8b0f582649ea38443849bf03c7c3d697f1a8a519
+  expectedPdfPageCount: null
+  declaration:
+    description: 供应链尽职调查管理办法，晟原精密 2025 年度可持续发展相关资料。
+    role: semantic_material
+    topic_tags:
+    - uncertain
+- caseId: material-13
+  ordinal: 13
+  relativePath: 公司简介.docx
+  selectionRationale: 晟原合成 corpus 的语义资料，按文件名表达内容归属。
+  expectedKind: docx
+  expectedMediaType: application/vnd.openxmlformats-officedocument.wordprocessingml.document
+  expectedSizeBytes: 13582
+  expectedSha256: da731256e862f75c00fbe4a628c563f863adb31f811ca82413596de1290b6a2b
+  expectedPdfPageCount: null
+  declaration:
+    description: 公司简介，晟原精密 2025 年度可持续发展相关资料。
+    role: semantic_material
+    topic_tags:
+    - uncertain
+- caseId: material-14
+  ordinal: 14
+  relativePath: 利益相关方沟通记录.docx
+  selectionRationale: 晟原合成 corpus 的语义资料，按文件名表达内容归属。
+  expectedKind: docx
+  expectedMediaType: application/vnd.openxmlformats-officedocument.wordprocessingml.document
+  expectedSizeBytes: 14560
+  expectedSha256: 3eab69cec6fe6946bdb35589b0628dba705a4c070b573c38f26cb2ab1be20946
+  expectedPdfPageCount: null
+  declaration:
+    description: 利益相关方沟通记录，晟原精密 2025 年度可持续发展相关资料。
+    role: semantic_material
+    topic_tags:
+    - uncertain
+- caseId: material-15
+  ordinal: 15
+  relativePath: 反商业贿赂与廉洁从业规定.docx
+  selectionRationale: 晟原合成 corpus 的语义资料，按文件名表达内容归属。
+  expectedKind: docx
+  expectedMediaType: application/vnd.openxmlformats-officedocument.wordprocessingml.document
+  expectedSizeBytes: 16553
+  expectedSha256: 861a4434a9e3efedefdf0c3686ff4cce1b504ce5f68add93302023150395d5df
+  expectedPdfPageCount: null
+  declaration:
+    description: 反商业贿赂与廉洁从业规定，晟原精密 2025 年度可持续发展相关资料。
+    role: semantic_material
+    topic_tags:
+    - uncertain
+- caseId: material-16
+  ordinal: 16
+  relativePath: 可持续发展委员会工作规则.docx
+  selectionRationale: 晟原合成 corpus 的语义资料，按文件名表达内容归属。
+  expectedKind: docx
+  expectedMediaType: application/vnd.openxmlformats-officedocument.wordprocessingml.document
+  expectedSizeBytes: 16515
+  expectedSha256: 6307d5c30056e44ed31d07d86903d92b3911e1656a0e0413072b4e9933db8bc6
+  expectedPdfPageCount: null
+  declaration:
+    description: 可持续发展委员会工作规则，晟原精密 2025 年度可持续发展相关资料。
+    role: semantic_material
+    topic_tags:
+    - uncertain
+- caseId: material-17
+  ordinal: 17
+  relativePath: 员工手册.docx
+  selectionRationale: 晟原合成 corpus 的语义资料，按文件名表达内容归属。
+  expectedKind: docx
+  expectedMediaType: application/vnd.openxmlformats-officedocument.wordprocessingml.document
+  expectedSizeBytes: 16198
+  expectedSha256: 13e0f9b02e249f588df75d3fc6a07dbcff0b1adfe38f28dbd517dc4975e6dd7b
+  expectedPdfPageCount: null
+  declaration:
+    description: 员工手册，晟原精密 2025 年度可持续发展相关资料。
+    role: semantic_material
+    topic_tags:
+    - uncertain
+- caseId: material-18
+  ordinal: 18
+  relativePath: 固体废弃物管理规程.docx
+  selectionRationale: 晟原合成 corpus 的语义资料，按文件名表达内容归属。
+  expectedKind: docx
+  expectedMediaType: application/vnd.openxmlformats-officedocument.wordprocessingml.document
+  expectedSizeBytes: 18032
+  expectedSha256: f5246e24046288d63b6f208c3c576c190a7c0cfadd604eeda0292511e42ae5e8
+  expectedPdfPageCount: null
+  declaration:
+    description: 固体废弃物管理规程，晟原精密 2025 年度可持续发展相关资料。
+    role: semantic_material
+    topic_tags:
+    - uncertain
+- caseId: material-19
+  ordinal: 19
+  relativePath: 客户服务与投诉处理规程.docx
+  selectionRationale: 晟原合成 corpus 的语义资料，按文件名表达内容归属。
+  expectedKind: docx
+  expectedMediaType: application/vnd.openxmlformats-officedocument.wordprocessingml.document
+  expectedSizeBytes: 20061
+  expectedSha256: 48ffe238f7e604cd6d3146d47cddb53f9ea24fad5d1d347f66de9cd5dbf70fde
+  expectedPdfPageCount: null
+  declaration:
+    description: 客户服务与投诉处理规程，晟原精密 2025 年度可持续发展相关资料。
+    role: semantic_material
+    topic_tags:
+    - uncertain
+- caseId: material-20
+  ordinal: 20
+  relativePath: 广告与宣传素材合规审查规程.docx
+  selectionRationale: 晟原合成 corpus 的语义资料，按文件名表达内容归属。
+  expectedKind: docx
+  expectedMediaType: application/vnd.openxmlformats-officedocument.wordprocessingml.document
+  expectedSizeBytes: 17086
+  expectedSha256: 4f5ef1e6ec08d98446312361fcea9cefc79cd851045112b2a7495e9076333528
+  expectedPdfPageCount: null
+  declaration:
+    description: 广告与宣传素材合规审查规程，晟原精密 2025 年度可持续发展相关资料。
+    role: semantic_material
+    topic_tags:
+    - uncertain
+- caseId: material-21
+  ordinal: 21
+  relativePath: 环境管理制度.docx
+  selectionRationale: 晟原合成 corpus 的语义资料，按文件名表达内容归属。
+  expectedKind: docx
+  expectedMediaType: application/vnd.openxmlformats-officedocument.wordprocessingml.document
+  expectedSizeBytes: 15575
+  expectedSha256: 7ccd4e40ea10056892d3616ad132f951190ce547eed08d28f2ca5da4b350402a
+  expectedPdfPageCount: null
+  declaration:
+    description: 环境管理制度，晟原精密 2025 年度可持续发展相关资料。
+    role: semantic_material
+    topic_tags:
+    - uncertain
+- caseId: material-22
+  ordinal: 22
+  relativePath: 职业健康安全管理制度.docx
+  selectionRationale: 晟原合成 corpus 的语义资料，按文件名表达内容归属。
+  expectedKind: docx
+  expectedMediaType: application/vnd.openxmlformats-officedocument.wordprocessingml.document
+  expectedSizeBytes: 18589
+  expectedSha256: 8640c8c5d898bf19b439cb87c8b2520bb8fb13e6a89c9dce8abce34047a4bccc
+  expectedPdfPageCount: null
+  declaration:
+    description: 职业健康安全管理制度，晟原精密 2025 年度可持续发展相关资料。
+    role: semantic_material
+    topic_tags:
+    - uncertain
+- caseId: material-23
+  ordinal: 23
+  relativePath: 能源管理办法.docx
+  selectionRationale: 晟原合成 corpus 的语义资料，按文件名表达内容归属。
+  expectedKind: docx
+  expectedMediaType: application/vnd.openxmlformats-officedocument.wordprocessingml.document
+  expectedSizeBytes: 15922
+  expectedSha256: 702958d76000625fcf5686f692d0a45dbb841532f412d5a4ba9c4f59b0a0697b
+  expectedPdfPageCount: null
+  declaration:
+    description: 能源管理办法，晟原精密 2025 年度可持续发展相关资料。
+    role: semantic_material
+    topic_tags:
+    - uncertain
+- caseId: material-24
+  ordinal: 24
+  relativePath: 质量管理手册.docx
+  selectionRationale: 晟原合成 corpus 的语义资料，按文件名表达内容归属。
+  expectedKind: docx
+  expectedMediaType: application/vnd.openxmlformats-officedocument.wordprocessingml.document
+  expectedSizeBytes: 20083
+  expectedSha256: fccb6b6b23cf5b3467abbc24946c8dac4307f885a4753698e3a15409a7d8e1b1
+  expectedPdfPageCount: null
+  declaration:
+    description: 质量管理手册，晟原精密 2025 年度可持续发展相关资料。
+    role: semantic_material
+    topic_tags:
+    - uncertain
+- caseId: material-25
+  ordinal: 25
+  relativePath: 边角料回收与资源化利用规程.docx
+  selectionRationale: 晟原合成 corpus 的语义资料，按文件名表达内容归属。
+  expectedKind: docx
+  expectedMediaType: application/vnd.openxmlformats-officedocument.wordprocessingml.document
+  expectedSizeBytes: 18695
+  expectedSha256: 5a62db8a41a2248e1dfb67d1da1d06612be2f34e4235658c69f0be87f9527847
+  expectedPdfPageCount: null
+  declaration:
+    description: 边角料回收与资源化利用规程，晟原精密 2025 年度可持续发展相关资料。
+    role: semantic_material
+    topic_tags:
+    - uncertain
+- caseId: material-26
+  ordinal: 26
+  relativePath: 食堂周菜单示例.docx
+  selectionRationale: 与任何议题无关的日常行政资料，用于覆盖不相关资料的分流链路。
+  expectedKind: docx
+  expectedMediaType: application/vnd.openxmlformats-officedocument.wordprocessingml.document
+  expectedSizeBytes: 11169
+  expectedSha256: bc33bda99addb524768e6153fe1de51df6238b93852f73f4711d0e50fd961f3e
+  expectedPdfPageCount: null
+  declaration:
+    description: 员工食堂周菜单，行政部日常资料。
+    role: semantic_material
+    topic_tags:
+    - uncertain
+layoutAssetRootRelative: backend/tests/fixtures/local_e2e/layout_assets
+layoutAssets:
+- caseId: layout-01
+  ordinal: 1
+  relativePath: 可持续发展治理组织架构图.jpg
+  selectionRationale: 合成治理组织架构示意图，覆盖 Image Agent 识别、提升与确定性放置链路。
+  expectedKind: jpeg
+  expectedMediaType: image/jpeg
+  expectedSizeBytes: 75661
+  expectedSha256: 58dd23eb889f017f13cef9ac8fdd7ffd70fb6817683fda677a0442dfbfee3a3b
+  expectedPdfPageCount: null
+  expectedImageAnalysis: succeeded
+  declaration:
+    description: 公司可持续发展治理组织架构示意图，供报告排版插图使用。
+    role: layout_asset
+    topic_tags:
+    - uncertain
+    asset_title: null
+- caseId: layout-02
+  ordinal: 2
+  relativePath: 损坏图片字节模拟.jpg
+  selectionRationale: 合法 JPEG 头加损坏内容字节，覆盖识别失败不阻断生成且跳过放置的分支。
+  expectedKind: jpeg
+  expectedMediaType: image/jpeg
+  expectedSizeBytes: 1932
+  expectedSha256: 3eb67ad34a364bf0a16a7a74603465769d0fe58275c65d822b64805f70959e84
+  expectedPdfPageCount: null
+  expectedImageAnalysis: failed
+  declaration:
+    description: 本地验收合成的损坏图片字节，用于模拟素材识别失败分支。
+    role: layout_asset
+    topic_tags:
+    - uncertain
+    asset_title: null
+- caseId: layout-03
+  ordinal: 3
+  relativePath: 温室气体排放核查声明示意图.jpg
+  selectionRationale: 合成温室气体排放核查声明示意图；素材须落在气候议题承载位才能被放置与嵌图，因此单独提供气候范围素材。
+  expectedKind: jpeg
+  expectedMediaType: image/jpeg
+  expectedSizeBytes: 120561
+  expectedSha256: ef1c44863bfa2521cd740cdafdf65d6133adc4fb152838d3f30fe055bb95ef3a
+  expectedPdfPageCount: null
+  expectedImageAnalysis: succeeded
+  declaration:
+    description: 公司年度温室气体排放核查声明示意图，供气候变化章节排版插图使用。
+    role: layout_asset
+    topic_tags:
+    - uncertain
+    asset_title: null
+- caseId: layout-04
+  ordinal: 4
+  relativePath: 质量管理体系认证证书示意图.jpg
+  selectionRationale: 合成质量管理体系认证证书示意图，整图带「测试样例·非真实证书」水印——它会被识别成 typed 证书事实并进正文表，必须一眼可辨是测试件。
+  expectedKind: jpeg
+  expectedMediaType: image/jpeg
+  expectedSizeBytes: 163357
+  expectedSha256: 5007f2842ab1482875960fff61907220821cb79ac7e41803c0a670db1a34fe8d
+  expectedPdfPageCount: null
+  expectedImageAnalysis: succeeded
+  expectedImageCategory: certificate_or_award
+  declaration:
+    description: 公司质量管理体系认证证书示意图，供报告排版插图使用。
+    role: layout_asset
+    topic_tags:
+    - uncertain
+    asset_title: null

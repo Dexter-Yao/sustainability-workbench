@@ -1,0 +1,16 @@
+# ABOUTME(en): Topic-specific intake questions of「僱傭」; the four fixed pillar questions come from topic_intake_common.yaml.
+# ABOUTME(en): Quantitative KPIs are collected through the metric catalog, not here.
+contentScopeId: employment
+items:
+- key: employment.q_employment_practices
+  prompt: 貴公司在招聘、晉升、薪酬、工作時數及平等機會方面有哪些做法？
+  kind: text
+  collectionPriority: recommended
+  hint: 可說明招聘渠道、晉升機制、薪酬制度、工時管理及反歧視安排；沒有可留空。
+  maxChars: 5000
+- key: employment.q_employee_benefits
+  prompt: 貴公司向僱員提供哪些法定以外的待遇及福利？
+  kind: text
+  collectionPriority: recommended
+  hint: 可說明醫療保險、進修津貼、彈性工作、僱員活動等；沒有可留空。
+  maxChars: 5000

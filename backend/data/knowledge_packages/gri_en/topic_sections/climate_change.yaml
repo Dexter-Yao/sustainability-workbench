@@ -1,0 +1,174 @@
+# ABOUTME(en): Topic chapter template of the GRI topic "Climate Change" (GRI 102: Climate Change 2025): management /
+# ABOUTME(en): approach / actions blocks with their intake evidence and GRI requirement keys; the metrics H3 is compiled from metricDisclosure.
+# Requirement keys reference GRI 102 disclosures; clause numbers stay in standard_disclosure_requirements and never enter the task focus.
+section:
+  key: climate_change
+  title: Climate Change
+  headingLevel: 2
+  reportSectionId: climate_change
+  conciseDisclosure:
+    id: climate.concise_summary
+    type: paragraph
+    blockType: generative
+    source: ai
+    styleRole: body
+    generation:
+      task:
+        focus: |-
+          From the evidence currently visible for this topic, write one coherent summary covering the main arrangements for managing climate change, the approach and targets, the actions taken and the metrics reported, without the four sub-headings.
+      inputs:
+        evidence:
+          kind: report_section
+      targetChars:
+      - 260
+      - 520
+  children:
+  - key: climate_change.gov
+    title: Management of the Topic
+    pillar: governance
+    headingLevel: 3
+    blocks:
+    - id: climate.gov_oversight
+      type: paragraph
+      blockType: generative
+      source: ai
+      styleRole: body
+      generation:
+        task:
+          focus: |-
+            Describe how the company manages climate change: the governance body or position responsible for overseeing and implementing the transition and adaptation plans, its responsibilities, and how climate considerations enter decision-making.
+          noFactGuidance: |-
+            When the user provides no climate governance facts, state that the board holds ultimate oversight of climate-related matters and that management handles day-to-day management and reporting; do not name committees, positions, frequencies or specific meetings.
+        inputs:
+          evidence:
+            kind: explicit
+            intakeItems:
+            - climate.q_governance_roles
+            - climate.q_governance_policies
+            - climate.q_governance_certifications
+        targetChars:
+        - 120
+        - 250
+        standardDisclosureRequirementKeys:
+        - climate_change.gov.board_oversight
+        - climate_change.gov.management_role
+        simplifiedWritingGuidance:
+        - |-
+          The board-level oversight statement is carried by the "Board Statement"; this passage covers only the climate-specific governance arrangements.
+  - key: climate_change.strategy
+    title: Approach and Targets
+    pillar: strategy
+    headingLevel: 3
+    blocks:
+    - id: climate.strategy_risks_opportunities
+      type: paragraph
+      blockType: generative
+      source: ai
+      styleRole: body
+      generation:
+        task:
+          focus: |-
+            Describe the physical and transition risks and the opportunities the company has identified, the impacts on people and the environment associated with them, their effects on the business model and value chain over the short, medium and long term, and the company's transition plan for climate change mitigation.
+          noFactGuidance: |-
+            When the user provides no climate risk facts, describe only the directional effects of physical risks (such as extreme weather and heat) and transition risks (such as carbon pricing and customers' low-carbon requirements) common to the industry and business type, and the general response directions; do not claim that the company has identified or quantified them or has a transition plan.
+        inputs:
+          evidence:
+            kind: explicit
+            intakeItems:
+            - climate.q_strategy_content
+            - climate.q_climate_risks
+            - climate.q_climate_opportunities
+            - climate.q_transition_plan
+        targetChars:
+        - 190
+        - 420
+        standardDisclosureRequirementKeys:
+        - climate_change.strategy.risks_and_opportunities
+        - climate_change.strategy.business_model_and_value_chain
+        - climate_change.strategy.strategy_and_transition_plan
+        - climate_change.strategy.financial_effects
+        simplifiedWritingGuidance:
+        - |-
+          Write financial effects as figures only when the user provides quantitative data; otherwise describe the direction of the effect qualitatively and, where appropriate, note that the company is assessing it.
+        - |-
+          Figures are carried by the KPI data table; this passage does not state emissions, consumption, ratios or reduction percentages.
+    - id: climate.strategy_resilience
+      type: paragraph
+      blockType: generative
+      source: ai
+      styleRole: body
+      generation:
+        task:
+          focus: |-
+            Describe the company's climate change adaptation plan: the policies and actions to adapt to climate change, the climate scenarios and temperature projection used, and the methodologies and assumptions behind the plan.
+          noFactGuidance: |-
+            When the user provides no adaptation plan facts, state that the company will develop its adaptation planning as the business develops; do not claim that scenario analysis has been completed or conclusions reached.
+        inputs:
+          evidence:
+            kind: explicit
+            intakeItems:
+            - climate.q_scenario_analysis
+        targetChars:
+        - 85
+        - 190
+        standardDisclosureRequirementKeys:
+        - climate_change.strategy.climate_resilience
+    - id: climate.strategy_targets
+      type: paragraph
+      blockType: generative
+      source: ai
+      styleRole: body
+      generation:
+        task:
+          focus: |-
+            Describe the greenhouse gas emissions reduction targets the company has set, the scopes and gases they cover, the base year and the rationale for choosing it, the target year, and the progress towards them.
+          noFactGuidance: |-
+            When the user provides no targets or plans, state that the company will keep attending to improvement directions and the setting of quantified targets for this topic as the business develops; do not invent target values, base years, deadlines or achieved results.
+        inputs:
+          evidence:
+            kind: explicit
+            intakeItems:
+            - climate.q_strategy_content
+            - climate.q_climate_targets
+        targetChars:
+        - 95
+        - 215
+        standardDisclosureRequirementKeys:
+        - climate_change.strategy.climate_targets
+  - key: climate_change.iro
+    title: Actions and Processes
+    pillar: iro_management
+    headingLevel: 3
+    blocks:
+    - id: climate.iro_risk_management_process
+      type: paragraph
+      blockType: generative
+      source: ai
+      styleRole: body
+      generation:
+        task:
+          focus: |-
+            Describe the impacts on people and the environment from implementing the transition and adaptation plans and the actions taken to manage them, covering workers, local communities and biodiversity, and how the plans align with just transition principles and stakeholder engagement.
+          noFactGuidance: |-
+            When the user provides no risk management process facts, state that the company attends to the identification and assessment of climate-related risks within its overall risk management framework; do not claim a dedicated process, a review frequency or completed prioritisation.
+        inputs:
+          evidence:
+            kind: explicit
+            intakeItems:
+            - climate.q_climate_risks
+            - climate.q_risk_management_process
+        targetChars:
+        - 110
+        - 240
+        standardDisclosureRequirementKeys:
+        - climate_change.iro.risk_management_process
+metricDisclosure:
+  catalogMetricKeys:
+  - climate_ghg_scope1
+  - climate_ghg_scope2
+  - climate_ghg_scope1_2_total
+  - climate_ghg_scope3
+  - climate_ghg_intensity_revenue
+  - climate_ghg_intensity_output
+  - climate_internal_carbon_price
+  - climate_capital_deployment

@@ -1,0 +1,30 @@
+# ABOUTME: 生态系统与生物多样性保护议题轻量版内容清单，保留敏感区域判断并补充保护措施和活动题。
+# ABOUTME: 治理、战略和指标目标固定题由 topic_intake_common.yaml 展开；结构化数值由 ESG 定量数据表维护。
+contentScopeId: ecosystem_biodiversity_protection
+items:
+- key: ecosystem_biodiversity_protection.q_sensitive_area_impact
+  prompt: 贵公司生产经营是否位于生态保护红线、自然保护地、重要生态功能区等敏感区域附近，或是否对生态系统和生物多样性产生明显影响？
+  kind: single_select
+  collectionPriority: recommended
+  options:
+  - 涉及敏感区域或可能产生明显影响
+  - 暂未发现重大影响且不涉及敏感区域
+  - 不确定
+  hint: 如涉及或不确定，请在补充说明中填写筛查范围、业务依赖、影响、风险、机遇、管理重点或当前掌握情况。
+  maxChars: 5000
+- key: ecosystem_biodiversity_protection.q_ecological_protection_measures
+  prompt: 贵公司采取了哪些生态保护、环境影响降低、生态环境恢复、项目或产品生态影响评估和管控类措施？
+  kind: text
+  collectionPriority: recommended
+  hint: 可填写生态保护措施、环境影响降低措施、生态恢复安排、项目或产品生态影响评估、建设运营管控或其他自然友好实践；没有可留空。
+  maxChars: 5000
+- key: ecosystem_biodiversity_protection.q_ecological_protection_activities
+  prompt: 贵公司是否参加过生态环境保护类活动？
+  kind: single_select
+  collectionPriority: recommended
+  options:
+  - 是
+  - 否
+  - 不确定
+  hint: 如选择是，请在补充说明中简述活动内容和活动参与情况；没有或不确定可不补充。
+  maxChars: 5000

@@ -1,0 +1,17 @@
+# ABOUTME(en): Topic-specific intake questions of「發展及培訓」; the four fixed pillar questions come from topic_intake_common.yaml.
+# ABOUTME(en): Quantitative KPIs are collected through the metric catalog, not here.
+contentScopeId: development_and_training
+items:
+- key: training.q_training_programmes
+  prompt: 匯報期間貴公司開展了哪些培訓活動？
+  kind: text
+  collectionPriority: recommended
+  hint: 可說明培訓主題、對象、形式及評估方式；沒有可留空。
+  generationBoundary: 未填寫具體數值時，不得生成培訓人次、時數或覆蓋率。
+  maxChars: 5000
+- key: training.q_training_needs
+  prompt: 貴公司如何識別培訓需求及規劃僱員發展？
+  kind: text
+  collectionPriority: recommended
+  hint: 可說明需求調查、績效評核結合、晉升路徑及資助進修安排；沒有可留空。
+  maxChars: 5000

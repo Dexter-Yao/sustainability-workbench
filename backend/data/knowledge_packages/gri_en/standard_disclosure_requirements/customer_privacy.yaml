@@ -1,0 +1,39 @@
+# ABOUTME(en): GRI 418: Customer Privacy 2016 disclosure requirements, grouped by the package's pillars, for the
+# ABOUTME(en): coverage audit and the key whitelist. Wording condenses the official requirement text.
+topicStandardDisclosureRequirementGroups:
+- topicSectionKey: customer_privacy.gov
+  pillar: governance
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: customer_privacy.gov.management_of_privacy
+    standardDisclosureRequirementTitle: Management of the customer privacy topic
+    excerptFrom: GRI 3-3 with GRI 418
+    standardDisclosureRequirementText: |-
+      Report how the organization manages the customer privacy topic, including the responsibilities and policies covering the collection, use, storage and protection of customer data.
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: GRI
+      clauseRef: GRI 3-3 with GRI 418
+- topicSectionKey: customer_privacy.strategy
+  pillar: strategy
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: customer_privacy.strategy.privacy_direction
+    standardDisclosureRequirementTitle: Direction on protecting customer privacy
+    excerptFrom: GRI 3-3 with GRI 418
+    standardDisclosureRequirementText: |-
+      Describe the direction the organization takes on protecting customer privacy, including how privacy considerations are reflected in its systems and business arrangements.
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: GRI
+      clauseRef: GRI 3-3 with GRI 418
+- topicSectionKey: customer_privacy.iro
+  pillar: iro_management
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: customer_privacy.iro.complaints_and_breaches
+    standardDisclosureRequirementTitle: Substantiated complaints concerning breaches of customer privacy
+    excerptFrom: 418-1
+    standardDisclosureRequirementText: |-
+      Report the total number of substantiated complaints received concerning breaches of customer privacy, split into complaints received from outside parties and substantiated by the organization and complaints from regulatory bodies, and the total number of identified leaks, thefts or losses of customer data; where none have been identified, a brief statement of that fact is sufficient.
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: GRI
+      clauseRef: 418-1

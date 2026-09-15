@@ -1,0 +1,846 @@
+contract: sustainability_desk.local_e2e_report_input_fixture.v1
+fixtureId: jinli-synthetic-full-hkex-zh-hant-v1
+artifactPurpose: local_e2e_test
+fixtureBasis: simulated_for_local_e2e
+reportProfileId: hkex_zh_hant@1
+corpusId: jinli-synthetic-corpus
+reportingEntity: 晉澧精密工業控股有限公司
+reportingYear: 2025
+consolidationScope: 本公司及全部附屬公司
+assessmentScores:
+  climate_change:
+    financialScore: 4.4
+    impactScore: 4.3
+  emissions:
+    financialScore: 4.1
+    impactScore: 4.4
+  waste_management:
+    financialScore: 3.6
+    impactScore: 4.2
+  energy_management:
+    financialScore: 4.5
+    impactScore: 4.1
+  water_management:
+    financialScore: 3.2
+    impactScore: 3.8
+  materials_and_packaging:
+    financialScore: 3.5
+    impactScore: 3.6
+  environment_and_natural_resources:
+    financialScore: 3.0
+    impactScore: 3.7
+  employment:
+    financialScore: 4.2
+    impactScore: 4.3
+  health_and_safety:
+    financialScore: 4.3
+    impactScore: 4.6
+  development_and_training:
+    financialScore: 3.8
+    impactScore: 4.0
+  labour_standards:
+    financialScore: 3.4
+    impactScore: 4.2
+  supply_chain_management:
+    financialScore: 4.2
+    impactScore: 4.0
+  product_responsibility:
+    financialScore: 4.6
+    impactScore: 4.2
+  data_protection_and_privacy:
+    financialScore: 3.9
+    impactScore: 3.7
+  anti_corruption:
+    financialScore: 4.1
+    impactScore: 4.2
+  community_investment:
+    financialScore: 3.0
+    impactScore: 3.9
+greenhouseGasAccountingStandard: 《溫室氣體核算體系》（GHG Protocol）
+inputWrites:
+- target_key: field.company_short_name
+  answer: 晉澧精密
+  expected_definition_fingerprint: 9908cccb2e6e8385ebb8199a9db994e1f2d84bb68e7940ff97c5ce4b392b3cdf
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+- target_key: field.industry_major_category
+  answer: 製造業
+  expected_definition_fingerprint: f798243b2c0ac08b24c0ef190ad722f7aec8d243c0e021b02e455413403e1498
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+- target_key: field.industry_division
+  answer: 精密金屬沖壓件及連接器製造
+  expected_definition_fingerprint: 402da1a72969ed1ab5d3a935674a658d29554f45f4e01f4959f9a6c0c64324b1
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+- target_key: field.report_publication_channel
+  answer: 聯交所披露易及公司網站刊發
+  expected_definition_fingerprint: 25af78268b21cff4cec1c61403a1837ac41a8ef20e88f64a988469225de3499c
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+- target_key: field.report_publication_website_url
+  answer: https://www.jinli-precision.example.hk
+  expected_definition_fingerprint: 110c9ed9419f83f1ce19e6033e7af80f7719503bad4890b34d21d91d55d67125
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+- target_key: field.report_approval_year
+  answer: 2026
+  expected_definition_fingerprint: af717d8393f3fd8dc0f431329e97f090a60a085ecf930db2c8ac4f270ab48d6a
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+- target_key: field.report_approval_month
+  answer: 2026-03
+  expected_definition_fingerprint: 97315530ca0b0dad3d1923a753d1bf256c248dca187d8369f9e2f46206f797d1
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+- target_key: company_profile
+  answer: '晉澧精密工業控股有限公司於 2006 年在香港成立，2016 年於香港聯合交易所主板上市，是一家專注於精密金屬沖壓件、連接器及組裝模組研發、製造及銷售的製造企業。公司總部位於香港觀塘，生產基地位於廣東省東莞市松山湖園區，由全資附屬公司東莞晉澧精密電子有限公司持有及營運。截至
+    2025 年 12 月 31 日，集團僱員 612 人。
+
+
+    公司產品分為精密金屬沖壓件、連接器及組裝模組三類，應用於消費電子、工業設備及新能源汽車零部件領域；2025 年度營業收入 486.2 百萬港元，其中消費電子約佔
+    46%，新能源汽車零部件約佔 33%，工業設備及其他約佔 21%。公司具備精密級進模開發、高速沖壓與在線檢測及熱處理配套能力，東莞廠區沖壓車間自動化率約 68%，屋頂光伏
+    1.2 MWp 於 2023 年 6 月投運。
+
+
+    公司持有 ISO 9001、ISO 14001、ISO 45001 及 IATF 16949 認證，研發及工程人員約 86 人，2025 年研發開支約 21.4
+    百萬港元。公司以「精密製造、穩健經營、以人為本」為經營理念，推進節能減排、廢棄物資源化與供應鏈協同，重視僱員發展、產品責任及社區參與。'
+  expected_definition_fingerprint: e8d35357671536a46366f3ff71711c607670b6d09a9acfb78b671cc229ac17f1
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+- target_key: company_certifications
+  answer: ISO 9001 品質管理體系、ISO 14001 環境管理體系、ISO 45001 職業健康安全管理體系、IATF 16949 汽車業品質管理體系
+  expected_definition_fingerprint: aba7d4d6b7d6da74c53c9e18ce373c25730939e1fe974c2758c595d1c95dbf57
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+- target_key: board_statement.q_oversight
+  answer: 董事會對集團的環境、社會及管治事宜負最終責任，包括釐定管理方針及策略、審批重要性評估結果、審批目標並檢討進度、審批年度報告。2025 年董事會兩次專項審議相關事宜（3
+    月審議 2024 年度報告及重要性評估結果，9 月檢討目標進度及氣候情景分析）。日常管理授權予由執行董事兼財務總監牽頭的環境、社會及管治工作小組，小組每季開會，每半年向董事會提交書面匯報，重大事項須於
+    2 個工作日內向主席及行政總裁報告。
+  expected_definition_fingerprint: 86ed8b141c7f260c6bb8e7721c79d07c2eee00f4c282d2bb8c38635c565dffa3
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+- target_key: board_statement.q_management_approach
+  answer: 董事會確立以「合規營運、綠色製造、以人為本」為主軸的管理方針。重要議題每年透過三步識別及排序：以守則各層面及氣候相關披露為基礎形成 16 項議題清單；2025
+    年 10 月向僱員、客戶、供應商及投資者發出持份者問卷（回收 312 份）評估對持份者的重要性；11 月由工作小組及部門主管就對業務的重要性（收入、成本、合規及聲譽，綜合短、中、長期）評分，兩軸均以
+    4.0 分為閾值。結果 8 項議題屬高度重要，經董事會於 12 月審閱。氣候相關風險納入集團年度風險登記冊，由審核委員會檢討。
+  expected_definition_fingerprint: 9edef2e310b6279448093235c626ec9cc8a9a9085de39e90477796aaa14b5c19
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+- target_key: board_statement.q_progress_review
+  answer: 董事會於 2024 年批准三項可量化目標並每年 9 月檢討進度：2030 年範圍 1 及範圍 2 溫室氣體排放密度較 2023 年下降 30%（2025
+    年為 16.6 tCO₂e／百萬港元，已下降 22.4%）；2027 年能源消耗密度較 2023 年下降 15%（2025 年 38.9 MWh／百萬港元，已下降
+    13.2%）；每年工傷個案數目不高於上一年度（2025 年 7 宗，2024 年 9 宗）。排放及能源密度直接影響電力成本與客戶碳足跡要求，工傷率影響生產連續性及僱員保留；董事會可按業務發展調整目標。
+  expected_definition_fingerprint: 12aa64b10490d12868977d24a1462fb60f33f494f0364f9fa4cf13ed82ec7b13
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+- target_key: sustainability_governance_structure
+  answer: 集團環境、社會及管治事宜由董事會、環境、社會及管治工作小組及各部門聯絡人三層參與管理。董事會負最終責任並每半年聽取書面匯報。工作小組 2021
+    年成立，職權範圍載於 JL-GOV-001，由執行董事兼財務總監黃頌恩牽頭，成員包括東莞廠總經理周啟明、環境健康安全主管羅子軒、生產部主管吳志強、品質部主管張永樂、採購部主管馮嘉欣、人力資源部主管李慧珊、資訊科技部主管郭俊傑及銷售及客戶服務部主管高美玲，公司秘書譚詠詩任小組秘書；小組每季開會，2025
+    年共 4 次。各部門指派聯絡人，按季度提交數據及進度。
+  expected_definition_fingerprint: eeee6a4a3383bf22fbf4fce8e6ca5214da16ba9dc9c167c0ec9b0450a7a533ba
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+- target_key: sustainability_governance_duties
+  answer: 董事會負責審批管理方針、目標及年度報告，檢討目標進度。工作小組負責統籌重要性評估、目標分解與跟蹤、氣候相關風險評估、數據匯總複核及報告編製，並審核相關政策的制訂與修訂。環境健康安全部負責排放、廢棄物、能源、用水及職業安全數據；人力資源部負責僱傭、培訓、勞工準則及社區投資；採購部負責供應鏈管理及供應商評核；品質部及銷售及客戶服務部負責產品責任與客戶投訴；資訊科技部負責資料保障；公司秘書處負責反貪污、合規及董事會匯報。數據經部門主管簽核，環境及安全數據由環境健康安全主管複核，其餘由公司秘書複核。
+  expected_definition_fingerprint: 24e1cc827c23651b3ebd7b7456790eda7fe328cec2891a33d0942d508d229af0
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+- target_key: appendix.reader_feedback.address
+  answer: 香港九龍觀塘鴻圖道 1 號晉澧中心 12 樓
+  expected_definition_fingerprint: 76a95bae24c96ee0b72db329560cbb926ccdc1799654d0d12dc989c8d35b3277
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+- target_key: appendix.reader_feedback.email
+  answer: esg@jinli-precision.example.hk
+  expected_definition_fingerprint: f1ae8d7349f9be177adc7b07db59f47a6821adb92d2b60659cbeb7dc374ce825
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+- target_key: appendix.reader_feedback.phone
+  answer: +852 0000 0000
+  expected_definition_fingerprint: ef3f5bd0d0c32ccaadd599db60827d47779b213d3f9536ad2b9a92ef13044ee1
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+- target_key: climate.q_climate_risks
+  answer:
+  - 極端天氣（颱風、暴雨、水浸）
+  - 持續高溫
+  - 碳定價及排放監管政策變化
+  - 客戶及市場的低碳要求
+  - 能源價格波動
+  expected_definition_fingerprint: dc21c31bbfc7677df5d1254d6d24574dcd13f89ff165a3b7622b6852636f6048
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 東莞廠及香港辦公室位於華南沿岸；2025 年因颱風預警停產 2 天；消費電子及汽車客戶要求提供碳足跡及減排承諾。
+- target_key: climate.q_climate_opportunities
+  answer:
+  - 能源及資源效率提升
+  - 低碳產品或服務
+  - 可再生能源使用
+  expected_definition_fingerprint: d15265208e101d25d9068fa96761a4f9104a94d5bf1e9dd76fec4467c0d74afa
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 節能改造累計年節電約 1,350 MWh；新能源汽車零部件收入佔比升至 33%；評估倉庫屋頂光伏擴建。
+- target_key: climate.q_scenario_analysis
+  answer: 已開展情景分析
+  expected_definition_fingerprint: 349b122f99e84059057c31de7d33c9d272f83b4671e251dcdd1e434d69d8a5d2
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 2025 年首次定性情景分析，參考 2°C 有序轉型及 4°C 高排放兩個情景；未量化財務影響，計劃 2026 年作定量敏感度測算。
+- target_key: emissions.q_emission_sources
+  answer:
+  - 燃燒設備（鍋爐、發電機）
+  - 公司車輛
+  - 生產工序（噴塗、焊接、清洗等）
+  - 生產廢水排放
+  - 生活污水排放
+  expected_definition_fingerprint: c38f66faf9dc4f6c617fae16489c11fe1d40fb91b6686c4e0de7d244a8701af1
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 天然氣退火及熱處理爐、備用發電機、清洗及脫脂工序溶劑揮發；廢水經預處理後排入園區污水管網。電鍍全部外協。
+- target_key: energy.q_renewable_energy
+  answer: 自建太陽能光伏等可再生能源設施
+  expected_definition_fingerprint: 376fd92834eb37884d1430f89c346e011b534261a3b4749ad9ea4dd23abb2a63
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 東莞廠屋頂光伏 1.2 MWp，2023 年 6 月投運，2025 年自發自用 1,360 MWh。
+- target_key: waste.q_hazardous_waste
+  answer: 有，並交由持牌承辦商處置
+  expected_definition_fingerprint: 9effb30c3c607e536a1b949ff909ab9f2df9a6db7754b46f13a0bda5581864e5
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 廢切削液及廢油、含油抹布及手套、廢活性炭、廢化學品包裝等，全部執行電子轉移聯單。
+- target_key: water.q_water_sourcing_issue
+  answer: 沒有遇到問題
+  expected_definition_fingerprint: 06fed40d864b62e43e132e6978448c34aa7e56b07e521efa4f2388106fa8766e
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 東莞廠及香港辦公室均使用市政供水。
+- target_key: natural_resources.q_significant_impacts
+  answer:
+  - 噪音
+  - 原材料開採或採購
+  expected_definition_fingerprint: 24e8e61793f9be560d0598e217056d84222e6809389a548676ee29b1700e7ff2
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 高速沖床為主要噪音源，廠界噪音年檢符合標準；主要原材料為銅合金及不銹鋼帶材。
+- target_key: health_safety.q_ohs_incidents
+  answer: 有工傷事故，無因工亡故
+  expected_definition_fingerprint: f3bcafcfeb5847799f457556612648295c1e19f365b444a4ab47b6281208d789
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 2025 年工傷個案 7 宗，損失工作日 126 天；連續三年無因工亡故。
+- target_key: labour_standards.q_labour_violations
+  answer: 沒有發現
+  expected_definition_fingerprint: abd854fe2778788e40cb7c390ffd3375d6cd8956653767d71090dd337b541b62
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 2025 年 5 月及 11 月各抽查 60 份入職檔案，未發現童工或強制勞工。
+- target_key: anti_corruption.q_corruption_cases
+  answer: 沒有
+  expected_definition_fingerprint: 732a14496b44a085af600e0f87ac00fd22ef5507bac1752ad5ba129bdc02b287
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 2025 年無涉及集團或其僱員的貪污訴訟案件；收到舉報 2 宗，1 宗屬實並已處理。
+- target_key: community_investment.q_focus_areas
+  answer:
+  - 教育
+  - 環境
+  - 扶貧及弱勢社群
+  expected_definition_fingerprint: 318fff66a94cd871aba51bae98269c9b1299d6833ad6e66bc4d8dbe11469fd15
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 聚焦香港觀塘及東莞松山湖社區：職業技術學校獎學金、植樹及海岸清潔、長者探訪。
+- target_key: climate.q_governance_roles
+  answer: 設有專責部門或崗位負責
+  expected_definition_fingerprint: 5bbced41304da4c2b5ac95ebf31c8ff36dc0cb0e64c537de1e6fbd8576c85457
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 環境健康安全部與財務部聯合負責氣候相關風險評估及排放數據，ESG 工作小組召集人統籌。
+- target_key: climate.q_governance_policies
+  answer: 設有相關政策、程序或管理要求
+  expected_definition_fingerprint: 0dadbd91be654a18e7a8bb73955438ac748843f9a939758c74e2c657d6c4848b
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 《氣候相關風險管理指引》（JL-EHS-005）。
+- target_key: climate.q_governance_certifications
+  answer: 持有相關認證
+  expected_definition_fingerprint: 4b7aff9299974728d8db299edfb5143462644334adbbf762a9fd772a1fb24063
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: ISO 14001 環境管理體系。
+- target_key: emissions.q_governance_roles
+  answer: 設有專責部門或崗位負責
+  expected_definition_fingerprint: 9015a11ef8f2c4009e521902ae8c7f87ad5cf37936f71df82a786a3d078ded76
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 環境健康安全部負責廢氣、廢水監測及排污許可管理。
+- target_key: emissions.q_governance_policies
+  answer: 設有相關政策、程序或管理要求
+  expected_definition_fingerprint: 1de33559e47103027d0229afd49ef01aa4e0a91d01039eab6839dd9eac416eba
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 《環境管理制度》（JL-EHS-001），東莞廠持有排污許可證。
+- target_key: emissions.q_governance_certifications
+  answer: 持有相關認證
+  expected_definition_fingerprint: 2f7c2e40d8f91e3063879be8284ace2054ccbef8fd8717b48cbc7fcc07b64cf0
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: ISO 14001 環境管理體系。
+- target_key: waste.q_governance_roles
+  answer: 設有專責部門或崗位負責
+  expected_definition_fingerprint: 52b8b7271e239ac91c3e2d39a7860def55738d1d6333cb79047d9ec384aa7c53
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 環境健康安全部負責廢棄物分類、貯存、轉移及台賬。
+- target_key: waste.q_governance_policies
+  answer: 設有相關政策、程序或管理要求
+  expected_definition_fingerprint: aa189f9e14dff295667c2367d5105d20a6ac9c82c8587ce8a551cf4eef5e4cfa
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 《廢棄物管理程序》（JL-EHS-003）。
+- target_key: waste.q_governance_certifications
+  answer: 持有相關認證
+  expected_definition_fingerprint: 40eb1e41532994cedc425ddf6743e117f86bca97a576396fbcf2859592fe6536
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: ISO 14001 環境管理體系。
+- target_key: energy.q_governance_roles
+  answer: 設有專責部門或崗位負責
+  expected_definition_fingerprint: b930ae90b24bc2a6e4720766a4a3c7ef1cf339d7611702474b3c36fb4da29e93
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 生產部負責設備能效及節能改造，環境健康安全部負責計量統計。
+- target_key: energy.q_governance_policies
+  answer: 設有相關政策、程序或管理要求
+  expected_definition_fingerprint: a430c5a023375be2d5480d996cf80ac422d43c2b8fa4141fa3dd98591238c721
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 《能源管理辦法》（JL-EHS-002）。
+- target_key: energy.q_governance_certifications
+  answer: 持有相關認證
+  expected_definition_fingerprint: 7f1b6cde37c448809e551821beb8bb3e0f0e22b3cae17c5b5b7ad8d22fb4f27c
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: ISO 14001 環境管理體系。
+- target_key: water.q_governance_roles
+  answer: 設有專責部門或崗位負責
+  expected_definition_fingerprint: 4490a5b5aedbb2f0a871fd825a685144294aa6e3e835c5b1518a019db2856752
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 環境健康安全部負責用水計量及廢水預處理，行政部負責生活區節水。
+- target_key: water.q_governance_policies
+  answer: 設有相關政策、程序或管理要求
+  expected_definition_fingerprint: 4c95e111b94f70ba0a5d908c1f1645f6a88e094faf546ad24700d366950015a0
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 《環境管理制度》（JL-EHS-001）第三章。
+- target_key: water.q_governance_certifications
+  answer: 持有相關認證
+  expected_definition_fingerprint: 4c3633e56de1655bab97d493f60b5e3be50615c1e24e9c29e31db650d1a568b5
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: ISO 14001 環境管理體系。
+- target_key: materials.q_governance_roles
+  answer: 設有專責部門或崗位負責
+  expected_definition_fingerprint: 1931ce0d591098e466b0edb492bd60b6e043c2cfa0d81be2252edd1f15a09b81
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 生產部物流組負責包裝材料選用及統計，採購部核對再生材料聲明。
+- target_key: materials.q_governance_policies
+  answer: 設有相關政策、程序或管理要求
+  expected_definition_fingerprint: a7632858051a1856418482de3f8c7e820bfa1ca2f3d803dd2dedeaaebf4b90eb
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 《包裝材料管理指引》（JL-EHS-006）。
+- target_key: materials.q_governance_certifications
+  answer: 暫無相關認證
+  expected_definition_fingerprint: 1d00a371524638adb4edeacfba84b54f928a3805283aee44349fe9e64652b06c
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+- target_key: natural_resources.q_governance_roles
+  answer: 設有專責部門或崗位負責
+  expected_definition_fingerprint: 343cf34fc98dc04c927044672daf4f55f633d6869fc714743d5c2453f5075318
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 環境健康安全部負責噪音監測及環境因素識別。
+- target_key: natural_resources.q_governance_policies
+  answer: 設有相關政策、程序或管理要求
+  expected_definition_fingerprint: b0aea95e54e62ebbc32449d9ba4f03a44665cc2c5bf2f6213b6a353e3410beb6
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 《環境管理制度》（JL-EHS-001）。
+- target_key: natural_resources.q_governance_certifications
+  answer: 持有相關認證
+  expected_definition_fingerprint: 7b89db8b65415442ef4405d4819e6814453cf6296281627715e1d7c261c83d94
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: ISO 14001 環境管理體系。
+- target_key: employment.q_governance_roles
+  answer: 設有專責部門或崗位負責
+  expected_definition_fingerprint: 6dbae841231a418aafb2e575b2ce0da64f158d1bac2fda86492fd6c9a1ccd1bf
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 人力資源部負責招聘、薪酬、福利及僱員關係。
+- target_key: employment.q_governance_policies
+  answer: 設有相關政策、程序或管理要求
+  expected_definition_fingerprint: 79bb2b65ecaf747dd10ec285983d91d97a57d71c9208ee44f15b5776978f1774
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 《僱員手冊》（JL-HR-001），遵守香港《僱傭條例》及內地《勞動合同法》。
+- target_key: employment.q_governance_certifications
+  answer: 暫無相關認證
+  expected_definition_fingerprint: 5f135ed94de3f132d0dcbc33784518308d50ad95a53c46cdc58a201228378705
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+- target_key: health_safety.q_governance_roles
+  answer: 設有專責部門或崗位負責
+  expected_definition_fingerprint: 4078f323e3d8ca4d354bf102d263884c4d8e9230b4e592015d4b9de454a64aa5
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 環境健康安全部負責職業健康與安全管理，東莞廠安全生產委員會每季檢討。
+- target_key: health_safety.q_governance_policies
+  answer: 設有相關政策、程序或管理要求
+  expected_definition_fingerprint: 49873cb3a49fee41910af6f199d2c1b5a425e389fc575c58aae330545ee37e21
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 《職業健康與安全管理制度》（JL-EHS-004）。
+- target_key: health_safety.q_governance_certifications
+  answer: 持有相關認證
+  expected_definition_fingerprint: 34007161b75c52d73935422c1f118dfe928b88839ba344dfda1f9586900c2b5c
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: ISO 45001 職業健康安全管理體系。
+- target_key: training.q_governance_roles
+  answer: 設有專責部門或崗位負責
+  expected_definition_fingerprint: 63061e49d2c0739d941f1489d037fa903720d51fb0d04e7c7231b16cc8ed9dc6
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 人力資源部負責培訓需求調查、年度培訓計劃及記錄。
+- target_key: training.q_governance_policies
+  answer: 設有相關政策、程序或管理要求
+  expected_definition_fingerprint: 78f8d49458baf54efb2aa9c394a09e9556ce0f140c6f7628f5005d0b5792196e
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 《僱員手冊》（JL-HR-001）第六章培訓與發展。
+- target_key: training.q_governance_certifications
+  answer: 暫無相關認證
+  expected_definition_fingerprint: 10c50219535b6e65cc5f4575a5566d9c31031b27f3e9528508b7a4e572193685
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+- target_key: labour_standards.q_governance_roles
+  answer: 設有專責部門或崗位負責
+  expected_definition_fingerprint: 4afe653753316edf6bd9ff8c4cc1f282e402071fcb7b7ac4811b3047de52947b
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 人力資源部負責入職核查及檔案抽查，採購部把同等要求延伸至供應商。
+- target_key: labour_standards.q_governance_policies
+  answer: 設有相關政策、程序或管理要求
+  expected_definition_fingerprint: 8d653aafc4db2ea5b4220aa8e6f1b5d8bcb3a82cc6fa1a44f21a3d37c45bd581
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 《僱員手冊》（JL-HR-001）第二、三章，《供應商行為準則》。
+- target_key: labour_standards.q_governance_certifications
+  answer: 暫無相關認證
+  expected_definition_fingerprint: 8fd3d779a60ce0dfa28c7643d2ed5c40dd75ccdd3c7fa44156bf84dad47ed947
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+- target_key: supply_chain.q_governance_roles
+  answer: 設有專責部門或崗位負責
+  expected_definition_fingerprint: 088dcd9fa549bc3866b002fb2f32fecda28bd4b08c789490e586efb82895da88
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 採購部負責供應商准入、評核、審核及退出，品質部與環境健康安全部參與現場審核。
+- target_key: supply_chain.q_governance_policies
+  answer: 設有相關政策、程序或管理要求
+  expected_definition_fingerprint: 5e138998cc825101a0ad12b542b468b7a5c9e70fe45d8c8298442b2b97e0c89d
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 《供應商管理辦法》（JL-PUR-001）及《供應商行為準則》。
+- target_key: supply_chain.q_governance_certifications
+  answer: 暫無相關認證
+  expected_definition_fingerprint: 0572ad262bd0f8795ba0b5ac4e376bd88d51b0f2a412eea5a93a5a8168ed52b4
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+- target_key: product.q_governance_roles
+  answer: 設有專責部門或崗位負責
+  expected_definition_fingerprint: 2f620f4e435fd4e051ba3dfaa8199a1a317e07b1449c9507c4af195d90a8b20f
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 品質部負責品質保證、產品安全及回收程序，銷售及客戶服務部負責投訴處理。
+- target_key: product.q_governance_policies
+  answer: 設有相關政策、程序或管理要求
+  expected_definition_fingerprint: d600c6228b482895d05a529b317453f5a27a9639e9e260204a7f92488d458087
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 《品質管理手冊》（JL-QA-001）、《客戶服務及投訴處理程序》（JL-CS-001）。
+- target_key: product.q_governance_certifications
+  answer: 持有相關認證
+  expected_definition_fingerprint: c01ddb11b6a4f4da327d803bbc5b04fb31f475fa8f74d1fc5efc4cbfee082c06
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: ISO 9001 品質管理體系、IATF 16949 汽車業品質管理體系。
+- target_key: privacy.q_governance_roles
+  answer: 設有專責部門或崗位負責
+  expected_definition_fingerprint: 7accb0d937fc11bc47f75734e2fef131a4ef12d9650e591abb92ae0fbeb8a752
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 資訊科技部負責資料安全措施，公司秘書負責法規合規審核。
+- target_key: privacy.q_governance_policies
+  answer: 設有相關政策、程序或管理要求
+  expected_definition_fingerprint: 367808b128b919405bc67eec97ed4e97f9bbf7cc27caa28761522fdba74839c4
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 《資料保障及私隱政策》（JL-IT-001）。
+- target_key: privacy.q_governance_certifications
+  answer: 暫無相關認證
+  expected_definition_fingerprint: a86a3e186740815979f390dede00fb2d091bfb62ae57034616e03c4a9349ff23
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+- target_key: anti_corruption.q_governance_roles
+  answer: 設有專責部門或崗位負責
+  expected_definition_fingerprint: d708851522416f0f61657840e02fffa45872a13fff7786f7186d10e28d4d3281
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 公司秘書處負責政策執行及舉報調查，審核委員會監督。
+- target_key: anti_corruption.q_governance_policies
+  answer: 設有相關政策、程序或管理要求
+  expected_definition_fingerprint: 79aa82a15cdd7398ef8ade42f113f3204a90fa33731ffa8d6178edd7f81aed18
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 《反貪污及舉報政策》（JL-LEG-001），遵守香港《防止賄賂條例》。
+- target_key: anti_corruption.q_governance_certifications
+  answer: 暫無相關認證
+  expected_definition_fingerprint: ccea46de2f27b966e8161593f67b8b5265c01906ca37ee5eb35379b22600959c
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+- target_key: community_investment.q_governance_roles
+  answer: 設有專責部門或崗位負責
+  expected_definition_fingerprint: 2f2433e60392d8d0e5641fd5c9bda49d6459e21c742376963a3ef5f397fd7a40
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 人力資源部企業社會責任小組統籌社區投資及義工活動。
+- target_key: community_investment.q_governance_policies
+  answer: 設有相關政策、程序或管理要求
+  expected_definition_fingerprint: 1f0b3b4996c5baf3bdb615fc489ead35814dde168a0fd632fffaac0aee291259
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 社區投資聚焦教育、環境及社區服務三個範疇，義工假每年 1 天。
+- target_key: community_investment.q_governance_certifications
+  answer: 暫無相關認證
+  expected_definition_fingerprint: 6500f4e9f7c45dc98135db6aa166338cef6aa98e8db40279299b61c45ef787a0
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+- target_key: metric.economic_revenue
+  answer: 486.2
+  expected_definition_fingerprint: 5ad8659147527bc0dd5674de2fd17f5505b31f7bae7ba15396bb126883b5837f
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 2025 年度綜合收入
+- target_key: metric.economic_total_employees
+  answer: 612
+  expected_definition_fingerprint: c74121c3c47455ccf308a9c2b70f11aeb66ff23495792f8453ba4d4c283786b2
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 2025 年 12 月 31 日在冊僱員
+- target_key: metric.climate_ghg_scope1
+  answer: 1240
+  expected_definition_fingerprint: 17095d1636054dcbbad7b0b0ce9dcf3fc1990d40ecb800f087f202a31ab0c142
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 天然氣退火及熱處理爐 968、柴油 109、汽油 80、石油氣 19、製冷劑逸散 64
+- target_key: metric.climate_ghg_scope2
+  answer: 6830
+  expected_definition_fingerprint: e0c0b941c046daf4d3da0b20936489acb5f7e25ad7e3fbbaba6295c5598a5dd7
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 外購電力 11,920 MWh × 0.5730 tCO₂e/MWh（地點法）
+- target_key: metric.climate_ghg_intensity_revenue
+  answer: 16.6
+  expected_definition_fingerprint: 9322601851c3fb626402ffc6efecbcda3d5ba785e6164f03abc50d11fed0e14c
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 範圍 1+2 合計 8,070 ÷ 營業收入 486.2 百萬港元
+- target_key: metric.climate_capital_deployment
+  answer: 3.2
+  expected_definition_fingerprint: 41a659424c99028c7c1fac945c125436d8f8813f9b72c573584aa05bcf79d820
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 空壓機及冷卻塔節能改造資本開支
+- target_key: metric.emissions_nox
+  answer: 1860
+  expected_definition_fingerprint: 2991d6337ef35802f501fe944f155bdb3561d64775e2a9c674e8138dcae3fe06
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 熱處理爐 1,555（監測）、車輛 305（因子法）
+- target_key: metric.emissions_sox
+  answer: 12
+  expected_definition_fingerprint: 2e44d10bdb285c23d095e7bbb65897a045c845152d2086243564e5eac5d6fe15
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 柴油及汽油含硫量計算
+- target_key: metric.emissions_pm
+  answer: 96
+  expected_definition_fingerprint: fc4d007416f55b46d0389576cb9d5c20aa0329a7c4336dc64f0ceba30c8679b8
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 熱處理爐 60（監測）、車輛 36（因子法）
+- target_key: metric.emissions_voc
+  answer: 340
+  expected_definition_fingerprint: f9b9ad4e1378da880670278d21476eab3e05dde36dd2858d5b1e5b297b9be940
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 清洗及脫脂工序 290（物料衡算）、車輛 50
+- target_key: metric.emissions_wastewater_discharge
+  answer: 41200
+  expected_definition_fingerprint: 7ee76876efaa006ed81e303ca808cbb48e136babce416fa83429c954b3f3960f
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 東莞廠排放口流量計
+- target_key: metric.emissions_cod
+  answer: 1650
+  expected_definition_fingerprint: efcf7986814c28bf274bc76e003332611fa9b3a0aa3fd6bdc420635e1ad90d6f
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 季度第三方檢測平均濃度 40 mg/L × 排放量
+- target_key: metric.waste_hazardous_total
+  answer: 36.5
+  expected_definition_fingerprint: 0b055fcb42f71e69ceb3ebed8ac071e91a898dcbfe5b65824dd5fd6fd4a65000
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 轉移聯單重量合計
+- target_key: metric.waste_hazardous_intensity
+  answer: 0.075
+  expected_definition_fingerprint: af180b0303873971b9e4ebfa2da98766cde591084123b8ea4c2d85adff82399d
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 36.5 噸 ÷ 486.2 百萬港元
+- target_key: metric.waste_non_hazardous_total
+  answer: 412
+  expected_definition_fingerprint: 80065584dd683443ac21ce2dfba4b500409a9dded6458116c81a0febc8a3b95f
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 回收商及環衛過磅單合計
+- target_key: metric.waste_non_hazardous_intensity
+  answer: 0.847
+  expected_definition_fingerprint: 6030507231becc613b90d334ecd7510494fc68ea5e287a4047f3b9a6827d92f3
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 412 噸 ÷ 486.2 百萬港元
+- target_key: metric.waste_recycled_total
+  answer: 268
+  expected_definition_fingerprint: c9bc4b0e929136c544cbf2dd1fcde0506f1955afe5e692365d5f62fb84e5019f
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 金屬 232、紙 28、塑膠 8
+- target_key: metric.waste_recycling_rate
+  answer: 59.8
+  expected_definition_fingerprint: d8c3e7372550d33135b90f311c4f839eea210800c1a536573591bdae75f1fae7
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 268 ÷ (36.5 + 412)
+- target_key: metric.energy_purchased_electricity
+  answer: 11920
+  expected_definition_fingerprint: efcca47db8fc1ea8bbf15b98dc4e47c107e8b115fc8df8eaf722b1e8c071c08f
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 東莞廠 11,690、香港辦公室 230
+- target_key: metric.energy_renewable_electricity
+  answer: 1360
+  expected_definition_fingerprint: ac71893c3b9a6383174ff145ecff3ad1f134c1e35f36a7e027f373547aaff453
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 屋頂光伏自發自用；上網 120 MWh 不計入
+- target_key: metric.energy_natural_gas
+  answer: 4800
+  expected_definition_fingerprint: 600ff98022c1c481e47e41761790715efa49a108bc4bc548f845e6942c4ce888
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 退火及熱處理爐
+- target_key: metric.energy_diesel
+  answer: 410
+  expected_definition_fingerprint: 6fc7c266d0d63e6a6b496c7e600edfd48af229d80e50eb3c4e597e978977a6e6
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 備用發電機、廠區貨車
+- target_key: metric.energy_petrol
+  answer: 320
+  expected_definition_fingerprint: 9c8ff89b5529839d7e35ce1f98abfafdfe0dc892195b4722b4950818eb795be0
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 公司車輛
+- target_key: metric.energy_lpg
+  answer: 85
+  expected_definition_fingerprint: 0e9570b52e47a493030cb96e0ab78fc1ca827c6a4c5d6dc6a191c7dd64ee796a
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 員工飯堂、叉車
+- target_key: metric.energy_intensity_revenue
+  answer: 38.9
+  expected_definition_fingerprint: 3db74861e2314c42309aafbf9efd65c92ab834993d2f6f7ce3ef96f39c70d039
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 能源總量 18,895 MWh ÷ 486.2 百萬港元
+- target_key: metric.water_consumption_total
+  answer: 58400
+  expected_definition_fingerprint: c3b9eeadd0dd30238822ed29b9cb00e14b80b9ba5677bb06b57496fd601a9c66
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 東莞廠 56,900（水錶）、香港辦公室 1,500（物業分攤估算）
+- target_key: metric.water_intensity_revenue
+  answer: 120.1
+  expected_definition_fingerprint: 4a6d4fe1ea687fc7ad26145433120de8d22c4ea1ebe16c29830ce03211ffd553
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 58,400 ÷ 486.2 百萬港元
+- target_key: metric.water_recycled
+  answer: 6200
+  expected_definition_fingerprint: b0b1c19c3d0693ad0a77d67443acc38ff71a60dea4e237bde77a8301b333c38a
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 雨水收集 2,400、中水回用 3,800
+- target_key: metric.packaging_total
+  answer: 186
+  expected_definition_fingerprint: 92cde5b31c987031384b243364e99ab01490e9c52731069b533bc8c7ddf5c3ca
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 紙箱 124、塑膠托盤及膠袋 47、其他 15
+- target_key: metric.packaging_recycled_content_rate
+  answer: 62
+  expected_definition_fingerprint: 0f9adf9d9b4f64fd12550052c3d2a0cab1c9f5f1e3af1211b2fda47a64eff19e
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 按供應商再生材料含量聲明加權
+- target_key: metric.employment_total_workforce
+  answer: 612
+  expected_definition_fingerprint: 40944e68b25702de6ccc61f8c0ff0c3d88ee0d344460ad04fd8500661a8bd751
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 期末在冊
+- target_key: metric.employment_female
+  answer: 268
+  expected_definition_fingerprint: f78e9bdab3fcee9f33fa2e3cbc7c6d96b176773e3cd753c0f0795d72fdfe2937
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+- target_key: metric.employment_male
+  answer: 344
+  expected_definition_fingerprint: 959947c7a5cd48cf63347e5e1859b7947d4a865447868014eed01b4a2f03d090
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+- target_key: metric.employment_full_time
+  answer: 598
+  expected_definition_fingerprint: b3f7266aa0a6bf30212ecc93329a276142b4258956aa62614f500e6053fc5479
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+- target_key: metric.employment_part_time
+  answer: 14
+  expected_definition_fingerprint: dbf53e014dff52a2cc3175196c359797c7c7d8a0fcba2616267952c95b83efa8
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 香港辦公室行政及清潔崗位
+- target_key: metric.employment_age_under_30
+  answer: 214
+  expected_definition_fingerprint: c4281bc9ea873e30e05e7a480f05c771befef09d59713a90a0d7d7075de006d6
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+- target_key: metric.employment_age_30_50
+  answer: 336
+  expected_definition_fingerprint: a45a6fdbb104e83b42721181660c2ca07463d71fffe419d080c0b707f1b75736
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+- target_key: metric.employment_age_over_50
+  answer: 62
+  expected_definition_fingerprint: 33c97a26a100af6f7e7acc8c55d1e95e17e022c0f25cc6a8fe8bbf9e18ff10d7
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+- target_key: metric.employment_region_hong_kong
+  answer: 38
+  expected_definition_fingerprint: daa210b4e9ba473ebb0df89d3e927e1a45092414b9b342346703043cfd5593c6
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+- target_key: metric.employment_region_mainland
+  answer: 574
+  expected_definition_fingerprint: 00cf5404af118949cc034f143940235044b94588fa4beb1aaf24af200373f9bd
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+- target_key: metric.employment_region_other
+  answer: 0
+  expected_definition_fingerprint: e830c3bca17f01068819fda2fbf0b1f46356769b1cfae4ac59edb3b501b1c72d
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+- target_key: metric.employment_turnover_rate_total
+  answer: 11.1
+  expected_definition_fingerprint: 5ff4b7322c18dd4e02e33a8c8fe6145c4ebda9926461811453072b2477fb6f7c
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 離職 68 ÷ 期末 612
+- target_key: metric.employment_turnover_rate_female
+  answer: 12.3
+  expected_definition_fingerprint: 70d0adc38164c5034891b696a016f78919ae497793f609a7316d2b6f6a62f54e
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 33 ÷ 268
+- target_key: metric.employment_turnover_rate_male
+  answer: 10.2
+  expected_definition_fingerprint: 78e230ac10bdb01e51b612a6eca19e6bcc6786a845de6f33c0b75d9bf4135647
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 35 ÷ 344
+- target_key: metric.employment_turnover_rate_under_30
+  answer: 15.0
+  expected_definition_fingerprint: a1af159b162f2a6e123e5e06a1f92d02be24c226961c080409e52ac151092588
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 32 ÷ 214
+- target_key: metric.employment_turnover_rate_30_50
+  answer: 9.2
+  expected_definition_fingerprint: dbaf8f697efb8aded426358c653ab4a87bd2880215f9294404f0abd9a74845e9
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 31 ÷ 336
+- target_key: metric.employment_turnover_rate_over_50
+  answer: 8.1
+  expected_definition_fingerprint: 02144f9c006108ba8340f54d5fe4aff1de103f1bfd33012e3232860722da5343
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 5 ÷ 62
+- target_key: metric.health_safety_fatalities_current
+  answer: 0
+  expected_definition_fingerprint: d1369a18ab658fd4423ba3763fec060bb3807197f3db62bae4cb885b99202b1e
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+- target_key: metric.health_safety_fatalities_prior_1
+  answer: 0
+  expected_definition_fingerprint: 466038d782078f3dde115fd05fddaa7939e52404f0866d0a157688c741dffa30
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 2024 年
+- target_key: metric.health_safety_fatalities_prior_2
+  answer: 0
+  expected_definition_fingerprint: c92efb923daed2d115627600538dd9af723521e89ea599bb596d423edaf53632
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 2023 年
+- target_key: metric.health_safety_fatality_rate
+  answer: 0
+  expected_definition_fingerprint: e5fa1f809d2a793f910f63ee26fb39e908af0becce720ba123c3209a7a0489c9
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+- target_key: metric.health_safety_lost_days
+  answer: 126
+  expected_definition_fingerprint: bd295ef9aaf6480a46121ae908612e04a880412e8da97225218e0036b8cc9d13
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 7 宗工傷個案合計
+- target_key: metric.health_safety_injury_cases
+  answer: 7
+  expected_definition_fingerprint: ec62d775843aec6151aad8b7fe543c453a5a41aefe9257bddec42602fbfeb747
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 損失工作日 1 天或以上
+- target_key: metric.training_employees_trained_rate
+  answer: 91
+  expected_definition_fingerprint: f6ebf046691c0cf7cc75d8fadf20cae32a410824e1d773a2f61df2cb15937720
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 557 ÷ 612
+- target_key: metric.training_rate_female
+  answer: 90
+  expected_definition_fingerprint: 76bb695aaad0f8aec86ca996a25781028c6feba37fb0983e48beb1426255a696
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 241 ÷ 268
+- target_key: metric.training_rate_male
+  answer: 92
+  expected_definition_fingerprint: 7cfee5e3cf66c650d589704cb89a8bb9cdd9cdffe24b35287659656df6dce3be
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 316 ÷ 344
+- target_key: metric.training_rate_senior_management
+  answer: 100
+  expected_definition_fingerprint: 34fa86e95fce0137adeabc3cbece085c2a4124d793ede1333594e225752688fd
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 12 ÷ 12
+- target_key: metric.training_rate_middle_management
+  answer: 95
+  expected_definition_fingerprint: b66d3d84c400b83aaec5381ef6ad35ec52655487cf22cb72932c53b80fb5ba84
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 55 ÷ 58
+- target_key: metric.training_rate_general_staff
+  answer: 90
+  expected_definition_fingerprint: f7324262d8dd1197983b411350e85bd01c4f2efb05c97499df7936770bc66e9a
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 490 ÷ 542
+- target_key: metric.training_hours_average
+  answer: 18.5
+  expected_definition_fingerprint: bddb75c5604793708e03c09c3fadc435beb9ec5bb29f01e7921d23c52ef7e5d6
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 總時數 11,322 ÷ 612
+- target_key: metric.training_hours_female
+  answer: 17.2
+  expected_definition_fingerprint: e755fc6f7e1838f26a0a85147e58befa287a204a74c91f6681d10be665e25071
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 4,614 ÷ 268
+- target_key: metric.training_hours_male
+  answer: 19.5
+  expected_definition_fingerprint: b18f89fb340763e16c66ca1e4e741ace2eea90b7575af5ab3a0e2273f3a7f70f
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 6,708 ÷ 344
+- target_key: metric.training_hours_senior_management
+  answer: 24.0
+  expected_definition_fingerprint: b9fa3ed08b0be826f9224adb623b4bcc72b23ad02f8dda5c4b41c45ce570de8e
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 288 ÷ 12
+- target_key: metric.training_hours_middle_management
+  answer: 22.5
+  expected_definition_fingerprint: e662ca72d843ed56a19be7048e5b9fb2848e67756cfbb2089384b5576e56db5c
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 1,305 ÷ 58
+- target_key: metric.training_hours_general_staff
+  answer: 18.0
+  expected_definition_fingerprint: b1014a0b6e77d111f74b0ed0679e35c78c729636858aae26957bad36040ab6d6
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 9,729 ÷ 542
+- target_key: metric.supply_chain_suppliers_total
+  answer: 213
+  expected_definition_fingerprint: b1e62a39f96238387249870ad3c34d3eed79b17b3b9f928fa3860400420aa986
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 年內有交易的活躍供應商
+- target_key: metric.supply_chain_suppliers_hong_kong
+  answer: 26
+  expected_definition_fingerprint: 01c2b6250664b1b1a0fe096ff1380a48aadff2b6240d7493a4cc89cd823ab480
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+- target_key: metric.supply_chain_suppliers_mainland
+  answer: 171
+  expected_definition_fingerprint: aefd57ee23f816fb7bc32e2455d9d128554573711886bfbf04d75b7b8645cecc
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+- target_key: metric.supply_chain_suppliers_other
+  answer: 16
+  expected_definition_fingerprint: 0d9146cd18ca0b273f83122a9a2e8779e199643e63e178fd27b744f840be45e6
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 日本、台灣、德國、馬來西亞
+- target_key: metric.supply_chain_suppliers_assessed
+  answer: 213
+  expected_definition_fingerprint: d36f077b8f3c70fdf216f55386f2c4275edd423294618516a5bf6b27a060c4a6
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 全部簽署《供應商行為準則》並完成 ESG 自評；現場審核 42 家
+- target_key: metric.product_recall_rate
+  answer: 0
+  expected_definition_fingerprint: b7b72156d13b6fb803a252b43a1538dc5f60a52df4dac334a03a59dd8e91321c
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 無因安全與健康理由的回收
+- target_key: metric.product_complaints
+  answer: 9
+  expected_definition_fingerprint: d791ccfb591c8eb0c186d9ad4a508747d8e060369270f144dc189887d53e7dd9
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 品質 6、交付 2、包裝 1
+- target_key: metric.product_complaints_resolved_rate
+  answer: 100
+  expected_definition_fingerprint: 2d184cadfee8de56e04de084e5735dc0488b1ea420b9d6c774c19e7cdf3aa8c9
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 全部於期內關閉，平均 6.4 天
+- target_key: metric.privacy_data_breaches
+  answer: 0
+  expected_definition_fingerprint: a09f5c880bfd6fda64f016ac9976a32fa3bb51998f9a1e9a8e8fa8af7dddad86
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+- target_key: metric.anti_corruption_legal_cases
+  answer: 0
+  expected_definition_fingerprint: 1f4b68420cb064471d1b44176a6536938e5a995bf0bfd85149d8c69ebef40026
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+- target_key: metric.anti_corruption_training_directors
+  answer: 7
+  expected_definition_fingerprint: 866b1e4dc3b8051a9141f20251f4c556f9c7368f6fedfa4ef5dbe69e6b65b053
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 全體董事，各 2 小時
+- target_key: metric.anti_corruption_training_employees
+  answer: 486
+  expected_definition_fingerprint: 3674ded3b612b9f18131bf9a3a82ff6596f7c6df24937392da7780508d930191
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 入職 74、高風險崗位 126、全員線上 286
+- target_key: metric.anti_corruption_training_hours
+  answer: 1120
+  expected_definition_fingerprint: e98e863f226c00ac62c8df937c3cc9bddeee1d5c19d5e231e9bf98ea4086a5a3
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 董事 14 + 僱員 1,106
+- target_key: metric.community_donations
+  answer: 186
+  expected_definition_fingerprint: 3d26f2e6c0426d047da4ca8caba69863edfa6a9e8912ae48eeae483060595a2c
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 教育 96、環境 40、社區服務 50
+- target_key: metric.community_volunteer_hours
+  answer: 640
+  expected_definition_fingerprint: b6b898ae1fb1ac92dd7eddfb29e85a0cd180a5c8ad69c7a18c6c029bb74af4d5
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 6 次活動
+- target_key: metric.community_volunteer_participants
+  answer: 112
+  expected_definition_fingerprint: cdcff7baaba999dd4af4c49ade768350618e44339b77b68f8cba4ac79f679e1e
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 143 人次去重

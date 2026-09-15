@@ -1,0 +1,17 @@
+# ABOUTME(en): Topic-specific intake questions of "Data Protection and Privacy"; the four fixed pillar questions come from topic_intake_common.yaml.
+# ABOUTME(en): Quantitative KPIs are collected through the metric catalog, not here.
+contentScopeId: data_protection_and_privacy
+items:
+- key: privacy.q_privacy_policies
+  prompt: |-
+    What do the company's customer data protection and privacy policies cover?
+  kind: text
+  collectionPriority: recommended
+  hint: Purpose limits, retention, transfers, access requests.
+  maxChars: 5000
+- key: privacy.q_data_security_measures
+  prompt: What data security measures has the company taken?
+  kind: text
+  collectionPriority: recommended
+  hint: Access control, encryption, backup, training, response.
+  maxChars: 5000

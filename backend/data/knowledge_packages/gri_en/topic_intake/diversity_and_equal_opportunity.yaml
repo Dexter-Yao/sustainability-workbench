@@ -1,0 +1,23 @@
+# ABOUTME(en): Topic-specific intake questions of "Diversity and Equal Opportunity"; the four fixed pillar questions come from topic_intake_common.yaml.
+# ABOUTME(en): Quantitative metrics are collected through the metric catalog, not here.
+contentScopeId: diversity_and_equal_opportunity
+items:
+- key: diversity.q_diversity_policy
+  prompt: Does the company have a diversity or equal opportunity policy?
+  kind: single_select
+  collectionPriority: recommended
+  options:
+  - Yes, a written policy
+  - Yes, as part of another policy
+  - Not yet
+  - Not sure
+  hint: State whether a policy exists, not its content.
+  maxChars: 5000
+- key: diversity.q_diversity_measures
+  prompt: What measures does the company take to support equal opportunity?
+  kind: text
+  collectionPriority: recommended
+  hint: Recruitment, development, pay review; or blank.
+  generationBoundary: |-
+    Unless specific facts are given, do not generate proportions, pay gaps or programme names.
+  maxChars: 5000

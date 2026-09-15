@@ -1,0 +1,103 @@
+# ABOUTME(en): Report-level obligations of Appendix C2 Part B (mandatory disclosure requirements) and the
+# ABOUTME(en): "comply or explain" fallback: obligations that belong to the report as a whole, not to one Aspect.
+# ABOUTME(en): Carriers are declared here; the judging rules live in contract/disclosure_coverage.py.
+#
+# obligationKind 取值：
+#   structural  報告骨架靜態滿足的結構義務（章節存在與相對次序）
+#   statement   須在正文出現的聲明義務（董事會聲明、匯報原則、匯報範圍等），按實例判定
+#   process     須披露過程或機制的義務（重要性評估過程）
+#   fallback_statement  守則內置的「不遵守就解釋」出口，未觸發不構成缺口
+#
+# 段落編號以港交所 2025 年 1 月 1 日生效版本為準，待與繁體版守則逐條核對。
+reportLevelDisclosureObligations:
+- obligationKey: c2.board_statement
+  obligationTitle: 董事會聲明
+  sourceLabel: 港交所·附錄C2·B部 第13段
+  obligationText: 環境、社會及管治報告須載有董事會聲明，說明（i）董事會對環境、社會及管治事宜的監管；（ii）董事會的環境、社會及管治管理方針及策略，包括評估、優先排序及管理重要的環境、社會及管治相關事宜（包括對發行人業務的風險）的過程；及（iii）董事會如何按環境、社會及管治相關目標檢討進度，並解釋它們如何與發行人業務有關連。
+  obligationKind: statement
+  carrierSectionKeys: [board_statement]
+  carrierBlockIds: [board.oversight, board.management_approach, board.progress_review]
+  userFacingNote: 報告未載有完整的董事會聲明。守則規定董事會聲明須涵蓋董事會監管、管理方針及策略（包括重要性評估過程）以及目標進度的檢討方式三項內容。
+
+- obligationKey: c2.reporting_principles
+  obligationTitle: 匯報原則
+  sourceLabel: 港交所·附錄C2·B部 第14段
+  obligationText: 環境、社會及管治報告須說明報告如何應用匯報原則：重要性、量化、平衡及一致性，包括說明重要性評估的過程及結果、量化資料的準則與方法，以及披露資料統計方法或關鍵績效指標的變動。
+  obligationKind: statement
+  carrierSectionKeys: [about_report.principles]
+  carrierBlockIds: [about.principles]
+  userFacingNote: 報告未說明如何應用重要性、量化、平衡及一致性四項匯報原則。
+
+- obligationKey: c2.reporting_boundary
+  obligationTitle: 匯報範圍
+  sourceLabel: 港交所·附錄C2·B部 第15段
+  obligationText: 環境、社會及管治報告須解釋其匯報範圍，說明哪些實體或業務納入報告；如匯報範圍有所變動，須解釋差異及變動原因。
+  obligationKind: statement
+  carrierSectionKeys: [about_report.scope]
+  carrierBlockIds:
+  - about.scope
+  - about.scope_without_short_name
+  - about.scope_parent_only
+  - about.scope_parent_only_without_short_name
+  - about.scope_special
+  - about.scope_special_without_short_name
+  userFacingNote: 報告未載明匯報範圍。守則規定須解釋哪些實體或業務納入報告，建議在定稿前補充公司全稱及匯報範圍口徑。
+
+- obligationKey: c2.reporting_period
+  obligationTitle: 匯報期間
+  sourceLabel: 港交所·附錄C2·A部 第4段
+  obligationText: 環境、社會及管治報告所涵蓋的期間須與發行人年報所涵蓋的財政年度一致。
+  obligationKind: statement
+  carrierSectionKeys: [about_report.timeframe]
+  carrierBlockIds: [about.timeframe]
+  userFacingNote: 報告未載明匯報期間。守則規定匯報期間須與年報財政年度一致，建議在定稿前補充報告期起止日期。
+
+- obligationKey: c2.materiality_process_disclosure
+  obligationTitle: 重要性評估過程與結果披露
+  sourceLabel: 港交所·附錄C2·B部 第13(ii)段及第14段（重要性原則）
+  obligationText: 報告須披露重要的環境、社會及管治事宜的識別過程與選擇準則、董事會如何評估及優先排序這些事宜，以及重要性評估的結果。
+  obligationKind: process
+  carrierSectionKeys: [sm.materiality]
+  carrierBlockIds: []
+  userFacingNote: 報告未披露重要性評估的過程與結果。
+
+- obligationKey: c2.framework_structure
+  obligationTitle: 報告框架完整性
+  sourceLabel: 港交所·附錄C2·B部及C部
+  obligationText: 報告須涵蓋董事會聲明、匯報原則與範圍的說明、各層面的一般披露與關鍵績效指標，以及氣候相關披露；本包以關於本報告、董事會聲明、關於本公司、可持續發展管治、各主要範疇章節及附錄承載。
+  obligationKind: structural
+  carrierSectionKeys:
+  - about_report
+  - board_statement
+  - company_intro
+  - sustainability_mgmt
+  - report_appendix
+  carrierBlockIds: []
+  userFacingNote: 報告框架缺少守則要求的組成部分。
+
+- obligationKey: c2.content_index
+  obligationTitle: 守則內容索引
+  sourceLabel: 港交所·附錄C2·C部（「不遵守就解釋」條文）
+  obligationText: 報告宜提供守則一般披露及關鍵績效指標與報告章節的對照索引；未披露的條文須解釋原因。
+  obligationKind: structural
+  carrierSectionKeys: []
+  carrierBlockIds: [appendix.standards_index.table]
+  userFacingNote: 報告缺少守則內容索引。
+
+- obligationKey: c2.comply_or_explain
+  obligationTitle: 不遵守就解釋
+  sourceLabel: 港交所·附錄C2·A部 第2段
+  obligationText: 就C部「不遵守就解釋」條文，發行人若偏離有關條文，須在報告中提供經過審慮的理由解釋。
+  obligationKind: fallback_statement
+  carrierSectionKeys: []
+  carrierBlockIds: []
+  userFacingNote: 部分一般披露或關鍵績效指標未披露。守則允許以解釋替代：須在報告中說明未披露的經過審慮的理由。
+
+- obligationKey: c2.climate_scope3_relief
+  obligationTitle: 範圍3排放的過渡安排
+  sourceLabel: 港交所·附錄C2·D部 第30段（實施寬免）
+  obligationText: 發行人如未能披露範圍3溫室氣體排放，可在過渡期內披露其為披露該資料所採取的行動及時間表，或以定性資料替代。
+  obligationKind: fallback_statement
+  carrierSectionKeys: []
+  carrierBlockIds: []
+  userFacingNote: 報告未披露範圍3溫室氣體排放。守則允許在過渡期內以說明工作計劃與時間表替代。

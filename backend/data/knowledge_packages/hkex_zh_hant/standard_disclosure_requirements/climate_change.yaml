@@ -1,0 +1,120 @@
+# ABOUTME(en): Appendix C2 disclosure requirements of「氣候變化」(General Disclosure and KPIs), grouped by pillar,
+# ABOUTME(en): for the coverage audit and for prompt assembly by key whitelist (injection is switch-gated, off by default) and for the coverage audit. Wording awaits check against the official Chinese text.
+topicStandardDisclosureRequirementGroups:
+- topicSectionKey: climate_change.gov
+  pillar: governance
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: climate_change.gov.board_oversight
+    standardDisclosureRequirementTitle: 董事會對氣候相關風險與機遇的監管
+    excerptFrom: 港交所·附錄C2·D部 第19段
+    standardDisclosureRequirementText: |-
+      應披露負責監管氣候相關風險與機遇的治理機構或個別人士，包括其職權如何反映於職權範圍、其具備的相關技能與能力、獲知相關事宜的方式及頻次、如何在監督策略及重大交易決策時考慮氣候相關風險與機遇，以及如何監督目標的訂立及進度。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: D部 第19段
+  - standardDisclosureRequirementKey: climate_change.gov.management_role
+    standardDisclosureRequirementTitle: 管理層在氣候相關事宜中的角色
+    excerptFrom: 港交所·附錄C2·D部 第20段
+    standardDisclosureRequirementText: |-
+      應披露管理層在管治過程、控制措施及程序中監察、管理及監督氣候相關風險與機遇的角色，包括該角色是否授予特定管理層職位或委員會、如何進行監督，以及管理層是否使用控制措施及程序支持該監督。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: D部 第20段
+- topicSectionKey: climate_change.strategy
+  pillar: strategy
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: climate_change.strategy.risks_and_opportunities
+    standardDisclosureRequirementTitle: 氣候相關風險與機遇
+    excerptFrom: 港交所·附錄C2·D部 第21段
+    standardDisclosureRequirementText: |-
+      應披露可合理預期會影響公司前景的氣候相關風險與機遇，說明每項風險屬實體風險或過渡風險，並說明其可合理預期發生影響的時間範圍（短期、中期或長期）及公司如何界定該等時間範圍。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: D部 第21段
+  - standardDisclosureRequirementKey: climate_change.strategy.business_model_and_value_chain
+    standardDisclosureRequirementTitle: 對業務模式及價值鏈的影響
+    excerptFrom: 港交所·附錄C2·D部 第22段
+    standardDisclosureRequirementText: 應披露氣候相關風險與機遇對公司業務模式及價值鏈當前及預期的影響，以及該等風險與機遇在業務模式及價值鏈中集中的地方。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: D部 第22段
+  - standardDisclosureRequirementKey: climate_change.strategy.strategy_and_transition_plan
+    standardDisclosureRequirementTitle: 策略、決策及過渡計劃
+    excerptFrom: 港交所·附錄C2·D部 第23至24段
+    standardDisclosureRequirementText: |-
+      應披露公司如何應對氣候相關風險與機遇，包括對業務模式及資源分配的當前及預期變動、直接及間接的減緩及適應措施、過渡計劃及其所依賴的主要假設、計劃投入的資源，以及計劃的進度。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: D部 第23至24段
+  - standardDisclosureRequirementKey: climate_change.strategy.financial_effects
+    standardDisclosureRequirementTitle: 對財務狀況、財務表現及現金流的影響
+    excerptFrom: 港交所·附錄C2·D部 第24段
+    standardDisclosureRequirementText: 應披露氣候相關風險與機遇對公司當期財務狀況、財務表現及現金流的影響，以及短、中、長期預期的影響；未能提供定量資料時，應說明原因並提供定性資料。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: D部 第24段
+  - standardDisclosureRequirementKey: climate_change.strategy.climate_resilience
+    standardDisclosureRequirementTitle: 氣候韌性
+    excerptFrom: 港交所·附錄C2·D部 第25至26段
+    standardDisclosureRequirementText: |-
+      應披露公司對其策略及業務模式就氣候相關變動、發展及不確定因素的韌性評估，包括評估方法（如情景分析）、所採用的情景及假設，以及評估的時間範圍與結論；未採用情景分析的，可按實施寬免說明原因及計劃。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: D部 第25至26段
+  - standardDisclosureRequirementKey: climate_change.strategy.climate_targets
+    standardDisclosureRequirementTitle: 氣候相關目標
+    excerptFrom: 港交所·附錄C2·D部 第33至35段
+    standardDisclosureRequirementText: |-
+      應披露公司為監察策略目標進度而訂立的量化及定性氣候相關目標，包括目標的指標、目的、適用範圍、基準期、目標期、里程碑及進度；溫室氣體減排目標須說明所涵蓋的溫室氣體範圍及是否使用碳信用。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: D部 第33至35段
+- topicSectionKey: climate_change.iro
+  pillar: iro_management
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: climate_change.iro.risk_management_process
+    standardDisclosureRequirementTitle: 氣候相關風險與機遇的識別、評估及管理過程
+    excerptFrom: 港交所·附錄C2·D部 第27段
+    standardDisclosureRequirementText: |-
+      應披露公司識別、評估、優先排序及監察氣候相關風險與機遇所用的過程及相關政策，包括所用的輸入資料及參數、是否採用情景分析、如何評估性質、可能性及影響程度、如何排序及監察，以及該過程如何融入整體風險管理過程。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: D部 第27段
+- topicSectionKey: climate_change.metrics
+  pillar: metrics_targets
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: climate_change.metrics.ghg_emissions
+    standardDisclosureRequirementTitle: 溫室氣體排放（範圍1、範圍2及範圍3）
+    excerptFrom: 港交所·附錄C2·D部 第28至32段
+    standardDisclosureRequirementText: |-
+      應披露匯報期間的範圍1及範圍2溫室氣體絕對排放量（以二氧化碳當量公噸計）及所採用的計量方法、假設及排放因子；範圍3排放按過渡安排披露或說明工作計劃。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: D部 第28至32段
+  - standardDisclosureRequirementKey: climate_change.metrics.climate_related_metrics
+    standardDisclosureRequirementTitle: 氣候相關風險、機遇、資本開支及內部碳價格
+    excerptFrom: 港交所·附錄C2·D部 第36至37段
+    standardDisclosureRequirementText: |-
+      如相關，應披露易受氣候相關過渡風險及實體風險影響的資產或業務活動、與氣候相關機遇相符的資產或業務活動、投放於氣候相關風險與機遇的資本開支及投資，以及內部碳價格及其應用。
+    disclosureRequirementObligationLevel: conditional
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: D部 第36至37段
+  - standardDisclosureRequirementKey: climate_change.metrics.industry_based_metrics
+    standardDisclosureRequirementTitle: 行業特定指標
+    excerptFrom: 港交所·附錄C2·D部 第38段
+    standardDisclosureRequirementText: 鼓勵發行人參照行業特定指引披露與其所屬行業相關的氣候指標。
+    disclosureRequirementObligationLevel: encouraged
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: D部 第38段

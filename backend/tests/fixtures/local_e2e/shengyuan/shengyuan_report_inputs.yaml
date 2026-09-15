@@ -1,0 +1,392 @@
+contract: sustainability_desk.local_e2e_report_input_fixture.v1
+fixtureId: shengyuan-synthetic-full-lightweight-v1
+artifactPurpose: local_e2e_test
+fixtureBasis: simulated_for_local_e2e
+reportProfileId: sse_zh_hans@1
+corpusId: shengyuan-synthetic-corpus
+reportingEntity: 晟原精密电子股份有限公司
+reportingYear: 2025
+consolidationScope: 报告范围为公司本部及苏州主生产基地，无并表子公司。
+assessmentScores:
+  climate_change:
+    financialScore: 4.4
+    impactScore: 4.3
+  environmental_compliance_management:
+    financialScore: 4.3
+    impactScore: 4.4
+  pollutant_emissions_management:
+    financialScore: 4.2
+    impactScore: 4.5
+  waste_management:
+    financialScore: 4.1
+    impactScore: 4.3
+  circular_economy_promotion:
+    financialScore: 4.0
+    impactScore: 4.2
+  energy_management:
+    financialScore: 4.4
+    impactScore: 4.2
+  water_resource_management:
+    financialScore: 4.0
+    impactScore: 4.2
+  ecosystem_biodiversity_protection:
+    financialScore: 4.0
+    impactScore: 4.1
+  human_capital_development:
+    financialScore: 4.3
+    impactScore: 4.4
+  occupational_health_safety:
+    financialScore: 4.5
+    impactScore: 4.5
+  rural_revitalization:
+    financialScore: 4.0
+    impactScore: 4.1
+  social_contribution:
+    financialScore: 4.0
+    impactScore: 4.1
+  sustainable_supply_chain_management:
+    financialScore: 4.4
+    impactScore: 4.3
+  sme_fair_treatment:
+    financialScore: 4.2
+    impactScore: 4.1
+  technology_ethics:
+    financialScore: 4.0
+    impactScore: 4.0
+  innovation_driven:
+    financialScore: 4.4
+    impactScore: 4.2
+  product_quality_safety:
+    financialScore: 4.6
+    impactScore: 4.5
+  customer_service_quality_management:
+    financialScore: 4.2
+    impactScore: 4.3
+  data_security_customer_privacy_protection:
+    financialScore: 4.3
+    impactScore: 4.4
+  anti_bribery_anti_corruption:
+    financialScore: 4.2
+    impactScore: 4.4
+  anti_unfair_competition:
+    financialScore: 4.0
+    impactScore: 4.2
+  risk_management:
+    financialScore: 4.1
+    impactScore: 4.1
+  due_diligence:
+    financialScore: 4.1
+    impactScore: 4.2
+greenhouseGasAccountingStandard: ISO 14064-1:2018及《工业企业温室气体排放核算和报告通则》（GB/T 32150-2015）
+inputWrites:
+- target_key: field.company_short_name
+  answer: 晟原精密
+  expected_definition_fingerprint: 273f7bb43f997f9a7808ee8b2dc0b9d4f2cdd870e66ca68cf3ba74c7c534abd3
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+- target_key: field.industry_major_category
+  answer: 制造业
+  expected_definition_fingerprint: e4a3e06784a5213ade4320cfa35d1a369c9119db5f0e542988dcd5d716d6d827
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+- target_key: field.industry_division
+  answer: 计算机、通信和其他电子设备制造业
+  expected_definition_fingerprint: c52423c6a5088fd6854d33dc3664719a97449b23433cfbbfa1b72ee380c8627e
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+- target_key: field.has_technology_ethics_sensitive_activity
+  answer: 是
+  expected_definition_fingerprint: dad797ad6e1d8a33955ffe53a14becf511e263f5a3a03a180f68dbf584483efc
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+- target_key: field.report_approval_year
+  answer: 2026
+  expected_definition_fingerprint: 72f85c26ce5fce108aec551d4298774eae9ff445ab55dfda45bab2e8f710346c
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+- target_key: field.report_approval_month
+  answer: 2026-04
+  expected_definition_fingerprint: 310a3cebf9a19aa0650103001532f3a44096bc92406136db9efc5a757d1aed1c
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+- target_key: field.report_approval_body
+  answer: 董事会
+  expected_definition_fingerprint: d06cb6ea9b4d782b5c4853045b3acdbd6081542eaf7e7394747109c1bb519d0b
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+- target_key: field.board_meeting_count
+  answer: 8
+  expected_definition_fingerprint: ba8d76d58d9c6bc35db7df90737473b08473897043bd62e11c1768fac6a87ada
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+- target_key: field.board_attendance_rate
+  answer: 96
+  expected_definition_fingerprint: 41e9665584c76b469c1ddbc5a93e01a3c1f87d1631ffad54d21306b91d869898
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+- target_key: company_profile
+  answer: '晟原精密电子股份有限公司成立于 2008 年，是一家专注于精密电子元器件与连接器研发、制造与销售的企业，注册地与主生产基地均位于江苏省苏州市工业园区。公司成立初期以消费电子领域的精密冲压端子加工起步，2012
+    年前后建立自有模具开发能力，逐步由来料加工转向自主设计制造。2015 年起顺应下游电动化趋势进入新能源汽车零部件配套领域，2019 年通过 IATF 16949
+    汽车质量管理体系认证，形成消费电子与新能源汽车并重的业务结构。
+
+
+    公司现有产品覆盖高速连接器、精密冲压端子与结构件三条产品线，应用于消费电子、新能源汽车与工业控制领域。其中消费电子与新能源汽车为两大主要应用市场，合计约占营业收入的
+    75%，工业控制及其他应用约占 25%。客户群体主要为境内外整机厂与车企一级供应商，区域覆盖华东、华北与珠三角等制造业集聚区；2025 年度活跃客户约 68
+    家，前三大客户营业收入贡献度约 26%，客户集中度相对均衡。
+
+
+    公司核心能力集中在精密模具开发与高一致性批量制造：设有产品研发中心与工艺创新中心，配备模具研发实验室与连接器性能测试室，具备尺寸检测、盐雾试验、插拔寿命等检验能力。截至
+    2025 年末在册员工 860 人，其中研发团队约 90 人；2025 年研发投入 3,900 万元，重点投向新能源汽车用高温高可靠性连接器与精密冲压工艺自动化。
+
+
+    公司已建立并持续运行 ISO 9001 质量管理体系、ISO 14001 环境管理体系、ISO 45001 职业健康安全管理体系与 IATF 16949 汽车质量管理体系。公司秉持精密制造与绿色低碳并重的经营理念，在满足客户质量与交付要求的同时，推进能源效率提升、废弃物资源化与供应链可持续管理。'
+  expected_definition_fingerprint: e37682f74ac4e3c93fd9abf55aa6d9ad298731bed300100be42657674177b0eb
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+- target_key: articles
+  answer: '公司依照《中华人民共和国公司法》及公司章程建立法人治理结构，由股东会、董事会、监事会与高级管理层构成，各治理主体职责边界与运行安排在公司章程中予以明确。
+
+
+    股东会为公司权力机构，依法行使审议批准公司经营方针与投资计划、选举和更换董事与监事、审议批准年度财务预算方案与决算方案等职权。
+
+
+    董事会对股东会负责，负责决定公司经营计划与投资方案、制定年度财务预算与决算方案、聘任或解聘高级管理人员，并决定公司内部管理机构的设置。董事会下设战略委员会与审计委员会，就重大投资与财务事项提出专业意见。2025
+    年度董事会共召开会议 8 次，董事平均出席率 96%。
+
+
+    监事会对股东会负责，负责检查公司财务、对董事与高级管理人员执行职务的行为进行监督。
+
+
+    高级管理层由总经理及各分管副总经理组成，在董事会授权范围内负责日常经营管理，组织实施董事会决议，并向董事会报告经营情况与重大事项进展。
+
+
+    可持续发展相关事项的治理安排在上述法人治理结构之下另行设立，具体见可持续发展治理架构说明。'
+  expected_definition_fingerprint: 86afc90b023048d043962718586983e5a8a35a4ab883034caddbf791685d12e0
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+- target_key: sustainability_governance_structure
+  answer: '公司可持续发展（ESG）事项实行「董事会—可持续发展委员会—可持续发展办公室—专项工作组」四层治理架构。
+
+
+    第一层为董事会，是公司可持续发展事项的最高决策机构，每年听取一次可持续发展工作专项汇报，审议年度可持续发展报告，并对重大可持续发展目标与投入作出决策。
+
+
+    第二层为可持续发展委员会，于 2024 年 10 月依据《可持续发展委员会工作规则》（SY-GOV-001）设立，向董事会报告。委员会主任委员由总经理陆勤担任，委员包括分管生产、质量与
+    EHS 的副总经理周敏，以及质量、人力资源、采购、法务合规等相关部门负责人。2025 年度委员会共召开 3 次会议。
+
+
+    第三层为可持续发展办公室，为常设执行机构，挂靠总经理办公室，主任由何静担任，向可持续发展委员会报告。办公室负责日常协调、信息收集与报告编制。
+
+
+    第四层为四个专项工作组，向可持续发展办公室报告：环境与能源工作组（牵头人 EHS 主管汪磊）、员工与安全工作组（牵头人人力资源部部长韩雪）、供应链工作组（牵头人采购部部长徐涛）、合规与商业道德工作组（牵头人法务合规专员秦朗）。各工作组成员由相关部门业务骨干兼任。'
+  expected_definition_fingerprint: ebefafdd63f4ba6d199cfb24aad02d225f63749582be767fa7541688146c4f1c
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+- target_key: sustainability_governance_duties
+  answer: '董事会负责审定公司可持续发展战略方向与年度目标，审议年度可持续发展报告，决策重大环境与社会议题相关投入；每年听取一次专项汇报，重大事项由可持续发展委员会随时报告。
+
+
+    可持续发展委员会负责将董事会确定的方向转化为年度重点工作，审议议题重要性评估结果、年度目标与实施计划，协调跨部门资源，审核报告披露口径；委员会向董事会报告工作。
+
+
+    可持续发展办公室负责统筹日常工作：组织年度议题重要性评估、收集与核对各部门可持续发展数据、编制年度可持续发展报告、跟踪各工作组行动项进展；办公室按月向委员会汇总进展。
+
+
+    四个专项工作组按职责领域分工落实，按季度向可持续发展办公室提交进展。环境与能源工作组负责环境合规、能源与排放、水资源与废弃物管理相关工作的执行与数据归集；员工与安全工作组负责人力资本发展、职业健康与安全相关制度执行与数据归集；供应链工作组负责供应商准入、评价、尽职调查与退出机制的执行；合规与商业道德工作组负责反商业贿赂、反不正当竞争与广告宣传合规审查的执行。
+
+
+    可持续发展相关责任嵌入各业务条线的日常职责，不另设平行序列：相关工作由对应工作组按领域牵头协调，由业务条线在本职流程中执行。数据归集实行「谁产生、谁负责」原则，由各数据来源指定提供人对本条线数据的准确性负责。'
+  expected_definition_fingerprint: 720650dbc4c1dadb0da0f85c86594d061bf8f2ed061467320535b80ab584eff7
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+- target_key: appendix.reader_feedback.address
+  answer: 江苏省苏州市工业园区晟原路 18 号
+  expected_definition_fingerprint: 76a95bae24c96ee0b72db329560cbb926ccdc1799654d0d12dc989c8d35b3277
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+- target_key: appendix.reader_feedback.email
+  answer: esg@example-shengyuan.com
+  expected_definition_fingerprint: f1ae8d7349f9be177adc7b07db59f47a6821adb92d2b60659cbeb7dc374ce825
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+- target_key: appendix.reader_feedback.phone
+  answer: 0512-00000000
+  expected_definition_fingerprint: ef3f5bd0d0c32ccaadd599db60827d47779b213d3f9536ad2b9a92ef13044ee1
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+- target_key: climate.q_climate_risk_choices
+  answer:
+  - 台风
+  - 极端高温
+  - 碳定价与排放监管政策变化
+  - 消费者偏好转变风险
+  expected_definition_fingerprint: d419b1cef1bce8309a00b9a750d02d3cdf480eb8c0eed3c6f51dddc176681437
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 合成判断：苏州基地面临台风与夏季高温，产品出口受碳定价与客户低碳偏好影响。
+- target_key: climate.q_climate_opportunity_choices
+  answer:
+  - 运营资源效率提升机遇
+  - 低碳产品方案开发机遇
+  - 能源绿色转型
+  expected_definition_fingerprint: ac6615965bc913454b0b052f7f141887a5b08999c204bfd05a5e8fe796c96b90
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 合成判断：注塑与冲压工序节能改造、低碳连接器方案与屋顶光伏。
+- target_key: climate.q_climate_target_status
+  answer: 正在制定相关目标
+  expected_definition_fingerprint: 9f4b53292aa53c19377b0f2ef39323918f96c6b4a558c2d0f653792ae3f66cd0
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 合成信息：正在围绕单位产值能耗与范围一二排放制定目标与口径。
+- target_key: metric.economic_environment_r03
+  answer: 650
+  expected_definition_fingerprint: edf27881e38059a15dcc8280f1c73f64290cabbf498bdbbb50d3137bf7123189
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 2025 年度营业收入
+- target_key: metric.economic_environment_r04
+  answer: 12800
+  expected_definition_fingerprint: a1972891b88b50c8a3cfb38a9287672f51285ef49dc6102730b51b6e799b49ac
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 苏州主厂区天然气与工艺直接排放
+- target_key: metric.economic_environment_r05
+  answer: 26400
+  expected_definition_fingerprint: d4468d899a6294f1f9bc04bafc54e28526671bfff6bab45c0c0827b88989025c
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 外购电力产生的间接排放（市场法）
+- target_key: metric.economic_environment_r11
+  answer: 12100
+  expected_definition_fingerprint: cce58a181b4dcabdd9c2f8428f5f0f9921a335c6a98797461e8371d946a38149
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 外购电力 42,500 MWh 折算标准煤
+- target_key: metric.economic_environment_r17
+  answer: 6500
+  expected_definition_fingerprint: cb3bced0f849410558a5a24ffd2ab3fdda5d4705aabe899c54d2b7cf0534d1d1
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 天然气 6,474 与柴油 26 折算标准煤合计
+- target_key: metric.economic_environment_r19
+  answer: 1200
+  expected_definition_fingerprint: 5206e3d78fcb3a256238834f2227933144b99d79980352ce465f93d48344414d
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 屋顶光伏发电自用部分折算
+- target_key: metric.economic_environment_r28
+  answer: 1.6
+  expected_definition_fingerprint: 3f4aa7d8499c88e7f613ffb2df41f35b0e4543c577e095fcbf334a655dcdebd8
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 主厂区废气治理设施处理后排放口
+- target_key: metric.economic_environment_r30
+  answer: 8600
+  expected_definition_fingerprint: a4967c01b0c6e578371793c3b7803475543a03bbec64b657a1e6d9e3e0c6802f
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 预处理后纳入园区污水管网的工业废水
+- target_key: metric.economic_environment_r38
+  answer: 42.6
+  expected_definition_fingerprint: 66caf30ffbbc10c9d99305af80dba24f65dd5bcf64e5eb501795f90fcc5b3e4c
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 一般工业固废、危险废弃物与生活垃圾合计
+- target_key: metric.economic_environment_r39
+  answer: 39.4
+  expected_definition_fingerprint: 8145ee430a0478bf9c2d805731153d9df594f7624a832e549b937099aaa1f398
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 金属边角料、一般包装废弃物与生活垃圾
+- target_key: metric.economic_environment_r40
+  answer: 3.2
+  expected_definition_fingerprint: 05d01f7d0edda90365fb2794d3f4a79d8256ac091de3a781f79016e76ff51bd2
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 含油抹布、废包装桶与废活性炭等
+- target_key: metric.economic_environment_r41
+  answer: 18.0
+  expected_definition_fingerprint: dd8a01b3ad4d4292913116e00406237266980c3c8f7e2779e8923ede656a099b
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 金属边角料与部分包装材料资源化利用
+- target_key: metric.economic_environment_r42
+  answer: 12500
+  expected_definition_fingerprint: 47e729faf4764f089d3f312b2fd72ae20f12caf656d3ea2034e5de2b99fb028a
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 主厂区生产与生活用水
+- target_key: metric.social_r02
+  answer: 860
+  expected_definition_fingerprint: 955236f2ba95a523a938f28d044895e45e95f81776ab665cedf77ef5ce7b95d6
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 报告期末在册员工
+- target_key: metric.social_r03
+  answer: 520
+  expected_definition_fingerprint: b0d7a6580aa3e366a411750ffce06c12c84ae84aee5a5a164979bb8991971f95
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 报告期末男性员工
+- target_key: metric.social_r04
+  answer: 340
+  expected_definition_fingerprint: 479900974e5ef2b53796846fad2d8bd177db3fbe4ed60719759996edfeea685f
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 报告期末女性员工
+- target_key: metric.social_r10
+  answer: 2
+  expected_definition_fingerprint: 4d5689bd913c1bf2df6114574e084e66d5dce7f237a3eb57f2e369ef4f1af4da
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 博士学历
+- target_key: metric.social_r11
+  answer: 48
+  expected_definition_fingerprint: 42e70a824a9a09a418cba0862e1850018aaeb107530816366cf7c33d7730d4cd
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 硕士学历
+- target_key: metric.social_r12
+  answer: 310
+  expected_definition_fingerprint: 2dbd7677be1c0a44adb31728604b5a106e213fa1a1e2516836b56831b1545bd4
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 本科学历
+- target_key: metric.social_r13
+  answer: 500
+  expected_definition_fingerprint: 9853fc15617264e1a8c74f5534f5ba1866d5c5e1397e64d312f5942569762d33
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 本科以下学历
+- target_key: metric.social_r17
+  answer: 8.5
+  expected_definition_fingerprint: 421238230cd4eb4961ef6c16316b35c13522c9254f5c4a9ed8748bbfb170c640
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 离职 72 人 ÷ 平均在册 846 人
+- target_key: metric.social_r25
+  answer: 86
+  expected_definition_fingerprint: 235ce6b4806b626e805a9afc7e3690bd84ece71505bd9f0fb17644f33733a3ba
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 覆盖生产、质量与管理岗位
+- target_key: metric.social_r26
+  answer: 12
+  expected_definition_fingerprint: d090788b186f0c456dd99188bef87c513ce6128a592581c5b441ad8285081b09
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 培训总学时 10,248 ÷ 员工总数 860
+- target_key: metric.social_r53
+  answer: 0
+  expected_definition_fingerprint: a84bd71b77cf8a2e3a5f5c0e64f0c5a3ced698dc6df2941b139ac8e27a95a040
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 报告期无产品召回
+- target_key: metric.social_r54
+  answer: 0
+  expected_definition_fingerprint: 30cafd4c358a977fe702f0835ccb6a7d4c0d2f1e740f358527ea69ae66aa60bc
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 报告期无产品召回
+- target_key: metric.social_r55
+  answer: 6
+  expected_definition_fingerprint: 2888106fa36c97dcd05b01512188e56bd368d3b7ec747c8a741151fde0d8cd80
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 产品及服务相关投诉
+- target_key: metric.social_r56
+  answer: 100
+  expected_definition_fingerprint: c215104f49a4df8399b56b9665a41d23e00b474075c92630d5757dda77952cd9
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 已受理投诉处理完成率
+- target_key: metric.social_r64
+  answer: 186
+  expected_definition_fingerprint: e6ff64d8bf3f732f67c87d5ea3f28b2aa76b575225b70785c741008b0fb46aea
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 纳入采购系统的活跃供应商
+- target_key: metric.social_r65
+  answer: 168
+  expected_definition_fingerprint: 4c7187a163ea2cb2a676923cf7ee6cc9c3650984424f1d766d09102733db32c7
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 中国内地供应商
+- target_key: metric.social_r66
+  answer: 4
+  expected_definition_fingerprint: 5d8f15f189b9ded227c8e902dce651a5e8c47a072d39e75a945260e4ae70abc2
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 港澳台地区供应商
+- target_key: metric.social_r67
+  answer: 14
+  expected_definition_fingerprint: 6e6dd94524de280d3c56afac3f08bbf57c990888eb76ce5cc34c9b3d555a13c3
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 国外供应商
+- target_key: metric.social_r69
+  answer: 6
+  expected_definition_fingerprint: e3cda928bc71e818940d9553be13c241baee1915890f813b8d5f2b79e5d62ebf
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 年度评价与退出记录
+- target_key: metric.governance_r06
+  answer: 4
+  expected_definition_fingerprint: 9d050f2722df37f600eb4184acb900c6e3f08108557ab9a43d7fe0ab356cd9d9
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 采购、财务、销售与供应商对接岗位廉洁培训
+- target_key: metric.governance_r07
+  answer: 128
+  expected_definition_fingerprint: 31ca87e17dcdda5c5d07087a1f2871282cda7188980f25ab8ae704676bdbcc46
+  expected_target_fingerprint: 3f86ae4459659e8a75ef3b0362b8a37af74229b6919995041e25122584496336
+  supplement: 廉洁培训签到统计

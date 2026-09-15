@@ -1,0 +1,103 @@
+# ABOUTME: 平等对待中小企业议题章节骨架，H2 标题以附录索引表“对应的本报告章节”为准。
+# ABOUTME: 本文件围绕公平合作和付款保障建模；未映射 ESG 定量数据表指标、供应商主数据或应付账款明细。
+section:
+  key: sme_fair_treatment
+  title: 平等对待中小企业
+  headingLevel: 2
+  reportSectionId: sme_fair_treatment
+  conciseDisclosure:
+    id: sme_fair_treatment.concise_summary
+    type: paragraph
+    blockType: generative
+    source: ai
+    styleRole: body
+    generation:
+      task:
+        focus: "根据本议题当前可见证据形成一段连贯摘要，覆盖相关管理关注、方向与实践，不使用四要素小标题。"
+      inputs: {evidence: {kind: report_section}}
+      targetChars: [300, 600]
+  children:
+  - key: sme_fair_treatment.gov
+    title: 治理
+    pillar: governance
+    headingLevel: 3
+    blocks:
+    - id: sme_fair_treatment.gov_fair_cooperation_management
+      type: paragraph
+      blockType: generative
+      source: ai
+      styleRole: body
+      generation:
+        task:
+          focus: "说明平等对待中小企业相关的管理原则、责任安排和基础机制。"
+        templateResidueBans:
+        - 报告期内，所有对中小企业款项均已按时支付
+        - 所有对中小企业款项均已按时支付
+        - 以实际行动支持其稳健运营与供应链可持续发展
+        inputs:
+          evidence:
+            kind: explicit
+            intakeItems:
+            - sme_fair_treatment.q_governance_roles
+            - sme_fair_treatment.q_governance_policies
+            - sme_fair_treatment.q_governance_certifications
+        targetChars:
+        - 140
+        - 260
+        standardDisclosureRequirementKeys:
+        - sme_fair_treatment.gov.fair_cooperation_required
+        - sme_fair_treatment.gov.fair_cooperation_encouraged
+  - key: sme_fair_treatment.strategy
+    title: 战略
+    pillar: strategy
+    headingLevel: 3
+    blocks:
+    - id: sme_fair_treatment.strategy_fair_cooperation_direction
+      type: paragraph
+      blockType: generative
+      source: ai
+      styleRole: body
+      generation:
+        task:
+          focus: "说明公平合作和中小企业权益保障的长期方向与推进原则。"
+        templateResidueBans:
+        - 报告期内，所有对中小企业款项均已按时支付
+        - 所有对中小企业款项均已按时支付
+        - 以实际行动支持其稳健运营与供应链可持续发展
+        inputs:
+          evidence:
+            kind: explicit
+            intakeItems:
+            - sme_fair_treatment.q_strategy_content
+        targetChars:
+        - 140
+        - 260
+        standardDisclosureRequirementKeys:
+        - sme_fair_treatment.strategy.fair_cooperation_strategy_required
+  - key: sme_fair_treatment.iro
+    title: 影响、风险与机遇管理
+    pillar: iro_management
+    headingLevel: 3
+    blocks:
+    - id: sme_fair_treatment.iro_payment_settlement_protection
+      type: paragraph
+      blockType: generative
+      source: ai
+      styleRole: body
+      generation:
+        task:
+          focus: "说明中小供应商账款履约和付款结算保障的相关实践。"
+        inputs:
+          evidence:
+            kind: explicit
+            intakeItems:
+            - sme_fair_treatment.q_sme_supplier_training_support
+            - sme_fair_treatment.q_supplier_payment_arrears
+        targetChars:
+        - 140
+        - 280
+        standardDisclosureRequirementKeys:
+        - sme_fair_treatment.iro.payment_settlement_required
+        - sme_fair_treatment.iro.overdue_payment_conditional
+metricDisclosure:
+  catalogMetricKeys: []

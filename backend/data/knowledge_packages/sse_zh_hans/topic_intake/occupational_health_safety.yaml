@@ -1,0 +1,46 @@
+# ABOUTME: 职业健康与安全议题轻量版内容清单，聚焦培训宣传、演练和安全投入举措。
+# ABOUTME: 治理、战略和指标目标固定题由 topic_intake_common.yaml 展开；结构化数值由 ESG 定量数据表维护。
+contentScopeId: occupational_health_safety
+items:
+- key: occupational_health_safety.q_safety_training_publicity
+  prompt: 公司是否开展过职业病防治、安全生产类培训或宣传？
+  kind: single_select
+  collectionPriority: recommended
+  options:
+  - 是
+  - 否
+  - 不确定
+  hint: 如选择是，请在补充说明中简述相关培训或宣传主题、覆盖对象范围等。
+  generationBoundary: 未填写具体数值时，不得生成培训人次、次数或覆盖率。
+  maxChars: 5000
+- key: occupational_health_safety.q_safety_drills
+  prompt: 公司是否开展过安全、消防或工作场所危险防范类演练？
+  kind: single_select
+  collectionPriority: recommended
+  options:
+  - 是
+  - 否
+  - 不确定
+  hint: 如选择是，请在补充说明中简述相关演练主题、员工参与情况等。
+  generationBoundary: 未填写具体数值时，不得生成演练次数或参与人数。
+  maxChars: 5000
+- key: occupational_health_safety.q_safety_investments_measures
+  prompt: 公司职业健康或劳动安全保护方面有哪些投入或举措？
+  kind: text
+  collectionPriority: recommended
+  hint: 简述安全投入或举措的内容。
+  termExplanation: 可包括安全防护用品、设备设施改造、职业健康检查、隐患排查、制度执行与培训演练。
+  generationBoundary: 未填写具体金额时，不得生成投入金额。
+  maxChars: 5000
+- key: occupational_health_safety.q_hazardous_chemicals_categories
+  prompt: 贵司生产经营中涉及哪些类别的危险化学品？
+  kind: multi_select
+  options:
+  - 易燃液体
+  - 腐蚀性物质
+  - 有毒有害气体
+  - 氧化剂与过氧化物
+  - 其他类别
+  collectionPriority: recommended
+  hint: 不涉及可不选。可在补充说明中填写具体品名、贮存与使用管控要求。
+  maxChars: 2000

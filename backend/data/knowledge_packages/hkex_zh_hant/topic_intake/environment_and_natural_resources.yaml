@@ -1,0 +1,23 @@
+# ABOUTME(en): Topic-specific intake questions of「環境及天然資源」; the four fixed pillar questions come from topic_intake_common.yaml.
+# ABOUTME(en): Quantitative KPIs are collected through the metric catalog, not here.
+contentScopeId: environment_and_natural_resources
+items:
+- key: natural_resources.q_significant_impacts
+  prompt: 貴公司的業務活動對環境及天然資源有哪些重大影響？
+  kind: multi_select
+  collectionPriority: recommended
+  options:
+  - 土地使用及廠房建設
+  - 生物多樣性及生態
+  - 噪音
+  - 光污染
+  - 原材料開採或採購
+  - 無重大影響
+  hint: 可多選；請在補充說明中簡述影響情況。
+  maxChars: 5000
+- key: natural_resources.q_mitigation_actions
+  prompt: 貴公司採取了哪些管理上述影響的行動？
+  kind: text
+  collectionPriority: recommended
+  hint: 可說明環境評估、綠化、噪音控制、可持續採購等行動；沒有可留空。
+  maxChars: 5000

@@ -1,0 +1,22 @@
+# ABOUTME(en): Manifest of the HKEX knowledge package in Traditional Chinese: Main Board Listing Rules
+# ABOUTME(en): Appendix C2 "Environmental, Social and Governance Reporting Code" (2025-01-01 text; A4 and KPI A1.2
+# ABOUTME(en): repealed, climate disclosures in Part D). Content files sit beside it under fixed names.
+schema_version: sustainability_desk.knowledge_package.v1
+id: hkex_zh_hant
+language: zh-Hant
+framework: hkex_esg_reporting_code
+display_name: 香港聯合交易所《環境、社會及管治報告守則》
+# Topic chapters carry the Part D climate pillars (管治／策略／風險管理／指標及目標); the same four
+# pillars structure every Aspect as policy, approach & compliance, and KPIs.
+pillar_titles:
+  governance: 管治
+  strategy: 策略
+  iro_management: 風險管理
+  metrics_targets: 指標及目標
+# 港交所守則的重要性原則以董事會判斷對投資者的重要程度為準；雙重重要性是官方
+# 列明的可參考做法，非要求。
+materiality_regime: financial_primary
+disclosure_basis:
+  mainland_standard_selectable: false
+  primary_standard_names:
+    - 香港聯合交易所有限公司《證券上市規則》附錄C2《環境、社會及管治報告守則》

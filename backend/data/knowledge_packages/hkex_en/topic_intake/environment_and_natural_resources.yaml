@@ -1,0 +1,24 @@
+# ABOUTME(en): Topic-specific intake questions of "The Environment and Natural Resources"; the four fixed pillar questions come from topic_intake_common.yaml.
+# ABOUTME(en): Quantitative KPIs are collected through the metric catalog, not here.
+contentScopeId: environment_and_natural_resources
+items:
+- key: natural_resources.q_significant_impacts
+  prompt: |-
+    What significant impacts do the company's activities have on the environment and natural resources?
+  kind: multi_select
+  collectionPriority: recommended
+  options:
+  - Land use and plant construction
+  - Biodiversity and ecology
+  - Noise
+  - Light pollution
+  - Raw material extraction or sourcing
+  - No significant impact
+  hint: Select all that apply; outline the impacts.
+  maxChars: 5000
+- key: natural_resources.q_mitigation_actions
+  prompt: What actions has the company taken to manage these impacts?
+  kind: text
+  collectionPriority: recommended
+  hint: Assessments, greening, noise control, sourcing; or blank.
+  maxChars: 5000

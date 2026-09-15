@@ -1,0 +1,23 @@
+# ABOUTME(en): Topic-specific intake questions of「能源管理」; the four fixed pillar questions come from topic_intake_common.yaml.
+# ABOUTME(en): Quantitative KPIs are collected through the metric catalog, not here.
+contentScopeId: energy_management
+items:
+- key: energy.q_energy_efficiency_measures
+  prompt: 貴公司採取了哪些提升能源效益的措施？
+  kind: text
+  collectionPriority: recommended
+  hint: 可說明設備更新、節能改造、能源監測及管理制度；沒有可留空。
+  generationBoundary: 未填寫具體數值時，不得生成節能量、節能比例或投資金額。
+  maxChars: 5000
+- key: energy.q_renewable_energy
+  prompt: 貴公司是否使用可再生能源？
+  kind: single_select
+  collectionPriority: recommended
+  options:
+  - 自建太陽能光伏等可再生能源設施
+  - 購買可再生能源電力或證書
+  - 兩者皆有
+  - 暫未使用
+  - 不確定
+  hint: 如有，請在補充說明中簡述裝機容量或採購安排。
+  maxChars: 5000

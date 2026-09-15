@@ -1,0 +1,140 @@
+# ABOUTME(en): HKEX topic contract: Appendix C2 Aspects (A1–A3, B1–B8) and the Part D climate chapter as
+# ABOUTME(en): scored topics → report H2 sections → fixed H1 subject-area modules. Module titles are fixed
+# ABOUTME(en): (no titleGenerationGuidance); mainland-only and governance topics without a C2 Aspect are absent.
+# 官方用語待與港交所繁體版守則逐條核對（見 docs/product-brief.md「HKEX 術語表」）。
+
+reportModules:
+  - id: environmental_aspects
+    navigationTitle: 環境
+    order: 10
+  - id: employment_and_labour_practices
+    navigationTitle: 僱傭及勞工常規
+    order: 20
+  - id: operating_practices
+    navigationTitle: 營運慣例
+    order: 30
+  - id: community
+    navigationTitle: 社區
+    order: 40
+
+dimensions:
+  - {id: environment, label: 環境, order: 10}
+  - {id: social, label: 社會, order: 20}
+
+assessmentTopics:
+  # —— A 環境 ——
+  - id: climate_change
+    name: 氣候變化
+    dimension: environment
+    order: 10
+    reportSectionId: climate_change
+    materialityDetermination: {kind: scored}
+  - id: emissions
+    name: 排放物
+    dimension: environment
+    order: 20
+    reportSectionId: emissions
+    materialityDetermination: {kind: scored}
+  - id: waste_management
+    name: 廢棄物管理
+    dimension: environment
+    order: 30
+    reportSectionId: waste_management
+    materialityDetermination: {kind: scored}
+  - id: energy_management
+    name: 能源管理
+    dimension: environment
+    order: 40
+    reportSectionId: energy_management
+    materialityDetermination: {kind: scored}
+  - id: water_management
+    name: 水資源管理
+    dimension: environment
+    order: 50
+    reportSectionId: water_management
+    materialityDetermination: {kind: scored}
+  - id: materials_and_packaging
+    name: 物料及包裝
+    dimension: environment
+    order: 60
+    reportSectionId: materials_and_packaging
+    materialityDetermination: {kind: scored}
+  - id: environment_and_natural_resources
+    name: 環境及天然資源
+    dimension: environment
+    order: 70
+    reportSectionId: environment_and_natural_resources
+    materialityDetermination: {kind: scored}
+  # —— B 社會 ——
+  - id: employment
+    name: 僱傭
+    dimension: social
+    order: 10
+    reportSectionId: employment
+    materialityDetermination: {kind: scored}
+  - id: health_and_safety
+    name: 健康與安全
+    dimension: social
+    order: 20
+    reportSectionId: health_and_safety
+    materialityDetermination: {kind: scored}
+  - id: development_and_training
+    name: 發展及培訓
+    dimension: social
+    order: 30
+    reportSectionId: development_and_training
+    materialityDetermination: {kind: scored}
+  - id: labour_standards
+    name: 勞工準則
+    dimension: social
+    order: 40
+    reportSectionId: labour_standards
+    materialityDetermination: {kind: scored}
+  - id: supply_chain_management
+    name: 供應鏈管理
+    dimension: social
+    order: 50
+    reportSectionId: supply_chain_management
+    materialityDetermination: {kind: scored}
+  - id: product_responsibility
+    name: 產品責任
+    dimension: social
+    order: 60
+    reportSectionId: product_responsibility
+    materialityDetermination: {kind: scored}
+  - id: data_protection_and_privacy
+    name: 資料保障及私隱
+    dimension: social
+    order: 70
+    reportSectionId: data_protection_and_privacy
+    materialityDetermination: {kind: scored}
+  - id: anti_corruption
+    name: 反貪污
+    dimension: social
+    order: 80
+    reportSectionId: anti_corruption
+    materialityDetermination: {kind: scored}
+  - id: community_investment
+    name: 社區投資
+    dimension: social
+    order: 90
+    reportSectionId: community_investment
+    materialityDetermination: {kind: scored}
+
+reportSections:
+  - {id: climate_change, title: 氣候變化, reportModuleId: environmental_aspects, order: 10, sectionPrefix: climate}
+  - {id: emissions, title: 排放物, reportModuleId: environmental_aspects, order: 20}
+  - {id: waste_management, title: 廢棄物管理, reportModuleId: environmental_aspects, order: 30, sectionPrefix: waste}
+  - {id: energy_management, title: 能源管理, reportModuleId: environmental_aspects, order: 40, sectionPrefix: energy}
+  - {id: water_management, title: 水資源管理, reportModuleId: environmental_aspects, order: 50, sectionPrefix: water}
+  - {id: materials_and_packaging, title: 物料及包裝, reportModuleId: environmental_aspects, order: 60, sectionPrefix: materials}
+  - {id: environment_and_natural_resources, title: 環境及天然資源, reportModuleId: environmental_aspects, order: 70, sectionPrefix: natural_resources}
+  - {id: employment, title: 僱傭, reportModuleId: employment_and_labour_practices, order: 10}
+  - {id: health_and_safety, title: 健康與安全, reportModuleId: employment_and_labour_practices, order: 20, sectionPrefix: health_safety}
+  - {id: development_and_training, title: 發展及培訓, reportModuleId: employment_and_labour_practices, order: 30, sectionPrefix: training}
+  - {id: labour_standards, title: 勞工準則, reportModuleId: employment_and_labour_practices, order: 40}
+  - {id: supply_chain_management, title: 供應鏈管理, reportModuleId: operating_practices, order: 10, sectionPrefix: supply_chain}
+  - {id: product_responsibility, title: 產品責任, reportModuleId: operating_practices, order: 20, sectionPrefix: product}
+  - {id: data_protection_and_privacy, title: 資料保障及私隱, reportModuleId: operating_practices, order: 30, sectionPrefix: privacy}
+  - {id: anti_corruption, title: 反貪污, reportModuleId: operating_practices, order: 40}
+  - {id: community_investment, title: 社區投資, reportModuleId: community, order: 10}

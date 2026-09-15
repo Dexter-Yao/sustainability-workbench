@@ -1,0 +1,20 @@
+# ABOUTME(en): Topic-specific intake questions of "Materials and Packaging"; the four fixed pillar questions come from topic_intake_common.yaml.
+# ABOUTME(en): Quantitative KPIs are collected through the metric catalog, not here.
+contentScopeId: materials_and_packaging
+items:
+- key: materials.q_packaging_materials
+  prompt: |-
+    What packaging materials are mainly used for the company's finished products?
+  kind: text
+  collectionPriority: recommended
+  hint: Cartons, plastic bags, foam, pallets and sources; or blank.
+  maxChars: 5000
+- key: materials.q_packaging_reduction
+  prompt: |-
+    What measures has the company taken to reduce packaging or raise the recyclable share?
+  kind: text
+  collectionPriority: recommended
+  hint: Lightweighting, reusable containers, recycled content.
+  generationBoundary: |-
+    Unless specific figures are given, do not generate reduction percentages or quantities.
+  maxChars: 5000

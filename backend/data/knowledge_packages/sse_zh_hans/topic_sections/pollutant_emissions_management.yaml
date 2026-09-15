@@ -1,0 +1,261 @@
+# ABOUTME: 污染物排放管理议题章节骨架，H2 标题以附录索引表“对应的本报告章节”为准。
+# ABOUTME: 本文件承载轻量版污染物排放管理生成块；指标块按声明读取ESG 定量数据表的受控投影。
+section:
+  key: pollutant_emissions_management
+  title: 污染物排放管理
+  headingLevel: 2
+  reportSectionId: pollutant_emissions_management
+  conciseDisclosure:
+    id: pollutant_emissions_management.concise_summary
+    type: paragraph
+    blockType: generative
+    source: ai
+    styleRole: body
+    generation:
+      task:
+        focus: "根据本议题当前可见证据形成一段连贯摘要，覆盖相关管理关注、方向与实践，不使用四要素小标题。"
+      inputs: {evidence: {kind: report_section}}
+      targetChars: [300, 600]
+  children:
+  - key: pollutant_emissions_management.gov
+    title: 治理
+    pillar: governance
+    headingLevel: 3
+    blocks:
+    - id: pollutant_emissions_management.gov_responsibility_structure
+      type: paragraph
+      blockType: generative
+      source: ai
+      styleRole: body
+      generation:
+        task:
+          focus: "说明污染物排放管理的责任安排、制度机制和协调方式。"
+        inputs:
+          evidence:
+            kind: explicit
+            intakeItems:
+            - pollutant_emissions_management.q_governance_roles
+            - pollutant_emissions_management.q_governance_policies
+            - pollutant_emissions_management.q_governance_certifications
+        targetChars:
+        - 220
+        - 420
+        standardDisclosureRequirementKeys:
+        - pollutant_emissions_management.gov.responsibility_structure
+        - pollutant_emissions_management.gov.pollution_control_system
+        - pollutant_emissions_management.gov.accounting_scope
+        - pollutant_emissions_management.gov.disclosure_permit_compliance
+        templateResidueBans:
+        - XXXX
+        - 代入上传制度名称
+        - 摘取制度中
+        - 《》、《》
+        simplifiedWritingGuidance:
+          - "使用污染物排放管理、达标排放、污染防治、清洁生产和排放削减等议题语境。"
+  - key: pollutant_emissions_management.strategy
+    title: 战略
+    pillar: strategy
+    headingLevel: 3
+    blocks:
+    - id: pollutant_emissions_management.strategy_risk_opportunity_preface
+      type: paragraph
+      blockType: fixed
+      source: template
+      styleRole: body
+      content:
+      - kind: text
+        text: 公司结合所属行业、主营业务及污染物排放管理要求，识别污染物排放相关风险与机遇，并围绕合规运营、声誉管理和绿色生产等方面制定相应管理措施。
+    - id: pollutant_emissions_management.strategy_risk_opportunity_table
+      type: table
+      blockType: generative
+      source: ai
+      generation:
+        task:
+          focus: "完成「污染物排放相关风险与机遇及应对措施」表格内容。"
+          noFactGuidance: |-
+            请结合报告主体的主营业务与所属行业，识别本公司实际适用的污染物排放相关风险与机遇，逐条撰写具体内容与应对措施，并在受控选项内选取财务影响与时间范围；参考清单仅供参照取舍，不适用的不列，不得坐实本公司已发生违规排放、环境事件、处罚、整改、排污许可或具体治理设施。
+        inputs:
+          evidence:
+            kind: explicit
+            intakeItems:
+            - pollutant_emissions_management.q_strategy_content
+        rowMode: adaptive_catalog
+        # 下限 3：表题承诺「风险与机遇」，清单含机遇类条目，须放得下至少 2 风险 + 1 机遇。
+        rowCount:
+        - 3
+        - 4
+        referenceCatalog:
+        - {category: 风险, name: 法规政策风险, reference: 排放标准趋严、监管要求变化对公司合规成本与运营的影响}
+        - {category: 风险, name: 声誉风险, reference: 排放或环境事件引发的舆论质疑与利益相关方评价下降}
+        - {category: 机遇, name: 市场机遇, reference: 清洁生产、绿色治理能力带来的市场认可、客户偏好或订单机会}
+        standardDisclosureRequirementKeys:
+        - pollutant_emissions_management.strategy.risk_opportunity
+        - pollutant_emissions_management.strategy.reduction_target
+        # Exceedance, penalty, rectification and permit facts may only appear when the user's
+        # evidence states them; negated evidence must not be affirmed (online guardrail).
+        evidenceGatedFacts: [核定排放量, 核定排放总量, 超标排放, 处罚, 整改完成, 整改, 排污许可证编号, 重点排污单位]
+        disclosureStance: risk_disclosure
+        simplifiedWritingGuidance:
+          - 污染物风险表应保持整表行文一致，围绕排放合规、污染防治和绿色生产能力给出方向性影响与应对；固定行或宽泛输入不延伸为未提供的客户、产品线、厂区、治理项目、时间表、专门机制或量化结论。
+      table:
+        caption: 污染物排放相关风险与机遇及应对措施
+        iroKind: risk_and_opportunity
+        rowSource: user
+        layoutProfile: risk_response_matrix
+        columnWidthWeights:
+          risk_category: 9
+          risk_name: 14
+          risk_description: 27
+          financial_impact: 13
+          time_horizon: 10
+          response_measures: 27
+        colDefs:
+        - key: risk_category
+          header: 风险与机遇类型
+          cellType: text
+          required: true
+        - key: risk_name
+          header: 风险与机遇名称
+          cellType: text
+          required: true
+        - key: risk_description
+          header: 潜在影响
+          cellType: ai_text
+          genHint: 结合主营业务与所属行业，用一至两句以方向性、框架性口径说明该风险或机遇的来源与影响趋势；不坐实具体违规、处罚、整改、超标排放、排污许可证、重点排污单位、排放数据或治理项目。
+          required: true
+        - key: financial_impact
+          header: 财务影响
+          cellType: multi_select
+          options:
+          - 运营成本增加
+          - 收入减少
+          - 收入增加
+          - 资本支出增加
+        - key: time_horizon
+          header: 影响的时间范围
+          cellType: multi_select
+          options:
+          - 短期
+          - 中期
+          - 长期
+        - key: response_measures
+          header: 应对措施
+          cellType: ai_text
+          genHint: 生成2-3个短句，围绕法规跟踪、达标管理、基础监测、工艺优化、设施维护或绿色产品响应等方向；用词概括，不编造具体项目名、设施名称、监测频次、整改、处罚或量化成效。
+          required: true
+        children:
+        - headerRow: true
+          children:
+          - type: th
+            value: 风险与机遇类型
+          - type: th
+            value: 风险与机遇名称
+          - type: th
+            value: 潜在影响
+          - type: th
+            value: 财务影响
+          - type: th
+            value: 影响的时间范围
+          - type: th
+            value: 应对措施
+  - key: pollutant_emissions_management.iro
+    title: 影响、风险与机遇管理
+    pillar: iro_management
+    headingLevel: 3
+    children:
+    - key: pollutant_emissions_management.iro.annual_discharge_treatment
+      title: 排放管理与处理
+      headingLevel: 4
+      titleGeneration:
+        sourceBlockId: pollutant_emissions_management.iro_annual_discharge_treatment
+        guidance: 概括本内容单元的核心行动或结果，生成简洁、准确且不引入新事实的标题。
+      appears_when:
+        all:
+        - path: intakeItems.pollutant_emissions_management.q_emission_management_requirements
+          op: eq
+          value: 是
+      blocks:
+      - id: pollutant_emissions_management.iro_annual_discharge_treatment
+        type: paragraph
+        blockType: generative
+        source: ai
+        styleRole: body
+        generation:
+          task:
+            focus: "说明污染物排放控制、处理方式和日常管理的相关实践。"
+          inputs:
+            evidence:
+              kind: explicit
+              intakeItems:
+              - pollutant_emissions_management.q_emission_management_requirements
+          targetChars:
+          - 220
+          - 460
+          standardDisclosureRequirementKeys:
+          - pollutant_emissions_management.iro.treatment_and_facilities
+          - pollutant_emissions_management.metrics.discharge_information
+          - pollutant_emissions_management.metrics.environmental_compliance
+    - key: pollutant_emissions_management.iro.policy_practice
+      title: 污染物管理机制
+      headingLevel: 4
+      titleGeneration:
+        sourceBlockId: pollutant_emissions_management.iro_policy_practice
+        guidance: 概括本内容单元的核心行动或结果，生成简洁、准确且不引入新事实的标题。
+      blocks:
+      - id: pollutant_emissions_management.iro_policy_practice
+        type: paragraph
+        blockType: generative
+        source: ai
+        styleRole: body
+        generation:
+          task:
+            focus: "依据治理支柱披露的污染物排放管理制度与责任安排，按管理框架说明制度执行、过程监测和问题整改的规范要求。"
+            noFactGuidance: "结合报告主体的主营业务与所属行业，按排放合规、日常运营管控和责任落实等基础方向，说明公司污染物排放管理关注与推进要求；不得虚构制度名称、监测台账、排放数据或整改事项。"
+          inputs:
+            evidence:
+              kind: explicit
+              intakeItems:
+              - pollutant_emissions_management.q_governance_policies
+              - pollutant_emissions_management.q_governance_roles
+          targetChars:
+          - 180
+          - 360
+          standardDisclosureRequirementKeys:
+          - pollutant_emissions_management.iro.policy_practice
+          - pollutant_emissions_management.iro.community_employee_impact
+          simplifiedWritingGuidance:
+          - "从治理支柱已披露的制度与职责事实中提炼管理规范与措施要求，不逐条罗列制度原文，不引入治理支柱未披露的机制。"
+          - "制度运行频次、检查次数、问题数量与整改结果必须来自相关事实，不得推断。"
+    - key: pollutant_emissions_management.iro.reduction_measures_results
+      title: 减排措施与成效
+      headingLevel: 4
+      titleGeneration:
+        sourceBlockId: pollutant_emissions_management.iro_reduction_measures_results
+        guidance: 概括本内容单元的核心行动或结果，生成简洁、准确且不引入新事实的标题。
+      appears_when:
+        all:
+        - path: intakeItems.pollutant_emissions_management.q_reduction_measures
+          op: eq
+          value: 是
+      blocks:
+      - id: pollutant_emissions_management.iro_reduction_measures_results
+        type: paragraph
+        blockType: generative
+        source: ai
+        styleRole: body
+        generation:
+          task:
+            focus: "说明污染物减排措施及其与当前证据相称的实施结果。"
+          inputs:
+            evidence:
+              kind: explicit
+              intakeItems:
+              - pollutant_emissions_management.q_reduction_measures
+          targetChars:
+          - 180
+          - 380
+          standardDisclosureRequirementKeys:
+          - pollutant_emissions_management.iro.reduction_measures_and_effect
+          - pollutant_emissions_management.metrics.discharge_intensity_and_classification
+metricDisclosure:
+  catalogMetricKeys: [economic_environment_r25, economic_environment_r26, economic_environment_r27, economic_environment_r28, economic_environment_r29, economic_environment_r30, economic_environment_r31, economic_environment_r32, economic_environment_r33, economic_environment_r34, economic_environment_r35, economic_environment_r36, economic_environment_r37]

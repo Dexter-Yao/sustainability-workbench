@@ -1,0 +1,101 @@
+# ABOUTME(en): Topic chapter template of the GRI topic "Diversity and Equal Opportunity" (GRI 405: Diversity and Equal Opportunity 2016): management /
+# ABOUTME(en): approach / actions blocks with their intake evidence and GRI requirement keys; the metrics H3 is compiled from metricDisclosure.
+section:
+  key: diversity_and_equal_opportunity
+  title: Diversity and Equal Opportunity
+  headingLevel: 2
+  reportSectionId: diversity_and_equal_opportunity
+  conciseDisclosure:
+    id: diversity.concise_summary
+    type: paragraph
+    blockType: generative
+    source: ai
+    styleRole: body
+    generation:
+      task:
+        focus: |-
+          From the evidence currently visible for this topic, write one coherent summary covering the diversity and equal opportunity policies, the composition of governance bodies and employees, and the remuneration approach, without the four sub-headings.
+      inputs:
+        evidence:
+          kind: report_section
+      targetChars:
+      - 260
+      - 520
+  children:
+  - key: diversity_and_equal_opportunity.gov
+    title: Management of the Topic
+    pillar: governance
+    headingLevel: 3
+    blocks:
+    - id: diversity.gov_policy
+      type: paragraph
+      blockType: generative
+      source: ai
+      styleRole: body
+      generation:
+        task:
+          focus: |-
+            Describe how the company manages diversity and equal opportunity: the policies and responsibilities covering equal opportunity in recruitment, remuneration and advancement.
+          noFactGuidance: |-
+            When the user provides no facts for this part, keep a prudent, general and low-commitment register describing the management attention and directional arrangements common to the industry; do not claim that specific systems, projects, certifications or results are in place.
+        inputs:
+          evidence:
+            kind: report_section
+        targetChars:
+        - 220
+        - 420
+        standardDisclosureRequirementKeys:
+        - diversity_and_equal_opportunity.gov.management_of_diversity
+  - key: diversity_and_equal_opportunity.strategy
+    title: Approach and Targets
+    pillar: strategy
+    headingLevel: 3
+    blocks:
+    - id: diversity.strategy_direction
+      type: paragraph
+      blockType: generative
+      source: ai
+      styleRole: body
+      generation:
+        task:
+          focus: |-
+            Describe the company's direction and targets for diversity and equal opportunity, including the approach to the composition of its governance bodies and workforce.
+          noFactGuidance: |-
+            When the user provides no facts for this part, keep a prudent, general and low-commitment register describing the management attention and directional arrangements common to the industry; do not claim that specific systems, projects, certifications or results are in place.
+        inputs:
+          evidence:
+            kind: report_section
+        targetChars:
+        - 200
+        - 400
+        standardDisclosureRequirementKeys:
+        - diversity_and_equal_opportunity.strategy.remuneration_ratio
+  - key: diversity_and_equal_opportunity.iro
+    title: Actions and Processes
+    pillar: iro_management
+    headingLevel: 3
+    blocks:
+    - id: diversity.iro_measures
+      type: paragraph
+      blockType: generative
+      source: ai
+      styleRole: body
+      generation:
+        task:
+          focus: |-
+            Describe the actions the company takes on diversity and equal opportunity: the measures applied in recruitment, development and workplace conduct.
+          noFactGuidance: |-
+            When the user provides no facts for this part, keep a prudent, general and low-commitment register describing the management attention and directional arrangements common to the industry; do not claim that specific systems, projects, certifications or results are in place.
+        inputs:
+          evidence:
+            kind: report_section
+        targetChars:
+        - 240
+        - 460
+        standardDisclosureRequirementKeys:
+        - diversity_and_equal_opportunity.iro.equal_opportunity_measures
+metricDisclosure:
+  catalogMetricKeys:
+  - employment_female
+  - employment_male
+  - employment_age_under_30

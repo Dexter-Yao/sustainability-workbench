@@ -1,0 +1,60 @@
+# ABOUTME(en): GRI 103: Energy 2025 disclosure requirements, grouped by the package's pillars, for the
+# ABOUTME(en): coverage audit and the key whitelist. Wording condenses the official requirement text.
+topicStandardDisclosureRequirementGroups:
+- topicSectionKey: energy.gov
+  pillar: governance
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: energy.gov.policies_and_commitments
+    standardDisclosureRequirementTitle: Energy policies and commitments
+    excerptFrom: 103-1-a
+    standardDisclosureRequirementText: |-
+      Describe how the organization's energy-related policies and commitments contribute to energy consumption reduction, energy efficiency and the transition to renewable energy sources, covering its own activities and its upstream and downstream value chain.
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: GRI
+      clauseRef: 103-1-a
+- topicSectionKey: energy.strategy
+  pillar: strategy
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: energy.strategy.impacts_of_energy_use
+    standardDisclosureRequirementTitle: Impacts of energy consumption and the transition to renewables
+    excerptFrom: 103-1-b
+    standardDisclosureRequirementText: |-
+      Describe the impacts on the economy, the environment and people that may result from the organization's energy consumption and its transition to renewable energy sources.
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: GRI
+      clauseRef: 103-1-b
+- topicSectionKey: energy.iro
+  pillar: iro_management
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: energy.iro.reduction_in_consumption
+    standardDisclosureRequirementTitle: Reduction in energy consumption
+    excerptFrom: 103-5
+    standardDisclosureRequirementText: |-
+      Report the reduction in energy consumption achieved as a direct result of conservation and efficiency initiatives, whether the reductions occur within the organization or in listed upstream and downstream categories, and the standards, methodologies and assumptions used.
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: GRI
+      clauseRef: 103-5
+- topicSectionKey: energy.metrics
+  pillar: metrics_targets
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: energy.metrics.consumption
+    standardDisclosureRequirementTitle: Energy consumption and self-generation within the organization
+    excerptFrom: 103-2
+    standardDisclosureRequirementText: |-
+      Report total energy consumption within the organization in joules, watt-hours or multiples, with a breakdown per energy source and information on whether it is renewable or non-renewable, and report purchased and self-generated electricity consumption and sold electricity separately.
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: GRI
+      clauseRef: 103-2
+  - standardDisclosureRequirementKey: energy.metrics.intensity
+    standardDisclosureRequirementTitle: Energy intensity
+    excerptFrom: 103-4
+    standardDisclosureRequirementText: |-
+      Report the energy intensity ratio, the energy consumption used as the numerator, the metric chosen as the denominator, and the types of energy included in the ratio.
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: GRI
+      clauseRef: 103-4

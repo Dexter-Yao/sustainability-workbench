@@ -1,0 +1,28 @@
+# ABOUTME(en): Manifest of the GRI knowledge package in English: GRI Standards (GRI 1 Foundation 2021,
+# ABOUTME(en): GRI 2 General Disclosures 2021, GRI 3 Material Topics 2021 and selected Topic Standards).
+# ABOUTME(en): Reports on this package declare use "with reference to" the GRI Standards, never "in accordance with".
+schema_version: sustainability_desk.knowledge_package.v1
+id: gri_en
+language: en
+framework: gri_standards
+display_name: GRI Standards
+# 封存（2026-09-07）：包内容与要求库保留并继续受编译审计守护，但不绑定 report profile，
+# 建报不可选。理由是当前聚焦港交所与上交所两套准则；GRI 需付费信号再推进。
+sealed: true
+# GRI has no four-pillar model of its own. The pillars below carry the GRI reporting logic onto the
+# shared topic-chapter skeleton: management of the topic (GRI 3-3 and any topic management disclosures),
+# the organization's approach and targets, the actions and processes it applies, and the reported metrics.
+pillar_titles:
+  governance: Management of the Topic
+  strategy: Approach and Targets
+  iro_management: Actions and Processes
+  metrics_targets: Metrics
+# GRI 3 judges significance from impacts on the economy, environment and people; it has
+# no financial materiality dimension (EFRAG IG 1 §138 states this explicitly).
+materiality_regime: impact_primary
+disclosure_basis:
+  mainland_standard_selectable: false
+  # Named as the standards the report draws on. The "with reference to" statement of use itself is a
+  # fixed GRI text carried by the content index, not by this list.
+  primary_standard_names:
+    - the GRI Standards

@@ -1,0 +1,2198 @@
+{
+  "$defs": {
+    "AssertionBasis": {
+      "enum": [
+        "material_evidence",
+        "user_assertion"
+      ],
+      "type": "string"
+    },
+    "CertificateFactProjection": {
+      "additionalProperties": false,
+      "description": "证书事实的用户可见投影；字段与入口解析同名，供资料处理页核对与更正。",
+      "properties": {
+        "certificate_name": {
+          "default": "",
+          "type": "string"
+        },
+        "issuer": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "covered_scope": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "holder_name": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "unreadable_fields": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        }
+      },
+      "title": "CertificateFactProjection",
+      "type": "object",
+      "required": [
+        "unreadable_fields"
+      ]
+    },
+    "ClarificationOptionProjection": {
+      "additionalProperties": false,
+      "properties": {
+        "value": {
+          "type": "string"
+        },
+        "label": {
+          "type": "string"
+        },
+        "description": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        }
+      },
+      "required": [
+        "value",
+        "label"
+      ],
+      "title": "ClarificationOptionProjection",
+      "type": "object"
+    },
+    "DocxParagraphLocator": {
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "const": "docx_paragraph",
+          "default": "docx_paragraph",
+          "type": "string"
+        },
+        "paragraph_index": {
+          "minimum": 1,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "kind",
+        "paragraph_index"
+      ],
+      "title": "DocxParagraphLocator",
+      "type": "object"
+    },
+    "DocxTableLocator": {
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "const": "docx_table",
+          "default": "docx_table",
+          "type": "string"
+        },
+        "table_index": {
+          "minimum": 1,
+          "type": "integer"
+        },
+        "row_start": {
+          "minimum": 1,
+          "type": "integer"
+        },
+        "row_end": {
+          "minimum": 1,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "kind",
+        "table_index",
+        "row_start",
+        "row_end"
+      ],
+      "title": "DocxTableLocator",
+      "type": "object"
+    },
+    "ImageRegionLocator": {
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "const": "image_region",
+          "default": "image_region",
+          "type": "string"
+        },
+        "region_label": {
+          "default": "整张图片",
+          "type": "string"
+        },
+        "x": {
+          "anyOf": [
+            {
+              "maximum": 1,
+              "minimum": 0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "y": {
+          "anyOf": [
+            {
+              "maximum": 1,
+              "minimum": 0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "width": {
+          "anyOf": [
+            {
+              "exclusiveMinimum": 0,
+              "maximum": 1,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "height": {
+          "anyOf": [
+            {
+              "exclusiveMinimum": 0,
+              "maximum": 1,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        }
+      },
+      "title": "ImageRegionLocator",
+      "type": "object",
+      "required": [
+        "kind"
+      ]
+    },
+    "MaterialClarificationProjection": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "scope_id": {
+          "type": "string"
+        },
+        "question": {
+          "type": "string"
+        },
+        "options": {
+          "items": {
+            "$ref": "#/$defs/ClarificationOptionProjection"
+          },
+          "type": "array"
+        },
+        "allow_free_text": {
+          "type": "boolean"
+        },
+        "status": {
+          "enum": [
+            "open",
+            "answered",
+            "dismissed"
+          ],
+          "type": "string"
+        },
+        "answer": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "created_at": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "scope_id",
+        "question",
+        "options",
+        "allow_free_text",
+        "status",
+        "created_at"
+      ],
+      "title": "MaterialClarificationProjection",
+      "type": "object"
+    },
+    "MaterialEvidenceProjection": {
+      "additionalProperties": false,
+      "properties": {
+        "source_id": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "source_name": {
+          "type": "string"
+        },
+        "segment_id": {
+          "type": "string"
+        },
+        "locator": {
+          "$ref": "#/$defs/SourceLocator"
+        },
+        "excerpt": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        }
+      },
+      "required": [
+        "source_id",
+        "source_name",
+        "segment_id",
+        "locator"
+      ],
+      "title": "MaterialEvidenceProjection",
+      "type": "object"
+    },
+    "MaterialFactConfirmationMethod": {
+      "enum": [
+        "deterministic",
+        "user"
+      ],
+      "type": "string"
+    },
+    "MaterialFactProjection": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "semantic_key": {
+          "type": "string"
+        },
+        "label": {
+          "type": "string"
+        },
+        "scope_id": {
+          "type": "string"
+        },
+        "report_section_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "value": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            }
+          ]
+        },
+        "supplement": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "effective_period": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "rationale": {
+          "type": "string"
+        },
+        "basis": {
+          "$ref": "#/$defs/AssertionBasis"
+        },
+        "evidence_refs": {
+          "items": {
+            "$ref": "#/$defs/MaterialEvidenceProjection"
+          },
+          "type": "array"
+        },
+        "status": {
+          "$ref": "#/$defs/MaterialFactStatus"
+        },
+        "confirmation_method": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/MaterialFactConfirmationMethod"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "version": {
+          "minimum": 1,
+          "type": "integer"
+        },
+        "stale_reason": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        }
+      },
+      "required": [
+        "id",
+        "semantic_key",
+        "label",
+        "scope_id",
+        "value",
+        "rationale",
+        "basis",
+        "evidence_refs",
+        "status",
+        "version"
+      ],
+      "title": "MaterialFactProjection",
+      "type": "object"
+    },
+    "MaterialFactStatus": {
+      "enum": [
+        "candidate",
+        "confirmed",
+        "conflicted",
+        "rejected",
+        "stale"
+      ],
+      "type": "string"
+    },
+    "MaterialGapProjection": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "scope_id": {
+          "type": "string"
+        },
+        "report_section_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "kind": {
+          "enum": [
+            "missing",
+            "conflict",
+            "unparseable",
+            "needs_judgment"
+          ],
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "source_ids": {
+          "items": {
+            "format": "uuid",
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "status": {
+          "enum": [
+            "open",
+            "resolved",
+            "dismissed",
+            "stale"
+          ],
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "scope_id",
+        "kind",
+        "title",
+        "description",
+        "source_ids",
+        "status"
+      ],
+      "title": "MaterialGapProjection",
+      "type": "object"
+    },
+    "MaterialIngressReasonCode": {
+      "enum": [
+        "admitted",
+        "duplicate_reused",
+        "duplicate_declaration_conflict",
+        "binding_removed",
+        "file_rejected",
+        "storage_failed",
+        "upload_failed"
+      ],
+      "type": "string"
+    },
+    "MaterialIngressReceipt": {
+      "additionalProperties": false,
+      "description": "由准入事实和当前 Source 状态派生的人类可见收据。",
+      "properties": {
+        "receipt_id": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "batch_id": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "filename": {
+          "maxLength": 500,
+          "minLength": 1,
+          "type": "string"
+        },
+        "status": {
+          "$ref": "#/$defs/MaterialIngressStatus"
+        },
+        "reason_code": {
+          "$ref": "#/$defs/MaterialIngressReasonCode"
+        },
+        "source_id": {
+          "anyOf": [
+            {
+              "format": "uuid",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "sha256": {
+          "anyOf": [
+            {
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "message": {
+          "maxLength": 1000,
+          "minLength": 1,
+          "type": "string"
+        },
+        "next_action": {
+          "maxLength": 1000,
+          "minLength": 1,
+          "type": "string"
+        }
+      },
+      "required": [
+        "batch_id",
+        "filename",
+        "status",
+        "reason_code",
+        "message",
+        "next_action"
+      ],
+      "title": "MaterialIngressReceipt",
+      "type": "object"
+    },
+    "MaterialIngressStatus": {
+      "enum": [
+        "accepted",
+        "reused",
+        "rejected"
+      ],
+      "type": "string"
+    },
+    "MaterialKind": {
+      "enum": [
+        "pdf",
+        "docx",
+        "xlsx",
+        "pptx",
+        "png",
+        "jpeg",
+        "webp"
+      ],
+      "type": "string"
+    },
+    "MaterialMessageProjection": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "role": {
+          "enum": [
+            "user",
+            "assistant"
+          ],
+          "type": "string"
+        },
+        "content": {
+          "type": "string"
+        },
+        "scope_id": {
+          "type": "string"
+        },
+        "created_at": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "role",
+        "content",
+        "scope_id",
+        "created_at"
+      ],
+      "title": "MaterialMessageProjection",
+      "type": "object"
+    },
+    "MaterialOptionGroupProjection": {
+      "additionalProperties": false,
+      "properties": {
+        "key": {
+          "type": "string"
+        },
+        "label": {
+          "type": "string"
+        },
+        "options": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "min_selections": {
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "key",
+        "label",
+        "options",
+        "min_selections"
+      ],
+      "title": "MaterialOptionGroupProjection",
+      "type": "object"
+    },
+    "MaterialParseResultProjection": {
+      "additionalProperties": false,
+      "description": "单份资料的脱敏 parse-first 结果摘要，不携带清洗正文或对象路径。",
+      "properties": {
+        "status": {
+          "enum": [
+            "not_started",
+            "available",
+            "failed"
+          ],
+          "type": "string"
+        },
+        "fragment_count": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "fragment_kinds": {
+          "items": {
+            "enum": [
+              "text",
+              "table",
+              "image_observation"
+            ],
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "summary": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "status",
+        "fragment_count",
+        "fragment_kinds",
+        "summary"
+      ],
+      "title": "MaterialParseResultProjection",
+      "type": "object"
+    },
+    "MaterialProcessingStepProjection": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "stage": {
+          "type": "string"
+        },
+        "method": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "model": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "route": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "status": {
+          "type": "string"
+        },
+        "quality_flags": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "created_at": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "stage",
+        "status",
+        "quality_flags",
+        "created_at"
+      ],
+      "title": "MaterialProcessingStepProjection",
+      "type": "object"
+    },
+    "MaterialProposalProjection": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "scope_id": {
+          "type": "string"
+        },
+        "report_section_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "target_key": {
+          "type": "string"
+        },
+        "target_label": {
+          "type": "string"
+        },
+        "target_kind": {
+          "enum": [
+            "text",
+            "single_select",
+            "multi_select"
+          ],
+          "type": "string"
+        },
+        "target_options": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "target_option_groups": {
+          "items": {
+            "$ref": "#/$defs/MaterialOptionGroupProjection"
+          },
+          "type": "array"
+        },
+        "question": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "current_answer": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "current_supplement": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "proposed_answer": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            }
+          ]
+        },
+        "proposed_supplement": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "basis": {
+          "$ref": "#/$defs/AssertionBasis"
+        },
+        "explanation": {
+          "type": "string"
+        },
+        "evidence_refs": {
+          "items": {
+            "$ref": "#/$defs/MaterialEvidenceProjection"
+          },
+          "type": "array"
+        },
+        "fact_claim_ids": {
+          "items": {
+            "format": "uuid",
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "processing_summary": {
+          "type": "string"
+        },
+        "status": {
+          "$ref": "#/$defs/ProposalStatus"
+        },
+        "stale_reason": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "target_value_fingerprint": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "scope_id",
+        "target_key",
+        "target_label",
+        "target_kind",
+        "target_options",
+        "target_option_groups",
+        "proposed_answer",
+        "basis",
+        "explanation",
+        "evidence_refs",
+        "fact_claim_ids",
+        "processing_summary",
+        "status",
+        "target_value_fingerprint"
+      ],
+      "title": "MaterialProposalProjection",
+      "type": "object"
+    },
+    "MaterialScopeProjection": {
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "enum": [
+            "profile",
+            "topics",
+            "uncertain",
+            "report"
+          ],
+          "type": "string"
+        },
+        "report_section_ids": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "kind",
+        "report_section_ids"
+      ],
+      "title": "MaterialScopeProjection",
+      "type": "object"
+    },
+    "MaterialScopeSummaryProjection": {
+      "additionalProperties": false,
+      "properties": {
+        "scope_id": {
+          "type": "string"
+        },
+        "label": {
+          "type": "string"
+        },
+        "report_section_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "source_count": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "ready_count": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "pending_proposal_count": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "accepted_proposal_count": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "gap_count": {
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "scope_id",
+        "label",
+        "source_count",
+        "ready_count",
+        "pending_proposal_count",
+        "accepted_proposal_count",
+        "gap_count"
+      ],
+      "title": "MaterialScopeSummaryProjection",
+      "type": "object"
+    },
+    "MaterialSetConfirmationProjection": {
+      "additionalProperties": false,
+      "description": "资料集确认状态；确认后才对 active 语义资料入队 File Agent。",
+      "properties": {
+        "status": {
+          "enum": [
+            "not_required",
+            "pending_description",
+            "required",
+            "confirmed"
+          ],
+          "type": "string"
+        },
+        "confirmed_at": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "pending_description_count": {
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "status",
+        "pending_description_count"
+      ],
+      "title": "MaterialSetConfirmationProjection",
+      "type": "object"
+    },
+    "MaterialSourceContentProjection": {
+      "additionalProperties": false,
+      "properties": {
+        "source_id": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "normalized_material": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/NormalizedMaterialProjection"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "source_id",
+        "normalized_material"
+      ],
+      "title": "MaterialSourceContentProjection",
+      "type": "object"
+    },
+    "MaterialSourceProjection": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "filename": {
+          "type": "string"
+        },
+        "content_type": {
+          "type": "string"
+        },
+        "size_bytes": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "sha256": {
+          "type": "string"
+        },
+        "scope": {
+          "$ref": "#/$defs/MaterialScopeProjection"
+        },
+        "content_availability": {
+          "enum": [
+            "available",
+            "not_extracted"
+          ],
+          "type": "string"
+        },
+        "status": {
+          "$ref": "#/$defs/MaterialSourceStatus"
+        },
+        "error_stage": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "error_message": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "error_next_action": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "can_retry": {
+          "type": "boolean"
+        },
+        "parse_result": {
+          "$ref": "#/$defs/MaterialParseResultProjection"
+        },
+        "normalized_material_fingerprint": {
+          "anyOf": [
+            {
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "normalized_material": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/NormalizedMaterialProjection"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "processing_steps": {
+          "items": {
+            "$ref": "#/$defs/MaterialProcessingStepProjection"
+          },
+          "type": "array"
+        },
+        "current_review_decision": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/MaterialSourceReviewProjection"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "created_at": {
+          "type": "string"
+        },
+        "updated_at": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "filename",
+        "content_type",
+        "size_bytes",
+        "sha256",
+        "scope",
+        "content_availability",
+        "status",
+        "can_retry",
+        "parse_result",
+        "processing_steps",
+        "created_at",
+        "updated_at"
+      ],
+      "title": "MaterialSourceProjection",
+      "type": "object"
+    },
+    "MaterialSourceReviewPosture": {
+      "enum": [
+        "reviewed_accepted",
+        "excluded_by_user"
+      ],
+      "type": "string"
+    },
+    "MaterialSourceReviewProjection": {
+      "additionalProperties": false,
+      "description": "客户安全的当前复核结果；内部身份、指纹和操作员理由不出边界。",
+      "properties": {
+        "decision": {
+          "$ref": "#/$defs/MaterialSourceReviewPosture"
+        },
+        "reason": {
+          "anyOf": [
+            {
+              "maxLength": 1000,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        }
+      },
+      "required": [
+        "decision"
+      ],
+      "title": "MaterialSourceReviewProjection",
+      "type": "object"
+    },
+    "MaterialSourceStatus": {
+      "enum": [
+        "uploading",
+        "queued",
+        "processing",
+        "ready",
+        "needs_attention",
+        "failed",
+        "deleted"
+      ],
+      "type": "string"
+    },
+    "MaterialWorkspaceProjection": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "report_id": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "adapter_id": {
+          "type": "string"
+        },
+        "contract_version": {
+          "type": "string"
+        },
+        "state_seq": {
+          "minimum": 1,
+          "type": "integer"
+        },
+        "projection_seq": {
+          "minimum": 1,
+          "type": "integer"
+        },
+        "report_state_seq": {
+          "minimum": 1,
+          "type": "integer"
+        },
+        "sources": {
+          "items": {
+            "$ref": "#/$defs/MaterialSourceProjection"
+          },
+          "type": "array"
+        },
+        "messages": {
+          "items": {
+            "$ref": "#/$defs/MaterialMessageProjection"
+          },
+          "type": "array"
+        },
+        "clarifications": {
+          "items": {
+            "$ref": "#/$defs/MaterialClarificationProjection"
+          },
+          "type": "array"
+        },
+        "proposals": {
+          "items": {
+            "$ref": "#/$defs/MaterialProposalProjection"
+          },
+          "type": "array"
+        },
+        "facts": {
+          "items": {
+            "$ref": "#/$defs/MaterialFactProjection"
+          },
+          "type": "array"
+        },
+        "gaps": {
+          "items": {
+            "$ref": "#/$defs/MaterialGapProjection"
+          },
+          "type": "array"
+        },
+        "topic_primary_input_modes": {
+          "additionalProperties": {
+            "$ref": "#/$defs/PrimaryInputMode"
+          },
+          "type": "object"
+        },
+        "report_primary_input_mode": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/PrimaryInputMode"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "scope_summaries": {
+          "items": {
+            "$ref": "#/$defs/MaterialScopeSummaryProjection"
+          },
+          "type": "array"
+        },
+        "ingress_receipts": {
+          "items": {
+            "$ref": "#/$defs/MaterialIngressReceipt"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "id",
+        "report_id",
+        "adapter_id",
+        "contract_version",
+        "state_seq",
+        "projection_seq",
+        "report_state_seq",
+        "sources",
+        "messages",
+        "clarifications",
+        "proposals",
+        "facts",
+        "gaps",
+        "topic_primary_input_modes",
+        "scope_summaries"
+      ],
+      "title": "MaterialWorkspaceProjection",
+      "type": "object"
+    },
+    "NormalizedMaterialProjection": {
+      "additionalProperties": false,
+      "properties": {
+        "segments": {
+          "items": {
+            "$ref": "#/$defs/NormalizedSegmentProjection"
+          },
+          "type": "array"
+        },
+        "review_markdown": {
+          "type": "string"
+        },
+        "quality_flags": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "segments",
+        "review_markdown",
+        "quality_flags"
+      ],
+      "title": "NormalizedMaterialProjection",
+      "type": "object"
+    },
+    "NormalizedSegmentProjection": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "kind": {
+          "enum": [
+            "text",
+            "table",
+            "image_observation"
+          ],
+          "type": "string"
+        },
+        "locator": {
+          "$ref": "#/$defs/SourceLocator"
+        },
+        "text": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "markdown": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "quality_flags": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "id",
+        "kind",
+        "locator",
+        "quality_flags"
+      ],
+      "title": "NormalizedSegmentProjection",
+      "type": "object"
+    },
+    "PdfPageLocator": {
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "const": "pdf_page",
+          "default": "pdf_page",
+          "type": "string"
+        },
+        "page": {
+          "minimum": 1,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "kind",
+        "page"
+      ],
+      "title": "PdfPageLocator",
+      "type": "object"
+    },
+    "PptxSlideLocator": {
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "const": "pptx_slide",
+          "default": "pptx_slide",
+          "type": "string"
+        },
+        "slide": {
+          "minimum": 1,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "slide"
+      ],
+      "title": "PptxSlideLocator",
+      "type": "object"
+    },
+    "PrimaryInputMode": {
+      "enum": [
+        "materials",
+        "questions"
+      ],
+      "type": "string"
+    },
+    "ProposalStatus": {
+      "enum": [
+        "proposed",
+        "accepted",
+        "rejected",
+        "applied",
+        "stale"
+      ],
+      "type": "string"
+    },
+    "ReportFileAnalysisProjection": {
+      "additionalProperties": false,
+      "description": "当前文件的 File Agent 生命周期与受限 Dossier 视图。",
+      "properties": {
+        "status": {
+          "enum": [
+            "queued",
+            "running",
+            "succeeded",
+            "needs_attention",
+            "failed",
+            "superseded"
+          ],
+          "type": "string"
+        },
+        "dossier": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/ReportFileDossierProjection"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        }
+      },
+      "required": [
+        "status"
+      ],
+      "title": "ReportFileAnalysisProjection",
+      "type": "object"
+    },
+    "ReportFileAttentionProjection": {
+      "additionalProperties": false,
+      "description": "一项面向上传者的资料澄清提示，不暴露内部判断代码。",
+      "properties": {
+        "message": {
+          "maxLength": 2000,
+          "minLength": 1,
+          "type": "string"
+        },
+        "next_action": {
+          "maxLength": 1000,
+          "minLength": 1,
+          "type": "string"
+        }
+      },
+      "required": [
+        "message",
+        "next_action"
+      ],
+      "title": "ReportFileAttentionProjection",
+      "type": "object"
+    },
+    "ReportFileDossierProjection": {
+      "additionalProperties": false,
+      "description": "FileDossier 的客户可见投影，保持文件级来源边界。",
+      "properties": {
+        "relevance": {
+          "enum": [
+            "relevant",
+            "not_relevant"
+          ],
+          "type": "string"
+        },
+        "relevance_reason": {
+          "maxLength": 2000,
+          "minLength": 1,
+          "type": "string"
+        },
+        "applicable_scope_count": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "attention_items": {
+          "items": {
+            "$ref": "#/$defs/ReportFileAttentionProjection"
+          },
+          "type": "array"
+        },
+        "report_scope": {
+          "anyOf": [
+            {
+              "enum": [
+                "within_report",
+                "outside_report"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "report_scope_notice": {
+          "anyOf": [
+            {
+              "maxLength": 500,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        }
+      },
+      "required": [
+        "relevance",
+        "relevance_reason",
+        "applicable_scope_count"
+      ],
+      "title": "ReportFileDossierProjection",
+      "type": "object"
+    },
+    "ReportFileImageAnalysisProjection": {
+      "additionalProperties": false,
+      "description": "排版素材的图片识别生命周期与受限资产视图；题注/替代文本归资产 owner。",
+      "properties": {
+        "status": {
+          "enum": [
+            "queued",
+            "running",
+            "succeeded",
+            "failed",
+            "superseded"
+          ],
+          "type": "string"
+        },
+        "asset_id": {
+          "anyOf": [
+            {
+              "format": "uuid",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "caption": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "category": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "placement_scope_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "certificate_fact": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/CertificateFactProjection"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        }
+      },
+      "required": [
+        "status"
+      ],
+      "title": "ReportFileImageAnalysisProjection",
+      "type": "object"
+    },
+    "ReportFileIngressPolicy": {
+      "additionalProperties": false,
+      "description": "报告文件入口的唯一公开准入策略，前端只能投影不可自行复制。",
+      "properties": {
+        "max_files_per_report": {
+          "minimum": 1,
+          "type": "integer"
+        },
+        "max_file_bytes": {
+          "minimum": 1,
+          "type": "integer"
+        },
+        "max_pdf_pages": {
+          "minimum": 1,
+          "type": "integer"
+        },
+        "description_min_chars": {
+          "minimum": 1,
+          "type": "integer"
+        },
+        "description_max_chars": {
+          "minimum": 1,
+          "type": "integer"
+        },
+        "asset_title_max_chars": {
+          "minimum": 1,
+          "type": "integer"
+        },
+        "semantic_material_kinds": {
+          "items": {
+            "$ref": "#/$defs/MaterialKind"
+          },
+          "type": "array"
+        },
+        "layout_asset_kinds": {
+          "items": {
+            "$ref": "#/$defs/MaterialKind"
+          },
+          "type": "array"
+        },
+        "semantic_material_extensions": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "layout_asset_extensions": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "topic_tags": {
+          "items": {
+            "$ref": "#/$defs/ReportFileTopicTag"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "max_files_per_report",
+        "max_file_bytes",
+        "max_pdf_pages",
+        "description_min_chars",
+        "description_max_chars",
+        "asset_title_max_chars",
+        "semantic_material_kinds",
+        "layout_asset_kinds",
+        "semantic_material_extensions",
+        "layout_asset_extensions",
+        "topic_tags"
+      ],
+      "title": "ReportFileIngressPolicy",
+      "type": "object"
+    },
+    "ReportFileIntakeProjection": {
+      "additionalProperties": false,
+      "description": "报告准备中心的文件准入 SSOT 投影。",
+      "properties": {
+        "report_id": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "projection_seq": {
+          "minimum": 1,
+          "type": "integer"
+        },
+        "policy": {
+          "$ref": "#/$defs/ReportFileIngressPolicy"
+        },
+        "active_file_count": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "sources": {
+          "items": {
+            "$ref": "#/$defs/ReportFileSourceProjection"
+          },
+          "type": "array"
+        },
+        "ingress_receipts": {
+          "items": {
+            "$ref": "#/$defs/MaterialIngressReceipt"
+          },
+          "type": "array"
+        },
+        "material_set_confirmation": {
+          "$ref": "#/$defs/MaterialSetConfirmationProjection"
+        },
+        "phase": {
+          "default": "draft",
+          "enum": [
+            "draft",
+            "processing",
+            "reviewed"
+          ],
+          "type": "string"
+        }
+      },
+      "required": [
+        "report_id",
+        "projection_seq",
+        "policy",
+        "active_file_count",
+        "sources",
+        "material_set_confirmation"
+      ],
+      "title": "ReportFileIntakeProjection",
+      "type": "object"
+    },
+    "ReportFileRole": {
+      "enum": [
+        "semantic_material",
+        "layout_asset"
+      ],
+      "type": "string"
+    },
+    "ReportFileSourceProjection": {
+      "additionalProperties": false,
+      "description": "轻量版准备中心使用的文件投影，不暴露旧资料工作区的用途、范围或解析正文。",
+      "properties": {
+        "binding_id": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "source_id": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "binding_status": {
+          "enum": [
+            "active",
+            "removed",
+            "superseded"
+          ],
+          "type": "string"
+        },
+        "filename": {
+          "type": "string"
+        },
+        "source_label": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "content_type": {
+          "type": "string"
+        },
+        "size_bytes": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "sha256": {
+          "type": "string"
+        },
+        "declaration": {
+          "$ref": "#/$defs/UserFileDeclarationRevision"
+        },
+        "admission_status": {
+          "enum": [
+            "admitted",
+            "failed"
+          ],
+          "type": "string"
+        },
+        "error_message": {
+          "anyOf": [
+            {
+              "maxLength": 1000,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "file_analysis": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/ReportFileAnalysisProjection"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "image_analysis": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/ReportFileImageAnalysisProjection"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "parse_status": {
+          "anyOf": [
+            {
+              "enum": [
+                "ok",
+                "failed",
+                "ok_with_attention"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "parse_failure_reason": {
+          "anyOf": [
+            {
+              "maxLength": 1000,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "created_at": {
+          "type": "string"
+        },
+        "updated_at": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "binding_id",
+        "source_id",
+        "binding_status",
+        "filename",
+        "content_type",
+        "size_bytes",
+        "sha256",
+        "declaration",
+        "admission_status",
+        "created_at",
+        "updated_at"
+      ],
+      "title": "ReportFileSourceProjection",
+      "type": "object"
+    },
+    "ReportFileTopicTag": {
+      "additionalProperties": false,
+      "description": "用户可选的文件主题标签；标签值由服务端领域目录而非前端枚举提供。",
+      "properties": {
+        "id": {
+          "maxLength": 300,
+          "minLength": 1,
+          "type": "string"
+        },
+        "label": {
+          "maxLength": 300,
+          "minLength": 1,
+          "type": "string"
+        },
+        "kind": {
+          "enum": [
+            "auxiliary",
+            "report_area",
+            "report_section"
+          ],
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "label",
+        "kind"
+      ],
+      "title": "ReportFileTopicTag",
+      "type": "object"
+    },
+    "SourceLocator": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/PdfPageLocator"
+        },
+        {
+          "$ref": "#/$defs/DocxParagraphLocator"
+        },
+        {
+          "$ref": "#/$defs/DocxTableLocator"
+        },
+        {
+          "$ref": "#/$defs/XlsxRangeLocator"
+        },
+        {
+          "$ref": "#/$defs/PptxSlideLocator"
+        },
+        {
+          "$ref": "#/$defs/ImageRegionLocator"
+        }
+      ]
+    },
+    "UserFileDeclaration": {
+      "additionalProperties": false,
+      "description": "用户对一份原文件的权威说明，不推断资料是否最终被报告采用。\n\ndescription 与 layout_asset 的 asset_title 允许为空串，表示用户选择先上传、\n后补充说明；一旦非空，仍必须满足 10–140 字（说明）或 1–140 字（素材标题）的\n权威长度约束。空说明不是故障态，是\"待补充\"这一合法用户分支。",
+      "properties": {
+        "description": {
+          "maxLength": 140,
+          "type": "string"
+        },
+        "role": {
+          "$ref": "#/$defs/ReportFileRole"
+        },
+        "topic_tags": {
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 24,
+          "minItems": 1,
+          "type": "array"
+        },
+        "asset_title": {
+          "anyOf": [
+            {
+              "maxLength": 100,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        }
+      },
+      "required": [
+        "description",
+        "role",
+        "topic_tags"
+      ],
+      "title": "UserFileDeclaration",
+      "type": "object"
+    },
+    "UserFileDeclarationRevision": {
+      "additionalProperties": false,
+      "description": "一项不可变的用户文件声明修订；当前声明由 Binding 的最高 revision 派生。",
+      "properties": {
+        "description": {
+          "maxLength": 140,
+          "type": "string"
+        },
+        "role": {
+          "$ref": "#/$defs/ReportFileRole"
+        },
+        "topic_tags": {
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 24,
+          "minItems": 1,
+          "type": "array"
+        },
+        "asset_title": {
+          "anyOf": [
+            {
+              "maxLength": 100,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "revision_id": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "binding_id": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "revision": {
+          "minimum": 1,
+          "type": "integer"
+        },
+        "declared_at": {
+          "format": "date-time",
+          "type": "string"
+        }
+      },
+      "required": [
+        "description",
+        "role",
+        "topic_tags",
+        "revision_id",
+        "binding_id",
+        "revision",
+        "declared_at"
+      ],
+      "title": "UserFileDeclarationRevision",
+      "type": "object"
+    },
+    "XlsxRangeLocator": {
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "const": "xlsx_range",
+          "default": "xlsx_range",
+          "type": "string"
+        },
+        "sheet_name": {
+          "type": "string"
+        },
+        "cell_range": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "kind",
+        "sheet_name",
+        "cell_range"
+      ],
+      "title": "XlsxRangeLocator",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "description": "前端生成类型使用的资料 API 合同集合；不作为业务请求载荷。",
+  "properties": {
+    "workspace": {
+      "$ref": "#/$defs/MaterialWorkspaceProjection"
+    },
+    "source_content": {
+      "$ref": "#/$defs/MaterialSourceContentProjection"
+    },
+    "file_declaration": {
+      "$ref": "#/$defs/UserFileDeclaration"
+    },
+    "report_file_intake": {
+      "$ref": "#/$defs/ReportFileIntakeProjection"
+    }
+  },
+  "required": [
+    "workspace",
+    "source_content",
+    "file_declaration",
+    "report_file_intake"
+  ],
+  "title": "MaterialApiContracts",
+  "type": "object"
+}

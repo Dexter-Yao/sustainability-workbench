@@ -1,0 +1,51 @@
+# ABOUTME(en): Appendix C2 disclosure requirements of "Energy Management" (General Disclosure and KPIs), grouped by pillar,
+# ABOUTME(en): for the coverage audit and for prompt assembly by key whitelist (injection is switch-gated, off by default) and for the coverage audit. Wording follows the English Code text.
+topicStandardDisclosureRequirementGroups:
+- topicSectionKey: energy_management.gov
+  pillar: governance
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: energy_management.gov.general_disclosure_policies
+    standardDisclosureRequirementTitle: Policy on efficient use of energy
+    excerptFrom: HKEX·Appendix C2·General Disclosure A2
+    standardDisclosureRequirementText: |-
+      Disclose the policies on the efficient use of resources, including energy, water and other raw materials.
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: General Disclosure A2
+- topicSectionKey: energy_management.strategy
+  pillar: strategy
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: energy_management.strategy.energy_efficiency_targets
+    standardDisclosureRequirementTitle: Energy use efficiency targets and steps taken to achieve them
+    excerptFrom: HKEX·Appendix C2·KPI A2.3
+    standardDisclosureRequirementText: |-
+      Description of energy use efficiency target(s) set and steps taken to achieve them.
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: KPI A2.3
+- topicSectionKey: energy_management.iro
+  pillar: iro_management
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: energy_management.iro.energy_efficiency_measures
+    standardDisclosureRequirementTitle: Energy efficiency measures
+    excerptFrom: HKEX·Appendix C2·KPI A2.3
+    standardDisclosureRequirementText: |-
+      Describe the specific measures taken to achieve the energy use efficiency targets and how they are implemented and monitored.
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: KPI A2.3
+- topicSectionKey: energy_management.metrics
+  pillar: metrics_targets
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: energy_management.metrics.energy_consumption_data
+    standardDisclosureRequirementTitle: Direct and indirect energy consumption by type and intensity
+    excerptFrom: HKEX·Appendix C2·KPI A2.1
+    standardDisclosureRequirementText: |-
+      Disclose direct and/or indirect energy consumption by type (e.g. electricity, gas or oil) in total (kWh in '000s) and intensity (e.g. per unit of production volume, per facility).
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: KPI A2.1

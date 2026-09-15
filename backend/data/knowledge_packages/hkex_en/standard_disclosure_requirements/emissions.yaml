@@ -1,0 +1,59 @@
+# ABOUTME(en): Appendix C2 disclosure requirements of "Emissions" (General Disclosure and KPIs), grouped by pillar,
+# ABOUTME(en): for the coverage audit and for prompt assembly by key whitelist (injection is switch-gated, off by default) and for the coverage audit. Wording follows the English Code text.
+topicStandardDisclosureRequirementGroups:
+- topicSectionKey: emissions.gov
+  pillar: governance
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: emissions.gov.general_disclosure_policies
+    standardDisclosureRequirementTitle: Emissions management policies
+    excerptFrom: HKEX·Appendix C2·General Disclosure A1
+    standardDisclosureRequirementText: |-
+      Disclose the policies on air and greenhouse gas emissions, discharges into water and land, and generation of hazardous and non-hazardous waste.
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: General Disclosure A1
+  - standardDisclosureRequirementKey: emissions.gov.general_disclosure_compliance
+    standardDisclosureRequirementTitle: Compliance with emissions-related laws and regulations
+    excerptFrom: HKEX·Appendix C2·General Disclosure A1
+    standardDisclosureRequirementText: |-
+      Disclose information on compliance with relevant laws and regulations that have a significant impact on the issuer, including compliance during the reporting period.
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: General Disclosure A1
+- topicSectionKey: emissions.strategy
+  pillar: strategy
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: emissions.strategy.emission_targets
+    standardDisclosureRequirementTitle: Emission targets and steps taken to achieve them
+    excerptFrom: HKEX·Appendix C2·KPI A1.5
+    standardDisclosureRequirementText: Description of emission target(s) set and steps taken to achieve them.
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: KPI A1.5
+- topicSectionKey: emissions.iro
+  pillar: iro_management
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: emissions.iro.emission_control_measures
+    standardDisclosureRequirementTitle: Emission control measures
+    excerptFrom: HKEX·Appendix C2·General Disclosure A1
+    standardDisclosureRequirementText: |-
+      Describe the company's measures for managing its main emission sources, including treatment of exhaust gas and wastewater and monitoring and testing arrangements, consistent with the General Disclosure and the KPI A1.1 emission data.
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: General Disclosure A1
+- topicSectionKey: emissions.metrics
+  pillar: metrics_targets
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: emissions.metrics.emission_types_and_data
+    standardDisclosureRequirementTitle: Types of emissions and respective emissions data
+    excerptFrom: HKEX·Appendix C2·KPI A1.1
+    standardDisclosureRequirementText: |-
+      Disclose the types of emissions and respective emissions data, such as nitrogen oxides, sulphur oxides, particulate matter and chemical oxygen demand discharged into water.
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: KPI A1.1

@@ -1,0 +1,51 @@
+# ABOUTME(en): GRI 306: Waste 2020 disclosure requirements, grouped by the package's pillars, for the
+# ABOUTME(en): coverage audit and the key whitelist. Wording condenses the official requirement text.
+topicStandardDisclosureRequirementGroups:
+- topicSectionKey: waste.gov
+  pillar: governance
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: waste.gov.generation_and_impacts
+    standardDisclosureRequirementTitle: Waste generation and significant waste-related impacts
+    excerptFrom: 306-1-a
+    standardDisclosureRequirementText: |-
+      For the organization's significant actual and potential waste-related impacts, describe the inputs, activities and outputs that lead or could lead to those impacts, and whether the impacts relate to waste generated in the organization's own activities or upstream or downstream in its value chain.
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: GRI
+      clauseRef: 306-1-a
+- topicSectionKey: waste.strategy
+  pillar: strategy
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: waste.strategy.prevention_measures
+    standardDisclosureRequirementTitle: Actions to prevent waste generation
+    excerptFrom: 306-2-a
+    standardDisclosureRequirementText: |-
+      Describe the actions, including circularity measures, taken to prevent waste generation in the organization's own activities and upstream and downstream in its value chain, and to manage significant impacts from waste generated.
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: GRI
+      clauseRef: 306-2-a
+- topicSectionKey: waste.iro
+  pillar: iro_management
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: waste.iro.third_party_and_data
+    standardDisclosureRequirementTitle: Third-party waste management and data collection
+    excerptFrom: 306-2-b, 306-2-c
+    standardDisclosureRequirementText: |-
+      Describe the processes used to collect and monitor waste-related data, and, if waste management is contracted to a third party, describe the processes used to determine whether the third party manages the waste in line with contractual or legislative obligations.
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: GRI
+      clauseRef: 306-2-b, 306-2-c
+- topicSectionKey: waste.metrics
+  pillar: metrics_targets
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: waste.metrics.waste_data
+    standardDisclosureRequirementTitle: Waste generated, diverted from disposal and directed to disposal
+    excerptFrom: 306-3, 306-4, 306-5
+    standardDisclosureRequirementText: |-
+      Report the total weight of waste generated in metric tons with a breakdown by composition, and the total weight of waste diverted from disposal and directed to disposal, each broken down into hazardous and non-hazardous waste and by recovery or disposal operation.
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: GRI
+      clauseRef: 306-3, 306-4, 306-5

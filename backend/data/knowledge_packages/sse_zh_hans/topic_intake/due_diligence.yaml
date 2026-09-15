@@ -1,0 +1,11 @@
+# ABOUTME: 尽职调查议题轻量版内容清单，仅保留内外部尽职调查情况问题。
+# ABOUTME: 治理、战略和指标目标固定题由 topic_intake_common.yaml 展开；结构化数值由 ESG 定量数据表维护。
+contentScopeId: due_diligence
+items:
+- key: due_diligence.q_internal_external_due_diligence
+  prompt: 请简述贵司开展过的内外部尽职调查情况。
+  kind: text
+  collectionPriority: recommended
+  hint: 填写已开展的尽职调查及其发现与整改；未开展可填写「无」。
+  termExplanation: 可包括内部机制、供应商、合作伙伴、投资并购、环境或社会风险等方向的调查。
+  maxChars: 5000

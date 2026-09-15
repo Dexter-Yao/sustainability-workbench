@@ -1,0 +1,24 @@
+# ABOUTME: 产品质量与安全议题轻量版内容清单，聚焦质量系统、质量要求和质量培训活动。
+# ABOUTME: 治理、战略和指标目标固定题由 topic_intake_common.yaml 展开；结构化数值由 ESG 定量数据表维护。
+contentScopeId: product_quality_safety
+items:
+- key: product_quality_safety.q_quality_system_name
+  prompt: 贵司质量管理信息系统名称是什么？
+  kind: text
+  collectionPriority: recommended
+  hint: 如有质量管理信息系统，请填写系统名称；没有可填“无”。
+  generationBoundary: 填写“无”仅表示未提供系统名称，不得解释为公司没有质量管理。
+  maxChars: 3000
+- key: product_quality_safety.q_quality_management_requirements
+  prompt: 请简述贵司产品质量管理要求。
+  kind: text
+  collectionPriority: recommended
+  hint: 可填写产品质量标准、检验检测、过程控制、供应商质量要求、客户反馈处理、质量改进或其他要求；没有可填“无”。
+  maxChars: 5000
+- key: product_quality_safety.q_quality_training_activities
+  prompt: 请简述贵司开展的质量管理主题培训和活动。
+  kind: text
+  collectionPriority: recommended
+  hint: 请填写活动名称、范围、活动效果等；没有可填“无”。
+  generationBoundary: 未填写具体数值时，不得生成培训人次、次数或覆盖率。
+  maxChars: 5000

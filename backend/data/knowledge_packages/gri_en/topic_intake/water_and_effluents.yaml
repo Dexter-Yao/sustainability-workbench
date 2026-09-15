@@ -1,0 +1,22 @@
+# ABOUTME(en): Topic-specific intake questions of "Water and Effluents"; the four fixed pillar questions come from topic_intake_common.yaml.
+# ABOUTME(en): Quantitative metrics are collected through the metric catalog, not here.
+contentScopeId: water_and_effluents
+items:
+- key: water.q_water_saving_measures
+  prompt: What measures has the company taken to save water or recycle it?
+  kind: text
+  collectionPriority: recommended
+  hint: Recycling, reuse, leak control, process changes; or blank.
+  generationBoundary: |-
+    Unless specific figures are given, do not generate water savings, recycling rates or investment amounts.
+  maxChars: 5000
+- key: water.q_water_stress
+  prompt: Does the company operate in an area with water stress?
+  kind: single_select
+  collectionPriority: recommended
+  options:
+  - Yes, one or more sites
+  - "No"
+  - Not sure
+  hint: Judged by the local catchment, not by company use.
+  maxChars: 5000

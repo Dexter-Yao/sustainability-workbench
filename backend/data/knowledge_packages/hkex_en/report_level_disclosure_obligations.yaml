@@ -1,0 +1,103 @@
+# ABOUTME(en): Report-level obligations of Appendix C2 Part B (mandatory disclosure requirements) and the
+# ABOUTME(en): "comply or explain" fallback: obligations that belong to the report as a whole, not to one Aspect.
+# ABOUTME(en): Carriers are declared here; the judging rules live in contract/disclosure_coverage.py.
+#
+# obligationKind values:
+#   structural  structural obligations satisfied by the report skeleton (sections exist in order)
+#   statement   statements that must appear in the body (board statement, reporting principles, boundary), judged per instance
+#   process     obligations to disclose a process or mechanism (materiality assessment process)
+#   fallback_statement  the Code's built-in "comply or explain" exit; not triggered = no gap
+#
+# Paragraph numbers follow the text effective 1 January 2025.
+reportLevelDisclosureObligations:
+- obligationKey: c2.board_statement
+  obligationTitle: Board statement
+  sourceLabel: HKEX·Appendix C2·Part B paragraph 13
+  obligationText: The ESG report must contain a statement from the board setting out (i) the board's oversight of ESG issues; (ii) the board's ESG management approach and strategy, including the process used to evaluate, prioritise and manage material ESG-related issues (including risks to the issuer's businesses); and (iii) how the board reviews progress made against ESG-related goals and targets with an explanation of how they relate to the issuer's businesses.
+  obligationKind: statement
+  carrierSectionKeys: [board_statement]
+  carrierBlockIds: [board.oversight, board.management_approach, board.progress_review]
+  userFacingNote: The report does not contain a complete board statement. The Code requires the statement to cover the board's oversight, its management approach and strategy (including the materiality assessment process) and how it reviews progress against goals and targets.
+
+- obligationKey: c2.reporting_principles
+  obligationTitle: Reporting principles
+  sourceLabel: HKEX·Appendix C2·Part B paragraph 14
+  obligationText: The ESG report must describe how the reporting principles of materiality, quantitative, balance and consistency have been applied, including the process for and results of the materiality assessment, the standards and methodologies for quantitative information, and any changes in methods or KPIs used.
+  obligationKind: statement
+  carrierSectionKeys: [about_report.principles]
+  carrierBlockIds: [about.principles]
+  userFacingNote: The report does not describe how the four reporting principles of materiality, quantitative, balance and consistency have been applied.
+
+- obligationKey: c2.reporting_boundary
+  obligationTitle: Reporting boundary
+  sourceLabel: HKEX·Appendix C2·Part B paragraph 15
+  obligationText: The ESG report must explain its reporting boundary, identifying which entities or operations are included; where there is a change in the boundary, the difference and the reason for the change must be explained.
+  obligationKind: statement
+  carrierSectionKeys: [about_report.scope]
+  carrierBlockIds:
+  - about.scope
+  - about.scope_without_short_name
+  - about.scope_parent_only
+  - about.scope_parent_only_without_short_name
+  - about.scope_special
+  - about.scope_special_without_short_name
+  userFacingNote: The report does not state its reporting boundary. The Code requires an explanation of which entities or operations are included; add the company's registered name and the boundary before finalising.
+
+- obligationKey: c2.reporting_period
+  obligationTitle: Reporting period
+  sourceLabel: HKEX·Appendix C2·Part A paragraph 4
+  obligationText: The period covered by the ESG report must be consistent with the financial year covered by the issuer's annual report.
+  obligationKind: statement
+  carrierSectionKeys: [about_report.timeframe]
+  carrierBlockIds: [about.timeframe]
+  userFacingNote: The report does not state its reporting period. The Code requires the period to match the annual report's financial year; add the start and end dates before finalising.
+
+- obligationKey: c2.materiality_process_disclosure
+  obligationTitle: Disclosure of the materiality assessment process and results
+  sourceLabel: HKEX·Appendix C2·Part B paragraph 13(ii) and paragraph 14 (materiality principle)
+  obligationText: The report must disclose the process for identifying material ESG issues and the criteria for their selection, how the board evaluates and prioritises them, and the results of the materiality assessment.
+  obligationKind: process
+  carrierSectionKeys: [sm.materiality]
+  carrierBlockIds: []
+  userFacingNote: The report does not disclose the materiality assessment process and results.
+
+- obligationKey: c2.framework_structure
+  obligationTitle: Completeness of the report framework
+  sourceLabel: HKEX·Appendix C2·Parts B and C
+  obligationText: The report must cover the board statement, the description of reporting principles and boundary, the General Disclosures and KPIs of each Aspect, and the climate-related disclosures; this package carries them in About This Report, Board Statement, About the Company, Sustainability Governance, the subject-area chapters and the appendix.
+  obligationKind: structural
+  carrierSectionKeys:
+  - about_report
+  - board_statement
+  - company_intro
+  - sustainability_mgmt
+  - report_appendix
+  carrierBlockIds: []
+  userFacingNote: The report framework lacks a component the Code requires.
+
+- obligationKey: c2.content_index
+  obligationTitle: Code content index
+  sourceLabel: HKEX·Appendix C2·Part C ("comply or explain" provisions)
+  obligationText: The report should provide an index mapping the Code's General Disclosures and KPIs to report sections; provisions not disclosed must be explained.
+  obligationKind: structural
+  carrierSectionKeys: []
+  carrierBlockIds: [appendix.standards_index.table]
+  userFacingNote: The report lacks the Code content index.
+
+- obligationKey: c2.comply_or_explain
+  obligationTitle: Comply or explain
+  sourceLabel: HKEX·Appendix C2·Part A paragraph 2
+  obligationText: For the "comply or explain" provisions in Part C, an issuer that deviates from a provision must give considered reasons in the report.
+  obligationKind: fallback_statement
+  carrierSectionKeys: []
+  carrierBlockIds: []
+  userFacingNote: Some General Disclosures or KPIs are not disclosed. The Code allows an explanation instead; the report must give considered reasons for not disclosing them.
+
+- obligationKey: c2.climate_scope3_relief
+  obligationTitle: Transitional arrangement for Scope 3 emissions
+  sourceLabel: HKEX·Appendix C2·Part D paragraph 30 (implementation relief)
+  obligationText: An issuer unable to disclose Scope 3 greenhouse gas emissions may, during the transition period, disclose the actions it is taking and the timeline for the disclosure, or provide qualitative information instead.
+  obligationKind: fallback_statement
+  carrierSectionKeys: []
+  carrierBlockIds: []
+  userFacingNote: The report does not disclose Scope 3 greenhouse gas emissions. The Code allows a description of the work plan and timeline instead during the transition period.

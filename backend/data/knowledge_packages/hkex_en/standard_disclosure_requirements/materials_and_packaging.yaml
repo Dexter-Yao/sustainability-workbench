@@ -1,0 +1,52 @@
+# ABOUTME(en): Appendix C2 disclosure requirements of "Materials and Packaging" (General Disclosure and KPIs), grouped by pillar,
+# ABOUTME(en): for the coverage audit and for prompt assembly by key whitelist (injection is switch-gated, off by default) and for the coverage audit. Wording follows the English Code text.
+topicStandardDisclosureRequirementGroups:
+- topicSectionKey: materials_and_packaging.gov
+  pillar: governance
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: materials_and_packaging.gov.general_disclosure_policies
+    standardDisclosureRequirementTitle: Policy on efficient use of raw materials
+    excerptFrom: HKEX·Appendix C2·General Disclosure A2
+    standardDisclosureRequirementText: |-
+      Disclose the policies on the efficient use of resources, including other raw materials.
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: General Disclosure A2
+- topicSectionKey: materials_and_packaging.strategy
+  pillar: strategy
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: materials_and_packaging.strategy.packaging_reduction_direction
+    standardDisclosureRequirementTitle: Packaging reduction direction
+    excerptFrom: HKEX·Appendix C2·General Disclosure A2
+    standardDisclosureRequirementText: |-
+      Describe the company's direction and targets on packaging reduction and the use of recyclable and recycled materials.
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: General Disclosure A2
+- topicSectionKey: materials_and_packaging.iro
+  pillar: iro_management
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: materials_and_packaging.iro.packaging_management
+    standardDisclosureRequirementTitle: Packaging material management measures
+    excerptFrom: HKEX·Appendix C2·KPI A2.5
+    standardDisclosureRequirementText: |-
+      Describe the types of packaging material used for finished products and the management measures, consistent with the quantities disclosed under KPI A2.5.
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: KPI A2.5
+- topicSectionKey: materials_and_packaging.metrics
+  pillar: metrics_targets
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: materials_and_packaging.metrics.packaging_material_data
+    standardDisclosureRequirementTitle: |-
+      Total packaging material used for finished products and per unit produced
+    excerptFrom: HKEX·Appendix C2·KPI A2.5
+    standardDisclosureRequirementText: |-
+      Disclose the total packaging material used for finished products (in tonnes) and, if applicable, with reference to per unit produced.
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: KPI A2.5

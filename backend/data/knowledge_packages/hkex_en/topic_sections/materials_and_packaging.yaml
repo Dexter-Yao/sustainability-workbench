@@ -1,0 +1,117 @@
+# ABOUTME(en): Topic chapter template of the HKEX Aspect "Materials and Packaging": governance / strategy / risk-management
+# ABOUTME(en): blocks with their intake evidence and Appendix C2 requirement keys; the metrics H3 is compiled from metricDisclosure.
+section:
+  key: materials_and_packaging
+  title: Materials and Packaging
+  headingLevel: 2
+  reportSectionId: materials_and_packaging
+  conciseDisclosure:
+    id: materials.concise_summary
+    type: paragraph
+    blockType: generative
+    source: ai
+    styleRole: body
+    generation:
+      task:
+        focus: |-
+          From the evidence currently visible for this Aspect, write one coherent summary covering the policy on raw and packaging materials and the reduction and recycling measures, without the four sub-headings.
+      inputs:
+        evidence:
+          kind: report_section
+      targetChars:
+      - 260
+      - 520
+  children:
+  - key: materials_and_packaging.gov
+    title: Governance
+    pillar: governance
+    headingLevel: 3
+    blocks:
+    - id: materials.gov_policy
+      type: paragraph
+      blockType: generative
+      source: ai
+      styleRole: body
+      generation:
+        task:
+          focus: |-
+            Describe the company's policy on efficient use of raw and packaging materials and the allocation of responsibility (Code Aspect A2 General Disclosure).
+          noFactGuidance: |-
+            When the user provides no policy or responsibility facts, describe in a measured, general register the management attention, compliance principles and allocation of responsibility a company of this industry and business type applies to this Aspect; do not name departments, policy titles, certifications or approval flows, and do not claim that a specific system exists or that compliance checks have been completed.
+        inputs:
+          evidence:
+            kind: explicit
+            intakeItems:
+            - materials.q_governance_roles
+            - materials.q_governance_policies
+            - materials.q_governance_certifications
+        targetChars:
+        - 85
+        - 190
+        standardDisclosureRequirementKeys:
+        - materials_and_packaging.gov.general_disclosure_policies
+  - key: materials_and_packaging.strategy
+    title: Strategy
+    pillar: strategy
+    headingLevel: 3
+    blocks:
+    - id: materials.strategy_targets
+      type: paragraph
+      blockType: generative
+      source: ai
+      styleRole: body
+      generation:
+        task:
+          focus: |-
+            Describe the company's targets and direction on reducing packaging, lightweighting and using recyclable or recycled materials.
+          noFactGuidance: |-
+            When the user provides no targets or plans, state that the company will keep attending to improvement directions and the setting of quantified targets for this Aspect as the business develops; do not invent target values, base years, deadlines or achieved results.
+        inputs:
+          evidence:
+            kind: explicit
+            intakeItems:
+            - materials.q_strategy_content
+            - materials.q_packaging_reduction
+        targetChars:
+        - 85
+        - 190
+        standardDisclosureRequirementKeys:
+        - materials_and_packaging.strategy.packaging_reduction_direction
+        simplifiedWritingGuidance:
+        - |-
+          Figures are carried by the KPI data table; this passage does not state emissions, consumption, ratios or reduction percentages.
+  - key: materials_and_packaging.iro
+    title: Risk Management
+    pillar: iro_management
+    headingLevel: 3
+    blocks:
+    - id: materials.iro_measures
+      type: paragraph
+      blockType: generative
+      source: ai
+      styleRole: body
+      generation:
+        task:
+          focus: |-
+            Describe the types of packaging material used for finished products and the management measures: packaging design, reusable transit containers, recycling arrangements and packaging reduction agreed with customers.
+          noFactGuidance: |-
+            When the user provides no specific measures, describe only the management steps and directional arrangements common to this Aspect for the industry and business type; do not claim that the company has implemented specific measures, purchased equipment, engaged contractors or achieved results.
+        inputs:
+          evidence:
+            kind: explicit
+            intakeItems:
+            - materials.q_packaging_materials
+            - materials.q_packaging_reduction
+        targetChars:
+        - 95
+        - 230
+        standardDisclosureRequirementKeys:
+        - materials_and_packaging.iro.packaging_management
+        simplifiedWritingGuidance:
+        - |-
+          Figures are carried by the KPI data table; this passage does not state emissions, consumption, ratios or reduction percentages.
+metricDisclosure:
+  catalogMetricKeys:
+  - packaging_total
+  - packaging_per_unit
+  - packaging_recycled_content_rate

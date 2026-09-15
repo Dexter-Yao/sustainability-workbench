@@ -1,0 +1,113 @@
+# ABOUTME: 利益相关方沟通确定性目录，拥有稳定对象、通用方式候选及适用议题默认多对多映射。
+# ABOUTME: 议题名称与适用性仍由 topic_registry.yaml 拥有；本文件只引用正式议题 ID，不承载行业推断或模型指令。
+
+stakeholders:
+  - id: government_regulators
+    label: 政府及监管机构
+    order: 10
+    defaultMethodIds: [regulatory_communication, document_submission_correspondence, supervision_inspection_support]
+  - id: shareholders_investors
+    label: 股东及投资者
+    order: 20
+    defaultMethodIds: [shareholder_meeting, information_disclosure, investor_communication]
+  - id: customers
+    label: 客户
+    order: 30
+    defaultMethodIds: [customer_visits, customer_service_channels, satisfaction_survey, complaints_feedback]
+  - id: management
+    label: 管理层
+    order: 40
+    defaultMethodIds: [management_meeting, special_reporting, issue_review_decision]
+  - id: employees
+    label: 员工
+    order: 50
+    defaultMethodIds: [employee_representative_communication, employee_forum, opinion_channels, training]
+  - id: suppliers
+    label: 供应商
+    order: 60
+    defaultMethodIds: [supplier_meeting, daily_business_communication, supplier_admission_evaluation, supply_chain_collaborative_improvement]
+  - id: partners
+    label: 合作伙伴
+    order: 70
+    defaultMethodIds: [business_meeting, industry_exchange, joint_working_group, project_cooperation]
+  - id: community_public
+    label: 社区与公众
+    order: 80
+    defaultMethodIds: [community_visits, public_consultation, opinion_solicitation, community_co_creation]
+
+methods:
+  - {id: regulatory_communication, label: 监管沟通, kind: communication_channel, allowedStakeholderTypes: [government_regulators]}
+  - {id: document_submission_correspondence, label: 文件报送与函件往来, kind: communication_channel, allowedStakeholderTypes: [government_regulators]}
+  - {id: policy_briefing_roundtable, label: 政策宣贯与专题座谈, kind: participation_mechanism, allowedStakeholderTypes: [government_regulators]}
+  - {id: supervision_inspection_support, label: 监督检查配合, kind: participation_mechanism, allowedStakeholderTypes: [government_regulators]}
+  - {id: government_enterprise_exchange, label: 政企交流, kind: collaboration_activity, allowedStakeholderTypes: [government_regulators]}
+
+  - {id: shareholder_meeting, label: 股东会, kind: communication_channel, allowedStakeholderTypes: [shareholders_investors]}
+  - {id: information_disclosure, label: 信息披露, kind: communication_channel, allowedStakeholderTypes: [shareholders_investors]}
+  - {id: investor_communication, label: 投资者沟通, kind: communication_channel, allowedStakeholderTypes: [shareholders_investors]}
+  - {id: inquiries_feedback, label: 问询与意见反馈, kind: participation_mechanism, allowedStakeholderTypes: [shareholders_investors]}
+  - {id: thematic_exchange, label: 专题交流, kind: collaboration_activity, allowedStakeholderTypes: [shareholders_investors]}
+
+  - {id: customer_visits, label: 客户走访, kind: communication_channel, allowedStakeholderTypes: [customers]}
+  - {id: customer_service_channels, label: 客服热线与在线渠道, kind: communication_channel, allowedStakeholderTypes: [customers]}
+  - {id: satisfaction_survey, label: 满意度调查, kind: participation_mechanism, allowedStakeholderTypes: [customers, employees]}
+  - {id: complaints_feedback, label: 投诉与反馈, kind: participation_mechanism, allowedStakeholderTypes: [customers, community_public]}
+  - {id: technical_exchange_joint_solution, label: 技术交流与联合解决方案, kind: collaboration_activity, allowedStakeholderTypes: [customers]}
+
+  - {id: management_meeting, label: 经营管理会议, kind: communication_channel, allowedStakeholderTypes: [management]}
+  - {id: special_reporting, label: 专题汇报, kind: communication_channel, allowedStakeholderTypes: [management]}
+  - {id: issue_review_decision, label: 议题审议与决策, kind: participation_mechanism, allowedStakeholderTypes: [management]}
+  - {id: cross_department_coordination, label: 跨部门协调, kind: participation_mechanism, allowedStakeholderTypes: [management]}
+  - {id: special_working_group, label: 专项工作组, kind: collaboration_activity, allowedStakeholderTypes: [management]}
+
+  - {id: employee_representative_communication, label: 职工代表沟通, kind: communication_channel, allowedStakeholderTypes: [employees]}
+  - {id: employee_forum, label: 员工座谈, kind: communication_channel, allowedStakeholderTypes: [employees]}
+  - {id: opinion_channels, label: 意见渠道, kind: communication_channel, allowedStakeholderTypes: [employees]}
+  - {id: grievance_feedback, label: 申诉与反馈, kind: participation_mechanism, allowedStakeholderTypes: [employees]}
+  - {id: training, label: 培训, kind: participation_mechanism, allowedStakeholderTypes: [employees]}
+  - {id: employee_improvement_activities, label: 员工改善活动, kind: collaboration_activity, allowedStakeholderTypes: [employees]}
+
+  - {id: supplier_meeting, label: 供应商会议, kind: communication_channel, allowedStakeholderTypes: [suppliers]}
+  - {id: daily_business_communication, label: 日常业务沟通, kind: communication_channel, allowedStakeholderTypes: [suppliers]}
+  - {id: supplier_admission_evaluation, label: 准入与评估, kind: participation_mechanism, allowedStakeholderTypes: [suppliers]}
+  - {id: on_site_audit, label: 现场审核, kind: participation_mechanism, allowedStakeholderTypes: [suppliers]}
+  - {id: supplier_grievance_feedback, label: 申诉反馈, kind: participation_mechanism, allowedStakeholderTypes: [suppliers]}
+  - {id: capability_building, label: 能力建设, kind: collaboration_activity, allowedStakeholderTypes: [suppliers]}
+  - {id: supply_chain_collaborative_improvement, label: 供应链协同改善, kind: collaboration_activity, allowedStakeholderTypes: [suppliers]}
+
+  - {id: business_meeting, label: 业务会谈, kind: communication_channel, allowedStakeholderTypes: [partners]}
+  - {id: industry_exchange, label: 行业交流, kind: communication_channel, allowedStakeholderTypes: [partners]}
+  - {id: industry_association_forum, label: 行业协会与论坛, kind: participation_mechanism, allowedStakeholderTypes: [partners]}
+  - {id: joint_working_group, label: 联合工作组, kind: participation_mechanism, allowedStakeholderTypes: [partners]}
+  - {id: industry_academia_research_cooperation, label: 产学研交流与合作, kind: collaboration_activity, allowedStakeholderTypes: [partners]}
+  - {id: joint_research_development, label: 联合研发, kind: collaboration_activity, allowedStakeholderTypes: [partners]}
+  - {id: project_cooperation, label: 项目合作, kind: collaboration_activity, allowedStakeholderTypes: [partners]}
+
+  - {id: community_visits, label: 社区走访, kind: communication_channel, allowedStakeholderTypes: [community_public]}
+  - {id: public_consultation, label: 公众咨询, kind: communication_channel, allowedStakeholderTypes: [community_public]}
+  - {id: opinion_solicitation, label: 意见征集, kind: participation_mechanism, allowedStakeholderTypes: [community_public]}
+  - {id: community_co_creation, label: 社区共建, kind: collaboration_activity, allowedStakeholderTypes: [community_public]}
+  - {id: public_welfare_activities, label: 公益活动, kind: collaboration_activity, allowedStakeholderTypes: [community_public]}
+
+defaultTopicStakeholders:
+  climate_change: [government_regulators, shareholders_investors, management, community_public]
+  environmental_compliance_management: [government_regulators, management, employees, community_public]
+  pollutant_emissions_management: [government_regulators, management, employees, community_public]
+  waste_management: [government_regulators, management, employees, community_public]
+  circular_economy_promotion: [customers, management, suppliers, partners]
+  energy_management: [government_regulators, management, employees]
+  water_resource_management: [government_regulators, management, community_public]
+  ecosystem_biodiversity_protection: [government_regulators, management, partners, community_public]
+  human_capital_development: [shareholders_investors, management, employees]
+  occupational_health_safety: [government_regulators, management, employees, suppliers]
+  rural_revitalization: [government_regulators, partners, community_public]
+  social_contribution: [shareholders_investors, management, partners, community_public]
+  sustainable_supply_chain_management: [customers, management, suppliers, partners]
+  sme_fair_treatment: [management, suppliers, partners]
+  technology_ethics: [government_regulators, customers, management, employees, partners]
+  innovation_driven: [shareholders_investors, customers, management, employees, partners]
+  product_quality_safety: [government_regulators, customers, management, suppliers, community_public]
+  customer_service_quality_management: [customers, management, employees]
+  data_security_customer_privacy_protection: [government_regulators, customers, management, employees, partners]
+  anti_bribery_anti_corruption: [government_regulators, shareholders_investors, management, employees, suppliers, partners]
+  anti_unfair_competition: [government_regulators, customers, management, employees, suppliers, partners]

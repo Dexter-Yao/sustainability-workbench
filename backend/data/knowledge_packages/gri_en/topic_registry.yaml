@@ -1,0 +1,132 @@
+# ABOUTME(en): GRI topic contract: selected GRI Topic Standards as scored topics → report H2 sections →
+# ABOUTME(en): fixed H1 modules. Topic ids carry the GRI Standard number so the content index can cite them.
+# ABOUTME(en): Minimum usable set for reporting with reference to the GRI Standards; module titles are fixed.
+
+reportModules:
+  - id: environmental_topics
+    navigationTitle: Environmental
+    order: 10
+  - id: social_topics
+    navigationTitle: Social
+    order: 20
+  - id: governance_and_value_chain
+    navigationTitle: Governance and Value Chain
+    order: 30
+
+dimensions:
+  - {id: environment, label: Environmental, order: 10}
+  - {id: social, label: Social, order: 20}
+  - {id: governance, label: Governance, order: 30}
+
+assessmentTopics:
+  # —— Environmental ——
+  - id: climate_change
+    name: Climate Change
+    dimension: environment
+    order: 10
+    reportSectionId: climate_change
+    materialityDetermination: {kind: scored}
+  - id: energy
+    name: Energy
+    dimension: environment
+    order: 20
+    reportSectionId: energy
+    materialityDetermination: {kind: scored}
+  - id: water_and_effluents
+    name: Water and Effluents
+    dimension: environment
+    order: 30
+    reportSectionId: water_and_effluents
+    materialityDetermination: {kind: scored}
+  - id: waste
+    name: Waste
+    dimension: environment
+    order: 40
+    reportSectionId: waste
+    materialityDetermination: {kind: scored}
+  - id: materials
+    name: Materials
+    dimension: environment
+    order: 50
+    reportSectionId: materials
+    materialityDetermination: {kind: scored}
+  - id: biodiversity
+    name: Biodiversity
+    dimension: environment
+    order: 60
+    reportSectionId: biodiversity
+    materialityDetermination: {kind: scored}
+  # —— Social ——
+  - id: employment
+    name: Employment
+    dimension: social
+    order: 10
+    reportSectionId: employment
+    materialityDetermination: {kind: scored}
+  - id: occupational_health_and_safety
+    name: Occupational Health and Safety
+    dimension: social
+    order: 20
+    reportSectionId: occupational_health_and_safety
+    materialityDetermination: {kind: scored}
+  - id: training_and_education
+    name: Training and Education
+    dimension: social
+    order: 30
+    reportSectionId: training_and_education
+    materialityDetermination: {kind: scored}
+  - id: diversity_and_equal_opportunity
+    name: Diversity and Equal Opportunity
+    dimension: social
+    order: 40
+    reportSectionId: diversity_and_equal_opportunity
+    materialityDetermination: {kind: scored}
+  - id: customer_health_and_safety
+    name: Customer Health and Safety
+    dimension: social
+    order: 50
+    reportSectionId: customer_health_and_safety
+    materialityDetermination: {kind: scored}
+  - id: customer_privacy
+    name: Customer Privacy
+    dimension: social
+    order: 60
+    reportSectionId: customer_privacy
+    materialityDetermination: {kind: scored}
+  # —— Governance and value chain ——
+  - id: anti_corruption
+    name: Anti-corruption
+    dimension: governance
+    order: 10
+    reportSectionId: anti_corruption
+    materialityDetermination: {kind: scored}
+  # Supplier environmental assessment (GRI 308) and supplier social assessment (GRI 414) are two
+  # scored topics sharing one report chapter — the "two topics, one chapter" shape of the contract.
+  - id: supplier_environmental_assessment
+    name: Supplier Environmental Assessment
+    dimension: governance
+    order: 20
+    reportSectionId: supplier_assessment
+    materialityDetermination: {kind: scored}
+  - id: supplier_social_assessment
+    name: Supplier Social Assessment
+    dimension: governance
+    order: 30
+    reportSectionId: supplier_assessment
+    materialityDetermination: {kind: scored}
+
+reportSections:
+  - {id: climate_change, title: Climate Change, reportModuleId: environmental_topics, order: 10, sectionPrefix: climate}
+  - {id: energy, title: Energy, reportModuleId: environmental_topics, order: 20}
+  - {id: water_and_effluents, title: Water and Effluents, reportModuleId: environmental_topics, order: 30, sectionPrefix: water}
+  - {id: waste, title: Waste, reportModuleId: environmental_topics, order: 40}
+  - {id: materials, title: Materials, reportModuleId: environmental_topics, order: 50}
+  - {id: biodiversity, title: Biodiversity, reportModuleId: environmental_topics, order: 60}
+  - {id: employment, title: Employment, reportModuleId: social_topics, order: 10}
+  - {id: occupational_health_and_safety, title: Occupational Health and Safety, reportModuleId: social_topics, order: 20, sectionPrefix: health_safety}
+  - {id: training_and_education, title: Training and Education, reportModuleId: social_topics, order: 30, sectionPrefix: training}
+  - {id: diversity_and_equal_opportunity, title: Diversity and Equal Opportunity, reportModuleId: social_topics, order: 40, sectionPrefix: diversity}
+  - {id: customer_health_and_safety, title: Customer Health and Safety, reportModuleId: social_topics, order: 50, sectionPrefix: customer_safety}
+  - {id: customer_privacy, title: Customer Privacy, reportModuleId: social_topics, order: 60, sectionPrefix: privacy}
+  - {id: anti_corruption, title: Anti-corruption, reportModuleId: governance_and_value_chain, order: 10}
+  - {id: supplier_assessment, title: Supplier Assessment, reportModuleId: governance_and_value_chain, order: 20, sectionPrefix: supplier}

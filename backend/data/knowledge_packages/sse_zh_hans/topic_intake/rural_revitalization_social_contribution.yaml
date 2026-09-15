@@ -1,0 +1,16 @@
+# ABOUTME: 乡村振兴与社会贡献议题轻量版内容清单，调整乡村服务题并保留社会贡献入口。
+# ABOUTME: 治理、战略和指标目标固定题由 topic_intake_common.yaml 展开；结构化数值由 ESG 定量数据表维护。
+contentScopeId: rural_revitalization_social_contribution
+items:
+- key: rural_revitalization_social_contribution.q_rural_products_services
+  prompt: 请简述贵公司产品销往乡村地区的情况，或贵公司在乡村地区开展的服务情况。
+  kind: text
+  collectionPriority: recommended
+  hint: 可填写产品或服务覆盖的乡村地区、销售或服务对象、服务内容、助农惠农安排、合作方式或阶段性成果；没有相关内容可留空。
+  maxChars: 5000
+- key: rural_revitalization_social_contribution.q_social_contribution_actions
+  prompt: 报告期内贵公司开展了哪些公益慈善、社区共建、志愿服务或其他社会贡献行动？
+  kind: text
+  collectionPriority: recommended
+  hint: 可填写公益慈善、社区发展、志愿服务、教育支持、困难群体帮扶、社区沟通或其他社会贡献内容；没有相关内容可留空。
+  maxChars: 5000

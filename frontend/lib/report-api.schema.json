@@ -1,0 +1,3619 @@
+{
+  "$defs": {
+    "AppendixPackage": {
+      "additionalProperties": false,
+      "description": "附录事实包：独立于议题与前四章正文，供附录章节、诊断与导出使用。",
+      "properties": {
+        "externalAssuranceReport": {
+          "$ref": "#/$defs/ExternalAssuranceReport",
+          "default": {
+            "isIncluded": false,
+            "fileLabel": null
+          }
+        },
+        "readerFeedbackContactInformation": {
+          "$ref": "#/$defs/ReaderFeedbackContactInformation",
+          "default": {
+            "address": null,
+            "email": null,
+            "phone": null
+          }
+        }
+      },
+      "title": "AppendixPackage",
+      "type": "object",
+      "required": []
+    },
+    "AssessmentCatalogTopicResponse": {
+      "additionalProperties": false,
+      "description": "由议题 Registry 与当前报告适用性共同投影的可评分议题。",
+      "properties": {
+        "assessmentTopicId": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "dimension": {
+          "type": "string"
+        },
+        "order": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "reportSectionId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "assessmentTopicId",
+        "name",
+        "dimension",
+        "order",
+        "reportSectionId"
+      ],
+      "title": "AssessmentCatalogTopicResponse",
+      "type": "object"
+    },
+    "AssessmentCounts": {
+      "additionalProperties": false,
+      "properties": {
+        "dual": {
+          "default": 0,
+          "type": "integer"
+        },
+        "impact_only": {
+          "default": 0,
+          "type": "integer"
+        },
+        "financial_only": {
+          "default": 0,
+          "type": "integer"
+        },
+        "non_material": {
+          "default": 0,
+          "type": "integer"
+        },
+        "total": {
+          "default": 0,
+          "type": "integer"
+        }
+      },
+      "title": "AssessmentCounts",
+      "type": "object",
+      "required": []
+    },
+    "AssessmentInputResponse": {
+      "additionalProperties": false,
+      "description": "当前报告的重要性目录、权威输入及 scoped freshness。",
+      "properties": {
+        "status": {
+          "$ref": "#/$defs/StructuredInputStatus"
+        },
+        "state_seq": {
+          "minimum": 1,
+          "type": "integer"
+        },
+        "contract_version": {
+          "type": "string"
+        },
+        "context_fingerprint": {
+          "maxLength": 64,
+          "minLength": 64,
+          "type": "string"
+        },
+        "score_scale": {
+          "$ref": "#/$defs/AssessmentScoreScale"
+        },
+        "topics": {
+          "items": {
+            "$ref": "#/$defs/AssessmentCatalogTopicResponse"
+          },
+          "type": "array"
+        },
+        "current": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/MaterialityAssessmentInput"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "resolved": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/ResolvedAssessmentResponse"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "readiness": {
+          "$ref": "#/$defs/LightweightReportReadiness"
+        }
+      },
+      "required": [
+        "status",
+        "state_seq",
+        "contract_version",
+        "context_fingerprint",
+        "score_scale",
+        "topics",
+        "current",
+        "resolved",
+        "readiness"
+      ],
+      "title": "AssessmentInputResponse",
+      "type": "object"
+    },
+    "AssessmentScoreScale": {
+      "additionalProperties": false,
+      "description": "双重重要性原始评分尺度：模板声明，导入、录入和 Report 校验共同使用。",
+      "properties": {
+        "minimumExclusive": {
+          "type": "number"
+        },
+        "maximum": {
+          "type": "number"
+        },
+        "multipleOf": {
+          "type": "number"
+        },
+        "financialMaterialityDefinition": {
+          "default": "",
+          "maxLength": 60,
+          "type": "string"
+        },
+        "financialMaterialityExplanation": {
+          "default": "",
+          "maxLength": 80,
+          "type": "string"
+        },
+        "impactMaterialityDefinition": {
+          "default": "",
+          "maxLength": 60,
+          "type": "string"
+        },
+        "impactMaterialityExplanation": {
+          "default": "",
+          "maxLength": 80,
+          "type": "string"
+        }
+      },
+      "required": [
+        "minimumExclusive",
+        "maximum",
+        "multipleOf"
+      ],
+      "title": "AssessmentScoreScale",
+      "type": "object"
+    },
+    "BlockProvenanceEntry": {
+      "additionalProperties": false,
+      "description": "User-safe provenance of one report block.",
+      "properties": {
+        "block_id": {
+          "maxLength": 300,
+          "minLength": 1,
+          "type": "string"
+        },
+        "basis": {
+          "items": {
+            "$ref": "#/$defs/ProvenanceBasis"
+          },
+          "minItems": 1,
+          "type": "array"
+        },
+        "generation_outcome": {
+          "$ref": "#/$defs/GenerationOutcome"
+        },
+        "omission": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/OmissionCode"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "material_disposition": {
+          "$ref": "#/$defs/MaterialDispositionCode"
+        },
+        "sources": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/BlockProvenanceSource"
+          },
+          "type": "array"
+        },
+        "intake_items": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/BlockProvenanceIntakeItem"
+          },
+          "type": "array"
+        },
+        "metrics": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/BlockProvenanceMetric"
+          },
+          "type": "array"
+        },
+        "attention_note": {
+          "default": false,
+          "type": "boolean"
+        },
+        "generated_content": {
+          "anyOf": [
+            {
+              "items": {
+                "$ref": "#/$defs/Inline"
+              },
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "run": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/BlockProvenanceRun"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        }
+      },
+      "required": [
+        "block_id",
+        "basis",
+        "generation_outcome",
+        "material_disposition",
+        "sources",
+        "intake_items",
+        "metrics"
+      ],
+      "title": "BlockProvenanceEntry",
+      "type": "object"
+    },
+    "BlockProvenanceIntakeItem": {
+      "additionalProperties": false,
+      "description": "An intake question the block's evidence selector declares, and whether it had a substantive answer.",
+      "properties": {
+        "question": {
+          "maxLength": 1000,
+          "minLength": 1,
+          "type": "string"
+        },
+        "answered": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "question",
+        "answered"
+      ],
+      "title": "BlockProvenanceIntakeItem",
+      "type": "object"
+    },
+    "BlockProvenanceMetric": {
+      "additionalProperties": false,
+      "description": "A quantitative metric the block actually consumed and the user actually filled in.",
+      "properties": {
+        "metric_name": {
+          "maxLength": 300,
+          "minLength": 1,
+          "type": "string"
+        },
+        "value": {
+          "maxLength": 100,
+          "minLength": 1,
+          "type": "string"
+        },
+        "unit": {
+          "anyOf": [
+            {
+              "maxLength": 50,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        }
+      },
+      "required": [
+        "metric_name",
+        "value"
+      ],
+      "title": "BlockProvenanceMetric",
+      "type": "object"
+    },
+    "BlockProvenanceRun": {
+      "additionalProperties": false,
+      "description": "Run facts for one block, projected from the generation trace as counts and codes only.",
+      "properties": {
+        "stage_status": {
+          "enum": [
+            "succeeded",
+            "failed"
+          ],
+          "type": "string"
+        },
+        "attempt_count": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "guardrail": {
+          "$ref": "#/$defs/GuardrailVerdict"
+        },
+        "guardrail_issue_codes": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/GuardrailIssueCode"
+          },
+          "type": "array"
+        },
+        "evidence_selector_kind": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/EvidenceSelectorKind"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "evidence_level": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/EvidenceLevel"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "intake_fact_count": {
+          "default": 0,
+          "minimum": 0,
+          "type": "integer"
+        },
+        "metric_evidence_count": {
+          "default": 0,
+          "minimum": 0,
+          "type": "integer"
+        },
+        "prior_disclosure_count": {
+          "default": 0,
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "stage_status",
+        "attempt_count",
+        "guardrail",
+        "guardrail_issue_codes"
+      ],
+      "title": "BlockProvenanceRun",
+      "type": "object"
+    },
+    "BlockProvenanceSource": {
+      "additionalProperties": false,
+      "description": "One uploaded file adopted for the block, with the number of FileMaterial units taken from it.",
+      "properties": {
+        "material_name": {
+          "maxLength": 500,
+          "minLength": 1,
+          "type": "string"
+        },
+        "adopted_material_count": {
+          "minimum": 1,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "material_name",
+        "adopted_material_count"
+      ],
+      "title": "BlockProvenanceSource",
+      "type": "object"
+    },
+    "BlockState": {
+      "enum": [
+        "pending",
+        "generating",
+        "ready",
+        "locked",
+        "failed",
+        "omitted"
+      ],
+      "type": "string"
+    },
+    "CustomEngagementMethod": {
+      "additionalProperties": false,
+      "description": "用户补充的沟通、参与或合作方式；类别用于确定性排序，正文只呈现 label。",
+      "properties": {
+        "kind": {
+          "$ref": "#/$defs/EngagementMethodKind"
+        },
+        "label": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "kind",
+        "label"
+      ],
+      "title": "CustomEngagementMethod",
+      "type": "object"
+    },
+    "DisclosureProfile": {
+      "additionalProperties": false,
+      "description": "报告级披露配置（SSOT §3.D）：大陆准则单选，港交所与其他文件为附加参考。",
+      "properties": {
+        "mainlandStandard": {
+          "default": "sse",
+          "enum": [
+            "sse",
+            "szse",
+            "bse"
+          ],
+          "type": "string"
+        },
+        "includesHongKongExchangeGuide": {
+          "default": false,
+          "type": "boolean"
+        },
+        "additionalDisclosureReferences": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        }
+      },
+      "title": "DisclosureProfile",
+      "type": "object",
+      "required": [
+        "additionalDisclosureReferences"
+      ]
+    },
+    "DocxParagraphLocator": {
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "const": "docx_paragraph",
+          "default": "docx_paragraph",
+          "type": "string"
+        },
+        "paragraph_index": {
+          "minimum": 1,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "paragraph_index"
+      ],
+      "title": "DocxParagraphLocator",
+      "type": "object"
+    },
+    "DocxTableLocator": {
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "const": "docx_table",
+          "default": "docx_table",
+          "type": "string"
+        },
+        "table_index": {
+          "minimum": 1,
+          "type": "integer"
+        },
+        "row_start": {
+          "minimum": 1,
+          "type": "integer"
+        },
+        "row_end": {
+          "minimum": 1,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "table_index",
+        "row_start",
+        "row_end"
+      ],
+      "title": "DocxTableLocator",
+      "type": "object"
+    },
+    "EngagementMethodKind": {
+      "enum": [
+        "communication_channel",
+        "participation_mechanism",
+        "collaboration_activity"
+      ],
+      "type": "string"
+    },
+    "EvidenceLevel": {
+      "enum": [
+        "block_facts",
+        "context_only",
+        "metric_narrative"
+      ],
+      "type": "string"
+    },
+    "EvidenceSelectorKind": {
+      "enum": [
+        "explicit",
+        "report_section",
+        "material_gated"
+      ],
+      "type": "string"
+    },
+    "ExternalAssuranceReport": {
+      "additionalProperties": false,
+      "description": "外部鉴证报告附件事实：只记录是否纳入及对外展示标签。",
+      "properties": {
+        "isIncluded": {
+          "default": false,
+          "type": "boolean"
+        },
+        "fileLabel": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        }
+      },
+      "title": "ExternalAssuranceReport",
+      "type": "object",
+      "required": []
+    },
+    "GenerationModelOption": {
+      "additionalProperties": false,
+      "description": "一次生成可选的模型。\n\n只暴露选择所需的事实：稳定 id 与服务商标识。**部署名与端点、密钥环境变量名\n一律不进客户端**——部署名是私有基础设施事实（如某资源上的具体部署），\n泄漏它既无助于选择，也把服务端拓扑写进了界面。",
+      "properties": {
+        "model_id": {
+          "type": "string"
+        },
+        "vendor": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "model_id",
+        "vendor"
+      ],
+      "title": "GenerationModelOption",
+      "type": "object"
+    },
+    "GenerationModelOptionsResponse": {
+      "additionalProperties": false,
+      "description": "当前环境可选的生成模型清单与服务端默认项。\n\n清单只含凭据齐备者：列出一个点下去才失败的选项，等于把配置错误推迟到生成现场。",
+      "properties": {
+        "models": {
+          "items": {
+            "$ref": "#/$defs/GenerationModelOption"
+          },
+          "type": "array"
+        },
+        "default_model_id": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "models",
+        "default_model_id"
+      ],
+      "title": "GenerationModelOptionsResponse",
+      "type": "object"
+    },
+    "GenerationOutcome": {
+      "enum": [
+        "ready",
+        "omitted",
+        "not_generated"
+      ],
+      "type": "string"
+    },
+    "GuardrailIssueCode": {
+      "enum": [
+        "ai_text_cell_empty",
+        "approximate_number_comma",
+        "empty_output",
+        "empty_variants",
+        "expanded_unit_missing",
+        "incomplete_output",
+        "internal_leak",
+        "internal_path_leak",
+        "metric_narrative_maturity",
+        "missing_display_title",
+        "missing_or_negative_statement",
+        "numeric_range_missing_percent",
+        "output_format",
+        "output_self_numbering",
+        "placeholder_output",
+        "required_cell_empty",
+        "social_sensitive_statement",
+        "table_company_subject",
+        "template_residue",
+        "title_trailing_punctuation",
+        "too_many_paragraphs_without_substantive_input",
+        "unsupported_actual_iro_classification",
+        "unsupported_formal_name",
+        "unsupported_numeric_claim",
+        "unsupported_evidence_gated_fact"
+      ],
+      "type": "string"
+    },
+    "GuardrailVerdict": {
+      "enum": [
+        "accepted",
+        "accepted_after_retry",
+        "rejected",
+        "not_evaluated"
+      ],
+      "type": "string"
+    },
+    "IROItem": {
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "enum": [
+            "impact",
+            "risk",
+            "opportunity"
+          ],
+          "type": "string"
+        },
+        "description": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "classes": {
+          "anyOf": [
+            {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "valueChain": {
+          "anyOf": [
+            {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "timeHorizon": {
+          "anyOf": [
+            {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "state": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/BlockState"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        }
+      },
+      "required": [
+        "kind"
+      ],
+      "title": "IROItem",
+      "type": "object"
+    },
+    "ImageRegionLocator": {
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "const": "image_region",
+          "default": "image_region",
+          "type": "string"
+        },
+        "region_label": {
+          "default": "整张图片",
+          "type": "string"
+        },
+        "x": {
+          "anyOf": [
+            {
+              "maximum": 1,
+              "minimum": 0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "y": {
+          "anyOf": [
+            {
+              "maximum": 1,
+              "minimum": 0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "width": {
+          "anyOf": [
+            {
+              "exclusiveMinimum": 0,
+              "maximum": 1,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "height": {
+          "anyOf": [
+            {
+              "exclusiveMinimum": 0,
+              "maximum": 1,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        }
+      },
+      "title": "ImageRegionLocator",
+      "type": "object",
+      "required": []
+    },
+    "Inline": {
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "enum": [
+            "text",
+            "ref"
+          ],
+          "type": "string"
+        },
+        "text": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "ref": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "fallback": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "marks": {
+          "anyOf": [
+            {
+              "items": {
+                "$ref": "#/$defs/Mark"
+              },
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        }
+      },
+      "required": [
+        "kind"
+      ],
+      "title": "Inline",
+      "type": "object"
+    },
+    "InternalAuditArtifactListResponse": {
+      "additionalProperties": false,
+      "properties": {
+        "artifacts": {
+          "items": {
+            "$ref": "#/$defs/InternalAuditArtifactResponse"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "artifacts"
+      ],
+      "title": "InternalAuditArtifactListResponse",
+      "type": "object"
+    },
+    "InternalAuditArtifactResponse": {
+      "additionalProperties": false,
+      "description": "内部审计权限持有者的跨 Account 交付物定位投影。",
+      "properties": {
+        "artifact_id": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "report_id": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "report_title": {
+          "maxLength": 200,
+          "minLength": 1,
+          "type": "string"
+        },
+        "account_email": {
+          "maxLength": 320,
+          "minLength": 3,
+          "type": "string"
+        },
+        "filename": {
+          "maxLength": 500,
+          "minLength": 1,
+          "type": "string"
+        },
+        "created_at": {
+          "type": "string"
+        },
+        "download_href": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "artifact_id",
+        "report_id",
+        "report_title",
+        "account_email",
+        "filename",
+        "created_at",
+        "download_href"
+      ],
+      "title": "InternalAuditArtifactResponse",
+      "type": "object"
+    },
+    "LightweightReadinessIssue": {
+      "properties": {
+        "code": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        },
+        "stageId": {
+          "enum": [
+            "report_configuration",
+            "assessment_scoring",
+            "quantitative_metrics",
+            "workbench_entry"
+          ],
+          "type": "string"
+        },
+        "actionHref": {
+          "type": "string"
+        },
+        "fieldKey": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "path": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "assessmentTopicId": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "metricKey": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        }
+      },
+      "required": [
+        "code",
+        "message",
+        "stageId",
+        "actionHref"
+      ],
+      "title": "LightweightReadinessIssue",
+      "type": "object",
+      "additionalProperties": false
+    },
+    "LightweightReadinessStage": {
+      "properties": {
+        "id": {
+          "enum": [
+            "report_configuration",
+            "assessment_scoring",
+            "quantitative_metrics",
+            "workbench_entry"
+          ],
+          "type": "string"
+        },
+        "label": {
+          "type": "string"
+        },
+        "actionHref": {
+          "type": "string"
+        },
+        "complete": {
+          "type": "boolean"
+        },
+        "issueCount": {
+          "type": "integer"
+        },
+        "inputStatus": {
+          "$ref": "#/$defs/StructuredInputStatus"
+        }
+      },
+      "required": [
+        "id",
+        "label",
+        "actionHref",
+        "complete",
+        "issueCount",
+        "inputStatus"
+      ],
+      "title": "LightweightReadinessStage",
+      "type": "object",
+      "additionalProperties": false
+    },
+    "LightweightReportReadiness": {
+      "properties": {
+        "stages": {
+          "items": {
+            "$ref": "#/$defs/LightweightReadinessStage"
+          },
+          "type": "array"
+        },
+        "issues": {
+          "items": {
+            "$ref": "#/$defs/LightweightReadinessIssue"
+          },
+          "type": "array"
+        },
+        "readyForWorkbench": {
+          "type": "boolean"
+        },
+        "firstIncompleteStageId": {
+          "anyOf": [
+            {
+              "enum": [
+                "report_configuration",
+                "assessment_scoring",
+                "quantitative_metrics",
+                "workbench_entry"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "firstIncompleteHref": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        }
+      },
+      "required": [
+        "stages",
+        "issues",
+        "readyForWorkbench"
+      ],
+      "title": "LightweightReportReadiness",
+      "type": "object",
+      "additionalProperties": false
+    },
+    "Mark": {
+      "enum": [
+        "bold",
+        "italic",
+        "underline"
+      ],
+      "type": "string"
+    },
+    "MaterialDispositionCode": {
+      "enum": [
+        "supported",
+        "partially_supported",
+        "context_only",
+        "needs_attention",
+        "not_applicable",
+        "no_decision"
+      ],
+      "type": "string"
+    },
+    "MaterialityAssessmentInput": {
+      "additionalProperties": false,
+      "description": "重要性评估的持久化输入；固定分类与计数均不在此重复保存。",
+      "properties": {
+        "reportingYear": {
+          "type": "integer"
+        },
+        "threshold": {
+          "$ref": "#/$defs/MaterialityThreshold"
+        },
+        "scores": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/MaterialityScoreInput"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "reportingYear",
+        "threshold",
+        "scores"
+      ],
+      "title": "MaterialityAssessmentInput",
+      "type": "object"
+    },
+    "MaterialityScoreInput": {
+      "additionalProperties": false,
+      "description": "用户为一个 scored 评分议题提供的原始双重重要性输入。",
+      "properties": {
+        "assessmentTopicId": {
+          "type": "string"
+        },
+        "financialScore": {
+          "type": "number"
+        },
+        "impactScore": {
+          "type": "number"
+        },
+        "iroItems": {
+          "anyOf": [
+            {
+              "items": {
+                "$ref": "#/$defs/IROItem"
+              },
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        }
+      },
+      "required": [
+        "assessmentTopicId",
+        "financialScore",
+        "impactScore"
+      ],
+      "title": "MaterialityScoreInput",
+      "type": "object"
+    },
+    "MaterialityThreshold": {
+      "additionalProperties": false,
+      "properties": {
+        "financial": {
+          "type": "number"
+        },
+        "impact": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "financial",
+        "impact"
+      ],
+      "title": "MaterialityThreshold",
+      "type": "object"
+    },
+    "ModuleTitleGenerationResponse": {
+      "additionalProperties": false,
+      "description": "报告模块标题原子写回后的公共响应。",
+      "properties": {
+        "section_titles": {
+          "additionalProperties": {
+            "$ref": "#/$defs/SectionDisplayTitle"
+          },
+          "type": "object"
+        },
+        "state_seq": {
+          "minimum": 1,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "section_titles",
+        "state_seq"
+      ],
+      "title": "ModuleTitleGenerationResponse",
+      "type": "object"
+    },
+    "OmissionCode": {
+      "enum": [
+        "no_supporting_material",
+        "empty_table"
+      ],
+      "type": "string"
+    },
+    "PdfPageLocator": {
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "const": "pdf_page",
+          "default": "pdf_page",
+          "type": "string"
+        },
+        "page": {
+          "minimum": 1,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "page"
+      ],
+      "title": "PdfPageLocator",
+      "type": "object"
+    },
+    "PptxSlideLocator": {
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "const": "pptx_slide",
+          "default": "pptx_slide",
+          "type": "string"
+        },
+        "slide": {
+          "minimum": 1,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "slide"
+      ],
+      "title": "PptxSlideLocator",
+      "type": "object"
+    },
+    "PreparationArea": {
+      "additionalProperties": false,
+      "description": "准备中心一个输入域的用户友好状态。",
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/PreparationAreaId"
+        },
+        "title": {
+          "type": "string"
+        },
+        "href": {
+          "type": "string"
+        },
+        "required_for_generation": {
+          "type": "boolean"
+        },
+        "status": {
+          "$ref": "#/$defs/PreparationAreaStatus"
+        },
+        "summary": {
+          "type": "string"
+        },
+        "action_label": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "title",
+        "href",
+        "required_for_generation",
+        "status",
+        "summary",
+        "action_label"
+      ],
+      "title": "PreparationArea",
+      "type": "object"
+    },
+    "PreparationAreaId": {
+      "enum": [
+        "report_identity",
+        "materiality",
+        "quantitative_metrics",
+        "topic_questions",
+        "materials"
+      ],
+      "type": "string"
+    },
+    "PreparationAreaStatus": {
+      "enum": [
+        "needs_input",
+        "optional_empty",
+        "ready",
+        "processing",
+        "needs_attention"
+      ],
+      "type": "string"
+    },
+    "PreparationBlocker": {
+      "additionalProperties": false,
+      "description": "一项会阻断轻量版首次生成的用户可行动缺失。",
+      "properties": {
+        "target_handle": {
+          "type": "string"
+        },
+        "label": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        },
+        "href": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "target_handle",
+        "label",
+        "message",
+        "href"
+      ],
+      "title": "PreparationBlocker",
+      "type": "object"
+    },
+    "PrimaryInputMode": {
+      "enum": [
+        "materials",
+        "questions"
+      ],
+      "type": "string"
+    },
+    "ProvenanceBasis": {
+      "enum": [
+        "structured_input",
+        "validated_material",
+        "quantitative_metric",
+        "industry_disclosure_context",
+        "deterministic_report_projection",
+        "uploaded_layout_image"
+      ],
+      "type": "string"
+    },
+    "PutReportStateResponse": {
+      "additionalProperties": false,
+      "description": "成功持久化后的新状态序号。",
+      "properties": {
+        "state_seq": {
+          "minimum": 1,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "state_seq"
+      ],
+      "title": "PutReportStateResponse",
+      "type": "object"
+    },
+    "QuantitativeMetricDef": {
+      "additionalProperties": false,
+      "properties": {
+        "key": {
+          "type": "string"
+        },
+        "sheet": {
+          "type": "string"
+        },
+        "kpiCode": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "category": {
+          "type": "string"
+        },
+        "groupPath": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "metricLabel": {
+          "type": "string"
+        },
+        "standaloneLabel": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "unit": {
+          "type": "string"
+        },
+        "sumOfMetricKeys": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "requiresGreenhouseGasAccountingStandard": {
+          "default": false,
+          "type": "boolean"
+        },
+        "metricDefinition": {
+          "default": "",
+          "maxLength": 60,
+          "type": "string"
+        },
+        "termExplanation": {
+          "default": "",
+          "maxLength": 80,
+          "type": "string"
+        }
+      },
+      "required": [
+        "key",
+        "sheet",
+        "category",
+        "groupPath",
+        "metricLabel",
+        "unit",
+        "sumOfMetricKeys"
+      ],
+      "title": "QuantitativeMetricDef",
+      "type": "object"
+    },
+    "QuantitativeMetricDraft": {
+      "additionalProperties": false,
+      "description": "单个 ESG 定量指标的用户填写值（report.meta.quantitativeMetrics.metrics 的元素）；形状受控。",
+      "properties": {
+        "value": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "noValueReason": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/QuantitativeNoValueReason"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "department": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "note": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        }
+      },
+      "title": "QuantitativeMetricDraft",
+      "type": "object",
+      "required": []
+    },
+    "QuantitativeMetricsMeta": {
+      "additionalProperties": false,
+      "description": "ESG 定量数据表的受控形状：指标草稿字典 + 温室气体核算标准。",
+      "properties": {
+        "metrics": {
+          "additionalProperties": {
+            "$ref": "#/$defs/QuantitativeMetricDraft"
+          },
+          "default": {},
+          "type": "object"
+        },
+        "greenhouseGasAccountingStandard": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "greenhouseGasAccountingStandardOther": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        }
+      },
+      "title": "QuantitativeMetricsMeta",
+      "type": "object",
+      "required": [
+        "metrics"
+      ]
+    },
+    "QuantitativeMetricsResponse": {
+      "additionalProperties": false,
+      "description": "当前报告的完整指标目录、权威输入及 scoped freshness。",
+      "properties": {
+        "status": {
+          "$ref": "#/$defs/StructuredInputStatus"
+        },
+        "state_seq": {
+          "minimum": 1,
+          "type": "integer"
+        },
+        "contract_version": {
+          "type": "string"
+        },
+        "context_fingerprint": {
+          "maxLength": 64,
+          "minLength": 64,
+          "type": "string"
+        },
+        "catalog": {
+          "items": {
+            "$ref": "#/$defs/QuantitativeMetricDef"
+          },
+          "type": "array"
+        },
+        "greenhouse_gas_accounting_standard_options": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "no_value_reasons": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "current": {
+          "$ref": "#/$defs/QuantitativeMetricsMeta"
+        },
+        "readiness": {
+          "$ref": "#/$defs/LightweightReportReadiness"
+        }
+      },
+      "required": [
+        "status",
+        "state_seq",
+        "contract_version",
+        "context_fingerprint",
+        "catalog",
+        "greenhouse_gas_accounting_standard_options",
+        "no_value_reasons",
+        "current",
+        "readiness"
+      ],
+      "title": "QuantitativeMetricsResponse",
+      "type": "object"
+    },
+    "QuantitativeNoValueReason": {
+      "enum": [
+        "not_collected",
+        "not_available",
+        "not_applicable",
+        "will_supplement"
+      ],
+      "type": "string"
+    },
+    "ReaderFeedbackContactInformation": {
+      "additionalProperties": false,
+      "description": "读者反馈固定文本所需联系方式。",
+      "properties": {
+        "address": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "email": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "phone": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        }
+      },
+      "title": "ReaderFeedbackContactInformation",
+      "type": "object",
+      "required": []
+    },
+    "ReportArtifactKind": {
+      "enum": [
+        "word",
+        "review"
+      ],
+      "type": "string"
+    },
+    "ReportArtifactProjection": {
+      "additionalProperties": false,
+      "description": "客户可下载的交付物句柄；内部审计包不会对普通客户开放下载。",
+      "properties": {
+        "artifact_id": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "kind": {
+          "$ref": "#/$defs/ReportArtifactKind"
+        },
+        "filename": {
+          "maxLength": 500,
+          "minLength": 1,
+          "type": "string"
+        },
+        "media_type": {
+          "maxLength": 200,
+          "minLength": 1,
+          "type": "string"
+        },
+        "download_href": {
+          "pattern": "^/api/reports/",
+          "type": "string"
+        }
+      },
+      "required": [
+        "artifact_id",
+        "kind",
+        "filename",
+        "media_type",
+        "download_href"
+      ],
+      "title": "ReportArtifactProjection",
+      "type": "object"
+    },
+    "ReportBlockProvenanceProjection": {
+      "additionalProperties": false,
+      "description": "Per-block provenance of the latest successfully generated report revision.",
+      "properties": {
+        "contract": {
+          "const": "sustainability_desk.block_provenance.v1",
+          "default": "sustainability_desk.block_provenance.v1",
+          "type": "string"
+        },
+        "report_id": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "revision": {
+          "minimum": 1,
+          "type": "integer"
+        },
+        "generated_report_state_seq": {
+          "minimum": 1,
+          "type": "integer"
+        },
+        "generated_at": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "trace_availability": {
+          "$ref": "#/$defs/TraceAvailability"
+        },
+        "blocks": {
+          "items": {
+            "$ref": "#/$defs/BlockProvenanceEntry"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "report_id",
+        "revision",
+        "generated_report_state_seq",
+        "generated_at",
+        "trace_availability",
+        "blocks"
+      ],
+      "title": "ReportBlockProvenanceProjection",
+      "type": "object"
+    },
+    "ReportCapabilitiesResponse": {
+      "additionalProperties": false,
+      "description": "Account 与单份 Report 合并后的实际能力。",
+      "properties": {
+        "allowed_report_section_ids": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "section_regeneration_limit": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "can_generate": {
+          "type": "boolean"
+        },
+        "can_regenerate_sections": {
+          "type": "boolean"
+        },
+        "can_export_word": {
+          "type": "boolean"
+        },
+        "material_agent_enabled": {
+          "type": "boolean"
+        },
+        "collects_materiality_assessment": {
+          "type": "boolean"
+        },
+        "allowed_quantitative_metric_keys": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "allowed_report_artifact_kinds": {
+          "items": {
+            "enum": [
+              "word",
+              "review"
+            ],
+            "type": "string"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "allowed_report_section_ids",
+        "section_regeneration_limit",
+        "can_generate",
+        "can_regenerate_sections",
+        "can_export_word",
+        "material_agent_enabled",
+        "collects_materiality_assessment",
+        "allowed_quantitative_metric_keys",
+        "allowed_report_artifact_kinds"
+      ],
+      "title": "ReportCapabilitiesResponse",
+      "type": "object"
+    },
+    "ReportGenerationEvent": {
+      "additionalProperties": false,
+      "description": "同一运行记录派生的用户友好增量说明。",
+      "properties": {
+        "sequence": {
+          "minimum": 1,
+          "type": "integer"
+        },
+        "event_type": {
+          "enum": [
+            "queued",
+            "started",
+            "block_started",
+            "block_completed",
+            "report_saved",
+            "artifacts_ready",
+            "export_blocked",
+            "failed",
+            "superseded"
+          ],
+          "type": "string"
+        },
+        "message": {
+          "maxLength": 1000,
+          "minLength": 1,
+          "type": "string"
+        },
+        "current_object": {
+          "anyOf": [
+            {
+              "maxLength": 500,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "action_required": {
+          "default": false,
+          "type": "boolean"
+        },
+        "occurred_at": {
+          "format": "date-time",
+          "type": "string"
+        }
+      },
+      "required": [
+        "sequence",
+        "event_type",
+        "message",
+        "occurred_at"
+      ],
+      "title": "ReportGenerationEvent",
+      "type": "object"
+    },
+    "ReportGenerationProjection": {
+      "additionalProperties": false,
+      "description": "创建响应、轮询进度和交付页共用的报告级运行投影。",
+      "properties": {
+        "contract": {
+          "const": "sustainability_desk.report_generation.v1",
+          "default": "sustainability_desk.report_generation.v1",
+          "type": "string"
+        },
+        "run_id": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "report_id": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "status": {
+          "$ref": "#/$defs/ReportGenerationStatus"
+        },
+        "base_report_state_seq": {
+          "minimum": 1,
+          "type": "integer"
+        },
+        "result_report_state_seq": {
+          "anyOf": [
+            {
+              "minimum": 2,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "completed_block_count": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "total_block_count": {
+          "minimum": 1,
+          "type": "integer"
+        },
+        "summary": {
+          "maxLength": 1000,
+          "minLength": 1,
+          "type": "string"
+        },
+        "started_at": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "events": {
+          "items": {
+            "$ref": "#/$defs/ReportGenerationEvent"
+          },
+          "type": "array"
+        },
+        "artifacts": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/ReportArtifactProjection"
+          },
+          "type": "array"
+        },
+        "workbench_enabled": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "run_id",
+        "report_id",
+        "status",
+        "base_report_state_seq",
+        "completed_block_count",
+        "total_block_count",
+        "summary",
+        "events",
+        "workbench_enabled",
+        "artifacts"
+      ],
+      "title": "ReportGenerationProjection",
+      "type": "object"
+    },
+    "ReportGenerationStatus": {
+      "enum": [
+        "queued",
+        "running",
+        "succeeded",
+        "failed",
+        "superseded"
+      ],
+      "type": "string"
+    },
+    "ReportLineageBlockProjection": {
+      "additionalProperties": false,
+      "description": "单个报告 Block 的用户可解释摘要；详细边仍由统一列表拥有。",
+      "properties": {
+        "block_id": {
+          "maxLength": 300,
+          "minLength": 1,
+          "type": "string"
+        },
+        "status": {
+          "enum": [
+            "linked",
+            "no_user_provided_content",
+            "changed_after_generation",
+            "not_generated"
+          ],
+          "type": "string"
+        },
+        "source_count": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "input_count": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "generated_report_state_seq": {
+          "anyOf": [
+            {
+              "minimum": 1,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        }
+      },
+      "required": [
+        "block_id",
+        "status",
+        "source_count",
+        "input_count"
+      ],
+      "title": "ReportLineageBlockProjection",
+      "type": "object"
+    },
+    "ReportLineageEdgeProjection": {
+      "additionalProperties": false,
+      "description": "面向同一报告授权用户的受限谱系边，不暴露内部 trace 或私有对象定位。",
+      "properties": {
+        "id": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "edge_kind": {
+          "enum": [
+            "source_fragment_to_input_resolution",
+            "input_resolution_to_report_input",
+            "source_fragment_to_fact",
+            "fact_to_report_input",
+            "report_input_to_block",
+            "evidence_fact_to_requirement",
+            "requirement_to_gap",
+            "blueprint_to_block",
+            "block_to_claim",
+            "block_to_artifact"
+          ],
+          "type": "string"
+        },
+        "from_kind": {
+          "type": "string"
+        },
+        "from_ref": {
+          "type": "string"
+        },
+        "to_kind": {
+          "type": "string"
+        },
+        "to_ref": {
+          "type": "string"
+        },
+        "decision": {
+          "enum": [
+            "candidate",
+            "confirmed",
+            "auto_applied",
+            "held_low_confidence",
+            "blocked_conflict",
+            "invalid",
+            "not_applicable"
+          ],
+          "type": "string"
+        },
+        "reason_code": {
+          "type": "string"
+        },
+        "explanation": {
+          "type": "string"
+        },
+        "status": {
+          "enum": [
+            "active",
+            "stale",
+            "superseded"
+          ],
+          "type": "string"
+        },
+        "source_id": {
+          "anyOf": [
+            {
+              "format": "uuid",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "source_name": {
+          "anyOf": [
+            {
+              "maxLength": 500,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "fragment_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "fragment_locator": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/SourceLocator"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "report_state_seq": {
+          "anyOf": [
+            {
+              "minimum": 1,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "created_at": {
+          "format": "date-time",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "edge_kind",
+        "from_kind",
+        "from_ref",
+        "to_kind",
+        "to_ref",
+        "decision",
+        "reason_code",
+        "explanation",
+        "status",
+        "created_at"
+      ],
+      "title": "ReportLineageEdgeProjection",
+      "type": "object"
+    },
+    "ReportLineageProjection": {
+      "additionalProperties": false,
+      "description": "报告全过程的唯一公共谱系投影；阶段时间线继续由各领域进度 owner 派生。",
+      "properties": {
+        "report_id": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "report_state_seq": {
+          "minimum": 1,
+          "type": "integer"
+        },
+        "edges": {
+          "items": {
+            "$ref": "#/$defs/ReportLineageEdgeProjection"
+          },
+          "type": "array"
+        },
+        "blocks": {
+          "items": {
+            "$ref": "#/$defs/ReportLineageBlockProjection"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "report_id",
+        "report_state_seq",
+        "edges",
+        "blocks"
+      ],
+      "title": "ReportLineageProjection",
+      "type": "object"
+    },
+    "ReportListResponse": {
+      "additionalProperties": false,
+      "description": "报告列表响应。",
+      "properties": {
+        "reports": {
+          "items": {
+            "$ref": "#/$defs/ReportSummaryResponse"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "reports"
+      ],
+      "title": "ReportListResponse",
+      "type": "object"
+    },
+    "ReportPreparationProjection": {
+      "additionalProperties": false,
+      "description": "轻量版准备中心唯一公共读模型。",
+      "properties": {
+        "contract": {
+          "const": "sustainability_desk.report_preparation.v1",
+          "default": "sustainability_desk.report_preparation.v1",
+          "type": "string"
+        },
+        "report_id": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "report_state_seq": {
+          "minimum": 1,
+          "type": "integer"
+        },
+        "generation_eligible": {
+          "type": "boolean"
+        },
+        "generation_blockers": {
+          "items": {
+            "$ref": "#/$defs/PreparationBlocker"
+          },
+          "type": "array"
+        },
+        "areas": {
+          "items": {
+            "$ref": "#/$defs/PreparationArea"
+          },
+          "type": "array"
+        },
+        "report_update_available": {
+          "default": false,
+          "type": "boolean"
+        },
+        "workbench_enabled": {
+          "type": "boolean"
+        },
+        "primary_input_mode": {
+          "anyOf": [
+            {
+              "enum": [
+                "materials",
+                "questions"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "assessment_partially_scored": {
+          "default": false,
+          "type": "boolean"
+        },
+        "assessment_scored_topic_count": {
+          "default": 0,
+          "type": "integer"
+        },
+        "assessment_applicable_topic_count": {
+          "default": 0,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "report_id",
+        "report_state_seq",
+        "generation_eligible",
+        "generation_blockers",
+        "areas",
+        "workbench_enabled"
+      ],
+      "title": "ReportPreparationProjection",
+      "type": "object"
+    },
+    "ReportProfileOption": {
+      "additionalProperties": false,
+      "description": "建报时可选的一项报告配置：一个知识包（准则 × 语言）的产品化投影。\n\n只暴露选择所需的事实。Profile 的能力字段（工作台开关、生成必填字段、合成数据要求）\n是服务端裁决依据，不进客户端——客户端按 id 请求，不自行解释能力。",
+      "properties": {
+        "report_profile_id": {
+          "type": "string"
+        },
+        "display_name": {
+          "type": "string"
+        },
+        "language": {
+          "enum": [
+            "zh-Hans",
+            "zh-Hant",
+            "en"
+          ],
+          "type": "string"
+        }
+      },
+      "required": [
+        "report_profile_id",
+        "display_name",
+        "language"
+      ],
+      "title": "ReportProfileOption",
+      "type": "object"
+    },
+    "ReportProfileOptionsResponse": {
+      "additionalProperties": false,
+      "description": "建报可选配置清单与服务端默认项。",
+      "properties": {
+        "profiles": {
+          "items": {
+            "$ref": "#/$defs/ReportProfileOption"
+          },
+          "type": "array"
+        },
+        "default_report_profile_id": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "profiles",
+        "default_report_profile_id"
+      ],
+      "title": "ReportProfileOptionsResponse",
+      "type": "object"
+    },
+    "ReportStateResponse": {
+      "additionalProperties": false,
+      "description": "报告状态快照及其乐观锁序号。",
+      "properties": {
+        "state": {
+          "$ref": "#/$defs/StoredReportStateV4"
+        },
+        "state_seq": {
+          "minimum": 1,
+          "type": "integer"
+        },
+        "contract_version": {
+          "type": "string"
+        },
+        "report_profile_id": {
+          "type": "string"
+        },
+        "language": {
+          "enum": [
+            "zh-Hans",
+            "zh-Hant",
+            "en"
+          ],
+          "type": "string"
+        },
+        "capabilities": {
+          "$ref": "#/$defs/ReportCapabilitiesResponse"
+        }
+      },
+      "required": [
+        "state",
+        "state_seq",
+        "contract_version",
+        "report_profile_id",
+        "language",
+        "capabilities"
+      ],
+      "title": "ReportStateResponse",
+      "type": "object"
+    },
+    "ReportSummaryResponse": {
+      "additionalProperties": false,
+      "description": "报告列表与生命周期操作共用的权威摘要。",
+      "properties": {
+        "id": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "report_type": {
+          "const": "lightweight",
+          "type": "string"
+        },
+        "report_profile_id": {
+          "type": "string"
+        },
+        "language": {
+          "enum": [
+            "zh-Hans",
+            "zh-Hant",
+            "en"
+          ],
+          "type": "string"
+        },
+        "data_classification": {
+          "enum": [
+            "synthetic",
+            "customer"
+          ],
+          "type": "string"
+        },
+        "created_under_profile_id": {
+          "type": "string"
+        },
+        "contract_version": {
+          "type": "string"
+        },
+        "status": {
+          "enum": [
+            "active",
+            "archived"
+          ],
+          "type": "string"
+        },
+        "created_at": {
+          "type": "string"
+        },
+        "updated_at": {
+          "type": "string"
+        },
+        "company_registered_name": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        }
+      },
+      "required": [
+        "id",
+        "title",
+        "report_type",
+        "report_profile_id",
+        "language",
+        "data_classification",
+        "created_under_profile_id",
+        "contract_version",
+        "status",
+        "created_at",
+        "updated_at"
+      ],
+      "title": "ReportSummaryResponse",
+      "type": "object"
+    },
+    "ResolvedAssessmentResponse": {
+      "additionalProperties": false,
+      "description": "由 assessmentInput 与 Registry 现算的唯一展示结果。",
+      "properties": {
+        "reportingYear": {
+          "type": "integer"
+        },
+        "threshold": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/MaterialityThreshold"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "counts": {
+          "$ref": "#/$defs/AssessmentCounts"
+        },
+        "topics": {
+          "items": {
+            "$ref": "#/$defs/ResolvedAssessmentTopicResponse"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "reportingYear",
+        "threshold",
+        "counts",
+        "topics"
+      ],
+      "title": "ResolvedAssessmentResponse",
+      "type": "object"
+    },
+    "ResolvedAssessmentTopicResponse": {
+      "additionalProperties": false,
+      "description": "权威 resolved materiality 的可展示议题投影；固定议题不伪造分数。",
+      "properties": {
+        "assessmentTopicId": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "dimension": {
+          "type": "string"
+        },
+        "order": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "reportSectionId": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "determination": {
+          "enum": [
+            "scored",
+            "fixed"
+          ],
+          "type": "string"
+        },
+        "materiality": {
+          "enum": [
+            "dual",
+            "impact",
+            "financial",
+            "non"
+          ],
+          "type": "string"
+        },
+        "financialScore": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "impactScore": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        }
+      },
+      "required": [
+        "assessmentTopicId",
+        "name",
+        "dimension",
+        "order",
+        "reportSectionId",
+        "determination",
+        "materiality"
+      ],
+      "title": "ResolvedAssessmentTopicResponse",
+      "type": "object"
+    },
+    "RewriteAllowanceResponse": {
+      "additionalProperties": false,
+      "description": "指定报告页面的服务端权威重写额度。",
+      "properties": {
+        "section_key": {
+          "type": "string"
+        },
+        "quota": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "used": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "remaining": {
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "section_key",
+        "quota",
+        "used",
+        "remaining"
+      ],
+      "title": "RewriteAllowanceResponse",
+      "type": "object"
+    },
+    "SectionDisplayTitle": {
+      "additionalProperties": false,
+      "description": "章节的实例级用户可见标题；稳定导航标题仍由 Section.title 拥有。",
+      "properties": {
+        "text": {
+          "type": "string"
+        },
+        "origin": {
+          "enum": [
+            "generated",
+            "user"
+          ],
+          "type": "string"
+        },
+        "inputFingerprint": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "text",
+        "origin",
+        "inputFingerprint"
+      ],
+      "title": "SectionDisplayTitle",
+      "type": "object"
+    },
+    "SectionGenerationFreshnessResponse": {
+      "additionalProperties": false,
+      "description": "当前模型可见输入与最近成功生成输入的比较结果。",
+      "properties": {
+        "status": {
+          "enum": [
+            "not_generated",
+            "fresh",
+            "stale"
+          ],
+          "type": "string"
+        },
+        "current_input_fingerprint": {
+          "maxLength": 64,
+          "minLength": 64,
+          "type": "string"
+        },
+        "generated_input_fingerprint": {
+          "anyOf": [
+            {
+              "maxLength": 64,
+              "minLength": 64,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        }
+      },
+      "required": [
+        "status",
+        "current_input_fingerprint"
+      ],
+      "title": "SectionGenerationFreshnessResponse",
+      "type": "object"
+    },
+    "SourceLocator": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/PdfPageLocator"
+        },
+        {
+          "$ref": "#/$defs/DocxParagraphLocator"
+        },
+        {
+          "$ref": "#/$defs/DocxTableLocator"
+        },
+        {
+          "$ref": "#/$defs/XlsxRangeLocator"
+        },
+        {
+          "$ref": "#/$defs/PptxSlideLocator"
+        },
+        {
+          "$ref": "#/$defs/ImageRegionLocator"
+        }
+      ]
+    },
+    "StakeholderEngagementEntry": {
+      "additionalProperties": false,
+      "description": "一类稳定利益相关方对应的适用议题与沟通方式引用。",
+      "properties": {
+        "stakeholderType": {
+          "$ref": "#/$defs/StakeholderType"
+        },
+        "assessmentTopicIds": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "methodIds": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "customMethods": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/CustomEngagementMethod"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "stakeholderType",
+        "assessmentTopicIds",
+        "methodIds",
+        "customMethods"
+      ],
+      "title": "StakeholderEngagementEntry",
+      "type": "object"
+    },
+    "StakeholderEngagementProfile": {
+      "additionalProperties": false,
+      "description": "利益相关方沟通的 parse-first 真相；表格、诊断与 Word 均由此确定性投影。",
+      "properties": {
+        "scopeAssessmentTopicIds": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "entries": {
+          "items": {
+            "$ref": "#/$defs/StakeholderEngagementEntry"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "entries",
+        "scopeAssessmentTopicIds"
+      ],
+      "title": "StakeholderEngagementProfile",
+      "type": "object"
+    },
+    "StakeholderType": {
+      "enum": [
+        "government_regulators",
+        "shareholders_investors",
+        "customers",
+        "management",
+        "employees",
+        "suppliers",
+        "partners",
+        "community_public"
+      ],
+      "type": "string"
+    },
+    "StoredCompanyBusinessSummary": {
+      "additionalProperties": false,
+      "description": "公司业务摘要快照项：派生值与其来源指纹同体保存。\n\n指纹取自压缩来源 `company_profile`；来源变化即摘要过期，须重算。\n值与指纹分开保存会让两者可能不一致，故合为一项。",
+      "properties": {
+        "text": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "sourceFingerprint": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        }
+      },
+      "required": [
+        "text",
+        "sourceFingerprint"
+      ],
+      "title": "StoredCompanyBusinessSummary",
+      "type": "object"
+    },
+    "StoredGeneratedBlock": {
+      "additionalProperties": false,
+      "description": "生成段落快照项：仅允许正文与生命周期状态。",
+      "properties": {
+        "content": {
+          "anyOf": [
+            {
+              "items": {
+                "$ref": "#/$defs/Inline"
+              },
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "state": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/BlockState"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        }
+      },
+      "title": "StoredGeneratedBlock",
+      "type": "object",
+      "required": []
+    },
+    "StoredImageBlock": {
+      "additionalProperties": false,
+      "description": "素材图片承载位快照项：仅保存按序放置的资产引用，题注与替代文本归资产 owner。",
+      "properties": {
+        "layoutAssetIds": {
+          "default": [],
+          "items": {
+            "format": "uuid",
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "state": {
+          "const": "ready",
+          "default": "ready",
+          "type": "string"
+        }
+      },
+      "title": "StoredImageBlock",
+      "type": "object",
+      "required": [
+        "layoutAssetIds"
+      ]
+    },
+    "StoredIntakeAnswer": {
+      "additionalProperties": false,
+      "description": "用户答案快照项：只保留实例答案，不接受题目结构。",
+      "properties": {
+        "answer": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "supplement": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        }
+      },
+      "title": "StoredIntakeAnswer",
+      "type": "object",
+      "required": []
+    },
+    "StoredReportMetaV4": {
+      "additionalProperties": false,
+      "description": "V4 报告级状态；缺失处置由输入义务与 Block 合同拥有。",
+      "properties": {
+        "quantitativeMetrics": {
+          "$ref": "#/$defs/QuantitativeMetricsMeta"
+        },
+        "materialityStrategy": {
+          "anyOf": [
+            {
+              "const": "complete_coverage",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "primaryInputMode": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/PrimaryInputMode"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        }
+      },
+      "title": "StoredReportMetaV4",
+      "type": "object",
+      "required": []
+    },
+    "StoredReportStateV4": {
+      "additionalProperties": false,
+      "description": "V4 严格状态边界；不接受旧缺失策略，未完成输入交由 readiness 处理。",
+      "properties": {
+        "version": {
+          "const": 4,
+          "type": "integer"
+        },
+        "fields": {
+          "additionalProperties": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "integer"
+              },
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "default": {},
+          "type": "object"
+        },
+        "intakeItems": {
+          "additionalProperties": {
+            "$ref": "#/$defs/StoredIntakeAnswer"
+          },
+          "default": {},
+          "type": "object"
+        },
+        "assessmentInput": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/MaterialityAssessmentInput"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "disclosureProfile": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/DisclosureProfile"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "appendixPackage": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/AppendixPackage"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "meta": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/StoredReportMetaV4"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "stakeholderEngagement": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/StakeholderEngagementProfile"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "sectionTitles": {
+          "additionalProperties": {
+            "$ref": "#/$defs/SectionDisplayTitle"
+          },
+          "default": {},
+          "type": "object"
+        },
+        "generatedBlocks": {
+          "additionalProperties": {
+            "$ref": "#/$defs/StoredGeneratedBlock"
+          },
+          "default": {},
+          "type": "object"
+        },
+        "tableBlocks": {
+          "additionalProperties": {
+            "$ref": "#/$defs/StoredTableBlock"
+          },
+          "default": {},
+          "type": "object"
+        },
+        "imageBlocks": {
+          "additionalProperties": {
+            "$ref": "#/$defs/StoredImageBlock"
+          },
+          "default": {},
+          "type": "object"
+        },
+        "structuredInputFreshness": {
+          "$ref": "#/$defs/StructuredInputFreshness"
+        },
+        "companyBusinessSummary": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/StoredCompanyBusinessSummary"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        }
+      },
+      "required": [
+        "version",
+        "fields",
+        "intakeItems",
+        "sectionTitles",
+        "generatedBlocks",
+        "tableBlocks",
+        "imageBlocks"
+      ],
+      "title": "StoredReportStateV4",
+      "type": "object"
+    },
+    "StoredRowOrigin": {
+      "additionalProperties": false,
+      "description": "AI 定行的可重生成事实；不包含行级生成规格。",
+      "properties": {
+        "from": {
+          "default": "ai",
+          "enum": [
+            "ai",
+            "user"
+          ],
+          "type": "string"
+        },
+        "theme": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "category": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "driver_hint": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        }
+      },
+      "title": "StoredRowOrigin",
+      "type": "object",
+      "required": []
+    },
+    "StoredTableBlock": {
+      "additionalProperties": false,
+      "description": "表格实例快照项：表头和列合同仍由运行时模板提供。\n\n``state=\"omitted\"`` 与空行共同表示本轮没有足以形成数据行的用户资料；\n该处置是报告状态的一部分，不能由导出器临时猜测。",
+      "properties": {
+        "children": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/StoredTableRow"
+          },
+          "type": "array"
+        },
+        "state": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/BlockState"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        }
+      },
+      "title": "StoredTableBlock",
+      "type": "object",
+      "required": [
+        "children"
+      ]
+    },
+    "StoredTableCell": {
+      "additionalProperties": false,
+      "description": "表格单元格快照：保留用户值，不接受 Plate 文本骨架或列合同。",
+      "properties": {
+        "type": {
+          "default": "td",
+          "enum": [
+            "td",
+            "th"
+          ],
+          "type": "string"
+        },
+        "colKey": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "value": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "options": {
+          "anyOf": [
+            {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "colSpan": {
+          "default": 1,
+          "minimum": 1,
+          "type": "integer"
+        },
+        "rowSpan": {
+          "default": 1,
+          "minimum": 1,
+          "type": "integer"
+        },
+        "cellState": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/BlockState"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        }
+      },
+      "title": "StoredTableCell",
+      "type": "object",
+      "required": []
+    },
+    "StoredTableRow": {
+      "additionalProperties": false,
+      "description": "表格用户行快照：结构、generation 与 appears_when 均由运行时模板拥有。",
+      "properties": {
+        "type": {
+          "const": "tr",
+          "default": "tr",
+          "type": "string"
+        },
+        "headerRow": {
+          "default": false,
+          "type": "boolean"
+        },
+        "state": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/BlockState"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "origin": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/StoredRowOrigin"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "children": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/StoredTableCell"
+          },
+          "type": "array"
+        }
+      },
+      "title": "StoredTableRow",
+      "type": "object",
+      "required": [
+        "children"
+      ]
+    },
+    "StructuredInputConflictResponse": {
+      "additionalProperties": false,
+      "description": "409 冲突时返回当前权威快照，客户端只能重载而不能猜测合并。",
+      "properties": {
+        "code": {
+          "const": "report_state_conflict",
+          "default": "report_state_conflict",
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        },
+        "current": {
+          "$ref": "#/$defs/StructuredInputMutationResponse"
+        }
+      },
+      "required": [
+        "message",
+        "current"
+      ],
+      "title": "StructuredInputConflictResponse",
+      "type": "object"
+    },
+    "StructuredInputFreshness": {
+      "additionalProperties": false,
+      "description": "V4 只保存最近一次成功导入所对应的上下文，不复制工作簿内容。",
+      "properties": {
+        "assessmentContextFingerprint": {
+          "anyOf": [
+            {
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "quantitativeMetricsContextFingerprint": {
+          "anyOf": [
+            {
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        }
+      },
+      "title": "StructuredInputFreshness",
+      "type": "object",
+      "required": []
+    },
+    "StructuredInputMutationResponse": {
+      "additionalProperties": false,
+      "description": "结构化输入原子写成功后的完整权威状态，不要求客户端拼接局部结果。",
+      "properties": {
+        "state": {
+          "$ref": "#/$defs/StoredReportStateV4"
+        },
+        "state_seq": {
+          "minimum": 1,
+          "type": "integer"
+        },
+        "contract_version": {
+          "type": "string"
+        },
+        "readiness": {
+          "$ref": "#/$defs/LightweightReportReadiness"
+        }
+      },
+      "required": [
+        "state",
+        "state_seq",
+        "contract_version",
+        "readiness"
+      ],
+      "title": "StructuredInputMutationResponse",
+      "type": "object"
+    },
+    "StructuredInputStatus": {
+      "enum": [
+        "missing",
+        "unverified",
+        "stale",
+        "current"
+      ],
+      "type": "string"
+    },
+    "TraceAvailability": {
+      "enum": [
+        "available",
+        "unavailable"
+      ],
+      "type": "string"
+    },
+    "XlsxRangeLocator": {
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "const": "xlsx_range",
+          "default": "xlsx_range",
+          "type": "string"
+        },
+        "sheet_name": {
+          "type": "string"
+        },
+        "cell_range": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "sheet_name",
+        "cell_range"
+      ],
+      "title": "XlsxRangeLocator",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "description": "仅用于导出一份包含全部核心响应定义的前端运行时 schema。",
+  "properties": {
+    "report_summary": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/ReportSummaryResponse"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "report_list": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/ReportListResponse"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "report_state": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/ReportStateResponse"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "report_lineage": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/ReportLineageProjection"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "block_provenance": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/ReportBlockProvenanceProjection"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "report_preparation": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/ReportPreparationProjection"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "report_generation": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/ReportGenerationProjection"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "internal_audit_artifacts": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/InternalAuditArtifactListResponse"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "put_report_state": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/PutReportStateResponse"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "assessment_input": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/AssessmentInputResponse"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "quantitative_metrics": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/QuantitativeMetricsResponse"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "structured_input_mutation": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/StructuredInputMutationResponse"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "structured_input_conflict": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/StructuredInputConflictResponse"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "rewrite_allowance": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/RewriteAllowanceResponse"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "generation_freshness": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/SectionGenerationFreshnessResponse"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "module_title_generation": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/ModuleTitleGenerationResponse"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "report_profile_options": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/ReportProfileOptionsResponse"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "generation_model_options": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/GenerationModelOptionsResponse"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    }
+  },
+  "title": "ReportApiContractBundle",
+  "type": "object",
+  "required": []
+}

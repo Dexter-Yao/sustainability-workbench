@@ -1,0 +1,20 @@
+{
+  "_comment": "本报告披露议题数量的跨端 golden：后端 test_applicable_scoring_topic_count_golden.py 与前端 lib/report-values.test.ts 消费同一份，防双写漂移。真相源是 backend/data/topic_registry.yaml 的议题清单与适用性规则（仅科技伦理一条适用性规则，risk_management 恒在范围内）。",
+  "cases": [
+    {
+      "name": "无科技伦理敏感业务（risk_management 已并入轻量版主链）",
+      "has_technology_ethics_sensitive_activity": "否",
+      "expected": 22
+    },
+    {
+      "name": "有科技伦理敏感业务：全部议题均适用",
+      "has_technology_ethics_sensitive_activity": "是",
+      "expected": 23
+    },
+    {
+      "name": "科技伦理未作答：未作答时议题保持适用，与选「是」同结果",
+      "has_technology_ethics_sensitive_activity": null,
+      "expected": 23
+    }
+  ]
+}

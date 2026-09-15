@@ -1,0 +1,228 @@
+# ABOUTME: 环境合规管理议题准则披露要求库，供覆盖审计与按 key 白名单注入生成上下文（注入受开关控制，默认关闭）。
+# ABOUTME: 本文件不作为用户可见准则批注来源；用户可见条款原文来自 user_visible_disclosure_clause_annotations。
+topicStandardDisclosureRequirementGroups:
+- topicSectionKey: environmental_compliance_management.gov
+  pillar: governance
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: environmental_compliance_management.gov.management_system_required
+    standardDisclosureRequirementTitle: 环境管理体系与运行控制
+    excerptFrom: 附录索引表第二十九条；参考模板“环境合规管理”
+    standardDisclosureRequirementText: 应说明公司是否建立环境管理体系、环境管理制度、环境因素识别、合规性评价、监督考核或“识别—管控—监督—改进”的闭环机制。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 第二十九条
+    - standard: SZSE
+      clauseRef: 第二十九条
+    - standard: BSE
+      clauseRef: 第二十九条
+  - standardDisclosureRequirementKey: environmental_compliance_management.gov.management_system_encouraged
+    standardDisclosureRequirementTitle: 环境管理体系认证与制度评价
+    excerptFrom: 参考模板“ISO 14001 环境管理体系认证、合规性评估”
+    standardDisclosureRequirementText: 可进一步披露说明 ISO 14001 或同类环境管理体系认证、覆盖运营场所比例、制度执行性评价、内部审核、管理评审、纠正预防和持续改进安排。
+    disclosureRequirementObligationLevel: encouraged
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 第二十九条
+    - standard: SZSE
+      clauseRef: 第二十九条
+    - standard: BSE
+      clauseRef: 第二十九条
+  - standardDisclosureRequirementKey: environmental_compliance_management.gov.certifications_required
+    standardDisclosureRequirementTitle: 环境管理体系认证情况
+    excerptFrom: 参考模板“公司环境管理体系认证情况”
+    standardDisclosureRequirementText: 如涉及环境管理体系认证或其他环境合规认证信息，应说明认证名称、适用标准、覆盖范围、有效期或报告期内复审情况。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 第二十九条
+    - standard: SZSE
+      clauseRef: 第二十九条
+    - standard: BSE
+      clauseRef: 第二十九条
+  - standardDisclosureRequirementKey: environmental_compliance_management.gov.certifications_encouraged
+    standardDisclosureRequirementTitle: 认证覆盖与标准化体系运行
+    excerptFrom: 参考模板“依照适用标准搭建全流程环境管控体系”
+    standardDisclosureRequirementText: 可进一步披露说明认证适用标准、覆盖业务或运营场所、证书有效期、复审安排、标准化运行机制和认证对环境管理长效化的作用；证书编号、机构名称、覆盖比例和有效期必须来自相关事实。
+    disclosureRequirementObligationLevel: encouraged
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 第二十九条
+    - standard: SZSE
+      clauseRef: 第二十九条
+    - standard: BSE
+      clauseRef: 第二十九条
+  - standardDisclosureRequirementKey: environmental_compliance_management.gov.responsibility_matrix_required
+    standardDisclosureRequirementTitle: 环境合规责任分工
+    excerptFrom: 附录索引表第二十九条；参考模板“矩阵式职责架构”
+    standardDisclosureRequirementText: 应说明环境合规管理的责任部门、执行单位、职责边界或业务协同方式。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 第二十九条
+    - standard: SZSE
+      clauseRef: 第二十九条
+    - standard: BSE
+      clauseRef: 第二十九条
+  - standardDisclosureRequirementKey: environmental_compliance_management.gov.responsibility_matrix_encouraged
+    standardDisclosureRequirementTitle: 矩阵式职责架构与业务协同
+    excerptFrom: 参考模板“纵向贯通、横向协同的矩阵式管理架构”
+    standardDisclosureRequirementText: 可进一步披露说明矩阵式职责架构、纵向归口管理、横向业务协同、研发源头管控、供应链环保责任延伸和生产运营执行主体。
+    disclosureRequirementObligationLevel: encouraged
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 第二十九条
+    - standard: SZSE
+      clauseRef: 第二十九条
+    - standard: BSE
+      clauseRef: 第二十九条
+- topicSectionKey: environmental_compliance_management.strategy
+  pillar: strategy
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: environmental_compliance_management.strategy.targets_required
+    standardDisclosureRequirementTitle: 环境合规战略、策略与目标
+    excerptFrom: 参考模板“公司环境合规管理战略、策略和目标内容”
+    standardDisclosureRequirementText: 应说明公司环境合规管理的战略、策略或目标，包括对标环保法律法规、污染物达标排放、厂区噪声治理、固体废弃物规范化管理、环境风险排查、管控机制或合法合规运营方向；量化目标和完成进度必须来自相关事实。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 第二十九条
+    - standard: SZSE
+      clauseRef: 第二十九条
+    - standard: BSE
+      clauseRef: 第二十九条
+  - standardDisclosureRequirementKey: environmental_compliance_management.strategy.targets_encouraged
+    standardDisclosureRequirementTitle: 环境风险管控与合规运营目标
+    excerptFrom: 参考模板“建立长效环境风险排查与管控机制”
+    standardDisclosureRequirementText: 可进一步披露说明环境合规目标与业务运营、污染防治、噪声治理、废弃物规范处置、在线监测、现场核查、数据复盘或风险管控机制的衔接。
+    disclosureRequirementObligationLevel: encouraged
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 第二十九条
+    - standard: SZSE
+      clauseRef: 第二十九条
+    - standard: BSE
+      clauseRef: 第二十九条
+  - standardDisclosureRequirementKey: environmental_compliance_management.strategy.lifecycle_control_required
+    standardDisclosureRequirementTitle: 全生命周期环境合规管控
+    excerptFrom: 附录索引表第二十九条；参考模板“全流程嵌入与系统性管控”
+    standardDisclosureRequirementText: 应说明公司如何将生态环境保护和环境合规要求嵌入研发、建设、生产、供应链、运营或产品全生命周期，包括环保三同时、环境因素识别、供应商和承包商环保评估、污染防治、废弃物或排放标准化处置。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 第二十九条
+    - standard: SZSE
+      clauseRef: 第二十九条
+    - standard: BSE
+      clauseRef: 第二十九条
+  - standardDisclosureRequirementKey: environmental_compliance_management.strategy.lifecycle_control_encouraged
+    standardDisclosureRequirementTitle: 源头预防、过程控制与责任延伸
+    excerptFrom: 参考模板“源头预防、过程控制、供应链责任延伸、末端可追溯管理”
+    standardDisclosureRequirementText: 可进一步披露说明前端预防性嵌入、过程系统性控制、产品报废回收路径、绿色运输、隐患汇总表、整改追踪和持续改进机制。
+    disclosureRequirementObligationLevel: encouraged
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 第二十九条
+    - standard: SZSE
+      clauseRef: 第二十九条
+    - standard: BSE
+      clauseRef: 第二十九条
+- topicSectionKey: environmental_compliance_management.iro
+  pillar: iro_management
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: environmental_compliance_management.iro.management_practice_required
+    standardDisclosureRequirementTitle: 环境合规制度落地与管理框架
+    excerptFrom: 参考模板“根据治理制度内容，按管理框架生成环境合规管理规范”
+    standardDisclosureRequirementText: 应依据环境管理制度、环境标准体系或运行控制事实，说明制度执行、过程监督、问题整改、闭环改进和环境合规管理规范。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 第二十九条
+    - standard: SZSE
+      clauseRef: 第二十九条
+    - standard: BSE
+      clauseRef: 第二十九条
+  - standardDisclosureRequirementKey: environmental_compliance_management.iro.management_practice_encouraged
+    standardDisclosureRequirementTitle: 制度执行、监督与持续改进
+    excerptFrom: 参考模板“制度内容按管理框架生成描述”
+    standardDisclosureRequirementText: 可进一步披露说明制度发布、执行监督、内部检查、不符合项整改、持续改进、供应链或运营环节责任延伸。
+    disclosureRequirementObligationLevel: encouraged
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 第二十九条
+    - standard: SZSE
+      clauseRef: 第二十九条
+    - standard: BSE
+      clauseRef: 第二十九条
+  - standardDisclosureRequirementKey: environmental_compliance_management.iro.environment_audit_required
+    standardDisclosureRequirementTitle: 环境审计与环保检查
+    excerptFrom: 参考模板“公司开展自身运营场所环境审计和对供应商的环境审计情况”
+    standardDisclosureRequirementText: 如涉及环境审计、环保检查或供应商环境审计事实，应说明审计类型、审计对象、覆盖范围、审计结果、发现事项或整改跟踪。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 第三十三条
+    - standard: SZSE
+      clauseRef: 第三十三条
+    - standard: BSE
+      clauseRef: 第三十三条
+  - standardDisclosureRequirementKey: environmental_compliance_management.iro.environment_audit_encouraged
+    standardDisclosureRequirementTitle: 审计覆盖、结果与整改跟踪
+    excerptFrom: 参考模板“审计类型、审计对象、审计覆盖范围、审计结果”
+    standardDisclosureRequirementText: 可进一步披露说明自身运营场所环境审计、供应商环境审计、环保现场核查、审计发现事项、整改责任、整改进展和结果复核；审计覆盖比例、问题数量和整改完成率必须来自相关事实。
+    disclosureRequirementObligationLevel: encouraged
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 第三十三条
+    - standard: SZSE
+      clauseRef: 第三十三条
+    - standard: BSE
+      clauseRef: 第三十三条
+  - standardDisclosureRequirementKey: environmental_compliance_management.iro.training_required
+    standardDisclosureRequirementTitle: 环境合规培训与责任意识建设
+    excerptFrom: 参考模板“企业开展的环境合规类培训情况”
+    standardDisclosureRequirementText: 如涉及环境合规培训或环保宣教事实，应说明培训目标、培训类型、培训方式、培训对象、覆盖范围、培训主题和对环境合规责任意识的作用。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 第二十九条
+    - standard: SZSE
+      clauseRef: 第二十九条
+    - standard: BSE
+      clauseRef: 第二十九条
+  - standardDisclosureRequirementKey: environmental_compliance_management.iro.training_encouraged
+    standardDisclosureRequirementTitle: 培训覆盖、主题与能力建设
+    excerptFrom: 参考模板“培训目标、培训类型、培训方式、培训对象、培训覆盖范围、培训主题”
+    standardDisclosureRequirementText: 可进一步披露说明多层次培训、专项培训、岗位培训、合规宣教、环保专业知识储备、责任边界厘清和风险识别能力建设。
+    disclosureRequirementObligationLevel: encouraged
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 第二十九条
+    - standard: SZSE
+      clauseRef: 第二十九条
+    - standard: BSE
+      clauseRef: 第二十九条
+  - standardDisclosureRequirementKey: environmental_compliance_management.iro.event_risk_required
+    standardDisclosureRequirementTitle: 环境事件风险评估、预防与应急
+    excerptFrom: 附录索引表第三十三条
+    standardDisclosureRequirementText: 应说明公司针对环境事件开展的风险评估、预防管理措施和突发环境事件应急预案总体情况。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 第三十三条
+    - standard: SZSE
+      clauseRef: 第三十三条
+    - standard: BSE
+      clauseRef: 第三十三条
+  - standardDisclosureRequirementKey: environmental_compliance_management.iro.event_risk_encouraged
+    standardDisclosureRequirementTitle: 环境隐患排查与整改闭环
+    excerptFrom: 参考模板“监督与持续改进机制”
+    standardDisclosureRequirementText: 可进一步披露说明环境检查、隐患汇总、问题记录、整改追踪、不符合项验证、应急演练和复盘改进。
+    disclosureRequirementObligationLevel: encouraged
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 第三十三条
+    - standard: SZSE
+      clauseRef: 第三十三条
+    - standard: BSE
+      clauseRef: 第三十三条

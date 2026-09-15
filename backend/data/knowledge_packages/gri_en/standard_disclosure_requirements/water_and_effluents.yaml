@@ -1,0 +1,51 @@
+# ABOUTME(en): GRI 303: Water and Effluents 2018 disclosure requirements, grouped by the package's pillars, for the
+# ABOUTME(en): coverage audit and the key whitelist. Wording condenses the official requirement text.
+topicStandardDisclosureRequirementGroups:
+- topicSectionKey: water_and_effluents.gov
+  pillar: governance
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: water_and_effluents.gov.shared_resource
+    standardDisclosureRequirementTitle: Interactions with water as a shared resource
+    excerptFrom: 303-1-a, 303-1-b
+    standardDisclosureRequirementText: |-
+      Describe how the organization interacts with water, including how and where water is withdrawn, consumed and discharged, and the water-related impacts it has caused or contributed to; and describe the approach used to identify those impacts, including the scope of assessments, their timeframe and any tools or methodologies used.
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: GRI
+      clauseRef: 303-1-a, 303-1-b
+- topicSectionKey: water_and_effluents.strategy
+  pillar: strategy
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: water_and_effluents.strategy.goals_and_stewardship
+    standardDisclosureRequirementTitle: Water-related goals and stewardship
+    excerptFrom: 303-1-c, 303-1-d
+    standardDisclosureRequirementText: |-
+      Describe how water-related impacts are addressed, including how the organization works with stakeholders to steward water as a shared resource and how it engages with suppliers or customers with significant water-related impacts, and explain the process for setting any water-related goals and targets.
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: GRI
+      clauseRef: 303-1-c, 303-1-d
+- topicSectionKey: water_and_effluents.iro
+  pillar: iro_management
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: water_and_effluents.iro.discharge_management
+    standardDisclosureRequirementTitle: Management of water discharge-related impacts
+    excerptFrom: 303-2-a
+    standardDisclosureRequirementText: |-
+      Describe any minimum standards set for the quality of effluent discharge and how those standards were determined, including how standards for facilities operating in locations with no local discharge requirements were determined.
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: GRI
+      clauseRef: 303-2-a
+- topicSectionKey: water_and_effluents.metrics
+  pillar: metrics_targets
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: water_and_effluents.metrics.withdrawal_and_consumption
+    standardDisclosureRequirementTitle: Water withdrawal, discharge and consumption
+    excerptFrom: 303-3, 303-4, 303-5
+    standardDisclosureRequirementText: |-
+      Report total water withdrawal, total water discharge and total water consumption in megalitres, with a breakdown by source and, where relevant, water withdrawn or consumed in areas with water stress, together with contextual information necessary to understand the data.
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: GRI
+      clauseRef: 303-3, 303-4, 303-5

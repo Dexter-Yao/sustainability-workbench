@@ -1,0 +1,235 @@
+# ABOUTME(en): Word format parameters of the hkex_zh_hant package: Hong Kong Traditional Chinese typography
+# ABOUTME(en): (PMingLiU body, Microsoft JhengHei headings, zh-HK language tag), delivery labels and the review
+# ABOUTME(en): deliverable wording. Layout numbers follow the mainland package; wording is Hong Kong usage.
+profile_id: hkex_zh_hant
+profile_version: 1
+language: zh-Hant
+scope: 全體繁體中文 Word 報告（full_report）
+
+theme:
+  primary: "1F4E79"
+  note_red: "C00000"
+  caption_gray: "404040"
+  cover_gray: "595959"
+  placeholder_gray: "999999"
+
+page:
+  size: A4
+  body_margins_cm: { top: 2.0, bottom: 2.0, left: 2.5, right: 2.5 }
+  cover_margins_cm: { top: 2.0, bottom: 2.0, left: 3.0, right: 3.0 }
+
+numbering:
+  section_scheme: chapter_cn           # 第一章 / 一、 / （一） / 1.
+  # 董事會聲明與前置章一樣不佔章號；附錄亦不佔。
+  unnumbered_chapter_keys: [about_report, board_statement, company_intro, report_appendix]
+  figure_numbering: sequential_whole_document
+  appendix_numbering: appendix_letter
+  number_caption_separator: "　"
+  count_only_rendered: true
+
+captions:
+  figure_position: below
+  table_position: above
+  font_size_pt: 9
+  color: caption_gray
+  no_trailing_period: true
+  source_note_font_size_pt: 9
+  table_note_font_size_pt: 8
+  table_note_italic: true
+
+footnotes:
+  text_style_name: footnote text
+  reference_style_name: footnote reference
+  font_size_pt: 9
+
+body:
+  east_asia_font: 新細明體
+  font_size_pt: 11
+  line_spacing_multiple: 1.5
+  space_after_pt: 6
+  first_line_indent_chars: 2
+  first_line_indent_twips: 480
+headings:
+  east_asia_font: 微軟正黑體
+labels:
+  toc_title: 目錄
+  toc_placeholder: 目錄條目在導出定稿時生成
+  page_number_prefix: "第 "
+  page_number_suffix: " 頁"
+  table_note_prefix: "註："
+  figure_label: 圖
+  table_label: 表
+  appendix_number_prefix: "A."
+  reporting_period_template: "{year}年度"
+  document_title_template: "{year}年度{title}"
+  generated_at_template: "生成於 {timestamp}"
+  image_placeholder_template: "［圖片佔位：{text}］"
+  derived_figure_failed: 指標摘要圖生成失敗
+  default_table_unit_text: 表格
+  default_image_unit_text: 圖表
+  metric_year_template: "{year}年"
+  metric_year_fallback: 匯報年度
+  metric_table_headers: { metric: 指標, value: 數值, unit: 單位 }
+  delivery_filename_variants: { word: 正式稿, review: 審閱稿 }
+
+tables:
+  cell_font_size_pt: 8.5
+  header_font_size_pt: 8.5
+  header_bold: true
+  header_color: primary
+  cell_east_asia_font: 新細明體
+  cell_line_spacing: 1.15
+  cell_space_before_pt: 0
+  cell_space_after_pt: 0
+  cell_margins_dxa: { top: 80, start: 90, bottom: 80, end: 90 }
+  three_line:
+    outer_size_pt: 1.5
+    outer_color: primary
+    inner_h_size_pt: 0.5
+    inner_h_color: "BFBFBF"
+    vertical_edges: nil
+  first_column_narrow_ratio: 0.13
+  repeat_header_row: true
+  keep_row_together: true
+  fixed_layout: true
+  caption_space_pt: 6
+
+figures:
+  placeholder_color: placeholder_gray
+  widths_cm:
+    evidence_default: 16.0
+    derived_metric_summary: 16.0
+    materiality_matrix: 13.0
+  aspect_ratio_rules:
+    wide_threshold: 1.4
+    mid_threshold: 0.8
+    wide_cm: 16.0
+    mid_cm: 11.0
+    narrow_scale_cm: 13.0
+    narrow_cap_cm: 11.0
+lists:
+  bullet_char: "•"
+  ordered_level_text: "%1."
+  indent_left_dxa: 560
+  hanging_dxa: 280
+  supported_levels: 1
+
+footer:
+  east_asia_font: 新細明體
+  color: cover_gray
+  standard_font_size_pt: 8
+  review_font_size_pt: 7
+  timestamp_format: "%Y年%m月%d日"
+  timezone: Asia/Hong_Kong
+  provider_name: "Sustainability Workbench"
+  review_prefix_standard: "本報告由開源工具 Sustainability Workbench 根據用戶提供的資料編製"
+  review_contact: ""
+  repository_url: "github.com/Dexter-Yao/sustainability-workbench"
+  cover_and_toc_footer: attribution_only
+
+cover_full_report:
+  logo_width_cm: 5.0
+  logo_space_before_pt: 18
+  logo_space_after_pt: 64
+  standard_spacer_before_pt: 130
+  company_space_before_review_pt: 30
+  company_space_before_standard_pt: 0
+  company_space_after_pt: 22
+  company_font_size_pt: 22
+  title_text: 環境、社會及管治報告
+  title_font_size_pt: 28
+  title_space_after_pt: 12
+  period_font_size_pt: 13
+  period_space_after_pt: 0
+  ai_disclosure_text: 本報告含人工智能生成合成內容
+  ai_disclosure_font_size_pt: 10
+  ai_disclosure_space_before_pt: 18
+
+material_processing_notice:
+  line_spacing_multiple: 1.0
+  heading_font_size_pt: 18
+  heading_space_after_pt: 10
+  lead_font_size_pt: 10.5
+  lead_space_after_pt: 16
+  file_name_font_size_pt: 12
+  file_name_space_before_pt: 14
+  file_name_space_after_pt: 6
+  item_font_size_pt: 10.5
+  item_space_after_pt: 4
+  next_action_font_size_pt: 10
+  next_action_space_after_pt: 10
+  next_action_label: 提示
+  next_action_indent_chars: 2
+
+# 審閱版交付文案：封面批註、逐塊批註、資料處理說明頁與守則對照說明頁的全部用戶可見句式。
+delivery_texts:
+  overview:
+    no_materials: 本版本未使用上傳資料；正文依據用戶的基本資料、填寫內容與行業通用披露語境撰寫，系統撰寫的各段與繪製的各圖均以批註說明依據。
+    materials_adopted: 本版本使用了用戶提供的資料；系統撰寫的各段與繪製的各圖均以批註說明依據。
+    adopted_list_template: "已採用資料：{names}。"
+    adopted_name_separator: "、"
+    materials_read_not_adopted: 本版本已讀取用戶提供的資料，但未作為公司事實採用；正文依據用戶的基本資料、填寫內容與行業通用披露語境撰寫。
+    file_group_template: "《{names}》：{explanation}"
+    file_name_separator: "》《"
+    not_adopted:
+      not_relevant: 內容與本報告的公司事實呈現無關
+      attention_items: 資料存在須留意事項（見資料處理說明），未作為公司事實採用
+      no_supporting_content: 經核對未找到可直接支持正文表述的內容，未作為公司事實採用
+  unit_labels: {paragraph: 本段, list: 本條, table: 本表, other: 本內容}
+  explanations:
+    layout_image: 本圖為用戶上傳的素材圖片，系統按識別結果放置於本節，圖片內容未作改動。
+    certificate_table: 本表由系統從用戶上傳的證書圖片識別得出，同一張證書只列一行；認證名稱、發證機構與認證範圍如與證書原件有出入，可在資料處理頁更正後重新生成。
+    derived_metric_figure: "本圖由系統根據用戶填寫的以下關鍵績效指標繪製，數值與填寫值一致："
+    assessment_matrix: 本圖由系統根據用戶完成的議題重要性評估結果繪製，各議題的位置對應其對業務的重要性與對持份者的重要性評分。
+    from_materials: "{label}依據用戶提供的以下資料撰寫，內容限於資料實際反映的範圍："
+    from_materials_and_metrics: "{label}依據用戶提供的以下資料，並結合用戶填寫的關鍵績效指標撰寫："
+    needs_attention: 相關資料中的資料存在不一致或無法核實之處，{label}未將其作為公司事實採用，按審慎表述撰寫。
+    from_metrics: "{label}依據用戶填寫的關鍵績效指標與填寫內容撰寫。"
+    without_materials: "{label}未引用用戶上傳的資料，依據用戶的基本資料、填寫內容與行業通用披露語境撰寫。"
+  reading_notes:
+    needs_attention: 閱讀提示：本版未將存在關鍵不確定性或相互不一致的資料作為公司事實採用。
+    attention_items_present: 閱讀提示：本版僅採用了可穩定支持報告表述的資料內容。
+  comment_lines:
+    source_item: "- 《{name}》"
+    image_item: "- 上傳文件《{name}》"
+    image_user_description: "（用戶說明：{description}）"
+    image_category_placement: "  系統識別為{category}，放置於「{scope}」。"
+    image_placement: "  系統按識別結果放置於「{scope}」。"
+    metrics_heading: "本段引用的關鍵績效指標（用戶填寫值）："
+    metric_item: "- {name}：{value}{unit}"
+    cover_comment: "本次報告說明：{overview}"
+  layout_image_categories:
+    certificate_or_award: 證書或獎項
+    photo: 活動、現場或產品照片
+    document_scan: 文件掃描或截圖
+  material_notice:
+    heading: 資料處理說明
+    lead: 本頁說明系統對用戶所提供資料的處理情況，供定稿前參考。本頁不屬於報告正文，正式報告不包含本頁。
+    files_heading: 資料核對事項
+    files_lead: 以下事項來自對用戶所提供資料的自動核對，按來源文件列出，供定稿前留意。
+  standards_notice:
+    heading: 守則對照說明
+    lead: 本頁說明本報告對照香港聯合交易所有限公司《證券上市規則》附錄C2《環境、社會及管治報告守則》的披露涵蓋情況，供定稿前參考，不構成鑑證意見或法律意見。本頁不屬於報告正文，正式報告不包含本頁。
+    attention_heading: 建議留意事項
+    attention_lead: 以下事項在定稿前值得關注，可透過補充資料或補充說明處理；守則對C部條文採「不遵守就解釋」原則，未披露的條文須在報告中說明理由。
+    exclusion_heading: 守則允許的省略或過渡安排
+    exclusion_lead: 以下內容依據守則規定未納入本報告，列出供了解，無須處理。
+    omission_finding_template: "「{title}」因未獲得對應資料，本報告未作披露。"
+    omission_finding_untitled: 該層面存在應披露事項因未獲得對應資料而未作披露。
+    omission_next_action: 補充相應資料後重新生成，或在定稿時按「不遵守就解釋」原則補充一句未披露原因的說明。
+    report_scope_label: 報告整體
+    obligation_unmet_template: "「{title}」尚未滿足。"
+    obligation_next_action: 請在定稿前補充相應內容。
+    pending_topic_message: 該層面的守則披露要求尚在梳理中，本報告按現有編製規範生成內容，未做逐條守則對照。
+    summary_template: 本報告已涵蓋 {count} 項守則一般披露及關鍵績效指標。
+    exclusion_rationales:
+      scenario_analysis_relief: 氣候情景分析屬守則D部設有實施寬免的事項，本報告未開展情景分析，未作相關披露。
+      scope3_relief: 範圍3溫室氣體排放屬守則D部設有過渡期寬免的事項，本報告未作定量披露，將於後續匯報期間說明工作計劃。
+      quantitative_capability: 相關財務影響的定量資料缺少可核算基礙，本報告未作定量披露；守則允許以定性說明替代。
+      industry_metrics_encouraged: 行業特定指標屬守則鼓勵而非規定披露的事項，本報告未作單獨披露。
+      integrated_adjacent_topic: 該事項已在相鄰層面中合併披露；守則允許相關內容合併撰寫。
+
+toc:
+  max_heading_level: 2
+  field_instruction: ' TOC \o "1-2" \h \z \u '
+  page_numbers: frozen_by_layout_engine

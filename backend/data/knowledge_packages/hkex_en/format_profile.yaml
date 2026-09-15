@@ -1,0 +1,236 @@
+# ABOUTME(en): Word format parameters of the hkex_en package: Latin typography (Calibri body, Arial headings,
+# ABOUTME(en): en-HK language tag), decimal section numbering, English delivery labels and review deliverable
+# ABOUTME(en): wording. Layout numbers follow the other packages; only wording and numbering differ.
+profile_id: hkex_en
+profile_version: 1
+language: en
+scope: All English Word reports (full_report)
+
+theme:
+  primary: "1F4E79"
+  note_red: "C00000"
+  caption_gray: "404040"
+  cover_gray: "595959"
+  placeholder_gray: "999999"
+
+page:
+  size: A4
+  body_margins_cm: { top: 2.0, bottom: 2.0, left: 2.5, right: 2.5 }
+  cover_margins_cm: { top: 2.0, bottom: 2.0, left: 3.0, right: 3.0 }
+
+numbering:
+  section_scheme: decimal                # 1 / 1.1 / 1.1.1
+  # The board statement, like the front chapters and the appendix, carries no chapter number.
+  unnumbered_chapter_keys: [about_report, board_statement, company_intro, report_appendix]
+  figure_numbering: sequential_whole_document
+  appendix_numbering: appendix_letter
+  number_caption_separator: "  "
+  label_number_separator: " "
+  count_only_rendered: true
+
+captions:
+  figure_position: below
+  table_position: above
+  font_size_pt: 9
+  color: caption_gray
+  no_trailing_period: true
+  source_note_font_size_pt: 9
+  table_note_font_size_pt: 8
+  table_note_italic: true
+
+footnotes:
+  text_style_name: footnote text
+  reference_style_name: footnote reference
+  font_size_pt: 9
+
+body:
+  east_asia_font: Calibri
+  font_size_pt: 11
+  line_spacing_multiple: 1.5
+  space_after_pt: 6
+  first_line_indent_chars: 0
+  first_line_indent_twips: 0
+headings:
+  east_asia_font: Arial
+labels:
+  toc_title: Contents
+  toc_placeholder: Table of contents entries are generated when the export is finalised
+  page_number_prefix: "Page "
+  page_number_suffix: ""
+  table_note_prefix: "Note: "
+  figure_label: Figure
+  table_label: Table
+  appendix_number_prefix: "A."
+  reporting_period_template: "Year {year}"
+  document_title_template: "{title} {year}"
+  generated_at_template: "Generated on {timestamp}"
+  image_placeholder_template: "[Image placeholder: {text}]"
+  derived_figure_failed: The metric summary figure could not be generated
+  default_table_unit_text: table
+  default_image_unit_text: figure
+  metric_year_template: "{year}"
+  metric_year_fallback: Reporting year
+  metric_table_headers: { metric: Metric, value: Value, unit: Unit }
+  delivery_filename_variants: { word: Final, review: Review }
+
+tables:
+  cell_font_size_pt: 8.5
+  header_font_size_pt: 8.5
+  header_bold: true
+  header_color: primary
+  cell_east_asia_font: Calibri
+  cell_line_spacing: 1.15
+  cell_space_before_pt: 0
+  cell_space_after_pt: 0
+  cell_margins_dxa: { top: 80, start: 90, bottom: 80, end: 90 }
+  three_line:
+    outer_size_pt: 1.5
+    outer_color: primary
+    inner_h_size_pt: 0.5
+    inner_h_color: "BFBFBF"
+    vertical_edges: nil
+  first_column_narrow_ratio: 0.13
+  repeat_header_row: true
+  keep_row_together: true
+  fixed_layout: true
+  caption_space_pt: 6
+
+figures:
+  placeholder_color: placeholder_gray
+  widths_cm:
+    evidence_default: 16.0
+    derived_metric_summary: 16.0
+    materiality_matrix: 13.0
+  aspect_ratio_rules:
+    wide_threshold: 1.4
+    mid_threshold: 0.8
+    wide_cm: 16.0
+    mid_cm: 11.0
+    narrow_scale_cm: 13.0
+    narrow_cap_cm: 11.0
+lists:
+  bullet_char: "•"
+  ordered_level_text: "%1."
+  indent_left_dxa: 560
+  hanging_dxa: 280
+  supported_levels: 1
+
+footer:
+  east_asia_font: Calibri
+  color: cover_gray
+  standard_font_size_pt: 8
+  review_font_size_pt: 7
+  timestamp_format: "%d %B %Y"
+  timezone: Asia/Hong_Kong
+  provider_name: "Sustainability Workbench"
+  review_prefix_standard: "Prepared with Sustainability Workbench, an open-source tool, from user-provided material"
+  review_contact: ""
+  repository_url: "github.com/Dexter-Yao/sustainability-workbench"
+  cover_and_toc_footer: attribution_only
+
+cover_full_report:
+  logo_width_cm: 5.0
+  logo_space_before_pt: 18
+  logo_space_after_pt: 64
+  standard_spacer_before_pt: 130
+  company_space_before_review_pt: 30
+  company_space_before_standard_pt: 0
+  company_space_after_pt: 22
+  company_font_size_pt: 22
+  title_text: Environmental, Social and Governance Report
+  title_font_size_pt: 28
+  title_space_after_pt: 12
+  period_font_size_pt: 13
+  period_space_after_pt: 0
+  ai_disclosure_text: This report contains AI-generated synthetic content
+  ai_disclosure_font_size_pt: 10
+  ai_disclosure_space_before_pt: 18
+
+material_processing_notice:
+  line_spacing_multiple: 1.0
+  heading_font_size_pt: 18
+  heading_space_after_pt: 10
+  lead_font_size_pt: 10.5
+  lead_space_after_pt: 16
+  file_name_font_size_pt: 12
+  file_name_space_before_pt: 14
+  file_name_space_after_pt: 6
+  item_font_size_pt: 10.5
+  item_space_after_pt: 4
+  next_action_font_size_pt: 10
+  next_action_space_after_pt: 10
+  next_action_label: Note
+  next_action_indent_chars: 2
+
+# Review deliverable wording: cover comment, per-block comments, material processing notice and Code cross-check page.
+delivery_texts:
+  overview:
+    no_materials: This version uses no uploaded material; the text draws on the user's basic information, entries and the disclosure conventions common to the industry. Each passage written and each figure drawn by the system carries a comment stating its basis.
+    materials_adopted: This version uses material provided by the user; each passage written and each figure drawn by the system carries a comment stating its basis.
+    adopted_list_template: "Material adopted: {names}."
+    adopted_name_separator: ", "
+    materials_read_not_adopted: This version has read the material provided by the user but did not adopt it as company fact; the text draws on the user's basic information, entries and the disclosure conventions common to the industry.
+    file_group_template: "\"{names}\": {explanation}"
+    file_name_separator: "\", \""
+    not_adopted:
+      not_relevant: content unrelated to the presentation of company facts in this report
+      attention_items: the material carries points needing attention (see the material processing notice) and was not adopted as company fact
+      no_supporting_content: no content directly supporting the report text was found, so it was not adopted as company fact
+  unit_labels: {paragraph: This paragraph, list: This item, table: This table, other: This content}
+  explanations:
+    layout_image: This figure is an image uploaded by the user, placed in this section by the system according to its recognition result; the image content is unchanged.
+    certificate_table: This table was recognised by the system from certificate images uploaded by the user, one row per certificate; where the certification name, issuing body or scope differs from the original, correct it on the material processing page and regenerate.
+    derived_metric_figure: "This figure was drawn by the system from the following KPIs entered by the user; the values match the entries:"
+    assessment_matrix: This figure was drawn by the system from the topic materiality assessment completed by the user; each topic's position reflects its scores for importance to the business and importance to stakeholders.
+    from_materials: "{label} was written from the following material provided by the user and is limited to what the material actually reflects:"
+    from_materials_and_metrics: "{label} was written from the following material provided by the user together with the KPIs the user entered:"
+    needs_attention: The related material contains inconsistencies or unverifiable points; {label} did not adopt it as company fact and is written in a prudent register.
+    from_metrics: "{label} was written from the KPIs and entries the user provided."
+    without_materials: "{label} cites no uploaded material; it draws on the user's basic information, entries and the disclosure conventions common to the industry."
+  reading_notes:
+    needs_attention: "Reading note: this version did not adopt material with critical uncertainty or internal inconsistency as company fact."
+    attention_items_present: "Reading note: this version adopted only material content that reliably supports the report's statements."
+  comment_lines:
+    source_item: "- \"{name}\""
+    image_item: "- Uploaded file \"{name}\""
+    image_user_description: " (user description: {description})"
+    image_category_placement: "  Recognised by the system as {category}, placed under \"{scope}\"."
+    image_placement: "  Placed by the system under \"{scope}\" according to the recognition result."
+    metrics_heading: "KPIs cited in this passage (values entered by the user):"
+    metric_item: "- {name}: {value} {unit}"
+    cover_comment: "About this report: {overview}"
+  layout_image_categories:
+    certificate_or_award: a certificate or award
+    photo: a photograph of an activity, site or product
+    document_scan: a document scan or screenshot
+  material_notice:
+    heading: Material Processing Notice
+    lead: This page describes how the system handled the material the user provided, for reference before finalising. It is not part of the report body and does not appear in the formal report.
+    files_heading: Points to check in the material
+    files_lead: The following points come from the automatic check of the material the user provided, listed by source file, for attention before finalising.
+  standards_notice:
+    heading: Code Cross-check Notice
+    lead: This page describes how this report covers the disclosures of Appendix C2 "Environmental, Social and Governance Reporting Code" to the Rules Governing the Listing of Securities on The Stock Exchange of Hong Kong Limited, for reference before finalising; it is neither an assurance opinion nor legal advice. It is not part of the report body and does not appear in the formal report.
+    attention_heading: Points worth attention
+    attention_lead: The following points deserve attention before finalising and can be handled by adding material or explanations; the Code applies "comply or explain" to Part C provisions, so provisions not disclosed must be explained in the report.
+    exclusion_heading: Omissions or transitional arrangements the Code allows
+    exclusion_lead: The following content is not included in this report as the Code provides; it is listed for information and needs no action.
+    omission_finding_template: "\"{title}\" is not disclosed in this report because no corresponding material was obtained."
+    omission_finding_untitled: This Aspect has a disclosable matter that is not disclosed because no corresponding material was obtained.
+    omission_next_action: Add the corresponding material and regenerate, or add a sentence of considered reasons under "comply or explain" when finalising.
+    report_scope_label: Whole report
+    obligation_unmet_template: "\"{title}\" is not yet satisfied."
+    obligation_next_action: Please add the corresponding content before finalising.
+    pending_topic_message: The Code disclosure requirements of this Aspect are still being compiled; this report generates content under the current preparation rules without a provision-by-provision cross-check.
+    summary_template: This report covers {count} General Disclosures and KPIs of the Code.
+    exclusion_rationales:
+      scenario_analysis_relief: Climate scenario analysis is subject to implementation relief under Part D of the Code; this report has not carried out scenario analysis and makes no related disclosure.
+      scope3_relief: Scope 3 greenhouse gas emissions are subject to transitional relief under Part D of the Code; this report makes no quantitative disclosure and will describe the work plan in subsequent reporting periods.
+      quantitative_capability: The quantitative data on the related financial effects lack a computable basis; this report makes no quantitative disclosure, which the Code allows to be replaced by a qualitative description.
+      industry_metrics_encouraged: Industry-based metrics are encouraged rather than required by the Code; this report makes no separate disclosure.
+      integrated_adjacent_topic: This matter is disclosed together with a neighbouring Aspect; the Code allows related content to be written together.
+
+toc:
+  max_heading_level: 2
+  field_instruction: ' TOC \o "1-2" \h \z \u '
+  page_numbers: frozen_by_layout_engine

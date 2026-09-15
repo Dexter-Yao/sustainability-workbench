@@ -1,0 +1,170 @@
+# ABOUTME: 生态系统与生物多样性保护议题章节骨架，H2 标题以附录索引表“对应的本报告章节”为准。
+# ABOUTME: 本文件承载轻量版生态议题的段落级生成块；无专项自然评估数据时不生成指标支柱。
+section:
+  key: ecosystem_biodiversity_protection
+  title: 生态系统与生物多样性保护
+  headingLevel: 2
+  reportSectionId: ecosystem_biodiversity_protection
+  conciseDisclosure:
+    id: ecosystem_biodiversity_protection.concise_summary
+    type: paragraph
+    blockType: generative
+    source: ai
+    styleRole: body
+    generation:
+      task:
+        focus: "根据本议题当前可见证据形成一段连贯摘要，覆盖相关管理关注、方向与实践，不使用四要素小标题。"
+      inputs: {evidence: {kind: report_section}}
+      targetChars: [300, 600]
+  children:
+  - key: ecosystem_biodiversity_protection.gov
+    title: 治理
+    pillar: governance
+    headingLevel: 3
+    blocks:
+    - id: ecosystem_biodiversity_protection.gov_ecological_governance
+      type: paragraph
+      blockType: generative
+      source: ai
+      styleRole: body
+      generation:
+        task:
+          focus: "说明经营活动生态影响的基本治理关注与管理安排。"
+        inputs:
+          evidence:
+            kind: explicit
+            intakeItems:
+            - ecosystem_biodiversity_protection.q_governance_roles
+            - ecosystem_biodiversity_protection.q_governance_policies
+            - ecosystem_biodiversity_protection.q_governance_certifications
+        targetChars:
+        - 220
+        - 420
+        standardDisclosureRequirementKeys:
+        - ecosystem_biodiversity_protection.gov.ecological_governance_required
+        - ecosystem_biodiversity_protection.gov.policy_documents_required
+  - key: ecosystem_biodiversity_protection.strategy
+    title: 战略
+    pillar: strategy
+    headingLevel: 3
+    blocks:
+    - id: ecosystem_biodiversity_protection.strategy_ecological_protection_approach
+      type: paragraph
+      blockType: generative
+      source: ai
+      styleRole: body
+      generation:
+        task:
+          focus: "说明生态保护在长期经营中的关注重点、基本原则和推进方向。"
+        inputs:
+          evidence:
+            kind: explicit
+            intakeItems:
+            - ecosystem_biodiversity_protection.q_strategy_content
+        targetChars:
+        - 220
+        - 420
+        standardDisclosureRequirementKeys:
+        - ecosystem_biodiversity_protection.strategy.protection_approach_required
+  - key: ecosystem_biodiversity_protection.iro
+    title: 影响、风险与机遇管理
+    pillar: iro_management
+    headingLevel: 3
+    children:
+    - key: ecosystem_biodiversity_protection.iro.management_framework
+      title: 生态保护管理机制
+      headingLevel: 4
+      titleGeneration:
+        sourceBlockId: ecosystem_biodiversity_protection.iro_management_framework
+        guidance: 概括本内容单元的核心行动或结果，生成简洁、准确且不引入新事实的标题。
+      blocks:
+      - id: ecosystem_biodiversity_protection.iro_management_framework
+        type: paragraph
+        blockType: generative
+        source: ai
+        styleRole: body
+        generation:
+          task:
+            focus: "依据治理支柱披露的生态环境保护制度与责任安排，提炼公司生态保护管理规范和措施要求，形成管理框架描述。"
+            noFactGuidance: "结合报告主体的主营业务与所属行业，按生态影响关注、日常运营管控和合规要求等基础方向，说明公司生态环境保护管理关注与推进要求；不得虚构制度名称、评估安排、认证或量化数据。"
+          inputs:
+            evidence:
+              kind: explicit
+              intakeItems:
+              - ecosystem_biodiversity_protection.q_governance_policies
+              - ecosystem_biodiversity_protection.q_governance_roles
+          targetChars:
+          - 180
+          - 360
+          standardDisclosureRequirementKeys:
+          - ecosystem_biodiversity_protection.iro.policy_practice_required
+          simplifiedWritingGuidance:
+          - "从治理支柱已披露的制度与职责事实中提炼管理规范与措施要求，不逐条罗列制度原文，不引入治理支柱未披露的机制。"
+    - key: ecosystem_biodiversity_protection.iro.sensitive_area_and_impact
+      title: 生态影响识别
+      headingLevel: 4
+      titleGeneration:
+        sourceBlockId: ecosystem_biodiversity_protection.iro_sensitive_area_and_impact
+        guidance: 概括本内容单元的核心行动或结果，生成简洁、准确且不引入新事实的标题。
+      appears_when:
+        any:
+        - path: intakeItems.ecosystem_biodiversity_protection.q_sensitive_area_impact
+          op: eq
+          value: 涉及敏感区域或可能产生明显影响
+        - path: intakeItems.ecosystem_biodiversity_protection.q_sensitive_area_impact
+          op: eq
+          value: 不确定
+      blocks:
+      - id: ecosystem_biodiversity_protection.iro_sensitive_area_and_impact
+        type: paragraph
+        blockType: generative
+        source: ai
+        styleRole: body
+        generation:
+          task:
+            focus: "说明生态敏感区域和经营活动潜在生态影响的识别情况。"
+          inputs:
+            evidence:
+              kind: explicit
+              intakeItems:
+              - ecosystem_biodiversity_protection.q_sensitive_area_impact
+          targetChars:
+          - 220
+          - 420
+          standardDisclosureRequirementKeys:
+          - ecosystem_biodiversity_protection.iro.sensitive_area_and_impact_required
+    - key: ecosystem_biodiversity_protection.iro.protection_measures_and_activities
+      title: 生态保护措施
+      headingLevel: 4
+      titleGeneration:
+        sourceBlockId: ecosystem_biodiversity_protection.iro_protection_measures_and_activities
+        guidance: 概括本内容单元的核心行动或结果，生成简洁、准确且不引入新事实的标题。
+      appears_when:
+        any:
+        - path: intakeItems.ecosystem_biodiversity_protection.q_ecological_protection_measures
+          op: exists
+        - path: intakeItems.ecosystem_biodiversity_protection.q_ecological_protection_activities
+          op: eq
+          value: 是
+      blocks:
+      - id: ecosystem_biodiversity_protection.iro_protection_measures_and_activities
+        type: paragraph
+        blockType: generative
+        source: ai
+        styleRole: body
+        generation:
+          task:
+            focus: "说明生态保护、影响减缓和相关活动的实施情况。"
+          inputs:
+            evidence:
+              kind: explicit
+              intakeItems:
+              - ecosystem_biodiversity_protection.q_ecological_protection_measures
+              - ecosystem_biodiversity_protection.q_ecological_protection_activities
+          targetChars:
+          - 220
+          - 460
+          standardDisclosureRequirementKeys:
+          - ecosystem_biodiversity_protection.iro.protection_measures_and_activities_required
+metricDisclosure:
+  catalogMetricKeys: []

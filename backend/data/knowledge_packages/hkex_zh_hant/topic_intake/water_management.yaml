@@ -1,0 +1,21 @@
+# ABOUTME(en): Topic-specific intake questions of「水資源管理」; the four fixed pillar questions come from topic_intake_common.yaml.
+# ABOUTME(en): Quantitative KPIs are collected through the metric catalog, not here.
+contentScopeId: water_management
+items:
+- key: water.q_water_sourcing_issue
+  prompt: 貴公司在求取適用水源上是否遇到問題？
+  kind: single_select
+  collectionPriority: recommended
+  options:
+  - 沒有遇到問題
+  - 曾遇到問題（如供水不穩定、水質不達標）
+  - 不確定
+  hint: 如曾遇到問題，請在補充說明中說明情況及應對安排。
+  maxChars: 5000
+- key: water.q_water_saving_measures
+  prompt: 貴公司採取了哪些節約用水或循環再用水的措施？
+  kind: text
+  collectionPriority: recommended
+  hint: 可說明節水設備、循環用水系統、用水監測及管理制度；沒有可留空。
+  generationBoundary: 未填寫具體數值時，不得生成節水量、循環率或投資金額。
+  maxChars: 5000

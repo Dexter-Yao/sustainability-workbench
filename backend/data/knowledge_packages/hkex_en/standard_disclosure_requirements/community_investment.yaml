@@ -1,0 +1,51 @@
+# ABOUTME(en): Appendix C2 disclosure requirements of "Community Investment" (General Disclosure and KPIs), grouped by pillar,
+# ABOUTME(en): for the coverage audit and for prompt assembly by key whitelist (injection is switch-gated, off by default) and for the coverage audit. Wording follows the English Code text.
+topicStandardDisclosureRequirementGroups:
+- topicSectionKey: community_investment.gov
+  pillar: governance
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: community_investment.gov.general_disclosure_policies
+    standardDisclosureRequirementTitle: Community engagement policies
+    excerptFrom: HKEX·Appendix C2·General Disclosure B8
+    standardDisclosureRequirementText: |-
+      Disclose the policies on community engagement to understand the needs of the communities where the issuer operates and to ensure its activities take into consideration the communities' interests.
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: General Disclosure B8
+- topicSectionKey: community_investment.strategy
+  pillar: strategy
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: community_investment.strategy.focus_areas
+    standardDisclosureRequirementTitle: Focus areas of contribution
+    excerptFrom: HKEX·Appendix C2·KPI B8.1
+    standardDisclosureRequirementText: |-
+      Disclose the focus areas of contribution (e.g. education, environmental concerns, labour needs, health, culture, sport).
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: KPI B8.1
+- topicSectionKey: community_investment.iro
+  pillar: iro_management
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: community_investment.iro.community_activities
+    standardDisclosureRequirementTitle: Community engagement and charitable activities
+    excerptFrom: HKEX·Appendix C2·General Disclosure B8
+    standardDisclosureRequirementText: |-
+      Describe the community engagement activities carried out during the reporting period and the cooperation with communities.
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: General Disclosure B8
+- topicSectionKey: community_investment.metrics
+  pillar: metrics_targets
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: community_investment.metrics.resources_contributed_data
+    standardDisclosureRequirementTitle: Resources contributed to the focus areas
+    excerptFrom: HKEX·Appendix C2·KPI B8.2
+    standardDisclosureRequirementText: |-
+      Disclose the resources contributed (e.g. money or time) to the focus areas.
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: HKEX
+      clauseRef: KPI B8.2

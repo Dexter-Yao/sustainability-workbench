@@ -1,0 +1,195 @@
+# ABOUTME: 职业健康与安全议题准则披露要求库，供覆盖审计与按 key 白名单注入生成上下文（注入受开关控制，默认关闭）。
+# ABOUTME: 本文件不作为用户可见准则批注来源；用户可见条款原文来自 user_visible_disclosure_clause_annotations。
+topicStandardDisclosureRequirementGroups:
+- topicSectionKey: occupational_health_safety.gov
+  pillar: governance
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: occupational_health_safety.gov.organization_responsibilities_required
+    standardDisclosureRequirementTitle: 职业健康安全组织架构和职责分工
+    excerptFrom: 附录索引表第五十条；参考模板“组织架构和职责分工描述”
+    standardDisclosureRequirementText: 应说明公司职业健康安全、安全生产或办公安全管理的主管部门、组织架构、职责分工、管理层职责、属地执行职责、员工责任或承包商安全职责。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 第五十条
+    - standard: SZSE
+      clauseRef: 第五十条
+    - standard: BSE
+      clauseRef: 第五十条
+  - standardDisclosureRequirementKey: occupational_health_safety.gov.policy_documents_required
+    standardDisclosureRequirementTitle: 职业健康安全制度体系
+    excerptFrom: 附录索引表第五十条；参考模板“制度文件”
+    standardDisclosureRequirementText: 应说明公司职业健康安全、安全生产、办公安全、承包商或供应商职业健康安全、作业许可、高风险作业等制度文件和覆盖范围；如企业只提供制度类型，应避免补写具体制度名称、发布时间或适用范围。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 第五十条
+    - standard: SZSE
+      clauseRef: 第五十条
+    - standard: BSE
+      clauseRef: 第五十条
+  - standardDisclosureRequirementKey: occupational_health_safety.gov.iso45001_encouraged
+    standardDisclosureRequirementTitle: ISO 45001 与 EHS 方针标准
+    excerptFrom: 参考模板“EHS 方针和标准、ISO 45001 认证”
+    standardDisclosureRequirementText: 可进一步披露说明 ISO 45001 认证、EHS 方针、适用于员工和承包商的健康安全标准、工业卫生、电气安全、机械安全、仓库安全、火灾预防、交通安全等覆盖范围。
+    disclosureRequirementObligationLevel: encouraged
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 第五十条
+    - standard: SZSE
+      clauseRef: 第五十条
+    - standard: BSE
+      clauseRef: 第五十条
+- topicSectionKey: occupational_health_safety.strategy
+  pillar: strategy
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: occupational_health_safety.strategy.strategy_targets_required
+    standardDisclosureRequirementTitle: 职业健康安全战略、策略和目标
+    excerptFrom: 附录索引表第五十条；参考模板“战略、策略、目标内容”
+    standardDisclosureRequirementText: 应说明公司职业健康安全、安全生产或办公安全相关战略、策略、目标或年度重点工作，包括安全事故、轻伤事故率、微伤事故率、交通事故率、隐患整改率、职业病发病率、职业监护体检率或安全培训相关目标。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 第五十条
+    - standard: SZSE
+      clauseRef: 第五十条
+    - standard: BSE
+      clauseRef: 第五十条
+  - standardDisclosureRequirementKey: occupational_health_safety.strategy.safety_first_encouraged
+    standardDisclosureRequirementTitle: 安全第一、预防为主的管理方针
+    excerptFrom: 参考模板“安全第一，预防为主”
+    standardDisclosureRequirementText: 可进一步披露说明安全第一、预防为主、全过程风险管控、常态化安全建设、现场安全管理提升和安全文化建设活动。
+    disclosureRequirementObligationLevel: encouraged
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 第五十条
+    - standard: SZSE
+      clauseRef: 第五十条
+    - standard: BSE
+      clauseRef: 第五十条
+- topicSectionKey: occupational_health_safety.iro
+  pillar: iro_management
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: occupational_health_safety.iro.risk_framework_required
+    standardDisclosureRequirementTitle: 职业健康安全风险管理框架
+    excerptFrom: 附录索引表第五十条；参考模板“职业健康安全风险管理”
+    standardDisclosureRequirementText: 应说明职业健康安全风险管理框架或风险管理办法，按风险识别、风险评估、风险控制、持续改善组织内容，并可覆盖危险源辨识、分级管控、隐患排查治理和整改闭环。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 第五十条
+    - standard: SZSE
+      clauseRef: 第五十条
+    - standard: BSE
+      clauseRef: 第五十条
+  - standardDisclosureRequirementKey: occupational_health_safety.iro.safety_measures_required
+    standardDisclosureRequirementTitle: 安全规范要求与管理举措
+    excerptFrom: 附录索引表第五十条；参考模板“规范要求和举措”
+    standardDisclosureRequirementText: 应说明公司在职业健康安全、生产安全和办公安全方面的规范要求与管理举措，可覆盖现场作业、办公安全、劳动保护、个人防护、设备设施改善或隐患排查；培训宣传和应急演练由专项段承载，不在本段重复展开。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 第五十条
+    - standard: SZSE
+      clauseRef: 第五十条
+    - standard: BSE
+      clauseRef: 第五十条
+  - standardDisclosureRequirementKey: occupational_health_safety.iro.event_learning_encouraged
+    standardDisclosureRequirementTitle: 安全环保事件治理与组织学习
+    excerptFrom: 参考模板“报告-调查-处理-学习”
+    standardDisclosureRequirementText: 可进一步披露说明尽职免责、失职追责、举一反三、警示教育、典型事故管控、应急准备与响应管理、特种设备安全管理和高风险作业许可。
+    disclosureRequirementObligationLevel: encouraged
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 第五十条
+    - standard: SZSE
+      clauseRef: 第五十条
+    - standard: BSE
+      clauseRef: 第五十条
+  - standardDisclosureRequirementKey: occupational_health_safety.iro.occupational_disease_required
+    standardDisclosureRequirementTitle: 职业病风险管控与健康监护
+    excerptFrom: 附录索引表第五十条；参考模板“职业病防治”
+    standardDisclosureRequirementText: 应说明职业病防护、健康检查、个人防护或作业环境改善等职业健康和劳动安全保护举措。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 第五十条
+    - standard: SZSE
+      clauseRef: 第五十条
+    - standard: BSE
+      clauseRef: 第五十条
+  - standardDisclosureRequirementKey: occupational_health_safety.iro.hazardous_chemicals_conditional
+    standardDisclosureRequirementTitle: 危险化学品管控
+    excerptFrom: 参考模板“危险化学品管控要求和措施办法”
+    standardDisclosureRequirementText: 若公司生产过程涉及危险化学品，应说明危险化学品储存、使用、台账、领用审批、隔离、防泄漏、合规检查和应急处置等要求和措施；若企业明确不涉及危险化学品，应从略危化品内容，不写成负面缺失。
+    disclosureRequirementObligationLevel: conditional
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 第五十条
+    - standard: SZSE
+      clauseRef: 第五十条
+    - standard: BSE
+      clauseRef: 第五十条
+  - standardDisclosureRequirementKey: occupational_health_safety.iro.emergency_management_required
+    standardDisclosureRequirementTitle: 职业健康安全应急管理
+    excerptFrom: 附录索引表第五十条；参考模板“应急管理办法、应急预案要求”
+    standardDisclosureRequirementText: 应说明安全、消防或工作场所危险防范演练及应急准备相关安排。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 第五十条
+    - standard: SZSE
+      clauseRef: 第五十条
+    - standard: BSE
+      clauseRef: 第五十条
+  - standardDisclosureRequirementKey: occupational_health_safety.iro.training_drills_required
+    standardDisclosureRequirementTitle: 职业健康安全培训与演练
+    excerptFrom: 附录索引表第五十条；参考模板“职业健康安全培训与演练”
+    standardDisclosureRequirementText: 应说明报告期内职业健康安全培训宣传和安全演练情况。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 第五十条
+    - standard: SZSE
+      clauseRef: 第五十条
+    - standard: BSE
+      clauseRef: 第五十条
+- topicSectionKey: occupational_health_safety.metrics
+  pillar: metrics_targets
+  standardDisclosureRequirements:
+  - standardDisclosureRequirementKey: occupational_health_safety.metrics.safety_metrics_required
+    standardDisclosureRequirementTitle: 职业健康与安全绩效指标
+    excerptFrom: 附录索引表第五十条
+    standardDisclosureRequirementText: 如企业在本议题提供职业健康与安全数据，正文应准确说明安全培训覆盖率、安全培训总时长、安全应急演练次数、年度安全生产事故、防治职业病投入、防治职业病培训、年度新增职业病人数、因工伤死亡和健康状况不佳而损失的天数或隐患整改率。
+    disclosureRequirementObligationLevel: required
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 第五十条
+    - standard: SZSE
+      clauseRef: 第五十条
+    - standard: BSE
+      clauseRef: 第五十条
+  - standardDisclosureRequirementKey: occupational_health_safety.metrics.safety_metrics_encouraged
+    standardDisclosureRequirementTitle: 安全目标达成与趋势说明
+    excerptFrom: 参考模板“职业健康与安全关键指标”
+    standardDisclosureRequirementText: 可进一步披露说明安全目标达成情况、历史对比、未达成原因、整改措施、安全文化建设成果和后续改进计划。
+    disclosureRequirementObligationLevel: encouraged
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 第五十条
+    - standard: SZSE
+      clauseRef: 第五十条
+    - standard: BSE
+      clauseRef: 第五十条
+  - standardDisclosureRequirementKey: occupational_health_safety.metrics.safety_incident_conditional
+    standardDisclosureRequirementTitle: 安全事故、职业病与损失工时
+    excerptFrom: 附录索引表第五十条
+    standardDisclosureRequirementText: 若企业在本议题填写安全事故、职业病、因工伤死亡或健康状况不佳损失天数，应准确说明事件数量、影响、处理方式、整改措施和后续预防安排。
+    disclosureRequirementObligationLevel: conditional
+    sourceClauseReferenceLabels:
+    - standard: SSE
+      clauseRef: 第五十条
+    - standard: SZSE
+      clauseRef: 第五十条
+    - standard: BSE
+      clauseRef: 第五十条

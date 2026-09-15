@@ -1,0 +1,272 @@
+# ABOUTME: 可持续发展议题合同，以评分议题→报告章节→报告模块的单向关系定义报告语义。
+# ABOUTME: 原始合同不保存反向成员或派生维度；加载器解析并校验全部反向索引。
+
+reportModules:
+  - id: environmental_sustainability
+    navigationTitle: 环境可持续
+    order: 10
+    titleGenerationGuidance: 从保护生态环境、绿水青山和低碳转型视角，结合本模块实际包含的议题主旨生成标题。
+  - id: people_and_communities
+    navigationTitle: 人与社区
+    order: 20
+    titleGenerationGuidance: 从企业内外部协同发展和促进社会和谐视角，结合本模块实际包含的议题主旨生成标题。
+  - id: innovation_and_product_responsibility
+    navigationTitle: 创新与产品责任
+    order: 30
+    titleGenerationGuidance: 从科技创新和产品全生命周期管理视角，结合本模块实际包含的议题主旨生成标题。
+  - id: sustainable_value_chain
+    navigationTitle: 可持续价值链
+    order: 40
+    titleGenerationGuidance: 从构建可持续价值链生态视角，结合本模块实际包含的议题主旨生成标题。
+  - id: responsible_governance
+    navigationTitle: 负责任治理
+    order: 50
+    titleGenerationGuidance: 结合本模块治理议题主旨，生成与其他模块风格协调的标题。
+
+dimensions:
+  - {id: environment, label: 环境, order: 10}
+  - {id: social, label: 社会, order: 20}
+  - {id: governance, label: 治理, order: 30}
+
+assessmentTopics:
+  # —— 环境 ——
+  - id: climate_change
+    name: 应对气候变化
+    dimension: environment
+    order: 10
+    reportSectionId: climate_change
+    materialityDetermination: {kind: scored}
+  - id: environmental_compliance_management
+    name: 环境合规管理
+    dimension: environment
+    order: 20
+    reportSectionId: environmental_compliance_management
+    materialityDetermination: {kind: scored}
+  - id: pollutant_emissions_management
+    name: 污染物排放管理
+    dimension: environment
+    order: 30
+    reportSectionId: pollutant_emissions_management
+    materialityDetermination: {kind: scored}
+  - id: waste_management
+    name: 废弃物管理
+    dimension: environment
+    order: 40
+    reportSectionId: waste_management
+    materialityDetermination: {kind: scored}
+  - id: circular_economy_promotion
+    name: 促进循环经济
+    dimension: environment
+    order: 50
+    reportSectionId: circular_economy_promotion
+    materialityDetermination: {kind: scored}
+  - id: energy_management
+    name: 能源管理
+    dimension: environment
+    order: 60
+    reportSectionId: energy_management
+    materialityDetermination: {kind: scored}
+  - id: water_resource_management
+    name: 水资源管理
+    dimension: environment
+    order: 70
+    reportSectionId: water_resource_management
+    materialityDetermination: {kind: scored}
+  - id: ecosystem_biodiversity_protection
+    name: 生态系统与生物多样性保护
+    dimension: environment
+    order: 80
+    reportSectionId: ecosystem_biodiversity_protection
+    materialityDetermination: {kind: scored}
+
+  # —— 社会 ——
+  - id: human_capital_development
+    name: 人力资本发展
+    dimension: social
+    order: 10
+    reportSectionId: human_capital_development
+    materialityDetermination: {kind: scored}
+  - id: occupational_health_safety
+    name: 职业健康与安全
+    dimension: social
+    order: 20
+    reportSectionId: occupational_health_safety
+    materialityDetermination: {kind: scored}
+  - id: rural_revitalization
+    name: 乡村振兴
+    dimension: social
+    order: 30
+    reportSectionId: rural_revitalization_social_contribution
+    materialityDetermination: {kind: scored}
+  - id: social_contribution
+    name: 社会贡献
+    dimension: social
+    order: 40
+    reportSectionId: rural_revitalization_social_contribution
+    materialityDetermination: {kind: scored}
+  - id: sustainable_supply_chain_management
+    name: 可持续供应链管理
+    dimension: social
+    order: 50
+    reportSectionId: sustainable_supply_chain_management
+    materialityDetermination: {kind: scored}
+  - id: sme_fair_treatment
+    name: 平等对待中小企业
+    dimension: social
+    order: 60
+    reportSectionId: sme_fair_treatment
+    materialityDetermination: {kind: scored}
+  - id: technology_ethics
+    name: 科技伦理
+    dimension: social
+    order: 70
+    reportSectionId: technology_ethics
+    applicability: technology_ethics_sensitive_activity
+    materialityDetermination: {kind: scored}
+  - id: innovation_driven
+    name: 创新驱动
+    dimension: social
+    order: 80
+    reportSectionId: innovation_driven
+    materialityDetermination: {kind: scored}
+  - id: product_quality_safety
+    name: 产品质量与安全
+    dimension: social
+    order: 90
+    reportSectionId: product_quality_safety
+    materialityDetermination: {kind: scored}
+  - id: customer_service_quality_management
+    name: 客户服务质量管理
+    dimension: social
+    order: 100
+    reportSectionId: customer_service_quality_management
+    materialityDetermination: {kind: scored}
+  - id: data_security_customer_privacy_protection
+    name: 数据安全与客户隐私保护
+    dimension: social
+    order: 110
+    reportSectionId: data_security_customer_privacy_protection
+    materialityDetermination: {kind: scored}
+
+  # —— 治理 ——
+  - id: anti_bribery_anti_corruption
+    name: 反商业贿赂与反贪污
+    dimension: governance
+    order: 10
+    reportSectionId: anti_bribery_anti_corruption
+    materialityDetermination: {kind: scored}
+  - id: anti_unfair_competition
+    name: 反不正当竞争
+    dimension: governance
+    order: 20
+    reportSectionId: anti_unfair_competition
+    materialityDetermination: {kind: scored}
+  - id: risk_management
+    name: 风险管理
+    dimension: governance
+    order: 30
+    reportSectionId: risk_management
+    materialityDetermination: {kind: scored}
+  - id: due_diligence
+    name: 尽职调查
+    dimension: governance
+    order: 40
+    reportSectionId: due_diligence
+    materialityDetermination: {kind: scored}
+  - id: stakeholder_communication
+    name: 利益相关方沟通
+    dimension: governance
+    order: 50
+    reportSectionId: null
+    materialityDetermination: {kind: fixed, materiality: impact}
+
+reportSections:
+  - id: climate_change
+    title: 应对气候变化
+    reportModuleId: environmental_sustainability
+    order: 10
+    sectionPrefix: climate
+  - id: environmental_compliance_management
+    title: 环境合规管理
+    reportModuleId: environmental_sustainability
+    order: 20
+  - id: pollutant_emissions_management
+    title: 污染物排放管理
+    reportModuleId: environmental_sustainability
+    order: 30
+  - id: waste_management
+    title: 废弃物管理
+    reportModuleId: environmental_sustainability
+    order: 40
+  - id: circular_economy_promotion
+    title: 促进循环经济
+    reportModuleId: environmental_sustainability
+    order: 50
+  - id: energy_management
+    title: 能源管理
+    reportModuleId: environmental_sustainability
+    order: 60
+  - id: water_resource_management
+    title: 水资源管理
+    reportModuleId: environmental_sustainability
+    order: 70
+  - id: ecosystem_biodiversity_protection
+    title: 生态系统与生物多样性保护
+    reportModuleId: environmental_sustainability
+    order: 80
+  - id: human_capital_development
+    title: 人力资本发展
+    reportModuleId: people_and_communities
+    order: 10
+  - id: occupational_health_safety
+    title: 职业健康与安全
+    reportModuleId: people_and_communities
+    order: 20
+  - id: rural_revitalization_social_contribution
+    title: 乡村振兴与社会贡献
+    reportModuleId: people_and_communities
+    order: 30
+  - id: sustainable_supply_chain_management
+    title: 可持续供应链管理
+    reportModuleId: sustainable_value_chain
+    order: 10
+  - id: sme_fair_treatment
+    title: 平等对待中小企业
+    reportModuleId: sustainable_value_chain
+    order: 20
+  - id: technology_ethics
+    title: 科技伦理
+    reportModuleId: sustainable_value_chain
+    order: 30
+  - id: innovation_driven
+    title: 创新驱动
+    reportModuleId: innovation_and_product_responsibility
+    order: 10
+  - id: product_quality_safety
+    title: 产品质量与安全
+    reportModuleId: innovation_and_product_responsibility
+    order: 20
+  - id: customer_service_quality_management
+    title: 客户服务质量管理
+    reportModuleId: innovation_and_product_responsibility
+    order: 30
+  - id: data_security_customer_privacy_protection
+    title: 数据安全与客户隐私保护
+    reportModuleId: sustainable_value_chain
+    order: 40
+  - id: anti_bribery_anti_corruption
+    title: 反商业贿赂与反贪污
+    reportModuleId: responsible_governance
+    order: 10
+  - id: anti_unfair_competition
+    title: 反不正当竞争
+    reportModuleId: responsible_governance
+    order: 20
+  - id: risk_management
+    title: 风险管理
+    reportModuleId: responsible_governance
+    order: 30
+  - id: due_diligence
+    title: 尽职调查
+    reportModuleId: responsible_governance
+    order: 40

@@ -1,0 +1,171 @@
+# ABOUTME(en): Coverage adjudication of every GRI requirement key in this package: bound to a generation block,
+# ABOUTME(en): carried by the metric catalog (metric_disclosure_catalog) or explained; design-time facts read by the disclosure coverage report.
+#
+# coverageStatus values: bound_to_block / metric_disclosure_catalog / integrated_report_level / excluded_for_simplified / conditional_applicability
+topicRequirementCoverage:
+  anti_corruption:
+    topicStatus: reviewed
+    requirements:
+      anti_corruption.gov.management_of_anti_corruption:
+        coverageStatus: bound_to_block
+      anti_corruption.strategy.risk_assessment:
+        coverageStatus: bound_to_block
+      anti_corruption.iro.communication_and_training:
+        coverageStatus: bound_to_block
+      anti_corruption.iro.incidents:
+        coverageStatus: bound_to_block
+  biodiversity:
+    topicStatus: reviewed
+    requirements:
+      biodiversity.gov.policies:
+        coverageStatus: bound_to_block
+      biodiversity.strategy.identification:
+        coverageStatus: bound_to_block
+      biodiversity.iro.management:
+        coverageStatus: bound_to_block
+      biodiversity.metrics.locations:
+        coverageStatus: metric_disclosure_catalog
+  climate_change:
+    topicStatus: reviewed
+    requirements:
+      climate_change.gov.board_oversight:
+        coverageStatus: bound_to_block
+      climate_change.gov.management_role:
+        coverageStatus: bound_to_block
+      climate_change.strategy.risks_and_opportunities:
+        coverageStatus: bound_to_block
+      climate_change.strategy.business_model_and_value_chain:
+        coverageStatus: bound_to_block
+      climate_change.strategy.strategy_and_transition_plan:
+        coverageStatus: bound_to_block
+      climate_change.strategy.financial_effects:
+        coverageStatus: bound_to_block
+      climate_change.strategy.climate_resilience:
+        coverageStatus: bound_to_block
+      climate_change.strategy.climate_targets:
+        coverageStatus: bound_to_block
+      climate_change.iro.risk_management_process:
+        coverageStatus: bound_to_block
+      climate_change.metrics.ghg_emissions:
+        coverageStatus: metric_disclosure_catalog
+      climate_change.metrics.ghg_intensity:
+        coverageStatus: metric_disclosure_catalog
+  customer_health_and_safety:
+    topicStatus: reviewed
+    requirements:
+      customer_health_and_safety.gov.management_of_customer_safety:
+        coverageStatus: bound_to_block
+      customer_health_and_safety.strategy.impact_assessment:
+        coverageStatus: bound_to_block
+      customer_health_and_safety.iro.non_compliance:
+        coverageStatus: bound_to_block
+  customer_privacy:
+    topicStatus: reviewed
+    requirements:
+      customer_privacy.gov.management_of_privacy:
+        coverageStatus: bound_to_block
+      customer_privacy.strategy.privacy_direction:
+        coverageStatus: bound_to_block
+      customer_privacy.iro.complaints_and_breaches:
+        coverageStatus: bound_to_block
+  diversity_and_equal_opportunity:
+    topicStatus: reviewed
+    requirements:
+      diversity_and_equal_opportunity.gov.management_of_diversity:
+        coverageStatus: bound_to_block
+      diversity_and_equal_opportunity.strategy.remuneration_ratio:
+        coverageStatus: bound_to_block
+      diversity_and_equal_opportunity.iro.equal_opportunity_measures:
+        coverageStatus: bound_to_block
+      diversity_and_equal_opportunity.metrics.composition:
+        coverageStatus: metric_disclosure_catalog
+  employment:
+    topicStatus: reviewed
+    requirements:
+      employment.gov.management_of_employment:
+        coverageStatus: bound_to_block
+      employment.strategy.benefits:
+        coverageStatus: bound_to_block
+      employment.iro.parental_leave:
+        coverageStatus: bound_to_block
+      employment.metrics.hires_and_turnover:
+        coverageStatus: metric_disclosure_catalog
+  energy:
+    topicStatus: reviewed
+    requirements:
+      energy.gov.policies_and_commitments:
+        coverageStatus: bound_to_block
+      energy.strategy.impacts_of_energy_use:
+        coverageStatus: bound_to_block
+      energy.iro.reduction_in_consumption:
+        coverageStatus: bound_to_block
+      energy.metrics.consumption:
+        coverageStatus: metric_disclosure_catalog
+      energy.metrics.intensity:
+        coverageStatus: metric_disclosure_catalog
+  materials:
+    topicStatus: reviewed
+    requirements:
+      materials.gov.management_of_materials:
+        coverageStatus: bound_to_block
+      materials.strategy.recycled_input_direction:
+        coverageStatus: bound_to_block
+      materials.iro.reclaimed_products:
+        coverageStatus: bound_to_block
+      materials.metrics.materials_used:
+        coverageStatus: metric_disclosure_catalog
+  occupational_health_and_safety:
+    topicStatus: reviewed
+    requirements:
+      occupational_health_and_safety.gov.management_system:
+        coverageStatus: bound_to_block
+      occupational_health_and_safety.strategy.worker_participation:
+        coverageStatus: bound_to_block
+      occupational_health_and_safety.iro.hazard_identification:
+        coverageStatus: bound_to_block
+      occupational_health_and_safety.iro.worker_training:
+        coverageStatus: bound_to_block
+      occupational_health_and_safety.metrics.injuries:
+        coverageStatus: metric_disclosure_catalog
+  supplier_assessment:
+    topicStatus: reviewed
+    requirements:
+      supplier_assessment.gov.management_of_supplier_assessment:
+        coverageStatus: bound_to_block
+      supplier_assessment.strategy.screening:
+        coverageStatus: bound_to_block
+      supplier_assessment.iro.negative_impacts:
+        coverageStatus: bound_to_block
+  training_and_education:
+    topicStatus: reviewed
+    requirements:
+      training_and_education.gov.management_of_training:
+        coverageStatus: bound_to_block
+      training_and_education.strategy.performance_reviews:
+        coverageStatus: bound_to_block
+      training_and_education.iro.skill_programs:
+        coverageStatus: bound_to_block
+      training_and_education.metrics.training_hours:
+        coverageStatus: metric_disclosure_catalog
+  waste:
+    topicStatus: reviewed
+    requirements:
+      waste.gov.generation_and_impacts:
+        coverageStatus: bound_to_block
+      waste.strategy.prevention_measures:
+        coverageStatus: bound_to_block
+      waste.iro.third_party_and_data:
+        coverageStatus: bound_to_block
+      waste.metrics.waste_data:
+        coverageStatus: metric_disclosure_catalog
+  water_and_effluents:
+    topicStatus: reviewed
+    requirements:
+      water_and_effluents.gov.shared_resource:
+        coverageStatus: bound_to_block
+      water_and_effluents.strategy.goals_and_stewardship:
+        coverageStatus: bound_to_block
+      water_and_effluents.iro.discharge_management:
+        coverageStatus: bound_to_block
+      water_and_effluents.metrics.withdrawal_and_consumption:
+        coverageStatus: metric_disclosure_catalog
