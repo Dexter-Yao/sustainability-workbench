@@ -1,12 +1,16 @@
 # Sustainability Workbench
 
-Turns a company's policy documents, records, certificates and reported figures into a draft
-sustainability report that follows exchange disclosure rules, and exports it to Word.
+A self-hosted drafting workbench for listed-company sustainability (ESG) reports, for the
+people who prepare them — in-house reporting teams, and the consultants and accounting firms
+who do it on their behalf.
 
-Three rule sets are supported today: Shanghai Stock Exchange (Simplified Chinese), HKEX
-(Traditional Chinese), HKEX (English).
+It reads a company's policies, records, certificates and reported figures, drafts the report
+section by section against a specific exchange's disclosure rules, and exports to Word. Three
+rule sets ship today: Shanghai Stock Exchange (Simplified Chinese), HKEX (Traditional Chinese),
+HKEX (English).
 
-[简体中文](./README.zh-CN.md) · [Architecture](./docs/architecture.md) · [Setup](./SETUP.md)
+**[简体中文](./README.zh-CN.md)** · [Architecture](./docs/architecture.md) ·
+[Setup](./SETUP.md) · [Handbook](./docs/handbook/README.md)
 
 ## Why not just hand the files to an LLM
 
@@ -122,13 +126,24 @@ It drives the built-in synthetic corpus through the real input path and renders 
 | Frontend | Next.js |
 | Storage & auth | Supabase (Postgres + Auth + Storage) |
 | Export | python-docx for rendering, LibreOffice for table-of-contents pagination |
-| Models | Deployments listed in a registry; generation and quality judging configured separately |
+| Models | Azure OpenAI by default; any OpenAI-compatible endpoint works without code changes |
 
-## Status
+## Status and scope
 
-A personal project, built as a single-user local tool. All three rule sets generate and export
-complete reports. The repository ships a fully synthetic corpus — a fictional company, no real
-business data — so you can run the whole flow end to end.
+A personal project. All three rule sets generate and export complete reports, and the repository
+ships a fully synthetic corpus — two fictional companies, no real business data — so you can run
+the whole flow end to end without supplying anything.
+
+What it deliberately does not do, so you can judge whether it fits:
+
+- **It drafts; it does not assure.** Output is a draft for professional review, not an assurance
+  opinion and not a compliance guarantee. Every generated report needs a human to sign it off.
+- **Single-user and local by design.** One account, your machine, your database. There is no
+  multi-tenant mode and no hosted version — for a document containing unpublished company
+  figures, that is a property rather than a missing feature.
+- **No self-service sign-up.** The first account is created from the command line on purpose.
+- **The GRI package is present but sealed** — it is not selectable when creating a report. It was
+  built against a route that requires wording changes before it can honestly claim conformance.
 
 ## Licence
 

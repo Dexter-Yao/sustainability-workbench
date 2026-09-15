@@ -36,6 +36,8 @@ ROOT_AUDITED_DOCS = [
     # Agent 规则本身也引用大量代码路径；它是接手者的第一入口，断链代价与 README 同级。
     # AGENTS.md 与 CLAUDE.md 文本一致（由 cmp 守护），只检一份即可。
     "CLAUDE.md",
+    "CONTRIBUTING.md",
+    "SECURITY.md",
 ]
 #: `docs/` 及其子目录（如 docs/handbook/）全部纳入——子目录文档同样会引用代码路径与同级文档。
 AUDITED_DOCS = [name for name in ROOT_AUDITED_DOCS if (ROOT / name).is_file()] + sorted(
@@ -85,6 +87,8 @@ ABSENT_BY_DESIGN: dict[str, str] = {
 #: 与 ABSENT_BY_DESIGN 同理，只许收缩。
 DELETED_BY_DESIGN: dict[str, str] = {
     "Reference/design_system/": "已删除；design.md §9 记录「不再维护独立可视化样例稿」",
+    # 它不存在正是文档要陈述的事实：密钥只经环境变量注入，.env 被 gitignore，绝不入库。
+    "backend/.env": "SECURITY.md 陈述该文件被 git 忽略、不得入库；存在才是问题",
 }
 
 #: 形如 `financial/dual`、`succeeded/failed` 的并列枚举会被路径正则误捕，非真实路径。

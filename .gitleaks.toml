@@ -1,0 +1,17 @@
+# gitleaks 配置：本仓的 generic-api-key 命中全部是业务标识符，不是凭据。
+# 留下本文件是为了让下一个人（或 CI）不必把同样的 27 条重新判一遍。
+[extend]
+useDefault = true
+
+[[rules]]
+id = "generic-api-key"
+[rules.allowlist]
+description = """知识包内的指标 key 与披露义务 key：形如 climate_ghg_scope1、
+employment_age_30_50、c2.comply_or_explain、occupational_health_safety.gov.iso45001_encouraged。
+它们是 ESG 指标与准则条款的业务标识符，长下划线/点分串触发了通用密钥规则。
+本仓真实凭据只经环境变量注入，绝不入库（见 backend/.env.example）。"""
+paths = [
+  '''backend/data/knowledge_packages/.*/quantitative_metrics\.json''',
+  '''backend/data/knowledge_packages/.*/report_level_disclosure_obligations\.yaml''',
+  '''backend/data/knowledge_packages/.*/standard_disclosure_requirements/.*\.yaml''',
+]
