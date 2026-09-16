@@ -276,7 +276,9 @@ async def load_report_block_provenance(
     except (AccountNotFoundError, AccountEntitlementError) as error:
         raise BlockProvenanceServiceError("Account 权益状态异常") from error
     scope = effective_report_scope(
-        context, created_under_profile_id=summary.created_under_profile_id
+        context,
+        created_under_profile_id=summary.created_under_profile_id,
+        report_profile_id=summary.report_profile_id,
     )
     revision = await generation_dal.revision_state(
         pool, account_id=account_id, report_id=report_id, revision_id=run.result_revision_id

@@ -247,6 +247,36 @@ def knowledge_package_of(report: Report) -> KnowledgePackage:
     return load_knowledge_package(report.knowledgePackageId)
 
 
+def bind_knowledge_package(
+    report: Report, package: KnowledgePackage, *, validate_references: bool = True
+) -> Report:
+    """Stamp the authoritative package onto a client-supplied Report and run package-scoped checks.
+
+    包身份由服务端从 `reports.report_profile_id` 解析，客户端从不决定；客户端投影
+    （`frontend/public/contract.json`）是单包静态快照，刻意不带 `knowledgePackageId`。
+
+    为什么必须在这里重新校验：`model_copy` 在 pydantic v2 下**不重跑**验证器，
+    而 `Report._validate_stakeholder_engagement` 在未绑定包时按设计跳过。二者叠加，
+    只 `model_copy` 会让绑定后的报告完全失去引用校验（未知沟通方式将一路进正文）。
+    故绑定与校验在此合为一个动作，调用方不必各自记得补一次。
+
+    `validate_references=False` 留给**只借用该包某一份目录、不主张报告归属该包**的调用
+    （如指标摘要预览图：它按调用方指名的 Profile 取指标目录，而 Report 可能来自另一个包）。
+    此时做跨包引用校验必然误报——用港交所目录去核对上交所议题，没有一条对得上。
+    """
+
+    bound = report.model_copy(update={"knowledgePackageId": package.id})
+    if validate_references and bound.stakeholderEngagement is not None:
+        from sustainability_desk.contract.stakeholder_engagement import (
+            validate_stakeholder_engagement_profile,
+        )
+
+        validate_stakeholder_engagement_profile(
+            bound.stakeholderEngagement, package=package
+        )
+    return bound
+
+
 def knowledge_package_id_for_path(path: Path) -> str | None:
     """The package a file belongs to by location, or None when it lives outside the packages root."""
 

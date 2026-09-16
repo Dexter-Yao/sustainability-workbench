@@ -5,7 +5,8 @@ from pathlib import Path
 import pytest
 
 from sustainability_desk.contract.stored_report_state import StoredReportStateV4
-from sustainability_desk.contract.models import CustomEngagementMethod
+from sustainability_desk.contract.knowledge_packages import bind_knowledge_package
+from sustainability_desk.contract.models import CustomEngagementMethod, Report
 from sustainability_desk.contract.stakeholder_engagement import (
     apply_stakeholder_engagement_projection,
     load_stakeholder_engagement_catalog,
@@ -240,3 +241,53 @@ def test_missing_topic_blocks_export_without_preventing_profile_parse() -> None:
     assert issue.blockId == "sm.stakeholder_table"
     assert "尚有 1 个适用议题" in issue.message
     assert "应对气候变化" in issue.message
+
+
+def test_unbound_report_parses_so_the_client_projection_can_reach_the_server() -> None:
+    """未绑定知识包的报告必须能通过校验——客户端投影按设计不带包身份。
+
+    回归 2026-09-16：客户端投影（`frontend/public/contract.json`）是单包静态快照，
+    不带 `knowledgePackageId`；而生成完成后状态里带 stakeholderEngagement。二者一合，
+    `/api/plan`、`/api/reports/{id}/diagnose`、`generation-freshness` 全部在入口 422
+    （`body.report`），表现为报告正文页「无法载入或解析当前报告」——即报告一旦生成完成
+    就再也打不开。包身份是服务端事实，不能在校验期强求客户端先知道它。
+    """
+    report = _report(technology_ethics=False)
+    assert report.stakeholderEngagement is not None
+
+    unbound = Report.model_validate(
+        {**report.model_dump(mode="json"), "knowledgePackageId": None}
+    )
+
+    assert unbound.knowledgePackageId is None
+    assert unbound.stakeholderEngagement is not None
+
+
+def test_binding_a_package_still_rejects_unknown_engagement_references() -> None:
+    """绑定包之后必须重新校验引用——`model_copy` 不重跑验证器。
+
+    与上一条是一对：验证器在未绑定时跳过，若绑定侧只做 `model_copy`，未知沟通方式
+    将完全失去拦截并一路进入正文。`bind_knowledge_package` 因此把绑定与校验合为一步。
+    """
+    report = _report(technology_ethics=False)
+    assert report.stakeholderEngagement is not None
+    broken = report.stakeholderEngagement.model_copy(
+        update={
+            "entries": [
+                report.stakeholderEngagement.entries[0].model_copy(
+                    update={"methodIds": ["不存在的沟通方式"]}
+                ),
+                *report.stakeholderEngagement.entries[1:],
+            ]
+        }
+    )
+    unbound = Report.model_validate(
+        {
+            **report.model_dump(mode="json"),
+            "knowledgePackageId": None,
+            "stakeholderEngagement": broken.model_dump(mode="json"),
+        }
+    )
+
+    with pytest.raises(ValueError, match="未知沟通方式"):
+        bind_knowledge_package(unbound, SSE_PACKAGE)

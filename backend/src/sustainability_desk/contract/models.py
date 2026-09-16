@@ -1004,8 +1004,19 @@ class Report(ReportContractModel):
 
     @model_validator(mode="after")
     def _validate_stakeholder_engagement(self):
-        """Profile 引用必须来自正式议题与受控方式目录；覆盖完整性由导出诊断负责。"""
-        if self.stakeholderEngagement is not None:
+        """Profile 引用必须来自正式议题与受控方式目录；覆盖完整性由导出诊断负责。
+
+        **未绑定知识包时跳过本检查，而不是报错。** 包身份不是客户端事实：它由服务端从
+        `reports.report_profile_id` 权威解析，客户端投影（`frontend/public/contract.json`）
+        是单包静态快照，刻意不带 `knowledgePackageId`。在校验期要求它存在，等于要求
+        客户端先知道包——而请求体恰恰是在服务端绑定之前被校验的，于是任何携带
+        stakeholderEngagement 的报告都在入口 422，报告生成完成后正文页必然打不开。
+
+        包相关的引用校验改由 `bind_knowledge_package()` 在绑定之后显式执行：
+        `model_copy` 不重跑验证器（pydantic v2），只靠本验证器会让绑定后的报告
+        完全失去该检查。二者是一对，不要只改一处。
+        """
+        if self.stakeholderEngagement is not None and self.knowledgePackageId is not None:
             from sustainability_desk.contract.knowledge_packages import knowledge_package_of
             from sustainability_desk.contract.stakeholder_engagement import validate_stakeholder_engagement_profile
 

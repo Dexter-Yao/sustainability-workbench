@@ -19,6 +19,7 @@ from sustainability_desk.persistence.section_generations import (
     GenerationStateConflictError,
     complete_batch,
     fail_batch,
+    latest_successful_input_fingerprint,
     reserve_batch,
     rewrite_allowance,
 )
@@ -197,3 +198,65 @@ async def test_idempotency_replay_and_cross_report_reuse_rejected(pool, account)
     assert replay.replayed is True and replay.id == batch.id
     with pytest.raises(GenerationIdempotencyConflictError):
         await _reserve(pool, account, second.id, 1, key=key)
+
+
+async def test_latest_successful_input_fingerprint_reads_the_frozen_value(pool, account):
+    """读取最近一次成功批次冻结的输入指纹。
+
+    回归 2026-09-16：该查询按 `created_at` 排序，而本表根本没有这一列
+    （只有 `started_at`/`finished_at`），任何调用都以 asyncpg UndefinedColumnError
+    变成 500——`generation-freshness` 端点因此在报告正文页整条路径上不可用。
+    此前该函数零测试覆盖，缺列才得以随仓发布。
+
+    本用例真连数据库，SQL 里的列名错误无处可藏；只断言取到的是最近一次
+    **成功**批次的指纹，不重复断言排序实现。
+    """
+    report = await _report(pool, account)
+
+    assert (
+        await latest_successful_input_fingerprint(
+            pool, report_id=report.id, section_key="climate_change"
+        )
+        is None
+    )
+
+    first = await reserve_batch(
+        pool,
+        account_id=account,
+        report_id=report.id,
+        section_key="climate_change",
+        expected_block_ids=EXPECTED,
+        idempotency_key=uuid4(),
+        base_state_seq=1,
+        regeneration_quota=3,
+        input_fingerprint="b" * 64,
+    )
+    seq = await complete_batch(pool, batch=first, results=RESULTS, package=SSE_PACKAGE)
+
+    assert (
+        await latest_successful_input_fingerprint(
+            pool, report_id=report.id, section_key="climate_change"
+        )
+        == "b" * 64
+    )
+
+    # 失败批次不得改写「最近一次成功」的答案。
+    later = await reserve_batch(
+        pool,
+        account_id=account,
+        report_id=report.id,
+        section_key="climate_change",
+        expected_block_ids=EXPECTED,
+        idempotency_key=uuid4(),
+        base_state_seq=seq,
+        regeneration_quota=3,
+        input_fingerprint="c" * 64,
+    )
+    await fail_batch(pool, later.id, "deliberate")
+
+    assert (
+        await latest_successful_input_fingerprint(
+            pool, report_id=report.id, section_key="climate_change"
+        )
+        == "b" * 64
+    )

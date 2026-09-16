@@ -34,6 +34,7 @@ from sustainability_desk.contract.report_api import (
 )
 from sustainability_desk.contract.knowledge_packages import (
     KnowledgePackage,
+    bind_knowledge_package,
     knowledge_package_of,
 )
 from sustainability_desk.contract.report_profiles import (
@@ -206,7 +207,7 @@ async def _stored_export_diagnostics(
     )
     # The client never decides which package a report belongs to; the Profile row does.
     projected = scope.project_report(
-        report.model_copy(update={"knowledgePackageId": scope.knowledge_package.id})
+        bind_knowledge_package(report, scope.knowledge_package)
     )
     stored = await reports_dal.get_state(pool, context.account_id, report_id)
     if stored.contract_version != contract_version(scope.knowledge_package):
@@ -349,7 +350,7 @@ def plan_report(
     # 入口绑定报告所属知识包：客户端投影（frontend/public/contract.json）不带 knowledgePackageId，
     # 而包由服务端从 report_profile_id 权威解析。不在此绑定，下游每个按包解析的调用都要
     # 各自补传 package，漏一处即运行期 ValueError（曾表现为基本资料页整页 500）。
-    report = report.model_copy(update={"knowledgePackageId": package.id})
+    report = bind_knowledge_package(report, package)
 
     contract = load_package_contract(package)
     templates = load_topic_templates(package)
@@ -1050,7 +1051,9 @@ def quantitative_metric_summary_image(
     )
     try:
         png = render_quantitative_metric_summary(
-            req.report.model_copy(update={"knowledgePackageId": package.id}),
+            # 只借该 Profile 的指标目录渲图，不主张这份 Report 属于该包：
+            # 未指名 Profile 时默认值是「新建报告用的那个包」，与 Report 的实际来源无关。
+            bind_knowledge_package(req.report, package, validate_references=False),
             req.spec.metricKeys,
             featured_metric_keys=req.spec.featuredMetricKeys,
             display_mode=req.spec.displayMode,

@@ -611,7 +611,9 @@ async def latest_successful_input_fingerprint(
         select input_fingerprint
         from section_regeneration_batches
         where report_id = $1 and section_key = $2 and status = 'succeeded'
-        order by finished_at desc, created_at desc
+        -- 次序列用 started_at：本表没有 created_at，它就是创建时刻（DEFAULT now()），
+        -- 且与迁移里的 section_regeneration_batches_section_idx 同序，可直接走该索引。
+        order by finished_at desc, started_at desc
         limit 1
         """,
         report_id,
