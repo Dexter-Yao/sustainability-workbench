@@ -32,8 +32,10 @@ jobs:
         # LibreOffice 的本机按 SETUP.md 验，CI 不具备该能力也不假装具备。
         # 持久化用例另有 pytest.skip("本地 Supabase 栈未启动")，同样不假装验过。
         run: uv run pytest -q --ignore=tests/test_docx_render.py
-      - name: ruff
-        run: uv run --project backend ruff check backend/src backend/tests
+      # 刻意不在 CI 跑 ruff：本仓没有 [tool.ruff] 配置，也没把 ruff 列进依赖，
+      # 「干净」这个结论一直是相对某个本机版本成立的（0.12 通过，0.16 报 675 条，
+      # 差异全是两版之间新增的默认规则）。CI 拉不固定版本等于凭空引入一套本项目
+      # 从未采纳的标准。要让它进 CI，得先定版本、写配置、清一次存量——那是独立的事。
 
   frontend:
     runs-on: ubuntu-latest

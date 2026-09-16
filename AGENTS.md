@@ -57,6 +57,9 @@
 - `make verify`：后端 pytest + 前端 test/lint/build。**必须先 `supabase start`**——
   栈没起时持久化用例走 `pytest.skip` 静默跳过，你会看到全绿但数据库层一条没验过。
 - 后端 `uv run --project backend ruff check src tests` 不在 verify 内，需单独跑。
+  **注意它对版本敏感**：本仓没有 `[tool.ruff]` 配置，也没把 ruff 列进依赖，
+  故结论相对于你本机装的那个版本成立（实测 0.12 全通过、0.16 报 675 条，
+  差异全是两版之间新增的默认规则）。要把它纳入 CI，先定版本、写配置、清一次存量。
 - 守护测试：`test_doc_reference_integrity.py` 检查根目录与 `docs/` 全部文档的路径与标识符
   （受检清单从文件系统枚举，新增文档自动纳入）；`test_schema_baseline.py` 断言 schema 只有
   一份基线；`design.md` 的 § 编号被代码注释引用，压缩内容不得改编号。
