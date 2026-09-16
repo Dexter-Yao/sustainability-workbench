@@ -92,3 +92,40 @@ def test_json_catalog_files_have_no_stray_keys() -> None:
     for package in (ZH, EN):
         for item in json.loads(package.quantitative_metrics_path.read_text(encoding="utf-8")):
             assert set(item) <= {"key", "sheet", "category", "groupPath", "metricLabel", "unit", "sumOfMetricKeys", "requiresGreenhouseGasAccountingStandard", "kpiCode", "metricDefinition", "termExplanation"}, item["key"]
+
+
+def test_english_packages_carry_no_chinese_in_authored_content() -> None:
+    """英文包的用户可见文本不得含汉字——语言纯度此前无任何守护。
+
+    回归 2026-09-16：本文件其余用例全是**结构**比对（其名自明：
+    `test_metric_catalogs_are_identical_apart_from_words`），从不看正文；全仓
+    `backend/tests/` 搜 `4e00` / `CJK` / `is_han` 零命中。于是「英文包混入中文」
+    这一类缺陷可以一路发布——本轮英文报告正文在屏幕上显示为简体，正是没有任何
+    一道闸会对语言发声。
+
+    只查 YAML 的**值**，不查键与注释：键是稳定标识（英文），注释是写给维护者的。
+    """
+    import re
+
+    han = re.compile(r"[一-鿿]")
+
+    def walk(node, path: str):
+        if isinstance(node, str):
+            if han.search(node):
+                yield path, node[:60]
+        elif isinstance(node, dict):
+            for key, value in node.items():
+                yield from walk(value, f"{path}.{key}")
+        elif isinstance(node, list):
+            for index, value in enumerate(node):
+                yield from walk(value, f"{path}[{index}]")
+
+    for package in (EN, load_knowledge_package("gri_en")):
+        leaks: list[tuple[str, str]] = []
+        for yaml_path in sorted(package.root.rglob("*.yaml")):
+            document = yaml.safe_load(yaml_path.read_text(encoding="utf-8"))
+            leaks.extend(
+                (f"{yaml_path.relative_to(package.root)}{path}", text)
+                for path, text in walk(document, "")
+            )
+        assert leaks == [], f"{package.id} 含中文文本：{leaks[:5]}"

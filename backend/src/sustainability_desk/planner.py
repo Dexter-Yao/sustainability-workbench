@@ -226,9 +226,20 @@ def merge_prose(assembled: Report, current: Report) -> tuple[Report, list[str], 
         existing = cur_blocks.get(block.id)
         if existing is None:
             return block
+        # 正文只在**用户真能编辑的块**上接受客户端内容。fixed / slot 是包资产：
+        # 前者整段由包写定，后者是包写定的文字加 ref 占位（用户值经 fields 解析回填），
+        # 两者都不以正文形态承载用户输入——`frontend/lib/derive.ts` 的 isEditableBlock
+        # 同样只认 generative / constrained，两个集合不相交。
+        #
+        # 不设这道边界的后果已实测：客户端只有一份静态合同投影
+        # （frontend/public/contract.json，上交所简体单包），而各包 block id 刻意相同
+        # （孪生不变量），于是简体正文会逐块盖掉英文包的英文原文——港交所英文报告的
+        # 前四章、可持续发展管理与附录共 39 个块在屏幕上变成简体，而 Word 交付物
+        # （不走本合并）仍是正确英文，两者自相矛盾。
+        keeps_client_prose = block.blockType in ("generative", "constrained")
         return block.model_copy(
             update={
-                "content": existing.content,
+                "content": existing.content if keeps_client_prose else block.content,
                 "state": existing.state,
                 "table": existing.table,
             }
@@ -280,6 +291,10 @@ def merge_prose(assembled: Report, current: Report) -> tuple[Report, list[str], 
             "intakeItems": intake,
             "assessment": assembled.assessment,
             # 以下都是**包资产**，一律以装配结果为准。
+            #
+            # 块正文同属包资产，但它按 block id 逐块合并，边界因此写在 merge_block 内
+            # （fixed / slot 取包内容，只有 generative / constrained 接受客户端正文），
+            # 不在这张清单上。
             #
             # 基底是 `current`（客户端送来的 Report），不显式覆盖就会原样保留客户端的值，
             # 而客户端只有一份静态合同投影（frontend/public/contract.json，上交所简体）。

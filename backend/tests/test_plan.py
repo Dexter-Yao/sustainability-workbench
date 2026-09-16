@@ -114,11 +114,20 @@ def test_plan_keeps_non_material_topic():
 
 
 def test_plan_preserves_prose_on_replan():
-    """重新 plan 按 block id 保留已编辑正文，不被模板态覆盖；input assessment 保留。"""
+    """重新 plan 按 block id 保留已编辑正文，不被模板态覆盖；input assessment 保留。
+
+    取**用户真能编辑的块**（generative / constrained，与前端 `isEditableBlock` 同一判据）。
+    早先本用例取 `iter_blocks()` 的第一个段落，实为 `about.opening`——它是 `fixed` 的包资产，
+    界面上没有编辑入口，于是这条断言实际钉住的是「客户端正文可以覆盖包正文」，
+    而那正是跨包文污染的成因（见 planner.merge_block 注释）。
+    """
     # 深拷贝后再模拟前端编辑:装配产物与进程内缓存模板共享嵌套块,不得原地改写缓存实例。
     assembled = plan_report(_report_with_topics("dual"), package=SSE_PACKAGE)["report"].model_copy(deep=True)
     assert assembled.assessment is not None, "plan 须保留 input assessment（merge 用 current 为基底）"
-    para = next(b for b in assembled.iter_blocks() if b.type == "paragraph")
+    para = next(
+        b for b in assembled.iter_blocks()
+        if b.type == "paragraph" and b.blockType in ("generative", "constrained")
+    )
     para.content = [Inline(kind="text", text="用户已编辑正文")]
     para.state = "ready"
     pid = para.id
@@ -318,3 +327,42 @@ def test_with_topic_sections_appends_templates():
     tmpl = Section(key="climate", title="气候", headingLevel=1, reportSectionId="climate_change", blocks=[])
     merged = with_topic_sections(base, {"climate_change": tmpl})
     assert [s.key for s in merged.sections] == ["s", "climate"]
+
+
+def test_replan_keeps_package_prose_for_non_editable_blocks():
+    """客户端送来的 fixed / slot 正文不得覆盖包正文——跨包文污染的守门测试。
+
+    回归 2026-09-16：客户端只有一份静态合同投影（`frontend/public/contract.json`，
+    上交所简体单包），而各包 block id 刻意相同（孪生不变量）。`merge_prose` 早先无条件
+    接受客户端 content，于是简体正文逐块盖掉英文包的英文原文：港交所英文报告的前四章、
+    可持续发展管理与附录共 39 个块在屏幕上变成简体，而 Word 交付物（不走本合并）
+    仍是正确英文——同一份报告，两处自相矛盾。
+
+    本用例模拟那条真实路径：英文包装配 + 简体正文的 current。
+    """
+    from sustainability_desk.contract.knowledge_packages import load_knowledge_package
+
+    hkex_en = load_knowledge_package("hkex_en")
+    assembled = plan_report(
+        Report(knowledgePackageId=hkex_en.id, title="t", fields={}, sections=[]),
+        package=hkex_en,
+    )["report"].model_copy(deep=True)
+
+    # 模拟静态简体快照：把每个 fixed / slot 段落的正文换成简体。
+    contaminated = assembled.model_copy(deep=True)
+    touched = 0
+    for block in contaminated.iter_blocks():
+        if block.type == "paragraph" and block.blockType in ("fixed", "slot"):
+            block.content = [Inline(kind="text", text="本报告信息披露范围覆盖简体内容")]
+            touched += 1
+    assert touched > 0, "英文包应含 fixed / slot 段落，否则本用例失去意义"
+
+    merged = plan_report(contaminated, package=hkex_en)["report"]
+    leaked = [
+        block.id
+        for block in merged.iter_blocks()
+        if block.type == "paragraph"
+        and block.blockType in ("fixed", "slot")
+        and any("简体内容" in (inline.text or "") for inline in (block.content or []))
+    ]
+    assert leaked == [], f"包正文被客户端内容覆盖：{leaked[:5]}"
