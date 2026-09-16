@@ -97,8 +97,11 @@ make verify                             # 后端与前端测试
 
 前置：Node 22、uv、Docker、Supabase CLI、LibreOffice。`make doctor` 会在开始前检查这些。
 
+**请预留约 6 GB 磁盘与 15–30 分钟。** 仓库本身很小（约 13 MB），但容器镜像、LibreOffice
+与依赖树不小，且大部分落在项目目录之外。[安装配置](./SETUP.md) 有逐项明细，并列出两个可以不装的组件。
+
 这里的 Supabase **不是云服务账号**——`supabase start` 是在你自己机器的 Docker 里起
-Postgres、认证与存储三个容器。数据不出本机，也不需要注册任何东西。
+Postgres、认证与存储等容器。数据不出本机，也不需要注册任何东西。
 
 ## 技术栈
 

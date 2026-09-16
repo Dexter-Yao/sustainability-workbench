@@ -1954,9 +1954,6 @@ dependencies = [
     { name = "cryptography" },
     { name = "fastapi" },
     { name = "matplotlib" },
-    { name = "omegaconf" },
-    { name = "onnxruntime" },
-    { name = "opencv-python-headless" },
     { name = "openpyxl" },
     { name = "opentelemetry-api" },
     { name = "opentelemetry-exporter-otlp-proto-http" },
@@ -1972,8 +1969,15 @@ dependencies = [
     { name = "python-multipart" },
     { name = "python-pptx" },
     { name = "pyyaml" },
-    { name = "rapidocr" },
     { name = "uvicorn", extra = ["standard"] },
+]
+
+[package.optional-dependencies]
+ocr = [
+    { name = "omegaconf" },
+    { name = "onnxruntime" },
+    { name = "opencv-python-headless" },
+    { name = "rapidocr" },
 ]
 
 [package.dev-dependencies]
@@ -1989,9 +1993,9 @@ requires-dist = [
     { name = "cryptography", specifier = ">=49.0.0" },
     { name = "fastapi", specifier = ">=0.137.1" },
     { name = "matplotlib", specifier = ">=3.11.0" },
-    { name = "omegaconf", specifier = ">=2.3,<3" },
-    { name = "onnxruntime", specifier = ">=1.28,<2" },
-    { name = "opencv-python-headless", specifier = ">=4.10" },
+    { name = "omegaconf", marker = "extra == 'ocr'", specifier = ">=2.3,<3" },
+    { name = "onnxruntime", marker = "extra == 'ocr'", specifier = ">=1.28,<2" },
+    { name = "opencv-python-headless", marker = "extra == 'ocr'", specifier = ">=4.10" },
     { name = "openpyxl", specifier = ">=3.1" },
     { name = "opentelemetry-api", specifier = ">=1.27,<2" },
     { name = "opentelemetry-exporter-otlp-proto-http", specifier = ">=1.27,<2" },
@@ -2007,9 +2011,10 @@ requires-dist = [
     { name = "python-multipart", specifier = ">=0.0.32" },
     { name = "python-pptx", specifier = ">=1.0.2" },
     { name = "pyyaml", specifier = ">=6.0.3" },
-    { name = "rapidocr", specifier = "==3.9.2" },
+    { name = "rapidocr", marker = "extra == 'ocr'", specifier = "==3.9.2" },
     { name = "uvicorn", extras = ["standard"], specifier = ">=0.49.0" },
 ]
+provides-extras = ["ocr"]
 
 [package.metadata.requires-dev]
 dev = [

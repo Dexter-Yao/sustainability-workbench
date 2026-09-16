@@ -293,3 +293,24 @@ def test_scanned_page_ocr_returns_no_text_keeps_negative_evidence_blocked_gap() 
         gap for gap in parsed.coverage.gaps if gap.code == "pdf_scanned_page_ocr_empty"
     )
     assert empty_gap.effect == "negative_evidence_blocked"
+
+
+def test_missing_ocr_extra_fails_loudly_with_an_actionable_hint() -> None:
+    """未安装 `--extra ocr` 时，扫描件识别必须明确报错而不是返回空文本。
+
+    OCR 栈（rapidocr / onnxruntime / OpenCV）约 320 MB，只服务扫描件一条路径，
+    故列为可选 extra。但「可选」不等于「可以静默降级」：静默返回空会让一份根本没读
+    进去的扫描件看起来像「读过但没内容」，用户无从判断是资料本身没信息还是少装了组件，
+    而这两者的处置完全不同。
+    """
+    from unittest.mock import patch as _patch
+
+    from sustainability_desk.material.intake import scanned_pdf_ocr
+
+    with _patch.object(scanned_pdf_ocr, "ocr_engine_available", return_value=False):
+        results = scanned_pdf_ocr.ocr_pdf_pages(b"%PDF-not-really", [0, 1])
+
+    assert set(results) == {0, 1}
+    for page_result in results.values():
+        assert isinstance(page_result, ScannedPdfOcrError)
+        assert "--extra ocr" in str(page_result), "提示必须给出可执行的安装命令"

@@ -21,6 +21,33 @@
 LibreOffice 不是验收工具而是运行时硬依赖：Word 的目录域页码要靠排版引擎跑一遍分页才算得出，
 python-docx 不做排版。缺 `soffice` 时导出直接报错。
 
+### 先看清占多少地方
+
+仓库本身只有约 13 MB（一千余个文件，基本都是源码），但**跑起来要准备约 6 GB 磁盘**。
+大头落在仓库目录之外——`du` 看项目文件夹是看不到的：
+
+| 位置 | 项 | 约占 |
+|---|---|---|
+| 仓库外 | Supabase 容器镜像（首次 `supabase start` 拉取，7 个） | 3.2 GB |
+| 仓库外 | Supabase 数据卷 | 1.5 GB |
+| 仓库外 | LibreOffice | 800 MB |
+| 仓库内 | `frontend/node_modules` | 560 MB |
+| 仓库内 | `backend/.venv` | 220 MB |
+| 仓库内 | `frontend/.next`（构建产物，随使用增长） | 150 MB 起 |
+
+首次安装以网络下载为主，约 **15–30 分钟**，其中拉镜像占大头。
+
+本项目已按实际用量裁掉三个 Supabase 组件（Studio、Edge Runtime 及其连带件，合计约 3 GB）：
+产品不依赖它们，仓库内也没有 Edge Function。需要数据库管理界面时，把
+`supabase/config.toml` 的 `[studio] enabled` 改回 `true` 再重起栈。
+
+两项**默认不装**，需要时再说：
+
+- **扫描件 OCR**（约 220 MB）：`uv sync --extra ocr`。不装时文字版 PDF、Word、Excel 照常解析，
+  只有**扫描成图片的 PDF** 会明确报错提示缺该组件，不会静默跳过。
+- **Playwright 浏览器**（约 540 MB）：只有跑 `npm run test:e2e` 才需要，
+  用 `npx playwright install chromium` 装。
+
 macOS 装法：
 
 ```bash
@@ -40,7 +67,8 @@ make doctor
 supabase start
 ```
 
-首次运行会拉镜像，要几分钟。完成后 `supabase status` 会打印一组连接参数，下一步要用。
+首次运行要拉约 3.2 GB 镜像，按网络情况 10–20 分钟；之后再起是秒级。
+完成后 `supabase status` 会打印一组连接参数，下一步要用。
 
 ## 3. 配置环境变量
 

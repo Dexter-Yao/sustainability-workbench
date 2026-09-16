@@ -25,6 +25,20 @@ class ScannedPdfOcrError(ValueError):
     """OCR 子进程失败、超时或渲染异常；调用方必须弃用当页结果，不得重试。"""
 
 
+#: OCR 引擎未安装时给出的可执行提示。扫描件解析必须**明确报错**而不是静默返回空文本：
+#: 静默会让一份根本没读进去的扫描件看起来像「读过但没内容」，用户无从判断是资料本身
+#: 没信息还是系统少装了组件，而这两者的处置完全不同。
+OCR_EXTRA_HINT = "扫描件识别需要 OCR 组件，请执行 `uv sync --extra ocr` 后重试"
+
+
+def ocr_engine_available() -> bool:
+    """OCR 引擎是否已安装（`--extra ocr`）。只做导入探测，不初始化模型。"""
+
+    from importlib.util import find_spec
+
+    return find_spec("rapidocr") is not None
+
+
 @dataclass(frozen=True)
 class OcrPageText:
     """单页 OCR 结果；confidence 仅供内部质量判断，不得进入模型上下文。"""
@@ -115,6 +129,9 @@ def ocr_pdf_pages(
     调用方必须持有 `_OCR_SERIAL_LOCK`（本函数内部获取），保证同一时刻全进程只有一个
     OCR 子进程在运行。整份文件超过 `OCR_FILE_TIMEOUT_SECONDS` 直接放弃剩余页。
     """
+    if not ocr_engine_available():
+        # 每页都给同一条可执行提示：调用方按页汇报失败原因，不必各自判断整体可用性。
+        return {index: ScannedPdfOcrError(OCR_EXTRA_HINT) for index in page_indexes}
     results: dict[int, OcrPageText | ScannedPdfOcrError] = {}
     started = time.monotonic()
     with _OCR_SERIAL_LOCK:

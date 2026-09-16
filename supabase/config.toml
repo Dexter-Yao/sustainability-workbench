@@ -94,7 +94,10 @@ enabled = true
 # max_header_length = 4096
 
 [studio]
-enabled = true
+# 默认关闭：Studio 是数据库管理界面，产品本身不依赖它，而它的镜像约 1.2 GB——
+# 占首次 `supabase start` 拉取量的近三分之一。要用数据库管理界面时改回 true 再
+# `supabase stop && supabase start`。
+enabled = false
 # Port to use for Supabase Studio.
 port = 54323
 # External URL of the API server that frontend connects to.
@@ -321,7 +324,9 @@ authorization_url_path = "/oauth/consent"
 allow_dynamic_registration = false
 
 [edge_runtime]
-enabled = true
+# 关闭：本项目没有 `supabase/functions/` 目录，前后端对 Edge Function 零调用
+# （`functions/v1`、`invoke(` 全仓无命中）。它的镜像约 686 MB，纯属白拉。
+enabled = false
 # Supported request policies: `oneshot`, `per_worker`.
 # `per_worker` (default) — enables hot reload during local development.
 # `oneshot` — fallback mode if hot reload causes issues (e.g. in large repos or with symlinks).

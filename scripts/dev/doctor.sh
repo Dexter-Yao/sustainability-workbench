@@ -27,6 +27,18 @@ fi
 command -v pandoc >/dev/null 2>&1 \
   || echo "提示: 未找到 pandoc，晟原语料的 docx 派生产物无法重生成（不影响产品运行）"
 
+# 以下两项都是按需安装的可选组件，缺失不影响主链，但缺了又没人提醒时
+# 用户会撞上一个没有指引的失败 + 一次意外的大体积下载，故在此如实报出。
+# 探测**项目 venv**而非系统 python：OCR 装在 backend/.venv 里，用系统解释器判断会
+# 对每个用户都误报「未安装」——一条恒假的提示比没有提示更糟。venv 尚未创建时跳过本项，
+# 那种情况下用户还没跑过 uv sync，提示 OCR 没有意义。
+if [[ -x "backend/.venv/bin/python" ]]; then
+  backend/.venv/bin/python -c "import importlib.util,sys; sys.exit(0 if importlib.util.find_spec('rapidocr') else 1)" >/dev/null 2>&1 \
+    || echo "提示: 未安装 OCR 组件（约 220 MB），扫描成图片的 PDF 无法识别；需要时执行 uv sync --extra ocr"
+fi
+[[ -d "$HOME/Library/Caches/ms-playwright" || -d "$HOME/.cache/ms-playwright" ]] \
+  || echo "提示: 未安装 Playwright 浏览器（约 540 MB），npm run test:e2e 会失败；需要时执行 npx playwright install chromium"
+
 if [[ "${SUSTAINABILITY_DESK_ENVIRONMENT:-local}" == "production" ]]; then
   echo "本地开发入口拒绝 SUSTAINABILITY_DESK_ENVIRONMENT=production" >&2
   exit 1
