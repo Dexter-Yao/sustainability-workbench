@@ -11,6 +11,9 @@ exports to Word. Three rule sets ship today — Shanghai Stock Exchange (Simplif
 HKEX (Traditional Chinese), HKEX (English) — and they serve as the structure whether or not you
 are listed.
 
+It drafts; it does not assure. What comes out is a draft for professional review — not an
+assurance opinion, not a compliance guarantee. Someone still has to read it and sign it off.
+
 **[简体中文](./README.zh-CN.md)** · [Architecture](./docs/architecture.md) ·
 [Setup](./SETUP.md) · [Handbook](./docs/handbook/README.md)
 
@@ -46,6 +49,12 @@ Five preparation steps, then generate:
 
 The last four can be left empty. After generation you get two Word files: a final version, and a
 review version carrying annotations about what still needs human confirmation.
+
+The repository ships a fully synthetic corpus — two fictional companies, no real business data —
+so you can run the whole flow end to end without supplying anything of your own.
+
+A GRI package is present but sealed: it is not selectable when creating a report. It was built
+against a route that needs wording changes before it can honestly claim conformance.
 
 ## Architecture
 
@@ -164,23 +173,6 @@ It drives the built-in synthetic corpus through the real input path and renders 
 | Storage & auth | Supabase (Postgres + Auth + Storage) |
 | Export | python-docx for rendering, LibreOffice for table-of-contents pagination |
 | Models | Azure OpenAI by default; any OpenAI-compatible endpoint works without code changes |
-
-## Status and scope
-
-A personal project. All three rule sets generate and export complete reports, and the repository
-ships a fully synthetic corpus — two fictional companies, no real business data — so you can run
-the whole flow end to end without supplying anything.
-
-What it deliberately does not do, so you can judge whether it fits:
-
-- **It drafts; it does not assure.** Output is a draft for professional review, not an assurance
-  opinion and not a compliance guarantee. Every generated report needs a human to sign it off.
-- **Single-user and local by design.** One account, your machine, your database. There is no
-  multi-tenant mode and no hosted version — for a document containing unpublished company
-  figures, that is a property rather than a missing feature.
-- **No self-service sign-up.** The first account is created from the command line on purpose.
-- **The GRI package is present but sealed** — it is not selectable when creating a report. It was
-  built against a route that requires wording changes before it can honestly claim conformance.
 
 ## Licence
 
