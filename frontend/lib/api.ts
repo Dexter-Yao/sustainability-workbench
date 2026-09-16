@@ -319,7 +319,14 @@ export async function importUnifiedWorkbook(
 export interface Issue {
   level: "block" | "warn";
   code: string;
+  /**
+   * 服务端构造的简体消息。**不要直接渲染**——界面语言跟随报告所属知识包，
+   * 而它恒简体，英文报告的导出前检查会因此混排中文。用 `issueMessage()`
+   * 按 `code` + `params` 取界面语言文案。保留本字段只为日志与排查。
+   */
   message: string;
+  /** 渲染文案所需的业务值（标签、计数、名称列表）；键名与各 code 的模板占位符对应。 */
+  params?: Record<string, string | number | string[]> | null;
   blockId?: string | null;
   rowId?: string | null;
   fieldKey?: string | null;

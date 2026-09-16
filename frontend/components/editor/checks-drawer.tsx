@@ -6,6 +6,7 @@
 import type { Issue } from "@/lib/api";
 import { interpolate } from "@/lib/i18n/dictionary";
 import { useT } from "@/lib/i18n/locale-context";
+import { issueMessage } from "@/lib/issue-message";
 
 import { SideDrawer } from "./side-drawer";
 
@@ -102,7 +103,7 @@ export function ChecksDrawer({
             lineHeight: 1.6,
           }}
         >
-          <span>{issue.message}</span>
+          <span>{issueMessage(issue, t)}</span>
           <span aria-hidden style={{ color: "var(--accent)", flexShrink: 0 }}>
             →
           </span>

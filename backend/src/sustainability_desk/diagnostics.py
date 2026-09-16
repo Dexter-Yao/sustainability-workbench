@@ -57,11 +57,23 @@ if TYPE_CHECKING:  # 仅类型引用，避免 accounts→diagnostics 的运行�
 
 
 class Issue(BaseModel):
-    """单条诊断：level 决定是否阻断导出；code 供前端归类；定位字段按问题类型择填。"""
+    """单条诊断：level 决定是否阻断导出；code 供前端归类；定位字段按问题类型择填。
+
+    **用户可见文案由前端按 `code` + `params` 渲染，不用 `message`。** `message` 恒简体
+    （本模块内联构造），直接呈现会在英文报告的导出前检查里混排中文——界面语言跟随
+    报告所属知识包，而诊断不知道那是哪一种语言。同一问题在生成阻断侧已有既成范式：
+    `frontend/components/intake/generation-section.tsx` 的 `blockerMessage()` 按稳定
+    handle + 字典渲染，不透传后端串。
+
+    `message` 保留且继续填写：它是服务端日志与既有消费者的事实，去掉即破坏契约。
+    `params` 只承载**渲染所需的业务值**（标签、计数、名称列表），不含 id、路径或内部结构。
+    """
 
     level: Literal["block", "warn"]
     code: str
     message: str
+    #: 前端按 code 取文案模板后代入的值；键名与各 code 的模板占位符一一对应。
+    params: dict[str, str | int | list[str]] = {}
     blockId: str | None = None
     rowId: str | None = None
     fieldKey: str | None = None
@@ -268,6 +280,11 @@ def diagnose(
                     f"尚有 {len(missing_stakeholder_topics)} 个适用议题未分配沟通对象："
                     + "、".join(topic_names[topic_id] for topic_id in missing_stakeholder_topics)
                 ),
+                params={
+                    "count": len(missing_stakeholder_topics),
+                    # 议题名来自知识包，天然是包语言，前端按界面语言的分隔符连接。
+                    "topics": [topic_names[topic_id] for topic_id in missing_stakeholder_topics],
+                },
                 blockId="sm.stakeholder_table",
             )
         )
@@ -313,6 +330,12 @@ def diagnose(
                     f"{obligation.label}未填写，"
                     f"无法进入{_INPUT_PHASE_LABEL[obligation.required_before]}阶段"
                 ),
+                params={
+                    # label 由知识包下发，天然是包语言；phase 传**稳定 id**而非中文标签，
+                    # 由前端按界面语言取词（传中文标签等于把翻译责任推给客户端字符串匹配）。
+                    "label": obligation.label,
+                    "phase": obligation.required_before,
+                },
                 fieldKey=(
                     obligation.owner_id
                     if obligation.owner_kind == "field"
@@ -339,6 +362,7 @@ def diagnose(
                     level="block",
                     code="stale_display_title",
                     message=f"章节「{section.title or section.key}」的用户可见标题尚未生成或已因正文变化而过期",
+                    params={"section": section.title or section.key},
                     reportSectionId=section.reportSectionId,
                     path=f"sections.{section.key}.displayTitle",
                 )
@@ -381,6 +405,7 @@ def diagnose(
                         level="warn",
                         code="missing_user_visible_clause_annotation_source",
                         message=f"当前大陆准则下缺少「{section.title or section.key}」章节的用户可见准则批注条款原文",
+                        params={"section": section.title or section.key},
                         path="disclosureProfile.mainlandStandard",
                     )
                 )
@@ -430,6 +455,7 @@ def diagnose(
                         + "、".join(missing_assurance)
                         + "；未补齐前对应段落与附录自动省略"
                     ),
+                    params={"missing": list(missing_assurance)},
                     path=(
                         "appendixPackage.externalAssuranceReport.fileLabel"
                         if _empty(assurance.fileLabel)
@@ -483,6 +509,17 @@ def diagnose(
                 issues.append(
                     Issue(level=_table_issue_level(block, d.kind), code=d.kind,
                           message=_table_issue_message(block, d),
+                          # 表题、行标签与列表头都来自知识包或用户填写，天然是报告语言；
+                          # 只有连接它们的措辞需要按界面语言取词。rowId 是内部标识，不入 params。
+                          params={
+                              key: value
+                              for key, value in (
+                                  ("caption", block.table.caption if block.table and block.table.caption else ""),
+                                  ("row", d.rowLabel or ""),
+                                  ("column", d.colHeader or d.col or ""),
+                              )
+                              if value
+                          },
                           blockId=d.blockId, rowId=d.rowId, col=d.col)
                 )
         else:
@@ -514,6 +551,8 @@ def diagnose(
                                   if label
                                   else "正文引用的报告内容未生成或未填写，导出时该处会缺失"
                               ),
+                              # label 缺省时前端取无标签的通用措辞；不回落到把 ref 路径给用户看。
+                              params={"label": label} if label else {},
                               blockId=block.id,
                               fieldKey=inl.ref if inl.ref in report.fields else None,
                               path=inl.ref if inl.ref.startswith(("disclosureProfile.", "appendixPackage.")) else None)
