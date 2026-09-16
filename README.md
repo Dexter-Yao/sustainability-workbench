@@ -1,23 +1,25 @@
 # Sustainability Workbench
 
-A self-hosted drafting workbench for listed-company sustainability (ESG) reports, for the
-people who prepare them — in-house reporting teams, and the consultants and accounting firms
-who do it on their behalf.
+A self-hosted drafting workbench for sustainability (ESG) reports, for the people who prepare
+them — in-house reporting teams at companies of any size, and the consultants and accounting
+firms who do it on their behalf.
 
-It reads a company's policies, records, certificates and reported figures, drafts the report
-section by section against a specific exchange's disclosure rules, and exports to Word. Three
-rule sets ship today: Shanghai Stock Exchange (Simplified Chinese), HKEX (Traditional Chinese),
-HKEX (English).
+Plenty of companies write one because a customer, a bank or a tender asked for it, not because
+a regulator did. Either way the work is the same: it reads your policies, records, certificates
+and reported figures, drafts the report section by section against a disclosure standard, and
+exports to Word. Three rule sets ship today — Shanghai Stock Exchange (Simplified Chinese),
+HKEX (Traditional Chinese), HKEX (English) — and they serve as the structure whether or not you
+are listed.
 
 **[简体中文](./README.zh-CN.md)** · [Architecture](./docs/architecture.md) ·
 [Setup](./SETUP.md) · [Handbook](./docs/handbook/README.md)
 
 ## Why not just hand the files to an LLM
 
-A listed company's sustainability report is constrained by exchange rules: which topics must be
+A sustainability report is constrained by the standard it follows: which topics must be
 covered, what each topic has to disclose, which metrics need numbers. Handing every file to a
 model and asking for a report fails in two places — it writes things the company never did, and
-it misses disclosures the rules require.
+it misses disclosures the standard requires.
 
 Two constraints address that:
 
@@ -47,9 +49,40 @@ review version carrying annotations about what still needs human confirmation.
 
 ## Architecture
 
-See [docs/architecture.md](./docs/architecture.md). In one line: user input → File Agent reads
-each document → Mapping Agent selects material per chapter → controlled evidence set →
-block-by-block generation → diagnostic gate → Word.
+```
+Your input
+├─ Company basics (name, reporting period)          ┐
+├─ Topic materiality scoring (what enters the report)├─────────────┐
+├─ Quantitative metrics (emissions, workforce, waste)┘             │
+└─ Documents (policies, records, certificates)                     │
+        │                                                          │
+        ▼                                                          │
+   File Agent            material.file_agent                       │
+   reads each file → traceable dossier                             │
+        │                                                          │
+        ▼                                                          │
+   Mapping Agent         material.mapping_agent                    │
+   picks material per chapter; selects, never writes               │
+        │                                                          ▼
+   ┌──────────────────────────────────────────────────────────────────┐
+   │ Controlled evidence set — each block sees only its assigned facts │
+   └──────────────────────────────────────────────────────────────────┘
+        │
+        ▼
+   Block-by-block drafting   generation.blocks → generation.commit
+        │                            ▲
+        ▼                            │ blocking issue → back for revision
+   Diagnostic gate           delivery.export_gate
+        │
+        ▼
+   Final + review Word       delivery.docx.word / .review
+```
+
+Paragraph-by-paragraph revision is optional and sits between drafting and the gate. Of the four
+inputs only company basics is required; the rest may be left empty, and the system adjusts what
+it writes rather than inventing filler.
+
+Full detail in [docs/architecture.md](./docs/architecture.md).
 
 Rules and language live in **knowledge packages** — one package per rule set per language.
 Adding an exchange or a language means adding a package, not changing the generation pipeline.
@@ -67,6 +100,10 @@ make verify                             # backend and frontend tests
 
 Prerequisites: Node 22, uv, Docker, the Supabase CLI, and LibreOffice. `make doctor` checks all
 of them before you start.
+
+Supabase here is **not a cloud account** — `supabase start` runs Postgres, auth and storage in
+local Docker containers on your own machine. Nothing leaves it, and there is nothing to sign up
+for.
 
 ## For coding agents
 
