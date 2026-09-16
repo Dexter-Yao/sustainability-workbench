@@ -243,7 +243,7 @@ export function ParagraphBlock({ node }: { node: ParagraphNode }) {
               padding: "0 4px",
             }}
           >
-            编辑
+            {t.documentNodes.editAction}
           </button>
         </span>
       ) : null}
@@ -252,6 +252,7 @@ export function ParagraphBlock({ node }: { node: ParagraphNode }) {
 }
 
 export function TableBlock({ node }: { node: TableNode }) {
+  const t = useT();
   const { blockById, selectedBlockId } = useReport();
   const block = blockById(node.blockId);
   const table = block?.table;
@@ -262,17 +263,18 @@ export function TableBlock({ node }: { node: TableNode }) {
       style={{ margin: "12px 0", ...(selected ? { background: "var(--accent-subtle)", borderRadius: 6, padding: "6px 10px" } : {}) }}
     >
       {table?.caption ? (
-        <div style={{ fontSize: "var(--text-label-size)", color: "var(--foreground-secondary)", marginBottom: 4 }}>表　{table.caption}</div>
+        <div style={{ fontSize: "var(--text-label-size)", color: "var(--foreground-secondary)", marginBottom: 4 }}>{t.documentNodes.tableCaptionPrefix}{table.caption}</div>
       ) : null}
       {table && block ? <GsTableBlock blk={block} table={table} blockId={node.blockId} /> : null}
       {table?.disclaimer ? (
-        <div style={{ fontSize: "var(--text-supporting-size)", color: "var(--muted-foreground)", marginTop: 4 }}>注：{table.disclaimer}</div>
+        <div style={{ fontSize: "var(--text-supporting-size)", color: "var(--muted-foreground)", marginTop: 4 }}>{t.documentNodes.tableDisclaimerPrefix}{table.disclaimer}</div>
       ) : null}
     </BlockShell>
   );
 }
 
 export function ImageBlock({ node }: { node: ImageNode }) {
+  const t = useT();
   const { blockById, report, selectedBlockId } = useReport();
   const { activeReportId } = useApp();
   const assetMetadata = useLayoutAssetMetadata();
@@ -307,7 +309,7 @@ export function ImageBlock({ node }: { node: ImageNode }) {
         </div>
       ) : null}
       {image?.caption && !layoutAssetIds?.length ? (
-        <div style={{ fontSize: "var(--text-label-size)", color: "var(--foreground-secondary)", textAlign: "center", marginTop: 4 }}>图　{image.caption}</div>
+        <div style={{ fontSize: "var(--text-label-size)", color: "var(--foreground-secondary)", textAlign: "center", marginTop: 4 }}>{t.documentNodes.figureCaptionPrefix}{image.caption}</div>
       ) : null}
     </BlockShell>
   );

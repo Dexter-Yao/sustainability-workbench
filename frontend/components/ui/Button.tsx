@@ -55,10 +55,17 @@ export function Button({
   useEffect(() => {
     if (process.env.NODE_ENV === "production") return;
     if (variant !== "primary") return;
-    const count = document.querySelectorAll('[data-gs-button-variant="primary"]').length;
-    if (count > 1) {
+    // 只数**此刻在屏**的 primary。§4.0.1 约束的是视觉主次，而关闭的 <dialog> 什么也不显示：
+    // CreateReportDialog 与 ConfirmDialog 都用原生 <dialog>，内容常驻 DOM、靠 showModal()
+    // 开合（两者刻意同构）。按「渲染树」字面计数，会让「报告列表 + 一个关着的建报对话框」
+    // 这种完全正常的页面恒报违规，噪声盖过真违规——dev 控制台的 2 Issues 即由此而来。
+    // 对话框打开时它的 primary 才入账，那时页面主按钮确实被遮罩挡住、不构成并列主次。
+    const onScreen = Array.from(
+      document.querySelectorAll('[data-gs-button-variant="primary"]'),
+    ).filter((node) => (node as HTMLElement).offsetParent !== null);
+    if (onScreen.length > 1) {
       console.error(
-        `design.md §4.0.1 违规：当前路由渲染树中出现 ${count} 个 variant="primary" 按钮（应至多一个）。`,
+        `design.md §4.0.1 违规：当前路由同屏出现 ${onScreen.length} 个 variant="primary" 按钮（应至多一个）。`,
       );
     }
   });

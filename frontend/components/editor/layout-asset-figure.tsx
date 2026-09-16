@@ -63,6 +63,7 @@ function CaptionRow({
   caption: string;
   onCaptionChange: (caption: string) => void | Promise<void>;
 }) {
+  const t = useT();
   const [editing, setEditing] = useState(false);
   const [draft, setDraft] = useState(caption);
   const [error, setError] = useState<string | null>(null);
@@ -86,7 +87,7 @@ function CaptionRow({
       setError(null);
     } catch {
       // 保留草稿供重试；静默回滚会让用户误以为已保存。
-      setError("题注保存失败，请重试。");
+      setError(t.documentNodes.captionSaveFailed);
       setEditing(true);
     }
   };
@@ -130,7 +131,7 @@ function CaptionRow({
   return (
     <>
       <div onClick={() => setEditing(true)} style={{ ...captionTextStyle, cursor: "text" }}>
-        图　{caption}
+        {t.documentNodes.figureCaptionPrefix}{caption}
       </div>
       {error ? <div role="alert" style={{ ...captionTextStyle, color: "var(--destructive)" }}>{error}</div> : null}
     </>
@@ -202,7 +203,7 @@ export function LayoutAssetFigure({
         onCaptionChange ? (
           <CaptionRow caption={caption} onCaptionChange={onCaptionChange} />
         ) : (
-          <div style={captionTextStyle}>图　{caption}</div>
+          <div style={captionTextStyle}>{t.documentNodes.figureCaptionPrefix}{caption}</div>
         )
       ) : null}
     </div>

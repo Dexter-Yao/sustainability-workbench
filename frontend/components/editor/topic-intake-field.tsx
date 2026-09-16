@@ -5,6 +5,7 @@
 import { type CSSProperties } from "react";
 
 import { useApp } from "@/lib/app-context";
+import { interpolate } from "@/lib/i18n/dictionary";
 import { useT } from "@/lib/i18n/locale-context";
 import { updateIntakeItem } from "@/lib/report-section-flow";
 import type { IntakeItem } from "@/lib/schema";
@@ -130,6 +131,7 @@ function MultiSelectOptions({
   item: IntakeItem;
   onPatch: (patch: Partial<Pick<IntakeItem, "answer" | "supplement">>) => void;
 }) {
+  const t = useT();
   const groups = item.optionGroups ?? [];
   if (groups.length === 0) {
     return (
@@ -154,7 +156,7 @@ function MultiSelectOptions({
               {group.label}
               {min > 0 ? (
                 <span style={{ marginLeft: 6, fontWeight: 400, color: met ? "var(--muted-foreground)" : "var(--warning)" }}>
-                  至少选择 {min} 项
+                  {interpolate(t.topicIntake.minSelections, { count: min })}
                 </span>
               ) : null}
             </div>

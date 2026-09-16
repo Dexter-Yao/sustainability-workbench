@@ -121,12 +121,17 @@ function TopicEditor({ profile, stakeholderType }: { profile: StakeholderEngagem
     <>
       <div>{orderedStakeholderTopicLabels(entry.assessmentTopicIds).map((label) => <span key={label} style={chip}>{label}</span>)}</div>
       <EditorPopover label={t.stakeholderTable.editTopics}>
-        {(["环境", "社会", "治理"] as const).map((dimension) => {
+        {/* 维度串是目录里的数据键（topic.dimension），不翻译；显示名另取字典。 */}
+        {([
+          ["环境", t.stakeholderTable.dimensionEnvironmental],
+          ["社会", t.stakeholderTable.dimensionSocial],
+          ["治理", t.stakeholderTable.dimensionGovernance],
+        ] as const).map(([dimension, dimensionLabel]) => {
           const topics = STAKEHOLDER_CATALOG.topics.filter((topic) => topic.dimension === dimension && profile.scopeAssessmentTopicIds.includes(topic.id));
           if (!topics.length) return null;
           return (
             <section key={dimension} style={{ marginBottom: 10 }}>
-              <h4 style={{ margin: "0 0 5px", fontSize: 12, color: "var(--foreground)" }}>{dimension}</h4>
+              <h4 style={{ margin: "0 0 5px", fontSize: 12, color: "var(--foreground)" }}>{dimensionLabel}</h4>
               <div>{topics.map((topic) => <ToggleOption key={topic.id} label={topic.label} selected={entry.assessmentTopicIds.includes(topic.id)} onClick={() => updateStakeholderEngagement((current) => toggleStakeholderTopic(current, stakeholderType, topic.id))} />)}</div>
             </section>
           );

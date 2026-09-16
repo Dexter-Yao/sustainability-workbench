@@ -598,6 +598,43 @@ export const zhHans = {
     keepTitle: "保留当前标题",
     editTitle: "编辑标题",
     editTitlePrompt: "输入该章节的标题",
+    /**
+     * 诊断条目文案，按后端下发的稳定 `code` 取，占位符由 `Issue.params` 代入。
+     *
+     * 后端 `Issue.message` 恒简体（`diagnostics.py` 内联构造），直接渲染会让英文报告的
+     * 导出前检查混排中文——界面语言跟随报告所属知识包，而诊断不知道那是哪一种语言。
+     * 与生成阻断侧的 `blockerMessage()` 同一纪律：按稳定标识取词，不透传后端串。
+     * 未登记的 code 回落 `fallback`，不显示后端原文。
+     */
+    issues: {
+      fallback: "该项需要确认后才能导出。",
+      key_residue: "「{label}」未填写，导出时正文引用它的位置会缺失内容",
+      key_residue_unlabeled: "正文引用的报告内容未生成或未填写，导出时该处会缺失",
+      stakeholder_topic_unassigned: "尚有 {count} 个适用议题未分配沟通对象：{topics}",
+      required_input_obligation: "{label}未填写，无法进入{phase}阶段",
+      stale_display_title: "章节「{section}」的用户可见标题尚未生成或已因正文变化而过期",
+      required_disclosure_profile: "报告披露准则未配置",
+      missing_user_visible_clause_annotation_source: "当前大陆准则下缺少「{section}」章节的用户可见准则批注条款原文",
+      required_report_configuration: "已选择公司官网发布，但未填写公司官网地址；未补齐前报告获取方式不写出官网地址",
+      required_assurance_report: "已选择外部鉴证，但未填写{missing}；未补齐前对应段落与附录自动省略",
+      unresolved_standard_disclosure_requirement: "该处内容的准则披露要求配置无法解析，请联系管理员处理",
+      internal_report_text: "正文包含内部说明或代理提示内容，已阻断导出",
+      materiality_complete_coverage: "企业重要性评分未获授权资料支持；报告按当前合同的完整议题覆盖策略组织章节，未呈现为企业评分结论。",
+      /** 表行 gate：code 取 table_export_issues 的 kind。 */
+      required_empty: "{caption}{row}{column}为空",
+      ai_text_empty: "{caption}{row}{column}为空",
+      row_failed: "{caption}{row}生成失败",
+      fixed_row_missing: "{caption}缺少「{row}」行",
+      fixed_row_duplicate: "{caption}{row}重复",
+    },
+    /** `required_input_obligation` 的阶段名；后端传稳定 id，不传中文标签。 */
+    issuePhases: {
+      workbench: "工作台",
+      generation: "正式生成",
+      export: "Word 导出",
+    },
+    /** 名称列表的连接符；中文用顿号，英文用逗号加空格。 */
+    issueListSeparator: "、",
   },
   provenancePanel: {
     heading: "内容来源",
@@ -742,6 +779,10 @@ export const zhHans = {
     addCustomSubmit: "添加",
     editTopics: "编辑议题",
     editMethods: "编辑方式",
+    /** 议题维度分组标题。键是目录里的 dimension 取值（数据键，不翻译），值是显示名。 */
+    dimensionEnvironmental: "环境",
+    dimensionSocial: "社会",
+    dimensionGovernance: "治理",
     removeCustomMethod: "删除自定义方式",
     scopePending: "（利益相关方范围待装配）",
     /** {count} 个适用议题尚未分配沟通对象。 */
@@ -766,15 +807,31 @@ export const zhHans = {
     notSelected: "（未选）",
     charCountSuffix: "字",
     supplementLabel: "补充该选项的具体说明",
+    /** 多选分组的最小选择数提示；{count} 为该组下限。 */
+    minSelections: "至少选择 {count} 项",
   },
   /** 报告正文页的节点交互与图表。 */
   documentNodes: {
     editParagraph: "编辑本段正文",
+    /** 段落右侧的行内编辑入口；与 editParagraph（无障碍全称）同一动作的可见短标签。 */
+    editAction: "编辑",
     edited: "已修改",
     assetAlt: "报告素材图片",
     assetUnavailable: "图片暂不可用",
     matrixAlt: "双重重要性议题矩阵",
     matrixFailed: "矩阵图生成失败",
+    matrixLoading: "矩阵图生成中…",
+    matrixAllHidden: "已隐藏全部分类，点击分类图例恢复显示。",
+    metricSummaryAlt: "ESG 定量指标摘要",
+    metricSummaryLoading: "指标图生成中…",
+    /** 图/表题前缀与表注前缀；与正文同为宋体排版，全角空格是版式的一部分。 */
+    figureCaptionPrefix: "图　",
+    tableCaptionPrefix: "表　",
+    tableDisclaimerPrefix: "注：",
+    captionSaveFailed: "题注保存失败，请重试。",
+    /** 准则批注行：{topic} 议题名，{clauses} 已按顿号连接的条款号。 */
+    clauseAnnotation: "准则批注：{topic}（{clauses}）",
+    clauseSeparator: "、",
   },
   /** 交付物图标的类型徽标字符。 */
   artifactIcon: {

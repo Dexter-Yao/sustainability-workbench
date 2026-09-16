@@ -5,6 +5,8 @@
 import type { CSSProperties } from "react";
 
 import type { UserVisibleDisclosureClauseAnnotationEntry } from "@/lib/api";
+import { interpolate } from "@/lib/i18n/dictionary";
+import { useT } from "@/lib/i18n/locale-context";
 
 const annotationStyle: CSSProperties = {
   borderLeft: "2px solid var(--border)",
@@ -17,11 +19,15 @@ const annotationStyle: CSSProperties = {
 };
 
 export function StandardsClauseAnnotation({ entry }: { entry: UserVisibleDisclosureClauseAnnotationEntry | null }) {
+  const t = useT();
   if (!entry) return null;
   return (
     <details style={annotationStyle}>
       <summary style={{ cursor: "pointer", color: "var(--muted-foreground)" }}>
-        准则批注：{entry.reportContentTopicName}（{entry.appendixIndexClauseReferences.join("、")}）
+        {interpolate(t.documentNodes.clauseAnnotation, {
+          topic: entry.reportContentTopicName,
+          clauses: entry.appendixIndexClauseReferences.join(t.documentNodes.clauseSeparator),
+        })}
       </summary>
       <div style={{ display: "grid", gap: 6, marginTop: 8 }}>
         {entry.clauseOriginalTexts.map((item) => (

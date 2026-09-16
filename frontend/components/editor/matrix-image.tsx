@@ -80,7 +80,7 @@ export function MatrixImage({
           color: "var(--muted-foreground)",
         }}
       >
-        已隐藏全部分类，点击分类图例恢复显示。
+        {t.documentNodes.matrixAllHidden}
       </div>
     );
   }
@@ -112,7 +112,7 @@ export function MatrixImage({
           color: "var(--muted-foreground)",
         }}
       >
-        矩阵图生成中…
+        {t.documentNodes.matrixLoading}
       </div>
     );
   }

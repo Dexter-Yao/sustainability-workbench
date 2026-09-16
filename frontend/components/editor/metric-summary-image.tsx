@@ -5,6 +5,7 @@
 import { useEffect, useMemo, useRef, useState, type ReactNode } from "react";
 
 import { fetchMetricSummaryImage } from "@/lib/api";
+import { useT } from "@/lib/i18n/locale-context";
 import type { DerivedVisualizationSpec, Report } from "@/lib/schema";
 
 export function MetricSummaryImage({
@@ -18,6 +19,7 @@ export function MetricSummaryImage({
   fallback?: ReactNode;
   maxWidth?: number;
 }) {
+  const t = useT();
   const [url, setUrl] = useState<string | null>(null);
   const [empty, setEmpty] = useState(false);
   const [failed, setFailed] = useState(false);
@@ -68,7 +70,7 @@ export function MetricSummaryImage({
       // eslint-disable-next-line @next/next/no-img-element
       <img
         src={url}
-        alt="ESG 定量指标摘要"
+        alt={t.documentNodes.metricSummaryAlt}
         style={{ display: "block", width: "100%", maxWidth, margin: "0 auto" }}
       />
     );
@@ -88,7 +90,7 @@ export function MetricSummaryImage({
         color: "var(--muted-foreground)",
       }}
     >
-      指标图生成中...
+      {t.documentNodes.metricSummaryLoading}
     </div>
   );
 }
