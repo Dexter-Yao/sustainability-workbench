@@ -110,10 +110,10 @@ make verify                             # backend and frontend tests
 Prerequisites: Node 22, uv, Docker and the Supabase CLI — plus LibreOffice if you want table-of-
 contents page numbers computed at export time rather than by the reader. `make doctor` checks them.
 
-**Set aside about 6 GB and 15–30 minutes.** The repository is small (~13 MB), but the container
-images, LibreOffice and the dependency trees are not, and most of that lands outside the project
-directory. [SETUP.md](./SETUP.md) breaks the figure down and lists the two components you can
-skip.
+**Set aside about 5.6 GB and 15–30 minutes.** The repository is small (~13 MB), but the container
+images and dependency trees are not, and most of that lands outside the project directory.
+[SETUP.md](./SETUP.md) breaks the figure down and lists the three optional components —
+LibreOffice, OCR and the test browsers — that you can skip.
 
 Supabase here is **not a cloud account** — `supabase start` runs Postgres, auth and storage in
 local Docker containers on your own machine. Nothing leaves it, and there is nothing to sign up
