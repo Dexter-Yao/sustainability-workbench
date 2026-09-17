@@ -31,9 +31,9 @@ python-docx 不做排版。缺 `soffice` 时导出直接报错。
 | 仓库外 | Supabase 容器镜像（首次 `supabase start` 拉取，7 个） | 3.2 GB |
 | 仓库外 | Supabase 数据卷 | 1.5 GB |
 | 仓库外 | LibreOffice | 800 MB |
-| 仓库内 | `frontend/node_modules` | 560 MB |
-| 仓库内 | `backend/.venv` | 220 MB |
-| 仓库内 | `frontend/.next`（构建产物，随使用增长） | 150 MB 起 |
+| 仓库内 | 前端依赖（npm install 产物） | 560 MB |
+| 仓库内 | 后端虚拟环境（uv sync 产物） | 240 MB |
+| 仓库内 | 前端构建缓存（随使用增长） | 150 MB 起 |
 
 首次安装以网络下载为主，约 **15–30 分钟**，其中拉镜像占大头。
 
