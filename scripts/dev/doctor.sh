@@ -36,6 +36,14 @@ fi
 [[ -d "$HOME/Library/Caches/ms-playwright" || -d "$HOME/.cache/ms-playwright" ]] \
   || echo "提示: 未安装 Playwright 浏览器（约 540 MB），npm run test:e2e 会失败；需要时执行 npx playwright install chromium"
 
+# backend/.env 缺失或未填是最常见的首次运行失败，而它的症状（持久化端点 503）
+# 不会指向原因。这里只查存在与占位符残留，不校验取值本身——真正的取值由后端启动时断言。
+if [[ ! -f backend/.env ]]; then
+  echo "提示: 未找到 backend/.env，持久化接口会返回 503；按 SETUP.md 第 3 步从 backend/.env.example 复制并填写"
+elif grep -qE '^[A-Z_]+=<' backend/.env 2>/dev/null; then
+  echo "提示: backend/.env 里仍有 <...> 占位符未替换，相关功能会失败"
+fi
+
 if [[ "${SUSTAINABILITY_DESK_ENVIRONMENT:-local}" == "production" ]]; then
   echo "本地开发入口拒绝 SUSTAINABILITY_DESK_ENVIRONMENT=production" >&2
   exit 1

@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # ABOUTME: 本机手动验收全栈编排：Supabase 前提检查 + 后端 API + 双 worker + 前端，一条命令起停。
-# ABOUTME: 命令由 Agent 执行、用户只在浏览器操作页面（docs/local-e2e-acceptance.md §9）；worker 在位=真实模型调用。
+# ABOUTME: 起停本机全栈（后端 + 资料/生成 worker + 前端）；worker 在位 = 生成会发真实模型调用。
 #
 # 用法：
 #   scripts/dev/local-acceptance-stack.sh up          # 启动全栈（前端 dev 模式）
@@ -8,7 +8,7 @@
 #   scripts/dev/local-acceptance-stack.sh status      # 各进程与端口探活 + OTLP 后端 上报状态
 #   scripts/dev/local-acceptance-stack.sh down        # 停止全部由本脚本启动的进程
 #
-# 注意事项（与 docs/local-e2e-acceptance.md 对齐）：
+# 注意事项：
 # - 前提：本地 Supabase 栈已运行（54321/54322）；backend/.env 存在且含模型密钥。
 # - 浏览器一律使用 http://localhost:3000（127.0.0.1 需 next.config.ts allowedDevOrigins，已放行但仍以 localhost 为准）。
 # - OTLP 后端 上报：backend/.env 配有 SUSTAINABILITY_DESK_OTLP_TRACES_ENDPOINT/HEADERS 时自动开启；
@@ -16,7 +16,7 @@
 #   本地 JSONL 始终是真相，OTLP 后端 只是镜像；不需要上报时从 backend/.env 移除这两行即可。
 # - worker 在位=真实模型调用：上传资料后点「下一步：资料处理」即开始逐份 File Agent；「生成报告」入队生成。
 # - 新迁移（supabase/migrations/）需已应用到本地库；缺列会在账户/资料接口报 UndefinedColumn。
-# - 验收数据见 docs/local-e2e-acceptance.md「浏览器手动验收」（数据用 scripts/dev/acceptance_data.py prepare 生成）。
+# - 演练数据用 scripts/dev/acceptance_data.py prepare 生成（合成语料，不含真实企业信息）。
 set -euo pipefail
 
 repo_root="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
@@ -128,7 +128,7 @@ cmd_up() {
   for _ in $(seq 1 30); do
     if port_alive "$api_port" "/api/runtime/client-config" && port_alive "$frontend_port" "/login"; then
       say "✓ 全栈就绪：http://localhost:$frontend_port （请用 localhost 访问）"
-      say "  验收数据与流程：docs/local-e2e-acceptance.md「浏览器手动验收」（数据用 scripts/dev/acceptance_data.py prepare 生成）"
+      say "  演练数据：scripts/dev/acceptance_data.py prepare 生成合成语料，可直接在页面上传导入"
       say "  注意：worker 在位——「下一步：资料处理」与「生成报告」会真实消耗模型调用。"
       return
     fi

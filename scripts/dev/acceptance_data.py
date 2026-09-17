@@ -19,7 +19,7 @@
   uv run --directory backend python ../scripts/dev/acceptance_data.py fill <评分模板.xlsx> <定量模板.xlsx>
       workbooks 的手动降级路径：把值填入从页面下载的模板，输出 *-已填写.xlsx。
 
-完整流程与注意事项见 docs/local-e2e-acceptance.md「浏览器手动验收」一节。
+产出可直接在页面上传导入的合成语料；起停全栈见 scripts/dev/local-acceptance-stack.sh。
 """
 from __future__ import annotations
 
@@ -151,7 +151,7 @@ def cmd_prepare(out_dir: Path | None) -> None:
     (out / "05-上传文件说明清单.md").write_text("\n".join(lines), encoding="utf-8")
     (out / "README.md").write_text(
         "本目录由 scripts/dev/acceptance_data.py prepare 生成，可随时重建。\n"
-        "完整验收流程、脚本用法与 trace 定位见 docs/local-e2e-acceptance.md「浏览器手动验收」。\n",
+        "上传后点「下一步：资料处理」，worker 会逐份跑 File Agent（真实模型调用）。\n",
         encoding="utf-8",
     )
     print(f"✓ 验收材料已生成: {out}")

@@ -57,6 +57,19 @@ brew install node uv docker supabase/tap/supabase pandoc
 brew install --cask libreoffice   # 可选：导出时预先算好目录页码
 ```
 
+Linux（Debian / Ubuntu）装法。Supabase CLI 不在发行版仓库里，需单独取：
+
+```bash
+# Node 22：发行版自带的通常偏旧，用 NodeSource
+curl -fsSL https://deb.nodesource.com/setup_22.x | sudo -E bash - && sudo apt install -y nodejs
+curl -LsSf https://astral.sh/uv/install.sh | sh          # uv
+sudo apt install -y docker.io pandoc
+sudo apt install -y libreoffice-writer                   # 可选，且比 macOS 的整套 cask 小得多
+# Supabase CLI：取对应架构的 .deb（版本号见其 Releases 页）
+curl -fsSLO https://github.com/supabase/cli/releases/latest/download/supabase_linux_amd64.deb \
+  && sudo dpkg -i supabase_linux_amd64.deb
+```
+
 装完跑一次检查：
 
 ```bash
