@@ -58,6 +58,19 @@ def toc_includes_heading_level(level: int) -> bool:
     return 1 <= level <= TOC_MAX_HEADING_LEVEL
 
 
+def page_layout_renderer() -> str | None:
+    """可用的版式引擎路径；没装 LibreOffice 时返回 None。
+
+    LibreOffice 只用于**预先算好**目录页码。没有它时交付物仍然有目录：
+    每条目录项是指向同文档书签的 ``PAGEREF`` 域并带 ``dirty`` 标记，Word 与
+    LibreOffice 打开时会自行解析出页码（实测与预计算结果逐条一致）。差别只在
+    「页码是打开前就在那里，还是打开那一刻算出来」——把整套办公套件列为硬依赖
+    来买这点确定性，对自用场景不划算。
+    """
+
+    return shutil.which("soffice") or shutil.which("libreoffice")
+
+
 class TocFinalizationError(RuntimeError):
     """最终 DOCX 无法以真实版式更新目录页码。"""
 
@@ -269,8 +282,10 @@ def _finalize_toc_page_numbers(
 ) -> Path:
     if not document_path.is_file():
         raise TocFinalizationError(f"最终 DOCX 不存在，无法更新目录：{document_path}")
-    executable = renderer or shutil.which("soffice") or shutil.which("libreoffice")
+    executable = renderer or page_layout_renderer()
     if executable is None:
+        # 调用方（render_final_docx）在没有版式引擎时根本不会走到这里；
+        # 显式传了 renderer 却指不到可执行文件仍是硬错误，不静默放行。
         raise TocFinalizationError("未安装 LibreOffice，无法更新最终 Word 目录页码。")
 
     with tempfile.TemporaryDirectory(

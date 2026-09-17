@@ -15,11 +15,13 @@
 | [uv](https://docs.astral.sh/uv/) | Python 依赖与运行 | 后端起不来 |
 | Docker | 跑本机 Supabase 栈 | `supabase start` 失败 |
 | [Supabase CLI](https://supabase.com/docs/guides/cli) | 本机 Postgres + 认证 + 存储 | 无数据库 |
-| LibreOffice | Word 目录页码分页 | **导出必然失败** |
+| LibreOffice（可选） | 导出时预先算好目录页码 | 页码改由阅读器打开时解析 |
 | pandoc（可选） | 重生成合成语料的 docx | 只影响重建语料 |
 
-LibreOffice 不是验收工具而是运行时硬依赖：Word 的目录域页码要靠排版引擎跑一遍分页才算得出，
-python-docx 不做排版。缺 `soffice` 时导出直接报错。
+LibreOffice 只用于**预先算好**目录页码，是增强项不是硬依赖。目录项是指向同文档书签的
+`PAGEREF` 域并带脏标记，Word 与 LibreOffice 打开时会自行解析出页码（实测与预计算逐条一致）。
+差别只在页码是打开前就在那里、还是打开那一刻算出来；要把文档发给外部、希望对方打开即完整时，
+装上它即可。
 
 ### 先看清占多少地方
 
@@ -30,7 +32,7 @@ python-docx 不做排版。缺 `soffice` 时导出直接报错。
 |---|---|---|
 | 仓库外 | Supabase 容器镜像（首次 `supabase start` 拉取，7 个） | 3.2 GB |
 | 仓库外 | Supabase 数据卷 | 1.5 GB |
-| 仓库外 | LibreOffice | 800 MB |
+| 仓库外 | LibreOffice（可选，见上） | 800 MB |
 | 仓库内 | 前端依赖（npm install 产物） | 560 MB |
 | 仓库内 | 后端虚拟环境（uv sync 产物） | 240 MB |
 | 仓库内 | 前端构建缓存（随使用增长） | 150 MB 起 |
@@ -52,7 +54,7 @@ macOS 装法：
 
 ```bash
 brew install node uv docker supabase/tap/supabase pandoc
-brew install --cask libreoffice
+brew install --cask libreoffice   # 可选：导出时预先算好目录页码
 ```
 
 装完跑一次检查：
@@ -156,7 +158,8 @@ SUSTAINABILITY_DESK_CONFIRM_PROVISION_OWNER=YES \
 **点「生成报告」一直在等待** — worker 没起。`./scripts/dev/local-acceptance-stack.sh status`
 确认 `material-worker` 在运行。
 
-**导出报错 `TocFinalizationError`** — 没装 LibreOffice，或 `soffice` 不在 PATH。
+**目录页码显示为 0 或需要刷新** — 没装 LibreOffice 时页码由阅读器打开时解析，属预期；
+装上 LibreOffice 即可在导出时就算好。
 
 **`make verify` 全绿但不确定数据库验过没有** — 见第 4 步。栈没起时持久化用例静默跳过；
 `supabase status` 确认栈在跑，再重跑一次。

@@ -147,10 +147,15 @@
 
 - `hooks/pre-push` 在每次 `git push` 前跑通 `make verify` 全链路，任一段失败即中止推送。
   新 clone 后执行 `make install-hooks` 恢复（等价于 `git config core.hooksPath hooks`）。
-- **LibreOffice 是导出的运行时硬依赖，不只是验收工具。** `export/toc.py` 的
-  `finalize_toc_page_numbers` 在每次导出末尾无条件调用：Word 目录域的页码要靠排版引擎跑一遍分页
-  才算得出，python-docx 不做排版。缺 `soffice` 直接 `TocFinalizationError`。移除它等于交付物
-  没有目录页码，是产品决策而非依赖清理。
+- **LibreOffice 对使用者可选、对改代码的人必需。** `export/toc.py` 的
+  `finalize_toc_page_numbers` 只做一件事：把 docx 渲成 PDF 读出真实页码，回写目录域的展示缓存。
+  没装时 `render_final_docx` 跳过这一步，目录仍可用——每条目录项是指向同文档书签的 `PAGEREF`
+  域并带 `dirty` 标记，Word 与 LibreOffice 打开时自行解析（实测页码与预计算逐条一致）。
+  差别只在页码是打开前就在那里、还是打开那一刻算出来。**但推送前必须装**：预先算好页码
+  那条路径同样要被验证过，pre-push 因此仍按失败处理。
+  改这块时注意两件已验证的事实：交付文档里**没有 `TOC` 域、只有 `PAGEREF`**，故
+  `w:updateFields`（全域刷新，会触发 Word 的外部内容安全提示）既不需要也不该加回来；
+  占位缓存写的是「1」，少了 `dirty` 标记会让每条目录都显示第 1 页——那比报错更糟。
 - **钩子先断言数据库与 LibreOffice 前置，不满足就拒绝推送，这是刻意设计。** 持久化用例在本机
   Supabase 栈未启动时走 `pytest.skip`，Word 导出的视觉验收用例在缺少 `soffice` 时走 skipif；
   二者缺失时 pytest 不报错、只把用例跳过，全绿结果会掩盖「持久化与导出从未被验证」。

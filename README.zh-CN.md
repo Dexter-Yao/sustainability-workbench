@@ -95,7 +95,8 @@ make verify                             # 后端与前端测试
 ./scripts/dev/local-acceptance-stack.sh up   # 一次起后端、worker 与前端
 ```
 
-前置：Node 22、uv、Docker、Supabase CLI、LibreOffice。`make doctor` 会在开始前检查这些。
+前置：Node 22、uv、Docker、Supabase CLI；LibreOffice 可选——装了它，导出时就把目录页码算好，
+不装则由阅读器打开时解析。`make doctor` 会在开始前检查这些。
 
 **请预留约 6 GB 磁盘与 15–30 分钟。** 仓库本身很小（约 13 MB），但容器镜像、LibreOffice
 与依赖树不小，且大部分落在项目目录之外。[安装配置](./SETUP.md) 有逐项明细，并列出两个可以不装的组件。
@@ -110,7 +111,7 @@ Postgres、认证与存储等容器。数据不出本机，也不需要注册任
 | 后端 | Python / FastAPI，Postgres 队列 + 独立 worker |
 | 前端 | Next.js |
 | 存储与认证 | Supabase（Postgres + Auth + Storage） |
-| 导出 | python-docx 渲染，LibreOffice 负责目录页码分页 |
+| 导出 | python-docx 渲染；LibreOffice 可选，用于导出时预算目录页码 |
 | 模型 | 默认 Azure OpenAI；任何 OpenAI 兼容端点都可接入，不需改代码 |
 
 ## 许可

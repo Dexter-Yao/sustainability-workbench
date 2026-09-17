@@ -107,8 +107,8 @@ make verify                             # backend and frontend tests
 ./scripts/dev/local-acceptance-stack.sh up   # starts backend, worker and frontend
 ```
 
-Prerequisites: Node 22, uv, Docker, the Supabase CLI, and LibreOffice. `make doctor` checks all
-of them before you start.
+Prerequisites: Node 22, uv, Docker and the Supabase CLI — plus LibreOffice if you want table-of-
+contents page numbers computed at export time rather than by the reader. `make doctor` checks them.
 
 **Set aside about 6 GB and 15–30 minutes.** The repository is small (~13 MB), but the container
 images, LibreOffice and the dependency trees are not, and most of that lands outside the project
@@ -124,7 +124,7 @@ for.
 Run these in order. Each step either succeeds or fails loudly; do not skip ahead.
 
 ```bash
-make doctor                                  # verifies Node 22+, uv, Docker, Supabase CLI, LibreOffice
+make doctor                                  # verifies Node 22+, uv, Docker, Supabase CLI
 supabase start                               # must finish before any test run
 cp backend/.env.example backend/.env         # then fill JWT_SECRET, SERVICE_ROLE_KEY, ANON_KEY from `supabase status`
                                              # and one model key (Azure OpenAI, or any OpenAI-compatible endpoint)
@@ -149,8 +149,9 @@ Four things that will waste your time if you do not know them:
   the database layer. Start the stack first.
 - **The worker is not optional.** Material processing and report generation are Postgres queues
   consumed by a separate process. Without it the UI works and generation waits forever.
-- **LibreOffice is a runtime dependency, not a test tool.** Word table-of-contents page numbers
-  need a layout engine; python-docx does not paginate. Missing `soffice` means export fails.
+- **LibreOffice is optional.** It only pre-computes table-of-contents page numbers at export
+  time. Without it the TOC still works — each entry is a `PAGEREF` field pointing at a bookmark
+  in the same document, which Word and LibreOffice resolve on open.
 - **Open `http://localhost:3000`, not `127.0.0.1`.** The Next dev server rejects other origins
   and the page stalls on an auth error.
 
@@ -176,7 +177,7 @@ It drives the built-in synthetic corpus through the real input path and renders 
 | Backend | Python / FastAPI, Postgres queue with a separate worker |
 | Frontend | Next.js |
 | Storage & auth | Supabase (Postgres + Auth + Storage) |
-| Export | python-docx for rendering, LibreOffice for table-of-contents pagination |
+| Export | python-docx for rendering; LibreOffice optionally pre-computes TOC page numbers |
 | Models | Azure OpenAI by default; any OpenAI-compatible endpoint works without code changes |
 
 ## Licence

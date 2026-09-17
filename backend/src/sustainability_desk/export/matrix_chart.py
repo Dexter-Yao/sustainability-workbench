@@ -1,7 +1,7 @@
-# ABOUTME: 双重重要性矩阵图渲染——据评估得分生成 PNG（matplotlib + adjustText 自动避让标签并加引线）。
+# ABOUTME: 双重重要性矩阵图渲染——据评估得分生成 PNG（matplotlib 绘图，标签避让与引线自实现）。
 # ABOUTME: 得分仅用于画图，绝不进入任何模型 prompt（LLM 上下文边界）；十字取阈值并置于几何中心，四象限等面积。
 # ABOUTME: visible_materialities 仅供交互预览按分类过滤散点；Word 导出调用不传参，始终完整渲染。
-# ABOUTME(en): Double materiality matrix rendering — a PNG from assessment scores (matplotlib plus adjustText labels).
+# ABOUTME(en): Double materiality matrix rendering — a PNG from assessment scores; label spreading is our own.
 # ABOUTME(en): Scores are used only for drawing and never enter any model prompt; quadrants are equal-area on the axes.
 from __future__ import annotations
 
@@ -14,7 +14,6 @@ import matplotlib
 matplotlib.use("Agg")
 
 import matplotlib.pyplot as plt  # noqa: E402 — 必须在 use("Agg") 之后导入
-from adjustText import adjust_text  # noqa: E402
 from matplotlib.patches import Rectangle  # noqa: E402
 
 from sustainability_desk.contract.models import (  # noqa: E402
@@ -65,7 +64,7 @@ def render_materiality_matrix(
     """据评估结果渲染双重重要性矩阵 PNG（横轴财务、纵轴影响）。
 
     十字线取分类阈值并置于几何中心，使四象限等面积、各议题落入其所属象限；议题按得分散点，
-    名称经 adjustText 自动避让并按需加引线，全部约束在绘图区内。得分仅用于画图，绝不进入 prompt。
+    名称经 _spread_labels 自动避让并按需加引线，全部约束在绘图区内。得分仅用于画图，绝不进入 prompt。
 
     ``visible_materialities`` 为视图级过滤：仅散点与标签按分类筛选，坐标尺度仍以全量评分议题为准，
     过滤视图与完整图同轴同象限；分类直接取评估结果自带 materiality（权威解析结果），不在此重算。
@@ -140,18 +139,73 @@ def render_materiality_matrix(
     ax.set_ylabel(axes.impact, fontsize=12, labelpad=12)
 
     # 自动避让标签 + 引线；约束在坐标区内，避免标签压轴或出象限。
-    if texts:
-        adjust_text(
-            texts,
-            x=[f for f, _ in pts],
-            y=[i for _, i in pts],
-            ax=ax,
-            arrowprops=dict(arrowstyle="-", color=_LEADER_GRAY, lw=0.6),
-            expand=(1.3, 1.5),
-            ensure_inside_axes=True,
-        )
+    _spread_labels(fig, ax, texts, pts, bounds=(lo_f, hi_f, lo_i, hi_i))
 
     buf = BytesIO()
     fig.savefig(buf, format="png", dpi=150, bbox_inches="tight", transparent=True)
     plt.close(fig)
     return buf.getvalue()
+
+
+def _spread_labels(fig, ax, texts, pts, *, bounds: tuple[float, float, float, float]) -> None:
+    """把重叠的议题标签沿纵向推开，并为移动过的标签补一条引线。
+
+    自己做而不用 adjustText：后者只有 100 KB，却依赖 scipy——为一张图的标签排布
+    拖进 70 MB 科学计算库，是整个依赖树里体积与价值最失衡的一处。这里用像素空间的
+    迭代位移达到同类效果：取 matplotlib 自己的文本范围（无需额外依赖），逐轮把相撞的
+    标签上下推开，越界则夹回坐标区内。
+
+    与 adjustText 的差别诚实说明：它是力导向迭代、收敛更好；此处以纵向位移为主、
+    横向重叠时补一点错列，极密集时排布略逊。对二十余个议题的矩阵图实测足够。
+    """
+
+    if not texts:
+        return
+
+    lo_f, hi_f, lo_i, hi_i = bounds
+    # 文本范围要等渲染器就位才准；此处强制一次绘制，取得真实像素外框。
+    fig.canvas.draw()
+    renderer = fig.canvas.get_renderer()
+
+    def extent(text):
+        return text.get_window_extent(renderer=renderer)
+
+    pad = 2.0  # 像素；两标签之间至少留出的空隙
+    for _ in range(60):
+        boxes = [extent(t) for t in texts]
+        order = sorted(range(len(texts)), key=lambda k: boxes[k].y0)
+        moved = False
+        for a_index, b_index in zip(order, order[1:]):
+            a, b = boxes[a_index], boxes[b_index]
+            overlap_y = (a.y1 + pad) - b.y0
+            if overlap_y <= 0 or a.x1 <= b.x0 or b.x1 <= a.x0:
+                continue  # 纵向不相撞，或横向本就错开
+            shift = overlap_y / 2.0
+            # 横向重叠越多，纵向推开越吃力；此时同时给一点横向位移，让两条标签错列。
+            overlap_x = min(a.x1, b.x1) - max(a.x0, b.x0)
+            nudge_x = overlap_x / 4.0 if overlap_x > 0 else 0.0
+            for index, direction in ((a_index, -1.0), (b_index, 1.0)):
+                x_data, y_data = texts[index].get_position()
+                x_pixel, y_pixel = ax.transData.transform((x_data, y_data))
+                x_new, y_new = ax.transData.inverted().transform(
+                    (x_pixel + direction * nudge_x, y_pixel + direction * shift)
+                )
+                texts[index].set_position(
+                    (min(max(x_new, lo_f), hi_f), min(max(y_new, lo_i), hi_i))
+                )
+            moved = True
+        if not moved:
+            break
+
+    # 标签被推离原点时补引线；未移动的不画，避免图上出现零长线段。
+    for text, (x_point, y_point) in zip(texts, pts):
+        x_label, y_label = text.get_position()
+        if abs(y_label - y_point) < (hi_i - lo_i) * 0.004:
+            continue
+        ax.annotate(
+            "",
+            xy=(x_point, y_point),
+            xytext=(x_label, y_label),
+            arrowprops=dict(arrowstyle="-", color=_LEADER_GRAY, lw=0.6),
+            zorder=4,
+        )

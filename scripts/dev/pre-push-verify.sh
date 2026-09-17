@@ -39,6 +39,9 @@ if ! command -v soffice >/dev/null 2>&1 && ! command -v libreoffice >/dev/null 2
    Word 导出的视觉验收用例会静默 skip。Word 导出保真是一级风险，
    不接受「未验证」冒充「已通过」。
 
+   注意：LibreOffice 对**使用者**是可选的（没装则目录页码由阅读器打开时解析），
+   但对**改代码的人**是必需的——预先算好页码这条路径同样要被验证过才能推送。
+
    安装后再推送：  brew install --cask libreoffice
 HINT
   exit 1

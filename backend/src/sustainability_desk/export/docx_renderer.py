@@ -38,7 +38,11 @@ from sustainability_desk.contract.report_values import display_report_ref
 from sustainability_desk.contract.section_number import number_sections
 from sustainability_desk.contract.visibility import assessment_value, visible
 from sustainability_desk.export.media import prune_unused_media
-from sustainability_desk.export.toc import finalize_toc_page_numbers, toc_includes_heading_level
+from sustainability_desk.export.toc import (
+    finalize_toc_page_numbers,
+    page_layout_renderer,
+    toc_includes_heading_level,
+)
 from sustainability_desk.export.figure_projection import FigureKind, FigureNumbering, FigureSpec
 from sustainability_desk.export.footnotes import add_footnote
 from sustainability_desk.export.format_profile import WordFormatProfile, load_format_profile, rgb
@@ -1536,6 +1540,11 @@ def _refresh_toc_cache(doc) -> None:
         begin_run = OxmlElement("w:r")
         begin = OxmlElement("w:fldChar")
         begin.set(qn("w:fldCharType"), "begin")
+        # 标记为脏：下面写入的展示缓存只是占位的「1」，阅读器打开时据书签重算真实页码。
+        # 装了 LibreOffice 时 finalize_toc_page_numbers 会写入实算页码并清掉本标记
+        # （交付给外部时页码即已冻结）；没装则保留，由 Word / LibreOffice 自行解析——
+        # PAGEREF 指向同文档内的书签，不是外部引用，不触发 Word 的外部内容安全提示。
+        begin.set(qn("w:dirty"), "true")
         begin_run.append(begin)
         paragraph.append(begin_run)
         instruction_run = OxmlElement("w:r")
@@ -1756,7 +1765,11 @@ def render_final_docx(
         standards_compliance_notice=standards_compliance_notice,
         figure_specs_out=figure_specs_out,
     )
-    finalize_toc_page_numbers(output, profile=format_profile_for(report))
+    # 装了 LibreOffice 就把页码预先算好并冻结（交付给外部时打开即完整）；没装则保留
+    # PAGEREF 的 dirty 标记，由阅读器打开时据书签自行解析。两条路径都给出目录与页码，
+    # 差别只在算的时机——故版式引擎是增强项而非硬依赖，不为这点确定性要求整套办公套件。
+    if page_layout_renderer() is not None:
+        finalize_toc_page_numbers(output, profile=format_profile_for(report))
     return output
 
 

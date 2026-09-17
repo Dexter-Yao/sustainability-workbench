@@ -4,7 +4,6 @@ version = "0.1.0"
 description = "可持续披露报告编制工作台后端"
 requires-python = ">=3.12"
 dependencies = [
-    "adjusttext>=1.4.0",
     "asyncpg>=0.31.0",
     "cryptography>=49.0.0",
     "fastapi>=0.137.1",

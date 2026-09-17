@@ -1,6 +1,7 @@
 # ABOUTME: schema→docx 渲染器测试——前四章实例渲染、标题分级、字段填值、条件显隐、无残留。
 from datetime import datetime, timezone
 import re
+from unittest.mock import patch
 from zipfile import ZipFile
 
 from docx import Document
@@ -1277,3 +1278,32 @@ def test_every_delivery_variant_carries_ai_disclosure_on_cover_and_in_metadata(
         assert "测试企业股份有限公司-2025" in comments
         # 内部标识不进交付物：编号由封面可见事实派生，不含 report_id。
         assert "report_id" not in comments
+
+
+def test_toc_page_numbers_resolve_without_a_layout_engine(base_template, out_dir):
+    """没装 LibreOffice 时导出仍给出可用目录：PAGEREF 带 dirty 标记由阅读器自算页码。
+
+    LibreOffice 曾是硬依赖，只为**预先算好**目录页码——缺它直接 TocFinalizationError。
+    对自用场景，为这点确定性要求一整套 800 MB 办公套件不划算：目录项是指向同文档书签的
+    PAGEREF 域，Word 与 LibreOffice 打开时会自行解析（实测页码与预计算结果逐条一致）。
+
+    本用例钉住降级路径的两个前提：缺引擎时不抛错，且域上留有 dirty 标记——
+    少了标记，阅读器会把占位的「1」当成已算好的页码，于是每条目录都显示第 1 页，
+    那比报错更糟：它看起来是对的。
+    """
+    import sustainability_desk.export.docx_renderer as renderer_module
+
+    report = _ai_disclosure_report()
+    out_path = out_dir / "no-layout-engine.docx"
+
+    with patch.object(renderer_module, "page_layout_renderer", return_value=None):
+        renderer_module.render_final_docx(report, base_template, out_path)
+
+    with ZipFile(out_path) as archive:
+        document_xml = archive.read("word/document.xml").decode("utf-8")
+
+    page_refs = re.findall(r"PAGEREF GS_TOC", document_xml)
+    assert page_refs, "目录项应带 PAGEREF 域"
+    assert document_xml.count('w:dirty="true"') >= len(page_refs), (
+        "每个目录 PAGEREF 都要带 dirty 标记，否则阅读器会沿用占位页码"
+    )

@@ -14,15 +14,12 @@ if (( node_major < 22 )); then
   exit 1
 fi
 
-# LibreOffice 是导出的运行时硬依赖，不是验收工具：Word 目录页码要靠排版引擎跑一遍分页
-# 才算得出，python-docx 不做排版，故 finalize_toc_page_numbers 在每次导出末尾无条件调用，
-# 缺 soffice 直接 TocFinalizationError。这里与 pre-push 一致按失败处理，不降级为提示——
-# 提示会让用户一路装到「生成成功、导出失败」才发现。
-if ! command -v soffice >/dev/null 2>&1 && ! command -v libreoffice >/dev/null 2>&1; then
-  echo "缺少 LibreOffice（soffice）：Word 导出的运行时依赖，缺它导出必然失败" >&2
-  echo "  macOS 安装： brew install --cask libreoffice" >&2
-  exit 1
-fi
+# LibreOffice 只用于**预先算好**目录页码，是增强项不是硬依赖：目录项是指向同文档书签的
+# PAGEREF 域并带 dirty 标记，Word 与 LibreOffice 打开时会自行解析出页码（实测与预计算
+# 结果逐条一致）。差别只在页码是打开前就在那里、还是打开那一刻算出来。故此处是提示级——
+# 为这点确定性要求用户装一整套 800 MB 办公套件，对自用场景不划算。
+command -v soffice >/dev/null 2>&1 || command -v libreoffice >/dev/null 2>&1 \
+  || echo "提示: 未安装 LibreOffice（约 800 MB），Word 目录页码改由阅读器打开时解析；需要导出即冻结页码时 brew install --cask libreoffice"
 # pandoc 只用于重生成合成语料的 docx 派生产物，不在产品运行路径上，故保持提示级。
 command -v pandoc >/dev/null 2>&1 \
   || echo "提示: 未找到 pandoc，晟原语料的 docx 派生产物无法重生成（不影响产品运行）"
