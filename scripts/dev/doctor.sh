@@ -1,66 +1,69 @@
 #!/usr/bin/env bash
-# ABOUTME: 本地开发前置检查，只验证工具、本机栈端口和环境标识，不读取或打印密钥。
-# ABOUTME: 任何失败均明确退出，避免带着错误环境继续启动服务。
+# ABOUTME: Local development preflight — checks tools, local stack ports and the environment label only.
+# ABOUTME: Never reads or prints secrets. Any hard failure exits, so nothing starts against a wrong environment.
+# ABOUTME(zh): 本地开发前置检查；输出为英文，与产品界面语言无关——它是给装机者看的工具信息。
 set -euo pipefail
 
 required=(node npm uv docker supabase curl)
 for command_name in "${required[@]}"; do
-  command -v "$command_name" >/dev/null || { echo "缺少命令: $command_name" >&2; exit 1; }
+  command -v "$command_name" >/dev/null || { echo "Missing command: $command_name" >&2; exit 1; }
 done
 
 node_major="$(node -p 'process.versions.node.split(".")[0]')"
 if (( node_major < 22 )); then
-  echo "Node.js 需要 22 或以上，当前为 $(node --version)" >&2
+  echo "Node.js 22 or newer is required; found $(node --version)" >&2
   exit 1
 fi
 
-# LibreOffice 只用于**预先算好**目录页码，是增强项不是硬依赖：目录项是指向同文档书签的
-# PAGEREF 域并带 dirty 标记，Word 与 LibreOffice 打开时会自行解析出页码（实测与预计算
-# 结果逐条一致）。差别只在页码是打开前就在那里、还是打开那一刻算出来。故此处是提示级——
-# 为这点确定性要求用户装一整套 800 MB 办公套件，对自用场景不划算。
+# LibreOffice only pre-computes table-of-contents page numbers, so it is an enhancement rather than
+# a hard dependency: each entry is a PAGEREF field pointing at a bookmark in the same document and
+# carries a dirty flag, which Word and LibreOffice resolve on open (measured identical to the
+# pre-computed numbers, entry by entry). The only difference is whether the number is already there
+# or is computed as the document opens — not worth demanding a whole 800 MB office suite.
 command -v soffice >/dev/null 2>&1 || command -v libreoffice >/dev/null 2>&1 \
-  || echo "提示: 未安装 LibreOffice（约 800 MB），Word 目录页码改由阅读器打开时解析；需要导出即冻结页码时 brew install --cask libreoffice"
-# pandoc 只用于重生成合成语料的 docx 派生产物，不在产品运行路径上，故保持提示级。
+  || echo "Note: LibreOffice is not installed (~800 MB). Word TOC page numbers will be resolved by the reader on open; install it if you want them frozen at export time."
+# pandoc only regenerates the .docx derivatives of the synthetic corpus; not on the product path.
 command -v pandoc >/dev/null 2>&1 \
-  || echo "提示: 未找到 pandoc，晟原语料的 docx 派生产物无法重生成（不影响产品运行）"
+  || echo "Note: pandoc not found. The .docx derivatives of the synthetic corpus cannot be rebuilt (the product itself is unaffected)."
 
-# 以下两项都是按需安装的可选组件，缺失不影响主链，但缺了又没人提醒时
-# 用户会撞上一个没有指引的失败 + 一次意外的大体积下载，故在此如实报出。
-# 探测**项目 venv**而非系统 python：OCR 装在 backend/.venv 里，用系统解释器判断会
-# 对每个用户都误报「未安装」——一条恒假的提示比没有提示更糟。venv 尚未创建时跳过本项，
-# 那种情况下用户还没跑过 uv sync，提示 OCR 没有意义。
+# Both of the following are install-on-demand; missing them does not break the main flow, but with
+# nobody to say so the user hits an unguided failure plus an unannounced large download.
+# Probe the PROJECT venv, not the system interpreter: OCR installs into backend/.venv, so checking
+# system Python would warn every user forever — a permanently false note is worse than none.
+# Skip entirely when the venv does not exist yet; at that point the user has not run uv sync.
 if [[ -x "backend/.venv/bin/python" ]]; then
   backend/.venv/bin/python -c "import importlib.util,sys; sys.exit(0 if importlib.util.find_spec('rapidocr') else 1)" >/dev/null 2>&1 \
-    || echo "提示: 未安装 OCR 组件（约 220 MB），扫描成图片的 PDF 无法识别；需要时执行 uv sync --extra ocr"
+    || echo "Note: OCR components are not installed (~220 MB). Scanned (image-only) PDFs cannot be read; run 'uv sync --extra ocr' when you need them."
 fi
 [[ -d "$HOME/Library/Caches/ms-playwright" || -d "$HOME/.cache/ms-playwright" ]] \
-  || echo "提示: 未安装 Playwright 浏览器（约 540 MB），npm run test:e2e 会失败；需要时执行 npx playwright install chromium"
+  || echo "Note: Playwright browsers are not installed (~540 MB). 'npm run test:e2e' will fail; run 'npx playwright install chromium' when you need it."
 
-# backend/.env 缺失或未填是最常见的首次运行失败，而它的症状（持久化端点 503）
-# 不会指向原因。这里只查存在与占位符残留，不校验取值本身——真正的取值由后端启动时断言。
+# A missing or unfilled backend/.env is the most common first-run failure, and its symptom
+# (503 from persistence endpoints) does not point at the cause. Only existence and leftover
+# placeholders are checked here; the values themselves are asserted by the backend at startup.
 if [[ ! -f backend/.env ]]; then
-  echo "提示: 未找到 backend/.env，持久化接口会返回 503；按 SETUP.md 第 3 步从 backend/.env.example 复制并填写"
+  echo "Note: backend/.env not found. Persistence endpoints will return 503 — copy backend/.env.example and fill it in (SETUP.md step 3)."
 elif grep -qE '^[A-Z_]+=<' backend/.env 2>/dev/null; then
-  echo "提示: backend/.env 里仍有 <...> 占位符未替换，相关功能会失败"
+  echo "Note: backend/.env still contains <...> placeholders; the features that read them will fail."
 fi
 
 if [[ "${SUSTAINABILITY_DESK_ENVIRONMENT:-local}" == "production" ]]; then
-  echo "本地开发入口拒绝 SUSTAINABILITY_DESK_ENVIRONMENT=production" >&2
+  echo "The local development entry point refuses SUSTAINABILITY_DESK_ENVIRONMENT=production" >&2
   exit 1
 fi
 if [[ "${SUSTAINABILITY_DESK_SUPABASE_PROJECT:-sustainability-desk-local}" != "sustainability-desk-local" ]]; then
-  echo "本地开发必须使用 sustainability-desk-local（本机 Supabase 栈）" >&2
+  echo "Local development must use the sustainability-desk-local Supabase stack" >&2
   exit 1
 fi
 
 if ! nc -z 127.0.0.1 54322 >/dev/null 2>&1; then
-  echo "提示: 本机 Supabase 栈未启动（127.0.0.1:54322 不可达），先执行 supabase start"
+  echo "Note: the local Supabase stack is not running (127.0.0.1:54322 unreachable). Run 'supabase start' first."
 fi
 
 for port in 3000 8010; do
   if lsof -nP -iTCP:"$port" -sTCP:LISTEN >/dev/null 2>&1; then
-    echo "提示: 端口 $port 已有监听进程"
+    echo "Note: port $port already has a listener"
   fi
 done
 
-echo "本地开发前置检查通过"
+echo "Local development preflight passed"
