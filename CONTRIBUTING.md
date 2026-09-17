@@ -20,10 +20,14 @@ whether I will merge it.
 ## Before you submit
 
 ```bash
-supabase start      # first — persistence tests skip silently without it and the suite lies
+make supabase-up    # first — persistence tests skip silently without it and the suite lies
 make verify         # backend pytest + frontend test/lint/build
-uv run --project backend ruff check src tests
 ```
+
+There is deliberately no lint step here: the repository pins no `ruff` version and carries no
+`[tool.ruff]` config, so "clean" would mean whatever version you happened to resolve (0.12 passes,
+0.16 reports hundreds of findings from rules this project never adopted). Adding it properly means
+pinning a version, writing the config and clearing the backlog — worth doing, but as its own change.
 
 `make install-hooks` wires `make verify` into pre-push.
 

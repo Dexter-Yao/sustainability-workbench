@@ -9,13 +9,13 @@ a regulator did. Either way the work is the same: it reads your policies, record
 and reported figures, drafts the report section by section against a disclosure standard, and
 exports to Word. Three rule sets ship today — Shanghai Stock Exchange (Simplified Chinese),
 HKEX (Traditional Chinese), HKEX (English) — and they serve as the structure whether or not you
-are listed.
+are listed. (A fourth package, GRI, sits in the repository sealed and unselectable; see below.)
 
 It drafts; it does not assure. What comes out is a draft for professional review — not an
 assurance opinion, not a compliance guarantee. Someone still has to read it and sign it off.
 
-**[简体中文](./README.zh-CN.md)** · [Architecture](./docs/architecture.md) ·
-[Setup](./SETUP.md) · [Handbook](./docs/handbook/README.md)
+**[简体中文](./README.zh-CN.md)** · [Setup](./SETUP.md) ·
+[Architecture](./docs/architecture.md) (Chinese) · [Handbook](./docs/handbook/README.md) (Chinese)
 
 ## Why not just hand the files to an LLM
 
@@ -107,7 +107,7 @@ Paragraph-by-paragraph revision is optional and sits between drafting and the ga
 inputs only company basics is required; the rest may be left empty, and the system adjusts what
 it writes rather than inventing filler.
 
-Full detail in [docs/architecture.md](./docs/architecture.md).
+Full detail in [docs/architecture.md](./docs/architecture.md) (written in Chinese).
 
 Rules and language live in **knowledge packages** — one package per rule set per language.
 Adding an exchange or a language means adding a package, not changing the generation pipeline.
@@ -124,12 +124,13 @@ make verify                             # backend and frontend tests
 ```
 
 Prerequisites: Node 22, uv, Docker and the Supabase CLI — plus LibreOffice if you want table-of-
-contents page numbers computed at export time rather than by the reader. `make doctor` checks them.
+contents page numbers computed at export time rather than by the reader. `make doctor` requires the
+four, and notes the optional ones.
 
 **Set aside about 2.5 GB and 10–15 minutes.** The repository is small (~13 MB), but the container
 images and dependency trees are not, and most of that lands outside the project directory.
 [SETUP.md](./SETUP.md) breaks the figure down and lists the three optional components —
-LibreOffice, OCR and the test browsers — that you can skip.
+LibreOffice, OCR and the Playwright browsers — that you can skip.
 
 Supabase here is **not a cloud account** — it runs Postgres and auth in local Docker containers
 on your own machine. Nothing leaves it, and there is nothing to sign up
@@ -175,13 +176,13 @@ No account can be created from the UI — sign-up is deliberately closed, so
 `make provision-owner` is the only path to the first login.
 
 Working on the code: read [CLAUDE.md](./CLAUDE.md) first (rules, invariants, what not to
-change), then [docs/architecture.md](./docs/architecture.md). `AGENTS.md` is a byte-identical
+change), then [docs/architecture.md](./docs/architecture.md) (Chinese). `AGENTS.md` is a byte-identical
 copy for tools that look for that name.
 
 Verify a change end to end without calling any model:
 
 ```bash
-uv run --project backend pytest tests/test_local_e2e_fixture_corpora.py
+cd backend && uv run pytest tests/test_local_e2e_fixture_corpora.py
 ```
 
 It drives the built-in synthetic corpus through the real input path and renders a Word file.
@@ -196,7 +197,7 @@ It drives the built-in synthetic corpus through the real input path and renders 
 | Export | python-docx for rendering; LibreOffice optionally pre-computes TOC page numbers |
 | Models | Azure OpenAI by default; any OpenAI-compatible endpoint works without code changes |
 
-## Licence
+## License
 
 MIT. See [LICENSE](./LICENSE).
 

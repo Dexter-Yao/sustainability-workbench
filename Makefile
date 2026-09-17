@@ -9,11 +9,10 @@ install-hooks:
 doctor:
 	@bash scripts/dev/doctor.sh
 
-# 起本机 Supabase 栈，并排除本产品用不到的三个服务（共约 900 MB 镜像）：
+# 起本机 Supabase 栈，并排除本产品用不到的三个服务（共约 1.3 GB 镜像）：
 #   postgrest — 全仓零 /rest/v1 调用，后端一律 asyncpg 直连
 #   mailpit   — 从不发信：首个账号由 provision_owner_account 以 email_confirm=True 建，
 #               且 config.toml 的 enable_confirmations=false
-#   realtime  — 已在 config.toml 关闭（前端只用 supabase-js 的认证部分）
 #   storage-api — 私有对象默认存本机磁盘（persistence/local_storage_transport.py）；
 #               产品对它的全部用法只有写、读、删三件事，文件系统本来就做。
 #               要把对象放回 Supabase：清空 SUSTAINABILITY_DESK_LOCAL_STORAGE_ROOT

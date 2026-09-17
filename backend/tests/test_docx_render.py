@@ -8,6 +8,7 @@ from docx import Document
 from docx.oxml.ns import qn
 
 from sustainability_desk.contract.loader import load_contract
+from sustainability_desk.export.toc import page_layout_renderer
 from sustainability_desk.contract.models import (
     CustomEngagementMethod,
     ExternalAssuranceReport,
@@ -98,10 +99,16 @@ def test_render_full_instance(template_docx, sample_values_yaml, out_dir):
             rels = archive.read(name).decode("utf-8")
             assert 'TargetMode="External"' not in rels, name
         assert "word/charts/chart1.xml" not in archive.namelist()
-        # 目录的页码已在最终版式完成后写入展示缓存。交付件禁止 Word 打开时
-        # 刷新字段，否则会弹出“字段可能引用其他文件”的通用安全提示。
+        # 交付件一律禁止 Word 打开时刷新**全部**字段：那会弹出“字段可能引用其他
+        # 文件”的通用安全提示。目录项的 PAGEREF 指向同文档书签，不在此列。
         assert "w:updateFields" not in settings_xml
-        assert 'w:dirty="true"' not in document_xml
+        # 装了版式引擎时页码已写进展示缓存并清掉脏标记；没装则保留脏标记，
+        # 由阅读器打开时据书签自行解析。两种都是正确终态，故按可用性断言——
+        # 写死其中一种会让这条用例在另一种环境里假失败。
+        if page_layout_renderer() is not None:
+            assert 'w:dirty="true"' not in document_xml
+        else:
+            assert 'w:dirty="true"' in document_xml
     sdts = doc.element.body.findall(qn("w:sdt"))
     toc_sdt = next(
         sdt

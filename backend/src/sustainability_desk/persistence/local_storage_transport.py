@@ -15,10 +15,10 @@ from sustainability_desk.persistence.settings import PersistenceSettings
 class LocalStorageTransport:
     """把私有对象存在本机磁盘上，接口与 Supabase Storage transport 一致。
 
-    存在的理由是体积：storage-api 镜像约 818 MB，而本产品对它的全部用法只有
-    「写一个对象、读回来、删掉」三件事——对自用安装来说，这三件事文件系统本来就做。
-    报告交付物（Word）本就落本地盘（`report_artifact_root`），资料对象走同一形态
-    只是把最后一处外部依赖收回来。
+    存在的理由：本产品对对象存储的全部用法只有「写一个对象、读回来、删掉」三件事，
+    而这三件事文件系统本来就做——为此多跑一个服务，对自用安装不划算（具体体积见
+    SETUP，不写进代码：镜像会升版，写死的数字注定过期）。报告交付物（Word）本就落
+    本地盘（`report_artifact_root`），资料对象走同一形态只是把最后一处外部依赖收回来。
 
     两种 transport 的方法签名刻意逐字对齐（create / read / delete），调用方
     `MaterialStorageClient` 因此不需要知道自己在跟谁说话。

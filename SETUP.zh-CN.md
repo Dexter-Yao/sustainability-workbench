@@ -36,7 +36,7 @@ LibreOffice 只用于**预先算好**目录页码，是增强项不是硬依赖�
 | 仓库外 | Supabase 数据卷 | 80 MB |
 | 仓库外 | LibreOffice（可选，见上） | 800 MB |
 | 仓库内 | 前端依赖（npm install 产物） | 560 MB |
-| 仓库内 | 后端虚拟环境（uv sync 产物） | 170 MB |
+| 仓库内 | 后端虚拟环境（全新 `uv sync`） | 170 MB |
 | 仓库内 | 前端构建缓存（随使用增长） | 150 MB 起 |
 
 首次安装以网络下载为主，约 **15–30 分钟**，其中拉镜像占大头。
@@ -52,8 +52,9 @@ LibreOffice 只用于**预先算好**目录页码，是增强项不是硬依赖�
 
 需要数据库管理界面时，把 `supabase/config.toml` 的 `[studio] enabled` 改回 `true` 再重起栈。
 
-两项**默认不装**，需要时再说：
+三项**可选**，需要时再装：
 
+- **LibreOffice**：见上；不装则目录页码由阅读器打开时解析。
 - **扫描件 OCR**（约 220 MB）：`uv sync --extra ocr`。不装时文字版 PDF、Word、Excel 照常解析，
   只有**扫描成图片的 PDF** 会明确报错提示缺该组件，不会静默跳过。
 - **Playwright 浏览器**（约 540 MB）：只有跑 `npm run test:e2e` 才需要，
@@ -91,8 +92,8 @@ make doctor
 make supabase-up
 ```
 
-用这个目标而不是裸敲 `supabase start`：有两项排除是命令行参数、不是持久化配置，
-手敲会把约 900 MB 用不到的服务又拉起来。
+用这个目标而不是裸敲 `supabase start`：有三项排除是命令行参数、不是持久化配置，
+手敲会把约 1.3 GB 用不到的服务又拉起来。
 
 首次运行要拉约 1.5 GB 镜像，按网络情况 5–10 分钟；之后再起是秒级。
 完成后 `supabase status` 会打印一组连接参数，下一步要用。
@@ -104,6 +105,8 @@ cp backend/.env.example backend/.env
 ```
 
 然后按 `supabase status` 的输出填三个值：
+
+`SUSTAINABILITY_DESK_` 是本项目的技术标识，刻意与产品名无关——这样改产品名不会打断任何人的配置。
 
 | `.env` 里的变量 | 取 `supabase status` 的哪一项 |
 |---|---|

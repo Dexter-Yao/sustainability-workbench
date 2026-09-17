@@ -38,7 +38,7 @@ project folder will never show it:
 | Outside the repo | Supabase container images (3, pulled on first start) | 1.5 GB |
 | Outside the repo | Supabase data volumes | 80 MB |
 | In the repo | Frontend dependencies (npm install output) | 560 MB |
-| In the repo | Backend virtualenv (uv sync output) | 170 MB |
+| In the repo | Backend virtualenv (fresh `uv sync`) | 170 MB |
 | In the repo | Frontend build cache (grows with use) | 150 MB+ |
 
 The first install is mostly network transfer: roughly **15–30 minutes**, dominated by the image pull.
@@ -58,7 +58,7 @@ To keep uploaded files in Supabase Storage instead, clear
 If you want the database admin UI, set `[studio] enabled` back to `true` in `supabase/config.toml`
 and restart the stack.
 
-Three more are **not installed by default**:
+Three components are **optional** — install them only when you need what they do:
 
 - **LibreOffice** (~800 MB): see above.
 - **Scanned-document OCR** (~220 MB): `uv sync --extra ocr`. Without it, text-based PDF, Word and
@@ -100,9 +100,9 @@ make doctor
 make supabase-up
 ```
 
-Use this target rather than a bare `supabase start`: two of the exclusions are command-line
+Use this target rather than a bare `supabase start`: three of the exclusions are command-line
 arguments rather than stored config, so typing `supabase start` by hand quietly pulls and runs
-about 900 MB of services nothing here uses.
+about 1.3 GB of services nothing here uses.
 
 The first run pulls about 1.5 GB of images — 5–10 minutes depending on your connection; later
 starts take seconds. When it finishes, `supabase status` prints the connection values used next.
@@ -114,6 +114,9 @@ cp backend/.env.example backend/.env
 ```
 
 Then fill in three values from the `supabase status` output:
+
+The `SUSTAINABILITY_DESK_` prefix is the project's technical identifier and is deliberately
+independent of the product name, so that renaming the product never breaks anyone's configuration.
 
 | Variable in `.env` | Which `supabase status` field |
 |---|---|
