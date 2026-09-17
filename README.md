@@ -166,9 +166,8 @@ Four things that will waste your time if you do not know them:
   the database layer. Start the stack first.
 - **The worker is not optional.** Material processing and report generation are Postgres queues
   consumed by a separate process. Without it the UI works and generation waits forever.
-- **LibreOffice is optional.** It only pre-computes table-of-contents page numbers at export
-  time. Without it the TOC still works — each entry is a `PAGEREF` field pointing at a bookmark
-  in the same document, which Word and LibreOffice resolve on open.
+- **LibreOffice is optional.** Without it the table of contents still works; its page numbers are
+  resolved by whatever opens the document rather than fixed at export.
 - **Open `http://localhost:3000`, not `127.0.0.1`.** The Next dev server rejects other origins
   and the page stalls on an auth error.
 

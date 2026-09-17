@@ -24,10 +24,8 @@ make supabase-up    # first — persistence tests skip silently without it and t
 make verify         # backend pytest + frontend test/lint/build
 ```
 
-There is deliberately no lint step here: the repository pins no `ruff` version and carries no
-`[tool.ruff]` config, so "clean" would mean whatever version you happened to resolve (0.12 passes,
-0.16 reports hundreds of findings from rules this project never adopted). Adding it properly means
-pinning a version, writing the config and clearing the backlog — worth doing, but as its own change.
+There is no lint step: the repository pins no linter version and carries no lint config, so there
+is no standard to be clean against yet.
 
 `make install-hooks` wires `make verify` into pre-push.
 

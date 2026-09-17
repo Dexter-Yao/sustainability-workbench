@@ -21,11 +21,9 @@ Platform: macOS or Linux (the preflight script uses `nc` and `lsof`).
 | LibreOffice (optional) | Pre-computes TOC page numbers at export | Page numbers are resolved by the reader on open |
 | pandoc (optional) | Rebuilds the .docx derivatives of the synthetic corpus | Only affects rebuilding that corpus |
 
-LibreOffice is an enhancement, not a hard dependency. Each table-of-contents entry is a `PAGEREF`
-field pointing at a bookmark in the same document, carrying a dirty flag; Word and LibreOffice
-resolve the page numbers on open (measured identical to the pre-computed values, entry by entry).
-The only difference is whether the number is already there or is computed as the document opens.
-Install it if you send reports to other people and want the numbers frozen at export time.
+LibreOffice is optional. Without it, table-of-contents page numbers are resolved by whatever opens
+the document; with it, they are computed at export and frozen into the file. Install it if you send
+reports to people whose reader you cannot predict.
 
 ### How much space this needs
 
@@ -43,20 +41,15 @@ project folder will never show it:
 
 The first install is mostly network transfer: roughly **15–30 minutes**, dominated by the image pull.
 
-Six Supabase services are switched off because this product does not use them — Studio, Edge
-Runtime, Realtime, PostgREST, the local mail catcher and the storage API, together about 3.4 GB of
-images. Nothing here calls an edge function or a realtime subscription; the backend talks to
-Postgres over asyncpg rather than PostgREST; no email is ever sent, because the first account is
-created already confirmed; and uploaded files are kept on your own disk, since writing, reading and
-deleting an object is something the filesystem already does. Three containers remain: Postgres,
-auth and the gateway.
+Three containers run: Postgres, auth and the gateway. Six more Supabase services — Studio, Edge
+Runtime, Realtime, PostgREST, the mail catcher and the storage API — are switched off, which is
+where most of the saving comes from. Uploaded files go to your own disk instead.
 
-To keep uploaded files in Supabase Storage instead, clear
-`SUSTAINABILITY_DESK_LOCAL_STORAGE_ROOT` and drop `storage-api` from the exclusions in the
-`supabase-up` target.
+Two of those are worth knowing how to turn back on:
 
-If you want the database admin UI, set `[studio] enabled` back to `true` in `supabase/config.toml`
-and restart the stack.
+- **Database admin UI**: set `[studio] enabled` to `true` in `supabase/config.toml`, then restart.
+- **Uploads in Supabase Storage**: clear `SUSTAINABILITY_DESK_LOCAL_STORAGE_ROOT` and drop
+  `storage-api` from the exclusions in the `supabase-up` target.
 
 Three components are **optional** — install them only when you need what they do:
 

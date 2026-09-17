@@ -20,10 +20,8 @@
 | LibreOffice（可选） | 导出时预先算好目录页码 | 页码改由阅读器打开时解析 |
 | pandoc（可选） | 重生成合成语料的 docx | 只影响重建语料 |
 
-LibreOffice 只用于**预先算好**目录页码，是增强项不是硬依赖。目录项是指向同文档书签的
-`PAGEREF` 域并带脏标记，Word 与 LibreOffice 打开时会自行解析出页码（实测与预计算逐条一致）。
-差别只在页码是打开前就在那里、还是打开那一刻算出来；要把文档发给外部、希望对方打开即完整时，
-装上它即可。
+LibreOffice 可选。不装时目录页码由打开文档的程序解析，装了则在导出时算好并固定写进文件。
+要把报告发给别人、又无法预知对方用什么阅读器时，装上它。
 
 ### 先看清占多少地方
 
@@ -41,16 +39,15 @@ LibreOffice 只用于**预先算好**目录页码，是增强项不是硬依赖�
 
 首次安装以网络下载为主，约 **15–30 分钟**，其中拉镜像占大头。
 
-本项目按实际用量关掉了六个 Supabase 服务——Studio、Edge Runtime、Realtime、PostgREST、
-本地收信器与对象存储服务，合计约 3.4 GB 镜像。仓库里没有边缘函数、没有一处实时订阅；
-后端一律 asyncpg 直连 Postgres，不走 PostgREST；首个账号建出来就是已确认状态，从不发信；
-上传的资料文件存在你自己的磁盘上——写一个对象、读回来、删掉，文件系统本来就做这三件事。
-剩下三个容器：Postgres、认证与网关。
+实际运行三个容器：Postgres、认证与网关。另有六个 Supabase 服务——Studio、Edge Runtime、
+Realtime、PostgREST、本地收信器与对象存储——处于关闭状态，体积主要省在这里。
+上传的资料文件改存本机磁盘。
 
-要把资料对象放回 Supabase Storage：清空 `SUSTAINABILITY_DESK_LOCAL_STORAGE_ROOT`，
-并从 `supabase-up` 目标的排除项里去掉 `storage-api`。
+其中两项值得知道怎么开回来：
 
-需要数据库管理界面时，把 `supabase/config.toml` 的 `[studio] enabled` 改回 `true` 再重起栈。
+- **数据库管理界面**：把 `supabase/config.toml` 的 `[studio] enabled` 改为 `true`，重起栈。
+- **资料对象放回 Supabase Storage**：清空 `SUSTAINABILITY_DESK_LOCAL_STORAGE_ROOT`，
+  并从 `supabase-up` 目标的排除项里去掉 `storage-api`。
 
 三项**可选**，需要时再装：
 
