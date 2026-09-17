@@ -56,6 +56,22 @@ so you can run the whole flow end to end without supplying anything of your own.
 A GRI package is present but sealed: it is not selectable when creating a report. It was built
 against a route that needs wording changes before it can honestly claim conformance.
 
+## What it looks like
+
+Generated prose with its sources on the right — which uploaded file supported this block, which
+questions you answered, and what the generation run did:
+
+![The report body with its content-sources panel](./docs/images/report-provenance.en.png)
+
+Edit any paragraph in place. The green dot marks what you changed, and the panel shows the
+difference from the generated draft:
+
+![A revised paragraph shown against the generated draft](./docs/images/report-revision.en.png)
+
+Before export, a deterministic gate — no model involved — lists what still needs attention:
+
+![The pre-export checks drawer](./docs/images/export-checks.en.png)
+
 ## Architecture
 
 ```
@@ -101,7 +117,7 @@ Adding an exchange or a language means adding a package, not changing the genera
 See [SETUP.md](./SETUP.md). Short version, once the prerequisites are installed:
 
 ```bash
-supabase start                          # local Postgres + auth + storage
+make supabase-up                        # local Postgres + auth + storage
 cp backend/.env.example backend/.env    # fill from `supabase status`, add a model API key
 make verify                             # backend and frontend tests
 ./scripts/dev/local-acceptance-stack.sh up   # starts backend, worker and frontend
@@ -110,7 +126,7 @@ make verify                             # backend and frontend tests
 Prerequisites: Node 22, uv, Docker and the Supabase CLI — plus LibreOffice if you want table-of-
 contents page numbers computed at export time rather than by the reader. `make doctor` checks them.
 
-**Set aside about 5.6 GB and 15–30 minutes.** The repository is small (~13 MB), but the container
+**Set aside about 3.3 GB and 10–20 minutes.** The repository is small (~13 MB), but the container
 images and dependency trees are not, and most of that lands outside the project directory.
 [SETUP.md](./SETUP.md) breaks the figure down and lists the three optional components —
 LibreOffice, OCR and the test browsers — that you can skip.
@@ -125,7 +141,7 @@ Run these in order. Each step either succeeds or fails loudly; do not skip ahead
 
 ```bash
 make doctor                                  # verifies Node 22+, uv, Docker, Supabase CLI
-supabase start                               # must finish before any test run
+make supabase-up                             # must finish before any test run
 cp backend/.env.example backend/.env         # then fill JWT_SECRET, SERVICE_ROLE_KEY, ANON_KEY from `supabase status`
                                              # and one model key (Azure OpenAI, or any OpenAI-compatible endpoint)
 make verify                                  # backend pytest + frontend test/lint/build
@@ -144,7 +160,7 @@ SUSTAINABILITY_DESK_CONFIRM_PROVISION_OWNER=YES \
 
 Four things that will waste your time if you do not know them:
 
-- **`make verify` before `supabase start` gives a false green.** Persistence tests call
+- **`make verify` before `make supabase-up` gives a false green.** Persistence tests call
   `pytest.skip` when the database is unreachable, so the suite passes without ever exercising
   the database layer. Start the stack first.
 - **The worker is not optional.** Material processing and report generation are Postgres queues

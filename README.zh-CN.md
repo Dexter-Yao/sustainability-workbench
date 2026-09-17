@@ -12,7 +12,7 @@
 最终仍要有人读过并签字负责。
 
 **[English](./README.md)** · [架构说明](./docs/architecture.md) ·
-[安装配置](./SETUP.md) · [用户手册](./docs/handbook/README.md)
+[安装配置](./SETUP.zh-CN.md) · [用户手册](./docs/handbook/README.md)
 
 ## 为什么不是「把文件丢给 AI 写一份」
 
@@ -44,6 +44,20 @@
 仓库自带全合成语料——两家虚构公司、无真实企业数据——不用自备任何东西就能完整跑一遍。
 
 仓库内含 GRI 包但已封存，建报时不可选：它依据的路线要求先改动措辞，否则不能诚实地声称符合该准则。
+
+## 界面长什么样
+
+生成的正文，右栏是它的来源——这一块用了哪份上传资料、哪些填写题，以及那次生成做了什么：
+
+![报告正文页与内容来源面板](./docs/images/report-provenance.zh.png)
+
+任何一段都能就地修订。绿点标出改过的段落，右栏逐字给出与生成稿的差异：
+
+![修订后的段落与生成稿差异](./docs/images/report-revision.zh.png)
+
+出稿前有一道不调用模型的诊断闸，列出还需确认的事项：
+
+![导出前检查抽屉](./docs/images/export-checks.zh.png)
 
 ## 架构
 
@@ -86,10 +100,10 @@
 
 ## 快速开始
 
-详见 [安装配置](./SETUP.md)。前置装好之后：
+详见 [安装配置](./SETUP.zh-CN.md)。前置装好之后：
 
 ```bash
-supabase start                          # 本机 Postgres + 认证 + 存储
+make supabase-up                        # 本机 Postgres + 认证 + 存储
 cp backend/.env.example backend/.env    # 按 supabase status 填写，并填模型 API key
 make verify                             # 后端与前端测试
 ./scripts/dev/local-acceptance-stack.sh up   # 一次起后端、worker 与前端
@@ -98,8 +112,8 @@ make verify                             # 后端与前端测试
 前置：Node 22、uv、Docker、Supabase CLI；LibreOffice 可选——装了它，导出时就把目录页码算好，
 不装则由阅读器打开时解析。`make doctor` 会在开始前检查这些。
 
-**请预留约 5.6 GB 磁盘与 15–30 分钟。** 仓库本身很小（约 13 MB），但容器镜像与依赖树不小，
-且大部分落在项目目录之外。[安装配置](./SETUP.md) 有逐项明细，并列出三个可以不装的组件
+**请预留约 3.3 GB 磁盘与 10–20 分钟。** 仓库本身很小（约 13 MB），但容器镜像与依赖树不小，
+且大部分落在项目目录之外。[安装配置](./SETUP.zh-CN.md) 有逐项明细，并列出三个可以不装的组件
 （LibreOffice、扫描件 OCR、测试浏览器）。
 
 这里的 Supabase **不是云服务账号**——`supabase start` 是在你自己机器的 Docker 里起

@@ -1,182 +1,209 @@
-<!-- ABOUTME: 本机安装与配置的完整步骤；README 只放最短路径，细节全部在这里。 -->
-<!-- ABOUTME: 步骤顺序有依赖关系，第 3 步与第 4 步不可交换，原因见该步说明。 -->
+<!-- ABOUTME: Full local install and configuration steps; the README keeps only the shortest path. -->
+<!-- ABOUTME: Step order carries dependencies — steps 3 and 4 cannot be swapped; the reason is in step 4. -->
 
 # Setup
 
-面向第一次跑这个项目的人。全程在本机，不连任何外部数据库。
+For someone running this project for the first time. Everything stays on your machine; no external
+database is involved.
 
-平台：macOS 或 Linux（前置检查脚本用到 `nc`、`lsof`）。
+**[简体中文](./SETUP.zh-CN.md)**
 
-## 1. 装前置
+Platform: macOS or Linux (the preflight script uses `nc` and `lsof`).
 
-| 工具 | 用途 | 缺了会怎样 |
+## 1. Install the prerequisites
+
+| Tool | What it is for | What happens without it |
 |---|---|---|
-| Node 22+ | 前端 | `make doctor` 报错 |
-| [uv](https://docs.astral.sh/uv/) | Python 依赖与运行 | 后端起不来 |
-| Docker | 跑本机 Supabase 栈 | `supabase start` 失败 |
-| [Supabase CLI](https://supabase.com/docs/guides/cli) | 本机 Postgres + 认证 + 存储 | 无数据库 |
-| LibreOffice（可选） | 导出时预先算好目录页码 | 页码改由阅读器打开时解析 |
-| pandoc（可选） | 重生成合成语料的 docx | 只影响重建语料 |
+| Node 22+ | Frontend | `make doctor` fails |
+| [uv](https://docs.astral.sh/uv/) | Python dependencies and runner | Backend will not start |
+| Docker | Runs the local Supabase stack | `supabase start` fails |
+| [Supabase CLI](https://supabase.com/docs/guides/cli) | Local Postgres, auth and storage | No database |
+| LibreOffice (optional) | Pre-computes TOC page numbers at export | Page numbers are resolved by the reader on open |
+| pandoc (optional) | Rebuilds the .docx derivatives of the synthetic corpus | Only affects rebuilding that corpus |
 
-LibreOffice 只用于**预先算好**目录页码，是增强项不是硬依赖。目录项是指向同文档书签的
-`PAGEREF` 域并带脏标记，Word 与 LibreOffice 打开时会自行解析出页码（实测与预计算逐条一致）。
-差别只在页码是打开前就在那里、还是打开那一刻算出来；要把文档发给外部、希望对方打开即完整时，
-装上它即可。
+LibreOffice is an enhancement, not a hard dependency. Each table-of-contents entry is a `PAGEREF`
+field pointing at a bookmark in the same document, carrying a dirty flag; Word and LibreOffice
+resolve the page numbers on open (measured identical to the pre-computed values, entry by entry).
+The only difference is whether the number is already there or is computed as the document opens.
+Install it if you send reports to other people and want the numbers frozen at export time.
 
-### 先看清占多少地方
+### How much space this needs
 
-仓库本身只有约 13 MB（一千余个文件，基本都是源码），但**跑起来要准备约 5.6 GB 磁盘**。
-大头落在仓库目录之外——`du` 看项目文件夹是看不到的：
+The repository itself is small (~13 MB, a thousand-odd files, nearly all source), but **set aside
+about 3.3 GB** to run it. Most of that lands outside the project directory, where `du` on the
+project folder will never show it:
 
-| 位置 | 项 | 约占 |
+| Where | What | Approx. |
 |---|---|---|
-| 仓库外 | Supabase 容器镜像（首次 `supabase start` 拉取，7 个） | 3.2 GB |
-| 仓库外 | Supabase 数据卷 | 1.5 GB |
-| 仓库外 | LibreOffice（可选，见上） | 800 MB |
-| 仓库内 | 前端依赖（npm install 产物） | 560 MB |
-| 仓库内 | 后端虚拟环境（uv sync 产物） | 170 MB |
-| 仓库内 | 前端构建缓存（随使用增长） | 150 MB 起 |
+| Outside the repo | Supabase container images (4, pulled on first start) | 2.3 GB |
+| Outside the repo | Supabase data volumes | 80 MB |
+| In the repo | Frontend dependencies (npm install output) | 560 MB |
+| In the repo | Backend virtualenv (uv sync output) | 170 MB |
+| In the repo | Frontend build cache (grows with use) | 150 MB+ |
 
-首次安装以网络下载为主，约 **15–30 分钟**，其中拉镜像占大头。
+The first install is mostly network transfer: roughly **15–30 minutes**, dominated by the image pull.
 
-本项目已按实际用量裁掉三个 Supabase 组件（Studio、Edge Runtime 及其连带件，合计约 3 GB）：
-产品不依赖它们，仓库内也没有 Edge Function。需要数据库管理界面时，把
-`supabase/config.toml` 的 `[studio] enabled` 改回 `true` 再重起栈。
+Five Supabase services are switched off because this product does not use them — Studio, Edge
+Runtime, Realtime, PostgREST and the local mail catcher, together about 2.6 GB of images. Nothing
+here calls an edge function or a realtime subscription; the backend talks to Postgres over asyncpg
+rather than PostgREST; and no email is ever sent, because the first account is created already
+confirmed. Four containers remain: Postgres, auth, storage and the gateway.
 
-两项**默认不装**，需要时再说：
+If you want the database admin UI, set `[studio] enabled` back to `true` in `supabase/config.toml`
+and restart the stack.
 
-- **扫描件 OCR**（约 220 MB）：`uv sync --extra ocr`。不装时文字版 PDF、Word、Excel 照常解析，
-  只有**扫描成图片的 PDF** 会明确报错提示缺该组件，不会静默跳过。
-- **Playwright 浏览器**（约 540 MB）：只有跑 `npm run test:e2e` 才需要，
-  用 `npx playwright install chromium` 装。
+Three more are **not installed by default**:
 
-macOS 装法：
+- **LibreOffice** (~800 MB): see above.
+- **Scanned-document OCR** (~220 MB): `uv sync --extra ocr`. Without it, text-based PDF, Word and
+  Excel files still parse; only **image-only scanned PDFs** fail, with an explicit message naming
+  the missing component rather than silently returning nothing.
+- **Playwright browsers** (~540 MB): only needed for `npm run test:e2e`; install with
+  `npx playwright install chromium`.
+
+macOS:
 
 ```bash
 brew install node uv docker supabase/tap/supabase pandoc
-brew install --cask libreoffice   # 可选：导出时预先算好目录页码
+brew install --cask libreoffice   # optional: pre-compute TOC page numbers at export
 ```
 
-Linux（Debian / Ubuntu）装法。Supabase CLI 不在发行版仓库里，需单独取：
+Linux (Debian / Ubuntu). The Supabase CLI is not in the distribution repositories, so fetch it
+separately:
 
 ```bash
-# Node 22：发行版自带的通常偏旧，用 NodeSource
+# Node 22: distribution packages are usually older, so use NodeSource
 curl -fsSL https://deb.nodesource.com/setup_22.x | sudo -E bash - && sudo apt install -y nodejs
 curl -LsSf https://astral.sh/uv/install.sh | sh          # uv
 sudo apt install -y docker.io pandoc
-sudo apt install -y libreoffice-writer                   # 可选，且比 macOS 的整套 cask 小得多
-# Supabase CLI：取对应架构的 .deb（版本号见其 Releases 页）
+sudo apt install -y libreoffice-writer                   # optional, and much smaller than the macOS cask
+# Supabase CLI: grab the .deb for your architecture (see its Releases page for versions)
 curl -fsSLO https://github.com/supabase/cli/releases/latest/download/supabase_linux_amd64.deb \
   && sudo dpkg -i supabase_linux_amd64.deb
 ```
 
-装完跑一次检查：
+Then run the check once:
 
 ```bash
 make doctor
 ```
 
-## 2. 起本机 Supabase 栈
+## 2. Start the local Supabase stack
 
 ```bash
-supabase start
+make supabase-up
 ```
 
-首次运行要拉约 3.2 GB 镜像，按网络情况 10–20 分钟；之后再起是秒级。
-完成后 `supabase status` 会打印一组连接参数，下一步要用。
+Use this target rather than a bare `supabase start`: two of the exclusions are command-line
+arguments rather than stored config, so typing `supabase start` by hand quietly pulls and runs
+about 900 MB of services nothing here uses.
 
-## 3. 配置环境变量
+The first run pulls about 2.3 GB of images — 8–15 minutes depending on your connection; later
+starts take seconds. When it finishes, `supabase status` prints the connection values used next.
+
+## 3. Configure environment variables
 
 ```bash
 cp backend/.env.example backend/.env
 ```
 
-然后按 `supabase status` 的输出填三个值：
+Then fill in three values from the `supabase status` output:
 
-| `.env` 里的变量 | 取 `supabase status` 的哪一项 |
+| Variable in `.env` | Which `supabase status` field |
 |---|---|
 | `SUSTAINABILITY_DESK_SUPABASE_JWT_SECRET` | `JWT_SECRET` |
 | `SUSTAINABILITY_DESK_SUPABASE_SERVICE_KEY` | `SERVICE_ROLE_KEY` |
 | `SUSTAINABILITY_DESK_PUBLIC_SUPABASE_ANON_KEY` | `ANON_KEY` |
 
-数据库与 API 地址（`DATABASE_URL`、`SUPABASE_URL`）模板里已经是本机默认值，通常不用改。
+The database and API addresses (`DATABASE_URL`, `SUPABASE_URL`) already hold local defaults in the
+template and usually need no change.
 
-还要填一个模型凭据。默认走 Azure OpenAI：
+You also need one model credential. The default is Azure OpenAI:
 
 ```
 AZURE_OPENAI_API_KEY=...
-AZURE_OPENAI_ENDPOINT=https://<资源名>.cognitiveservices.azure.com/
+AZURE_OPENAI_ENDPOINT=https://<resource-name>.cognitiveservices.azure.com/
 ```
 
-也可以用任何 OpenAI 兼容服务（自建 vLLM、Ollama、代理网关），把 `.env.example` 里
-`OPENAI_COMPAT_*` 三项注释打开即可，不用改代码。
+Any OpenAI-compatible service works too (self-hosted vLLM, Ollama, a proxy gateway): uncomment the
+three `OPENAI_COMPAT_*` lines in `.env.example`. No code changes needed. DeepSeek, Zhipu GLM,
+Alibaba Qwen and Moonshot are also registered out of the box — set the matching key.
 
-## 4. 跑测试
+## 4. Run the tests
 
 ```bash
 make verify
 ```
 
-**这一步必须在第 2、3 步之后**，顺序不能换。原因：`make verify` 直接跑 pytest，本身不检查
-数据库是否可达；栈没起来时，账户、报告、生成运行、导出这些持久化用例会走 `pytest.skip`
-静默跳过。结果是**你会看到全绿，但数据库层一条都没验证过**。先起栈再跑，才是真的通过。
+**This must come after steps 2 and 3; the order cannot be swapped.** `make verify` runs pytest
+directly and does not itself check that the database is reachable. With the stack down, the
+account, report, generation and export tests take `pytest.skip` and pass silently. The result is
+that **you see all green while the database layer was never exercised**. Start the stack first, and
+the pass means something.
 
-## 5. 起服务
+## 5. Start the services
 
 ```bash
 ./scripts/dev/local-acceptance-stack.sh up
 ```
 
-这一条会起三个进程：后端（:8010）、资料处理 worker、前端（:3000），并等到就绪再返回。
-查看状态与停止：
+That starts three processes — backend (:8010), the material-processing worker, and the frontend
+(:3000) — and returns once they are ready. To check or stop them:
 
 ```bash
 ./scripts/dev/local-acceptance-stack.sh status
 ./scripts/dev/local-acceptance-stack.sh down
 ```
 
-也可以手动分三个终端起（调试时更方便看日志）：
+You can also start them by hand in three terminals, which makes logs easier to follow while
+debugging:
 
 ```bash
 make dev-backend     # http://127.0.0.1:8010
-make dev-worker      # 队列消费进程
+make dev-worker      # queue consumer
 make dev-frontend    # http://localhost:3000
 ```
 
-**worker 不能省**。资料处理与报告生成都经 Postgres 队列由 worker 消费；只起后端和前端的话，
-页面能登录、能上传，但点「生成报告」会一直停在「等待开始」。
+**The worker is not optional.** Material processing and report generation are Postgres queues
+consumed by that process. With only the backend and frontend running, the UI logs in and accepts
+uploads, but "Generate report" waits forever.
 
-## 6. 建第一个账号
+## 6. Create the first account
 
-认证栈关闭了公开注册（界面没有注册页），所以第一个账号用命令建：
+The auth stack has public sign-up switched off (there is no registration page), so the first
+account is created from the command line:
 
 ```bash
-# 先看将要做什么
+# See what it would do first
 make provision-owner ARGS="--email you@example.com"
 
-# 确认后执行
-SUSTAINABILITY_DESK_OWNER_PASSWORD='<12 位以上，含大小写与数字>' \
+# Then apply
+SUSTAINABILITY_DESK_OWNER_PASSWORD='<12+ chars, mixed case and digits>' \
 SUSTAINABILITY_DESK_CONFIRM_PROVISION_OWNER=YES \
   make provision-owner ARGS="--email you@example.com --apply"
 ```
 
-口令要求至少 12 位且同时含小写、大写与数字。缺变量时会明确报错，不会静默建出无法登录的账号；
-已存在的账号一律复用，不重置密码。
+The password must be at least 12 characters and contain lowercase, uppercase and digits. Missing
+variables produce an explicit error rather than silently creating an account you cannot sign in
+with; an existing account is reused and its password is never reset.
 
-然后打开 <http://localhost:3000> 登录。**用 `localhost` 而不是 `127.0.0.1`**：Next dev server
-会拦截启动 hostname 之外的 origin 请求，用 `127.0.0.1` 访问会卡在「认证服务未配置」。
+Then open <http://localhost:3000> and sign in. **Use `localhost`, not `127.0.0.1`**: the Next dev
+server rejects origins other than its start hostname, and `127.0.0.1` leaves the page stuck on an
+authentication error.
 
-## 常见问题
+## Troubleshooting
 
-**点「生成报告」一直在等待** — worker 没起。`./scripts/dev/local-acceptance-stack.sh status`
-确认 `material-worker` 在运行。
+**"Generate report" waits forever** — the worker is not running. Check with
+`./scripts/dev/local-acceptance-stack.sh status` that `material-worker` is up.
 
-**目录页码显示为 0 或需要刷新** — 没装 LibreOffice 时页码由阅读器打开时解析，属预期；
-装上 LibreOffice 即可在导出时就算好。
+**TOC page numbers show as 0 or need refreshing** — expected without LibreOffice; the reader
+resolves them on open. Install LibreOffice to have them computed at export time.
 
-**`make verify` 全绿但不确定数据库验过没有** — 见第 4 步。栈没起时持久化用例静默跳过；
-`supabase status` 确认栈在跑，再重跑一次。
+**`make verify` is green but you are unsure the database was covered** — see step 4. Persistence
+tests skip silently when the stack is down. Confirm with `supabase status`, then run it again.
 
-**页面显示「当前报告基于旧版契约创建」** — 该报告是更早的契约版本建的，新建一份即可。
+**The page says the report was created under an older contract version** — that report predates a
+contract change. Create a new one.
 
-**改了后端代码但行为没变** — 后端进程不自动重载栈脚本起的实例。`down` 再 `up`。
+**Backend code changed but behaviour did not** — the stack script's backend process does not
+hot-reload. Run `down` then `up`.
