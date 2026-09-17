@@ -1,6 +1,6 @@
 # Sustainability Workbench
 
-A self-hosted drafting workbench for sustainability (ESG) reports, for the people who prepare
+A self-hosted AI-facilitated drafting workbench for sustainability (ESG) reports, for the people who prepare
 them — in-house reporting teams at companies of any size, and the consultants and accounting
 firms who do it on their behalf.
 
