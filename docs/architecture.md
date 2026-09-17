@@ -1,93 +1,103 @@
-<!-- ABOUTME: 主链、两条约束、知识包与运行时阶段的架构说明；面向零上下文读者。 -->
-<!-- ABOUTME: 阶段 id 取自 observability 的阶段词汇表，不是示意命名。 -->
+<!-- ABOUTME: Architecture: the main chain, two constraints, knowledge packages and runtime stages. -->
+<!-- ABOUTME: Stage ids come from the observability stage vocabulary; they are not illustrative names. -->
 
 # Architecture
 
-## 主链
+**[简体中文](./architecture.zh-CN.md)**
+
+## The main chain
 
 ```
-用户输入
-├─ 企业基本信息（公司、报告期间）        ┐
-├─ 议题重要性评分（决定哪些议题进报告）   ├──────────────┐
-├─ 定量指标（排放、用工、废弃物）         ┘              │
-└─ 资料文件（制度、台账、证书）                          │
-        │                                                │
-        ▼                                                │
-   File Agent            material.file_agent              │
-   逐文件理解 → 可追溯 Dossier                            │
-        │                                                │
-        ▼                                                │
-   Mapping Agent         material.mapping_agent           │
-   按章节选材料，只选不写                                  │
-        │                                                │
-        ▼                                                ▼
-   ┌─────────────────────────────────────────────────────────┐
-   │ 受控证据集 —— 每个块只看见分配给它的事实                  │
-   └─────────────────────────────────────────────────────────┘
+Your input
+├─ Company basics (name, reporting period)          ┐
+├─ Topic materiality scoring (what enters the report)├─────────────┐
+├─ Quantitative metrics (emissions, workforce, waste)┘             │
+└─ Documents (policies, records, certificates)                     │
+        │                                                          │
+        ▼                                                          │
+   File Agent            material.file_agent                       │
+   reads each file → traceable dossier                             │
+        │                                                          │
+        ▼                                                          │
+   Mapping Agent         material.mapping_agent                    │
+   picks material per chapter; selects, never writes               │
+        │                                                          ▼
+   ┌──────────────────────────────────────────────────────────────────┐
+   │ Controlled evidence set — each block sees only its assigned facts │
+   └──────────────────────────────────────────────────────────────────┘
         │
         ▼
-   逐块生成正文        generation.blocks → generation.commit
-        │                          ▲
-        ▼                          │ 有阻断问题即退回，不出稿
-   诊断闸              delivery.export_gate
+   Block-by-block drafting   generation.blocks → generation.commit
+        │                            ▲
+        ▼                            │ blocking issue → back for revision
+   Diagnostic gate           delivery.export_gate
         │
         ▼
-   正式稿 + 审阅稿      delivery.docx.word / .review
+   Final + review Word       delivery.docx.word / .review
 ```
 
-人工逐段修订是可选环节，接在生成之后、诊断闸之前；诊断闸拦下的报告退回修订。
+Paragraph-by-paragraph revision is optional and sits between drafting and the gate; a report the
+gate stops goes back for revision.
 
-四类输入里只有企业基本信息必填，其余三类可以留空；系统按缺失事实调整写法，不编造内容补篇幅。
+Of the four inputs only company basics is required. The rest may be left empty, and the system
+adjusts what it writes rather than inventing filler.
 
-## 两个约束
+## Two constraints
 
-### Agent 只选材料，不写正文
+### Agents select material; they do not write prose
 
-File Agent 读懂每份文件形成摘要，Mapping Agent 决定某个章节可以用哪几份材料。两者都**不产出
-报告文字**。正文由另一条链路逐块生成，每个块只能看见分配给它的事实——靠结构保证不写企业没做过
-的事，而不是在提示词里叮嘱模型。
+A File Agent reads each document into a summary, and a Mapping Agent decides which materials a
+given chapter may draw on. Neither **produces report text**. Prose is generated on a separate path,
+block by block, and each block can only see the facts assigned to it — the guarantee that the
+report will not describe things the company never did is structural, not an instruction in a
+prompt.
 
-### 诊断闸不调用模型
+### The diagnostic gate calls no model
 
-生成完不直接出稿。诊断层用代码检查完整性与一致性，有阻断级问题就拦下并指出位置。不调用模型，
-所以同样的报告永远得到同样的判断。
+Generation does not deliver straight to a file. The diagnostic layer checks completeness and
+consistency in code, and stops anything with a blocking issue, naming where it is. No model is
+involved, so the same report always gets the same verdict.
 
-## 知识包
+## Knowledge packages
 
-一个包 = 一套准则 × 一种语言。包内承载：
+One package = one rule set × one language. A package carries:
 
-- 议题清单与重要性判定方式
-- 章节骨架与块级生成规格
-- 准则条款与披露要求
-- 定量指标目录
-- 提示词与 Word 版式参数
+- The topic list and how materiality is determined
+- The chapter skeleton and block-level generation specs
+- Standard clauses and disclosure requirements
+- The quantitative metric catalogue
+- Prompts and Word layout parameters
 
-当前三包：
+Three packages ship today:
 
-| 包 | 准则 | 语言 | 重要性判定 |
+| Package | Standard | Language | Materiality |
 |---|---|---|---|
-| `sse_zh_hans` | 上海证券交易所 | 简体中文 | 双重重要性 |
-| `hkex_zh_hant` | 香港联交所 | 繁體中文 | 财务重要性为主 |
-| `hkex_en` | 香港联交所 | 英文 | 同上 |
+| `sse_zh_hans` | Shanghai Stock Exchange | Simplified Chinese | Double materiality |
+| `hkex_zh_hant` | HKEX | Traditional Chinese | Financial materiality first |
+| `hkex_en` | HKEX | English | Same |
 
-换一套准则或一种语言＝换一个知识包，代码不分支。繁體与英文是两个独立的包，不是同一份内容的
-转写。准则差异沉在数据层，加一个交易所、加一种语言不改生成链路。
+Another standard or another language means another package; the code does not branch. Traditional
+Chinese and English are two independent packages, not one content set transliterated. Differences
+between standards live in the data layer, so adding an exchange or a language leaves the generation
+pipeline untouched.
 
-## 运行时阶段
+## Runtime stages
 
-每次运行按登记的阶段落轨迹，出问题能定位到具体阶段而不是「生成失败了」。
+Every run writes its trace against registered stages, so a failure points at a stage rather than
+at "generation failed".
 
-| 阶段 id | 做什么 |
+| Stage id | What it does |
 |---|---|
-| `material.file_agent` | 逐份资料理解，产出可追溯摘要 |
-| `material.image_agent` | 图片素材识别与题注 |
-| `material.mapping_agent` | 按章节选材料 |
-| `generation.blocks` | 逐块生成正文（支柱块、结论块分批） |
-| `generation.row` | 表格逐行生成 |
-| `generation.commit` | 写回结构化报告 |
-| `delivery.export_gate` | 确定性诊断，有阻断问题即拦下 |
-| `delivery.render` | 渲染 Word |
-| `delivery.docx.word` / `.review` | 正式稿与审阅稿两份产物 |
+| `material.file_agent` | Reads each document, producing a traceable summary |
+| `material.image_agent` | Recognises image material and captions it |
+| `material.mapping_agent` | Picks material per chapter |
+| `generation.blocks` | Drafts prose block by block (pillar blocks and conclusion blocks in batches) |
+| `generation.row` | Generates table rows |
+| `generation.commit` | Writes back into the structured report |
+| `delivery.export_gate` | Deterministic diagnosis; stops anything with a blocking issue |
+| `delivery.render` | Renders Word |
+| `delivery.docx.word` / `.review` | The final and review deliverables |
 
-阶段词汇表由 `backend/src/sustainability_desk/observability/registry.py` 聚合，阶段常量与
-实现同址声明，导入即登记、冲突即抛错。
+The stage vocabulary is assembled by
+`backend/src/sustainability_desk/observability/registry.py`. Stage constants are declared next to
+the implementation they name: importing registers them, and a conflict raises.

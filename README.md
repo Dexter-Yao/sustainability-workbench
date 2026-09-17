@@ -15,7 +15,7 @@ It drafts; it does not assure. What comes out is a draft for professional review
 assurance opinion, not a compliance guarantee. Someone still has to read it and sign it off.
 
 **[简体中文](./README.zh-CN.md)** · [Setup](./SETUP.md) ·
-[Architecture](./docs/architecture.md) (Chinese) · [Handbook](./docs/handbook/README.md) (Chinese)
+[Architecture](./docs/architecture.md) · [Handbook](./docs/handbook/README.md) (Chinese)
 
 ## Why not just hand the files to an LLM
 
@@ -107,7 +107,7 @@ Paragraph-by-paragraph revision is optional and sits between drafting and the ga
 inputs only company basics is required; the rest may be left empty, and the system adjusts what
 it writes rather than inventing filler.
 
-Full detail in [docs/architecture.md](./docs/architecture.md) (written in Chinese).
+Full detail in [docs/architecture.md](./docs/architecture.md).
 
 Rules and language live in **knowledge packages** — one package per rule set per language.
 Adding an exchange or a language means adding a package, not changing the generation pipeline.
@@ -175,7 +175,7 @@ No account can be created from the UI — sign-up is deliberately closed, so
 `make provision-owner` is the only path to the first login.
 
 Working on the code: read [CLAUDE.md](./CLAUDE.md) first (rules, invariants, what not to
-change), then [docs/architecture.md](./docs/architecture.md) (Chinese). `AGENTS.md` is a byte-identical
+change), then [docs/architecture.md](./docs/architecture.md). `AGENTS.md` is a byte-identical
 copy for tools that look for that name.
 
 Verify a change end to end without calling any model:
