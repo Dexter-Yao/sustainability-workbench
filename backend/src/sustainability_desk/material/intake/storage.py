@@ -9,6 +9,7 @@ from uuid import UUID
 import httpx
 
 from sustainability_desk.material.intake.models import MaterialKind
+from sustainability_desk.persistence.local_storage_transport import LocalStorageTransport
 from sustainability_desk.persistence.private_storage_transport import (
     PrivateStorageTransport,
     PrivateStorageTransportError,
@@ -23,7 +24,15 @@ class MaterialStorageError(RuntimeError):
 
 
 class MaterialStorageClient:
-    """通过 Supabase Storage REST 操作私有资料，允许测试注入 MockTransport。"""
+    """操作私有资料对象；后端选定 transport，调用方不关心对象落在哪里。
+
+    两种 transport 同形：配了 `local_storage_root` 走本机磁盘（默认），留空则回到
+    Supabase Storage REST。前者让安装不必拉 storage-api 镜像（约 818 MB），
+    而本产品对对象存储的全部用法只有写、读、删三件事。
+
+    显式传入 `client` 时一律走 REST transport：那是测试注入 MockTransport 的路径，
+    也是真要连 Supabase 时的用法——传了 HTTP 客户端却被存到磁盘会让测试静默失真。
+    """
 
     def __init__(
         self,
@@ -32,7 +41,10 @@ class MaterialStorageClient:
         client: httpx.AsyncClient | None = None,
     ) -> None:
         try:
-            self._transport = PrivateStorageTransport(settings, client=client)
+            if client is None and settings.uses_local_object_storage:
+                self._transport = LocalStorageTransport(settings)
+            else:
+                self._transport = PrivateStorageTransport(settings, client=client)
         except PrivateStorageTransportError as error:
             raise MaterialStorageError(str(error)) from error
 

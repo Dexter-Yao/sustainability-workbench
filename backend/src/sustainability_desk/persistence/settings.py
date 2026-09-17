@@ -28,6 +28,10 @@ class PersistenceSettings(BaseSettings):
     environment: str = "development"
     supabase_project: str = ""
     jwt_audience: str = "authenticated"
+    #: 私有资料对象的存放位置。留空即用 Supabase Storage；给绝对路径则存本机磁盘，
+    #: 那样安装时可以不拉 storage-api 镜像（约 818 MB）。默认走本地：本产品对对象存储
+    #: 的全部用法只有写、读、删三件事，自用安装没有理由为此多装一个服务。
+    local_storage_root: str = str(BACKEND / "out" / "object-storage")
 
     @property
     def auth_configured(self) -> bool:
@@ -37,6 +41,12 @@ class PersistenceSettings(BaseSettings):
     def configured(self) -> bool:
         return bool(self.database_url and self.auth_configured)
 
+
+    @property
+    def uses_local_object_storage(self) -> bool:
+        """私有对象是否走本机磁盘。配了根目录即走本地，留空回到 Supabase Storage。"""
+
+        return bool(self.local_storage_root)
 
     @property
     def public_client_configured(self) -> bool:

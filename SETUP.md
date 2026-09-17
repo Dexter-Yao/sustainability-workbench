@@ -30,12 +30,12 @@ Install it if you send reports to other people and want the numbers frozen at ex
 ### How much space this needs
 
 The repository itself is small (~13 MB, a thousand-odd files, nearly all source), but **set aside
-about 3.3 GB** to run it. Most of that lands outside the project directory, where `du` on the
+about 2.5 GB** to run it. Most of that lands outside the project directory, where `du` on the
 project folder will never show it:
 
 | Where | What | Approx. |
 |---|---|---|
-| Outside the repo | Supabase container images (4, pulled on first start) | 2.3 GB |
+| Outside the repo | Supabase container images (3, pulled on first start) | 1.5 GB |
 | Outside the repo | Supabase data volumes | 80 MB |
 | In the repo | Frontend dependencies (npm install output) | 560 MB |
 | In the repo | Backend virtualenv (uv sync output) | 170 MB |
@@ -43,11 +43,17 @@ project folder will never show it:
 
 The first install is mostly network transfer: roughly **15–30 minutes**, dominated by the image pull.
 
-Five Supabase services are switched off because this product does not use them — Studio, Edge
-Runtime, Realtime, PostgREST and the local mail catcher, together about 2.6 GB of images. Nothing
-here calls an edge function or a realtime subscription; the backend talks to Postgres over asyncpg
-rather than PostgREST; and no email is ever sent, because the first account is created already
-confirmed. Four containers remain: Postgres, auth, storage and the gateway.
+Six Supabase services are switched off because this product does not use them — Studio, Edge
+Runtime, Realtime, PostgREST, the local mail catcher and the storage API, together about 3.4 GB of
+images. Nothing here calls an edge function or a realtime subscription; the backend talks to
+Postgres over asyncpg rather than PostgREST; no email is ever sent, because the first account is
+created already confirmed; and uploaded files are kept on your own disk, since writing, reading and
+deleting an object is something the filesystem already does. Three containers remain: Postgres,
+auth and the gateway.
+
+To keep uploaded files in Supabase Storage instead, clear
+`SUSTAINABILITY_DESK_LOCAL_STORAGE_ROOT` and drop `storage-api` from the exclusions in the
+`supabase-up` target.
 
 If you want the database admin UI, set `[studio] enabled` back to `true` in `supabase/config.toml`
 and restart the stack.
@@ -98,7 +104,7 @@ Use this target rather than a bare `supabase start`: two of the exclusions are c
 arguments rather than stored config, so typing `supabase start` by hand quietly pulls and runs
 about 900 MB of services nothing here uses.
 
-The first run pulls about 2.3 GB of images — 8–15 minutes depending on your connection; later
+The first run pulls about 1.5 GB of images — 5–10 minutes depending on your connection; later
 starts take seconds. When it finishes, `supabase status` prints the connection values used next.
 
 ## 3. Configure environment variables

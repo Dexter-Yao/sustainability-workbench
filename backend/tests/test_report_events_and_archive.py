@@ -60,12 +60,25 @@ async def owner_and_report(pool):
 
 
 async def test_archive_export_uploads_and_records_event(pool, owner_and_report):
+    """Supabase Storage 这条路径仍然可用——留给把对象存到 Supabase 的安装。
+
+    storage-api 不在运行时跳过：它默认已不启动（本地对象存储是默认值），
+    此时该服务不可达是预期状态，不是回归。跳过而非失败，与本仓「栈未起即 skip」
+    的既有约定一致。
+    """
     _, summary = owner_and_report
+    try:
+        async with httpx.AsyncClient(timeout=2.0) as probe:
+            await probe.get(f"{LOCAL_SUPABASE}/storage/v1/version")
+    except httpx.HTTPError:
+        pytest.skip("storage-api 未运行（默认不启动，对象走本机磁盘）")
+    # local_storage_root 置空以走 Supabase Storage 这条路径——本用例钉的就是它。
     settings = PersistenceSettings(
         _env_file=None,
         database_url=LOCAL_DB,
         supabase_url=LOCAL_SUPABASE,
         supabase_service_key=LOCAL_SERVICE_KEY,
+        local_storage_root="",
     )
     data = b"fake-docx-bytes-for-archive-test"
     await archive_export(pool, settings, summary.id, data)
@@ -90,9 +103,18 @@ async def test_archive_export_uploads_and_records_event(pool, owner_and_report):
 
 
 async def test_archive_export_records_event_even_without_storage(pool, owner_and_report):
+    """两处存储都不可用时仍记事件，并如实标 archived=false。
+
+    这条钉的是「导出不因存档失败而受影响」：对象存储是审计副本，不是交付路径——
+    交付物本就落在 report_artifact_root。故两个根都置空，模拟谁都收不下的情形。
+    """
     _, summary = owner_and_report
     settings = PersistenceSettings(
-        _env_file=None, database_url=LOCAL_DB, supabase_url="", supabase_service_key=""
+        _env_file=None,
+        database_url=LOCAL_DB,
+        supabase_url="",
+        supabase_service_key="",
+        local_storage_root="",
     )
     await archive_export(pool, settings, summary.id, b"bytes")
     event = await pool.fetchrow(
@@ -100,3 +122,31 @@ async def test_archive_export_records_event_even_without_storage(pool, owner_and
         summary.id,
     )
     assert event["payload"]["archived"] is False and event["payload"]["objectPath"] is None
+
+
+async def test_archive_export_writes_to_local_object_storage(pool, owner_and_report, tmp_path):
+    """默认（本地对象存储）下存档真的落盘，而不是恒记 archived=false。
+
+    关掉 storage-api 之后，如果 _upload 只认 Supabase 这一条路，每次导出都会记
+    archived=false——审计事件看起来像「一直上传失败」，而实际是根本没人在收。
+    这种「失败」和真失败无法区分，比没有存档更糟。
+    """
+    _, summary = owner_and_report
+    settings = PersistenceSettings(
+        _env_file=None,
+        database_url=LOCAL_DB,
+        supabase_url="",
+        supabase_service_key="",
+        local_storage_root=str(tmp_path / "object-storage"),
+    )
+    data = b"local-archive-bytes"
+    await archive_export(pool, settings, summary.id, data)
+
+    event = await pool.fetchrow(
+        "select payload from report_events where report_id = $1 and event_type = 'report_exported' order by id desc limit 1",
+        summary.id,
+    )
+    payload = event["payload"]
+    assert payload["archived"] is True
+    stored = tmp_path / "object-storage" / "exports" / payload["objectPath"]
+    assert stored.read_bytes() == data

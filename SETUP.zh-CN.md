@@ -27,12 +27,12 @@ LibreOffice 只用于**预先算好**目录页码，是增强项不是硬依赖�
 
 ### 先看清占多少地方
 
-仓库本身只有约 13 MB（一千余个文件，基本都是源码），但**跑起来要准备约 3.3 GB 磁盘**。
+仓库本身只有约 13 MB（一千余个文件，基本都是源码），但**跑起来要准备约 2.5 GB 磁盘**。
 大头落在仓库目录之外——`du` 看项目文件夹是看不到的：
 
 | 位置 | 项 | 约占 |
 |---|---|---|
-| 仓库外 | Supabase 容器镜像（首次启动拉取，4 个） | 2.3 GB |
+| 仓库外 | Supabase 容器镜像（首次启动拉取，3 个） | 1.5 GB |
 | 仓库外 | Supabase 数据卷 | 80 MB |
 | 仓库外 | LibreOffice（可选，见上） | 800 MB |
 | 仓库内 | 前端依赖（npm install 产物） | 560 MB |
@@ -41,10 +41,14 @@ LibreOffice 只用于**预先算好**目录页码，是增强项不是硬依赖�
 
 首次安装以网络下载为主，约 **15–30 分钟**，其中拉镜像占大头。
 
-本项目按实际用量关掉了五个 Supabase 服务——Studio、Edge Runtime、Realtime、PostgREST
-与本地收信器，合计约 2.6 GB 镜像。仓库里没有边缘函数、没有一处实时订阅；后端一律 asyncpg
-直连 Postgres，不走 PostgREST；首个账号建出来就是已确认状态，从不发信。剩下四个容器：
-Postgres、认证、存储与网关。
+本项目按实际用量关掉了六个 Supabase 服务——Studio、Edge Runtime、Realtime、PostgREST、
+本地收信器与对象存储服务，合计约 3.4 GB 镜像。仓库里没有边缘函数、没有一处实时订阅；
+后端一律 asyncpg 直连 Postgres，不走 PostgREST；首个账号建出来就是已确认状态，从不发信；
+上传的资料文件存在你自己的磁盘上——写一个对象、读回来、删掉，文件系统本来就做这三件事。
+剩下三个容器：Postgres、认证与网关。
+
+要把资料对象放回 Supabase Storage：清空 `SUSTAINABILITY_DESK_LOCAL_STORAGE_ROOT`，
+并从 `supabase-up` 目标的排除项里去掉 `storage-api`。
 
 需要数据库管理界面时，把 `supabase/config.toml` 的 `[studio] enabled` 改回 `true` 再重起栈。
 
@@ -90,7 +94,7 @@ make supabase-up
 用这个目标而不是裸敲 `supabase start`：有两项排除是命令行参数、不是持久化配置，
 手敲会把约 900 MB 用不到的服务又拉起来。
 
-首次运行要拉约 2.3 GB 镜像，按网络情况 8–15 分钟；之后再起是秒级。
+首次运行要拉约 1.5 GB 镜像，按网络情况 5–10 分钟；之后再起是秒级。
 完成后 `supabase status` 会打印一组连接参数，下一步要用。
 
 ## 3. 配置环境变量

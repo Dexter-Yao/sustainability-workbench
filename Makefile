@@ -14,10 +14,14 @@ doctor:
 #   mailpit   — 从不发信：首个账号由 provision_owner_account 以 email_confirm=True 建，
 #               且 config.toml 的 enable_confirmations=false
 #   realtime  — 已在 config.toml 关闭（前端只用 supabase-js 的认证部分）
+#   storage-api — 私有对象默认存本机磁盘（persistence/local_storage_transport.py）；
+#               产品对它的全部用法只有写、读、删三件事，文件系统本来就做。
+#               要把对象放回 Supabase：清空 SUSTAINABILITY_DESK_LOCAL_STORAGE_ROOT
+#               并从下面的排除项里去掉 storage-api。
 # 排除项是 `supabase start` 的参数而非持久化配置，故必须走这个目标；
 # 裸敲 `supabase start` 会把它们又拉起来。
 supabase-up:
-	@supabase start -x postgrest,mailpit
+	@supabase start -x postgrest,mailpit,storage-api
 
 supabase-down:
 	@supabase stop

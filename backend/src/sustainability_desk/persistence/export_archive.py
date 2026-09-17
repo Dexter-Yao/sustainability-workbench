@@ -12,7 +12,12 @@ from uuid import UUID
 import asyncpg
 import httpx
 
+from sustainability_desk.persistence.private_storage_transport import (
+    PrivateStorageTransportError,
+)
 from sustainability_desk.persistence.settings import PersistenceSettings
+
+EXPORTS_BUCKET = "exports"
 
 logger = logging.getLogger(__name__)
 
@@ -20,9 +25,24 @@ DOCX_MIME = "application/vnd.openxmlformats-officedocument.wordprocessingml.docu
 
 
 async def _upload(settings: PersistenceSettings, object_path: str, data: bytes) -> bool:
+    # 本地对象存储下把存档写进磁盘：否则关掉 storage-api 之后每次导出都记
+    # archived=false，审计事件看起来像「一直上传失败」，而实际是根本没人在收。
+    if settings.uses_local_object_storage:
+        from sustainability_desk.persistence.local_storage_transport import (
+            LocalStorageTransport,
+        )
+
+        try:
+            await LocalStorageTransport(settings).create(
+                EXPORTS_BUCKET, object_path, data, media_type=DOCX_MIME
+            )
+        except PrivateStorageTransportError:
+            logger.exception("导出存档落盘失败 %s", object_path)
+            return False
+        return True
     if not (settings.supabase_url and settings.supabase_service_key):
         return False
-    url = f"{settings.supabase_url.rstrip('/')}/storage/v1/object/exports/{object_path}"
+    url = f"{settings.supabase_url.rstrip('/')}/storage/v1/object/{EXPORTS_BUCKET}/{object_path}"
     async with httpx.AsyncClient(timeout=30.0) as client:
         res = await client.post(
             url,

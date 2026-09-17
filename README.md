@@ -117,7 +117,7 @@ Adding an exchange or a language means adding a package, not changing the genera
 See [SETUP.md](./SETUP.md). Short version, once the prerequisites are installed:
 
 ```bash
-make supabase-up                        # local Postgres + auth + storage
+make supabase-up                        # local Postgres + auth
 cp backend/.env.example backend/.env    # fill from `supabase status`, add a model API key
 make verify                             # backend and frontend tests
 ./scripts/dev/local-acceptance-stack.sh up   # starts backend, worker and frontend
@@ -126,13 +126,13 @@ make verify                             # backend and frontend tests
 Prerequisites: Node 22, uv, Docker and the Supabase CLI — plus LibreOffice if you want table-of-
 contents page numbers computed at export time rather than by the reader. `make doctor` checks them.
 
-**Set aside about 3.3 GB and 10–20 minutes.** The repository is small (~13 MB), but the container
+**Set aside about 2.5 GB and 10–15 minutes.** The repository is small (~13 MB), but the container
 images and dependency trees are not, and most of that lands outside the project directory.
 [SETUP.md](./SETUP.md) breaks the figure down and lists the three optional components —
 LibreOffice, OCR and the test browsers — that you can skip.
 
-Supabase here is **not a cloud account** — `supabase start` runs Postgres, auth and storage in
-local Docker containers on your own machine. Nothing leaves it, and there is nothing to sign up
+Supabase here is **not a cloud account** — it runs Postgres and auth in local Docker containers
+on your own machine. Nothing leaves it, and there is nothing to sign up
 for.
 
 ## For coding agents
@@ -192,7 +192,7 @@ It drives the built-in synthetic corpus through the real input path and renders 
 |---|---|
 | Backend | Python / FastAPI, Postgres queue with a separate worker |
 | Frontend | Next.js |
-| Storage & auth | Supabase (Postgres + Auth + Storage) |
+| Storage & auth | Supabase (Postgres + Auth); uploaded files and deliverables stay on local disk |
 | Export | python-docx for rendering; LibreOffice optionally pre-computes TOC page numbers |
 | Models | Azure OpenAI by default; any OpenAI-compatible endpoint works without code changes |
 
