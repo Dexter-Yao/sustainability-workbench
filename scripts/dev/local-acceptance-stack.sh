@@ -37,6 +37,41 @@ die() { printf '✗ %s\n' "$*" >&2; exit 1; }
 
 port_alive() { curl -s -o /dev/null --max-time 3 "http://localhost:$1$2"; }
 
+# 单个日志上限。进程若陷入高频失败重试（如 DB 不可用时 worker 每轮打堆栈），
+# 日志会无界增长——曾有一次 material-worker 连写四天，单文件 42G 撑爆磁盘。
+# worker 侧已有退避与熔断，这里是与之独立的第二道防线：任何进程都适用。
+log_size_cap_bytes=$(( 200 * 1024 * 1024 ))
+
+log_size_of() {
+  # stat 的 BSD/GNU 参数不通用，本脚本只跑 macOS 与 Linux 两种，逐一尝试。
+  stat -f %z "$1" 2>/dev/null || stat -c %s "$1" 2>/dev/null || echo 0
+}
+
+start_log_guard() {
+  # 超限即就地截断并留一行标记：进程仍持有该 inode 的 fd，rotate 改名只会让它
+  # 继续往改名后的文件写，故必须原地截断；调试要的是最近的输出，丢弃早期内容可接受。
+  # 截断能真正回收空间的前提是 start_one 以 append 模式打开日志，见那里的说明。
+  local guard_pid_file="$pid_dir/log-guard.pid"
+  if [[ -f "$guard_pid_file" ]] && kill -0 "$(cat "$guard_pid_file")" 2>/dev/null; then
+    return
+  fi
+  (
+    while :; do
+      sleep 30
+      for log in "$log_dir"/*.log; do
+        [[ -f "$log" ]] || continue
+        if (( $(log_size_of "$log") > log_size_cap_bytes )); then
+          : > "$log"
+          printf '%s [local-stack] 日志超过 %s MiB 上限，已就地截断\n' \
+            "$(date '+%F %T')" "$(( log_size_cap_bytes / 1024 / 1024 ))" >> "$log"
+        fi
+      done
+    done
+  ) >/dev/null 2>&1 &
+  echo $! > "$guard_pid_file"
+  say "· 日志看守启动 (pid $(cat "$guard_pid_file"))，单文件上限 $(( log_size_cap_bytes / 1024 / 1024 )) MiB"
+}
+
 start_one() {
   local name="$1"; shift
   local workdir="$1"; shift
@@ -45,7 +80,11 @@ start_one() {
     say "· $name 已在运行 (pid $(cat "$pid_file"))"
     return
   fi
-  ( cd "$workdir" && nohup "$@" > "$log_dir/$name.log" 2>&1 & echo $! > "$pid_file" )
+  # 先清空再以 append 打开，而非直接 >：append 模式下每次写都定位到当前文件末尾，
+  # 日志看守截断后空间才真正回收。用 > 时 fd 偏移量不随截断回退，进程继续从旧
+  # 偏移写，文件洞会被回填成实块——看上去截断了，磁盘却一直涨。
+  : > "$log_dir/$name.log"
+  ( cd "$workdir" && nohup "$@" >> "$log_dir/$name.log" 2>&1 & echo $! > "$pid_file" )
   say "· $name 启动 (pid $(cat "$pid_file"))，日志 $log_dir/$name.log"
 }
 
@@ -110,6 +149,7 @@ cmd_up() {
       "$(grep '^SUSTAINABILITY_DESK_OTLP_TRACES_HEADERS=' "$backend_dir/.env")"
     )
   fi
+  start_log_guard
   start_one backend "$backend_dir" \
     env ${otlp_env[@]+"${otlp_env[@]}"} SUSTAINABILITY_DESK_SERVICE_ROLE=api uv run uvicorn sustainability_desk.api.app:app --host 0.0.0.0 --port "$api_port"
   # 消费协程数即 File Agent 与 Mapping 的并发上限；
@@ -139,7 +179,7 @@ cmd_up() {
 
 cmd_status() {
   otlp_status
-  for name in backend material-worker frontend; do
+  for name in backend material-worker frontend log-guard; do
     local_pid_file="$pid_dir/$name.pid"
     if [[ -f "$local_pid_file" ]] && kill -0 "$(cat "$local_pid_file")" 2>/dev/null; then
       say "✓ $name 运行中 (pid $(cat "$local_pid_file"))"
@@ -152,10 +192,22 @@ cmd_status() {
   port_alive "$supabase_api_port" "/auth/v1/health" && say "✓ Supabase 栈 :$supabase_api_port 响应正常" || say "✗ Supabase 栈 :$supabase_api_port 无响应"
 }
 
+stop_log_guard() {
+  # 看守是本脚本自身派生的子 shell，与 uv run 不同，没有需要连坐的子进程；
+  # 按 pid 单杀即可，不得走 stop_one 的进程组杀法（会误伤调用方所在组）。
+  local guard_pid_file="$pid_dir/log-guard.pid"
+  if [[ -f "$guard_pid_file" ]]; then
+    local pid; pid="$(cat "$guard_pid_file")"
+    kill "$pid" 2>/dev/null && say "· 日志看守已停止" || true
+    rm -f "$guard_pid_file"
+  fi
+}
+
 cmd_down() {
   for name in frontend material-worker backend; do
     stop_one "$name"
   done
+  stop_log_guard
   say "✓ 已全部停止（本地 Supabase 栈由你自行管理，未触碰）"
 }
 
