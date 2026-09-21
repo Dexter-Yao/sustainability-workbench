@@ -4,7 +4,10 @@ from uuid import uuid4
 
 import pytest
 
-from sustainability_desk.material.agent_worker import MaterialAgentWorker
+from sustainability_desk.material.agent_worker import (
+    MaterialAgentWorker,
+    MaterialAgentWorkerUnavailableError,
+)
 
 
 @pytest.mark.asyncio
@@ -353,3 +356,230 @@ async def test_unexpected_node_failure_does_not_kill_worker(monkeypatch) -> None
     )
 
     assert calls >= 3, "单节点异常后 worker 必须继续消费"
+
+
+@pytest.mark.asyncio
+async def test_persistent_failure_backs_off(monkeypatch) -> None:
+    """连续失败必须退避：DB 不可用时每轮全速重试会把磁盘写满。"""
+    import asyncio
+
+    monkeypatch.setenv("SUSTAINABILITY_DESK_MATERIAL_AGENT_WORKER_CONCURRENCY", "1")
+    waits: list[float] = []
+    calls = 0
+    stop = asyncio.Event()
+
+    async def always_fails(*_args, **_kwargs):
+        nonlocal calls
+        calls += 1
+        if calls >= 4:
+            stop.set()
+        raise ConnectionRefusedError(61, "Connect call failed")
+
+    async def noop_recover(*_args, **_kwargs):
+        return None
+
+    real_wait_for = asyncio.wait_for
+
+    async def spy_wait_for(awaitable, timeout):
+        waits.append(timeout)
+        return await real_wait_for(awaitable, 0.001)
+
+    monkeypatch.setattr(
+        "sustainability_desk.material.agent_worker.process_one_file_agent_run",
+        always_fails,
+    )
+    monkeypatch.setattr(
+        "sustainability_desk.material.agent_worker.pipeline_dal.recover_expired_pipeline_runs",
+        noop_recover,
+    )
+    monkeypatch.setattr(
+        "sustainability_desk.material.agent_worker.generation_dal.recover_expired_generation_runs",
+        noop_recover,
+    )
+    monkeypatch.setattr(
+        "sustainability_desk.material.agent_worker.asyncio.wait_for", spy_wait_for
+    )
+
+    worker = MaterialAgentWorker(
+        pool=object(),
+        storage=object(),  # type: ignore[arg-type]
+        worker_id="test-worker",
+    )
+    await real_wait_for(
+        worker.run_forever(poll_interval=0.01, stop_event=stop), timeout=5
+    )
+
+    # recover_loop 自身按固定 2.0s 轮询，与退避无关，按上界剔除。
+    backoffs = [w for w in waits if 0.01 < w < 2.0]
+    assert len(backoffs) >= 2, "连续失败必须退避，而非按 poll_interval 全速重试"
+    assert backoffs == sorted(backoffs), "退避间隔必须递增"
+    assert backoffs[0] > 0.01, "首次失败后即应退避，不得沿用 poll_interval"
+
+
+@pytest.mark.asyncio
+async def test_persistent_failure_stops_worker(monkeypatch) -> None:
+    """连续失败超过阈值必须退出：环境坏了就该让进程管理器接手，而非空转刷日志。"""
+    import asyncio
+
+    monkeypatch.setenv("SUSTAINABILITY_DESK_MATERIAL_AGENT_WORKER_CONCURRENCY", "1")
+    monkeypatch.setenv("SUSTAINABILITY_DESK_MATERIAL_AGENT_WORKER_MAX_CONSECUTIVE_FAILURES", "3")
+    calls = 0
+
+    async def always_fails(*_args, **_kwargs):
+        nonlocal calls
+        calls += 1
+        raise ConnectionRefusedError(61, "Connect call failed")
+
+    async def noop_recover(*_args, **_kwargs):
+        return None
+
+    real_wait_for = asyncio.wait_for
+
+    async def fast_wait_for(awaitable, timeout):
+        return await real_wait_for(awaitable, 0.001)
+
+    monkeypatch.setattr(
+        "sustainability_desk.material.agent_worker.process_one_file_agent_run",
+        always_fails,
+    )
+    monkeypatch.setattr(
+        "sustainability_desk.material.agent_worker.pipeline_dal.recover_expired_pipeline_runs",
+        noop_recover,
+    )
+    monkeypatch.setattr(
+        "sustainability_desk.material.agent_worker.generation_dal.recover_expired_generation_runs",
+        noop_recover,
+    )
+    monkeypatch.setattr(
+        "sustainability_desk.material.agent_worker.asyncio.wait_for", fast_wait_for
+    )
+
+    worker = MaterialAgentWorker(
+        pool=object(),
+        storage=object(),  # type: ignore[arg-type]
+        worker_id="test-worker",
+    )
+    with pytest.raises(MaterialAgentWorkerUnavailableError):
+        await real_wait_for(
+            worker.run_forever(poll_interval=0.01), timeout=5
+        )
+
+    assert calls == 3, "达到阈值即退出，不得继续重试"
+
+
+@pytest.mark.asyncio
+async def test_success_resets_failure_streak(monkeypatch) -> None:
+    """成功一次即清零：零星坏文件不得累积成熔断，否则一批文件里几个坏的就停工。"""
+    import asyncio
+
+    monkeypatch.setenv("SUSTAINABILITY_DESK_MATERIAL_AGENT_WORKER_CONCURRENCY", "1")
+    monkeypatch.setenv("SUSTAINABILITY_DESK_MATERIAL_AGENT_WORKER_MAX_CONSECUTIVE_FAILURES", "3")
+    calls = 0
+    stop = asyncio.Event()
+
+    async def alternating(*_args, **_kwargs):
+        nonlocal calls
+        calls += 1
+        if calls >= 9:
+            stop.set()
+            return True
+        # 失败两次、成功一次循环：永不触及阈值
+        if calls % 3 != 0:
+            raise RuntimeError("解析器崩了")
+        return True
+
+    async def noop_recover(*_args, **_kwargs):
+        return None
+
+    real_wait_for = asyncio.wait_for
+
+    async def fast_wait_for(awaitable, timeout):
+        return await real_wait_for(awaitable, 0.001)
+
+    monkeypatch.setattr(
+        "sustainability_desk.material.agent_worker.process_one_file_agent_run",
+        alternating,
+    )
+    monkeypatch.setattr(
+        "sustainability_desk.material.agent_worker.pipeline_dal.recover_expired_pipeline_runs",
+        noop_recover,
+    )
+    monkeypatch.setattr(
+        "sustainability_desk.material.agent_worker.generation_dal.recover_expired_generation_runs",
+        noop_recover,
+    )
+    monkeypatch.setattr(
+        "sustainability_desk.material.agent_worker.asyncio.wait_for", fast_wait_for
+    )
+
+    worker = MaterialAgentWorker(
+        pool=object(),
+        storage=object(),  # type: ignore[arg-type]
+        worker_id="test-worker",
+    )
+    await real_wait_for(
+        worker.run_forever(poll_interval=0.01, stop_event=stop), timeout=5
+    )
+
+    assert calls >= 9, "间歇性失败不得触发熔断"
+
+
+@pytest.mark.asyncio
+async def test_circuit_break_winds_down_sibling_consumers(monkeypatch) -> None:
+    """熔断退出前必须收束兄弟协程：否则调用方 close pool 时它们仍在取连接。"""
+    import asyncio
+
+    monkeypatch.setenv("SUSTAINABILITY_DESK_MATERIAL_AGENT_WORKER_CONCURRENCY", "3")
+    monkeypatch.setenv("SUSTAINABILITY_DESK_MATERIAL_AGENT_WORKER_MAX_CONSECUTIVE_FAILURES", "2")
+    live = 0
+    peak_after_raise = 0
+    raised = False
+
+    async def always_fails(*_args, **_kwargs):
+        nonlocal live, peak_after_raise
+        live += 1
+        try:
+            if raised:
+                peak_after_raise += 1
+            await asyncio.sleep(0)
+            raise ConnectionRefusedError(61, "Connect call failed")
+        finally:
+            live -= 1
+
+    async def noop_recover(*_args, **_kwargs):
+        return None
+
+    real_wait_for = asyncio.wait_for
+
+    async def fast_wait_for(awaitable, timeout):
+        return await real_wait_for(awaitable, 0.001)
+
+    monkeypatch.setattr(
+        "sustainability_desk.material.agent_worker.process_one_file_agent_run",
+        always_fails,
+    )
+    monkeypatch.setattr(
+        "sustainability_desk.material.agent_worker.pipeline_dal.recover_expired_pipeline_runs",
+        noop_recover,
+    )
+    monkeypatch.setattr(
+        "sustainability_desk.material.agent_worker.generation_dal.recover_expired_generation_runs",
+        noop_recover,
+    )
+    monkeypatch.setattr(
+        "sustainability_desk.material.agent_worker.asyncio.wait_for", fast_wait_for
+    )
+
+    worker = MaterialAgentWorker(
+        pool=object(),
+        storage=object(),  # type: ignore[arg-type]
+        worker_id="test-worker",
+    )
+    with pytest.raises(MaterialAgentWorkerUnavailableError):
+        await real_wait_for(worker.run_forever(poll_interval=0.01), timeout=5)
+    raised = True
+
+    # 异常传出后再让事件循环转几圈：若有孤儿协程存活，它们会继续调用 run_once。
+    await asyncio.sleep(0.05)
+    assert live == 0, "熔断后不得有消费协程仍在运行"
+    assert peak_after_raise == 0, "熔断后不得再有节点领取"

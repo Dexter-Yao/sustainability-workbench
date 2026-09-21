@@ -32,6 +32,14 @@ from sustainability_desk.lightweight_report_generation import (
 
 logger = logging.getLogger(__name__)
 
+# 连续失败退避上界：DB 不可用属于环境故障，重试再密也无济于事，
+# 退到分钟级即可，既不刷日志也能在环境恢复后及时接上。
+_FAILURE_BACKOFF_CEILING_SECONDS = 30.0
+
+
+class MaterialAgentWorkerUnavailableError(RuntimeError):
+    """连续失败达到阈值：故障在环境而非节点，交由进程管理器决定是否重启。"""
+
 
 def material_agent_worker_concurrency() -> int:
     """读取同一进程的有界任务并发；模型请求仍受统一 LLM 信号量限制。"""
@@ -43,6 +51,21 @@ def material_agent_worker_concurrency() -> int:
         raise RuntimeError("资料 Agent worker 并发必须是整数") from error
     if value < 1:
         raise RuntimeError("资料 Agent worker 并发必须为正整数")
+    return value
+
+
+def material_agent_worker_max_consecutive_failures() -> int:
+    """读取熔断阈值；0 表示永不熔断，供不希望 worker 自行退出的部署使用。"""
+
+    raw = os.getenv(
+        "SUSTAINABILITY_DESK_MATERIAL_AGENT_WORKER_MAX_CONSECUTIVE_FAILURES", "20"
+    )
+    try:
+        value = int(raw)
+    except ValueError as error:
+        raise RuntimeError("资料 Agent worker 熔断阈值必须是整数") from error
+    if value < 0:
+        raise RuntimeError("资料 Agent worker 熔断阈值不得为负数")
     return value
 
 
@@ -158,10 +181,16 @@ class MaterialAgentWorker:
         消费协程数由 SUSTAINABILITY_DESK_MATERIAL_AGENT_WORKER_CONCURRENCY 决定（默认 4，
         与 drain 同源）；领取互斥由 DAL 的 for update skip locked 保证。过期租约
         恢复独立成低频协程，不随消费轮询次数放大。
+
+        单节点失败继续消费，但连续失败按指数退避，并在达到
+        SUSTAINABILITY_DESK_MATERIAL_AGENT_WORKER_MAX_CONSECUTIVE_FAILURES（默认 20，
+        0 为关闭）时抛出 MaterialAgentWorkerUnavailableError：连续失败意味着故障在
+        环境而非节点，空转重试只会刷爆日志盘。
         """
 
         stop = stop_event or asyncio.Event()
         concurrency = material_agent_worker_concurrency()
+        max_consecutive_failures = material_agent_worker_max_consecutive_failures()
 
         async def recover_loop() -> None:
             while not stop.is_set():
@@ -184,6 +213,10 @@ class MaterialAgentWorker:
                 mapping_scope_id=self._mapping_scope_id,
                 job_kind=self._job_kind,
             )
+            # 连续失败计数区分两类故障：偶发坏节点（下一个大概率正常，继续消费）
+            # 与环境故障（DB 不可用时每个节点都以同样方式失败，此时「继续消费下一个」
+            # 只是全速空转）。计数一旦成功即清零，故零星坏文件不会累积成熔断。
+            consecutive_failures = 0
             while not stop.is_set():
                 try:
                     claimed = await worker.run_once()
@@ -195,12 +228,37 @@ class MaterialAgentWorker:
                     logger.warning("File Agent 租约已过期，交还该节点：%s", error)
                     continue
                 except Exception:  # noqa: BLE001 — 单节点失败不得终结常驻消费
-                    logger.exception("资料 Agent 节点处理失败，继续消费下一个节点")
+                    consecutive_failures += 1
+                    if max_consecutive_failures and (
+                        consecutive_failures >= max_consecutive_failures
+                    ):
+                        logger.error(
+                            "资料 Agent 连续失败 %d 次，判定为环境故障并退出",
+                            consecutive_failures,
+                        )
+                        raise MaterialAgentWorkerUnavailableError(
+                            f"连续 {consecutive_failures} 个节点失败，"
+                            "疑为数据库或存储不可用"
+                        ) from None
+                    if consecutive_failures == 1:
+                        # 仅首次打完整 traceback：连续同类失败每轮一条堆栈会把磁盘写满，
+                        # 而后续堆栈与首条并无新信息。
+                        logger.exception("资料 Agent 节点处理失败，继续消费下一个节点")
+                    else:
+                        logger.warning(
+                            "资料 Agent 节点连续第 %d 次失败，退避后重试",
+                            consecutive_failures,
+                        )
+                    backoff = min(
+                        poll_interval * (2 ** (consecutive_failures - 1)),
+                        _FAILURE_BACKOFF_CEILING_SECONDS,
+                    )
                     try:
-                        await asyncio.wait_for(stop.wait(), timeout=poll_interval)
+                        await asyncio.wait_for(stop.wait(), timeout=backoff)
                     except TimeoutError:
                         pass
                     continue
+                consecutive_failures = 0
                 if claimed:
                     continue
                 try:
@@ -208,10 +266,26 @@ class MaterialAgentWorker:
                 except TimeoutError:
                     continue
 
-        await asyncio.gather(
-            recover_loop(),
-            *(consume(index) for index in range(concurrency)),
-        )
+        # 任一消费协程判定环境故障退出时，必须先置停止位再收束同一批协程：
+        # 裸 gather 只传播首个异常而放任兄弟协程继续引用连接池，调用方随后
+        # close pool 会打出一串无意义的连接错误。故此处持有 task 句柄，
+        # 异常时置位并等待这批既有 task 自行收尾，而非另起一批新协程。
+        tasks = [
+            asyncio.ensure_future(coro)
+            for coro in (
+                recover_loop(),
+                *(consume(index) for index in range(concurrency)),
+            )
+        ]
+        try:
+            await asyncio.gather(*tasks)
+        except MaterialAgentWorkerUnavailableError:
+            stop.set()
+            await asyncio.gather(*tasks, return_exceptions=True)
+            raise
+        finally:
+            for task in tasks:
+                task.cancel()
 
 
 def _parser() -> argparse.ArgumentParser:
