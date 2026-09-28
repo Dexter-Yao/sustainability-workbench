@@ -1768,8 +1768,10 @@ def render_final_docx(
     # 装了 LibreOffice 就把页码预先算好并冻结（交付给外部时打开即完整）；没装则保留
     # PAGEREF 的 dirty 标记，由阅读器打开时据书签自行解析。两条路径都给出目录与页码，
     # 差别只在算的时机——故版式引擎是增强项而非硬依赖，不为这点确定性要求整套办公套件。
-    if page_layout_renderer() is not None:
-        finalize_toc_page_numbers(output, profile=format_profile_for(report))
+    # The availability probe starts a process, so the engine found here is handed on, not re-probed.
+    layout_engine = page_layout_renderer()
+    if layout_engine is not None:
+        finalize_toc_page_numbers(output, profile=format_profile_for(report), renderer=layout_engine)
     return output
 
 

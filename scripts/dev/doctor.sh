@@ -20,8 +20,18 @@ fi
 # carries a dirty flag, which Word and LibreOffice resolve on open (measured identical to the
 # pre-computed numbers, entry by entry). The only difference is whether the number is already there
 # or is computed as the document opens — not worth demanding a whole 800 MB office suite.
-command -v soffice >/dev/null 2>&1 || command -v libreoffice >/dev/null 2>&1 \
-  || echo "Note: LibreOffice is not installed (~800 MB). Word TOC page numbers will be resolved by the reader on open; install it if you want them frozen at export time."
+# "Available" means it runs, as page_layout_renderer in backend/src/sustainability_desk/export/toc.py
+# defines it: an uninstall can leave a wrapper on PATH that execs a bundle which is gone. doctor runs
+# before the backend environment exists, so it probes from the shell instead of calling that function.
+layout_engine_runs=false
+for engine_name in soffice libreoffice; do
+  if engine_path=$(command -v "$engine_name") && "$engine_path" --version >/dev/null 2>&1; then
+    layout_engine_runs=true
+    break
+  fi
+done
+$layout_engine_runs \
+  || echo "Note: LibreOffice is not available (~800 MB). Word TOC page numbers will be resolved by the reader on open; install it if you want them frozen at export time."
 # pandoc only regenerates the .docx derivatives of the synthetic corpus; not on the product path.
 command -v pandoc >/dev/null 2>&1 \
   || echo "Note: pandoc not found. The .docx derivatives of the synthetic corpus cannot be rebuilt (the product itself is unaffected)."

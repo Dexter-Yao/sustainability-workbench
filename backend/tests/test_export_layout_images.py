@@ -10,7 +10,7 @@
 诊断组合根要把已校验的 state 一并交出。本测试钉住这两点：组合根的返回形态，
 以及导出与生成消费同一个解析函数（而非各自实现一份）。
 
-完整的「图片真的进了 docx」属渲染保真，由 Word 验收用例覆盖（需 LibreOffice 与对象存储）。
+完整的「图片真的进了 docx」属渲染保真，由 test_docx_layout_images.py 覆盖。
 """
 
 from __future__ import annotations

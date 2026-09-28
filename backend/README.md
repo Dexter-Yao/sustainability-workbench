@@ -12,7 +12,7 @@ uv run pytest
 uv run uvicorn sustainability_desk.api.app:app --reload
 ```
 
-环境变量以 `.env.example` 为准；`.env` 不入库。Word 导出的视觉验收用例需要 LibreOffice（`soffice`）。
+环境变量以 `.env.example` 为准；`.env` 不入库。Word 导出用例不要求 LibreOffice：没有能运行的 `soffice` 时走「阅读器打开时解析目录页码」的路径，有则额外验证预先算好页码的路径。
 模型登记在 `src/sustainability_desk/llm/model_registry.py`：生成默认走 Azure OpenAI 的 luna 部署，judge 走同资源异部署的 terra；其他已登记模型为可选候选，配好对应密钥即可选用。密钥只经环境变量注入。
 
 数据契约真相源：`docs/schema-contract.md`。

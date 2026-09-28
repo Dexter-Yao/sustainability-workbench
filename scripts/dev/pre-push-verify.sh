@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # ABOUTME: git pre-push 的验证入口，跑通 make verify 全链路后才允许推送到远程。
-# ABOUTME: 先断言数据库与 LibreOffice 前置，避免持久化与导出用例静默跳过后伪装成全绿。
+# ABOUTME: 先断言数据库前置，避免持久化用例静默跳过后伪装成全绿；LibreOffice 可选，只报告不拦截。
 set -euo pipefail
 
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
@@ -14,8 +14,8 @@ fi
 started_at=$(date +%s)
 
 # --- 前置断言 ---------------------------------------------------------------
-# 这两项缺失时 pytest 不报错，只把对应用例 skip 掉；不拦住就会推走一份
-# 「持久化与导出从未被验证」的全绿结果。
+# 这一项缺失时 pytest 不报错，只把对应用例 skip 掉；不拦住就会推走一份
+# 「持久化从未被验证」的全绿结果。
 echo "== 0/3 前置检查 =="
 
 if ! nc -z 127.0.0.1 54322 >/dev/null 2>&1; then
@@ -32,21 +32,20 @@ HINT
 fi
 echo "   ✓ Supabase 栈可达"
 
-if ! command -v soffice >/dev/null 2>&1 && ! command -v libreoffice >/dev/null 2>&1; then
-  cat >&2 <<'HINT'
-   ✗ 未找到 LibreOffice（soffice）
-
-   Word 导出的视觉验收用例会静默 skip。Word 导出保真是一级风险，
-   不接受「未验证」冒充「已通过」。
-
-   注意：LibreOffice 对**使用者**是可选的（没装则目录页码由阅读器打开时解析），
-   但对**改代码的人**是必需的——预先算好页码这条路径同样要被验证过才能推送。
-
-   安装后再推送：  brew install --cask libreoffice
-HINT
+# LibreOffice is optional: without a runnable engine the Word export tests take the reader-resolved
+# TOC path and still pass. Say which TOC path went unverified instead of blocking the push.
+# page_layout_renderer is the single owner of "available"; a probe that errors means a broken backend
+# environment rather than a missing engine, so it fails loudly instead of reading as "not installed".
+if ! layout_engine=$(cd backend && uv run --quiet python -c \
+  'from sustainability_desk.export.toc import page_layout_renderer; print(page_layout_renderer() or "")'); then
+  echo "   ✗ 无法探测版式引擎：backend 环境异常，先修复再推送" >&2
   exit 1
 fi
-echo "   ✓ LibreOffice 可用"
+if [[ -n "$layout_engine" ]]; then
+  echo "   ✓ LibreOffice 可运行：预计算目录页码的路径会被验证"
+else
+  echo "   · LibreOffice 不可用：Word 导出用例走「阅读器打开时解析页码」的路径，预计算页码的路径本次未验证"
+fi
 
 # --- 验证链路 ---------------------------------------------------------------
 # 与 make verify 同一套命令；此处拆开只为逐段显示进度与耗时。

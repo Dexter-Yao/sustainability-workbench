@@ -4,6 +4,7 @@
 # ABOUTME(en): The TOC lists report modules and topics only; page numbers come from a real layout engine, never guessed.
 from __future__ import annotations
 
+import logging
 import os
 import re
 import shutil
@@ -19,10 +20,16 @@ from sustainability_desk.observability.registry import Stage, register_stage
 from sustainability_desk.observability.stages import current_stage, open_stage
 from sustainability_desk.export.format_profile import WordFormatProfile
 
+logger = logging.getLogger(__name__)
+
 # LibreOffice 子进程超时。阶段声明从本常量派生，数值只在此维护一份。
 TOC_RENDER_TIMEOUT_SECONDS = 120
+# Upper bound for the `--version` availability probe. The first launch after an install can be slow
+# while macOS verifies the app bundle; an engine slower than this is treated as unavailable.
+LAYOUT_ENGINE_PROBE_TIMEOUT_SECONDS = 30
 
-# TOC 定稿是 render_final_docx 尾部的**无条件**调用，因此 LibreOffice 是导出的运行时硬依赖。
+# render_final_docx runs TOC finalization only when a runnable layout engine exists: LibreOffice is an
+# optional enhancement, not a runtime dependency of the export.
 # span 经同任务 ContextVar 嵌套进 delivery.docx.word，不透传句柄污染渲染器签名；
 # 单元测试直调本函数时无环境 span，不开 span，失败仍由具名异常 fail-loud。
 TOC_FINALIZE_STAGE = register_stage(
@@ -66,9 +73,45 @@ def page_layout_renderer() -> str | None:
     LibreOffice 打开时会自行解析出页码（实测与预计算结果逐条一致）。差别只在
     「页码是打开前就在那里，还是打开那一刻算出来」——把整套办公套件列为硬依赖
     来买这点确定性，对自用场景不划算。
+
+    Available means the executable actually runs. Uninstalling the app can leave a wrapper on PATH
+    that execs a bundle which no longer exists; counting that as installed made every Word export
+    fail in TOC finalization instead of taking the reader-resolved path.
     """
 
-    return shutil.which("soffice") or shutil.which("libreoffice")
+    for name in ("soffice", "libreoffice"):
+        executable = shutil.which(name)
+        if executable is not None and _layout_engine_runs(executable):
+            return executable
+    return None
+
+
+def _layout_engine_runs(executable: str) -> bool:
+    """Whether ``executable --version`` exits cleanly within the probe timeout."""
+
+    try:
+        probe = subprocess.run(
+            [executable, "--version"],
+            capture_output=True,
+            text=True,
+            timeout=LAYOUT_ENGINE_PROBE_TIMEOUT_SECONDS,
+            check=False,
+        )
+    except (OSError, subprocess.TimeoutExpired) as error:
+        logger.warning(
+            "Layout engine %s did not run (%s); TOC page numbers are left to the reader.",
+            executable,
+            type(error).__name__,
+        )
+        return False
+    if probe.returncode != 0:
+        logger.warning(
+            "Layout engine %s exited with code %s; TOC page numbers are left to the reader.",
+            executable,
+            probe.returncode,
+        )
+        return False
+    return True
 
 
 class TocFinalizationError(RuntimeError):

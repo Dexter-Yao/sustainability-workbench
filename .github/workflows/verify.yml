@@ -1,5 +1,5 @@
-# ABOUTME: CI 跑不依赖本机栈的部分：前端全量、后端非持久化非导出用例、两个 lint。
-# ABOUTME: 持久化用例需要 Supabase 栈、导出用例需要完整 LibreOffice，两者按 SETUP.md 在本机跑。
+# ABOUTME: CI 跑不依赖本机栈的部分：前端全量、后端非持久化非导出用例、前端 lint。
+# ABOUTME: 持久化用例需要 Supabase 栈，按 SETUP.md 在本机跑；Word 导出用例暂未纳入 CI，原因见 pytest 步骤。
 name: verify
 
 on:
@@ -24,13 +24,13 @@ jobs:
       - run: uv sync --project backend
       - name: pytest
         working-directory: backend
-        # 跳过 Word 导出用例：它们走 render_final_docx，末尾无条件调用
-        # finalize_toc_page_numbers——目录页码要靠排版引擎真跑一遍分页才算得出。
-        # 两种 runner 配置都不成立（均为 CI 实测）：不装 LibreOffice 报
-        # 「未安装 LibreOffice」；装 libreoffice-writer 则 headless 排不出正文
-        # 第 1 页，报「未找到正文第 1 页」。导出保真是一级风险，必须在装有完整
-        # LibreOffice 的本机按 SETUP.md 验，CI 不具备该能力也不假装具备。
-        # 持久化用例另有 pytest.skip("本地 Supabase 栈未启动")，同样不假装验过。
+        # Word export tests (test_docx_render.py) stay out of CI for now. Since LibreOffice became
+        # optional they no longer need it: without a runnable engine they take the reader-resolved TOC
+        # path and pass locally. They have not run on a Linux runner yet, and the runner lacks CJK fonts
+        # (charts would log missing-glyph warnings), so including them means installing fonts-noto-cjk
+        # and getting a first green run. The pre-computed TOC path cannot be verified here at all: with
+        # libreoffice-writer installed, headless rendering never finds body page 1 (measured in CI).
+        # Persistence tests call pytest.skip("本地 Supabase 栈未启动") here and are not claimed as verified.
         run: uv run pytest -q --ignore=tests/test_docx_render.py
       # 刻意不在 CI 跑 ruff：本仓没有 [tool.ruff] 配置，也没把 ruff 列进依赖，
       # 「干净」这个结论一直是相对某个本机版本成立的（0.12 通过，0.16 报 675 条，
