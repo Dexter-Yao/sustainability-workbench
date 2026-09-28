@@ -121,7 +121,8 @@ AZURE_OPENAI_ENDPOINT=https://<资源名>.cognitiveservices.azure.com/
 ```
 
 也可以用任何 OpenAI 兼容服务（自建 vLLM、Ollama、代理网关），把 `.env.example` 里
-`OPENAI_COMPAT_*` 三项注释打开即可，不用改代码。
+`OPENAI_COMPAT_*` 三项注释打开即可，不用改代码。DeepSeek、智谱 GLM、阿里通义千问（Qwen）
+与月之暗面（Kimi）也已内置登记，填上对应密钥即可。
 
 ## 4. 跑测试
 
